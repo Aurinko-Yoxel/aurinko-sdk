@@ -1,0 +1,19 @@
+{
+  "groupId": "io.aurinko",
+  "invokerPackage": "io.aurinko.client",
+  "apiPackage": "io.aurinko.api",
+  "artifactDescription": "Aurinko API SDK",
+  "artifactUrl": "https://aurinko.io",
+  "artifactId": "aurinko-api",
+  "artifactVersion": "1.0.0",
+  "developerEmail": "support@aurinko.io",
+  "developerName": "Aurinko team",
+  "developerOrganization": "Yoxel Inc",
+  "developerOrganizationUrl": "https://aurinko.io",
+  "licenseName": "Apache 2.0",
+  "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html",
+  "modelPackage": "io.aurinko.client.model",
+  "library": "feign",
+  "serializationLibrary": "jackson"
+}
+
