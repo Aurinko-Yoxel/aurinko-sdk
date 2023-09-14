@@ -13,7 +13,8 @@
   "licenseName": "Apache 2.0",
   "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html",
   "modelPackage": "io.aurinko.client.model",
-  "library": "feign",
+  "library": "native",
+  "asyncNative": true,
   "serializationLibrary": "jackson"
 }
 
