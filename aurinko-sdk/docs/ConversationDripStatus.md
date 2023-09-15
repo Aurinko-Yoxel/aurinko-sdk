@@ -1,0 +1,35 @@
+
+
+# ConversationDripStatus
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**convoId** | **String** |  |  [optional] |
+|**subject** | **String** |  |  [optional] |
+|**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
+|**rule** | [**List&lt;FollowupRuleAggregateOut&gt;**](FollowupRuleAggregateOut.md) |  |  [optional] |
+|**dripStartedAt** | **OffsetDateTime** |  |  [optional] |
+|**dripLastNum** | **Integer** |  |  [optional] |
+|**dripError** | **String** |  |  [optional] |
+|**dripEndedAt** | **OffsetDateTime** |  |  [optional] |
+|**actionVars** | **Map&lt;String, String&gt;** |  |  [optional] |
+|**targets** | **List&lt;String&gt;** |  |  [optional] |
+|**dripResponder** | **String** |  |  [optional] |
+
+
+
+## Enum: StatusEnum
+
+| Name | Value |
+|---- | -----|
+| DISABLED | &quot;disabled&quot; |
+| ACTIVE | &quot;active&quot; |
+| FAILED | &quot;failed&quot; |
+| FINISHED | &quot;finished&quot; |
+| RULEINCOMPLETE | &quot;ruleIncomplete&quot; |
+
+
+
