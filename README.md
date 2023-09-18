@@ -6,7 +6,7 @@ brew install openapi-generator
 ```
 2. Generate an sdk
 ```
-openapi-generator generate -c config.json -i https://api.aurinko.io/assets/swagger.json -g java -o aurinko-sdk
+openapi-generator generate -c config.json -i https://apirefs.aurinko.io/swagger.json -g java -o aurinko-sdk
 ```
 3. Go to aurinko-sdk and build jar
 ```
