@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingTimesOutDto.JSON_PROPERTY_SECONDARY_COLOR,
   BookingTimesOutDto.JSON_PROPERTY_ADDITIONAL_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ITEMS = "items";
   private List<MeetingTime> items;

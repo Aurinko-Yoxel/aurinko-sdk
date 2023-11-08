@@ -42,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimpleRange.JSON_PROPERTY_COUNT,
   RecurrenceSimpleRange.JSON_PROPERTY_PATTERN_EXCLUSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class RecurrenceSimpleRange {
   /**
    * Gets or Sets type

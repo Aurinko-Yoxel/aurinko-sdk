@@ -76,7 +76,9 @@ public enum ServiceTypeNonDaemon {
   
   CLIENTIFY("Clientify"),
   
-  QUICKBOOKS("QuickBooks");
+  QUICKBOOKS("QuickBooks"),
+  
+  ACTIVECAMPAIGN("ActiveCampaign");
 
   private String value;
 

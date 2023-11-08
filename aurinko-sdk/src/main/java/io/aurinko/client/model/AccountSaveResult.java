@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AccountSaveResult.JSON_PROPERTY_USER_ID,
   AccountSaveResult.JSON_PROPERTY_USER_SESSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class AccountSaveResult {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
   private Long accountId;

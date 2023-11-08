@@ -170,7 +170,7 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 
 ## authorize
 
-> CompletableFuture<Void> authorize(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl)
+> CompletableFuture<Void> authorize(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes)
 
 Start an account authentication flow
 
@@ -211,8 +211,9 @@ public class Example {
         String communityUrl = "communityUrl_example"; // String | 
         Boolean checkServiceAccount = true; // Boolean | 
         String serverUrl = "serverUrl_example"; // String | 
+        Boolean ensureScopes = true; // Boolean | When set to true, raises an error if any of the requested scopes are not granted by the user
         try {
-            CompletableFuture<Void> result = apiInstance.authorize(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl);
+            CompletableFuture<Void> result = apiInstance.authorize(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthApi#authorize");
             System.err.println("Status code: " + e.getCode());
@@ -230,7 +231,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **clientId** | **String**| Application client Id | |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, DDS, Zoho, Clientify, QuickBooks] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, DDS, Zoho, Clientify, QuickBooks, ActiveCampaign] |
 | **returnUrl** | **String**| Redirect/callback url | |
 | **mailboxInfo** | **String**|  | [optional] |
 | **scopes** | [**List&lt;Scope&gt;**](Scope.md)| Space separated list of scopes | [optional] |
@@ -249,6 +250,7 @@ public class Example {
 | **communityUrl** | **String**|  | [optional] |
 | **checkServiceAccount** | **Boolean**|  | [optional] |
 | **serverUrl** | **String**|  | [optional] |
+| **ensureScopes** | **Boolean**| When set to true, raises an error if any of the requested scopes are not granted by the user | [optional] |
 
 ### Return type
 
@@ -271,7 +273,7 @@ No authorization required
 
 ## authorizeWithHttpInfo
 
-> CompletableFuture<ApiResponse<Void>> authorize authorizeWithHttpInfo(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl)
+> CompletableFuture<ApiResponse<Void>> authorize authorizeWithHttpInfo(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes)
 
 Start an account authentication flow
 
@@ -313,8 +315,9 @@ public class Example {
         String communityUrl = "communityUrl_example"; // String | 
         Boolean checkServiceAccount = true; // Boolean | 
         String serverUrl = "serverUrl_example"; // String | 
+        Boolean ensureScopes = true; // Boolean | When set to true, raises an error if any of the requested scopes are not granted by the user
         try {
-            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeWithHttpInfo(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl);
+            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeWithHttpInfo(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
         } catch (InterruptedException | ExecutionException e) {
@@ -341,7 +344,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **clientId** | **String**| Application client Id | |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, DDS, Zoho, Clientify, QuickBooks] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, DDS, Zoho, Clientify, QuickBooks, ActiveCampaign] |
 | **returnUrl** | **String**| Redirect/callback url | |
 | **mailboxInfo** | **String**|  | [optional] |
 | **scopes** | [**List&lt;Scope&gt;**](Scope.md)| Space separated list of scopes | [optional] |
@@ -360,6 +363,7 @@ public class Example {
 | **communityUrl** | **String**|  | [optional] |
 | **checkServiceAccount** | **Boolean**|  | [optional] |
 | **serverUrl** | **String**|  | [optional] |
+| **ensureScopes** | **Boolean**| When set to true, raises an error if any of the requested scopes are not granted by the user | [optional] |
 
 ### Return type
 
@@ -383,7 +387,7 @@ No authorization required
 
 ## authorizeDaemon
 
-> CompletableFuture<Void> authorizeDaemon(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId)
+> CompletableFuture<Void> authorizeDaemon(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes)
 
 Start an service/daemon account authentication flow
 
@@ -415,8 +419,9 @@ public class Example {
         String state = "state_example"; // String | Custom state string
         Boolean fromPortal = true; // Boolean | 
         String clientOrgId = "clientOrgId_example"; // String | 
+        Boolean ensureScopes = true; // Boolean | When set to true, raises an error if any of the requested scopes are not granted by the user
         try {
-            CompletableFuture<Void> result = apiInstance.authorizeDaemon(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId);
+            CompletableFuture<Void> result = apiInstance.authorizeDaemon(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthApi#authorizeDaemon");
             System.err.println("Status code: " + e.getCode());
@@ -444,6 +449,7 @@ public class Example {
 | **state** | **String**| Custom state string | [optional] |
 | **fromPortal** | **Boolean**|  | [optional] |
 | **clientOrgId** | **String**|  | [optional] |
+| **ensureScopes** | **Boolean**| When set to true, raises an error if any of the requested scopes are not granted by the user | [optional] |
 
 ### Return type
 
@@ -466,7 +472,7 @@ No authorization required
 
 ## authorizeDaemonWithHttpInfo
 
-> CompletableFuture<ApiResponse<Void>> authorizeDaemon authorizeDaemonWithHttpInfo(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId)
+> CompletableFuture<ApiResponse<Void>> authorizeDaemon authorizeDaemonWithHttpInfo(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes)
 
 Start an service/daemon account authentication flow
 
@@ -499,8 +505,9 @@ public class Example {
         String state = "state_example"; // String | Custom state string
         Boolean fromPortal = true; // Boolean | 
         String clientOrgId = "clientOrgId_example"; // String | 
+        Boolean ensureScopes = true; // Boolean | When set to true, raises an error if any of the requested scopes are not granted by the user
         try {
-            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeDaemonWithHttpInfo(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId);
+            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeDaemonWithHttpInfo(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
         } catch (InterruptedException | ExecutionException e) {
@@ -537,6 +544,7 @@ public class Example {
 | **state** | **String**| Custom state string | [optional] |
 | **fromPortal** | **Boolean**|  | [optional] |
 | **clientOrgId** | **String**|  | [optional] |
+| **ensureScopes** | **Boolean**| When set to true, raises an error if any of the requested scopes are not granted by the user | [optional] |
 
 ### Return type
 

@@ -208,6 +208,9 @@ tags:
     {
       "subscription" : integer, // subscription Id
       "resource" : string,
+      "accountId": integer,
+      "error": string,          // if any
+      "lifecycleEvent": string, // Enum of `error` or `active`, when subscription state changes
       "payloads" : [...]
     }
     ```
@@ -2050,27 +2053,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/tracking \
-              -d pageToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
-  /v1/email/tracking/threads:
-    get:
-      operationId: getTrackingThreads
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmailTrackingThreadPageNext'
-          description: Success
-      summary: List tracked email threads
-      tags:
-      - EmailTracking
-      x-codeSamples:
-      - lang: cURL
-        source: |-
-          curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/tracking/threads \
+              -G https:/api.aurinko.io/v1/email/tracking
       x-accepts: application/json
   /v1/email/tracking/purgeMyTracking:
     post:
@@ -2154,6 +2137,124 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X POST https:/api.aurinko.io/v1/email/tracking/ignoreOpenClicks
+      x-accepts: application/json
+  /v1/email/tracking/{id}:
+    get:
+      operationId: trackingById
+      parameters:
+      - description: Tracking data id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackingData'
+          description: Success
+      summary: Get tracking data by Id
+      tags:
+      - EmailTracking
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET -H 'Authorization: Bearer <access token>' \
+              -G https:/api.aurinko.io/v1/email/tracking/{id}'
+      x-accepts: application/json
+  /v1/email/tracking/{id}/events:
+    get:
+      operationId: trackingEvents
+      parameters:
+      - description: Tracking id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - description: page size
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 50
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      - description: return records offset by the given number
+        explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailTrackingEventPageNext'
+          description: Success
+      summary: List tracking events
+      tags:
+      - EmailTracking
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET -H 'Authorization: Bearer <access token>' \
+              -G https:/api.aurinko.io/v1/email/tracking/{id}/events
+      x-accepts: application/json
+  /v1/email/tracking/{trackingId}/events/{id}:
+    get:
+      operationId: trackingEventById
+      parameters:
+      - description: Tracking data id
+        explode: false
+        in: path
+        name: trackingId
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - description: Tracking event id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailTrackingEvent'
+          description: Success
+      summary: Get tracking event by Id
+      tags:
+      - EmailTracking
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET -H 'Authorization: Bearer <access token>' \
+              -G https:/api.aurinko.io/v1/email/tracking/{trackingId}/events/{id}'
       x-accepts: application/json
   /v1/followup/config:
     get:
@@ -2527,6 +2628,14 @@ paths:
       - explode: true
         in: query
         name: withPhoto
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: includeUpdateToken
         required: false
         schema:
           nullable: true
@@ -3474,6 +3583,15 @@ paths:
           nullable: true
           type: string
         style: form
+      - description: "When set to true, raises an error if any of the requested scopes\
+          \ are not granted by the user"
+        explode: true
+        in: query
+        name: ensureScopes
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "303":
           description: Redirect
@@ -3595,6 +3713,15 @@ paths:
         schema:
           nullable: true
           type: string
+        style: form
+      - description: "When set to true, raises an error if any of the requested scopes\
+          \ are not granted by the user"
+        explode: true
+        in: query
+        name: ensureScopes
+        required: false
+        schema:
+          type: boolean
         style: form
       responses:
         "303":
@@ -4657,6 +4784,7 @@ components:
       - Zoho
       - Clientify
       - QuickBooks
+      - ActiveCampaign
       type: string
     EmailDeletedPage:
       example:
@@ -4713,6 +4841,7 @@ components:
       - Zoho
       - Clientify
       - QuickBooks
+      - ActiveCampaign
       type: string
     UpdateDraftTrackingIn:
       example:
@@ -4974,6 +5103,7 @@ components:
           hasBounced: true
           context: context
           location: location
+          id: 1
           lastActivityTime: 2000-01-23T04:56:07.000+00:00
           trackLinks: true
           inetMessageId: inetMessageId
@@ -4990,6 +5120,7 @@ components:
           hasBounced: true
           context: context
           location: location
+          id: 1
           lastActivityTime: 2000-01-23T04:56:07.000+00:00
           trackLinks: true
           inetMessageId: inetMessageId
@@ -5169,6 +5300,57 @@ components:
           format: date-time
           type: string
       type: object
+    EmailTrackingEvent:
+      example:
+        messageId: messageId
+        userAgent: userAgent
+        trackingCode: trackingCode
+        eventType: open
+        threadId: threadId
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        referrer: referrer
+        internetMessageId: internetMessageId
+        context: context
+        location: location
+        id: 1
+        remoteAddr: remoteAddr
+        trackingId: 5
+      properties:
+        id:
+          format: int64
+          type: integer
+        createdAt:
+          format: date-time
+          type: string
+        eventType:
+          enum:
+          - open
+          - click
+          - reply
+          - replyBounce
+          type: string
+        location:
+          type: string
+        userAgent:
+          type: string
+        referrer:
+          type: string
+        remoteAddr:
+          type: string
+        threadId:
+          type: string
+        messageId:
+          type: string
+        internetMessageId:
+          type: string
+        trackingId:
+          format: int64
+          type: integer
+        context:
+          type: string
+        trackingCode:
+          type: string
+      type: object
     BodyType:
       enum:
       - html
@@ -5345,11 +5527,15 @@ components:
         hasBounced: true
         context: context
         location: location
+        id: 1
         lastActivityTime: 2000-01-23T04:56:07.000+00:00
         trackLinks: true
         inetMessageId: inetMessageId
         remoteAddr: remoteAddr
       properties:
+        id:
+          format: int64
+          type: integer
         messageId:
           type: string
         inetMessageId:
@@ -5734,6 +5920,51 @@ components:
         scheduled:
           $ref: '#/components/schemas/ScheduledDraft'
       type: object
+    EmailTrackingEventPageNext:
+      example:
+        totalSize: 6
+        offset: 0
+        records:
+        - messageId: messageId
+          userAgent: userAgent
+          trackingCode: trackingCode
+          eventType: open
+          threadId: threadId
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          referrer: referrer
+          internetMessageId: internetMessageId
+          context: context
+          location: location
+          id: 1
+          remoteAddr: remoteAddr
+          trackingId: 5
+        - messageId: messageId
+          userAgent: userAgent
+          trackingCode: trackingCode
+          eventType: open
+          threadId: threadId
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          referrer: referrer
+          internetMessageId: internetMessageId
+          context: context
+          location: location
+          id: 1
+          remoteAddr: remoteAddr
+          trackingId: 5
+        done: true
+      properties:
+        offset:
+          type: integer
+        totalSize:
+          format: int64
+          type: integer
+        done:
+          type: boolean
+        records:
+          items:
+            $ref: '#/components/schemas/EmailTrackingEvent'
+          type: array
+      type: object
     BookingInDto:
       example:
         availabilityStep: 0
@@ -6015,7 +6246,7 @@ components:
           attendeePermissions:
           - inviteOthers
           - inviteOthers
-          onlineMeetingProvider: hangoutsMeet
+          onlineMeetingProvider: onlineMeetingProvider
           onlineMeetingDetails:
             regionCode: regionCode
             pin: pin
@@ -6116,25 +6347,6 @@ components:
             - attachments
             type: string
           readOnly: true
-          type: array
-      type: object
-    EmailTrackingThreadPageNext:
-      example:
-        records:
-        - threadId: threadId
-          messageId: messageId
-          bounced: true
-          inetMessageId: inetMessageId
-          timestamp: timestamp
-        - threadId: threadId
-          messageId: messageId
-          bounced: true
-          inetMessageId: inetMessageId
-          timestamp: timestamp
-      properties:
-        records:
-          items:
-            $ref: '#/components/schemas/TrackedThreadMessage'
           type: array
       type: object
     WeekWorkSchedule:
@@ -7477,25 +7689,6 @@ components:
         followUp:
           $ref: '#/components/schemas/FollowUpOutgoing'
       type: object
-    TrackedThreadMessage:
-      example:
-        threadId: threadId
-        messageId: messageId
-        bounced: true
-        inetMessageId: inetMessageId
-        timestamp: timestamp
-      properties:
-        messageId:
-          type: string
-        inetMessageId:
-          type: string
-        threadId:
-          type: string
-        timestamp:
-          type: string
-        bounced:
-          type: boolean
-      type: object
     CalendarsPage:
       example:
         records:
@@ -7781,7 +7974,7 @@ components:
             attendeePermissions:
             - inviteOthers
             - inviteOthers
-            onlineMeetingProvider: hangoutsMeet
+            onlineMeetingProvider: onlineMeetingProvider
             onlineMeetingDetails:
               regionCode: regionCode
               pin: pin
@@ -7808,7 +8001,7 @@ components:
             id: id
             type: regular
         globalId: globalId
-        onlineMeetingProvider: teamsForBusiness
+        onlineMeetingProvider: onlineMeetingProvider
         etag: etag
         id: id
         onlineMeetingDetails:
@@ -7834,12 +8027,8 @@ components:
         record:
           $ref: '#/components/schemas/Event'
         onlineMeetingProvider:
-          enum:
-          - teamsForBusiness
-          - skypeForBusiness
-          - skypeForConsumer
-          - hangoutsMeet
-          - addOn
+          description: "Value of provider, for example hangoutsMeet, teamsForBusiness,\
+            \ skypeForBusiness, skypeForConsumer"
           type: string
         onlineMeetingDetails:
           $ref: '#/components/schemas/OnlineMeetingDetails'
@@ -7969,7 +8158,7 @@ components:
         attendeePermissions:
         - inviteOthers
         - inviteOthers
-        onlineMeetingProvider: hangoutsMeet
+        onlineMeetingProvider: onlineMeetingProvider
         onlineMeetingDetails:
           regionCode: regionCode
           pin: pin
@@ -8005,11 +8194,8 @@ components:
           type: boolean
           writeOnly: true
         onlineMeetingProvider:
-          enum:
-          - hangoutsMeet
-          - teamsForBusiness
-          - skypeForBusiness
-          - skypeForConsumer
+          description: "Value of provider, for example hangoutsMeet, teamsForBusiness,\
+            \ skypeForBusiness, skypeForConsumer"
           type: string
         onlineMeetingDetails:
           $ref: '#/components/schemas/OnlineMeetingDetails'
@@ -8467,7 +8653,7 @@ components:
             attendeePermissions:
             - inviteOthers
             - inviteOthers
-            onlineMeetingProvider: hangoutsMeet
+            onlineMeetingProvider: onlineMeetingProvider
             onlineMeetingDetails:
               regionCode: regionCode
               pin: pin
@@ -8599,7 +8785,7 @@ components:
             attendeePermissions:
             - inviteOthers
             - inviteOthers
-            onlineMeetingProvider: hangoutsMeet
+            onlineMeetingProvider: onlineMeetingProvider
             onlineMeetingDetails:
               regionCode: regionCode
               pin: pin
@@ -9078,7 +9264,7 @@ components:
             attendeePermissions:
             - inviteOthers
             - inviteOthers
-            onlineMeetingProvider: hangoutsMeet
+            onlineMeetingProvider: onlineMeetingProvider
             onlineMeetingDetails:
               regionCode: regionCode
               pin: pin
@@ -9210,7 +9396,7 @@ components:
             attendeePermissions:
             - inviteOthers
             - inviteOthers
-            onlineMeetingProvider: hangoutsMeet
+            onlineMeetingProvider: onlineMeetingProvider
             onlineMeetingDetails:
               regionCode: regionCode
               pin: pin

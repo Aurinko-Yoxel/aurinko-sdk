@@ -12,7 +12,7 @@
 |**response** | [**ResponseEnum**](#ResponseEnum) |  |  [optional] [readonly] |
 |**attendeePermissions** | [**List&lt;AttendeePermissionsEnum&gt;**](#List&lt;AttendeePermissionsEnum&gt;) |  |  [optional] |
 |**onlineMeeting** | **Boolean** | Assumes default onlineMeetingProvider (&#39;hangoutsMeet&#39; or &#39;teamsForBusiness&#39;) |  [optional] |
-|**onlineMeetingProvider** | [**OnlineMeetingProviderEnum**](#OnlineMeetingProviderEnum) |  |  [optional] |
+|**onlineMeetingProvider** | **String** | Value of provider, for example hangoutsMeet, teamsForBusiness, skypeForBusiness, skypeForConsumer |  [optional] |
 |**onlineMeetingDetails** | [**OnlineMeetingDetails**](OnlineMeetingDetails.md) |  |  [optional] |
 
 
@@ -34,17 +34,6 @@
 | INVITEOTHERS | &quot;inviteOthers&quot; |
 | MODIFY | &quot;modify&quot; |
 | SEEOTHERS | &quot;seeOthers&quot; |
-
-
-
-## Enum: OnlineMeetingProviderEnum
-
-| Name | Value |
-|---- | -----|
-| HANGOUTSMEET | &quot;hangoutsMeet&quot; |
-| TEAMSFORBUSINESS | &quot;teamsForBusiness&quot; |
-| SKYPEFORBUSINESS | &quot;skypeForBusiness&quot; |
-| SKYPEFORCONSUMER | &quot;skypeForConsumer&quot; |
 
 
 

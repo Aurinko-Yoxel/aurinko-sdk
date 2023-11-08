@@ -17,7 +17,7 @@ All URIs are relative to *https://api.aurinko.io*
 
 ## contact
 
-> CompletableFuture<Contact> contact(contId, bodyType, nativeProperties, withPhoto)
+> CompletableFuture<Contact> contact(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken)
 
 Get a contact
 
@@ -86,8 +86,9 @@ public class Example {
         BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean withPhoto = true; // Boolean | 
+        Boolean includeUpdateToken = true; // Boolean | 
         try {
-            CompletableFuture<Contact> result = apiInstance.contact(contId, bodyType, nativeProperties, withPhoto);
+            CompletableFuture<Contact> result = apiInstance.contact(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling ContactsApi#contact");
@@ -109,6 +110,7 @@ public class Example {
 | **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **withPhoto** | **Boolean**|  | [optional] |
+| **includeUpdateToken** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -131,7 +133,7 @@ CompletableFuture<[**Contact**](Contact.md)>
 
 ## contactWithHttpInfo
 
-> CompletableFuture<ApiResponse<Contact>> contact contactWithHttpInfo(contId, bodyType, nativeProperties, withPhoto)
+> CompletableFuture<ApiResponse<Contact>> contact contactWithHttpInfo(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken)
 
 Get a contact
 
@@ -201,8 +203,9 @@ public class Example {
         BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean withPhoto = true; // Boolean | 
+        Boolean includeUpdateToken = true; // Boolean | 
         try {
-            CompletableFuture<ApiResponse<Contact>> response = apiInstance.contactWithHttpInfo(contId, bodyType, nativeProperties, withPhoto);
+            CompletableFuture<ApiResponse<Contact>> response = apiInstance.contactWithHttpInfo(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -233,6 +236,7 @@ public class Example {
 | **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **withPhoto** | **Boolean**|  | [optional] |
+| **includeUpdateToken** | **Boolean**|  | [optional] |
 
 ### Return type
 

@@ -53,5 +53,7 @@
 
 * `QUICKBOOKS` (value: `"QuickBooks"`)
 
+* `ACTIVECAMPAIGN` (value: `"ActiveCampaign"`)
+
 
 

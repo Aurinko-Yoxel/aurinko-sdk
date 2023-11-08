@@ -86,7 +86,9 @@ public enum ServiceType {
   
   CLIENTIFY("Clientify"),
   
-  QUICKBOOKS("QuickBooks");
+  QUICKBOOKS("QuickBooks"),
+  
+  ACTIVECAMPAIGN("ActiveCampaign");
 
   private String value;
 

@@ -16,10 +16,12 @@ package io.aurinko.api;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.ConvertDraft;
 import io.aurinko.client.model.EmailTrackingData;
+import io.aurinko.client.model.EmailTrackingEvent;
+import io.aurinko.client.model.EmailTrackingEventPageNext;
 import io.aurinko.client.model.EmailTrackingPageNext;
-import io.aurinko.client.model.EmailTrackingThreadPageNext;
 import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.RewriteHtml;
+import io.aurinko.client.model.TrackingData;
 import io.aurinko.client.model.UpdateDraftTrackingIn;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -100,22 +102,6 @@ public class EmailTrackingApiTest {
     }
     
     /**
-     * List tracked email threads
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getTrackingThreadsTest() throws ApiException {
-        CompletableFuture<EmailTrackingThreadPageNext> response = 
-        api.getTrackingThreads();
-        
-        // TODO: test validations
-    }
-    
-    /**
      * Purge recent activity for a user
      *
      * 
@@ -148,6 +134,60 @@ public class EmailTrackingApiTest {
         String inetMessageId = null;
         CompletableFuture<OkResponse> response = 
         api.switchOpenClicks(isIgnored, messageId, inetMessageId);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get tracking data by Id
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void trackingByIdTest() throws ApiException {
+        Long id = null;
+        CompletableFuture<TrackingData> response = 
+        api.trackingById(id);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get tracking event by Id
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void trackingEventByIdTest() throws ApiException {
+        Long trackingId = null;
+        Long id = null;
+        CompletableFuture<EmailTrackingEvent> response = 
+        api.trackingEventById(trackingId, id);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * List tracking events
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void trackingEventsTest() throws ApiException {
+        Long id = null;
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<EmailTrackingEventPageNext> response = 
+        api.trackingEvents(id, limit, offset);
         
         // TODO: test validations
     }

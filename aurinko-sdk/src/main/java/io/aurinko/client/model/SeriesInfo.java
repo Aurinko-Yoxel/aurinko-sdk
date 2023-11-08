@@ -42,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SeriesInfo.JSON_PROPERTY_MODIFIED_OCCURRENCES,
   SeriesInfo.JSON_PROPERTY_DELETED_OCCURRENCES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class SeriesInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

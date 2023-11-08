@@ -1,5 +1,6 @@
 .github/workflows/maven.yml
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -69,8 +70,9 @@ docs/EmailSendResponse.md
 docs/EmailSyncApi.md
 docs/EmailTrackingApi.md
 docs/EmailTrackingData.md
+docs/EmailTrackingEvent.md
+docs/EmailTrackingEventPageNext.md
 docs/EmailTrackingPageNext.md
-docs/EmailTrackingThreadPageNext.md
 docs/Event.md
 docs/EventDateTime.md
 docs/EventOrId.md
@@ -140,7 +142,6 @@ docs/TaskUpdate.md
 docs/TaskUpdateResponse.md
 docs/TasksApi.md
 docs/TasksPage.md
-docs/TrackedThreadMessage.md
 docs/TrackingData.md
 docs/UpdateDraftTrackingIn.md
 docs/UpdateMessageStatusData.md
@@ -241,8 +242,9 @@ src/main/java/io/aurinko/client/model/EmailMessagesPage.java
 src/main/java/io/aurinko/client/model/EmailMessagesPageNext.java
 src/main/java/io/aurinko/client/model/EmailSendResponse.java
 src/main/java/io/aurinko/client/model/EmailTrackingData.java
+src/main/java/io/aurinko/client/model/EmailTrackingEvent.java
+src/main/java/io/aurinko/client/model/EmailTrackingEventPageNext.java
 src/main/java/io/aurinko/client/model/EmailTrackingPageNext.java
-src/main/java/io/aurinko/client/model/EmailTrackingThreadPageNext.java
 src/main/java/io/aurinko/client/model/Event.java
 src/main/java/io/aurinko/client/model/EventDateTime.java
 src/main/java/io/aurinko/client/model/EventOrId.java
@@ -303,7 +305,6 @@ src/main/java/io/aurinko/client/model/TaskListUpdate.java
 src/main/java/io/aurinko/client/model/TaskUpdate.java
 src/main/java/io/aurinko/client/model/TaskUpdateResponse.java
 src/main/java/io/aurinko/client/model/TasksPage.java
-src/main/java/io/aurinko/client/model/TrackedThreadMessage.java
 src/main/java/io/aurinko/client/model/TrackingData.java
 src/main/java/io/aurinko/client/model/UpdateDraftTrackingIn.java
 src/main/java/io/aurinko/client/model/UpdateMessageStatusData.java
@@ -384,8 +385,9 @@ src/test/java/io/aurinko/client/model/EmailMessagesPageNextTest.java
 src/test/java/io/aurinko/client/model/EmailMessagesPageTest.java
 src/test/java/io/aurinko/client/model/EmailSendResponseTest.java
 src/test/java/io/aurinko/client/model/EmailTrackingDataTest.java
+src/test/java/io/aurinko/client/model/EmailTrackingEventPageNextTest.java
+src/test/java/io/aurinko/client/model/EmailTrackingEventTest.java
 src/test/java/io/aurinko/client/model/EmailTrackingPageNextTest.java
-src/test/java/io/aurinko/client/model/EmailTrackingThreadPageNextTest.java
 src/test/java/io/aurinko/client/model/EventDateTimeTest.java
 src/test/java/io/aurinko/client/model/EventOrIdTest.java
 src/test/java/io/aurinko/client/model/EventTest.java
@@ -446,7 +448,6 @@ src/test/java/io/aurinko/client/model/TaskTest.java
 src/test/java/io/aurinko/client/model/TaskUpdateResponseTest.java
 src/test/java/io/aurinko/client/model/TaskUpdateTest.java
 src/test/java/io/aurinko/client/model/TasksPageTest.java
-src/test/java/io/aurinko/client/model/TrackedThreadMessageTest.java
 src/test/java/io/aurinko/client/model/TrackingDataTest.java
 src/test/java/io/aurinko/client/model/UpdateDraftTrackingInTest.java
 src/test/java/io/aurinko/client/model/UpdateMessageStatusDataTest.java

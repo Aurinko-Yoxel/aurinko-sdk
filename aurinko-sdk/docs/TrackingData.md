@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**id** | **Long** |  |  [optional] |
 |**messageId** | **String** |  |  [optional] |
 |**inetMessageId** | **String** |  |  [optional] |
 |**threadId** | **String** |  |  [optional] |

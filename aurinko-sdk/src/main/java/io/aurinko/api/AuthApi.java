@@ -50,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class AuthApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -202,12 +202,13 @@ public class AuthApi {
    * @param communityUrl  (optional)
    * @param checkServiceAccount  (optional)
    * @param serverUrl  (optional)
+   * @param ensureScopes When set to true, raises an error if any of the requested scopes are not granted by the user (optional)
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorize(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl) throws ApiException {
+  public CompletableFuture<Void> authorize(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl, Boolean ensureScopes) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl);
+      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -245,12 +246,13 @@ public class AuthApi {
    * @param communityUrl  (optional)
    * @param checkServiceAccount  (optional)
    * @param serverUrl  (optional)
+   * @param ensureScopes When set to true, raises an error if any of the requested scopes are not granted by the user (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl, Boolean ensureScopes) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl);
+      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -271,7 +273,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl) throws ApiException {
+  private HttpRequest.Builder authorizeRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl, Boolean ensureScopes) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
       throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorize");
@@ -332,6 +334,8 @@ public class AuthApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("checkServiceAccount", checkServiceAccount));
     localVarQueryParameterBaseName = "serverUrl";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("serverUrl", serverUrl));
+    localVarQueryParameterBaseName = "ensureScopes";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureScopes", ensureScopes));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");
@@ -369,12 +373,13 @@ public class AuthApi {
    * @param state Custom state string (optional)
    * @param fromPortal  (optional)
    * @param clientOrgId  (optional)
+   * @param ensureScopes When set to true, raises an error if any of the requested scopes are not granted by the user (optional)
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorizeDaemon(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId) throws ApiException {
+  public CompletableFuture<Void> authorizeDaemon(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId, Boolean ensureScopes) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId);
+      HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -403,12 +408,13 @@ public class AuthApi {
    * @param state Custom state string (optional)
    * @param fromPortal  (optional)
    * @param clientOrgId  (optional)
+   * @param ensureScopes When set to true, raises an error if any of the requested scopes are not granted by the user (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeDaemonWithHttpInfo(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeDaemonWithHttpInfo(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId, Boolean ensureScopes) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId);
+      HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -429,7 +435,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeDaemonRequestBuilder(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId) throws ApiException {
+  private HttpRequest.Builder authorizeDaemonRequestBuilder(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId, Boolean ensureScopes) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
       throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorizeDaemon");
@@ -472,6 +478,8 @@ public class AuthApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("fromPortal", fromPortal));
     localVarQueryParameterBaseName = "clientOrgId";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("clientOrgId", clientOrgId));
+    localVarQueryParameterBaseName = "ensureScopes";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureScopes", ensureScopes));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

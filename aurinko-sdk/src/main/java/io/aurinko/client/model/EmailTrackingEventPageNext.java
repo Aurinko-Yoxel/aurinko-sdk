@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.TrackedThreadMessage;
+import io.aurinko.client.model.EmailTrackingEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,25 +32,112 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * EmailTrackingThreadPageNext
+ * EmailTrackingEventPageNext
  */
 @JsonPropertyOrder({
-  EmailTrackingThreadPageNext.JSON_PROPERTY_RECORDS
+  EmailTrackingEventPageNext.JSON_PROPERTY_OFFSET,
+  EmailTrackingEventPageNext.JSON_PROPERTY_TOTAL_SIZE,
+  EmailTrackingEventPageNext.JSON_PROPERTY_DONE,
+  EmailTrackingEventPageNext.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
-public class EmailTrackingThreadPageNext {
-  public static final String JSON_PROPERTY_RECORDS = "records";
-  private List<TrackedThreadMessage> records;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+public class EmailTrackingEventPageNext {
+  public static final String JSON_PROPERTY_OFFSET = "offset";
+  private Integer offset;
 
-  public EmailTrackingThreadPageNext() { 
+  public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
+  private Long totalSize;
+
+  public static final String JSON_PROPERTY_DONE = "done";
+  private Boolean done;
+
+  public static final String JSON_PROPERTY_RECORDS = "records";
+  private List<EmailTrackingEvent> records;
+
+  public EmailTrackingEventPageNext() { 
   }
 
-  public EmailTrackingThreadPageNext records(List<TrackedThreadMessage> records) {
+  public EmailTrackingEventPageNext offset(Integer offset) {
+    this.offset = offset;
+    return this;
+  }
+
+   /**
+   * Get offset
+   * @return offset
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OFFSET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getOffset() {
+    return offset;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OFFSET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOffset(Integer offset) {
+    this.offset = offset;
+  }
+
+
+  public EmailTrackingEventPageNext totalSize(Long totalSize) {
+    this.totalSize = totalSize;
+    return this;
+  }
+
+   /**
+   * Get totalSize
+   * @return totalSize
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getTotalSize() {
+    return totalSize;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTotalSize(Long totalSize) {
+    this.totalSize = totalSize;
+  }
+
+
+  public EmailTrackingEventPageNext done(Boolean done) {
+    this.done = done;
+    return this;
+  }
+
+   /**
+   * Get done
+   * @return done
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getDone() {
+    return done;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDone(Boolean done) {
+    this.done = done;
+  }
+
+
+  public EmailTrackingEventPageNext records(List<EmailTrackingEvent> records) {
     this.records = records;
     return this;
   }
 
-  public EmailTrackingThreadPageNext addRecordsItem(TrackedThreadMessage recordsItem) {
+  public EmailTrackingEventPageNext addRecordsItem(EmailTrackingEvent recordsItem) {
     if (this.records == null) {
       this.records = new ArrayList<>();
     }
@@ -66,20 +153,20 @@ public class EmailTrackingThreadPageNext {
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<TrackedThreadMessage> getRecords() {
+  public List<EmailTrackingEvent> getRecords() {
     return records;
   }
 
 
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<TrackedThreadMessage> records) {
+  public void setRecords(List<EmailTrackingEvent> records) {
     this.records = records;
   }
 
 
   /**
-   * Return true if this EmailTrackingThreadPageNext object is equal to o.
+   * Return true if this EmailTrackingEventPageNext object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -89,19 +176,25 @@ public class EmailTrackingThreadPageNext {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EmailTrackingThreadPageNext emailTrackingThreadPageNext = (EmailTrackingThreadPageNext) o;
-    return Objects.equals(this.records, emailTrackingThreadPageNext.records);
+    EmailTrackingEventPageNext emailTrackingEventPageNext = (EmailTrackingEventPageNext) o;
+    return Objects.equals(this.offset, emailTrackingEventPageNext.offset) &&
+        Objects.equals(this.totalSize, emailTrackingEventPageNext.totalSize) &&
+        Objects.equals(this.done, emailTrackingEventPageNext.done) &&
+        Objects.equals(this.records, emailTrackingEventPageNext.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(records);
+    return Objects.hash(offset, totalSize, done, records);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EmailTrackingThreadPageNext {\n");
+    sb.append("class EmailTrackingEventPageNext {\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
+    sb.append("    done: ").append(toIndentedString(done)).append("\n");
     sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -149,6 +242,21 @@ public class EmailTrackingThreadPageNext {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `offset` to the URL query string
+    if (getOffset() != null) {
+      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `totalSize` to the URL query string
+    if (getTotalSize() != null) {
+      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `done` to the URL query string
+    if (getDone() != null) {
+      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
 
     // add `records` to the URL query string
     if (getRecords() != null) {

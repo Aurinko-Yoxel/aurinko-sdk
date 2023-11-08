@@ -48,7 +48,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class ContactsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -91,12 +91,13 @@ public class ContactsApi {
    * @param bodyType  (optional)
    * @param nativeProperties  (optional
    * @param withPhoto  (optional)
+   * @param includeUpdateToken  (optional)
    * @return CompletableFuture&lt;Contact&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Contact> contact(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto) throws ApiException {
+  public CompletableFuture<Contact> contact(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto, Boolean includeUpdateToken) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = contactRequestBuilder(contId, bodyType, nativeProperties, withPhoto);
+      HttpRequest.Builder localVarRequestBuilder = contactRequestBuilder(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -125,12 +126,13 @@ public class ContactsApi {
    * @param bodyType  (optional)
    * @param nativeProperties  (optional
    * @param withPhoto  (optional)
+   * @param includeUpdateToken  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;Contact&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Contact>> contactWithHttpInfo(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto) throws ApiException {
+  public CompletableFuture<ApiResponse<Contact>> contactWithHttpInfo(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto, Boolean includeUpdateToken) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = contactRequestBuilder(contId, bodyType, nativeProperties, withPhoto);
+      HttpRequest.Builder localVarRequestBuilder = contactRequestBuilder(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -159,7 +161,7 @@ public class ContactsApi {
     }
   }
 
-  private HttpRequest.Builder contactRequestBuilder(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto) throws ApiException {
+  private HttpRequest.Builder contactRequestBuilder(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto, Boolean includeUpdateToken) throws ApiException {
     // verify the required parameter 'contId' is set
     if (contId == null) {
       throw new ApiException(400, "Missing the required parameter 'contId' when calling contact");
@@ -179,6 +181,8 @@ public class ContactsApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("multi", "nativeProperties", nativeProperties));
     localVarQueryParameterBaseName = "withPhoto";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("withPhoto", withPhoto));
+    localVarQueryParameterBaseName = "includeUpdateToken";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("includeUpdateToken", includeUpdateToken));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

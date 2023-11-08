@@ -51,8 +51,9 @@ public class ContactsApiTest {
         BodyType bodyType = null;
         List<String> nativeProperties = null;
         Boolean withPhoto = null;
+        Boolean includeUpdateToken = null;
         CompletableFuture<Contact> response = 
-        api.contact(contId, bodyType, nativeProperties, withPhoto);
+        api.contact(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken);
         
         // TODO: test validations
     }

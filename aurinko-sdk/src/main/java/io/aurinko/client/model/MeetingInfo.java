@@ -44,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class MeetingInfo {
   public static final String JSON_PROPERTY_CANCELED = "canceled";
   private Boolean canceled;
@@ -135,47 +135,8 @@ public class MeetingInfo {
   public static final String JSON_PROPERTY_ONLINE_MEETING = "onlineMeeting";
   private Boolean onlineMeeting;
 
-  /**
-   * Gets or Sets onlineMeetingProvider
-   */
-  public enum OnlineMeetingProviderEnum {
-    HANGOUTSMEET("hangoutsMeet"),
-    
-    TEAMSFORBUSINESS("teamsForBusiness"),
-    
-    SKYPEFORBUSINESS("skypeForBusiness"),
-    
-    SKYPEFORCONSUMER("skypeForConsumer");
-
-    private String value;
-
-    OnlineMeetingProviderEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static OnlineMeetingProviderEnum fromValue(String value) {
-      for (OnlineMeetingProviderEnum b : OnlineMeetingProviderEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
   public static final String JSON_PROPERTY_ONLINE_MEETING_PROVIDER = "onlineMeetingProvider";
-  private OnlineMeetingProviderEnum onlineMeetingProvider;
+  private String onlineMeetingProvider;
 
   public static final String JSON_PROPERTY_ONLINE_MEETING_DETAILS = "onlineMeetingDetails";
   private OnlineMeetingDetails onlineMeetingDetails;
@@ -314,27 +275,27 @@ public class MeetingInfo {
   }
 
 
-  public MeetingInfo onlineMeetingProvider(OnlineMeetingProviderEnum onlineMeetingProvider) {
+  public MeetingInfo onlineMeetingProvider(String onlineMeetingProvider) {
     this.onlineMeetingProvider = onlineMeetingProvider;
     return this;
   }
 
    /**
-   * Get onlineMeetingProvider
+   * Value of provider, for example hangoutsMeet, teamsForBusiness, skypeForBusiness, skypeForConsumer
    * @return onlineMeetingProvider
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OnlineMeetingProviderEnum getOnlineMeetingProvider() {
+  public String getOnlineMeetingProvider() {
     return onlineMeetingProvider;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnlineMeetingProvider(OnlineMeetingProviderEnum onlineMeetingProvider) {
+  public void setOnlineMeetingProvider(String onlineMeetingProvider) {
     this.onlineMeetingProvider = onlineMeetingProvider;
   }
 

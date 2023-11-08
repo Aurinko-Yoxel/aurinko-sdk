@@ -18,34 +18,128 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.TrackedThreadMessage;
-import java.util.ArrayList;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Model tests for EmailTrackingThreadPageNext
+ * Model tests for EmailTrackingEvent
  */
-public class EmailTrackingThreadPageNextTest {
-    private final EmailTrackingThreadPageNext model = new EmailTrackingThreadPageNext();
+public class EmailTrackingEventTest {
+    private final EmailTrackingEvent model = new EmailTrackingEvent();
 
     /**
-     * Model tests for EmailTrackingThreadPageNext
+     * Model tests for EmailTrackingEvent
      */
     @Test
-    public void testEmailTrackingThreadPageNext() {
-        // TODO: test EmailTrackingThreadPageNext
+    public void testEmailTrackingEvent() {
+        // TODO: test EmailTrackingEvent
     }
 
     /**
-     * Test the property 'records'
+     * Test the property 'id'
      */
     @Test
-    public void recordsTest() {
-        // TODO: test records
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
+     * Test the property 'createdAt'
+     */
+    @Test
+    public void createdAtTest() {
+        // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'eventType'
+     */
+    @Test
+    public void eventTypeTest() {
+        // TODO: test eventType
+    }
+
+    /**
+     * Test the property 'location'
+     */
+    @Test
+    public void locationTest() {
+        // TODO: test location
+    }
+
+    /**
+     * Test the property 'userAgent'
+     */
+    @Test
+    public void userAgentTest() {
+        // TODO: test userAgent
+    }
+
+    /**
+     * Test the property 'referrer'
+     */
+    @Test
+    public void referrerTest() {
+        // TODO: test referrer
+    }
+
+    /**
+     * Test the property 'remoteAddr'
+     */
+    @Test
+    public void remoteAddrTest() {
+        // TODO: test remoteAddr
+    }
+
+    /**
+     * Test the property 'threadId'
+     */
+    @Test
+    public void threadIdTest() {
+        // TODO: test threadId
+    }
+
+    /**
+     * Test the property 'messageId'
+     */
+    @Test
+    public void messageIdTest() {
+        // TODO: test messageId
+    }
+
+    /**
+     * Test the property 'internetMessageId'
+     */
+    @Test
+    public void internetMessageIdTest() {
+        // TODO: test internetMessageId
+    }
+
+    /**
+     * Test the property 'trackingId'
+     */
+    @Test
+    public void trackingIdTest() {
+        // TODO: test trackingId
+    }
+
+    /**
+     * Test the property 'context'
+     */
+    @Test
+    public void contextTest() {
+        // TODO: test context
+    }
+
+    /**
+     * Test the property 'trackingCode'
+     */
+    @Test
+    public void trackingCodeTest() {
+        // TODO: test trackingCode
     }
 
 }

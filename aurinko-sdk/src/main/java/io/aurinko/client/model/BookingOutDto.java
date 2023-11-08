@@ -45,7 +45,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingOutDto.JSON_PROPERTY_CONTEXT,
   BookingOutDto.JSON_PROPERTY_START_CONFERENCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class BookingOutDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

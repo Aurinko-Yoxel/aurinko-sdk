@@ -86,8 +86,9 @@ public class AuthApiTest {
         String communityUrl = null;
         Boolean checkServiceAccount = null;
         String serverUrl = null;
+        Boolean ensureScopes = null;
         
-        CompletableFuture<Void> response = api.authorize(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl);
+        CompletableFuture<Void> response = api.authorize(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes);
         
         // TODO: test validations
     }
@@ -113,8 +114,9 @@ public class AuthApiTest {
         String state = null;
         Boolean fromPortal = null;
         String clientOrgId = null;
+        Boolean ensureScopes = null;
         
-        CompletableFuture<Void> response = api.authorizeDaemon(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId);
+        CompletableFuture<Void> response = api.authorizeDaemon(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes);
         
         // TODO: test validations
     }

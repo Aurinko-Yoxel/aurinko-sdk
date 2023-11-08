@@ -4,7 +4,7 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Build date: 2023-09-15T08:54:57.780675Z[Africa/Bamako]
+- Build date: 2023-11-08T10:31:33.594723Z[Africa/Bamako]
 
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with
@@ -228,12 +228,16 @@ Class | Method | HTTP request | Description
 *EmailTrackingApi* | [**createDraftTrackingWithHttpInfo**](docs/EmailTrackingApi.md#createDraftTrackingWithHttpInfo) | **POST** /v1/email/draftTracking/create | Modify tracking data
 *EmailTrackingApi* | [**getTracking**](docs/EmailTrackingApi.md#getTracking) | **GET** /v1/email/tracking | List tracking data
 *EmailTrackingApi* | [**getTrackingWithHttpInfo**](docs/EmailTrackingApi.md#getTrackingWithHttpInfo) | **GET** /v1/email/tracking | List tracking data
-*EmailTrackingApi* | [**getTrackingThreads**](docs/EmailTrackingApi.md#getTrackingThreads) | **GET** /v1/email/tracking/threads | List tracked email threads
-*EmailTrackingApi* | [**getTrackingThreadsWithHttpInfo**](docs/EmailTrackingApi.md#getTrackingThreadsWithHttpInfo) | **GET** /v1/email/tracking/threads | List tracked email threads
 *EmailTrackingApi* | [**purgeMyTracking**](docs/EmailTrackingApi.md#purgeMyTracking) | **POST** /v1/email/tracking/purgeMyTracking | Purge recent activity for a user
 *EmailTrackingApi* | [**purgeMyTrackingWithHttpInfo**](docs/EmailTrackingApi.md#purgeMyTrackingWithHttpInfo) | **POST** /v1/email/tracking/purgeMyTracking | Purge recent activity for a user
 *EmailTrackingApi* | [**switchOpenClicks**](docs/EmailTrackingApi.md#switchOpenClicks) | **POST** /v1/email/tracking/ignoreOpenClicks | Set ignore open/click tracking for а message
 *EmailTrackingApi* | [**switchOpenClicksWithHttpInfo**](docs/EmailTrackingApi.md#switchOpenClicksWithHttpInfo) | **POST** /v1/email/tracking/ignoreOpenClicks | Set ignore open/click tracking for а message
+*EmailTrackingApi* | [**trackingById**](docs/EmailTrackingApi.md#trackingById) | **GET** /v1/email/tracking/{id} | Get tracking data by Id
+*EmailTrackingApi* | [**trackingByIdWithHttpInfo**](docs/EmailTrackingApi.md#trackingByIdWithHttpInfo) | **GET** /v1/email/tracking/{id} | Get tracking data by Id
+*EmailTrackingApi* | [**trackingEventById**](docs/EmailTrackingApi.md#trackingEventById) | **GET** /v1/email/tracking/{trackingId}/events/{id} | Get tracking event by Id
+*EmailTrackingApi* | [**trackingEventByIdWithHttpInfo**](docs/EmailTrackingApi.md#trackingEventByIdWithHttpInfo) | **GET** /v1/email/tracking/{trackingId}/events/{id} | Get tracking event by Id
+*EmailTrackingApi* | [**trackingEvents**](docs/EmailTrackingApi.md#trackingEvents) | **GET** /v1/email/tracking/{id}/events | List tracking events
+*EmailTrackingApi* | [**trackingEventsWithHttpInfo**](docs/EmailTrackingApi.md#trackingEventsWithHttpInfo) | **GET** /v1/email/tracking/{id}/events | List tracking events
 *EmailTrackingApi* | [**updateDraftTracking**](docs/EmailTrackingApi.md#updateDraftTracking) | **PATCH** /v1/email/draftTracking/{draftId} | Modify draft&#39;s tracking
 *EmailTrackingApi* | [**updateDraftTrackingWithHttpInfo**](docs/EmailTrackingApi.md#updateDraftTrackingWithHttpInfo) | **PATCH** /v1/email/draftTracking/{draftId} | Modify draft&#39;s tracking
 *EventsApi* | [**attachment**](docs/EventsApi.md#attachment) | **GET** /v1/calendars/{calendarId}/events/{eventId}/attachments/{attachmentId} | Get an event attachment
@@ -388,8 +392,9 @@ Class | Method | HTTP request | Description
  - [EmailMessagesPageNext](docs/EmailMessagesPageNext.md)
  - [EmailSendResponse](docs/EmailSendResponse.md)
  - [EmailTrackingData](docs/EmailTrackingData.md)
+ - [EmailTrackingEvent](docs/EmailTrackingEvent.md)
+ - [EmailTrackingEventPageNext](docs/EmailTrackingEventPageNext.md)
  - [EmailTrackingPageNext](docs/EmailTrackingPageNext.md)
- - [EmailTrackingThreadPageNext](docs/EmailTrackingThreadPageNext.md)
  - [Event](docs/Event.md)
  - [EventDateTime](docs/EventDateTime.md)
  - [EventOrId](docs/EventOrId.md)
@@ -450,7 +455,6 @@ Class | Method | HTTP request | Description
  - [TaskUpdate](docs/TaskUpdate.md)
  - [TaskUpdateResponse](docs/TaskUpdateResponse.md)
  - [TasksPage](docs/TasksPage.md)
- - [TrackedThreadMessage](docs/TrackedThreadMessage.md)
  - [TrackingData](docs/TrackingData.md)
  - [UpdateDraftTrackingIn](docs/UpdateDraftTrackingIn.md)
  - [UpdateMessageStatusData](docs/UpdateMessageStatusData.md)

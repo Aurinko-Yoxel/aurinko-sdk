@@ -18,63 +18,58 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.EmailTrackingEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Model tests for TrackedThreadMessage
+ * Model tests for EmailTrackingEventPageNext
  */
-public class TrackedThreadMessageTest {
-    private final TrackedThreadMessage model = new TrackedThreadMessage();
+public class EmailTrackingEventPageNextTest {
+    private final EmailTrackingEventPageNext model = new EmailTrackingEventPageNext();
 
     /**
-     * Model tests for TrackedThreadMessage
+     * Model tests for EmailTrackingEventPageNext
      */
     @Test
-    public void testTrackedThreadMessage() {
-        // TODO: test TrackedThreadMessage
+    public void testEmailTrackingEventPageNext() {
+        // TODO: test EmailTrackingEventPageNext
     }
 
     /**
-     * Test the property 'messageId'
+     * Test the property 'offset'
      */
     @Test
-    public void messageIdTest() {
-        // TODO: test messageId
+    public void offsetTest() {
+        // TODO: test offset
     }
 
     /**
-     * Test the property 'inetMessageId'
+     * Test the property 'totalSize'
      */
     @Test
-    public void inetMessageIdTest() {
-        // TODO: test inetMessageId
+    public void totalSizeTest() {
+        // TODO: test totalSize
     }
 
     /**
-     * Test the property 'threadId'
+     * Test the property 'done'
      */
     @Test
-    public void threadIdTest() {
-        // TODO: test threadId
+    public void doneTest() {
+        // TODO: test done
     }
 
     /**
-     * Test the property 'timestamp'
+     * Test the property 'records'
      */
     @Test
-    public void timestampTest() {
-        // TODO: test timestamp
-    }
-
-    /**
-     * Test the property 'bounced'
-     */
-    @Test
-    public void bouncedTest() {
-        // TODO: test bounced
+    public void recordsTest() {
+        // TODO: test records
     }
 
 }

@@ -33,6 +33,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * TrackingData
  */
 @JsonPropertyOrder({
+  TrackingData.JSON_PROPERTY_ID,
   TrackingData.JSON_PROPERTY_MESSAGE_ID,
   TrackingData.JSON_PROPERTY_INET_MESSAGE_ID,
   TrackingData.JSON_PROPERTY_THREAD_ID,
@@ -50,8 +51,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   TrackingData.JSON_PROPERTY_IGNORE_OPEN_CLICKS,
   TrackingData.JSON_PROPERTY_HAS_BOUNCED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T08:54:57.780675Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
 public class TrackingData {
+  public static final String JSON_PROPERTY_ID = "id";
+  private Long id;
+
   public static final String JSON_PROPERTY_MESSAGE_ID = "messageId";
   private String messageId;
 
@@ -102,6 +106,31 @@ public class TrackingData {
 
   public TrackingData() { 
   }
+
+  public TrackingData id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getId() {
+    return id;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(Long id) {
+    this.id = id;
+  }
+
 
   public TrackingData messageId(String messageId) {
     this.messageId = messageId;
@@ -515,7 +544,8 @@ public class TrackingData {
       return false;
     }
     TrackingData trackingData = (TrackingData) o;
-    return Objects.equals(this.messageId, trackingData.messageId) &&
+    return Objects.equals(this.id, trackingData.id) &&
+        Objects.equals(this.messageId, trackingData.messageId) &&
         Objects.equals(this.inetMessageId, trackingData.inetMessageId) &&
         Objects.equals(this.threadId, trackingData.threadId) &&
         Objects.equals(this.sendDate, trackingData.sendDate) &&
@@ -535,13 +565,14 @@ public class TrackingData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, inetMessageId, threadId, sendDate, lastActivityTime, lastRespondedTime, trackReplies, trackOpens, trackLinks, trackingCode, context, location, userAgent, remoteAddr, ignoreOpenClicks, hasBounced);
+    return Objects.hash(id, messageId, inetMessageId, threadId, sendDate, lastActivityTime, lastRespondedTime, trackReplies, trackOpens, trackLinks, trackingCode, context, location, userAgent, remoteAddr, ignoreOpenClicks, hasBounced);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TrackingData {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    inetMessageId: ").append(toIndentedString(inetMessageId)).append("\n");
     sb.append("    threadId: ").append(toIndentedString(threadId)).append("\n");
@@ -604,6 +635,11 @@ public class TrackingData {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
 
     // add `messageId` to the URL query string
     if (getMessageId() != null) {

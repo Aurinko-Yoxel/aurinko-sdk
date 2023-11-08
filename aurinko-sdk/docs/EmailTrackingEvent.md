@@ -1,0 +1,36 @@
+
+
+# EmailTrackingEvent
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**id** | **Long** |  |  [optional] |
+|**createdAt** | **OffsetDateTime** |  |  [optional] |
+|**eventType** | [**EventTypeEnum**](#EventTypeEnum) |  |  [optional] |
+|**location** | **String** |  |  [optional] |
+|**userAgent** | **String** |  |  [optional] |
+|**referrer** | **String** |  |  [optional] |
+|**remoteAddr** | **String** |  |  [optional] |
+|**threadId** | **String** |  |  [optional] |
+|**messageId** | **String** |  |  [optional] |
+|**internetMessageId** | **String** |  |  [optional] |
+|**trackingId** | **Long** |  |  [optional] |
+|**context** | **String** |  |  [optional] |
+|**trackingCode** | **String** |  |  [optional] |
+
+
+
+## Enum: EventTypeEnum
+
+| Name | Value |
+|---- | -----|
+| OPEN | &quot;open&quot; |
+| CLICK | &quot;click&quot; |
+| REPLY | &quot;reply&quot; |
+| REPLYBOUNCE | &quot;replyBounce&quot; |
+
+
+
