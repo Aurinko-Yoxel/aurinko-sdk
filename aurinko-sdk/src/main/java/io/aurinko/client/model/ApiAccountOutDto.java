@@ -24,8 +24,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.AccountType;
 import io.aurinko.client.model.Scope;
 import io.aurinko.client.model.ServiceType;
+import io.aurinko.client.model.TokenStatus;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,7 +65,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ApiAccountOutDto.JSON_PROPERTY_AUTH_EXPIRES_AT,
   ApiAccountOutDto.JSON_PROPERTY_USER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class ApiAccountOutDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -77,90 +79,14 @@ public class ApiAccountOutDto {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;
 
-  /**
-   * Gets or Sets tokenStatus
-   */
-  public enum TokenStatusEnum {
-    DEAD("dead"),
-    
-    INVALID("invalid"),
-    
-    ACTIVE("active"),
-    
-    REQUIRED("required");
-
-    private String value;
-
-    TokenStatusEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TokenStatusEnum fromValue(String value) {
-      for (TokenStatusEnum b : TokenStatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
   public static final String JSON_PROPERTY_TOKEN_STATUS = "tokenStatus";
-  private TokenStatusEnum tokenStatus;
+  private TokenStatus tokenStatus;
 
   public static final String JSON_PROPERTY_TOKEN_ERROR = "tokenError";
   private String tokenError;
 
-  /**
-   * Gets or Sets type
-   */
-  public enum TypeEnum {
-    DAEMON("daemon"),
-    
-    PERSONAL("personal"),
-    
-    MANAGED("managed");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
   public static final String JSON_PROPERTY_TYPE = "type";
-  private TypeEnum type;
+  private AccountType type;
 
   public static final String JSON_PROPERTY_DAEMON = "daemon";
   private Boolean daemon;
@@ -319,7 +245,7 @@ public class ApiAccountOutDto {
   }
 
 
-  public ApiAccountOutDto tokenStatus(TokenStatusEnum tokenStatus) {
+  public ApiAccountOutDto tokenStatus(TokenStatus tokenStatus) {
     this.tokenStatus = tokenStatus;
     return this;
   }
@@ -332,14 +258,14 @@ public class ApiAccountOutDto {
   @JsonProperty(JSON_PROPERTY_TOKEN_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TokenStatusEnum getTokenStatus() {
+  public TokenStatus getTokenStatus() {
     return tokenStatus;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TOKEN_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTokenStatus(TokenStatusEnum tokenStatus) {
+  public void setTokenStatus(TokenStatus tokenStatus) {
     this.tokenStatus = tokenStatus;
   }
 
@@ -369,7 +295,7 @@ public class ApiAccountOutDto {
   }
 
 
-  public ApiAccountOutDto type(TypeEnum type) {
+  public ApiAccountOutDto type(AccountType type) {
     this.type = type;
     return this;
   }
@@ -382,14 +308,14 @@ public class ApiAccountOutDto {
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TypeEnum getType() {
+  public AccountType getType() {
     return type;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(AccountType type) {
     this.type = type;
   }
 

@@ -7,9 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **Integer** |  |  [optional] |
+|**id** | **Long** |  |  [optional] |
 |**resource** | **String** |  |  [optional] |
 |**notificationUrl** | **String** |  |  [optional] |
+|**active** | **Boolean** |  |  [optional] |
+|**failSince** | **OffsetDateTime** |  |  [optional] |
+|**failDescription** | **String** |  |  [optional] |
 
 
 

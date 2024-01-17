@@ -88,7 +88,17 @@ public enum ServiceType {
   
   QUICKBOOKS("QuickBooks"),
   
-  ACTIVECAMPAIGN("ActiveCampaign");
+  ACTIVECAMPAIGN("ActiveCampaign"),
+  
+  CREATIO("Creatio"),
+  
+  CONSTANTCONTACT("ConstantContact"),
+  
+  FISHBOWL("Fishbowl"),
+  
+  CALDAV("CalDav"),
+  
+  ICLOUD("iCloud");
 
   private String value;
 

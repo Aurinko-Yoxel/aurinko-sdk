@@ -244,7 +244,7 @@ CompletableFuture<ApiResponse<[**SubscriptionResponse**](SubscriptionResponse.md
 
 ## getSubscriptions
 
-> CompletableFuture<SubscriptionsPage> getSubscriptions(limit, offset)
+> CompletableFuture<SubscriptionsPage> getSubscriptions(limit, offset, includeInactive)
 
 Get a list of push event subscriptions
 
@@ -309,10 +309,11 @@ public class Example {
         ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        Integer limit = 56; // Integer | 
-        Integer offset = 56; // Integer | 
+        Integer limit = 50; // Integer | page size
+        Integer offset = 0; // Integer | return records offset by the given number
+        Boolean includeInactive = false; // Boolean | include inactive subscriptions
         try {
-            CompletableFuture<SubscriptionsPage> result = apiInstance.getSubscriptions(limit, offset);
+            CompletableFuture<SubscriptionsPage> result = apiInstance.getSubscriptions(limit, offset, includeInactive);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling WebhooksApi#getSubscriptions");
@@ -330,8 +331,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **limit** | **Integer**|  | [optional] |
-| **offset** | **Integer**|  | [optional] |
+| **limit** | **Integer**| page size | [optional] [default to 50] |
+| **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
+| **includeInactive** | **Boolean**| include inactive subscriptions | [optional] [default to false] |
 
 ### Return type
 
@@ -354,7 +356,7 @@ CompletableFuture<[**SubscriptionsPage**](SubscriptionsPage.md)>
 
 ## getSubscriptionsWithHttpInfo
 
-> CompletableFuture<ApiResponse<SubscriptionsPage>> getSubscriptions getSubscriptionsWithHttpInfo(limit, offset)
+> CompletableFuture<ApiResponse<SubscriptionsPage>> getSubscriptions getSubscriptionsWithHttpInfo(limit, offset, includeInactive)
 
 Get a list of push event subscriptions
 
@@ -420,10 +422,11 @@ public class Example {
         ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        Integer limit = 56; // Integer | 
-        Integer offset = 56; // Integer | 
+        Integer limit = 50; // Integer | page size
+        Integer offset = 0; // Integer | return records offset by the given number
+        Boolean includeInactive = false; // Boolean | include inactive subscriptions
         try {
-            CompletableFuture<ApiResponse<SubscriptionsPage>> response = apiInstance.getSubscriptionsWithHttpInfo(limit, offset);
+            CompletableFuture<ApiResponse<SubscriptionsPage>> response = apiInstance.getSubscriptionsWithHttpInfo(limit, offset, includeInactive);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -450,8 +453,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **limit** | **Integer**|  | [optional] |
-| **offset** | **Integer**|  | [optional] |
+| **limit** | **Integer**| page size | [optional] [default to 50] |
+| **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
+| **includeInactive** | **Boolean**| include inactive subscriptions | [optional] [default to false] |
 
 ### Return type
 

@@ -83,7 +83,7 @@ public class Example {
 
         ContactsApi apiInstance = new ContactsApi(defaultClient);
         String contId = "contId_example"; // String | Contact id
-        BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
+        BodyType bodyType = BodyType.fromValue("html"); // BodyType | Default text
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean withPhoto = true; // Boolean | 
         Boolean includeUpdateToken = true; // Boolean | 
@@ -107,7 +107,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **contId** | **String**| Contact id | |
-| **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
+| **bodyType** | [**BodyType**](.md)| Default text | [optional] [enum: html, text] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **withPhoto** | **Boolean**|  | [optional] |
 | **includeUpdateToken** | **Boolean**|  | [optional] |
@@ -200,7 +200,7 @@ public class Example {
 
         ContactsApi apiInstance = new ContactsApi(defaultClient);
         String contId = "contId_example"; // String | Contact id
-        BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
+        BodyType bodyType = BodyType.fromValue("html"); // BodyType | Default text
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean withPhoto = true; // Boolean | 
         Boolean includeUpdateToken = true; // Boolean | 
@@ -233,7 +233,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **contId** | **String**| Contact id | |
-| **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
+| **bodyType** | [**BodyType**](.md)| Default text | [optional] [enum: html, text] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **withPhoto** | **Boolean**|  | [optional] |
 | **includeUpdateToken** | **Boolean**|  | [optional] |

@@ -207,6 +207,14 @@ public class EmailMessageTest {
     }
 
     /**
+     * Test the property 'bodySnippet'
+     */
+    @Test
+    public void bodySnippetTest() {
+        // TODO: test bodySnippet
+    }
+
+    /**
      * Test the property 'attachments'
      */
     @Test

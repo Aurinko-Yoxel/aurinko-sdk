@@ -48,7 +48,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class ContactsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -88,7 +88,7 @@ public class ContactsApi {
    * Get a contact
    * 
    * @param contId Contact id (required)
-   * @param bodyType  (optional)
+   * @param bodyType Default text (optional)
    * @param nativeProperties  (optional
    * @param withPhoto  (optional)
    * @param includeUpdateToken  (optional)
@@ -123,7 +123,7 @@ public class ContactsApi {
    * Get a contact
    * 
    * @param contId Contact id (required)
-   * @param bodyType  (optional)
+   * @param bodyType Default text (optional)
    * @param nativeProperties  (optional
    * @param withPhoto  (optional)
    * @param includeUpdateToken  (optional)

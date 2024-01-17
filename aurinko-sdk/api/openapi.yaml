@@ -37,7 +37,7 @@ info:
     If you have a use case you would like to implement, please consult us for feedback on the best API operations for the task.
 
     [Click here to visit our API Guides](https://docs.aurinko.io/ctg-getting-started/getting-started).
-  termsOfService: http://aurinko.io/terms-of-service/
+  termsOfService: https://www.aurinko.io/terms-of-service/
   title: Aurinko.io API
   version: 1.0.0
 servers:
@@ -62,6 +62,7 @@ tags:
 - name: followup
 - name: contact
 - name: booking
+- name: user
 - name: account
 - name: am
 - name: auth
@@ -182,7 +183,7 @@ tags:
 
     ## Prerequisites
     Gmail notifications require a special configuration, explained in [this article](https://developers.google.com/gmail/api/guides/push).
-    A PubSub PUSH subscription should specify your Aurinko endpoint `https://{yourAurinkoDomain}/push/google`
+    A PubSub PUSH subscription should specify your Aurinko endpoint `https://{yourAurinkoDomain}/push/google/email`
     so that Gmail notifications are delivered to Aurinko first. Once the PubSub subscription is configured
     and the `publish` rights are granted to `gmail-api-push@system.gserviceaccount.com` please specify your
     PubSub topic in the Application settings (Google OAuth) in the Aurinko portal.
@@ -221,7 +222,7 @@ tags:
     Aurinko signs its requests using a secret unique to your app.
     Here's an overview of the process to validate a signed request from Aurinko:
 
-    1. Retrieve the `X-Aurinko-RequestTimestamp` header on the HTTP request, and the body of the request (Use the raw request body, before it has been deserialized from JSON or other forms.).
+    1. Retrieve the `X-Aurinko-Request-Timestamp` header on the HTTP request, and the body of the request (Use the raw request body, before it has been deserialized from JSON or other forms.).
     2. Concatenate the version number, the timestamp, and the body of the request to form a basestring. Use a colon as the delimiter between the three elements.
     The version number right now is always `v0`.
     ```
@@ -258,7 +259,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/calendars/freeBusy \
+              -X POST https://api.aurinko.io/v1/calendars/freeBusy \
               -d '{
                   "timeMin": "2020-02-03T10:00:00-07:00",
                   "timeMax": "2020-06-03T10:00:00-07:00",
@@ -288,7 +289,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/calendars/suggestMeetingTimes \
+              -X POST https://api.aurinko.io/v1/calendars/suggestMeetingTimes \
               -d '{
                   "timeMin": "2020-02-03T10:00:00-07:00",
                   "timeMax": "2020-06-03T10:00:00-07:00",
@@ -337,7 +338,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X GET https:/api.aurinko.io/v1/calendars
+              -X GET https://api.aurinko.io/v1/calendars
       x-accepts: application/json
     post:
       operationId: createCalendar
@@ -360,7 +361,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/calendars \
+              -X POST https://api.aurinko.io/v1/calendars \
               -d '{ "name": "New calendar" }'
       x-content-type: application/json
       x-accepts: application/json
@@ -390,7 +391,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X GET https:/api.aurinko.io/v1/calendars/primary
+              -X GET https://api.aurinko.io/v1/calendars/primary
       x-accepts: application/json
     patch:
       operationId: updateCalendar
@@ -422,7 +423,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https:/api.aurinko.io/v1/calendars/{calendarId} \
+              -X PATCH https://api.aurinko.io/v1/calendars/{calendarId} \
               -d '{ "name": "Updated calendar" }'
       x-content-type: application/json
       x-accepts: application/json
@@ -472,7 +473,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X POST -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/calendars/primary/sync \
+              -G https://api.aurinko.io/v1/calendars/primary/sync \
               -d timeMin=2019-06-03T10:00:00-07:00 \
               -d timeMax=2020-06-03T10:00:00-07:00
       x-accepts: application/json
@@ -521,7 +522,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/calendars/primary/sync/updated \
+              -G https://api.aurinko.io/v1/calendars/primary/sync/updated \
               -d deltaToken='a8b7c6d5e4f3g2h1'
       x-accepts: application/json
   /v1/calendars/{calendarId}/sync/deleted:
@@ -569,7 +570,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/calendars/primary/sync/deleted \
+              -G https://api.aurinko.io/v1/calendars/primary/sync/deleted \
               -d deltaToken='a8b7c6d5e4f3g2h1'
       x-accepts: application/json
   /v1/calendars/{calendarId}/events/range:
@@ -626,7 +627,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/calendars/primary/events/range \
+              -G https://api.aurinko.io/v1/calendars/primary/events/range \
               -d timeMin=2019-06-03T10:00:00-07:00 \
               -d timeMax=2020-06-03T10:00:00-07:00
       x-accepts: application/json
@@ -675,7 +676,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/calendars/primary/events/find \
+              -G https://api.aurinko.io/v1/calendars/primary/events/find \
               -d ICalUid=ABCID1 \
               -d ICalUid=XYZID2
       x-accepts: application/json
@@ -718,7 +719,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X DELETE -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/calendars/primary/events/<eventId>
+              https://api.aurinko.io/v1/calendars/primary/events/<eventId>
       x-accepts: application/json
     get:
       operationId: event
@@ -763,7 +764,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/calendars/primary/events/{id}
+              https://api.aurinko.io/v1/calendars/primary/events/{id}
       x-accepts: application/json
     patch:
       operationId: updateEvent
@@ -832,7 +833,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https:/api.aurinko.io/v1/calendars/primary/events/{eventId}?notifyAttendees=true \
+              -X PATCH https://api.aurinko.io/v1/calendars/primary/events/{eventId}?notifyAttendees=true \
               -d '{
                   "subject": "Business lunch",
                   "location": "Another cool place",
@@ -889,7 +890,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/calendars/primary/events/{masterId}/series
+              https://api.aurinko.io/v1/calendars/primary/events/{masterId}/series
       x-accepts: application/json
   /v1/calendars/{calendarId}/events/{masterId}/occurrences/{ost}:
     get:
@@ -934,7 +935,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/calendars/primary/events/{masterId}/occurrences/2020-04-01
+              https://api.aurinko.io/v1/calendars/primary/events/{masterId}/occurrences/2020-04-01
       x-accepts: application/json
   /v1/calendars/{calendarId}/events:
     post:
@@ -994,7 +995,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/calendars/primary/events \
+              -X POST https://api.aurinko.io/v1/calendars/primary/events \
               -d '{
                   "subject": "Business lunch",
                   "location": "Our favorite cafe",
@@ -1084,7 +1085,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https:/api.aurinko.io/v1/calendars/primary/events/{eventId}?notifyAttendees=true \
+              -X PATCH https://api.aurinko.io/v1/calendars/primary/events/{eventId}?notifyAttendees=true \
               -d '{
                   "subject": "Business lunch",
                   "location": "Another cool place",
@@ -1149,7 +1150,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/email/messages/{msgId}/attachments/{attId}
+              https://api.aurinko.io/v1/email/messages/{msgId}/attachments/{attId}
       x-accepts: application/json
   /v1/email/sync:
     post:
@@ -1185,7 +1186,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X POST -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/sync \
+              -G https://api.aurinko.io/v1/email/sync \
               -d daysWithin=7
       x-accepts: application/json
   /v1/email/sync/updated:
@@ -1225,7 +1226,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/sync/updated \
+              -G https://api.aurinko.io/v1/email/sync/updated \
               -d deltaToken='a8b7c6d5e4f3g2h1'
       x-accepts: application/json
   /v1/email/sync/deleted:
@@ -1265,7 +1266,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/sync/deleted \
+              -G https://api.aurinko.io/v1/email/sync/deleted \
               -d deltaToken='a8b7c6d5e4f3g2h1'
       x-accepts: application/json
   /v1/email/messages:
@@ -1290,7 +1291,10 @@ paths:
           nullable: true
           type: string
         style: form
-      - explode: true
+      - description: "Supported by Google and Office365 accounts only. Body preview\
+          \ (snippet) is returned for other providers. Always, check the omitted[]\
+          \ array to determine if the response contains full body."
+        explode: true
         in: query
         name: bodyType
         required: false
@@ -1329,7 +1333,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/messages
+              -G https://api.aurinko.io/v1/email/messages
               -d q='text to:{address_or_name}'
       x-accepts: application/json
     post:
@@ -1370,7 +1374,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/email/messages?bodyType=text \
+              -X POST https://api.aurinko.io/v1/email/messages?bodyType=text \
               -d '{
                   "subject": "Business lunch",
                   "body": "How about a lunch meeting?",
@@ -1391,7 +1395,8 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: Default html
+        explode: true
         in: query
         name: bodyType
         required: false
@@ -1432,7 +1437,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/email/messages/{id}
+              https://api.aurinko.io/v1/email/messages/{id}
       x-accepts: application/json
   /v1/email/messages/{messageId}/status:
     post:
@@ -1464,7 +1469,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/email/messages/{messageId}/status \
+              -X POST https://api.aurinko.io/v1/email/messages/{messageId}/status \
               -d '{
                   "unread": true
                  }'
@@ -1482,7 +1487,10 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: "Supported by Google and Office365 accounts only. Body preview\
+          \ (snippet) is returned for other providers. Always, check the omitted[]\
+          \ array to determine if the response contains full body."
+        explode: true
         in: query
         name: bodyType
         required: false
@@ -1511,7 +1519,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/email/conversations/{threadId}
+              https://api.aurinko.io/v1/email/conversations/{threadId}
       x-accepts: application/json
   /v1/email/messages/{messageId}/reply:
     post:
@@ -1560,7 +1568,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/email/messages/{msgId}/reply?bodyType=text \
+              -X POST https://api.aurinko.io/v1/email/messages/{msgId}/reply?bodyType=text \
               -d '{
                   "subject": "RE: Business lunch",
                   "body": "Sure, lets meet.",
@@ -1603,7 +1611,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/email/messages/{msgId}/attachments/{attId}
+              https://api.aurinko.io/v1/email/messages/{msgId}/attachments/{attId}
       x-accepts: application/json
   /v1/email/folders:
     get:
@@ -1631,7 +1639,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/folders
+              -G https://api.aurinko.io/v1/email/folders
       x-accepts: application/json
   /v1/email/folders/{folderId}:
     get:
@@ -1659,7 +1667,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/email/folders/{id}
+              https://api.aurinko.io/v1/email/folders/{id}
       x-accepts: application/json
   /v1/email/folders/{folderId}/messages:
     get:
@@ -1721,7 +1729,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/messages
+              -G https://api.aurinko.io/v1/email/messages
               -d q='text to:{address_or_name}'
       x-accepts: application/json
   /v1/email/drafts:
@@ -1754,7 +1762,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/email/drafts?bodyType=text \
+              -X POST https://api.aurinko.io/v1/email/drafts?bodyType=text \
               -d '{
                   "subject": "Business lunch",
                   "body": "How about a lunch meeting?",
@@ -1816,7 +1824,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/email/drafts/{id}
+              https://api.aurinko.io/v1/email/drafts/{id}
       x-accepts: application/json
   /v1/email/drafts/{draftId}/send:
     post:
@@ -1858,7 +1866,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/email/drafts/{draftId}/send?sendTime=2021-04-28T15:40:00Z \
+              -X POST https://api.aurinko.io/v1/email/drafts/{draftId}/send?sendTime=2021-04-28T15:40:00Z \
       x-content-type: application/json
       x-accepts: application/json
   /v1/email/draftTracking/create:
@@ -1902,7 +1910,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/email/draftTracking/create?draftId=<draftId>  \
+              -X POST https://api.aurinko.io/v1/email/draftTracking/create?draftId=<draftId>  \
               -d '{
                   "htmlText": "<p></p>",
                   "tracking": {
@@ -1942,7 +1950,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https:/api.aurinko.io/v1/email/draftTracking/<draftId>/convert  \
+              -X PATCH https://api.aurinko.io/v1/email/draftTracking/<draftId>/convert  \
               -d '{
                   "threadId": "<threadId>",
                   "internetMessageId": "<internetMessageId>"
@@ -1980,7 +1988,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https:/api.aurinko.io/v1/email/draftTracking/<draftId>  \
+              -X PATCH https://api.aurinko.io/v1/email/draftTracking/<draftId>  \
               -d '{
                   "context": "<context>"
                  }'
@@ -2053,7 +2061,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/tracking
+              -G https://api.aurinko.io/v1/email/tracking
       x-accepts: application/json
   /v1/email/tracking/purgeMyTracking:
     post:
@@ -2090,7 +2098,7 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
                -H 'User-Agent: <User-Agent>' \
-              -X POST https:/api.aurinko.io/v1/email/tracking/purgeMyTracking
+              -X POST https://api.aurinko.io/v1/email/tracking/purgeMyTracking
       x-accepts: application/json
   /v1/email/tracking/ignoreOpenClicks:
     post:
@@ -2136,7 +2144,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/email/tracking/ignoreOpenClicks
+              -X POST https://api.aurinko.io/v1/email/tracking/ignoreOpenClicks
       x-accepts: application/json
   /v1/email/tracking/{id}:
     get:
@@ -2165,7 +2173,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/tracking/{id}'
+              -G https://api.aurinko.io/v1/email/tracking/{id}'
       x-accepts: application/json
   /v1/email/tracking/{id}/events:
     get:
@@ -2216,7 +2224,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/tracking/{id}/events
+              -G https://api.aurinko.io/v1/email/tracking/{id}/events
       x-accepts: application/json
   /v1/email/tracking/{trackingId}/events/{id}:
     get:
@@ -2254,7 +2262,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/email/tracking/{trackingId}/events/{id}'
+              -G https://api.aurinko.io/v1/email/tracking/{trackingId}/events/{id}'
       x-accepts: application/json
   /v1/followup/config:
     get:
@@ -2489,7 +2497,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X POST -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/contacts/sync
+              -G https://api.aurinko.io/v1/contacts/sync
       x-accepts: application/json
   /v1/contacts/sync/updated:
     get:
@@ -2528,7 +2536,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/contacts/sync/updated \
+              -G https://api.aurinko.io/v1/contacts/sync/updated \
               -d deltaToken='a8b7c6d5e4f3g2h1'
       x-accepts: application/json
   /v1/contacts/sync/deleted:
@@ -2568,7 +2576,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/contacts/sync/deleted \
+              -G https://api.aurinko.io/v1/contacts/sync/deleted \
               -d deltaToken='a8b7c6d5e4f3g2h1'
       x-accepts: application/json
   /v1/contacts/{contId}:
@@ -2595,7 +2603,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X DELETE https:/api.aurinko.io/v1/contacts/{contId}
+              -X DELETE https://api.aurinko.io/v1/contacts/{contId}
       x-accepts: application/json
     get:
       operationId: contact
@@ -2608,7 +2616,8 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: Default text
+        explode: true
         in: query
         name: bodyType
         required: false
@@ -2655,7 +2664,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/contacts/{id}
+              https://api.aurinko.io/v1/contacts/{id}
       x-accepts: application/json
     patch:
       operationId: updateContact
@@ -2696,7 +2705,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https:/api.aurinko.io/v1/contacts/{contId} \
+              -X PATCH https://api.aurinko.io/v1/contacts/{contId} \
               -d '{
                        "name": {"givenName": "Sam", "familyName": "Black"},
                        "company": {"name":"Aurinko, Inc", "jobTitle": "QA engineer"},
@@ -2732,7 +2741,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/contacts \
+              -X POST https://api.aurinko.io/v1/contacts \
               -d '{
                        "name": {"givenName": "Sam", "familyName": "Black"},
                        "company": {"name":"Aurinko", "jobTitle": "Support engineer"},
@@ -2995,6 +3004,193 @@ paths:
       - Booking
       x-content-type: application/json
       x-accepts: application/json
+  /v1/user:
+    get:
+      operationId: getUserInfo
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EndUserDto'
+          description: Success
+        "401":
+          description: Access token is missing or invalid
+      security:
+      - UserSessionCookie: []
+      - ClientIdHeader: []
+      summary: Get user info
+      tags:
+      - User
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET --cookie "<END_USER_COOKIE>" \
+              -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
+              https://api.aurinko.io/v1/user
+      x-accepts: application/json
+  /v1/user/accounts:
+    get:
+      operationId: getEndUserAccounts
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EndUserAccountsPage'
+          description: Success
+        "401":
+          description: Access token is missing or invalid
+      security:
+      - UserSessionCookie: []
+      - ClientIdHeader: []
+      summary: Get user accounts
+      tags:
+      - User
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET --cookie "<END_USER_COOKIE>" \
+              -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
+              https://api.aurinko.io/v1/user/accounts
+      x-accepts: application/json
+  /v1/user/accounts/{id}:
+    delete:
+      operationId: logoutAccount
+      parameters:
+      - description: user's account Id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+          description: Success
+        "401":
+          description: Access token is missing or invalid
+      security:
+      - UserSessionCookie: []
+      - ClientIdHeader: []
+      summary: Logout from user's account by id
+      tags:
+      - User
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X DELETE --cookie "<END_USER_COOKIE>" \
+              -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
+              https://api.aurinko.io/v1/user/accounts/<id>
+      x-accepts: application/json
+    get:
+      operationId: getEndUserAccount
+      parameters:
+      - description: user's account Id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EndUserAccountDto'
+          description: Success
+        "401":
+          description: Access token is missing or invalid
+      security:
+      - UserSessionCookie: []
+      - ClientIdHeader: []
+      summary: Get user account by id
+      tags:
+      - User
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET --cookie "<END_USER_COOKIE>" \
+              -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
+              https://api.aurinko.io/v1/user/accounts/<id>
+      x-accepts: application/json
+  /v1/user/accounts/{id}/managed:
+    post:
+      operationId: copyAsManaged
+      parameters:
+      - description: user's account Id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - explode: true
+        in: query
+        name: clientOrgId
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EndUserAccountDto'
+          description: Success
+        "401":
+          description: Access token is missing or invalid
+      security:
+      - UserSessionCookie: []
+      - ClientIdHeader: []
+      summary: Copy specified account to managed
+      tags:
+      - User
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X POST --cookie "<END_USER_COOKIE>" \
+              -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
+              https://api.aurinko.io/v1/user/accounts/<id>
+      x-accepts: application/json
+  /v1/user/logout:
+    post:
+      operationId: logout
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+          description: Success
+        "401":
+          description: Access token is missing or invalid
+      security:
+      - UserSessionCookie: []
+      - ClientIdHeader: []
+      summary: Drop a user's cookie
+      tags:
+      - User
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X POST --cookie "<END_USER_COOKIE>" \
+              -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
+              https://api.aurinko.io/v1/user/logout
+      x-accepts: application/json
   /v1/account:
     delete:
       operationId: deleteAccount
@@ -3010,7 +3206,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X DELETE -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/account
+              https://api.aurinko.io/v1/account
       x-accepts: application/json
     get:
       operationId: getMyAccount
@@ -3030,7 +3226,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/account
+              https://api.aurinko.io/v1/account
       x-accepts: application/json
   /v1/account/token:
     delete:
@@ -3048,7 +3244,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X DELETE -H 'Authorization: Bearer <access token>' \
-              https:/api.aurinko.io/v1/account/token
+              https://api.aurinko.io/v1/account/token
       x-accepts: application/json
   /v1/am/accounts:
     get:
@@ -3124,7 +3320,7 @@ paths:
       x-codeSamples:
       - lang: cURL
         source: |-
-          curl -u ClientId:Secret -X GET https:/api.aurinko.io/v1/am/accounts \
+          curl -u ClientId:Secret -X GET https://api.aurinko.io/v1/am/accounts \
               -G -d clientOrgId='12345'
       x-accepts: application/json
     post:
@@ -3213,7 +3409,7 @@ paths:
       - Accounts
       x-codeSamples:
       - lang: cURL
-        source: curl -u ClientId:Secret -X DELETE https:/api.aurinko.io/v1/am/accounts/12345
+        source: curl -u ClientId:Secret -X DELETE https://api.aurinko.io/v1/am/accounts/12345
       x-accepts: application/json
   /v1/am/svc_accounts:
     get:
@@ -3298,7 +3494,7 @@ paths:
       x-codeSamples:
       - lang: cURL
         source: |-
-          curl -u ClientId:Secret -X GET https:/api.aurinko.io/v1/am/svc_accounts \
+          curl -u ClientId:Secret -X GET https://api.aurinko.io/v1/am/svc_accounts \
               -G -d clientOrgId='12345'
       x-accepts: application/json
     post:
@@ -3602,7 +3798,7 @@ paths:
       x-codeSamples:
       - lang: cURL
         source: |-
-          curl -X GET -G https:/api.aurinko.io/v1/auth/authorize \
+          curl -X GET -G https://api.aurinko.io/v1/auth/authorize \
               -d clientId='a8b7c6d5e4f3g2h1' \
               -d serviceType='Google' \
               -d scopes='Calendar.ReadWrite Mail.Read Mail.Send' \
@@ -3733,7 +3929,7 @@ paths:
       x-codeSamples:
       - lang: cURL
         source: |-
-          curl -X GET -G https:/api.aurinko.io/v1/auth/authorizeDaemon \
+          curl -X GET -G https://api.aurinko.io/v1/auth/authorizeDaemon \
               -d clientId='a8b7c6d5e4f3g2h1' \
               -d serviceType='Google' \
               -d scopes='Calendar.ReadWrite Mail.Read Mail.Send' \
@@ -3774,7 +3970,7 @@ paths:
       - Auth
       x-codeSamples:
       - lang: cURL
-        source: curl -u ClientId:Secret -X GET https:/api.aurinko.io/v1/auth/token/<code>
+        source: curl -u ClientId:Secret -X GET https://api.aurinko.io/v1/auth/token/<code>
       x-accepts: application/json
     post:
       operationId: authCodeExchange
@@ -3809,29 +4005,43 @@ paths:
       - Auth
       x-codeSamples:
       - lang: cURL
-        source: curl -u ClientId:Secret -X POST https:/api.aurinko.io/v1/auth/token/<code>
+        source: curl -u ClientId:Secret -X POST https://api.aurinko.io/v1/auth/token/<code>
       x-accepts: application/json
   /v1/subscriptions:
     get:
       operationId: getSubscriptions
       parameters:
-      - explode: true
+      - description: page size
+        explode: true
         in: query
         name: limit
         required: false
         schema:
+          default: 50
           format: int32
           nullable: true
           type: integer
         style: form
-      - explode: true
+      - description: return records offset by the given number
+        explode: true
         in: query
         name: offset
         required: false
         schema:
+          default: 0
           format: int32
           nullable: true
           type: integer
+        style: form
+      - description: include inactive subscriptions
+        explode: true
+        in: query
+        name: includeInactive
+        required: false
+        schema:
+          default: false
+          nullable: true
+          type: boolean
         style: form
       responses:
         "200":
@@ -3847,7 +4057,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/subscriptions
+              -X POST https://api.aurinko.io/v1/subscriptions
       x-accepts: application/json
     post:
       operationId: subscribe
@@ -3872,7 +4082,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/subscriptions \
+              -X POST https://api.aurinko.io/v1/subscriptions \
               -d '{
                   "resource": "/calendars/primary/events",
                   "notificationUrl": "https://myapp.com/push"
@@ -3950,7 +4160,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X GET https:/api.aurinko.io/v1/tasklists
+              -X GET https://api.aurinko.io/v1/tasklists
       x-accepts: application/json
     post:
       operationId: createTaskList
@@ -3973,7 +4183,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/tasklists \
+              -X POST https://api.aurinko.io/v1/tasklists \
               -d '{ "title": "New task list" }'
       x-content-type: application/json
       x-accepts: application/json
@@ -4003,7 +4213,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X DELETE https:/api.aurinko.io/v1/tasklists/{taskListId}
+              -X DELETE https://api.aurinko.io/v1/tasklists/{taskListId}
       x-accepts: application/json
     get:
       operationId: taskList
@@ -4030,7 +4240,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X GET https:/api.aurinko.io/v1/tasklists/{taskListId}
+              -X GET https://api.aurinko.io/v1/tasklists/{taskListId}
       x-accepts: application/json
     patch:
       operationId: updateTaskList
@@ -4071,7 +4281,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https:/api.aurinko.io/v1/tasklists \
+              -X PATCH https://api.aurinko.io/v1/tasklists \
               -d '{ "title": "New task list" }'
       x-content-type: application/json
       x-accepts: application/json
@@ -4111,7 +4321,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X POST -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/tasklists/{taskListId}/sync \
+              -G https://api.aurinko.io/v1/tasklists/{taskListId}/sync \
               -d skipCompletedBeforeDate='2023-05-29T10:58:27Z'
       x-accepts: application/json
   /v1/tasklists/{taskListId}/sync/updated:
@@ -4159,7 +4369,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/tasklists/{taskListId}/sync/updated \
+              -G https://api.aurinko.io/v1/tasklists/{taskListId}/sync/updated \
               -d deltaToken='a8b7c6d5e4f3g2h1'
       x-accepts: application/json
   /v1/tasklists/{taskListId}/sync/deleted:
@@ -4207,7 +4417,7 @@ paths:
       - lang: cURL
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
-              -G https:/api.aurinko.io/v1/tasklists/{taskListId}/sync/deleted \
+              -G https://api.aurinko.io/v1/tasklists/{taskListId}/sync/deleted \
               -d deltaToken='a8b7c6d5e4f3g2h1'
       x-accepts: application/json
   /v1/tasklists/{taskListId}/tasks:
@@ -4246,7 +4456,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X GET https:/api.aurinko.io/v1/tasklists/{taskListId}/tasks
+              -X GET https://api.aurinko.io/v1/tasklists/{taskListId}/tasks
       x-accepts: application/json
     post:
       operationId: createTask
@@ -4278,7 +4488,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X POST https:/api.aurinko.io/v1/tasklists/{taskListId}/tasks \
+              -X POST https://api.aurinko.io/v1/tasklists/{taskListId}/tasks \
               -d '{ "title": "New task list" }'
       x-content-type: application/json
       x-accepts: application/json
@@ -4316,7 +4526,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X DELETE https:/api.aurinko.io/v1/tasklists/{taskListId}/tasks/{id}
+              -X DELETE https://api.aurinko.io/v1/tasklists/{taskListId}/tasks/{id}
       x-accepts: application/json
     get:
       operationId: task
@@ -4351,7 +4561,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X GET https:/api.aurinko.io/v1/tasklists/{taskListId}/tasks/{id}
+              -X GET https://api.aurinko.io/v1/tasklists/{taskListId}/tasks/{id}
       x-accepts: application/json
     patch:
       operationId: updateTask
@@ -4400,7 +4610,7 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https:/api.aurinko.io/v1/tasklists \
+              -X PATCH https://api.aurinko.io/v1/tasklists \
               -d '{ "title": "New task list" }'
       x-content-type: application/json
       x-accepts: application/json
@@ -4657,6 +4867,7 @@ components:
           - address: address
             name: name
             raw: raw
+          bodySnippet: bodySnippet
         - lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           bcc:
           - address: address
@@ -4741,6 +4952,7 @@ components:
           - address: address
             name: name
             raw: raw
+          bodySnippet: bodySnippet
         nextPageToken: nextPageToken
         length: 0
       properties:
@@ -4785,6 +4997,11 @@ components:
       - Clientify
       - QuickBooks
       - ActiveCampaign
+      - Creatio
+      - ConstantContact
+      - Fishbowl
+      - CalDav
+      - iCloud
       type: string
     EmailDeletedPage:
       example:
@@ -4842,6 +5059,11 @@ components:
       - Clientify
       - QuickBooks
       - ActiveCampaign
+      - Creatio
+      - ConstantContact
+      - Fishbowl
+      - CalDav
+      - iCloud
       type: string
     UpdateDraftTrackingIn:
       example:
@@ -4909,6 +5131,30 @@ components:
           type: string
         raw:
           readOnly: true
+          type: string
+      type: object
+    OrganizationDto:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        xid: xid
+        domain: domain
+        serviceProvider: null
+        name: name
+        id: 5
+      properties:
+        id:
+          format: int64
+          type: integer
+        serviceProvider:
+          $ref: '#/components/schemas/ServiceProvider'
+        xid:
+          type: string
+        domain:
+          type: string
+        name:
+          type: string
+        createdAt:
+          format: date-time
           type: string
       type: object
     CalendarCreate:
@@ -5214,6 +5460,125 @@ components:
             $ref: '#/components/schemas/FollowupRuleAction'
           type: array
       type: object
+    EndUserDto:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        authOrgId: authOrgId
+        appId: 0
+        name: name
+        lastActivity: 2000-01-23T04:56:07.000+00:00
+        id: id
+        accounts:
+        - serviceType: null
+          authObtainedAt: 2000-01-23T04:56:07.000+00:00
+          tokenStatus: null
+          loginString: loginString
+          timezone: timezone
+          trackingActive: true
+          type: null
+          authNativeScopes:
+          - null
+          - null
+          authScopes:
+          - null
+          - null
+          serverUrl: serverUrl
+          clientOrgId: clientOrgId
+          id: 6
+          templatesCount: 2
+          email: email
+          authOrgId: authOrgId
+          active: true
+          nativeScopes:
+          - null
+          - null
+          serverUrl2: serverUrl2
+          parentId: 1
+          authUserId: authUserId
+          hasApiErrors: true
+          organization:
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            xid: xid
+            domain: domain
+            serviceProvider: null
+            name: name
+            id: 5
+          name: name
+          scopes:
+          - null
+          - null
+          bookingCount: 5
+          userAccountType: null
+        - serviceType: null
+          authObtainedAt: 2000-01-23T04:56:07.000+00:00
+          tokenStatus: null
+          loginString: loginString
+          timezone: timezone
+          trackingActive: true
+          type: null
+          authNativeScopes:
+          - null
+          - null
+          authScopes:
+          - null
+          - null
+          serverUrl: serverUrl
+          clientOrgId: clientOrgId
+          id: 6
+          templatesCount: 2
+          email: email
+          authOrgId: authOrgId
+          active: true
+          nativeScopes:
+          - null
+          - null
+          serverUrl2: serverUrl2
+          parentId: 1
+          authUserId: authUserId
+          hasApiErrors: true
+          organization:
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            xid: xid
+            domain: domain
+            serviceProvider: null
+            name: name
+            id: 5
+          name: name
+          scopes:
+          - null
+          - null
+          bookingCount: 5
+          userAccountType: null
+        trustedIdentity: true
+        email: email
+        externalIdType: null
+      properties:
+        id:
+          type: string
+        appId:
+          format: int64
+          type: integer
+        email:
+          type: string
+        name:
+          type: string
+        authOrgId:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        lastActivity:
+          format: date-time
+          type: string
+        trustedIdentity:
+          type: boolean
+        externalIdType:
+          $ref: '#/components/schemas/EndUserExtIdType'
+        accounts:
+          items:
+            $ref: '#/components/schemas/EndUserAccountDto'
+          type: array
+      type: object
     NativeScope:
       description: Native scope from provider's API.
       type: string
@@ -5443,12 +5808,12 @@ components:
         offset: 0
         records:
         - serviceType: null
-          tokenStatus: dead
+          tokenStatus: null
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
           loginString: loginString
           timezone: timezone
           tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
-          type: daemon
+          type: null
           authNativeScopes:
           - null
           - null
@@ -5472,12 +5837,12 @@ components:
           name: name
           name2: name2
         - serviceType: null
-          tokenStatus: dead
+          tokenStatus: null
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
           loginString: loginString
           timezone: timezone
           tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
-          type: daemon
+          type: null
           authNativeScopes:
           - null
           - null
@@ -5572,6 +5937,13 @@ components:
         hasBounced:
           type: boolean
       type: object
+    TokenStatus:
+      enum:
+      - dead
+      - invalid
+      - active
+      - required
+      type: string
     ContactCompany:
       example:
         officeLocation: officeLocation
@@ -5911,6 +6283,7 @@ components:
           - address: address
             name: name
             raw: raw
+          bodySnippet: bodySnippet
       properties:
         id:
           readOnly: true
@@ -5963,6 +6336,101 @@ components:
         records:
           items:
             $ref: '#/components/schemas/EmailTrackingEvent'
+          type: array
+      type: object
+    EndUserAccountsPage:
+      example:
+        records:
+        - serviceType: null
+          authObtainedAt: 2000-01-23T04:56:07.000+00:00
+          tokenStatus: null
+          loginString: loginString
+          timezone: timezone
+          trackingActive: true
+          type: null
+          authNativeScopes:
+          - null
+          - null
+          authScopes:
+          - null
+          - null
+          serverUrl: serverUrl
+          clientOrgId: clientOrgId
+          id: 6
+          templatesCount: 2
+          email: email
+          authOrgId: authOrgId
+          active: true
+          nativeScopes:
+          - null
+          - null
+          serverUrl2: serverUrl2
+          parentId: 1
+          authUserId: authUserId
+          hasApiErrors: true
+          organization:
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            xid: xid
+            domain: domain
+            serviceProvider: null
+            name: name
+            id: 5
+          name: name
+          scopes:
+          - null
+          - null
+          bookingCount: 5
+          userAccountType: null
+        - serviceType: null
+          authObtainedAt: 2000-01-23T04:56:07.000+00:00
+          tokenStatus: null
+          loginString: loginString
+          timezone: timezone
+          trackingActive: true
+          type: null
+          authNativeScopes:
+          - null
+          - null
+          authScopes:
+          - null
+          - null
+          serverUrl: serverUrl
+          clientOrgId: clientOrgId
+          id: 6
+          templatesCount: 2
+          email: email
+          authOrgId: authOrgId
+          active: true
+          nativeScopes:
+          - null
+          - null
+          serverUrl2: serverUrl2
+          parentId: 1
+          authUserId: authUserId
+          hasApiErrors: true
+          organization:
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            xid: xid
+            domain: domain
+            serviceProvider: null
+            name: name
+            id: 5
+          name: name
+          scopes:
+          - null
+          - null
+          bookingCount: 5
+          userAccountType: null
+        nextPageToken: nextPageToken
+        length: 0
+      properties:
+        nextPageToken:
+          type: string
+        length:
+          type: integer
+        records:
+          items:
+            $ref: '#/components/schemas/EndUserAccountDto'
           type: array
       type: object
     BookingInDto:
@@ -6040,12 +6508,12 @@ components:
     ApiAccountOutDto:
       example:
         serviceType: null
-        tokenStatus: dead
+        tokenStatus: null
         authObtainedAt: 2000-01-23T04:56:07.000+00:00
         loginString: loginString
         timezone: timezone
         tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
-        type: daemon
+        type: null
         authNativeScopes:
         - null
         - null
@@ -6080,20 +6548,11 @@ components:
         active:
           type: boolean
         tokenStatus:
-          enum:
-          - dead
-          - invalid
-          - active
-          - required
-          type: string
+          $ref: '#/components/schemas/TokenStatus'
         tokenError:
           type: string
         type:
-          enum:
-          - daemon
-          - personal
-          - managed
-          type: string
+          $ref: '#/components/schemas/AccountType'
         daemon:
           type: boolean
         loginString:
@@ -6242,7 +6701,7 @@ components:
             comment: comment
             id: id
             type: required
-          response: accepted
+          response: noResponse
           attendeePermissions:
           - inviteOthers
           - inviteOthers
@@ -6915,13 +7374,24 @@ components:
       example:
         notificationUrl: notificationUrl
         resource: resource
+        active: true
+        failDescription: failDescription
         id: 1
+        failSince: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
+          format: int64
           type: integer
         resource:
           type: string
         notificationUrl:
+          type: string
+        active:
+          type: boolean
+        failSince:
+          format: date-time
+          type: string
+        failDescription:
           type: string
       type: object
     CalendarUpdate:
@@ -7020,6 +7490,7 @@ components:
         - address: address
           name: name
           raw: raw
+        bodySnippet: bodySnippet
       properties:
         id:
           readOnly: true
@@ -7110,6 +7581,9 @@ components:
           readOnly: true
           type: boolean
         body:
+          readOnly: true
+          type: string
+        bodySnippet:
           readOnly: true
           type: string
         attachments:
@@ -7716,6 +8190,113 @@ components:
             $ref: '#/components/schemas/Calendar'
           type: array
       type: object
+    EndUserAccountDto:
+      example:
+        serviceType: null
+        authObtainedAt: 2000-01-23T04:56:07.000+00:00
+        tokenStatus: null
+        loginString: loginString
+        timezone: timezone
+        trackingActive: true
+        type: null
+        authNativeScopes:
+        - null
+        - null
+        authScopes:
+        - null
+        - null
+        serverUrl: serverUrl
+        clientOrgId: clientOrgId
+        id: 6
+        templatesCount: 2
+        email: email
+        authOrgId: authOrgId
+        active: true
+        nativeScopes:
+        - null
+        - null
+        serverUrl2: serverUrl2
+        parentId: 1
+        authUserId: authUserId
+        hasApiErrors: true
+        organization:
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          xid: xid
+          domain: domain
+          serviceProvider: null
+          name: name
+          id: 5
+        name: name
+        scopes:
+        - null
+        - null
+        bookingCount: 5
+        userAccountType: null
+      properties:
+        id:
+          format: int64
+          type: integer
+        parentId:
+          format: int64
+          type: integer
+        serviceType:
+          $ref: '#/components/schemas/ServiceType'
+        userAccountType:
+          $ref: '#/components/schemas/UserAccountType'
+        type:
+          $ref: '#/components/schemas/AccountType'
+        active:
+          type: boolean
+        loginString:
+          type: string
+        email:
+          type: string
+        name:
+          type: string
+        serverUrl:
+          type: string
+        serverUrl2:
+          type: string
+        clientOrgId:
+          type: string
+        authUserId:
+          type: string
+        authOrgId:
+          type: string
+        timezone:
+          type: string
+        authObtainedAt:
+          format: date-time
+          type: string
+        organization:
+          $ref: '#/components/schemas/OrganizationDto'
+        tokenStatus:
+          $ref: '#/components/schemas/TokenStatus'
+        scopes:
+          items:
+            $ref: '#/components/schemas/Scope'
+          type: array
+        authScopes:
+          items:
+            $ref: '#/components/schemas/Scope'
+          type: array
+        nativeScopes:
+          items:
+            $ref: '#/components/schemas/NativeScope'
+          type: array
+        authNativeScopes:
+          items:
+            $ref: '#/components/schemas/NativeScope'
+          type: array
+        hasApiErrors:
+          type: boolean
+        bookingCount:
+          type: integer
+        trackingActive:
+          type: boolean
+        templatesCount:
+          type: integer
+      type: object
     SeriesInfo:
       example:
         recurrence:
@@ -7864,6 +8445,43 @@ components:
         message:
           type: string
       type: object
+    ServiceProvider:
+      enum:
+      - Office365
+      - Google
+      - Zoho
+      - IMAP
+      - EWS
+      - Yahoo
+      - AOL
+      - iCloud
+      - BigPond
+      - Fastmail
+      - Repfabric
+      - Salesforce
+      - Salesflare
+      - SugarCRM
+      - HighLevel
+      - Hubspot
+      - Pipedrive
+      - AutoQuotes
+      - DDS
+      - Clientify
+      - Teamwork
+      - EclipseERP
+      - NetSuite
+      - Fishbowl
+      - Slack
+      - Zoom
+      - Webex
+      - MCTrade
+      - Creatio
+      - QuickBooks
+      - ActiveCampaign
+      - ConstantContact
+      - Yoxel
+      - CalDav
+      type: string
     EventOrId:
       example:
         iCalUId: iCalUId
@@ -7970,7 +8588,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: accepted
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -8154,7 +8772,7 @@ components:
           comment: comment
           id: id
           type: required
-        response: accepted
+        response: noResponse
         attendeePermissions:
         - inviteOthers
         - inviteOthers
@@ -8176,9 +8794,10 @@ components:
           type: array
         response:
           enum:
-          - accepted
-          - tentitive
+          - noResponse
           - declined
+          - tentative
+          - accepted
           readOnly: true
           type: string
         attendeePermissions:
@@ -8442,6 +9061,7 @@ components:
           - address: address
             name: name
             raw: raw
+          bodySnippet: bodySnippet
         - lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           bcc:
           - address: address
@@ -8526,6 +9146,7 @@ components:
           - address: address
             name: name
             raw: raw
+          bodySnippet: bodySnippet
         nextPageToken: nextPageToken
         nextDeltaToken: nextDeltaToken
         length: 0
@@ -8649,7 +9270,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: accepted
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -8781,7 +9402,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: accepted
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -8926,6 +9547,12 @@ components:
         status:
           $ref: '#/components/schemas/ShowAs'
       type: object
+    AccountType:
+      enum:
+      - daemon
+      - personal
+      - managed
+      type: string
     Attendee:
       example:
         emailAddress:
@@ -9260,7 +9887,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: accepted
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -9392,7 +10019,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: accepted
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -9447,10 +10074,16 @@ components:
         records:
         - notificationUrl: notificationUrl
           resource: resource
+          active: true
+          failDescription: failDescription
           id: 1
+          failSince: 2000-01-23T04:56:07.000+00:00
         - notificationUrl: notificationUrl
           resource: resource
+          active: true
+          failDescription: failDescription
           id: 1
+          failSince: 2000-01-23T04:56:07.000+00:00
         done: true
       properties:
         offset:
@@ -9606,6 +10239,10 @@ components:
             type: string
           type: array
       type: object
+    EndUserExtIdType:
+      enum:
+      - exchangeIdentity
+      type: string
     SuggestMeetingTimesResponse_items_inner:
       example:
         start: 2000-01-23T04:56:07.000+00:00
@@ -9779,23 +10416,23 @@ components:
     ClientIdHeader:
       description: Client ID that can be obtained at Aurinko Dashboard page
       in: header
-      name: X-Aurinko-ClientId
+      name: X-Aurinko-Client-Id
       type: apiKey
     AccountIdHeader:
       description: User account id
       in: header
-      name: X-Aurinko-AccountId
+      name: X-Aurinko-Account-Id
       type: apiKey
     AuthTypeHeader:
       description: "Authentication type. Possible values: default, exchangeIdToken"
       in: header
-      name: X-Aurinko-AuthType
+      name: X-Aurinko-Auth-Type
       type: apiKey
     ExchangeIdToken:
-      bearerFormat: "Exchange Identity Token (only with `X-Aurinko-AuthType: exchangeIdToken`\
+      bearerFormat: "Exchange Identity Token (only with `X-Aurinko-Auth-Type: exchangeIdToken`\
         \ header.)"
       description: "Authentication using Exchange Identity Token. To use this method\
-        \ `X-Aurinko-AuthType: exchangeIdToken` header should be used."
+        \ `X-Aurinko-Auth-Type: exchangeIdToken` header should be used."
       scheme: bearer
       type: http
 x-tagGroups:
@@ -9803,6 +10440,7 @@ x-tagGroups:
   tags:
   - Auth
   - Account
+  - User
 - name: Account management
   tags:
   - Accounts

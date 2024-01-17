@@ -89,7 +89,7 @@ public class Example {
 
         MessagesApi apiInstance = new MessagesApi(defaultClient);
         String threadId = "threadId_example"; // String | conversation/thread identifier
-        BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
+        BodyType bodyType = BodyType.fromValue("html"); // BodyType | Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body.
         String pageToken = "pageToken_example"; // String | 
         try {
             CompletableFuture<EmailMessagesPageNext> result = apiInstance.conversation(threadId, bodyType, pageToken);
@@ -111,7 +111,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **threadId** | **String**| conversation/thread identifier | |
-| **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
+| **bodyType** | [**BodyType**](.md)| Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. | [optional] [enum: html, text] |
 | **pageToken** | **String**|  | [optional] |
 
 ### Return type
@@ -202,7 +202,7 @@ public class Example {
 
         MessagesApi apiInstance = new MessagesApi(defaultClient);
         String threadId = "threadId_example"; // String | conversation/thread identifier
-        BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
+        BodyType bodyType = BodyType.fromValue("html"); // BodyType | Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body.
         String pageToken = "pageToken_example"; // String | 
         try {
             CompletableFuture<ApiResponse<EmailMessagesPageNext>> response = apiInstance.conversationWithHttpInfo(threadId, bodyType, pageToken);
@@ -233,7 +233,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **threadId** | **String**| conversation/thread identifier | |
-| **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
+| **bodyType** | [**BodyType**](.md)| Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. | [optional] [enum: html, text] |
 | **pageToken** | **String**|  | [optional] |
 
 ### Return type
@@ -555,7 +555,7 @@ public class Example {
 
         MessagesApi apiInstance = new MessagesApi(defaultClient);
         String messageId = "messageId_example"; // String | email message identifier
-        BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
+        BodyType bodyType = BodyType.fromValue("html"); // BodyType | Default html
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean loadInlines = false; // Boolean | automatically pre-load relevant inline attachments
         try {
@@ -578,7 +578,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **messageId** | **String**| email message identifier | |
-| **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
+| **bodyType** | [**BodyType**](.md)| Default html | [optional] [enum: html, text] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **loadInlines** | **Boolean**| automatically pre-load relevant inline attachments | [optional] [default to false] |
 
@@ -670,7 +670,7 @@ public class Example {
 
         MessagesApi apiInstance = new MessagesApi(defaultClient);
         String messageId = "messageId_example"; // String | email message identifier
-        BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
+        BodyType bodyType = BodyType.fromValue("html"); // BodyType | Default html
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean loadInlines = false; // Boolean | automatically pre-load relevant inline attachments
         try {
@@ -702,7 +702,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **messageId** | **String**| email message identifier | |
-| **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
+| **bodyType** | [**BodyType**](.md)| Default html | [optional] [enum: html, text] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **loadInlines** | **Boolean**| automatically pre-load relevant inline attachments | [optional] [default to false] |
 
@@ -795,7 +795,7 @@ public class Example {
         MessagesApi apiInstance = new MessagesApi(defaultClient);
         String pageToken = "pageToken_example"; // String | 
         String q = "q_example"; // String | Only return messages matching the specified query. For example, \"from:someuser@example.com after:01/01/2020\" 
-        BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
+        BodyType bodyType = BodyType.fromValue("html"); // BodyType | Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body.
         Boolean includeTrashAndJunk = true; // Boolean | 
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         try {
@@ -819,7 +819,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **pageToken** | **String**|  | [optional] |
 | **q** | **String**| Only return messages matching the specified query. For example, \&quot;from:someuser@example.com after:01/01/2020\&quot;  | [optional] |
-| **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
+| **bodyType** | [**BodyType**](.md)| Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. | [optional] [enum: html, text] |
 | **includeTrashAndJunk** | **Boolean**|  | [optional] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 
@@ -912,7 +912,7 @@ public class Example {
         MessagesApi apiInstance = new MessagesApi(defaultClient);
         String pageToken = "pageToken_example"; // String | 
         String q = "q_example"; // String | Only return messages matching the specified query. For example, \"from:someuser@example.com after:01/01/2020\" 
-        BodyType bodyType = BodyType.fromValue("html"); // BodyType | 
+        BodyType bodyType = BodyType.fromValue("html"); // BodyType | Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body.
         Boolean includeTrashAndJunk = true; // Boolean | 
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         try {
@@ -945,7 +945,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **pageToken** | **String**|  | [optional] |
 | **q** | **String**| Only return messages matching the specified query. For example, \&quot;from:someuser@example.com after:01/01/2020\&quot;  | [optional] |
-| **bodyType** | [**BodyType**](.md)|  | [optional] [enum: html, text] |
+| **bodyType** | [**BodyType**](.md)| Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. | [optional] [enum: html, text] |
 | **includeTrashAndJunk** | **Boolean**|  | [optional] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 

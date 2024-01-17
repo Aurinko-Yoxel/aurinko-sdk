@@ -21,9 +21,10 @@
 
 | Name | Value |
 |---- | -----|
-| ACCEPTED | &quot;accepted&quot; |
-| TENTITIVE | &quot;tentitive&quot; |
+| NORESPONSE | &quot;noResponse&quot; |
 | DECLINED | &quot;declined&quot; |
+| TENTATIVE | &quot;tentative&quot; |
+| ACCEPTED | &quot;accepted&quot; |
 
 
 

@@ -231,7 +231,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **clientId** | **String**| Application client Id | |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, DDS, Zoho, Clientify, QuickBooks, ActiveCampaign] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, DDS, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, CalDav, iCloud] |
 | **returnUrl** | **String**| Redirect/callback url | |
 | **mailboxInfo** | **String**|  | [optional] |
 | **scopes** | [**List&lt;Scope&gt;**](Scope.md)| Space separated list of scopes | [optional] |
@@ -344,7 +344,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **clientId** | **String**| Application client Id | |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, DDS, Zoho, Clientify, QuickBooks, ActiveCampaign] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, DDS, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, CalDav, iCloud] |
 | **returnUrl** | **String**| Redirect/callback url | |
 | **mailboxInfo** | **String**|  | [optional] |
 | **scopes** | [**List&lt;Scope&gt;**](Scope.md)| Space separated list of scopes | [optional] |

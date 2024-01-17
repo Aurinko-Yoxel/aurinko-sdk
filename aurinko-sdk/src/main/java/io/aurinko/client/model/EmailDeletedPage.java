@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailDeletedPage.JSON_PROPERTY_LENGTH,
   EmailDeletedPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class EmailDeletedPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   private String nextPageToken;

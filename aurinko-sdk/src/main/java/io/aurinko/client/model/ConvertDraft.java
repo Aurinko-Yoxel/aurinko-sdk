@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ConvertDraft.JSON_PROPERTY_MESSAGE_ID,
   ConvertDraft.JSON_PROPERTY_INTERNET_MESSAGE_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class ConvertDraft {
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
   private String threadId;

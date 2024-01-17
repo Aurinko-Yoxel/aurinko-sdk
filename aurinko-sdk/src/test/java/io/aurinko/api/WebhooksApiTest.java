@@ -66,8 +66,9 @@ public class WebhooksApiTest {
     public void getSubscriptionsTest() throws ApiException {
         Integer limit = null;
         Integer offset = null;
+        Boolean includeInactive = null;
         CompletableFuture<SubscriptionsPage> response = 
-        api.getSubscriptions(limit, offset);
+        api.getSubscriptions(limit, offset, includeInactive);
         
         // TODO: test validations
     }

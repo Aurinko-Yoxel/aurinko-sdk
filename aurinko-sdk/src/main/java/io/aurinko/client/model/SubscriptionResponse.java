@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -34,12 +35,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
   SubscriptionResponse.JSON_PROPERTY_ID,
   SubscriptionResponse.JSON_PROPERTY_RESOURCE,
-  SubscriptionResponse.JSON_PROPERTY_NOTIFICATION_URL
+  SubscriptionResponse.JSON_PROPERTY_NOTIFICATION_URL,
+  SubscriptionResponse.JSON_PROPERTY_ACTIVE,
+  SubscriptionResponse.JSON_PROPERTY_FAIL_SINCE,
+  SubscriptionResponse.JSON_PROPERTY_FAIL_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class SubscriptionResponse {
   public static final String JSON_PROPERTY_ID = "id";
-  private Integer id;
+  private Long id;
 
   public static final String JSON_PROPERTY_RESOURCE = "resource";
   private String resource;
@@ -47,10 +51,19 @@ public class SubscriptionResponse {
   public static final String JSON_PROPERTY_NOTIFICATION_URL = "notificationUrl";
   private String notificationUrl;
 
+  public static final String JSON_PROPERTY_ACTIVE = "active";
+  private Boolean active;
+
+  public static final String JSON_PROPERTY_FAIL_SINCE = "failSince";
+  private OffsetDateTime failSince;
+
+  public static final String JSON_PROPERTY_FAIL_DESCRIPTION = "failDescription";
+  private String failDescription;
+
   public SubscriptionResponse() { 
   }
 
-  public SubscriptionResponse id(Integer id) {
+  public SubscriptionResponse id(Long id) {
     this.id = id;
     return this;
   }
@@ -63,14 +76,14 @@ public class SubscriptionResponse {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -125,6 +138,81 @@ public class SubscriptionResponse {
   }
 
 
+  public SubscriptionResponse active(Boolean active) {
+    this.active = active;
+    return this;
+  }
+
+   /**
+   * Get active
+   * @return active
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getActive() {
+    return active;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setActive(Boolean active) {
+    this.active = active;
+  }
+
+
+  public SubscriptionResponse failSince(OffsetDateTime failSince) {
+    this.failSince = failSince;
+    return this;
+  }
+
+   /**
+   * Get failSince
+   * @return failSince
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FAIL_SINCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getFailSince() {
+    return failSince;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FAIL_SINCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFailSince(OffsetDateTime failSince) {
+    this.failSince = failSince;
+  }
+
+
+  public SubscriptionResponse failDescription(String failDescription) {
+    this.failDescription = failDescription;
+    return this;
+  }
+
+   /**
+   * Get failDescription
+   * @return failDescription
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FAIL_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getFailDescription() {
+    return failDescription;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FAIL_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFailDescription(String failDescription) {
+    this.failDescription = failDescription;
+  }
+
+
   /**
    * Return true if this SubscriptionResponse object is equal to o.
    */
@@ -139,12 +227,15 @@ public class SubscriptionResponse {
     SubscriptionResponse subscriptionResponse = (SubscriptionResponse) o;
     return Objects.equals(this.id, subscriptionResponse.id) &&
         Objects.equals(this.resource, subscriptionResponse.resource) &&
-        Objects.equals(this.notificationUrl, subscriptionResponse.notificationUrl);
+        Objects.equals(this.notificationUrl, subscriptionResponse.notificationUrl) &&
+        Objects.equals(this.active, subscriptionResponse.active) &&
+        Objects.equals(this.failSince, subscriptionResponse.failSince) &&
+        Objects.equals(this.failDescription, subscriptionResponse.failDescription);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, resource, notificationUrl);
+    return Objects.hash(id, resource, notificationUrl, active, failSince, failDescription);
   }
 
   @Override
@@ -154,6 +245,9 @@ public class SubscriptionResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    notificationUrl: ").append(toIndentedString(notificationUrl)).append("\n");
+    sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    failSince: ").append(toIndentedString(failSince)).append("\n");
+    sb.append("    failDescription: ").append(toIndentedString(failDescription)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -214,6 +308,21 @@ public class SubscriptionResponse {
     // add `notificationUrl` to the URL query string
     if (getNotificationUrl() != null) {
       joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNotificationUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `failSince` to the URL query string
+    if (getFailSince() != null) {
+      joiner.add(String.format("%sfailSince%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFailSince()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `failDescription` to the URL query string
+    if (getFailDescription() != null) {
+      joiner.add(String.format("%sfailDescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFailDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

@@ -27,6 +27,7 @@
 |**replyTo** | [**List&lt;EmailAddress&gt;**](EmailAddress.md) |  |  [optional] |
 |**hasAttachments** | **Boolean** |  |  [optional] [readonly] |
 |**body** | **String** |  |  [optional] [readonly] |
+|**bodySnippet** | **String** |  |  [optional] [readonly] |
 |**attachments** | [**List&lt;EmailAttachment&gt;**](EmailAttachment.md) |  |  [optional] |
 |**inReplyTo** | **String** |  |  [optional] [readonly] |
 |**references** | **String** |  |  [optional] [readonly] |

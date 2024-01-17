@@ -65,5 +65,15 @@
 
 * `ACTIVECAMPAIGN` (value: `"ActiveCampaign"`)
 
+* `CREATIO` (value: `"Creatio"`)
+
+* `CONSTANTCONTACT` (value: `"ConstantContact"`)
+
+* `FISHBOWL` (value: `"Fishbowl"`)
+
+* `CALDAV` (value: `"CalDav"`)
+
+* `ICLOUD` (value: `"iCloud"`)
+
 
 

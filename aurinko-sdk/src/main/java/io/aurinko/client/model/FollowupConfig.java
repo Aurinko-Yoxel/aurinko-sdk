@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FollowupConfig.JSON_PROPERTY_TIMEZONE,
   FollowupConfig.JSON_PROPERTY_EMAIL_ALIASES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class FollowupConfig {
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;

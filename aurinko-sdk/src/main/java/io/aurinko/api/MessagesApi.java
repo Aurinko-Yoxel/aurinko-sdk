@@ -54,7 +54,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class MessagesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -94,7 +94,7 @@ public class MessagesApi {
    * Get messages in a conversation
    * 
    * @param threadId conversation/thread identifier (required)
-   * @param bodyType  (optional)
+   * @param bodyType Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. (optional)
    * @param pageToken  (optional)
    * @return CompletableFuture&lt;EmailMessagesPageNext&gt;
    * @throws ApiException if fails to make API call
@@ -127,7 +127,7 @@ public class MessagesApi {
    * Get messages in a conversation
    * 
    * @param threadId conversation/thread identifier (required)
-   * @param bodyType  (optional)
+   * @param bodyType Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. (optional)
    * @param pageToken  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessagesPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
@@ -308,7 +308,7 @@ public class MessagesApi {
    * Get a message
    * 
    * @param messageId email message identifier (required)
-   * @param bodyType  (optional)
+   * @param bodyType Default html (optional)
    * @param nativeProperties  (optional
    * @param loadInlines automatically pre-load relevant inline attachments (optional, default to false)
    * @return CompletableFuture&lt;EmailMessage&gt;
@@ -342,7 +342,7 @@ public class MessagesApi {
    * Get a message
    * 
    * @param messageId email message identifier (required)
-   * @param bodyType  (optional)
+   * @param bodyType Default html (optional)
    * @param nativeProperties  (optional
    * @param loadInlines automatically pre-load relevant inline attachments (optional, default to false)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessage&gt;&gt;
@@ -427,7 +427,7 @@ public class MessagesApi {
    * 
    * @param pageToken  (optional)
    * @param q Only return messages matching the specified query. For example, \&quot;from:someuser@example.com after:01/01/2020\&quot;  (optional)
-   * @param bodyType  (optional)
+   * @param bodyType Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. (optional)
    * @param includeTrashAndJunk  (optional)
    * @param nativeProperties  (optional
    * @return CompletableFuture&lt;EmailMessagesPageNext&gt;
@@ -462,7 +462,7 @@ public class MessagesApi {
    * 
    * @param pageToken  (optional)
    * @param q Only return messages matching the specified query. For example, \&quot;from:someuser@example.com after:01/01/2020\&quot;  (optional)
-   * @param bodyType  (optional)
+   * @param bodyType Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. (optional)
    * @param includeTrashAndJunk  (optional)
    * @param nativeProperties  (optional
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessagesPageNext&gt;&gt;

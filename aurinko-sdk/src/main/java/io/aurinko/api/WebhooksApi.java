@@ -48,7 +48,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class WebhooksApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -180,14 +180,15 @@ public class WebhooksApi {
   /**
    * Get a list of push event subscriptions
    * 
-   * @param limit  (optional)
-   * @param offset  (optional)
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @param includeInactive include inactive subscriptions (optional, default to false)
    * @return CompletableFuture&lt;SubscriptionsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SubscriptionsPage> getSubscriptions(Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<SubscriptionsPage> getSubscriptions(Integer limit, Integer offset, Boolean includeInactive) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getSubscriptionsRequestBuilder(limit, offset);
+      HttpRequest.Builder localVarRequestBuilder = getSubscriptionsRequestBuilder(limit, offset, includeInactive);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -212,14 +213,15 @@ public class WebhooksApi {
   /**
    * Get a list of push event subscriptions
    * 
-   * @param limit  (optional)
-   * @param offset  (optional)
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @param includeInactive include inactive subscriptions (optional, default to false)
    * @return CompletableFuture&lt;ApiResponse&lt;SubscriptionsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SubscriptionsPage>> getSubscriptionsWithHttpInfo(Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<SubscriptionsPage>> getSubscriptionsWithHttpInfo(Integer limit, Integer offset, Boolean includeInactive) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getSubscriptionsRequestBuilder(limit, offset);
+      HttpRequest.Builder localVarRequestBuilder = getSubscriptionsRequestBuilder(limit, offset, includeInactive);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -248,7 +250,7 @@ public class WebhooksApi {
     }
   }
 
-  private HttpRequest.Builder getSubscriptionsRequestBuilder(Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder getSubscriptionsRequestBuilder(Integer limit, Integer offset, Boolean includeInactive) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -261,6 +263,8 @@ public class WebhooksApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("limit", limit));
     localVarQueryParameterBaseName = "offset";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("offset", offset));
+    localVarQueryParameterBaseName = "includeInactive";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("includeInactive", includeInactive));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

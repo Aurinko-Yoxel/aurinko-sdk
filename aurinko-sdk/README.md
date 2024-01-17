@@ -4,7 +4,7 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Build date: 2023-11-08T10:31:33.594723Z[Africa/Bamako]
+- Build date: 2024-01-09T14:13:35.152987Z[Africa/Bamako]
 
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with
@@ -328,6 +328,18 @@ Class | Method | HTTP request | Description
 *TasksApi* | [**tasksListWithHttpInfo**](docs/TasksApi.md#tasksListWithHttpInfo) | **GET** /v1/tasklists/{taskListId}/tasks | Request list of tasks
 *TasksApi* | [**updateTask**](docs/TasksApi.md#updateTask) | **PATCH** /v1/tasklists/{taskListId}/tasks/{id} | Update a task
 *TasksApi* | [**updateTaskWithHttpInfo**](docs/TasksApi.md#updateTaskWithHttpInfo) | **PATCH** /v1/tasklists/{taskListId}/tasks/{id} | Update a task
+*UserApi* | [**copyAsManaged**](docs/UserApi.md#copyAsManaged) | **POST** /v1/user/accounts/{id}/managed | Copy specified account to managed
+*UserApi* | [**copyAsManagedWithHttpInfo**](docs/UserApi.md#copyAsManagedWithHttpInfo) | **POST** /v1/user/accounts/{id}/managed | Copy specified account to managed
+*UserApi* | [**getEndUserAccount**](docs/UserApi.md#getEndUserAccount) | **GET** /v1/user/accounts/{id} | Get user account by id
+*UserApi* | [**getEndUserAccountWithHttpInfo**](docs/UserApi.md#getEndUserAccountWithHttpInfo) | **GET** /v1/user/accounts/{id} | Get user account by id
+*UserApi* | [**getEndUserAccounts**](docs/UserApi.md#getEndUserAccounts) | **GET** /v1/user/accounts | Get user accounts
+*UserApi* | [**getEndUserAccountsWithHttpInfo**](docs/UserApi.md#getEndUserAccountsWithHttpInfo) | **GET** /v1/user/accounts | Get user accounts
+*UserApi* | [**getUserInfo**](docs/UserApi.md#getUserInfo) | **GET** /v1/user | Get user info
+*UserApi* | [**getUserInfoWithHttpInfo**](docs/UserApi.md#getUserInfoWithHttpInfo) | **GET** /v1/user | Get user info
+*UserApi* | [**logout**](docs/UserApi.md#logout) | **POST** /v1/user/logout | Drop a user&#39;s cookie
+*UserApi* | [**logoutWithHttpInfo**](docs/UserApi.md#logoutWithHttpInfo) | **POST** /v1/user/logout | Drop a user&#39;s cookie
+*UserApi* | [**logoutAccount**](docs/UserApi.md#logoutAccount) | **DELETE** /v1/user/accounts/{id} | Logout from user&#39;s account by id
+*UserApi* | [**logoutAccountWithHttpInfo**](docs/UserApi.md#logoutAccountWithHttpInfo) | **DELETE** /v1/user/accounts/{id} | Logout from user&#39;s account by id
 *WebhooksApi* | [**getSubscription**](docs/WebhooksApi.md#getSubscription) | **GET** /v1/subscriptions/{id} | Check a subscription status
 *WebhooksApi* | [**getSubscriptionWithHttpInfo**](docs/WebhooksApi.md#getSubscriptionWithHttpInfo) | **GET** /v1/subscriptions/{id} | Check a subscription status
 *WebhooksApi* | [**getSubscriptions**](docs/WebhooksApi.md#getSubscriptions) | **GET** /v1/subscriptions | Get a list of push event subscriptions
@@ -341,6 +353,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [AccountSaveResult](docs/AccountSaveResult.md)
+ - [AccountType](docs/AccountType.md)
  - [AccountsPage](docs/AccountsPage.md)
  - [AdditionalField](docs/AdditionalField.md)
  - [ApiAccountInDto](docs/ApiAccountInDto.md)
@@ -395,6 +408,10 @@ Class | Method | HTTP request | Description
  - [EmailTrackingEvent](docs/EmailTrackingEvent.md)
  - [EmailTrackingEventPageNext](docs/EmailTrackingEventPageNext.md)
  - [EmailTrackingPageNext](docs/EmailTrackingPageNext.md)
+ - [EndUserAccountDto](docs/EndUserAccountDto.md)
+ - [EndUserAccountsPage](docs/EndUserAccountsPage.md)
+ - [EndUserDto](docs/EndUserDto.md)
+ - [EndUserExtIdType](docs/EndUserExtIdType.md)
  - [Event](docs/Event.md)
  - [EventDateTime](docs/EventDateTime.md)
  - [EventOrId](docs/EventOrId.md)
@@ -415,6 +432,7 @@ Class | Method | HTTP request | Description
  - [OccurrenceInfo](docs/OccurrenceInfo.md)
  - [OkResponse](docs/OkResponse.md)
  - [OnlineMeetingDetails](docs/OnlineMeetingDetails.md)
+ - [OrganizationDto](docs/OrganizationDto.md)
  - [Organizer](docs/Organizer.md)
  - [OutEmailTrack](docs/OutEmailTrack.md)
  - [OutgoingEmail](docs/OutgoingEmail.md)
@@ -432,6 +450,7 @@ Class | Method | HTTP request | Description
  - [Sensitivity](docs/Sensitivity.md)
  - [SeriesInfo](docs/SeriesInfo.md)
  - [ServiceKey](docs/ServiceKey.md)
+ - [ServiceProvider](docs/ServiceProvider.md)
  - [ServiceType](docs/ServiceType.md)
  - [ServiceTypeDaemon](docs/ServiceTypeDaemon.md)
  - [ServiceTypeNonDaemon](docs/ServiceTypeNonDaemon.md)
@@ -455,6 +474,7 @@ Class | Method | HTTP request | Description
  - [TaskUpdate](docs/TaskUpdate.md)
  - [TaskUpdateResponse](docs/TaskUpdateResponse.md)
  - [TasksPage](docs/TasksPage.md)
+ - [TokenStatus](docs/TokenStatus.md)
  - [TrackingData](docs/TrackingData.md)
  - [UpdateDraftTrackingIn](docs/UpdateDraftTrackingIn.md)
  - [UpdateMessageStatusData](docs/UpdateMessageStatusData.md)
@@ -501,7 +521,7 @@ Authentication schemes defined for the API:
 
 
 - **Type**: API key
-- **API key parameter name**: X-Aurinko-ClientId
+- **API key parameter name**: X-Aurinko-Client-Id
 - **Location**: HTTP header
 
 <a id="AccountIdHeader"></a>
@@ -509,7 +529,7 @@ Authentication schemes defined for the API:
 
 
 - **Type**: API key
-- **API key parameter name**: X-Aurinko-AccountId
+- **API key parameter name**: X-Aurinko-Account-Id
 - **Location**: HTTP header
 
 <a id="AuthTypeHeader"></a>
@@ -517,14 +537,14 @@ Authentication schemes defined for the API:
 
 
 - **Type**: API key
-- **API key parameter name**: X-Aurinko-AuthType
+- **API key parameter name**: X-Aurinko-Auth-Type
 - **Location**: HTTP header
 
 <a id="ExchangeIdToken"></a>
 ### ExchangeIdToken
 
 
-- **Type**: HTTP Bearer Token authentication (Exchange Identity Token (only with `X-Aurinko-AuthType: exchangeIdToken` header.))
+- **Type**: HTTP Bearer Token authentication (Exchange Identity Token (only with `X-Aurinko-Auth-Type: exchangeIdToken` header.))
 
 
 ## Recommendation

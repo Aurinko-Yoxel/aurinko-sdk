@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -59,6 +60,30 @@ public class SubscriptionResponseTest {
     @Test
     public void notificationUrlTest() {
         // TODO: test notificationUrl
+    }
+
+    /**
+     * Test the property 'active'
+     */
+    @Test
+    public void activeTest() {
+        // TODO: test active
+    }
+
+    /**
+     * Test the property 'failSince'
+     */
+    @Test
+    public void failSinceTest() {
+        // TODO: test failSince
+    }
+
+    /**
+     * Test the property 'failDescription'
+     */
+    @Test
+    public void failDescriptionTest() {
+        // TODO: test failDescription
     }
 
 }

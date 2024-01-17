@@ -61,6 +61,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailMessage.JSON_PROPERTY_REPLY_TO,
   EmailMessage.JSON_PROPERTY_HAS_ATTACHMENTS,
   EmailMessage.JSON_PROPERTY_BODY,
+  EmailMessage.JSON_PROPERTY_BODY_SNIPPET,
   EmailMessage.JSON_PROPERTY_ATTACHMENTS,
   EmailMessage.JSON_PROPERTY_IN_REPLY_TO,
   EmailMessage.JSON_PROPERTY_REFERENCES,
@@ -70,7 +71,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailMessage.JSON_PROPERTY_FOLDER_ID,
   EmailMessage.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-08T10:31:33.594723Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
 public class EmailMessage {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -261,6 +262,9 @@ public class EmailMessage {
   public static final String JSON_PROPERTY_BODY = "body";
   private String body;
 
+  public static final String JSON_PROPERTY_BODY_SNIPPET = "bodySnippet";
+  private String bodySnippet;
+
   public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
   private List<EmailAttachment> attachments;
 
@@ -343,6 +347,7 @@ public class EmailMessage {
     @JsonProperty(JSON_PROPERTY_SYS_CLASSIFICATIONS) List<SysClassificationsEnum> sysClassifications, 
     @JsonProperty(JSON_PROPERTY_HAS_ATTACHMENTS) Boolean hasAttachments, 
     @JsonProperty(JSON_PROPERTY_BODY) String body, 
+    @JsonProperty(JSON_PROPERTY_BODY_SNIPPET) String bodySnippet, 
     @JsonProperty(JSON_PROPERTY_IN_REPLY_TO) String inReplyTo, 
     @JsonProperty(JSON_PROPERTY_REFERENCES) String references, 
     @JsonProperty(JSON_PROPERTY_THREAD_INDEX) String threadIndex, 
@@ -362,6 +367,7 @@ public class EmailMessage {
     this.sysClassifications = sysClassifications;
     this.hasAttachments = hasAttachments;
     this.body = body;
+    this.bodySnippet = bodySnippet;
     this.inReplyTo = inReplyTo;
     this.references = references;
     this.threadIndex = threadIndex;
@@ -789,6 +795,21 @@ public class EmailMessage {
 
 
 
+   /**
+   * Get bodySnippet
+   * @return bodySnippet
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BODY_SNIPPET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getBodySnippet() {
+    return bodySnippet;
+  }
+
+
+
+
   public EmailMessage attachments(List<EmailAttachment> attachments) {
     this.attachments = attachments;
     return this;
@@ -995,6 +1016,7 @@ public class EmailMessage {
         Objects.equals(this.replyTo, emailMessage.replyTo) &&
         Objects.equals(this.hasAttachments, emailMessage.hasAttachments) &&
         Objects.equals(this.body, emailMessage.body) &&
+        Objects.equals(this.bodySnippet, emailMessage.bodySnippet) &&
         Objects.equals(this.attachments, emailMessage.attachments) &&
         Objects.equals(this.inReplyTo, emailMessage.inReplyTo) &&
         Objects.equals(this.references, emailMessage.references) &&
@@ -1007,7 +1029,7 @@ public class EmailMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, threadId, createdTime, lastModifiedTime, sentAt, receivedAt, internetMessageId, subject, sysLabels, keywords, sysClassifications, sensitivity, meetingMessageMethod, from, to, cc, bcc, replyTo, hasAttachments, body, attachments, inReplyTo, references, threadIndex, internetHeaders, nativeProperties, folderId, omitted);
+    return Objects.hash(id, threadId, createdTime, lastModifiedTime, sentAt, receivedAt, internetMessageId, subject, sysLabels, keywords, sysClassifications, sensitivity, meetingMessageMethod, from, to, cc, bcc, replyTo, hasAttachments, body, bodySnippet, attachments, inReplyTo, references, threadIndex, internetHeaders, nativeProperties, folderId, omitted);
   }
 
   @Override
@@ -1034,6 +1056,7 @@ public class EmailMessage {
     sb.append("    replyTo: ").append(toIndentedString(replyTo)).append("\n");
     sb.append("    hasAttachments: ").append(toIndentedString(hasAttachments)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
+    sb.append("    bodySnippet: ").append(toIndentedString(bodySnippet)).append("\n");
     sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    inReplyTo: ").append(toIndentedString(inReplyTo)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
@@ -1219,6 +1242,11 @@ public class EmailMessage {
     // add `body` to the URL query string
     if (getBody() != null) {
       joiner.add(String.format("%sbody%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `bodySnippet` to the URL query string
+    if (getBodySnippet() != null) {
+      joiner.add(String.format("%sbodySnippet%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBodySnippet()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `attachments` to the URL query string

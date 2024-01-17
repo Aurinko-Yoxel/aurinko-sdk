@@ -8,6 +8,7 @@ build.gradle
 build.sbt
 docs/AccountApi.md
 docs/AccountSaveResult.md
+docs/AccountType.md
 docs/AccountsApi.md
 docs/AccountsPage.md
 docs/AdditionalField.md
@@ -73,6 +74,10 @@ docs/EmailTrackingData.md
 docs/EmailTrackingEvent.md
 docs/EmailTrackingEventPageNext.md
 docs/EmailTrackingPageNext.md
+docs/EndUserAccountDto.md
+docs/EndUserAccountsPage.md
+docs/EndUserDto.md
+docs/EndUserExtIdType.md
 docs/Event.md
 docs/EventDateTime.md
 docs/EventOrId.md
@@ -98,6 +103,7 @@ docs/MessagesApi.md
 docs/OccurrenceInfo.md
 docs/OkResponse.md
 docs/OnlineMeetingDetails.md
+docs/OrganizationDto.md
 docs/Organizer.md
 docs/OutEmailTrack.md
 docs/OutgoingEmail.md
@@ -115,6 +121,7 @@ docs/SelectedMeetingTime.md
 docs/Sensitivity.md
 docs/SeriesInfo.md
 docs/ServiceKey.md
+docs/ServiceProvider.md
 docs/ServiceType.md
 docs/ServiceTypeDaemon.md
 docs/ServiceTypeNonDaemon.md
@@ -142,10 +149,12 @@ docs/TaskUpdate.md
 docs/TaskUpdateResponse.md
 docs/TasksApi.md
 docs/TasksPage.md
+docs/TokenStatus.md
 docs/TrackingData.md
 docs/UpdateDraftTrackingIn.md
 docs/UpdateMessageStatusData.md
 docs/UserAccountType.md
+docs/UserApi.md
 docs/WebhooksApi.md
 docs/WeekWorkSchedule.md
 docs/WorkingInterval.md
@@ -179,6 +188,7 @@ src/main/java/io/aurinko/api/ServicesApi.java
 src/main/java/io/aurinko/api/TaskListsApi.java
 src/main/java/io/aurinko/api/TaskSyncApi.java
 src/main/java/io/aurinko/api/TasksApi.java
+src/main/java/io/aurinko/api/UserApi.java
 src/main/java/io/aurinko/api/WebhooksApi.java
 src/main/java/io/aurinko/client/ApiClient.java
 src/main/java/io/aurinko/client/ApiException.java
@@ -191,6 +201,7 @@ src/main/java/io/aurinko/client/ServerConfiguration.java
 src/main/java/io/aurinko/client/ServerVariable.java
 src/main/java/io/aurinko/client/model/AbstractOpenApiSchema.java
 src/main/java/io/aurinko/client/model/AccountSaveResult.java
+src/main/java/io/aurinko/client/model/AccountType.java
 src/main/java/io/aurinko/client/model/AccountsPage.java
 src/main/java/io/aurinko/client/model/AdditionalField.java
 src/main/java/io/aurinko/client/model/ApiAccountInDto.java
@@ -245,6 +256,10 @@ src/main/java/io/aurinko/client/model/EmailTrackingData.java
 src/main/java/io/aurinko/client/model/EmailTrackingEvent.java
 src/main/java/io/aurinko/client/model/EmailTrackingEventPageNext.java
 src/main/java/io/aurinko/client/model/EmailTrackingPageNext.java
+src/main/java/io/aurinko/client/model/EndUserAccountDto.java
+src/main/java/io/aurinko/client/model/EndUserAccountsPage.java
+src/main/java/io/aurinko/client/model/EndUserDto.java
+src/main/java/io/aurinko/client/model/EndUserExtIdType.java
 src/main/java/io/aurinko/client/model/Event.java
 src/main/java/io/aurinko/client/model/EventDateTime.java
 src/main/java/io/aurinko/client/model/EventOrId.java
@@ -265,6 +280,7 @@ src/main/java/io/aurinko/client/model/MeetingTime.java
 src/main/java/io/aurinko/client/model/OccurrenceInfo.java
 src/main/java/io/aurinko/client/model/OkResponse.java
 src/main/java/io/aurinko/client/model/OnlineMeetingDetails.java
+src/main/java/io/aurinko/client/model/OrganizationDto.java
 src/main/java/io/aurinko/client/model/Organizer.java
 src/main/java/io/aurinko/client/model/OutEmailTrack.java
 src/main/java/io/aurinko/client/model/OutgoingEmail.java
@@ -282,6 +298,7 @@ src/main/java/io/aurinko/client/model/SelectedMeetingTime.java
 src/main/java/io/aurinko/client/model/Sensitivity.java
 src/main/java/io/aurinko/client/model/SeriesInfo.java
 src/main/java/io/aurinko/client/model/ServiceKey.java
+src/main/java/io/aurinko/client/model/ServiceProvider.java
 src/main/java/io/aurinko/client/model/ServiceType.java
 src/main/java/io/aurinko/client/model/ServiceTypeDaemon.java
 src/main/java/io/aurinko/client/model/ServiceTypeNonDaemon.java
@@ -305,6 +322,7 @@ src/main/java/io/aurinko/client/model/TaskListUpdate.java
 src/main/java/io/aurinko/client/model/TaskUpdate.java
 src/main/java/io/aurinko/client/model/TaskUpdateResponse.java
 src/main/java/io/aurinko/client/model/TasksPage.java
+src/main/java/io/aurinko/client/model/TokenStatus.java
 src/main/java/io/aurinko/client/model/TrackingData.java
 src/main/java/io/aurinko/client/model/UpdateDraftTrackingIn.java
 src/main/java/io/aurinko/client/model/UpdateMessageStatusData.java
@@ -332,8 +350,10 @@ src/test/java/io/aurinko/api/ServicesApiTest.java
 src/test/java/io/aurinko/api/TaskListsApiTest.java
 src/test/java/io/aurinko/api/TaskSyncApiTest.java
 src/test/java/io/aurinko/api/TasksApiTest.java
+src/test/java/io/aurinko/api/UserApiTest.java
 src/test/java/io/aurinko/api/WebhooksApiTest.java
 src/test/java/io/aurinko/client/model/AccountSaveResultTest.java
+src/test/java/io/aurinko/client/model/AccountTypeTest.java
 src/test/java/io/aurinko/client/model/AccountsPageTest.java
 src/test/java/io/aurinko/client/model/AdditionalFieldTest.java
 src/test/java/io/aurinko/client/model/ApiAccountInDtoTest.java
@@ -388,6 +408,10 @@ src/test/java/io/aurinko/client/model/EmailTrackingDataTest.java
 src/test/java/io/aurinko/client/model/EmailTrackingEventPageNextTest.java
 src/test/java/io/aurinko/client/model/EmailTrackingEventTest.java
 src/test/java/io/aurinko/client/model/EmailTrackingPageNextTest.java
+src/test/java/io/aurinko/client/model/EndUserAccountDtoTest.java
+src/test/java/io/aurinko/client/model/EndUserAccountsPageTest.java
+src/test/java/io/aurinko/client/model/EndUserDtoTest.java
+src/test/java/io/aurinko/client/model/EndUserExtIdTypeTest.java
 src/test/java/io/aurinko/client/model/EventDateTimeTest.java
 src/test/java/io/aurinko/client/model/EventOrIdTest.java
 src/test/java/io/aurinko/client/model/EventTest.java
@@ -408,6 +432,7 @@ src/test/java/io/aurinko/client/model/MeetingTimeTest.java
 src/test/java/io/aurinko/client/model/OccurrenceInfoTest.java
 src/test/java/io/aurinko/client/model/OkResponseTest.java
 src/test/java/io/aurinko/client/model/OnlineMeetingDetailsTest.java
+src/test/java/io/aurinko/client/model/OrganizationDtoTest.java
 src/test/java/io/aurinko/client/model/OrganizerTest.java
 src/test/java/io/aurinko/client/model/OutEmailTrackTest.java
 src/test/java/io/aurinko/client/model/OutgoingEmailAttachmentTest.java
@@ -425,6 +450,7 @@ src/test/java/io/aurinko/client/model/SelectedMeetingTimeTest.java
 src/test/java/io/aurinko/client/model/SensitivityTest.java
 src/test/java/io/aurinko/client/model/SeriesInfoTest.java
 src/test/java/io/aurinko/client/model/ServiceKeyTest.java
+src/test/java/io/aurinko/client/model/ServiceProviderTest.java
 src/test/java/io/aurinko/client/model/ServiceTypeDaemonTest.java
 src/test/java/io/aurinko/client/model/ServiceTypeNonDaemonTest.java
 src/test/java/io/aurinko/client/model/ServiceTypeTest.java
@@ -448,6 +474,7 @@ src/test/java/io/aurinko/client/model/TaskTest.java
 src/test/java/io/aurinko/client/model/TaskUpdateResponseTest.java
 src/test/java/io/aurinko/client/model/TaskUpdateTest.java
 src/test/java/io/aurinko/client/model/TasksPageTest.java
+src/test/java/io/aurinko/client/model/TokenStatusTest.java
 src/test/java/io/aurinko/client/model/TrackingDataTest.java
 src/test/java/io/aurinko/client/model/UpdateDraftTrackingInTest.java
 src/test/java/io/aurinko/client/model/UpdateMessageStatusDataTest.java

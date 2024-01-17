@@ -11,9 +11,9 @@
 |**parentId** | **Long** |  |  [optional] |
 |**serviceType** | **ServiceType** |  |  [optional] |
 |**active** | **Boolean** |  |  [optional] |
-|**tokenStatus** | [**TokenStatusEnum**](#TokenStatusEnum) |  |  [optional] |
+|**tokenStatus** | **TokenStatus** |  |  [optional] |
 |**tokenError** | **String** |  |  [optional] |
-|**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
+|**type** | **AccountType** |  |  [optional] |
 |**daemon** | **Boolean** |  |  [optional] |
 |**loginString** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
@@ -32,27 +32,6 @@
 |**authObtainedAt** | **OffsetDateTime** |  |  [optional] |
 |**authExpiresAt** | **OffsetDateTime** |  |  [optional] |
 |**userId** | **String** |  |  [optional] |
-
-
-
-## Enum: TokenStatusEnum
-
-| Name | Value |
-|---- | -----|
-| DEAD | &quot;dead&quot; |
-| INVALID | &quot;invalid&quot; |
-| ACTIVE | &quot;active&quot; |
-| REQUIRED | &quot;required&quot; |
-
-
-
-## Enum: TypeEnum
-
-| Name | Value |
-|---- | -----|
-| DAEMON | &quot;daemon&quot; |
-| PERSONAL | &quot;personal&quot; |
-| MANAGED | &quot;managed&quot; |
 
 
 
