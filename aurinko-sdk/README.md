@@ -4,7 +4,7 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Build date: 2024-01-09T14:13:35.152987Z[Africa/Bamako]
+- Build date: 2024-01-17T11:18:51.511282Z[Africa/Bamako]
 
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with

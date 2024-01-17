@@ -32,7 +32,9 @@ public enum BodyType {
   
   HTML("html"),
   
-  TEXT("text");
+  TEXT("text"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -57,7 +59,7 @@ public enum BodyType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

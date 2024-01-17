@@ -36,7 +36,9 @@ public enum TokenStatus {
   
   ACTIVE("active"),
   
-  REQUIRED("required");
+  REQUIRED("required"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -61,7 +63,7 @@ public enum TokenStatus {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

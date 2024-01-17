@@ -27,6 +27,7 @@
 | MONTHLYRELATIVE | &quot;monthlyRelative&quot; |
 | YEARLY | &quot;yearly&quot; |
 | YEARLYRELATIVE | &quot;yearlyRelative&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -36,6 +37,7 @@
 |---- | -----|
 | MONDAY | &quot;monday&quot; |
 | SUNDAY | &quot;sunday&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -48,6 +50,7 @@
 | THIRD | &quot;third&quot; |
 | FOURTH | &quot;fourth&quot; |
 | LAST | &quot;last&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

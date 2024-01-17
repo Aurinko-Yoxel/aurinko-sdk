@@ -51,7 +51,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OutgoingEmailReply.JSON_PROPERTY_TRACKING,
   OutgoingEmailReply.JSON_PROPERTY_FOLLOW_UP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class OutgoingEmailReply {
   public static final String JSON_PROPERTY_FROM = "from";
   private EmailAddress from;

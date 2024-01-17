@@ -30,7 +30,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum EndUserExtIdType {
   
-  EXCHANGEIDENTITY("exchangeIdentity");
+  EXCHANGEIDENTITY("exchangeIdentity"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -55,7 +57,7 @@ public enum EndUserExtIdType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

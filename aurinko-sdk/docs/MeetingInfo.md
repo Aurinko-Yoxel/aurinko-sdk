@@ -25,6 +25,7 @@
 | DECLINED | &quot;declined&quot; |
 | TENTATIVE | &quot;tentative&quot; |
 | ACCEPTED | &quot;accepted&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -35,6 +36,7 @@
 | INVITEOTHERS | &quot;inviteOthers&quot; |
 | MODIFY | &quot;modify&quot; |
 | SEEOTHERS | &quot;seeOthers&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -21,6 +21,7 @@
 | SCHEDULED | &quot;scheduled&quot; |
 | SENT | &quot;sent&quot; |
 | FAILED | &quot;failed&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

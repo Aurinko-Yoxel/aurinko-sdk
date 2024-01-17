@@ -25,6 +25,7 @@
 | WORK | &quot;work&quot; |
 | HOME | &quot;home&quot; |
 | OTHER | &quot;other&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

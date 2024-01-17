@@ -43,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimplePattern.JSON_PROPERTY_MONTH_OF_YEAR,
   RecurrenceSimplePattern.JSON_PROPERTY_INSTANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class RecurrenceSimplePattern {
   /**
    * Gets or Sets frequency
@@ -59,7 +59,9 @@ public class RecurrenceSimplePattern {
     
     YEARLY("yearly"),
     
-    YEARLYRELATIVE("yearlyRelative");
+    YEARLYRELATIVE("yearlyRelative"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -84,7 +86,7 @@ public class RecurrenceSimplePattern {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -103,7 +105,9 @@ public class RecurrenceSimplePattern {
   public enum WeekStartEnum {
     MONDAY("monday"),
     
-    SUNDAY("sunday");
+    SUNDAY("sunday"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -128,7 +132,7 @@ public class RecurrenceSimplePattern {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -153,7 +157,9 @@ public class RecurrenceSimplePattern {
     
     FOURTH("fourth"),
     
-    LAST("last");
+    LAST("last"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -178,7 +184,7 @@ public class RecurrenceSimplePattern {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

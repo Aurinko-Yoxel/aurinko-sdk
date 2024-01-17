@@ -41,6 +41,7 @@
 | SINGLE | &quot;single&quot; |
 | MASTER | &quot;master&quot; |
 | OCCURRENCE | &quot;occurrence&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -51,6 +52,7 @@
 | DESCRIPTION | &quot;description&quot; |
 | ATTENDEES | &quot;attendees&quot; |
 | ATTACHMENTS | &quot;attachments&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

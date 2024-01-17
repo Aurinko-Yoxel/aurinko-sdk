@@ -51,6 +51,7 @@
 | FLAGGED | &quot;flagged&quot; |
 | IMPORTANT | &quot;important&quot; |
 | DRAFT | &quot;draft&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -63,6 +64,7 @@
 | PROMOTIONS | &quot;promotions&quot; |
 | UPDATES | &quot;updates&quot; |
 | FORUMS | &quot;forums&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -75,6 +77,7 @@
 | CANCEL | &quot;cancel&quot; |
 | COUNTER | &quot;counter&quot; |
 | OTHER | &quot;other&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -87,6 +90,7 @@
 | ATTACHMENTS | &quot;attachments&quot; |
 | RECIPIENTS | &quot;recipients&quot; |
 | INTERNETHEADERS | &quot;internetHeaders&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

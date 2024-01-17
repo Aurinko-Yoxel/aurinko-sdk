@@ -2162,7 +2162,7 @@ CompletableFuture<ApiResponse<[**EventOrId**](EventOrId.md)>>
 
 ## updateMeetingResponse
 
-> CompletableFuture<OkResponse> updateMeetingResponse(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event)
+> CompletableFuture<OkResponse> updateMeetingResponse(calendarId, eventId, notifyAttendees, event)
 
 Update meeting response
 
@@ -2229,12 +2229,10 @@ public class Example {
         EventsApi apiInstance = new EventsApi(defaultClient);
         String calendarId = "calendarId_example"; // String | Calendar id
         String eventId = "eventId_example"; // String | Event id
-        String ifMatch = "ifMatch_example"; // String | The HTTP entity tag of the resource (ETag). Used for web cache validation.
         Boolean notifyAttendees = true; // Boolean | 
-        Boolean returnRecord = true; // Boolean | Whether response must contain a record that has been updated. This can result in an additional request to provider API.
         Event event = new Event(); // Event | 
         try {
-            CompletableFuture<OkResponse> result = apiInstance.updateMeetingResponse(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event);
+            CompletableFuture<OkResponse> result = apiInstance.updateMeetingResponse(calendarId, eventId, notifyAttendees, event);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling EventsApi#updateMeetingResponse");
@@ -2254,9 +2252,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **calendarId** | **String**| Calendar id | |
 | **eventId** | **String**| Event id | |
-| **ifMatch** | **String**| The HTTP entity tag of the resource (ETag). Used for web cache validation. | |
 | **notifyAttendees** | **Boolean**|  | [optional] [default to true] |
-| **returnRecord** | **Boolean**| Whether response must contain a record that has been updated. This can result in an additional request to provider API. | [optional] [default to true] |
 | **event** | [**Event**](Event.md)|  | [optional] |
 
 ### Return type
@@ -2280,7 +2276,7 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 
 ## updateMeetingResponseWithHttpInfo
 
-> CompletableFuture<ApiResponse<OkResponse>> updateMeetingResponse updateMeetingResponseWithHttpInfo(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event)
+> CompletableFuture<ApiResponse<OkResponse>> updateMeetingResponse updateMeetingResponseWithHttpInfo(calendarId, eventId, notifyAttendees, event)
 
 Update meeting response
 
@@ -2348,12 +2344,10 @@ public class Example {
         EventsApi apiInstance = new EventsApi(defaultClient);
         String calendarId = "calendarId_example"; // String | Calendar id
         String eventId = "eventId_example"; // String | Event id
-        String ifMatch = "ifMatch_example"; // String | The HTTP entity tag of the resource (ETag). Used for web cache validation.
         Boolean notifyAttendees = true; // Boolean | 
-        Boolean returnRecord = true; // Boolean | Whether response must contain a record that has been updated. This can result in an additional request to provider API.
         Event event = new Event(); // Event | 
         try {
-            CompletableFuture<ApiResponse<OkResponse>> response = apiInstance.updateMeetingResponseWithHttpInfo(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event);
+            CompletableFuture<ApiResponse<OkResponse>> response = apiInstance.updateMeetingResponseWithHttpInfo(calendarId, eventId, notifyAttendees, event);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -2382,9 +2376,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **calendarId** | **String**| Calendar id | |
 | **eventId** | **String**| Event id | |
-| **ifMatch** | **String**| The HTTP entity tag of the resource (ETag). Used for web cache validation. | |
 | **notifyAttendees** | **Boolean**|  | [optional] [default to true] |
-| **returnRecord** | **Boolean**| Whether response must contain a record that has been updated. This can result in an additional request to provider API. | [optional] [default to true] |
 | **event** | [**Event**](Event.md)|  | [optional] |
 
 ### Return type

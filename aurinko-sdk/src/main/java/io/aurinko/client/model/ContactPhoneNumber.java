@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ContactPhoneNumber.JSON_PROPERTY_TYPE,
   ContactPhoneNumber.JSON_PROPERTY_CANONICAL_FORM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class ContactPhoneNumber {
   public static final String JSON_PROPERTY_NUMBER = "number";
   private String number;
@@ -77,7 +77,9 @@ public class ContactPhoneNumber {
     
     TELEX("telex"),
     
-    TTY("tty");
+    TTY("tty"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -102,7 +104,7 @@ public class ContactPhoneNumber {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

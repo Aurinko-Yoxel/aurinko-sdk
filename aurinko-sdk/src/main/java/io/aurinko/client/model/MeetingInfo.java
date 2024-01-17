@@ -44,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class MeetingInfo {
   public static final String JSON_PROPERTY_CANCELED = "canceled";
   private Boolean canceled;
@@ -62,7 +62,9 @@ public class MeetingInfo {
     
     TENTATIVE("tentative"),
     
-    ACCEPTED("accepted");
+    ACCEPTED("accepted"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -87,7 +89,7 @@ public class MeetingInfo {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -102,7 +104,9 @@ public class MeetingInfo {
     
     MODIFY("modify"),
     
-    SEEOTHERS("seeOthers");
+    SEEOTHERS("seeOthers"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -127,7 +131,7 @@ public class MeetingInfo {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

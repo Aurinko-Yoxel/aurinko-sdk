@@ -41,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ContactPostalAddress.JSON_PROPERTY_COUNTRY,
   ContactPostalAddress.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class ContactPostalAddress {
   public static final String JSON_PROPERTY_STREET = "street";
   private String street;
@@ -72,7 +72,9 @@ public class ContactPostalAddress {
     
     HOME("home"),
     
-    OTHER("other");
+    OTHER("other"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -97,7 +99,7 @@ public class ContactPostalAddress {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

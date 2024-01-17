@@ -50,7 +50,9 @@ public enum Scope {
   
   TASKS_READ("Tasks.Read"),
   
-  TASKS_READWRITE("Tasks.ReadWrite");
+  TASKS_READWRITE("Tasks.ReadWrite"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -75,7 +77,7 @@ public enum Scope {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

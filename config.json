@@ -15,6 +15,7 @@
   "modelPackage": "io.aurinko.client.model",
   "library": "native",
   "asyncNative": true,
-  "serializationLibrary": "jackson"
+  "serializationLibrary": "jackson",
+  "enumUnknownDefaultCase": true
 }
 

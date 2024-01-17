@@ -50,7 +50,9 @@ public enum ServiceTypeDaemon {
   
   MCTRADE("MCTrade"),
   
-  ZOHO("Zoho");
+  ZOHO("Zoho"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -75,7 +77,7 @@ public enum ServiceTypeDaemon {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   /**

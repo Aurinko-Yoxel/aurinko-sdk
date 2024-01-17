@@ -22,6 +22,7 @@
 | REGULAR | &quot;regular&quot; |
 | MODIFIED | &quot;modified&quot; |
 | DELETED | &quot;deleted&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

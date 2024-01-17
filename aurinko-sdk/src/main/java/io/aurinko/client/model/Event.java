@@ -68,7 +68,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Event.JSON_PROPERTY_ATTACHMENTS,
   Event.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class Event {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -114,7 +114,9 @@ public class Event {
     
     MASTER("master"),
     
-    OCCURRENCE("occurrence");
+    OCCURRENCE("occurrence"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -139,7 +141,7 @@ public class Event {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -184,7 +186,9 @@ public class Event {
     
     ATTENDEES("attendees"),
     
-    ATTACHMENTS("attachments");
+    ATTACHMENTS("attachments"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -209,7 +213,7 @@ public class Event {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

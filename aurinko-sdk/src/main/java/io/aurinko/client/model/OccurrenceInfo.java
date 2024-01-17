@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OccurrenceInfo.JSON_PROPERTY_START,
   OccurrenceInfo.JSON_PROPERTY_MASTER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class OccurrenceInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -52,7 +52,9 @@ public class OccurrenceInfo {
     
     MODIFIED("modified"),
     
-    DELETED("deleted");
+    DELETED("deleted"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -77,7 +79,7 @@ public class OccurrenceInfo {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

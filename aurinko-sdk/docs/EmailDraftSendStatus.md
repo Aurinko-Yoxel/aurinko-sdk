@@ -17,6 +17,7 @@
 |---- | -----|
 | OK | &quot;Ok&quot; |
 | SCHEDULED | &quot;Scheduled&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

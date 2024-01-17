@@ -43,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   DripRequestDTO.JSON_PROPERTY_TARGETS,
   DripRequestDTO.JSON_PROPERTY_ACTION_VARS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class DripRequestDTO {
   /**
    * Gets or Sets status
@@ -51,7 +51,9 @@ public class DripRequestDTO {
   public enum StatusEnum {
     DISABLED("disabled"),
     
-    ACTIVE("active");
+    ACTIVE("active"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -76,7 +78,7 @@ public class DripRequestDTO {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

@@ -71,7 +71,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailMessage.JSON_PROPERTY_FOLDER_ID,
   EmailMessage.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class EmailMessage {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -115,7 +115,9 @@ public class EmailMessage {
     
     IMPORTANT("important"),
     
-    DRAFT("draft");
+    DRAFT("draft"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -140,7 +142,7 @@ public class EmailMessage {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -162,7 +164,9 @@ public class EmailMessage {
     
     UPDATES("updates"),
     
-    FORUMS("forums");
+    FORUMS("forums"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -187,7 +191,7 @@ public class EmailMessage {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -209,7 +213,9 @@ public class EmailMessage {
     
     COUNTER("counter"),
     
-    OTHER("other");
+    OTHER("other"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -234,7 +240,7 @@ public class EmailMessage {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -298,7 +304,9 @@ public class EmailMessage {
     
     RECIPIENTS("recipients"),
     
-    INTERNETHEADERS("internetHeaders");
+    INTERNETHEADERS("internetHeaders"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -323,7 +331,7 @@ public class EmailMessage {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

@@ -36,13 +36,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailSendResponse.JSON_PROPERTY_ID,
   EmailSendResponse.JSON_PROPERTY_THREAD_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class EmailSendResponse {
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("Ok");
+    OK("Ok"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -67,7 +69,7 @@ public class EmailSendResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

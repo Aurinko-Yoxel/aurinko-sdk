@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RewriteHtml.JSON_PROPERTY_HTML_TEXT,
   RewriteHtml.JSON_PROPERTY_TRACKING
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-09T14:13:35.152987Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
 public class RewriteHtml {
   public static final String JSON_PROPERTY_HTML_TEXT = "htmlText";
   private String htmlText;

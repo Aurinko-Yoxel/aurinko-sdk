@@ -28,6 +28,7 @@
 | COMPLETED | &quot;completed&quot; |
 | WAITINGONOTHERS | &quot;waitingOnOthers&quot; |
 | DEFERRED | &quot;deferred&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -38,6 +39,7 @@
 | LOW | &quot;low&quot; |
 | NORMAL | &quot;normal&quot; |
 | HIGH | &quot;high&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

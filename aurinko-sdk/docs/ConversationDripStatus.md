@@ -30,6 +30,7 @@
 | FAILED | &quot;failed&quot; |
 | FINISHED | &quot;finished&quot; |
 | RULEINCOMPLETE | &quot;ruleIncomplete&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
