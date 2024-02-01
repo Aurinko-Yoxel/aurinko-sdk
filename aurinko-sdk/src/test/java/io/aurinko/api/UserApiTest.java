@@ -39,7 +39,7 @@ public class UserApiTest {
 
     
     /**
-     * Copy specified account to managed
+     * Make a user account &#39;managed&#39;
      *
      * 
      *
@@ -106,9 +106,9 @@ public class UserApiTest {
     }
     
     /**
-     * Drop a user&#39;s cookie
+     * Log out a user
      *
-     * 
+     * Invalidates the user&#39;s session cookie
      *
      * @throws ApiException
      *          if the Api call fails
@@ -122,9 +122,9 @@ public class UserApiTest {
     }
     
     /**
-     * Logout from user&#39;s account by id
+     * Delete a user account
      *
-     * 
+     * Deleting a primary account, also invalidates the user&#39;s session cookie (logout).
      *
      * @throws ApiException
      *          if the Api call fails

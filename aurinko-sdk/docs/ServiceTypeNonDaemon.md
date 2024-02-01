@@ -45,7 +45,7 @@
 
 * `NETSUITE` (value: `"NetSuite"`)
 
-* `DDS` (value: `"DDS"`)
+* `SPECPATH` (value: `"SpecPath"`)
 
 * `ZOHO` (value: `"Zoho"`)
 

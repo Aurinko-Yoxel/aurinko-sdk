@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceIcal.JSON_PROPERTY_RULES,
   RecurrenceIcal.JSON_PROPERTY_RECURRENCE_START
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class RecurrenceIcal {
   public static final String JSON_PROPERTY_RULES = "rules";
   private List<String> rules;

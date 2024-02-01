@@ -80,7 +80,7 @@ public enum ServiceType {
   
   MCTRADE("MCTrade"),
   
-  DDS("DDS"),
+  SPECPATH("SpecPath"),
   
   ZOHO("Zoho"),
   

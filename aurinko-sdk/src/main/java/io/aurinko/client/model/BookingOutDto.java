@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.WeekWorkSchedule;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -37,15 +38,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingOutDto.JSON_PROPERTY_NAME,
   BookingOutDto.JSON_PROPERTY_DURATION_MINUTES,
   BookingOutDto.JSON_PROPERTY_AVAILABILITY_STEP,
+  BookingOutDto.JSON_PROPERTY_START_TIME,
   BookingOutDto.JSON_PROPERTY_TIME_AVAILABLE_FOR,
   BookingOutDto.JSON_PROPERTY_SUBJECT,
   BookingOutDto.JSON_PROPERTY_DESCRIPTION,
   BookingOutDto.JSON_PROPERTY_LOCATION,
   BookingOutDto.JSON_PROPERTY_WORK_HOURS,
   BookingOutDto.JSON_PROPERTY_CONTEXT,
-  BookingOutDto.JSON_PROPERTY_START_CONFERENCE
+  BookingOutDto.JSON_PROPERTY_START_CONFERENCE,
+  BookingOutDto.JSON_PROPERTY_OPEN_MEETING_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class BookingOutDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -58,6 +61,9 @@ public class BookingOutDto {
 
   public static final String JSON_PROPERTY_AVAILABILITY_STEP = "availabilityStep";
   private Integer availabilityStep;
+
+  public static final String JSON_PROPERTY_START_TIME = "startTime";
+  private OffsetDateTime startTime;
 
   public static final String JSON_PROPERTY_TIME_AVAILABLE_FOR = "timeAvailableFor";
   private String timeAvailableFor;
@@ -79,6 +85,9 @@ public class BookingOutDto {
 
   public static final String JSON_PROPERTY_START_CONFERENCE = "startConference";
   private Boolean startConference;
+
+  public static final String JSON_PROPERTY_OPEN_MEETING_URL = "openMeetingUrl";
+  private String openMeetingUrl;
 
   public BookingOutDto() { 
   }
@@ -180,6 +189,31 @@ public class BookingOutDto {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAvailabilityStep(Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
+  }
+
+
+  public BookingOutDto startTime(OffsetDateTime startTime) {
+    this.startTime = startTime;
+    return this;
+  }
+
+   /**
+   * Get startTime
+   * @return startTime
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_START_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getStartTime() {
+    return startTime;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_START_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStartTime(OffsetDateTime startTime) {
+    this.startTime = startTime;
   }
 
 
@@ -358,6 +392,31 @@ public class BookingOutDto {
   }
 
 
+  public BookingOutDto openMeetingUrl(String openMeetingUrl) {
+    this.openMeetingUrl = openMeetingUrl;
+    return this;
+  }
+
+   /**
+   * Get openMeetingUrl
+   * @return openMeetingUrl
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OPEN_MEETING_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getOpenMeetingUrl() {
+    return openMeetingUrl;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OPEN_MEETING_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOpenMeetingUrl(String openMeetingUrl) {
+    this.openMeetingUrl = openMeetingUrl;
+  }
+
+
   /**
    * Return true if this BookingOutDto object is equal to o.
    */
@@ -374,18 +433,20 @@ public class BookingOutDto {
         Objects.equals(this.name, bookingOutDto.name) &&
         Objects.equals(this.durationMinutes, bookingOutDto.durationMinutes) &&
         Objects.equals(this.availabilityStep, bookingOutDto.availabilityStep) &&
+        Objects.equals(this.startTime, bookingOutDto.startTime) &&
         Objects.equals(this.timeAvailableFor, bookingOutDto.timeAvailableFor) &&
         Objects.equals(this.subject, bookingOutDto.subject) &&
         Objects.equals(this.description, bookingOutDto.description) &&
         Objects.equals(this.location, bookingOutDto.location) &&
         Objects.equals(this.workHours, bookingOutDto.workHours) &&
         Objects.equals(this.context, bookingOutDto.context) &&
-        Objects.equals(this.startConference, bookingOutDto.startConference);
+        Objects.equals(this.startConference, bookingOutDto.startConference) &&
+        Objects.equals(this.openMeetingUrl, bookingOutDto.openMeetingUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, durationMinutes, availabilityStep, timeAvailableFor, subject, description, location, workHours, context, startConference);
+    return Objects.hash(id, name, durationMinutes, availabilityStep, startTime, timeAvailableFor, subject, description, location, workHours, context, startConference, openMeetingUrl);
   }
 
   @Override
@@ -396,6 +457,7 @@ public class BookingOutDto {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
     sb.append("    availabilityStep: ").append(toIndentedString(availabilityStep)).append("\n");
+    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    timeAvailableFor: ").append(toIndentedString(timeAvailableFor)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -403,6 +465,7 @@ public class BookingOutDto {
     sb.append("    workHours: ").append(toIndentedString(workHours)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    startConference: ").append(toIndentedString(startConference)).append("\n");
+    sb.append("    openMeetingUrl: ").append(toIndentedString(openMeetingUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -470,6 +533,11 @@ public class BookingOutDto {
       joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
+    // add `startTime` to the URL query string
+    if (getStartTime() != null) {
+      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
     // add `timeAvailableFor` to the URL query string
     if (getTimeAvailableFor() != null) {
       joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimeAvailableFor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
@@ -503,6 +571,11 @@ public class BookingOutDto {
     // add `startConference` to the URL query string
     if (getStartConference() != null) {
       joiner.add(String.format("%sstartConference%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartConference()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `openMeetingUrl` to the URL query string
+    if (getOpenMeetingUrl() != null) {
+      joiner.add(String.format("%sopenMeetingUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOpenMeetingUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

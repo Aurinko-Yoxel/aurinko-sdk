@@ -4,7 +4,7 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Build date: 2024-01-17T11:18:51.511282Z[Africa/Bamako]
+- Build date: 2024-02-01T09:20:22.278375Z[Africa/Bamako]
 
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with
@@ -328,18 +328,18 @@ Class | Method | HTTP request | Description
 *TasksApi* | [**tasksListWithHttpInfo**](docs/TasksApi.md#tasksListWithHttpInfo) | **GET** /v1/tasklists/{taskListId}/tasks | Request list of tasks
 *TasksApi* | [**updateTask**](docs/TasksApi.md#updateTask) | **PATCH** /v1/tasklists/{taskListId}/tasks/{id} | Update a task
 *TasksApi* | [**updateTaskWithHttpInfo**](docs/TasksApi.md#updateTaskWithHttpInfo) | **PATCH** /v1/tasklists/{taskListId}/tasks/{id} | Update a task
-*UserApi* | [**copyAsManaged**](docs/UserApi.md#copyAsManaged) | **POST** /v1/user/accounts/{id}/managed | Copy specified account to managed
-*UserApi* | [**copyAsManagedWithHttpInfo**](docs/UserApi.md#copyAsManagedWithHttpInfo) | **POST** /v1/user/accounts/{id}/managed | Copy specified account to managed
+*UserApi* | [**copyAsManaged**](docs/UserApi.md#copyAsManaged) | **POST** /v1/user/accounts/{id}/managed | Make a user account &#39;managed&#39;
+*UserApi* | [**copyAsManagedWithHttpInfo**](docs/UserApi.md#copyAsManagedWithHttpInfo) | **POST** /v1/user/accounts/{id}/managed | Make a user account &#39;managed&#39;
 *UserApi* | [**getEndUserAccount**](docs/UserApi.md#getEndUserAccount) | **GET** /v1/user/accounts/{id} | Get user account by id
 *UserApi* | [**getEndUserAccountWithHttpInfo**](docs/UserApi.md#getEndUserAccountWithHttpInfo) | **GET** /v1/user/accounts/{id} | Get user account by id
 *UserApi* | [**getEndUserAccounts**](docs/UserApi.md#getEndUserAccounts) | **GET** /v1/user/accounts | Get user accounts
 *UserApi* | [**getEndUserAccountsWithHttpInfo**](docs/UserApi.md#getEndUserAccountsWithHttpInfo) | **GET** /v1/user/accounts | Get user accounts
 *UserApi* | [**getUserInfo**](docs/UserApi.md#getUserInfo) | **GET** /v1/user | Get user info
 *UserApi* | [**getUserInfoWithHttpInfo**](docs/UserApi.md#getUserInfoWithHttpInfo) | **GET** /v1/user | Get user info
-*UserApi* | [**logout**](docs/UserApi.md#logout) | **POST** /v1/user/logout | Drop a user&#39;s cookie
-*UserApi* | [**logoutWithHttpInfo**](docs/UserApi.md#logoutWithHttpInfo) | **POST** /v1/user/logout | Drop a user&#39;s cookie
-*UserApi* | [**logoutAccount**](docs/UserApi.md#logoutAccount) | **DELETE** /v1/user/accounts/{id} | Logout from user&#39;s account by id
-*UserApi* | [**logoutAccountWithHttpInfo**](docs/UserApi.md#logoutAccountWithHttpInfo) | **DELETE** /v1/user/accounts/{id} | Logout from user&#39;s account by id
+*UserApi* | [**logout**](docs/UserApi.md#logout) | **POST** /v1/user/logout | Log out a user
+*UserApi* | [**logoutWithHttpInfo**](docs/UserApi.md#logoutWithHttpInfo) | **POST** /v1/user/logout | Log out a user
+*UserApi* | [**logoutAccount**](docs/UserApi.md#logoutAccount) | **DELETE** /v1/user/accounts/{id} | Delete a user account
+*UserApi* | [**logoutAccountWithHttpInfo**](docs/UserApi.md#logoutAccountWithHttpInfo) | **DELETE** /v1/user/accounts/{id} | Delete a user account
 *WebhooksApi* | [**getSubscription**](docs/WebhooksApi.md#getSubscription) | **GET** /v1/subscriptions/{id} | Check a subscription status
 *WebhooksApi* | [**getSubscriptionWithHttpInfo**](docs/WebhooksApi.md#getSubscriptionWithHttpInfo) | **GET** /v1/subscriptions/{id} | Check a subscription status
 *WebhooksApi* | [**getSubscriptions**](docs/WebhooksApi.md#getSubscriptions) | **GET** /v1/subscriptions | Get a list of push event subscriptions

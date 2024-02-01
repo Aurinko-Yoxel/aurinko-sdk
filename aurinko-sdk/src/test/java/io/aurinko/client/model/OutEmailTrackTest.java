@@ -54,6 +54,14 @@ public class OutEmailTrackTest {
     }
 
     /**
+     * Test the property 'trackOpensAfterSendDelay'
+     */
+    @Test
+    public void trackOpensAfterSendDelayTest() {
+        // TODO: test trackOpensAfterSendDelay
+    }
+
+    /**
      * Test the property 'links'
      */
     @Test

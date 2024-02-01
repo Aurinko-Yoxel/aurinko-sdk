@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ContactPhoneNumber.JSON_PROPERTY_TYPE,
   ContactPhoneNumber.JSON_PROPERTY_CANONICAL_FORM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class ContactPhoneNumber {
   public static final String JSON_PROPERTY_NUMBER = "number";
   private String number;

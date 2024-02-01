@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SuggestMeetingTimesRequest.JSON_PROPERTY_DEFAULT_WORK_HOURS,
   SuggestMeetingTimesRequest.JSON_PROPERTY_FREE_STATUSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class SuggestMeetingTimesRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   private OffsetDateTime timeMin;

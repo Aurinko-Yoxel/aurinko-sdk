@@ -34,16 +34,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
   OutEmailTrack.JSON_PROPERTY_THREAD_REPLIES,
   OutEmailTrack.JSON_PROPERTY_OPENS,
+  OutEmailTrack.JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY,
   OutEmailTrack.JSON_PROPERTY_LINKS,
   OutEmailTrack.JSON_PROPERTY_CONTEXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class OutEmailTrack {
   public static final String JSON_PROPERTY_THREAD_REPLIES = "threadReplies";
   private Boolean threadReplies;
 
   public static final String JSON_PROPERTY_OPENS = "opens";
   private Boolean opens;
+
+  public static final String JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY = "trackOpensAfterSendDelay";
+  private Integer trackOpensAfterSendDelay = 5;
 
   public static final String JSON_PROPERTY_LINKS = "links";
   private Boolean links;
@@ -101,6 +105,31 @@ public class OutEmailTrack {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpens(Boolean opens) {
     this.opens = opens;
+  }
+
+
+  public OutEmailTrack trackOpensAfterSendDelay(Integer trackOpensAfterSendDelay) {
+    this.trackOpensAfterSendDelay = trackOpensAfterSendDelay;
+    return this;
+  }
+
+   /**
+   * number of seconds to wait after a send before enabling tracking
+   * @return trackOpensAfterSendDelay
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getTrackOpensAfterSendDelay() {
+    return trackOpensAfterSendDelay;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTrackOpensAfterSendDelay(Integer trackOpensAfterSendDelay) {
+    this.trackOpensAfterSendDelay = trackOpensAfterSendDelay;
   }
 
 
@@ -168,13 +197,14 @@ public class OutEmailTrack {
     OutEmailTrack outEmailTrack = (OutEmailTrack) o;
     return Objects.equals(this.threadReplies, outEmailTrack.threadReplies) &&
         Objects.equals(this.opens, outEmailTrack.opens) &&
+        Objects.equals(this.trackOpensAfterSendDelay, outEmailTrack.trackOpensAfterSendDelay) &&
         Objects.equals(this.links, outEmailTrack.links) &&
         Objects.equals(this.context, outEmailTrack.context);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(threadReplies, opens, links, context);
+    return Objects.hash(threadReplies, opens, trackOpensAfterSendDelay, links, context);
   }
 
   @Override
@@ -183,6 +213,7 @@ public class OutEmailTrack {
     sb.append("class OutEmailTrack {\n");
     sb.append("    threadReplies: ").append(toIndentedString(threadReplies)).append("\n");
     sb.append("    opens: ").append(toIndentedString(opens)).append("\n");
+    sb.append("    trackOpensAfterSendDelay: ").append(toIndentedString(trackOpensAfterSendDelay)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("}");
@@ -240,6 +271,11 @@ public class OutEmailTrack {
     // add `opens` to the URL query string
     if (getOpens() != null) {
       joiner.add(String.format("%sopens%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOpens()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `trackOpensAfterSendDelay` to the URL query string
+    if (getTrackOpensAfterSendDelay() != null) {
+      joiner.add(String.format("%strackOpensAfterSendDelay%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackOpensAfterSendDelay()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `links` to the URL query string

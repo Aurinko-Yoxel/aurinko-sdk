@@ -66,7 +66,7 @@ public enum ServiceProvider {
   
   AUTOQUOTES("AutoQuotes"),
   
-  DDS("DDS"),
+  SPECPATH("SpecPath"),
   
   CLIENTIFY("Clientify"),
   

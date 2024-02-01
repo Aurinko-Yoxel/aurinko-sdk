@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.WeekWorkSchedule;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -68,6 +69,14 @@ public class BookingOutDtoTest {
     @Test
     public void availabilityStepTest() {
         // TODO: test availabilityStep
+    }
+
+    /**
+     * Test the property 'startTime'
+     */
+    @Test
+    public void startTimeTest() {
+        // TODO: test startTime
     }
 
     /**
@@ -124,6 +133,14 @@ public class BookingOutDtoTest {
     @Test
     public void startConferenceTest() {
         // TODO: test startConference
+    }
+
+    /**
+     * Test the property 'openMeetingUrl'
+     */
+    @Test
+    public void openMeetingUrlTest() {
+        // TODO: test openMeetingUrl
     }
 
 }

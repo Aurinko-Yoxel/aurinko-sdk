@@ -53,7 +53,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class EventsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -1135,14 +1135,16 @@ public class EventsApi {
    * 
    * @param calendarId Calendar id (required)
    * @param eventId Event id (required)
+   * @param ifMatch The HTTP entity tag of the resource (ETag). Used for web cache validation. (required)
    * @param notifyAttendees  (optional, default to true)
+   * @param returnRecord Whether response must contain a record that has been updated. This can result in an additional request to provider API. (optional, default to true)
    * @param event  (optional)
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> updateMeetingResponse(String calendarId, String eventId, Boolean notifyAttendees, Event event) throws ApiException {
+  public CompletableFuture<OkResponse> updateMeetingResponse(String calendarId, String eventId, String ifMatch, Boolean notifyAttendees, Boolean returnRecord, Event event) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = updateMeetingResponseRequestBuilder(calendarId, eventId, notifyAttendees, event);
+      HttpRequest.Builder localVarRequestBuilder = updateMeetingResponseRequestBuilder(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -1169,14 +1171,16 @@ public class EventsApi {
    * 
    * @param calendarId Calendar id (required)
    * @param eventId Event id (required)
+   * @param ifMatch The HTTP entity tag of the resource (ETag). Used for web cache validation. (required)
    * @param notifyAttendees  (optional, default to true)
+   * @param returnRecord Whether response must contain a record that has been updated. This can result in an additional request to provider API. (optional, default to true)
    * @param event  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> updateMeetingResponseWithHttpInfo(String calendarId, String eventId, Boolean notifyAttendees, Event event) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> updateMeetingResponseWithHttpInfo(String calendarId, String eventId, String ifMatch, Boolean notifyAttendees, Boolean returnRecord, Event event) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = updateMeetingResponseRequestBuilder(calendarId, eventId, notifyAttendees, event);
+      HttpRequest.Builder localVarRequestBuilder = updateMeetingResponseRequestBuilder(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -1205,7 +1209,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder updateMeetingResponseRequestBuilder(String calendarId, String eventId, Boolean notifyAttendees, Event event) throws ApiException {
+  private HttpRequest.Builder updateMeetingResponseRequestBuilder(String calendarId, String eventId, String ifMatch, Boolean notifyAttendees, Boolean returnRecord, Event event) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling updateMeetingResponse");
@@ -1213,6 +1217,10 @@ public class EventsApi {
     // verify the required parameter 'eventId' is set
     if (eventId == null) {
       throw new ApiException(400, "Missing the required parameter 'eventId' when calling updateMeetingResponse");
+    }
+    // verify the required parameter 'ifMatch' is set
+    if (ifMatch == null) {
+      throw new ApiException(400, "Missing the required parameter 'ifMatch' when calling updateMeetingResponse");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1226,6 +1234,8 @@ public class EventsApi {
     String localVarQueryParameterBaseName;
     localVarQueryParameterBaseName = "notifyAttendees";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("notifyAttendees", notifyAttendees));
+    localVarQueryParameterBaseName = "returnRecord";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("returnRecord", returnRecord));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");
@@ -1238,6 +1248,9 @@ public class EventsApi {
       localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
     }
 
+    if (ifMatch != null) {
+      localVarRequestBuilder.header("If-Match", ifMatch.toString());
+    }
     localVarRequestBuilder.header("Content-Type", "application/json");
     localVarRequestBuilder.header("Accept", "application/json");
 

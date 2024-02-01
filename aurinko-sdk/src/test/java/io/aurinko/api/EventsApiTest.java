@@ -230,10 +230,12 @@ public class EventsApiTest {
     public void updateMeetingResponseTest() throws ApiException {
         String calendarId = null;
         String eventId = null;
+        String ifMatch = null;
         Boolean notifyAttendees = null;
+        Boolean returnRecord = null;
         Event event = null;
         CompletableFuture<OkResponse> response = 
-        api.updateMeetingResponse(calendarId, eventId, notifyAttendees, event);
+        api.updateMeetingResponse(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event);
         
         // TODO: test validations
     }

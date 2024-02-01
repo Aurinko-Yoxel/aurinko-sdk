@@ -41,7 +41,7 @@
 
 * `AUTOQUOTES` (value: `"AutoQuotes"`)
 
-* `DDS` (value: `"DDS"`)
+* `SPECPATH` (value: `"SpecPath"`)
 
 * `CLIENTIFY` (value: `"Clientify"`)
 

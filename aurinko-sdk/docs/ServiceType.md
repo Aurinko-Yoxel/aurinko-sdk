@@ -55,7 +55,7 @@
 
 * `MCTRADE` (value: `"MCTrade"`)
 
-* `DDS` (value: `"DDS"`)
+* `SPECPATH` (value: `"SpecPath"`)
 
 * `ZOHO` (value: `"Zoho"`)
 

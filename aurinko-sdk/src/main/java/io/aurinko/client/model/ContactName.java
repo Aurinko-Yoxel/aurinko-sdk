@@ -41,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ContactName.JSON_PROPERTY_YOMI_GIVEN_NAME,
   ContactName.JSON_PROPERTY_YOMI_FAMILY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class ContactName {
   public static final String JSON_PROPERTY_DISPLAY_NAME = "displayName";
   private String displayName;

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.aurinko.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**copyAsManaged**](UserApi.md#copyAsManaged) | **POST** /v1/user/accounts/{id}/managed | Copy specified account to managed |
-| [**copyAsManagedWithHttpInfo**](UserApi.md#copyAsManagedWithHttpInfo) | **POST** /v1/user/accounts/{id}/managed | Copy specified account to managed |
+| [**copyAsManaged**](UserApi.md#copyAsManaged) | **POST** /v1/user/accounts/{id}/managed | Make a user account &#39;managed&#39; |
+| [**copyAsManagedWithHttpInfo**](UserApi.md#copyAsManagedWithHttpInfo) | **POST** /v1/user/accounts/{id}/managed | Make a user account &#39;managed&#39; |
 | [**getEndUserAccount**](UserApi.md#getEndUserAccount) | **GET** /v1/user/accounts/{id} | Get user account by id |
 | [**getEndUserAccountWithHttpInfo**](UserApi.md#getEndUserAccountWithHttpInfo) | **GET** /v1/user/accounts/{id} | Get user account by id |
 | [**getEndUserAccounts**](UserApi.md#getEndUserAccounts) | **GET** /v1/user/accounts | Get user accounts |
 | [**getEndUserAccountsWithHttpInfo**](UserApi.md#getEndUserAccountsWithHttpInfo) | **GET** /v1/user/accounts | Get user accounts |
 | [**getUserInfo**](UserApi.md#getUserInfo) | **GET** /v1/user | Get user info |
 | [**getUserInfoWithHttpInfo**](UserApi.md#getUserInfoWithHttpInfo) | **GET** /v1/user | Get user info |
-| [**logout**](UserApi.md#logout) | **POST** /v1/user/logout | Drop a user&#39;s cookie |
-| [**logoutWithHttpInfo**](UserApi.md#logoutWithHttpInfo) | **POST** /v1/user/logout | Drop a user&#39;s cookie |
-| [**logoutAccount**](UserApi.md#logoutAccount) | **DELETE** /v1/user/accounts/{id} | Logout from user&#39;s account by id |
-| [**logoutAccountWithHttpInfo**](UserApi.md#logoutAccountWithHttpInfo) | **DELETE** /v1/user/accounts/{id} | Logout from user&#39;s account by id |
+| [**logout**](UserApi.md#logout) | **POST** /v1/user/logout | Log out a user |
+| [**logoutWithHttpInfo**](UserApi.md#logoutWithHttpInfo) | **POST** /v1/user/logout | Log out a user |
+| [**logoutAccount**](UserApi.md#logoutAccount) | **DELETE** /v1/user/accounts/{id} | Delete a user account |
+| [**logoutAccountWithHttpInfo**](UserApi.md#logoutAccountWithHttpInfo) | **DELETE** /v1/user/accounts/{id} | Delete a user account |
 
 
 
@@ -23,7 +23,7 @@ All URIs are relative to *https://api.aurinko.io*
 
 > CompletableFuture<EndUserAccountDto> copyAsManaged(id, clientOrgId)
 
-Copy specified account to managed
+Make a user account &#39;managed&#39;
 
 ### Example
 
@@ -103,7 +103,7 @@ CompletableFuture<[**EndUserAccountDto**](EndUserAccountDto.md)>
 
 > CompletableFuture<ApiResponse<EndUserAccountDto>> copyAsManaged copyAsManagedWithHttpInfo(id, clientOrgId)
 
-Copy specified account to managed
+Make a user account &#39;managed&#39;
 
 ### Example
 
@@ -679,7 +679,9 @@ CompletableFuture<ApiResponse<[**EndUserDto**](EndUserDto.md)>>
 
 > CompletableFuture<OkResponse> logout()
 
-Drop a user&#39;s cookie
+Log out a user
+
+Invalidates the user&#39;s session cookie
 
 ### Example
 
@@ -753,7 +755,9 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 
 > CompletableFuture<ApiResponse<OkResponse>> logout logoutWithHttpInfo()
 
-Drop a user&#39;s cookie
+Log out a user
+
+Invalidates the user&#39;s session cookie
 
 ### Example
 
@@ -838,7 +842,9 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 
 > CompletableFuture<OkResponse> logoutAccount(id)
 
-Logout from user&#39;s account by id
+Delete a user account
+
+Deleting a primary account, also invalidates the user&#39;s session cookie (logout).
 
 ### Example
 
@@ -916,7 +922,9 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 
 > CompletableFuture<ApiResponse<OkResponse>> logoutAccount logoutAccountWithHttpInfo(id)
 
-Logout from user&#39;s account by id
+Delete a user account
+
+Deleting a primary account, also invalidates the user&#39;s session cookie (logout).
 
 ### Example
 

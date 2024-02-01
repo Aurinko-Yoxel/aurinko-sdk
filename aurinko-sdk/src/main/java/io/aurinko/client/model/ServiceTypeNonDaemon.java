@@ -70,7 +70,7 @@ public enum ServiceTypeNonDaemon {
   
   NETSUITE("NetSuite"),
   
-  DDS("DDS"),
+  SPECPATH("SpecPath"),
   
   ZOHO("Zoho"),
   

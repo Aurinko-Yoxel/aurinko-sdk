@@ -49,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class UserApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -86,7 +86,7 @@ public class UserApi {
   }
 
   /**
-   * Copy specified account to managed
+   * Make a user account &#39;managed&#39;
    * 
    * @param id user&#39;s account Id (required)
    * @param clientOrgId  (optional)
@@ -118,7 +118,7 @@ public class UserApi {
   }
 
   /**
-   * Copy specified account to managed
+   * Make a user account &#39;managed&#39;
    * 
    * @param id user&#39;s account Id (required)
    * @param clientOrgId  (optional)
@@ -461,8 +461,8 @@ public class UserApi {
     return localVarRequestBuilder;
   }
   /**
-   * Drop a user&#39;s cookie
-   * 
+   * Log out a user
+   * Invalidates the user&#39;s session cookie
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
@@ -491,8 +491,8 @@ public class UserApi {
   }
 
   /**
-   * Drop a user&#39;s cookie
-   * 
+   * Log out a user
+   * Invalidates the user&#39;s session cookie
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
@@ -547,8 +547,8 @@ public class UserApi {
     return localVarRequestBuilder;
   }
   /**
-   * Logout from user&#39;s account by id
-   * 
+   * Delete a user account
+   * Deleting a primary account, also invalidates the user&#39;s session cookie (logout).
    * @param id user&#39;s account Id (required)
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
@@ -578,8 +578,8 @@ public class UserApi {
   }
 
   /**
-   * Logout from user&#39;s account by id
-   * 
+   * Delete a user account
+   * Deleting a primary account, also invalidates the user&#39;s session cookie (logout).
    * @param id user&#39;s account Id (required)
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call

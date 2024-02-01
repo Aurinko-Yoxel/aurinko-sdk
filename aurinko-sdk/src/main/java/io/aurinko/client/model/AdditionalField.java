@@ -33,19 +33,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonPropertyOrder({
   AdditionalField.JSON_PROPERTY_NAME,
-  AdditionalField.JSON_PROPERTY_TYPE,
-  AdditionalField.JSON_PROPERTY_DEFAULT
+  AdditionalField.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-17T11:18:51.511282Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
 public class AdditionalField {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
-
-  public static final String JSON_PROPERTY_DEFAULT = "default";
-  private String _default;
 
   public AdditionalField() { 
   }
@@ -100,31 +96,6 @@ public class AdditionalField {
   }
 
 
-  public AdditionalField _default(String _default) {
-    this._default = _default;
-    return this;
-  }
-
-   /**
-   * Get _default
-   * @return _default
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEFAULT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getDefault() {
-    return _default;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DEFAULT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefault(String _default) {
-    this._default = _default;
-  }
-
-
   /**
    * Return true if this AdditionalField object is equal to o.
    */
@@ -138,13 +109,12 @@ public class AdditionalField {
     }
     AdditionalField additionalField = (AdditionalField) o;
     return Objects.equals(this.name, additionalField.name) &&
-        Objects.equals(this.type, additionalField.type) &&
-        Objects.equals(this._default, additionalField._default);
+        Objects.equals(this.type, additionalField.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, _default);
+    return Objects.hash(name, type);
   }
 
   @Override
@@ -153,7 +123,6 @@ public class AdditionalField {
     sb.append("class AdditionalField {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -209,11 +178,6 @@ public class AdditionalField {
     // add `type` to the URL query string
     if (getType() != null) {
       joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `default` to the URL query string
-    if (getDefault() != null) {
-      joiner.add(String.format("%sdefault%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDefault()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();
