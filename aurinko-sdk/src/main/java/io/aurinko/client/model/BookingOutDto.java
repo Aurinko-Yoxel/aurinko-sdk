@@ -48,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingOutDto.JSON_PROPERTY_START_CONFERENCE,
   BookingOutDto.JSON_PROPERTY_OPEN_MEETING_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BookingOutDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -123,7 +123,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get name
+   * Profile name used in the link to the list of available meeting slots.
    * @return name
   **/
   @javax.annotation.Nullable
@@ -148,7 +148,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get durationMinutes
+   * Duration of the meeting in minutes.
    * @return durationMinutes
   **/
   @javax.annotation.Nullable
@@ -173,7 +173,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get availabilityStep
+   * Determines the interval at which new meeting slots are made available throughout the working hours.
    * @return availabilityStep
   **/
   @javax.annotation.Nullable
@@ -198,7 +198,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get startTime
+   * The beginning of the formation of intervals. Must be in the future, otherwise the current time will be used.
    * @return startTime
   **/
   @javax.annotation.Nullable
@@ -223,7 +223,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Java&#39;s Period A date-based amount of time in the ISO-8601 calendar system, such as &#39;2 years, 3 months and 4 days&#39;.
+   * Period to search for available meetings. Format is ISO-8601. For example P3M (3 months), P4W (4 weeks), P5D (5 days).
    * @return timeAvailableFor
   **/
   @javax.annotation.Nullable
@@ -248,7 +248,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get subject
+   * Subject for creating an event about a meeting in the calendar.
    * @return subject
   **/
   @javax.annotation.Nullable
@@ -273,7 +273,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get description
+   * Description of the meeting event on the calendar.
    * @return description
   **/
   @javax.annotation.Nullable
@@ -298,7 +298,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get location
+   * Location of the meeting event on the calendar.
    * @return location
   **/
   @javax.annotation.Nullable
@@ -348,7 +348,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get context
+   * The field for storing any information is available only within the profile.
    * @return context
   **/
   @javax.annotation.Nullable
@@ -373,7 +373,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get startConference
+   * Whether to create a conference (hangoutsMeet, teamsForBusiness, etc.) in addition to a calendar event, not all providers support creating conferences.
    * @return startConference
   **/
   @javax.annotation.Nullable
@@ -398,7 +398,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Get openMeetingUrl
+   * The value is used in the variable to be substituted into the description or topic of the meeting event.
    * @return openMeetingUrl
   **/
   @javax.annotation.Nullable

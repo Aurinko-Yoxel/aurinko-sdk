@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingTimesOutDto.JSON_PROPERTY_SECONDARY_COLOR,
   BookingTimesOutDto.JSON_PROPERTY_ADDITIONAL_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ITEMS = "items";
   private List<MeetingTime> items;
@@ -93,7 +93,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get items
+   * List of available meeting slots.
    * @return items
   **/
   @javax.annotation.Nullable
@@ -118,7 +118,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get startTime
+   * Start time of available meeting slots.
    * @return startTime
   **/
   @javax.annotation.Nullable
@@ -143,7 +143,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get endTime
+   * End time of available meeting slots.
    * @return endTime
   **/
   @javax.annotation.Nullable
@@ -168,7 +168,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get durationMinutes
+   * Length of meeting in minutes
    * @return durationMinutes
   **/
   @javax.annotation.Nullable
@@ -193,7 +193,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get availabilityStep
+   * Determines the interval at which new meeting slots are made available throughout the working hours.
    * @return availabilityStep
   **/
   @javax.annotation.Nullable
@@ -218,7 +218,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get subject
+   * Subject for creating an event about a meeting in the calendar.
    * @return subject
   **/
   @javax.annotation.Nullable
@@ -243,7 +243,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get primaryColor
+   * Primary Color, taken from the application settings.
    * @return primaryColor
   **/
   @javax.annotation.Nullable
@@ -268,7 +268,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get secondaryColor
+   * The second Color, taken from the application settings.
    * @return secondaryColor
   **/
   @javax.annotation.Nullable
@@ -301,7 +301,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Get additionalFields
+   * List of templates for value substitution
    * @return additionalFields
   **/
   @javax.annotation.Nullable

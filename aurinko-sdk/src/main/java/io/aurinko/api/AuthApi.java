@@ -18,10 +18,10 @@ import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.AccountSaveResult;
+import io.aurinko.client.model.PreparedAuthToken;
 import io.aurinko.client.model.Scope;
 import io.aurinko.client.model.ServiceTypeDaemon;
 import io.aurinko.client.model.ServiceTypeNonDaemon;
-import io.aurinko.client.model.UserAccountType;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AuthApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -180,35 +180,27 @@ public class AuthApi {
     return localVarRequestBuilder;
   }
   /**
-   * Start an account authentication flow
+   * Start an account authorization flow
    * 
-   * @param clientId Application client Id (required)
+   * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
    * @param serviceType  (required)
-   * @param returnUrl Redirect/callback url (required)
-   * @param mailboxInfo  (optional)
-   * @param scopes Space separated list of scopes (optional
-   * @param nativeScopes  (optional
-   * @param responseType  (optional, default to code)
-   * @param accountId When re-authorizing an existing account (optional)
-   * @param loginHint  (optional)
-   * @param state Custom state string (optional)
-   * @param fromPortal  (optional)
-   * @param clientOrgId  (optional)
-   * @param userAccount  (optional)
-   * @param userId  (optional)
-   * @param timestamp  (optional)
-   * @param userSignature  (optional)
-   * @param sandbox  (optional)
-   * @param communityUrl  (optional)
-   * @param checkServiceAccount  (optional)
-   * @param serverUrl  (optional)
-   * @param ensureScopes When set to true, raises an error if any of the requested scopes are not granted by the user (optional)
+   * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
+   * @param scopes Space separated list of Aurinko defined scopes. (optional
+   * @param nativeScopes Space separated list of provider defined scopes (optional
+   * @param responseType The type of response expected from the authorization flow. Choose &#x60;token&#x60; to directly receive the authentication token, or &#x60;code&#x60; to obtain a temporary code that can be exchanged for the token using the /auth/token endpoint. (optional, default to code)
+   * @param accountId For re-authorizing an existing account. (optional)
+   * @param loginHint Is passed as \&quot;login_hint\&quot; in OAuth flows, suggesting user identity for a smoother login process. (optional)
+   * @param state Custom state string that will be returned in the callback. (optional)
+   * @param clientOrgId Allows clients to group accounts based on their internal organization data. (optional)
+   * @param serverUrl Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. (optional)
+   * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @param recycle Indicates whether to reuse an existing account instead of creating a new one during authentication. (optional)
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorize(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl, Boolean ensureScopes) throws ApiException {
+  public CompletableFuture<Void> authorize(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean recycle) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes);
+      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -224,35 +216,27 @@ public class AuthApi {
   }
 
   /**
-   * Start an account authentication flow
+   * Start an account authorization flow
    * 
-   * @param clientId Application client Id (required)
+   * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
    * @param serviceType  (required)
-   * @param returnUrl Redirect/callback url (required)
-   * @param mailboxInfo  (optional)
-   * @param scopes Space separated list of scopes (optional
-   * @param nativeScopes  (optional
-   * @param responseType  (optional, default to code)
-   * @param accountId When re-authorizing an existing account (optional)
-   * @param loginHint  (optional)
-   * @param state Custom state string (optional)
-   * @param fromPortal  (optional)
-   * @param clientOrgId  (optional)
-   * @param userAccount  (optional)
-   * @param userId  (optional)
-   * @param timestamp  (optional)
-   * @param userSignature  (optional)
-   * @param sandbox  (optional)
-   * @param communityUrl  (optional)
-   * @param checkServiceAccount  (optional)
-   * @param serverUrl  (optional)
-   * @param ensureScopes When set to true, raises an error if any of the requested scopes are not granted by the user (optional)
+   * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
+   * @param scopes Space separated list of Aurinko defined scopes. (optional
+   * @param nativeScopes Space separated list of provider defined scopes (optional
+   * @param responseType The type of response expected from the authorization flow. Choose &#x60;token&#x60; to directly receive the authentication token, or &#x60;code&#x60; to obtain a temporary code that can be exchanged for the token using the /auth/token endpoint. (optional, default to code)
+   * @param accountId For re-authorizing an existing account. (optional)
+   * @param loginHint Is passed as \&quot;login_hint\&quot; in OAuth flows, suggesting user identity for a smoother login process. (optional)
+   * @param state Custom state string that will be returned in the callback. (optional)
+   * @param clientOrgId Allows clients to group accounts based on their internal organization data. (optional)
+   * @param serverUrl Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. (optional)
+   * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @param recycle Indicates whether to reuse an existing account instead of creating a new one during authentication. (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl, Boolean ensureScopes) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean recycle) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes);
+      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -273,7 +257,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, Boolean fromPortal, String clientOrgId, UserAccountType userAccount, String userId, Long timestamp, String userSignature, Boolean sandbox, String communityUrl, Boolean checkServiceAccount, String serverUrl, Boolean ensureScopes) throws ApiException {
+  private HttpRequest.Builder authorizeRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean recycle) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
       throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorize");
@@ -296,8 +280,6 @@ public class AuthApi {
     String localVarQueryParameterBaseName;
     localVarQueryParameterBaseName = "clientId";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("clientId", clientId));
-    localVarQueryParameterBaseName = "mailboxInfo";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("mailboxInfo", mailboxInfo));
     localVarQueryParameterBaseName = "serviceType";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("serviceType", serviceType));
     localVarQueryParameterBaseName = "scopes";
@@ -314,26 +296,148 @@ public class AuthApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("returnUrl", returnUrl));
     localVarQueryParameterBaseName = "state";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("state", state));
-    localVarQueryParameterBaseName = "fromPortal";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("fromPortal", fromPortal));
     localVarQueryParameterBaseName = "clientOrgId";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("clientOrgId", clientOrgId));
-    localVarQueryParameterBaseName = "userAccount";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("userAccount", userAccount));
-    localVarQueryParameterBaseName = "userId";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("userId", userId));
-    localVarQueryParameterBaseName = "timestamp";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("timestamp", timestamp));
-    localVarQueryParameterBaseName = "userSignature";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("userSignature", userSignature));
-    localVarQueryParameterBaseName = "sandbox";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("sandbox", sandbox));
-    localVarQueryParameterBaseName = "communityUrl";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("communityUrl", communityUrl));
-    localVarQueryParameterBaseName = "checkServiceAccount";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("checkServiceAccount", checkServiceAccount));
     localVarQueryParameterBaseName = "serverUrl";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("serverUrl", serverUrl));
+    localVarQueryParameterBaseName = "ensureScopes";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureScopes", ensureScopes));
+    localVarQueryParameterBaseName = "recycle";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("recycle", recycle));
+
+    if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
+      StringJoiner queryJoiner = new StringJoiner("&");
+      localVarQueryParams.forEach(p -> queryJoiner.add(p.getName() + '=' + p.getValue()));
+      if (localVarQueryStringJoiner.length() != 0) {
+        queryJoiner.add(localVarQueryStringJoiner.toString());
+      }
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath + '?' + queryJoiner.toString()));
+    } else {
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    }
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+  /**
+   * Start a service/daemon account authorization flow
+   * 
+   * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
+   * @param serviceType  (required)
+   * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
+   * @param scopes Space separated list of Aurinko defined scopes. (optional
+   * @param nativeScopes Space separated list of provider defined scopes. (optional
+   * @param responseType The type of response expected from the authorization flow. Choose &#x60;token&#x60; to directly receive the authentication token, or &#x60;code&#x60; to obtain a temporary code that can be exchanged for the token using the /auth/token endpoint. (optional, default to code)
+   * @param accountId For re-authorizing an existing account. (optional)
+   * @param state Custom state string (optional)
+   * @param clientOrgId Allows clients to group accounts based on their internal organization data. (optional)
+   * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @return CompletableFuture&lt;Void&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<Void> authorizeDaemon(String clientId, ServiceTypeDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, String clientOrgId, Boolean ensureScopes) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, state, clientOrgId, ensureScopes);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("authorizeDaemon", localVarResponse));
+            }
+            return CompletableFuture.completedFuture(null);
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Start a service/daemon account authorization flow
+   * 
+   * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
+   * @param serviceType  (required)
+   * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
+   * @param scopes Space separated list of Aurinko defined scopes. (optional
+   * @param nativeScopes Space separated list of provider defined scopes. (optional
+   * @param responseType The type of response expected from the authorization flow. Choose &#x60;token&#x60; to directly receive the authentication token, or &#x60;code&#x60; to obtain a temporary code that can be exchanged for the token using the /auth/token endpoint. (optional, default to code)
+   * @param accountId For re-authorizing an existing account. (optional)
+   * @param state Custom state string (optional)
+   * @param clientOrgId Allows clients to group accounts based on their internal organization data. (optional)
+   * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<Void>> authorizeDaemonWithHttpInfo(String clientId, ServiceTypeDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, String clientOrgId, Boolean ensureScopes) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, state, clientOrgId, ensureScopes);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("authorizeDaemon", localVarResponse));
+            }
+            return CompletableFuture.completedFuture(
+                new ApiResponse<Void>(localVarResponse.statusCode(), localVarResponse.headers().map(), null)
+            );
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder authorizeDaemonRequestBuilder(String clientId, ServiceTypeDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, String clientOrgId, Boolean ensureScopes) throws ApiException {
+    // verify the required parameter 'clientId' is set
+    if (clientId == null) {
+      throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorizeDaemon");
+    }
+    // verify the required parameter 'serviceType' is set
+    if (serviceType == null) {
+      throw new ApiException(400, "Missing the required parameter 'serviceType' when calling authorizeDaemon");
+    }
+    // verify the required parameter 'returnUrl' is set
+    if (returnUrl == null) {
+      throw new ApiException(400, "Missing the required parameter 'returnUrl' when calling authorizeDaemon");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/auth/authorizeDaemon";
+
+    List<Pair> localVarQueryParams = new ArrayList<>();
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "clientId";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("clientId", clientId));
+    localVarQueryParameterBaseName = "serviceType";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("serviceType", serviceType));
+    localVarQueryParameterBaseName = "scopes";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("multi", "scopes", scopes));
+    localVarQueryParameterBaseName = "nativeScopes";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("multi", "nativeScopes", nativeScopes));
+    localVarQueryParameterBaseName = "responseType";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("responseType", responseType));
+    localVarQueryParameterBaseName = "accountId";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("accountId", accountId));
+    localVarQueryParameterBaseName = "returnUrl";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("returnUrl", returnUrl));
+    localVarQueryParameterBaseName = "state";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("state", state));
+    localVarQueryParameterBaseName = "clientOrgId";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("clientOrgId", clientOrgId));
     localVarQueryParameterBaseName = "ensureScopes";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureScopes", ensureScopes));
 
@@ -360,31 +464,36 @@ public class AuthApi {
     return localVarRequestBuilder;
   }
   /**
-   * Start an service/daemon account authentication flow
-   * 
-   * @param clientId Application client Id (required)
+   * Start a user session authorization flow
+   * This endpoint is used to authorize accounts that are linked to &#x60;Users&#x60;. The &#x60;accountRole&#x60; parameter must be set to either &#x60;primary&#x60; or &#x60;secondary&#x60;. A &#x60;primary&#x60; role creates a new User entity and assigns the account as its key/primary account, with subsequent authorizations simply re-authorizing the existing primary account with its User. The &#x60;secondary&#x60; role requires an existing &#x60;User&#x60; cookie or &#x60;userId&#x60;+&#x60;userSignature&#x60; parameters and links the new account to the &#x60;User&#x60; specified by the cookie or &#x60;userId&#x60;.
+   * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
    * @param serviceType  (required)
-   * @param returnUrl Redirect/callback url (required)
-   * @param mailboxInfo  (optional)
-   * @param scopes Space separated list of scopes (optional
-   * @param nativeScopes  (optional
-   * @param responseType  (optional, default to code)
-   * @param accountId When re-authorizing an existing account (optional)
+   * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
+   * @param accountRole The account&#39;s role in relation to a User. Use &#x60;primary&#x60; for the account to act as a key account; this will create a new User if the primary account doesn&#39;t exist already. If the primary account exists, it&#39;s simply re-authorized without creating a new user. Choose &#x60;secondary&#x60; to associate the account with an already existing User, which requires either existing User cookie or &#x60;userId&#x60; + &#x60;userSignature&#x60; for identification. (required)
+   * @param mailboxInfo Relevant only for cookie-based authentication in multi-client setups. When different client apps are connected to a single Aurinko application, this string (commonly the user&#39;s email, but can be any unique identifier) is combined with \&quot;clientId\&quot; to create a distinct authentication cookie name and prevent cookie conflicts. Clients using cookie-based auth must send \&quot;clientId\&quot; and \&quot;mailboxInfo\&quot; via \&quot;X-Aurinko-Client-Id\&quot; and \&quot;X-Aurinko-Mailbox-Info\&quot; HTTP headers for accurate cookie identification. (optional)
+   * @param scopes Space separated list of Aurinko defined scopes. (optional
+   * @param nativeScopes Space separated list of provider defined scopes (optional
+   * @param responseType The type of response expected from the user authorization flow. For &#x60;primary&#x60; accounts, choose &#x60;cookie&#x60; or &#x60;code&#x60;, for &#x60;secondary&#x60; accounts, choose &#x60;none&#x60;. &#x60;cookie&#x60; will set a cookie in the user&#39;s browser in the callback, &#x60;code&#x60; will return a temporary code that can be exchanged for a user session token using the /auth/token endpoint. &#x60;none&#x60; will return only the status of the operation and information about an occurred error. Because &#x60;secondary&#x60; accounts are linked to an existing and authorized User, they don&#39;t need to receive a token or cookie in the callback. (optional, default to cookie)
+   * @param accountId For re-authorizing an existing &#x60;secondary&#x60; account. (optional)
+   * @param loginHint Is passed as \&quot;login_hint\&quot; in OAuth flows, suggesting user identity for a smoother login process. (optional)
    * @param state Custom state string (optional)
-   * @param fromPortal  (optional)
-   * @param clientOrgId  (optional)
-   * @param ensureScopes When set to true, raises an error if any of the requested scopes are not granted by the user (optional)
+   * @param userId Identifies a user for whom a secondary account is being added. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request. Works in conjunction with &#x60;timestamp&#x60; and &#x60;userSignature&#x60; to authorize the addition of secondary account. (optional)
+   * @param timestamp Request timestamp in seconds. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request. Works in conjunction with &#x60;userId&#x60; and &#x60;userSignature&#x60; to authorize the addition of secondary account. (optional)
+   * @param userSignature A string that is generated by concatenating &#x60;userId&#x60; and &#x60;timestamp&#x60;, then hashing with HmacSHA256 using the application&#39;s &#x60;clientSecret&#x60;, then encoding in Hex, base64, or base64 web format. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request Works in conjunction with &#x60;userId&#x60; and &#x60;timestamp&#x60; to authorize the addition of secondary account. (optional)
+   * @param serverUrl Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. (optional)
+   * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @param token Token from the /auth/prepare endpoint. (optional)
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorizeDaemon(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId, Boolean ensureScopes) throws ApiException {
+  public CompletableFuture<Void> authorizeUser(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, String token) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes);
+      HttpRequest.Builder localVarRequestBuilder = authorizeUserRequestBuilder(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
             if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("authorizeDaemon", localVarResponse));
+              return CompletableFuture.failedFuture(getApiException("authorizeUser", localVarResponse));
             }
             return CompletableFuture.completedFuture(null);
       });
@@ -395,26 +504,31 @@ public class AuthApi {
   }
 
   /**
-   * Start an service/daemon account authentication flow
-   * 
-   * @param clientId Application client Id (required)
+   * Start a user session authorization flow
+   * This endpoint is used to authorize accounts that are linked to &#x60;Users&#x60;. The &#x60;accountRole&#x60; parameter must be set to either &#x60;primary&#x60; or &#x60;secondary&#x60;. A &#x60;primary&#x60; role creates a new User entity and assigns the account as its key/primary account, with subsequent authorizations simply re-authorizing the existing primary account with its User. The &#x60;secondary&#x60; role requires an existing &#x60;User&#x60; cookie or &#x60;userId&#x60;+&#x60;userSignature&#x60; parameters and links the new account to the &#x60;User&#x60; specified by the cookie or &#x60;userId&#x60;.
+   * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
    * @param serviceType  (required)
-   * @param returnUrl Redirect/callback url (required)
-   * @param mailboxInfo  (optional)
-   * @param scopes Space separated list of scopes (optional
-   * @param nativeScopes  (optional
-   * @param responseType  (optional, default to code)
-   * @param accountId When re-authorizing an existing account (optional)
+   * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
+   * @param accountRole The account&#39;s role in relation to a User. Use &#x60;primary&#x60; for the account to act as a key account; this will create a new User if the primary account doesn&#39;t exist already. If the primary account exists, it&#39;s simply re-authorized without creating a new user. Choose &#x60;secondary&#x60; to associate the account with an already existing User, which requires either existing User cookie or &#x60;userId&#x60; + &#x60;userSignature&#x60; for identification. (required)
+   * @param mailboxInfo Relevant only for cookie-based authentication in multi-client setups. When different client apps are connected to a single Aurinko application, this string (commonly the user&#39;s email, but can be any unique identifier) is combined with \&quot;clientId\&quot; to create a distinct authentication cookie name and prevent cookie conflicts. Clients using cookie-based auth must send \&quot;clientId\&quot; and \&quot;mailboxInfo\&quot; via \&quot;X-Aurinko-Client-Id\&quot; and \&quot;X-Aurinko-Mailbox-Info\&quot; HTTP headers for accurate cookie identification. (optional)
+   * @param scopes Space separated list of Aurinko defined scopes. (optional
+   * @param nativeScopes Space separated list of provider defined scopes (optional
+   * @param responseType The type of response expected from the user authorization flow. For &#x60;primary&#x60; accounts, choose &#x60;cookie&#x60; or &#x60;code&#x60;, for &#x60;secondary&#x60; accounts, choose &#x60;none&#x60;. &#x60;cookie&#x60; will set a cookie in the user&#39;s browser in the callback, &#x60;code&#x60; will return a temporary code that can be exchanged for a user session token using the /auth/token endpoint. &#x60;none&#x60; will return only the status of the operation and information about an occurred error. Because &#x60;secondary&#x60; accounts are linked to an existing and authorized User, they don&#39;t need to receive a token or cookie in the callback. (optional, default to cookie)
+   * @param accountId For re-authorizing an existing &#x60;secondary&#x60; account. (optional)
+   * @param loginHint Is passed as \&quot;login_hint\&quot; in OAuth flows, suggesting user identity for a smoother login process. (optional)
    * @param state Custom state string (optional)
-   * @param fromPortal  (optional)
-   * @param clientOrgId  (optional)
-   * @param ensureScopes When set to true, raises an error if any of the requested scopes are not granted by the user (optional)
+   * @param userId Identifies a user for whom a secondary account is being added. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request. Works in conjunction with &#x60;timestamp&#x60; and &#x60;userSignature&#x60; to authorize the addition of secondary account. (optional)
+   * @param timestamp Request timestamp in seconds. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request. Works in conjunction with &#x60;userId&#x60; and &#x60;userSignature&#x60; to authorize the addition of secondary account. (optional)
+   * @param userSignature A string that is generated by concatenating &#x60;userId&#x60; and &#x60;timestamp&#x60;, then hashing with HmacSHA256 using the application&#39;s &#x60;clientSecret&#x60;, then encoding in Hex, base64, or base64 web format. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request Works in conjunction with &#x60;userId&#x60; and &#x60;timestamp&#x60; to authorize the addition of secondary account. (optional)
+   * @param serverUrl Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. (optional)
+   * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @param token Token from the /auth/prepare endpoint. (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeDaemonWithHttpInfo(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId, Boolean ensureScopes) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeUserWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, String token) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes);
+      HttpRequest.Builder localVarRequestBuilder = authorizeUserRequestBuilder(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -422,7 +536,7 @@ public class AuthApi {
               memberVarAsyncResponseInterceptor.accept(localVarResponse);
             }
             if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("authorizeDaemon", localVarResponse));
+              return CompletableFuture.failedFuture(getApiException("authorizeUser", localVarResponse));
             }
             return CompletableFuture.completedFuture(
                 new ApiResponse<Void>(localVarResponse.statusCode(), localVarResponse.headers().map(), null)
@@ -435,23 +549,27 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeDaemonRequestBuilder(String clientId, ServiceTypeDaemon serviceType, String returnUrl, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, Boolean fromPortal, String clientOrgId, Boolean ensureScopes) throws ApiException {
+  private HttpRequest.Builder authorizeUserRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, String token) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorizeDaemon");
+      throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorizeUser");
     }
     // verify the required parameter 'serviceType' is set
     if (serviceType == null) {
-      throw new ApiException(400, "Missing the required parameter 'serviceType' when calling authorizeDaemon");
+      throw new ApiException(400, "Missing the required parameter 'serviceType' when calling authorizeUser");
     }
     // verify the required parameter 'returnUrl' is set
     if (returnUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'returnUrl' when calling authorizeDaemon");
+      throw new ApiException(400, "Missing the required parameter 'returnUrl' when calling authorizeUser");
+    }
+    // verify the required parameter 'accountRole' is set
+    if (accountRole == null) {
+      throw new ApiException(400, "Missing the required parameter 'accountRole' when calling authorizeUser");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/auth/authorizeDaemon";
+    String localVarPath = "/v1/auth/authorizeUser";
 
     List<Pair> localVarQueryParams = new ArrayList<>();
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
@@ -470,16 +588,26 @@ public class AuthApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("responseType", responseType));
     localVarQueryParameterBaseName = "accountId";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("accountId", accountId));
+    localVarQueryParameterBaseName = "loginHint";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("loginHint", loginHint));
     localVarQueryParameterBaseName = "returnUrl";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("returnUrl", returnUrl));
     localVarQueryParameterBaseName = "state";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("state", state));
-    localVarQueryParameterBaseName = "fromPortal";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("fromPortal", fromPortal));
-    localVarQueryParameterBaseName = "clientOrgId";
-    localVarQueryParams.addAll(ApiClient.parameterToPairs("clientOrgId", clientOrgId));
+    localVarQueryParameterBaseName = "accountRole";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("accountRole", accountRole));
+    localVarQueryParameterBaseName = "userId";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("userId", userId));
+    localVarQueryParameterBaseName = "timestamp";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("timestamp", timestamp));
+    localVarQueryParameterBaseName = "userSignature";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("userSignature", userSignature));
+    localVarQueryParameterBaseName = "serverUrl";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("serverUrl", serverUrl));
     localVarQueryParameterBaseName = "ensureScopes";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureScopes", ensureScopes));
+    localVarQueryParameterBaseName = "token";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("token", token));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");
@@ -588,6 +716,92 @@ public class AuthApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+  /**
+   * Prepare an authorization flow (with external authentication data)
+   * Aurinko&#39;s standard user authentication uses cookies or session tokens. For clients using Office365 add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).  To use exchange identity token, do the following: 1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details. 2. Make the call to &#x60;/auth/prepare&#x60; with these HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; &lt;br&gt;   This call returns a temporary token: &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;. 3. Use the temporary token from &#x60;/auth/prepare&#x60; at the &#x60;/authorizeUser&#x60; endpoint. Pass it as a query parameter: &#x60;?token&#x3D;your-temporary-token&#x60;.  Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API, client applications now can use exchange identity token by authenticating API requests with: - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
+   * @return CompletableFuture&lt;PreparedAuthToken&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<PreparedAuthToken> prepareAuth() throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = prepareAuthRequestBuilder();
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("prepareAuth", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<PreparedAuthToken>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Prepare an authorization flow (with external authentication data)
+   * Aurinko&#39;s standard user authentication uses cookies or session tokens. For clients using Office365 add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).  To use exchange identity token, do the following: 1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details. 2. Make the call to &#x60;/auth/prepare&#x60; with these HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; &lt;br&gt;   This call returns a temporary token: &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;. 3. Use the temporary token from &#x60;/auth/prepare&#x60; at the &#x60;/authorizeUser&#x60; endpoint. Pass it as a query parameter: &#x60;?token&#x3D;your-temporary-token&#x60;.  Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API, client applications now can use exchange identity token by authenticating API requests with: - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
+   * @return CompletableFuture&lt;ApiResponse&lt;PreparedAuthToken&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<PreparedAuthToken>> prepareAuthWithHttpInfo() throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = prepareAuthRequestBuilder();
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("prepareAuth", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<PreparedAuthToken>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<PreparedAuthToken>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder prepareAuthRequestBuilder() throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/auth/prepare";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }

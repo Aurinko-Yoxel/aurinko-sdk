@@ -11,8 +11,6 @@
 
 * `EWS` (value: `"EWS"`)
 
-* `EWS365` (value: `"EWS365"`)
-
 * `IMAP` (value: `"IMAP"`)
 
 * `SALESFORCE` (value: `"Salesforce"`)

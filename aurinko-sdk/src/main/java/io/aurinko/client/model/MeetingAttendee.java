@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   MeetingAttendee.JSON_PROPERTY_WORK_HOURS,
   MeetingAttendee.JSON_PROPERTY_ERROR
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MeetingAttendee {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;

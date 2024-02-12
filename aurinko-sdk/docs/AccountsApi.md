@@ -220,7 +220,7 @@ public class Example {
 | **limit** | **Integer**| page size | [optional] [default to 50] |
 | **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
 | **authOrgId** | **String**| An authenticated OrgId | [optional] |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [optional] [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, CalDav, iCloud] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [optional] [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, CalDav, iCloud] |
 | **subscriptionId** | **Long**|  | [optional] |
 
 ### Return type
@@ -309,7 +309,7 @@ public class Example {
 | **limit** | **Integer**| page size | [optional] [default to 50] |
 | **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
 | **authOrgId** | **String**| An authenticated OrgId | [optional] |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [optional] [enum: Google, Office365, EWS, EWS365, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, CalDav, iCloud] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [optional] [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, CalDav, iCloud] |
 | **subscriptionId** | **Long**|  | [optional] |
 
 ### Return type

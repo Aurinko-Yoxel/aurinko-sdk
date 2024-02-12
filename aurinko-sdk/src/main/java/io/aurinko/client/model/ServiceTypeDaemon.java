@@ -38,8 +38,6 @@ public enum ServiceTypeDaemon {
   
   EWS("EWS"),
   
-  EWS365("EWS365"),
-  
   MSTEAMSBOT("MsTeamsBot"),
   
   SLACK("Slack"),

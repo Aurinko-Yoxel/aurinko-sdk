@@ -18,121 +18,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.WeekWorkSchedule;
-import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Model tests for BookingInDto
+ * Model tests for PreparedAuthToken
  */
-public class BookingInDtoTest {
-    private final BookingInDto model = new BookingInDto();
+public class PreparedAuthTokenTest {
+    private final PreparedAuthToken model = new PreparedAuthToken();
 
     /**
-     * Model tests for BookingInDto
+     * Model tests for PreparedAuthToken
      */
     @Test
-    public void testBookingInDto() {
-        // TODO: test BookingInDto
+    public void testPreparedAuthToken() {
+        // TODO: test PreparedAuthToken
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'token'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'durationMinutes'
-     */
-    @Test
-    public void durationMinutesTest() {
-        // TODO: test durationMinutes
-    }
-
-    /**
-     * Test the property 'availabilityStep'
-     */
-    @Test
-    public void availabilityStepTest() {
-        // TODO: test availabilityStep
-    }
-
-    /**
-     * Test the property 'startTime'
-     */
-    @Test
-    public void startTimeTest() {
-        // TODO: test startTime
-    }
-
-    /**
-     * Test the property 'timeAvailableFor'
-     */
-    @Test
-    public void timeAvailableForTest() {
-        // TODO: test timeAvailableFor
-    }
-
-    /**
-     * Test the property 'subject'
-     */
-    @Test
-    public void subjectTest() {
-        // TODO: test subject
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'location'
-     */
-    @Test
-    public void locationTest() {
-        // TODO: test location
-    }
-
-    /**
-     * Test the property 'workHours'
-     */
-    @Test
-    public void workHoursTest() {
-        // TODO: test workHours
-    }
-
-    /**
-     * Test the property 'context'
-     */
-    @Test
-    public void contextTest() {
-        // TODO: test context
-    }
-
-    /**
-     * Test the property 'startConference'
-     */
-    @Test
-    public void startConferenceTest() {
-        // TODO: test startConference
-    }
-
-    /**
-     * Test the property 'openMeetingUrl'
-     */
-    @Test
-    public void openMeetingUrlTest() {
-        // TODO: test openMeetingUrl
+    public void tokenTest() {
+        // TODO: test token
     }
 
 }

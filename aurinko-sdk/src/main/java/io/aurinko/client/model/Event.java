@@ -68,7 +68,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Event.JSON_PROPERTY_ATTACHMENTS,
   Event.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Event {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

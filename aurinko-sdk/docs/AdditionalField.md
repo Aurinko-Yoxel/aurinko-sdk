@@ -7,8 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  [optional] |
-|**type** | **String** |  |  [optional] |
+|**name** | **String** | Template key name |  [optional] |
+|**type** | **String** | Value type |  [optional] |
+|**_default** | **String** | Default value |  [optional] |
 
 
 

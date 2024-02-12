@@ -16,6 +16,7 @@
   "library": "native",
   "asyncNative": true,
   "serializationLibrary": "jackson",
-  "enumUnknownDefaultCase": true
+  "enumUnknownDefaultCase": true,
+  "hideGenerationTimestamp": true
 }
 

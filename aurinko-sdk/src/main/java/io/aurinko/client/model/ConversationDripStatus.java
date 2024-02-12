@@ -50,7 +50,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ConversationDripStatus.JSON_PROPERTY_TARGETS,
   ConversationDripStatus.JSON_PROPERTY_DRIP_RESPONDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ConversationDripStatus {
   public static final String JSON_PROPERTY_CONVO_ID = "convoId";
   private String convoId;

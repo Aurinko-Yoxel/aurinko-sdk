@@ -69,7 +69,7 @@ public class Example {
 | **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
 | **clientOrgId** | **String**| A client OrgId | [optional] |
 | **authOrgId** | **String**| An authenticated OrgId | [optional] |
-| **serviceType** | [**ServiceTypeDaemon**](.md)|  | [optional] [enum: Google, GoogleBot, Office365, EWS, EWS365, MsTeamsBot, Slack, SlackBot, ZoomBot, MCTrade, Zoho] |
+| **serviceType** | [**ServiceTypeDaemon**](.md)|  | [optional] [enum: Google, GoogleBot, Office365, EWS, MsTeamsBot, Slack, SlackBot, ZoomBot, MCTrade, Zoho] |
 | **subscriptionId** | **Long**|  | [optional] |
 
 ### Return type
@@ -160,7 +160,7 @@ public class Example {
 | **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
 | **clientOrgId** | **String**| A client OrgId | [optional] |
 | **authOrgId** | **String**| An authenticated OrgId | [optional] |
-| **serviceType** | [**ServiceTypeDaemon**](.md)|  | [optional] [enum: Google, GoogleBot, Office365, EWS, EWS365, MsTeamsBot, Slack, SlackBot, ZoomBot, MCTrade, Zoho] |
+| **serviceType** | [**ServiceTypeDaemon**](.md)|  | [optional] [enum: Google, GoogleBot, Office365, EWS, MsTeamsBot, Slack, SlackBot, ZoomBot, MCTrade, Zoho] |
 | **subscriptionId** | **Long**|  | [optional] |
 
 ### Return type

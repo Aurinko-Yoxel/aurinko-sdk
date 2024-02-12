@@ -4,8 +4,6 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Build date: 2024-02-01T09:20:22.278375Z[Africa/Bamako]
-
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with
 many mailbox providers and services like Google, Office 365, Outlook.com, MS Exchange, IMAP.
@@ -154,12 +152,16 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**upsertPersonalWithHttpInfo**](docs/AccountsApi.md#upsertPersonalWithHttpInfo) | **POST** /v1/am/accounts | Upsert an account
 *AuthApi* | [**authCodeExchange**](docs/AuthApi.md#authCodeExchange) | **POST** /v1/auth/token/{code} | Request an access token
 *AuthApi* | [**authCodeExchangeWithHttpInfo**](docs/AuthApi.md#authCodeExchangeWithHttpInfo) | **POST** /v1/auth/token/{code} | Request an access token
-*AuthApi* | [**authorize**](docs/AuthApi.md#authorize) | **GET** /v1/auth/authorize | Start an account authentication flow
-*AuthApi* | [**authorizeWithHttpInfo**](docs/AuthApi.md#authorizeWithHttpInfo) | **GET** /v1/auth/authorize | Start an account authentication flow
-*AuthApi* | [**authorizeDaemon**](docs/AuthApi.md#authorizeDaemon) | **GET** /v1/auth/authorizeDaemon | Start an service/daemon account authentication flow
-*AuthApi* | [**authorizeDaemonWithHttpInfo**](docs/AuthApi.md#authorizeDaemonWithHttpInfo) | **GET** /v1/auth/authorizeDaemon | Start an service/daemon account authentication flow
+*AuthApi* | [**authorize**](docs/AuthApi.md#authorize) | **GET** /v1/auth/authorize | Start an account authorization flow
+*AuthApi* | [**authorizeWithHttpInfo**](docs/AuthApi.md#authorizeWithHttpInfo) | **GET** /v1/auth/authorize | Start an account authorization flow
+*AuthApi* | [**authorizeDaemon**](docs/AuthApi.md#authorizeDaemon) | **GET** /v1/auth/authorizeDaemon | Start a service/daemon account authorization flow
+*AuthApi* | [**authorizeDaemonWithHttpInfo**](docs/AuthApi.md#authorizeDaemonWithHttpInfo) | **GET** /v1/auth/authorizeDaemon | Start a service/daemon account authorization flow
+*AuthApi* | [**authorizeUser**](docs/AuthApi.md#authorizeUser) | **GET** /v1/auth/authorizeUser | Start a user session authorization flow
+*AuthApi* | [**authorizeUserWithHttpInfo**](docs/AuthApi.md#authorizeUserWithHttpInfo) | **GET** /v1/auth/authorizeUser | Start a user session authorization flow
 *AuthApi* | [**getAccessTokenByCode**](docs/AuthApi.md#getAccessTokenByCode) | **GET** /v1/auth/token/{code} | Get access token, Deprecated use POST instead
 *AuthApi* | [**getAccessTokenByCodeWithHttpInfo**](docs/AuthApi.md#getAccessTokenByCodeWithHttpInfo) | **GET** /v1/auth/token/{code} | Get access token, Deprecated use POST instead
+*AuthApi* | [**prepareAuth**](docs/AuthApi.md#prepareAuth) | **POST** /v1/auth/prepare | Prepare an authorization flow (with external authentication data)
+*AuthApi* | [**prepareAuthWithHttpInfo**](docs/AuthApi.md#prepareAuthWithHttpInfo) | **POST** /v1/auth/prepare | Prepare an authorization flow (with external authentication data)
 *BookingApi* | [**create**](docs/BookingApi.md#create) | **POST** /v1/book/profiles | Create a booking profile
 *BookingApi* | [**createWithHttpInfo**](docs/BookingApi.md#createWithHttpInfo) | **POST** /v1/book/profiles | Create a booking profile
 *BookingApi* | [**createMeeting**](docs/BookingApi.md#createMeeting) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
@@ -438,6 +440,7 @@ Class | Method | HTTP request | Description
  - [OutgoingEmail](docs/OutgoingEmail.md)
  - [OutgoingEmailAttachment](docs/OutgoingEmailAttachment.md)
  - [OutgoingEmailReply](docs/OutgoingEmailReply.md)
+ - [PreparedAuthToken](docs/PreparedAuthToken.md)
  - [Recurrence](docs/Recurrence.md)
  - [RecurrenceIcal](docs/RecurrenceIcal.md)
  - [RecurrenceSimple](docs/RecurrenceSimple.md)

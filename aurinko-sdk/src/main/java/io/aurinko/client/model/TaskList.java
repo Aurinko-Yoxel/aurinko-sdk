@@ -42,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   TaskList.JSON_PROPERTY_EMAILS_LIST,
   TaskList.JSON_PROPERTY_LAST_MODIFIED_TIME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TaskList {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

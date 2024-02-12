@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailDraft.JSON_PROPERTY_MESSAGE,
   EmailDraft.JSON_PROPERTY_SCHEDULED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EmailDraft {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

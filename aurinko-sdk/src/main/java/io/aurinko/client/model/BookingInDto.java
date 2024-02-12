@@ -35,8 +35,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonPropertyOrder({
   BookingInDto.JSON_PROPERTY_NAME,
-  BookingInDto.JSON_PROPERTY_AVAILABILITY_STEP,
   BookingInDto.JSON_PROPERTY_DURATION_MINUTES,
+  BookingInDto.JSON_PROPERTY_AVAILABILITY_STEP,
   BookingInDto.JSON_PROPERTY_START_TIME,
   BookingInDto.JSON_PROPERTY_TIME_AVAILABLE_FOR,
   BookingInDto.JSON_PROPERTY_SUBJECT,
@@ -47,16 +47,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingInDto.JSON_PROPERTY_START_CONFERENCE,
   BookingInDto.JSON_PROPERTY_OPEN_MEETING_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BookingInDto {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String JSON_PROPERTY_AVAILABILITY_STEP = "availabilityStep";
-  private Integer availabilityStep;
-
   public static final String JSON_PROPERTY_DURATION_MINUTES = "durationMinutes";
   private Integer durationMinutes;
+
+  public static final String JSON_PROPERTY_AVAILABILITY_STEP = "availabilityStep";
+  private Integer availabilityStep;
 
   public static final String JSON_PROPERTY_START_TIME = "startTime";
   private OffsetDateTime startTime;
@@ -94,7 +94,7 @@ public class BookingInDto {
   }
 
    /**
-   * Get name
+   * Profile name used in the link to the list of available meeting slots.
    * @return name
   **/
   @javax.annotation.Nullable
@@ -113,38 +113,13 @@ public class BookingInDto {
   }
 
 
-  public BookingInDto availabilityStep(Integer availabilityStep) {
-    this.availabilityStep = availabilityStep;
-    return this;
-  }
-
-   /**
-   * Get availabilityStep
-   * @return availabilityStep
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getAvailabilityStep() {
-    return availabilityStep;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAvailabilityStep(Integer availabilityStep) {
-    this.availabilityStep = availabilityStep;
-  }
-
-
   public BookingInDto durationMinutes(Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
     return this;
   }
 
    /**
-   * Get durationMinutes
+   * Duration of the meeting in minutes.
    * @return durationMinutes
   **/
   @javax.annotation.Nullable
@@ -163,13 +138,38 @@ public class BookingInDto {
   }
 
 
+  public BookingInDto availabilityStep(Integer availabilityStep) {
+    this.availabilityStep = availabilityStep;
+    return this;
+  }
+
+   /**
+   * Determines the interval at which new meeting slots are made available throughout the working hours.
+   * @return availabilityStep
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getAvailabilityStep() {
+    return availabilityStep;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAvailabilityStep(Integer availabilityStep) {
+    this.availabilityStep = availabilityStep;
+  }
+
+
   public BookingInDto startTime(OffsetDateTime startTime) {
     this.startTime = startTime;
     return this;
   }
 
    /**
-   * Get startTime
+   * The beginning of the formation of intervals. Must be in the future, otherwise the current time will be used.
    * @return startTime
   **/
   @javax.annotation.Nullable
@@ -194,7 +194,7 @@ public class BookingInDto {
   }
 
    /**
-   * Java&#39;s Period A date-based amount of time in the ISO-8601 calendar system, such as &#39;2 years, 3 months and 4 days&#39;.
+   * Period to search for available meetings. Format is ISO-8601. For example P3M (3 months), P4W (4 weeks), P5D (5 days).
    * @return timeAvailableFor
   **/
   @javax.annotation.Nullable
@@ -219,7 +219,7 @@ public class BookingInDto {
   }
 
    /**
-   * Get subject
+   * Subject for creating an event about a meeting in the calendar.
    * @return subject
   **/
   @javax.annotation.Nullable
@@ -244,7 +244,7 @@ public class BookingInDto {
   }
 
    /**
-   * Get description
+   * Description of the meeting event on the calendar.
    * @return description
   **/
   @javax.annotation.Nullable
@@ -269,7 +269,7 @@ public class BookingInDto {
   }
 
    /**
-   * Get location
+   * Location of the meeting event on the calendar.
    * @return location
   **/
   @javax.annotation.Nullable
@@ -319,7 +319,7 @@ public class BookingInDto {
   }
 
    /**
-   * Get context
+   * The field for storing any information is available only within the profile.
    * @return context
   **/
   @javax.annotation.Nullable
@@ -344,7 +344,7 @@ public class BookingInDto {
   }
 
    /**
-   * Get startConference
+   * Whether to create a conference (hangoutsMeet, teamsForBusiness, etc.) in addition to a calendar event, not all providers support creating conferences.
    * @return startConference
   **/
   @javax.annotation.Nullable
@@ -369,7 +369,7 @@ public class BookingInDto {
   }
 
    /**
-   * Get openMeetingUrl
+   * The value is used in the variable to be substituted into the description or topic of the meeting event.
    * @return openMeetingUrl
   **/
   @javax.annotation.Nullable
@@ -401,8 +401,8 @@ public class BookingInDto {
     }
     BookingInDto bookingInDto = (BookingInDto) o;
     return Objects.equals(this.name, bookingInDto.name) &&
-        Objects.equals(this.availabilityStep, bookingInDto.availabilityStep) &&
         Objects.equals(this.durationMinutes, bookingInDto.durationMinutes) &&
+        Objects.equals(this.availabilityStep, bookingInDto.availabilityStep) &&
         Objects.equals(this.startTime, bookingInDto.startTime) &&
         Objects.equals(this.timeAvailableFor, bookingInDto.timeAvailableFor) &&
         Objects.equals(this.subject, bookingInDto.subject) &&
@@ -416,7 +416,7 @@ public class BookingInDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, availabilityStep, durationMinutes, startTime, timeAvailableFor, subject, description, location, workHours, context, startConference, openMeetingUrl);
+    return Objects.hash(name, durationMinutes, availabilityStep, startTime, timeAvailableFor, subject, description, location, workHours, context, startConference, openMeetingUrl);
   }
 
   @Override
@@ -424,8 +424,8 @@ public class BookingInDto {
     StringBuilder sb = new StringBuilder();
     sb.append("class BookingInDto {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    availabilityStep: ").append(toIndentedString(availabilityStep)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
+    sb.append("    availabilityStep: ").append(toIndentedString(availabilityStep)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    timeAvailableFor: ").append(toIndentedString(timeAvailableFor)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
@@ -487,14 +487,14 @@ public class BookingInDto {
       joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `availabilityStep` to the URL query string
-    if (getAvailabilityStep() != null) {
-      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
       joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `availabilityStep` to the URL query string
+    if (getAvailabilityStep() != null) {
+      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `startTime` to the URL query string

@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OutgoingEmailAttachment.JSON_PROPERTY_CONTENT_ID,
   OutgoingEmailAttachment.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OutgoingEmailAttachment {
   public static final String JSON_PROPERTY_INLINE = "inline";
   private Boolean inline;

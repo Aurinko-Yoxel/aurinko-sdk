@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OccurrenceInfo.JSON_PROPERTY_START,
   OccurrenceInfo.JSON_PROPERTY_MASTER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OccurrenceInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

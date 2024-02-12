@@ -38,8 +38,6 @@ public enum ServiceType {
   
   EWS("EWS"),
   
-  EWS365("EWS365"),
-  
   IMAP("IMAP"),
   
   SALESFORCE("Salesforce"),

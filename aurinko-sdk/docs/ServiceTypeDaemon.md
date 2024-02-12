@@ -13,8 +13,6 @@
 
 * `EWS` (value: `"EWS"`)
 
-* `EWS365` (value: `"EWS365"`)
-
 * `MSTEAMSBOT` (value: `"MsTeamsBot"`)
 
 * `SLACK` (value: `"Slack"`)

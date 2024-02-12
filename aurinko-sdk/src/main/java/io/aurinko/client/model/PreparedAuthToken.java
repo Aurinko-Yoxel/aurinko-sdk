@@ -24,149 +24,51 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.TrackingData;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * EmailTrackingPageNext
+ * PreparedAuthToken
  */
 @JsonPropertyOrder({
-  EmailTrackingPageNext.JSON_PROPERTY_OFFSET,
-  EmailTrackingPageNext.JSON_PROPERTY_TOTAL_SIZE,
-  EmailTrackingPageNext.JSON_PROPERTY_DONE,
-  EmailTrackingPageNext.JSON_PROPERTY_RECORDS
+  PreparedAuthToken.JSON_PROPERTY_TOKEN
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class EmailTrackingPageNext {
-  public static final String JSON_PROPERTY_OFFSET = "offset";
-  private Integer offset;
+public class PreparedAuthToken {
+  public static final String JSON_PROPERTY_TOKEN = "token";
+  private String token;
 
-  public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
-  private Long totalSize;
-
-  public static final String JSON_PROPERTY_DONE = "done";
-  private Boolean done;
-
-  public static final String JSON_PROPERTY_RECORDS = "records";
-  private List<TrackingData> records;
-
-  public EmailTrackingPageNext() { 
+  public PreparedAuthToken() { 
   }
 
-  public EmailTrackingPageNext offset(Integer offset) {
-    this.offset = offset;
+  public PreparedAuthToken token(String token) {
+    this.token = token;
     return this;
   }
 
    /**
-   * Get offset
-   * @return offset
+   * Get token
+   * @return token
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OFFSET)
+  @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getOffset() {
-    return offset;
+  public String getToken() {
+    return token;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OFFSET)
+  @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOffset(Integer offset) {
-    this.offset = offset;
-  }
-
-
-  public EmailTrackingPageNext totalSize(Long totalSize) {
-    this.totalSize = totalSize;
-    return this;
-  }
-
-   /**
-   * Get totalSize
-   * @return totalSize
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getTotalSize() {
-    return totalSize;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotalSize(Long totalSize) {
-    this.totalSize = totalSize;
-  }
-
-
-  public EmailTrackingPageNext done(Boolean done) {
-    this.done = done;
-    return this;
-  }
-
-   /**
-   * Get done
-   * @return done
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getDone() {
-    return done;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDone(Boolean done) {
-    this.done = done;
-  }
-
-
-  public EmailTrackingPageNext records(List<TrackingData> records) {
-    this.records = records;
-    return this;
-  }
-
-  public EmailTrackingPageNext addRecordsItem(TrackingData recordsItem) {
-    if (this.records == null) {
-      this.records = new ArrayList<>();
-    }
-    this.records.add(recordsItem);
-    return this;
-  }
-
-   /**
-   * Get records
-   * @return records
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RECORDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<TrackingData> getRecords() {
-    return records;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_RECORDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<TrackingData> records) {
-    this.records = records;
+  public void setToken(String token) {
+    this.token = token;
   }
 
 
   /**
-   * Return true if this EmailTrackingPageNext object is equal to o.
+   * Return true if this PreparedAuthToken object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -176,26 +78,20 @@ public class EmailTrackingPageNext {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EmailTrackingPageNext emailTrackingPageNext = (EmailTrackingPageNext) o;
-    return Objects.equals(this.offset, emailTrackingPageNext.offset) &&
-        Objects.equals(this.totalSize, emailTrackingPageNext.totalSize) &&
-        Objects.equals(this.done, emailTrackingPageNext.done) &&
-        Objects.equals(this.records, emailTrackingPageNext.records);
+    PreparedAuthToken preparedAuthToken = (PreparedAuthToken) o;
+    return Objects.equals(this.token, preparedAuthToken.token);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offset, totalSize, done, records);
+    return Objects.hash(token);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EmailTrackingPageNext {\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
-    sb.append("    done: ").append(toIndentedString(done)).append("\n");
-    sb.append("    records: ").append(toIndentedString(records)).append("\n");
+    sb.append("class PreparedAuthToken {\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -243,29 +139,9 @@ public class EmailTrackingPageNext {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `offset` to the URL query string
-    if (getOffset() != null) {
-      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `totalSize` to the URL query string
-    if (getTotalSize() != null) {
-      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `done` to the URL query string
-    if (getDone() != null) {
-      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `records` to the URL query string
-    if (getRecords() != null) {
-      for (int i = 0; i < getRecords().size(); i++) {
-        if (getRecords().get(i) != null) {
-          joiner.add(getRecords().get(i).toUrlQueryString(String.format("%srecords%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
-        }
-      }
+    // add `token` to the URL query string
+    if (getToken() != null) {
+      joiner.add(String.format("%stoken%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

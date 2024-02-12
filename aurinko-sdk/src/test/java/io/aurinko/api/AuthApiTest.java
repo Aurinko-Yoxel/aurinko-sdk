@@ -15,10 +15,10 @@ package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.AccountSaveResult;
+import io.aurinko.client.model.PreparedAuthToken;
 import io.aurinko.client.model.Scope;
 import io.aurinko.client.model.ServiceTypeDaemon;
 import io.aurinko.client.model.ServiceTypeNonDaemon;
-import io.aurinko.client.model.UserAccountType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -57,7 +57,7 @@ public class AuthApiTest {
     }
     
     /**
-     * Start an account authentication flow
+     * Start an account authorization flow
      *
      * 
      *
@@ -69,32 +69,24 @@ public class AuthApiTest {
         String clientId = null;
         ServiceTypeNonDaemon serviceType = null;
         String returnUrl = null;
-        String mailboxInfo = null;
         List<Scope> scopes = null;
         List<String> nativeScopes = null;
         String responseType = null;
         Long accountId = null;
         String loginHint = null;
         String state = null;
-        Boolean fromPortal = null;
         String clientOrgId = null;
-        UserAccountType userAccount = null;
-        String userId = null;
-        Long timestamp = null;
-        String userSignature = null;
-        Boolean sandbox = null;
-        String communityUrl = null;
-        Boolean checkServiceAccount = null;
         String serverUrl = null;
         Boolean ensureScopes = null;
+        Boolean recycle = null;
         
-        CompletableFuture<Void> response = api.authorize(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, fromPortal, clientOrgId, userAccount, userId, timestamp, userSignature, sandbox, communityUrl, checkServiceAccount, serverUrl, ensureScopes);
+        CompletableFuture<Void> response = api.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle);
         
         // TODO: test validations
     }
     
     /**
-     * Start an service/daemon account authentication flow
+     * Start a service/daemon account authorization flow
      *
      * 
      *
@@ -106,17 +98,48 @@ public class AuthApiTest {
         String clientId = null;
         ServiceTypeDaemon serviceType = null;
         String returnUrl = null;
-        String mailboxInfo = null;
         List<Scope> scopes = null;
         List<String> nativeScopes = null;
         String responseType = null;
         Long accountId = null;
         String state = null;
-        Boolean fromPortal = null;
         String clientOrgId = null;
         Boolean ensureScopes = null;
         
-        CompletableFuture<Void> response = api.authorizeDaemon(clientId, serviceType, returnUrl, mailboxInfo, scopes, nativeScopes, responseType, accountId, state, fromPortal, clientOrgId, ensureScopes);
+        CompletableFuture<Void> response = api.authorizeDaemon(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, state, clientOrgId, ensureScopes);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Start a user session authorization flow
+     *
+     * This endpoint is used to authorize accounts that are linked to &#x60;Users&#x60;. The &#x60;accountRole&#x60; parameter must be set to either &#x60;primary&#x60; or &#x60;secondary&#x60;. A &#x60;primary&#x60; role creates a new User entity and assigns the account as its key/primary account, with subsequent authorizations simply re-authorizing the existing primary account with its User. The &#x60;secondary&#x60; role requires an existing &#x60;User&#x60; cookie or &#x60;userId&#x60;+&#x60;userSignature&#x60; parameters and links the new account to the &#x60;User&#x60; specified by the cookie or &#x60;userId&#x60;.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void authorizeUserTest() throws ApiException {
+        String clientId = null;
+        ServiceTypeNonDaemon serviceType = null;
+        String returnUrl = null;
+        String accountRole = null;
+        String mailboxInfo = null;
+        List<Scope> scopes = null;
+        List<String> nativeScopes = null;
+        String responseType = null;
+        Long accountId = null;
+        String loginHint = null;
+        String state = null;
+        String userId = null;
+        Long timestamp = null;
+        String userSignature = null;
+        String serverUrl = null;
+        Boolean ensureScopes = null;
+        String token = null;
+        
+        CompletableFuture<Void> response = api.authorizeUser(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token);
         
         // TODO: test validations
     }
@@ -134,6 +157,22 @@ public class AuthApiTest {
         String code = null;
         CompletableFuture<AccountSaveResult> response = 
         api.getAccessTokenByCode(code);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Prepare an authorization flow (with external authentication data)
+     *
+     * Aurinko&#39;s standard user authentication uses cookies or session tokens. For clients using Office365 add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).  To use exchange identity token, do the following: 1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details. 2. Make the call to &#x60;/auth/prepare&#x60; with these HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; &lt;br&gt;   This call returns a temporary token: &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;. 3. Use the temporary token from &#x60;/auth/prepare&#x60; at the &#x60;/authorizeUser&#x60; endpoint. Pass it as a query parameter: &#x60;?token&#x3D;your-temporary-token&#x60;.  Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API, client applications now can use exchange identity token by authenticating API requests with: - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void prepareAuthTest() throws ApiException {
+        CompletableFuture<PreparedAuthToken> response = 
+        api.prepareAuth();
         
         // TODO: test validations
     }

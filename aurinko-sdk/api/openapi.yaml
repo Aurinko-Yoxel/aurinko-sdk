@@ -69,12 +69,9 @@ tags:
 - name: subscriptions
 - name: task
 - description: |
-    These methods are used begin the authentication process and add Aurinko accounts. Two main use cases are supported:
-
-    1. Adding an account and obtaining an account token.
-    2. Adding an account and creating a user-account (user session). Specify `&userAccount=primary` parameter.
-      A userId and a user session token is obtained that represent an Aurinko app user.
-      - Adding a secondary account to an existing user-account. Specify `&userAccount=secondary&userId=<userId>` parameter.
+    Aurinko's Unified OAuth Flows are backed by providers’ OAuth2 flows (i.e. Google, Office 365, Zoho Mail, Salesforce, HubSpot, SugarCRM) or by secure password-based authentications (i.e. MS Exchange, IMAP accounts). The following three flows are supported:
+    1. Account OAuth - User delegated authorization that produces an Aurinko account and an access token. 2. Service Account OAuth - Admin/Org-level authorization that produces an Auirnko service account and an access token. 3. User OAuth - User delegated authorization that produces an Aurinko User, its primary account, and a user session token or cookie.
+    See [this user guide](https://docs.aurinko.io/authentication/authentication-flow) for more information.
   name: Auth
   x-displayName: Authorization
 - description: "## Failing requests\nAPI clients must expect and gracefully handle\
@@ -110,7 +107,8 @@ tags:
 - description: |
     An account corresponds to an email address, mailbox, and/or calendar. When connecting to the Aurinko API, a specific access token gives you access to a specific account’s data.
   name: Account
-- description: User session management.
+- description: |
+    `User` is an Aurinko provided entity that your app can leverage to implement user session management. Multiple regular Aurinko accounts can be linked to a `User` however there is always one primary account that acts as the user id-provider. The `User` sessions allow browser apps to store all their account access tokens securely on the Aurinko servers.
   name: User
   x-displayName: User sessions
 - description: |
@@ -3609,11 +3607,43 @@ paths:
       - Managed accounts
       x-content-type: application/json
       x-accepts: application/json
+  /v1/auth/prepare:
+    post:
+      description: |
+        Aurinko's standard user authentication uses cookies or session tokens. For clients using Office365
+        add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See
+        https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).
+
+        To use exchange identity token, do the following:
+        1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details.
+        2. Make the call to `/auth/prepare` with these HTTP headers:
+          - `X-Aurinko-Auth-Type`: `exchangeIdToken`
+          - `Authorization`: `Bearer <your_exchange_id_token>` <br>
+          This call returns a temporary token: `{ "token": "your-temporary-token" }`.
+        3. Use the temporary token from `/auth/prepare` at the `/authorizeUser` endpoint.
+        Pass it as a query parameter: `?token=your-temporary-token`.
+
+        Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API,
+        client applications now can use exchange identity token by authenticating API requests with:
+        - `X-Aurinko-Auth-Type`: `exchangeIdToken`
+        - `Authorization`: `Bearer <your_exchange_id_token>`
+      operationId: prepareAuth
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreparedAuthToken'
+          description: Success
+      summary: Prepare an authorization flow (with external authentication data)
+      tags:
+      - Auth
+      x-accepts: application/json
   /v1/auth/authorize:
     get:
       operationId: authorize
       parameters:
-      - description: Application client Id
+      - description: Application Client Id from the Aurinko portal dashboard.
         explode: true
         in: query
         name: clientId
@@ -3623,20 +3653,12 @@ paths:
         style: form
       - explode: true
         in: query
-        name: mailboxInfo
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: form
-      - explode: true
-        in: query
         name: serviceType
         required: true
         schema:
           $ref: '#/components/schemas/ServiceTypeNonDaemon'
         style: form
-      - description: Space separated list of scopes
+      - description: Space separated list of Aurinko defined scopes.
         explode: true
         in: query
         name: scopes
@@ -3647,7 +3669,8 @@ paths:
           nullable: true
           type: array
         style: form
-      - explode: true
+      - description: Space separated list of provider defined scopes
+        explode: true
         in: query
         name: nativeScopes
         required: false
@@ -3657,7 +3680,11 @@ paths:
           nullable: true
           type: array
         style: form
-      - explode: true
+      - description: "The type of response expected from the authorization flow. Choose\
+          \ `token` to directly receive the authentication token, or `code` to obtain\
+          \ a temporary code that can be exchanged for the token using the /auth/token\
+          \ endpoint."
+        explode: true
         in: query
         name: responseType
         required: false
@@ -3669,7 +3696,7 @@ paths:
           nullable: true
           type: string
         style: form
-      - description: When re-authorizing an existing account
+      - description: For re-authorizing an existing account.
         explode: true
         in: query
         name: accountId
@@ -3679,7 +3706,9 @@ paths:
           nullable: true
           type: integer
         style: form
-      - explode: true
+      - description: "Is passed as \"login_hint\" in OAuth flows, suggesting user\
+          \ identity for a smoother login process."
+        explode: true
         in: query
         name: loginHint
         required: false
@@ -3687,7 +3716,8 @@ paths:
           nullable: true
           type: string
         style: form
-      - description: Redirect/callback url
+      - description: Return/Callback url for receiving the authorization code or token.
+          It must be registered on the settings page in Aurinko portal.
         explode: true
         in: query
         name: returnUrl
@@ -3696,7 +3726,7 @@ paths:
           nullable: true
           type: string
         style: form
-      - description: Custom state string
+      - description: Custom state string that will be returned in the callback.
         explode: true
         in: query
         name: state
@@ -3705,15 +3735,9 @@ paths:
           nullable: true
           type: string
         style: form
-      - explode: true
-        in: query
-        name: fromPortal
-        required: false
-        schema:
-          nullable: true
-          type: boolean
-        style: form
-      - explode: true
+      - description: Allows clients to group accounts based on their internal organization
+          data.
+        explode: true
         in: query
         name: clientOrgId
         required: false
@@ -3721,63 +3745,11 @@ paths:
           nullable: true
           type: string
         style: form
-      - explode: true
-        in: query
-        name: userAccount
-        required: false
-        schema:
-          $ref: '#/components/schemas/UserAccountType'
-        style: form
-      - explode: true
-        in: query
-        name: userId
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: timestamp
-        required: false
-        schema:
-          format: int64
-          nullable: true
-          type: integer
-        style: form
-      - explode: true
-        in: query
-        name: userSignature
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: sandbox
-        required: false
-        schema:
-          nullable: true
-          type: boolean
-        style: form
-      - explode: true
-        in: query
-        name: communityUrl
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: checkServiceAccount
-        required: false
-        schema:
-          nullable: true
-          type: boolean
-        style: form
-      - explode: true
+      - description: "Can be used in the form-based authentication to specify the\
+          \ URL of the server to which the user intends to authenticate. When included,\
+          \ it automatically populates the corresponding input field on the authentication\
+          \ form."
+        explode: true
         in: query
         name: serverUrl
         required: false
@@ -3785,20 +3757,31 @@ paths:
           nullable: true
           type: string
         style: form
-      - description: "When set to true, raises an error if any of the requested scopes\
-          \ are not granted by the user"
+      - description: "When set to true, Aurinko will check if a user granted all requested\
+          \ permissions."
         explode: true
         in: query
         name: ensureScopes
         required: false
         schema:
+          nullable: true
+          type: boolean
+        style: form
+      - description: Indicates whether to reuse an existing account instead of creating
+          a new one during authentication.
+        explode: true
+        in: query
+        name: recycle
+        required: false
+        schema:
+          nullable: true
           type: boolean
         style: form
       responses:
         "303":
           description: Redirect
       security: []
-      summary: Start an account authentication flow
+      summary: Start an account authorization flow
       tags:
       - Auth
       x-codeSamples:
@@ -3816,7 +3799,7 @@ paths:
     get:
       operationId: authorizeDaemon
       parameters:
-      - description: Application client Id
+      - description: Application Client Id from the Aurinko portal dashboard.
         explode: true
         in: query
         name: clientId
@@ -3826,20 +3809,12 @@ paths:
         style: form
       - explode: true
         in: query
-        name: mailboxInfo
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: form
-      - explode: true
-        in: query
         name: serviceType
         required: true
         schema:
           $ref: '#/components/schemas/ServiceTypeDaemon'
         style: form
-      - description: Space separated list of scopes
+      - description: Space separated list of Aurinko defined scopes.
         explode: true
         in: query
         name: scopes
@@ -3850,7 +3825,8 @@ paths:
           nullable: true
           type: array
         style: form
-      - explode: true
+      - description: Space separated list of provider defined scopes.
+        explode: true
         in: query
         name: nativeScopes
         required: false
@@ -3860,7 +3836,11 @@ paths:
           nullable: true
           type: array
         style: form
-      - explode: true
+      - description: "The type of response expected from the authorization flow. Choose\
+          \ `token` to directly receive the authentication token, or `code` to obtain\
+          \ a temporary code that can be exchanged for the token using the /auth/token\
+          \ endpoint."
+        explode: true
         in: query
         name: responseType
         required: false
@@ -3872,7 +3852,7 @@ paths:
           nullable: true
           type: string
         style: form
-      - description: When re-authorizing an existing account
+      - description: For re-authorizing an existing account.
         explode: true
         in: query
         name: accountId
@@ -3882,7 +3862,8 @@ paths:
           nullable: true
           type: integer
         style: form
-      - description: Redirect/callback url
+      - description: Return/Callback url for receiving the authorization code or token.
+          It must be registered on the settings page in Aurinko portal.
         explode: true
         in: query
         name: returnUrl
@@ -3900,15 +3881,9 @@ paths:
           nullable: true
           type: string
         style: form
-      - explode: true
-        in: query
-        name: fromPortal
-        required: false
-        schema:
-          nullable: true
-          type: boolean
-        style: form
-      - explode: true
+      - description: Allows clients to group accounts based on their internal organization
+          data.
+        explode: true
         in: query
         name: clientOrgId
         required: false
@@ -3916,20 +3891,21 @@ paths:
           nullable: true
           type: string
         style: form
-      - description: "When set to true, raises an error if any of the requested scopes\
-          \ are not granted by the user"
+      - description: "When set to true, Aurinko will check if a user granted all requested\
+          \ permissions."
         explode: true
         in: query
         name: ensureScopes
         required: false
         schema:
+          nullable: true
           type: boolean
         style: form
       responses:
         "303":
           description: Redirect
       security: []
-      summary: Start an service/daemon account authentication flow
+      summary: Start a service/daemon account authorization flow
       tags:
       - Auth
       x-codeSamples:
@@ -3939,6 +3915,233 @@ paths:
               -d clientId='a8b7c6d5e4f3g2h1' \
               -d serviceType='Google' \
               -d scopes='Calendar.ReadWrite Mail.Read Mail.Send' \
+              -d returnUrl='https://yourapp.com/aurinko-redirect' \
+              -d state='CustomStateString'
+      x-accepts: application/json
+  /v1/auth/authorizeUser:
+    get:
+      description: "This endpoint is used to authorize accounts that are linked to\
+        \ `Users`. The `accountRole` parameter must be set to either `primary` or\
+        \ `secondary`. A `primary` role creates a new User entity and assigns the\
+        \ account as its key/primary account, with subsequent authorizations simply\
+        \ re-authorizing the existing primary account with its User. The `secondary`\
+        \ role requires an existing `User` cookie or `userId`+`userSignature` parameters\
+        \ and links the new account to the `User` specified by the cookie or `userId`."
+      operationId: authorizeUser
+      parameters:
+      - description: Application Client Id from the Aurinko portal dashboard.
+        explode: true
+        in: query
+        name: clientId
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: "Relevant only for cookie-based authentication in multi-client\
+          \ setups. When different client apps are connected to a single Aurinko application,\
+          \ this string (commonly the user's email, but can be any unique identifier)\
+          \ is combined with \"clientId\" to create a distinct authentication cookie\
+          \ name and prevent cookie conflicts. Clients using cookie-based auth must\
+          \ send \"clientId\" and \"mailboxInfo\" via \"X-Aurinko-Client-Id\" and\
+          \ \"X-Aurinko-Mailbox-Info\" HTTP headers for accurate cookie identification."
+        explode: true
+        in: query
+        name: mailboxInfo
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: serviceType
+        required: true
+        schema:
+          $ref: '#/components/schemas/ServiceTypeNonDaemon'
+        style: form
+      - description: Space separated list of Aurinko defined scopes.
+        explode: true
+        in: query
+        name: scopes
+        required: false
+        schema:
+          items:
+            $ref: '#/components/schemas/Scope'
+          nullable: true
+          type: array
+        style: form
+      - description: Space separated list of provider defined scopes
+        explode: true
+        in: query
+        name: nativeScopes
+        required: false
+        schema:
+          items:
+            $ref: '#/components/schemas/NativeScope'
+          nullable: true
+          type: array
+        style: form
+      - description: "The type of response expected from the user authorization flow.\
+          \ For `primary` accounts, choose `cookie` or `code`, for `secondary` accounts,\
+          \ choose `none`. `cookie` will set a cookie in the user's browser in the\
+          \ callback, `code` will return a temporary code that can be exchanged for\
+          \ a user session token using the /auth/token endpoint. `none` will return\
+          \ only the status of the operation and information about an occurred error.\
+          \ Because `secondary` accounts are linked to an existing and authorized\
+          \ User, they don't need to receive a token or cookie in the callback."
+        explode: true
+        in: query
+        name: responseType
+        required: false
+        schema:
+          default: cookie
+          enum:
+          - cookie
+          - code
+          - none
+          nullable: true
+          type: string
+        style: form
+      - description: For re-authorizing an existing `secondary` account.
+        explode: true
+        in: query
+        name: accountId
+        required: false
+        schema:
+          format: int64
+          nullable: true
+          type: integer
+        style: form
+      - description: "Is passed as \"login_hint\" in OAuth flows, suggesting user\
+          \ identity for a smoother login process."
+        explode: true
+        in: query
+        name: loginHint
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: Return/Callback url for receiving the authorization code or token.
+          It must be registered on the settings page in Aurinko portal.
+        explode: true
+        in: query
+        name: returnUrl
+        required: true
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: Custom state string
+        explode: true
+        in: query
+        name: state
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: "The account's role in relation to a User. Use `primary` for\
+          \ the account to act as a key account; this will create a new User if the\
+          \ primary account doesn't exist already. If the primary account exists,\
+          \ it's simply re-authorized without creating a new user. Choose `secondary`\
+          \ to associate the account with an already existing User, which requires\
+          \ either existing User cookie or `userId` + `userSignature` for identification."
+        explode: true
+        in: query
+        name: accountRole
+        required: true
+        schema:
+          enum:
+          - primary
+          - secondary
+          type: string
+        style: form
+      - description: Identifies a user for whom a secondary account is being added.
+          Should be used only when `userAccount=secondary` and user cookie is not
+          present in the request. Works in conjunction with `timestamp` and `userSignature`
+          to authorize the addition of secondary account.
+        explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: Request timestamp in seconds. Should be used only when `userAccount=secondary`
+          and user cookie is not present in the request. Works in conjunction with
+          `userId` and `userSignature` to authorize the addition of secondary account.
+        explode: true
+        in: query
+        name: timestamp
+        required: false
+        schema:
+          format: int64
+          nullable: true
+          type: integer
+        style: form
+      - description: "A string that is generated by concatenating `userId` and `timestamp`,\
+          \ then hashing with HmacSHA256 using the application's `clientSecret`, then\
+          \ encoding in Hex, base64, or base64 web format. Should be used only when\
+          \ `userAccount=secondary` and user cookie is not present in the request\
+          \ Works in conjunction with `userId` and `timestamp` to authorize the addition\
+          \ of secondary account."
+        explode: true
+        in: query
+        name: userSignature
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: "Can be used in the form-based authentication to specify the\
+          \ URL of the server to which the user intends to authenticate. When included,\
+          \ it automatically populates the corresponding input field on the authentication\
+          \ form."
+        explode: true
+        in: query
+        name: serverUrl
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: "When set to true, Aurinko will check if a user granted all requested\
+          \ permissions."
+        explode: true
+        in: query
+        name: ensureScopes
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
+      - description: Token from the /auth/prepare endpoint.
+        explode: true
+        in: query
+        name: token
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      responses:
+        "303":
+          description: Redirect
+      security: []
+      summary: Start a user session authorization flow
+      tags:
+      - Auth
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET -G https://api.aurinko.io/v1/auth/authorizeUser \
+              -d clientId='a8b7c6d5e4f3g2h1' \
+              -d serviceType='Google' \
+              -d accountRole='primary' \
+              -d scopes='Calendar.ReadWrite Mail.Read Mail.Send' \
+              -d responseType='cookie' \
               -d returnUrl='https://yourapp.com/aurinko-redirect' \
               -d state='CustomStateString'
       x-accepts: application/json
@@ -4977,7 +5180,6 @@ components:
       - GoogleBot
       - Office365
       - EWS
-      - EWS365
       - IMAP
       - Salesforce
       - Salesflare
@@ -5043,7 +5245,6 @@ components:
       - Google
       - Office365
       - EWS
-      - EWS365
       - IMAP
       - Salesforce
       - Salesflare
@@ -5594,7 +5795,6 @@ components:
       - GoogleBot
       - Office365
       - EWS
-      - EWS365
       - MsTeamsBot
       - Slack
       - SlackBot
@@ -6084,9 +6284,11 @@ components:
         availabilityStep: 6
         durationMinutes: 0
         additionalFields:
-        - name: name
+        - default: default
+          name: name
           type: type
-        - name: name
+        - default: default
+          name: name
           type: type
         subject: subject
         primaryColor: primaryColor
@@ -6100,29 +6302,46 @@ components:
         secondaryColor: secondaryColor
       properties:
         items:
+          description: List of available meeting slots.
           items:
             $ref: '#/components/schemas/MeetingTime'
           type: array
         startTime:
+          description: Start time of available meeting slots.
           format: date-time
           type: string
         endTime:
+          description: End time of available meeting slots.
           format: date-time
           type: string
         durationMinutes:
+          description: Length of meeting in minutes
           type: integer
         availabilityStep:
+          description: Determines the interval at which new meeting slots are made
+            available throughout the working hours.
           type: integer
         subject:
+          description: Subject for creating an event about a meeting in the calendar.
           type: string
         primaryColor:
+          description: "Primary Color, taken from the application settings."
           type: string
         secondaryColor:
+          description: "The second Color, taken from the application settings."
           type: string
         additionalFields:
+          description: List of templates for value substitution
           items:
             $ref: '#/components/schemas/AdditionalField'
           type: array
+      type: object
+    PreparedAuthToken:
+      example:
+        token: token
+      properties:
+        token:
+          type: string
       type: object
     BookingSuccessOutDto:
       example:
@@ -6441,8 +6660,8 @@ components:
     BookingInDto:
       example:
         availabilityStep: 0
-        durationMinutes: 6
-        timeAvailableFor: timeAvailableFor
+        durationMinutes: 30
+        timeAvailableFor: P4W
         subject: subject
         workHours:
           daySchedules:
@@ -6459,7 +6678,7 @@ components:
             - start: start
               end: end
           timezone: timezone
-        name: name
+        name: alex30min
         context: context
         description: description
         startTime: 2000-01-23T04:56:07.000+00:00
@@ -6468,31 +6687,51 @@ components:
         openMeetingUrl: openMeetingUrl
       properties:
         name:
+          description: Profile name used in the link to the list of available meeting
+            slots.
+          example: alex30min
           type: string
-        availabilityStep:
-          type: integer
         durationMinutes:
+          description: Duration of the meeting in minutes.
+          example: 30
+          type: integer
+        availabilityStep:
+          description: Determines the interval at which new meeting slots are made
+            available throughout the working hours.
           type: integer
         startTime:
+          description: "The beginning of the formation of intervals. Must be in the\
+            \ future, otherwise the current time will be used."
           format: date-time
           type: string
         timeAvailableFor:
-          description: "Java's Period A date-based amount of time in the ISO-8601\
-            \ calendar system, such as '2 years, 3 months and 4 days'."
+          description: "Period to search for available meetings. Format is ISO-8601.\
+            \ For example P3M (3 months), P4W (4 weeks), P5D (5 days)."
+          example: P4W
           type: string
         subject:
+          description: Subject for creating an event about a meeting in the calendar.
           type: string
         description:
+          description: Description of the meeting event on the calendar.
           type: string
         location:
+          description: Location of the meeting event on the calendar.
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
         context:
+          description: The field for storing any information is available only within
+            the profile.
           type: string
         startConference:
+          description: "Whether to create a conference (hangoutsMeet, teamsForBusiness,\
+            \ etc.) in addition to a calendar event, not all providers support creating\
+            \ conferences."
           type: boolean
         openMeetingUrl:
+          description: The value is used in the variable to be substituted into the
+            description or topic of the meeting event.
           type: string
       type: object
     EmailSendResponse:
@@ -6976,9 +7215,9 @@ components:
       type: object
     BookingUpdateDto:
       example:
-        availabilityStep: 6
-        durationMinutes: 0
-        timeAvailableFor: timeAvailableFor
+        availabilityStep: 0
+        durationMinutes: 30
+        timeAvailableFor: P4W
         subject: subject
         workHours:
           daySchedules:
@@ -6995,7 +7234,7 @@ components:
             - start: start
               end: end
           timezone: timezone
-        name: name
+        name: alex30min
         context: context
         description: description
         startTime: 2000-01-23T04:56:07.000+00:00
@@ -7004,31 +7243,51 @@ components:
         openMeetingUrl: openMeetingUrl
       properties:
         name:
+          description: Profile name used in the link to the list of available meeting
+            slots.
+          example: alex30min
           type: string
         durationMinutes:
+          description: Duration of the meeting in minutes.
+          example: 30
           type: integer
         availabilityStep:
+          description: Determines the interval at which new meeting slots are made
+            available throughout the working hours.
           type: integer
         startTime:
+          description: "The beginning of the formation of intervals. Must be in the\
+            \ future, otherwise the current time will be used."
           format: date-time
           type: string
         timeAvailableFor:
-          description: "Java's Period A date-based amount of time in the ISO-8601\
-            \ calendar system, such as '2 years, 3 months and 4 days'."
+          description: "Period to search for available meetings. Format is ISO-8601.\
+            \ For example P3M (3 months), P4W (4 weeks), P5D (5 days)."
+          example: P4W
           type: string
         subject:
+          description: Subject for creating an event about a meeting in the calendar.
           type: string
         description:
+          description: Description of the meeting event on the calendar.
           type: string
         location:
+          description: Location of the meeting event on the calendar.
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
         context:
+          description: The field for storing any information is available only within
+            the profile.
           type: string
         startConference:
+          description: "Whether to create a conference (hangoutsMeet, teamsForBusiness,\
+            \ etc.) in addition to a calendar event, not all providers support creating\
+            \ conferences."
           type: boolean
         openMeetingUrl:
+          description: The value is used in the variable to be substituted into the
+            description or topic of the meeting event.
           type: string
       type: object
     Recurrence:
@@ -7356,12 +7615,15 @@ components:
         time:
           $ref: '#/components/schemas/SelectedMeetingTime'
         name:
+          description: Username of the person requesting the meeting
           type: string
         email:
+          description: Email of the person requesting the meeting
           type: string
         substitutionData:
           additionalProperties:
             type: string
+          description: "Data for substitution instead of templates, key - value"
           type: object
       type: object
     AccountSaveResult:
@@ -8846,12 +9108,18 @@ components:
       type: object
     AdditionalField:
       example:
+        default: default
         name: name
         type: type
       properties:
         name:
+          description: Template key name
           type: string
         type:
+          description: Value type
+          type: string
+        default:
+          description: Default value
           type: string
       type: object
     FollowUpOutgoing:
@@ -8922,7 +9190,7 @@ components:
       type: object
     BookingOutDto:
       example:
-        availabilityStep: 1
+        availabilityStep: 6
         subject: subject
         workHours:
           daySchedules:
@@ -8940,9 +9208,9 @@ components:
               end: end
           timezone: timezone
         description: description
-        durationMinutes: 6
-        timeAvailableFor: timeAvailableFor
-        name: name
+        durationMinutes: 30
+        timeAvailableFor: P4W
+        name: alex30min
         context: context
         startTime: 2000-01-23T04:56:07.000+00:00
         location: location
@@ -8954,31 +9222,51 @@ components:
           format: int64
           type: integer
         name:
+          description: Profile name used in the link to the list of available meeting
+            slots.
+          example: alex30min
           type: string
         durationMinutes:
+          description: Duration of the meeting in minutes.
+          example: 30
           type: integer
         availabilityStep:
+          description: Determines the interval at which new meeting slots are made
+            available throughout the working hours.
           type: integer
         startTime:
+          description: "The beginning of the formation of intervals. Must be in the\
+            \ future, otherwise the current time will be used."
           format: date-time
           type: string
         timeAvailableFor:
-          description: "Java's Period A date-based amount of time in the ISO-8601\
-            \ calendar system, such as '2 years, 3 months and 4 days'."
+          description: "Period to search for available meetings. Format is ISO-8601.\
+            \ For example P3M (3 months), P4W (4 weeks), P5D (5 days)."
+          example: P4W
           type: string
         subject:
+          description: Subject for creating an event about a meeting in the calendar.
           type: string
         description:
+          description: Description of the meeting event on the calendar.
           type: string
         location:
+          description: Location of the meeting event on the calendar.
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
         context:
+          description: The field for storing any information is available only within
+            the profile.
           type: string
         startConference:
+          description: "Whether to create a conference (hangoutsMeet, teamsForBusiness,\
+            \ etc.) in addition to a calendar event, not all providers support creating\
+            \ conferences."
           type: boolean
         openMeetingUrl:
+          description: The value is used in the variable to be substituted into the
+            description or topic of the meeting event.
           type: string
       type: object
     DayOfWeek:

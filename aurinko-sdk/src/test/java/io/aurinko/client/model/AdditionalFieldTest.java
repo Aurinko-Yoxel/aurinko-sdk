@@ -53,4 +53,12 @@ public class AdditionalFieldTest {
         // TODO: test type
     }
 
+    /**
+     * Test the property '_default'
+     */
+    @Test
+    public void _defaultTest() {
+        // TODO: test _default
+    }
+
 }

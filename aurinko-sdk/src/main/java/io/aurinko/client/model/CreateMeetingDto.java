@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   CreateMeetingDto.JSON_PROPERTY_EMAIL,
   CreateMeetingDto.JSON_PROPERTY_SUBSTITUTION_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateMeetingDto {
   public static final String JSON_PROPERTY_TIME = "time";
   private SelectedMeetingTime time;
@@ -88,7 +88,7 @@ public class CreateMeetingDto {
   }
 
    /**
-   * Get name
+   * Username of the person requesting the meeting
    * @return name
   **/
   @javax.annotation.Nullable
@@ -113,7 +113,7 @@ public class CreateMeetingDto {
   }
 
    /**
-   * Get email
+   * Email of the person requesting the meeting
    * @return email
   **/
   @javax.annotation.Nullable
@@ -146,7 +146,7 @@ public class CreateMeetingDto {
   }
 
    /**
-   * Get substitutionData
+   * Data for substitution instead of templates, key - value
    * @return substitutionData
   **/
   @javax.annotation.Nullable

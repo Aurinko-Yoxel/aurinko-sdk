@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   TaskUpdateResponse.JSON_PROPERTY_ETAG,
   TaskUpdateResponse.JSON_PROPERTY_RECORD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T09:20:22.278375Z[Africa/Bamako]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TaskUpdateResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
