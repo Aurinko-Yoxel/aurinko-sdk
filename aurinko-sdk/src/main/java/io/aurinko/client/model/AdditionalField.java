@@ -56,7 +56,7 @@ public class AdditionalField {
   }
 
    /**
-   * Template key name
+   * Substitution variable name
    * @return name
   **/
   @javax.annotation.Nullable

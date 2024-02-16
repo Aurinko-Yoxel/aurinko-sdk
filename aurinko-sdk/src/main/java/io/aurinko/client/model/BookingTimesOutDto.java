@@ -218,7 +218,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Subject for creating an event about a meeting in the calendar.
+   * Subject for events booked using this profile.
    * @return subject
   **/
   @javax.annotation.Nullable
@@ -301,7 +301,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * List of templates for value substitution
+   * List of substitution variables like {{name}}, {{openMeetingUrl}},...
    * @return additionalFields
   **/
   @javax.annotation.Nullable

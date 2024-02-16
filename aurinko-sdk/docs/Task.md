@@ -14,8 +14,8 @@
 |**parentId** | **String** |  |  [optional] |
 |**position** | **String** |  |  [optional] |
 |**notes** | **String** |  |  [optional] |
-|**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-|**importance** | [**ImportanceEnum**](#ImportanceEnum) |  |  [optional] |
+|**status** | **TaskStatus** |  |  [optional] |
+|**importance** | **TaskImportance** |  |  [optional] |
 |**due** | **OffsetDateTime** |  |  [optional] |
 |**completed** | **OffsetDateTime** |  |  [optional] |
 |**links** | [**List&lt;TaskLink&gt;**](TaskLink.md) |  |  [optional] |
@@ -23,30 +23,6 @@
 |**categories** | **List&lt;String&gt;** |  |  [optional] |
 |**owner** | **String** |  |  [optional] |
 |**omitted** | [**List&lt;OmittedEnum&gt;**](#List&lt;OmittedEnum&gt;) |  |  [optional] [readonly] |
-
-
-
-## Enum: StatusEnum
-
-| Name | Value |
-|---- | -----|
-| NOTSTARTED | &quot;notStarted&quot; |
-| INPROGRESS | &quot;inProgress&quot; |
-| COMPLETED | &quot;completed&quot; |
-| WAITINGONOTHERS | &quot;waitingOnOthers&quot; |
-| DEFERRED | &quot;deferred&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
-
-
-
-## Enum: ImportanceEnum
-
-| Name | Value |
-|---- | -----|
-| LOW | &quot;low&quot; |
-| NORMAL | &quot;normal&quot; |
-| HIGH | &quot;high&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

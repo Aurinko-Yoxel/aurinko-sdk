@@ -123,7 +123,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Profile name used in the link to the list of available meeting slots.
+   * Profile name used in calendar links to identify a profile.
    * @return name
   **/
   @javax.annotation.Nullable
@@ -223,7 +223,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Period to search for available meetings. Format is ISO-8601. For example P3M (3 months), P4W (4 weeks), P5D (5 days).
+   * Time period (in ISO-8601 format) the profile is covering. For example, P3M (3 months), P4W (4 weeks), P5D (5 days).
    * @return timeAvailableFor
   **/
   @javax.annotation.Nullable
@@ -248,7 +248,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Subject for creating an event about a meeting in the calendar.
+   * Subject for events booked using this profile.
    * @return subject
   **/
   @javax.annotation.Nullable
@@ -273,7 +273,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Description of the meeting event on the calendar.
+   * Description for events booked using this profile.
    * @return description
   **/
   @javax.annotation.Nullable
@@ -298,7 +298,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Location of the meeting event on the calendar.
+   * Location for events booked using this profile.
    * @return location
   **/
   @javax.annotation.Nullable
@@ -348,7 +348,7 @@ public class BookingOutDto {
   }
 
    /**
-   * The field for storing any information is available only within the profile.
+   * Custom client data stored for the profile.
    * @return context
   **/
   @javax.annotation.Nullable
@@ -373,7 +373,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Whether to create a conference (hangoutsMeet, teamsForBusiness, etc.) in addition to a calendar event, not all providers support creating conferences.
+   * Whether to create an online conference (hangoutsMeet, teamsForBusiness, etc.) for the event. Note, not all providers support creating conferences.
    * @return startConference
   **/
   @javax.annotation.Nullable
@@ -398,7 +398,7 @@ public class BookingOutDto {
   }
 
    /**
-   * The value is used in the variable to be substituted into the description or topic of the meeting event.
+   * The value of the {{}openMeetingUrl}} variable that can be used in the event description or subject.
    * @return openMeetingUrl
   **/
   @javax.annotation.Nullable

@@ -96,8 +96,6 @@ public enum ServiceProvider {
   
   YOXEL("Yoxel"),
   
-  CALDAV("CalDav"),
-  
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;

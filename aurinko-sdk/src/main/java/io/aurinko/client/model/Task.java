@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.TaskImportance;
 import io.aurinko.client.model.TaskLink;
+import io.aurinko.client.model.TaskStatus;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -76,93 +78,11 @@ public class Task {
   public static final String JSON_PROPERTY_NOTES = "notes";
   private String notes;
 
-  /**
-   * Gets or Sets status
-   */
-  public enum StatusEnum {
-    NOTSTARTED("notStarted"),
-    
-    INPROGRESS("inProgress"),
-    
-    COMPLETED("completed"),
-    
-    WAITINGONOTHERS("waitingOnOthers"),
-    
-    DEFERRED("deferred"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-  }
-
   public static final String JSON_PROPERTY_STATUS = "status";
-  private StatusEnum status;
-
-  /**
-   * Gets or Sets importance
-   */
-  public enum ImportanceEnum {
-    LOW("low"),
-    
-    NORMAL("normal"),
-    
-    HIGH("high"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
-
-    private String value;
-
-    ImportanceEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ImportanceEnum fromValue(String value) {
-      for (ImportanceEnum b : ImportanceEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-  }
+  private TaskStatus status;
 
   public static final String JSON_PROPERTY_IMPORTANCE = "importance";
-  private ImportanceEnum importance;
+  private TaskImportance importance;
 
   public static final String JSON_PROPERTY_DUE = "due";
   private OffsetDateTime due;
@@ -406,7 +326,7 @@ public class Task {
   }
 
 
-  public Task status(StatusEnum status) {
+  public Task status(TaskStatus status) {
     this.status = status;
     return this;
   }
@@ -419,19 +339,19 @@ public class Task {
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public StatusEnum getStatus() {
+  public TaskStatus getStatus() {
     return status;
   }
 
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
+  public void setStatus(TaskStatus status) {
     this.status = status;
   }
 
 
-  public Task importance(ImportanceEnum importance) {
+  public Task importance(TaskImportance importance) {
     this.importance = importance;
     return this;
   }
@@ -444,14 +364,14 @@ public class Task {
   @JsonProperty(JSON_PROPERTY_IMPORTANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public ImportanceEnum getImportance() {
+  public TaskImportance getImportance() {
     return importance;
   }
 
 
   @JsonProperty(JSON_PROPERTY_IMPORTANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setImportance(ImportanceEnum importance) {
+  public void setImportance(TaskImportance importance) {
     this.importance = importance;
   }
 

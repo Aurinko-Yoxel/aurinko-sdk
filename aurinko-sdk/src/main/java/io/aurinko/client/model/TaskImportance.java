@@ -13,105 +13,70 @@
 
 package io.aurinko.client.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
+import java.util.Objects;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.TaskImportance;
-import io.aurinko.client.model.TaskStatus;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 
 /**
- * Model tests for TaskCreate
+ * Gets or Sets TaskImportance
  */
-public class TaskCreateTest {
-    private final TaskCreate model = new TaskCreate();
+public enum TaskImportance {
+  
+  LOW("low"),
+  
+  NORMAL("normal"),
+  
+  HIGH("high"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
-    /**
-     * Model tests for TaskCreate
-     */
-    @Test
-    public void testTaskCreate() {
-        // TODO: test TaskCreate
+  private String value;
+
+  TaskImportance(String value) {
+    this.value = value;
+  }
+
+  @JsonValue
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  @JsonCreator
+  public static TaskImportance fromValue(String value) {
+    for (TaskImportance b : TaskImportance.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    return UNKNOWN_DEFAULT_OPEN_API;
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    if (prefix == null) {
+      prefix = "";
     }
 
-    /**
-     * Test the property 'title'
-     */
-    @Test
-    public void titleTest() {
-        // TODO: test title
-    }
-
-    /**
-     * Test the property 'parentId'
-     */
-    @Test
-    public void parentIdTest() {
-        // TODO: test parentId
-    }
-
-    /**
-     * Test the property 'previousId'
-     */
-    @Test
-    public void previousIdTest() {
-        // TODO: test previousId
-    }
-
-    /**
-     * Test the property 'notes'
-     */
-    @Test
-    public void notesTest() {
-        // TODO: test notes
-    }
-
-    /**
-     * Test the property 'status'
-     */
-    @Test
-    public void statusTest() {
-        // TODO: test status
-    }
-
-    /**
-     * Test the property 'importance'
-     */
-    @Test
-    public void importanceTest() {
-        // TODO: test importance
-    }
-
-    /**
-     * Test the property 'due'
-     */
-    @Test
-    public void dueTest() {
-        // TODO: test due
-    }
-
-    /**
-     * Test the property 'startDateTime'
-     */
-    @Test
-    public void startDateTimeTest() {
-        // TODO: test startDateTime
-    }
-
-    /**
-     * Test the property 'categories'
-     */
-    @Test
-    public void categoriesTest() {
-        // TODO: test categories
-    }
+    return String.format("%s=%s", prefix, this.toString());
+  }
 
 }
+

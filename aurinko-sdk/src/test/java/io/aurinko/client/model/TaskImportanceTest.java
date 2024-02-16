@@ -13,105 +13,20 @@
 
 package io.aurinko.client.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.TaskImportance;
-import io.aurinko.client.model.TaskStatus;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Model tests for TaskCreate
+ * Model tests for TaskImportance
  */
-public class TaskCreateTest {
-    private final TaskCreate model = new TaskCreate();
-
+public class TaskImportanceTest {
     /**
-     * Model tests for TaskCreate
+     * Model tests for TaskImportance
      */
     @Test
-    public void testTaskCreate() {
-        // TODO: test TaskCreate
-    }
-
-    /**
-     * Test the property 'title'
-     */
-    @Test
-    public void titleTest() {
-        // TODO: test title
-    }
-
-    /**
-     * Test the property 'parentId'
-     */
-    @Test
-    public void parentIdTest() {
-        // TODO: test parentId
-    }
-
-    /**
-     * Test the property 'previousId'
-     */
-    @Test
-    public void previousIdTest() {
-        // TODO: test previousId
-    }
-
-    /**
-     * Test the property 'notes'
-     */
-    @Test
-    public void notesTest() {
-        // TODO: test notes
-    }
-
-    /**
-     * Test the property 'status'
-     */
-    @Test
-    public void statusTest() {
-        // TODO: test status
-    }
-
-    /**
-     * Test the property 'importance'
-     */
-    @Test
-    public void importanceTest() {
-        // TODO: test importance
-    }
-
-    /**
-     * Test the property 'due'
-     */
-    @Test
-    public void dueTest() {
-        // TODO: test due
-    }
-
-    /**
-     * Test the property 'startDateTime'
-     */
-    @Test
-    public void startDateTimeTest() {
-        // TODO: test startDateTime
-    }
-
-    /**
-     * Test the property 'categories'
-     */
-    @Test
-    public void categoriesTest() {
-        // TODO: test categories
+    public void testTaskImportance() {
+        // TODO: test TaskImportance
     }
 
 }

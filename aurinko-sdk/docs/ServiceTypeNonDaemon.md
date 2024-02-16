@@ -59,8 +59,6 @@
 
 * `FISHBOWL` (value: `"Fishbowl"`)
 
-* `CALDAV` (value: `"CalDav"`)
-
 * `ICLOUD` (value: `"iCloud"`)
 
 * `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)

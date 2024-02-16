@@ -600,6 +600,7 @@ CompletableFuture<[**EmailMessage**](EmailMessage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **429** | Success |  * Retry-After - threadId may be unavailable for some IMAP providers <br>  |
 
 ## messageWithHttpInfo
 
@@ -724,6 +725,7 @@ CompletableFuture<ApiResponse<[**EmailMessage**](EmailMessage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **429** | Success |  * Retry-After - threadId may be unavailable for some IMAP providers <br>  |
 
 
 ## messages

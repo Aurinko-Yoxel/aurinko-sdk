@@ -94,8 +94,6 @@ public enum ServiceType {
   
   FISHBOWL("Fishbowl"),
   
-  CALDAV("CalDav"),
-  
   ICLOUD("iCloud"),
   
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
