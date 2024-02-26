@@ -52,9 +52,10 @@ public class ManagedAccountsApiTest {
         UserAccountType userAccount = null;
         String userId = null;
         List<ServiceKey> recycleKeys = null;
+        Boolean ensureAccess = null;
         ApiAccountInDto apiAccountInDto = null;
         CompletableFuture<AccountSaveResult> response = 
-        api.upsertManagedAccount(accId, userAccount, userId, recycleKeys, apiAccountInDto);
+        api.upsertManagedAccount(accId, userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
         
         // TODO: test validations
     }

@@ -2794,14 +2794,35 @@ paths:
   /v1/book/profiles:
     get:
       operationId: getAccBookings
+      parameters:
+      - description: page size
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 50
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      - description: return records offset by the given number
+        explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          format: int32
+          nullable: true
+          type: integer
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
-                items:
-                  $ref: '#/components/schemas/BookingOutDto'
-                type: array
+                $ref: '#/components/schemas/BookingPage'
           description: Success
         "401":
           description: Authentication information is missing or invalid
@@ -3370,6 +3391,17 @@ paths:
           nullable: true
           type: array
         style: form
+      - description: "When set to true, Aurinko will check if a user has access to\
+          \ the requested resources. Supported only for Google and Office365, and\
+          \ only for Email, Calendar, Contacts and Tasks APIs."
+        explode: true
+        in: query
+        name: ensureAccess
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -3594,6 +3626,17 @@ paths:
           nullable: true
           type: array
         style: form
+      - description: "When set to true, Aurinko will check if a user has access to\
+          \ the requested resources. Supported only for Google and Office365, and\
+          \ only for Email, Calendar, Contacts and Tasks APIs."
+        explode: true
+        in: query
+        name: ensureAccess
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -3624,21 +3667,28 @@ paths:
   /v1/auth/prepare:
     post:
       description: |
-        Aurinko's standard user authentication uses cookies or session tokens. For clients using Office365
-        add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See
-        https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).
+        This method is for Office365 web add-ins that want to implement external authentication based on
+        [Exchange Identity Token](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token).
 
-        To use exchange identity token, do the following:
-        1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details.
-        2. Make the call to `/auth/prepare` with these HTTP headers:
+        Here are the steps involved in establishing an Aurinko User session:
+
+        1. Your Office 365 web add-in gets the Exchange identity token (see the link above for how it is done).
+
+        2. Makes a POST call to the `/auth/prepare` endpoint with the following HTTP headers:
           - `X-Aurinko-Auth-Type`: `exchangeIdToken`
-          - `Authorization`: `Bearer <your_exchange_id_token>` <br>
-          This call returns a temporary token: `{ "token": "your-temporary-token" }`.
-        3. Use the temporary token from `/auth/prepare` at the `/authorizeUser` endpoint.
-        Pass it as a query parameter: `?token=your-temporary-token`.
+          - `Authorization`: `Bearer <your_exchange_id_token>`
 
-        Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API,
-        client applications now can use exchange identity token by authenticating API requests with:
+             Auriko validates the identity token and provides a temporary token if the ID is valid:
+             `{ "token": "your-temporary-token" }`
+
+        3. The addin then calls the `/authorizeUser` endpoint with the temporary token, using the query parameter
+           `?token=your-temporary-token`.
+
+        Upon successful completion of the steps a new Aurinko User is created or an existing User is re-authorized.
+        And from now on this identity token is recognized by Aurinko and is associated with the User session.
+
+        From here on the add-in can access Aurinko API with its Exchange identity token, this way:
+
         - `X-Aurinko-Auth-Type`: `exchangeIdToken`
         - `Authorization`: `Bearer <your_exchange_id_token>`
       operationId: prepareAuth
@@ -3649,7 +3699,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PreparedAuthToken'
           description: Success
-      summary: Prepare an authorization flow (with external authentication data)
+      summary: Validate an external identity token
       tags:
       - Auth
       x-accepts: application/json
@@ -3776,6 +3826,17 @@ paths:
         explode: true
         in: query
         name: ensureScopes
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
+      - description: "When set to true, Aurinko will check if a user has access to\
+          \ the requested resources. Supported only for Google and Office365, and\
+          \ only for Email, Calendar, Contacts and Tasks APIs."
+        explode: true
+        in: query
+        name: ensureAccess
         required: false
         schema:
           nullable: true
@@ -4126,6 +4187,17 @@ paths:
         explode: true
         in: query
         name: ensureScopes
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
+      - description: "When set to true, Aurinko will check if a user has access to\
+          \ the requested resources. Supported only for Google and Office365, and\
+          \ only for Email, Calendar, Contacts and Tasks APIs."
+        explode: true
+        in: query
+        name: ensureAccess
         required: false
         schema:
           nullable: true
@@ -5550,7 +5622,6 @@ components:
           location: location
           id: 1
           lastActivityTime: 2000-01-23T04:56:07.000+00:00
-          trackLinks: true
           inetMessageId: inetMessageId
           remoteAddr: remoteAddr
         - trackOpens: true
@@ -5567,7 +5638,6 @@ components:
           location: location
           id: 1
           lastActivityTime: 2000-01-23T04:56:07.000+00:00
-          trackLinks: true
           inetMessageId: inetMessageId
           remoteAddr: remoteAddr
         done: true
@@ -5939,7 +6009,6 @@ components:
           context: context
           opens: true
           threadReplies: true
-          links: true
         htmlText: htmlText
       properties:
         htmlText:
@@ -6093,7 +6162,6 @@ components:
         location: location
         id: 1
         lastActivityTime: 2000-01-23T04:56:07.000+00:00
-        trackLinks: true
         inetMessageId: inetMessageId
         remoteAddr: remoteAddr
       properties:
@@ -6118,8 +6186,6 @@ components:
         trackReplies:
           type: boolean
         trackOpens:
-          type: boolean
-        trackLinks:
           type: boolean
         trackingCode:
           type: string
@@ -8392,7 +8458,6 @@ components:
           context: context
           opens: true
           threadReplies: true
-          links: true
       properties:
         from:
           $ref: '#/components/schemas/EmailAddress'
@@ -8975,7 +9040,6 @@ components:
         context: context
         opens: true
         threadReplies: true
-        links: true
       properties:
         threadReplies:
           type: boolean
@@ -8985,8 +9049,6 @@ components:
           default: 5
           description: number of seconds to wait after a send before enabling tracking
           type: integer
-        links:
-          type: boolean
         context:
           description: User-defined tracking data that will be associated with this
             email.
@@ -9179,7 +9241,7 @@ components:
       type: object
     BookingOutDto:
       example:
-        availabilityStep: 6
+        availabilityStep: 5
         subject: subject
         workHours:
           daySchedules:
@@ -9203,7 +9265,7 @@ components:
         context: context
         startTime: 2000-01-23T04:56:07.000+00:00
         location: location
-        id: 0
+        id: 1
         startConference: true
         openMeetingUrl: openMeetingUrl
       properties:
@@ -9265,6 +9327,79 @@ components:
       - saturday
       - sunday
       type: string
+    BookingPage:
+      example:
+        totalSize: 6
+        offset: 0
+        records:
+        - availabilityStep: 5
+          subject: subject
+          workHours:
+            daySchedules:
+            - dayOfWeek: null
+              workingIntervals:
+              - start: start
+                end: end
+              - start: start
+                end: end
+            - dayOfWeek: null
+              workingIntervals:
+              - start: start
+                end: end
+              - start: start
+                end: end
+            timezone: timezone
+          description: description
+          durationMinutes: 30
+          timeAvailableFor: P4W
+          name: aurDemo - https://calendar.aurinko.io/aurDemo
+          context: context
+          startTime: 2000-01-23T04:56:07.000+00:00
+          location: location
+          id: 1
+          startConference: true
+          openMeetingUrl: openMeetingUrl
+        - availabilityStep: 5
+          subject: subject
+          workHours:
+            daySchedules:
+            - dayOfWeek: null
+              workingIntervals:
+              - start: start
+                end: end
+              - start: start
+                end: end
+            - dayOfWeek: null
+              workingIntervals:
+              - start: start
+                end: end
+              - start: start
+                end: end
+            timezone: timezone
+          description: description
+          durationMinutes: 30
+          timeAvailableFor: P4W
+          name: aurDemo - https://calendar.aurinko.io/aurDemo
+          context: context
+          startTime: 2000-01-23T04:56:07.000+00:00
+          location: location
+          id: 1
+          startConference: true
+          openMeetingUrl: openMeetingUrl
+        done: true
+      properties:
+        offset:
+          type: integer
+        totalSize:
+          format: int64
+          type: integer
+        done:
+          type: boolean
+        records:
+          items:
+            $ref: '#/components/schemas/BookingOutDto'
+          type: array
+      type: object
     WorkingInterval:
       example:
         start: start
@@ -9754,7 +9889,6 @@ components:
           context: context
           opens: true
           threadReplies: true
-          links: true
       properties:
         tracking:
           $ref: '#/components/schemas/OutEmailTrack'
@@ -10474,7 +10608,6 @@ components:
           context: context
           opens: true
           threadReplies: true
-          links: true
         threadId: threadId
         followUp:
           actionVars:

@@ -16,7 +16,6 @@
 |**lastRespondedTime** | **OffsetDateTime** |  |  [optional] |
 |**trackReplies** | **Boolean** |  |  [optional] |
 |**trackOpens** | **Boolean** |  |  [optional] |
-|**trackLinks** | **Boolean** |  |  [optional] |
 |**trackingCode** | **String** |  |  [optional] |
 |**context** | **String** |  |  [optional] |
 |**location** | **String** |  |  [optional] |

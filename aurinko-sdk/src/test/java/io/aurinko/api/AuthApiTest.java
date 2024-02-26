@@ -78,9 +78,10 @@ public class AuthApiTest {
         String clientOrgId = null;
         String serverUrl = null;
         Boolean ensureScopes = null;
+        Boolean ensureAccess = null;
         Boolean recycle = null;
         
-        CompletableFuture<Void> response = api.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle);
+        CompletableFuture<Void> response = api.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle);
         
         // TODO: test validations
     }
@@ -137,9 +138,10 @@ public class AuthApiTest {
         String userSignature = null;
         String serverUrl = null;
         Boolean ensureScopes = null;
+        Boolean ensureAccess = null;
         String token = null;
         
-        CompletableFuture<Void> response = api.authorizeUser(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token);
+        CompletableFuture<Void> response = api.authorizeUser(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token);
         
         // TODO: test validations
     }
@@ -162,9 +164,9 @@ public class AuthApiTest {
     }
     
     /**
-     * Prepare an authorization flow (with external authentication data)
+     * Validate an external identity token
      *
-     * Aurinko&#39;s standard user authentication uses cookies or session tokens. For clients using Office365 add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).  To use exchange identity token, do the following: 1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details. 2. Make the call to &#x60;/auth/prepare&#x60; with these HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; &lt;br&gt;   This call returns a temporary token: &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;. 3. Use the temporary token from &#x60;/auth/prepare&#x60; at the &#x60;/authorizeUser&#x60; endpoint. Pass it as a query parameter: &#x60;?token&#x3D;your-temporary-token&#x60;.  Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API, client applications now can use exchange identity token by authenticating API requests with: - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
+     * This method is for Office365 web add-ins that want to implement external authentication based on [Exchange Identity Token](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token).  Here are the steps involved in establishing an Aurinko User session:  1. Your Office 365 web add-in gets the Exchange identity token (see the link above for how it is done).  2. Makes a POST call to the &#x60;/auth/prepare&#x60; endpoint with the following HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60;       Auriko validates the identity token and provides a temporary token if the ID is valid:      &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;  3. The addin then calls the &#x60;/authorizeUser&#x60; endpoint with the temporary token, using the query parameter    &#x60;?token&#x3D;your-temporary-token&#x60;.  Upon successful completion of the steps a new Aurinko User is created or an existing User is re-authorized. And from now on this identity token is recognized by Aurinko and is associated with the User session.  From here on the add-in can access Aurinko API with its Exchange identity token, this way:  - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
      *
      * @throws ApiException
      *          if the Api call fails

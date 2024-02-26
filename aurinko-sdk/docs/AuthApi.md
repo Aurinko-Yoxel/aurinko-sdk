@@ -14,8 +14,8 @@ All URIs are relative to *https://api.aurinko.io*
 | [**authorizeUserWithHttpInfo**](AuthApi.md#authorizeUserWithHttpInfo) | **GET** /v1/auth/authorizeUser | Start a user session authorization flow |
 | [**getAccessTokenByCode**](AuthApi.md#getAccessTokenByCode) | **GET** /v1/auth/token/{code} | Get access token, Deprecated use POST instead |
 | [**getAccessTokenByCodeWithHttpInfo**](AuthApi.md#getAccessTokenByCodeWithHttpInfo) | **GET** /v1/auth/token/{code} | Get access token, Deprecated use POST instead |
-| [**prepareAuth**](AuthApi.md#prepareAuth) | **POST** /v1/auth/prepare | Prepare an authorization flow (with external authentication data) |
-| [**prepareAuthWithHttpInfo**](AuthApi.md#prepareAuthWithHttpInfo) | **POST** /v1/auth/prepare | Prepare an authorization flow (with external authentication data) |
+| [**prepareAuth**](AuthApi.md#prepareAuth) | **POST** /v1/auth/prepare | Validate an external identity token |
+| [**prepareAuthWithHttpInfo**](AuthApi.md#prepareAuthWithHttpInfo) | **POST** /v1/auth/prepare | Validate an external identity token |
 
 
 
@@ -174,7 +174,7 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 
 ## authorize
 
-> CompletableFuture<Void> authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle)
+> CompletableFuture<Void> authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle)
 
 Start an account authorization flow
 
@@ -207,9 +207,10 @@ public class Example {
         String clientOrgId = "clientOrgId_example"; // String | Allows clients to group accounts based on their internal organization data.
         String serverUrl = "serverUrl_example"; // String | Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form.
         Boolean ensureScopes = true; // Boolean | When set to true, Aurinko will check if a user granted all requested permissions.
+        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
         Boolean recycle = true; // Boolean | Indicates whether to reuse an existing account instead of creating a new one during authentication.
         try {
-            CompletableFuture<Void> result = apiInstance.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle);
+            CompletableFuture<Void> result = apiInstance.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthApi#authorize");
             System.err.println("Status code: " + e.getCode());
@@ -238,6 +239,7 @@ public class Example {
 | **clientOrgId** | **String**| Allows clients to group accounts based on their internal organization data. | [optional] |
 | **serverUrl** | **String**| Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. | [optional] |
 | **ensureScopes** | **Boolean**| When set to true, Aurinko will check if a user granted all requested permissions. | [optional] |
+| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **recycle** | **Boolean**| Indicates whether to reuse an existing account instead of creating a new one during authentication. | [optional] |
 
 ### Return type
@@ -261,7 +263,7 @@ No authorization required
 
 ## authorizeWithHttpInfo
 
-> CompletableFuture<ApiResponse<Void>> authorize authorizeWithHttpInfo(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle)
+> CompletableFuture<ApiResponse<Void>> authorize authorizeWithHttpInfo(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle)
 
 Start an account authorization flow
 
@@ -295,9 +297,10 @@ public class Example {
         String clientOrgId = "clientOrgId_example"; // String | Allows clients to group accounts based on their internal organization data.
         String serverUrl = "serverUrl_example"; // String | Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form.
         Boolean ensureScopes = true; // Boolean | When set to true, Aurinko will check if a user granted all requested permissions.
+        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
         Boolean recycle = true; // Boolean | Indicates whether to reuse an existing account instead of creating a new one during authentication.
         try {
-            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeWithHttpInfo(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle);
+            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeWithHttpInfo(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
         } catch (InterruptedException | ExecutionException e) {
@@ -335,6 +338,7 @@ public class Example {
 | **clientOrgId** | **String**| Allows clients to group accounts based on their internal organization data. | [optional] |
 | **serverUrl** | **String**| Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. | [optional] |
 | **ensureScopes** | **Boolean**| When set to true, Aurinko will check if a user granted all requested permissions. | [optional] |
+| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **recycle** | **Boolean**| Indicates whether to reuse an existing account instead of creating a new one during authentication. | [optional] |
 
 ### Return type
@@ -532,7 +536,7 @@ No authorization required
 
 ## authorizeUser
 
-> CompletableFuture<Void> authorizeUser(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token)
+> CompletableFuture<Void> authorizeUser(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token)
 
 Start a user session authorization flow
 
@@ -571,9 +575,10 @@ public class Example {
         String userSignature = "userSignature_example"; // String | A string that is generated by concatenating `userId` and `timestamp`, then hashing with HmacSHA256 using the application's `clientSecret`, then encoding in Hex, base64, or base64 web format. Should be used only when `userAccount=secondary` and user cookie is not present in the request Works in conjunction with `userId` and `timestamp` to authorize the addition of secondary account.
         String serverUrl = "serverUrl_example"; // String | Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form.
         Boolean ensureScopes = true; // Boolean | When set to true, Aurinko will check if a user granted all requested permissions.
+        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
         String token = "token_example"; // String | Token from the /auth/prepare endpoint.
         try {
-            CompletableFuture<Void> result = apiInstance.authorizeUser(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token);
+            CompletableFuture<Void> result = apiInstance.authorizeUser(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthApi#authorizeUser");
             System.err.println("Status code: " + e.getCode());
@@ -606,6 +611,7 @@ public class Example {
 | **userSignature** | **String**| A string that is generated by concatenating &#x60;userId&#x60; and &#x60;timestamp&#x60;, then hashing with HmacSHA256 using the application&#39;s &#x60;clientSecret&#x60;, then encoding in Hex, base64, or base64 web format. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request Works in conjunction with &#x60;userId&#x60; and &#x60;timestamp&#x60; to authorize the addition of secondary account. | [optional] |
 | **serverUrl** | **String**| Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. | [optional] |
 | **ensureScopes** | **Boolean**| When set to true, Aurinko will check if a user granted all requested permissions. | [optional] |
+| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **token** | **String**| Token from the /auth/prepare endpoint. | [optional] |
 
 ### Return type
@@ -629,7 +635,7 @@ No authorization required
 
 ## authorizeUserWithHttpInfo
 
-> CompletableFuture<ApiResponse<Void>> authorizeUser authorizeUserWithHttpInfo(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token)
+> CompletableFuture<ApiResponse<Void>> authorizeUser authorizeUserWithHttpInfo(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token)
 
 Start a user session authorization flow
 
@@ -669,9 +675,10 @@ public class Example {
         String userSignature = "userSignature_example"; // String | A string that is generated by concatenating `userId` and `timestamp`, then hashing with HmacSHA256 using the application's `clientSecret`, then encoding in Hex, base64, or base64 web format. Should be used only when `userAccount=secondary` and user cookie is not present in the request Works in conjunction with `userId` and `timestamp` to authorize the addition of secondary account.
         String serverUrl = "serverUrl_example"; // String | Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form.
         Boolean ensureScopes = true; // Boolean | When set to true, Aurinko will check if a user granted all requested permissions.
+        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
         String token = "token_example"; // String | Token from the /auth/prepare endpoint.
         try {
-            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeUserWithHttpInfo(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token);
+            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeUserWithHttpInfo(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
         } catch (InterruptedException | ExecutionException e) {
@@ -713,6 +720,7 @@ public class Example {
 | **userSignature** | **String**| A string that is generated by concatenating &#x60;userId&#x60; and &#x60;timestamp&#x60;, then hashing with HmacSHA256 using the application&#39;s &#x60;clientSecret&#x60;, then encoding in Hex, base64, or base64 web format. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request Works in conjunction with &#x60;userId&#x60; and &#x60;timestamp&#x60; to authorize the addition of secondary account. | [optional] |
 | **serverUrl** | **String**| Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. | [optional] |
 | **ensureScopes** | **Boolean**| When set to true, Aurinko will check if a user granted all requested permissions. | [optional] |
+| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **token** | **String**| Token from the /auth/prepare endpoint. | [optional] |
 
 ### Return type
@@ -892,9 +900,9 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 
 > CompletableFuture<PreparedAuthToken> prepareAuth()
 
-Prepare an authorization flow (with external authentication data)
+Validate an external identity token
 
-Aurinko&#39;s standard user authentication uses cookies or session tokens. For clients using Office365 add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).  To use exchange identity token, do the following: 1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details. 2. Make the call to &#x60;/auth/prepare&#x60; with these HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; &lt;br&gt;   This call returns a temporary token: &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;. 3. Use the temporary token from &#x60;/auth/prepare&#x60; at the &#x60;/authorizeUser&#x60; endpoint. Pass it as a query parameter: &#x60;?token&#x3D;your-temporary-token&#x60;.  Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API, client applications now can use exchange identity token by authenticating API requests with: - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
+This method is for Office365 web add-ins that want to implement external authentication based on [Exchange Identity Token](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token).  Here are the steps involved in establishing an Aurinko User session:  1. Your Office 365 web add-in gets the Exchange identity token (see the link above for how it is done).  2. Makes a POST call to the &#x60;/auth/prepare&#x60; endpoint with the following HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60;       Auriko validates the identity token and provides a temporary token if the ID is valid:      &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;  3. The addin then calls the &#x60;/authorizeUser&#x60; endpoint with the temporary token, using the query parameter    &#x60;?token&#x3D;your-temporary-token&#x60;.  Upon successful completion of the steps a new Aurinko User is created or an existing User is re-authorized. And from now on this identity token is recognized by Aurinko and is associated with the User session.  From here on the add-in can access Aurinko API with its Exchange identity token, this way:  - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
 
 ### Example
 
@@ -998,9 +1006,9 @@ CompletableFuture<[**PreparedAuthToken**](PreparedAuthToken.md)>
 
 > CompletableFuture<ApiResponse<PreparedAuthToken>> prepareAuth prepareAuthWithHttpInfo()
 
-Prepare an authorization flow (with external authentication data)
+Validate an external identity token
 
-Aurinko&#39;s standard user authentication uses cookies or session tokens. For clients using Office365 add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).  To use exchange identity token, do the following: 1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details. 2. Make the call to &#x60;/auth/prepare&#x60; with these HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; &lt;br&gt;   This call returns a temporary token: &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;. 3. Use the temporary token from &#x60;/auth/prepare&#x60; at the &#x60;/authorizeUser&#x60; endpoint. Pass it as a query parameter: &#x60;?token&#x3D;your-temporary-token&#x60;.  Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API, client applications now can use exchange identity token by authenticating API requests with: - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
+This method is for Office365 web add-ins that want to implement external authentication based on [Exchange Identity Token](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token).  Here are the steps involved in establishing an Aurinko User session:  1. Your Office 365 web add-in gets the Exchange identity token (see the link above for how it is done).  2. Makes a POST call to the &#x60;/auth/prepare&#x60; endpoint with the following HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60;       Auriko validates the identity token and provides a temporary token if the ID is valid:      &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;  3. The addin then calls the &#x60;/authorizeUser&#x60; endpoint with the temporary token, using the query parameter    &#x60;?token&#x3D;your-temporary-token&#x60;.  Upon successful completion of the steps a new Aurinko User is created or an existing User is re-authorized. And from now on this identity token is recognized by Aurinko and is associated with the User session.  From here on the add-in can access Aurinko API with its Exchange identity token, this way:  - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
 
 ### Example
 

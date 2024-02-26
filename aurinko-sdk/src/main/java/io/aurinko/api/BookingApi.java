@@ -19,6 +19,7 @@ import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BookingInDto;
 import io.aurinko.client.model.BookingOutDto;
+import io.aurinko.client.model.BookingPage;
 import io.aurinko.client.model.BookingSuccessOutDto;
 import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.BookingUpdateDto;
@@ -386,12 +387,14 @@ public class BookingApi {
   /**
    * Get booking profiles
    * 
-   * @return CompletableFuture&lt;List&lt;BookingOutDto&gt;&gt;
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @return CompletableFuture&lt;BookingPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<List<BookingOutDto>> getAccBookings() throws ApiException {
+  public CompletableFuture<BookingPage> getAccBookings(Integer limit, Integer offset) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getAccBookingsRequestBuilder();
+      HttpRequest.Builder localVarRequestBuilder = getAccBookingsRequestBuilder(limit, offset);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -401,7 +404,7 @@ public class BookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<List<BookingOutDto>>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingPage>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -416,12 +419,14 @@ public class BookingApi {
   /**
    * Get booking profiles
    * 
-   * @return CompletableFuture&lt;ApiResponse&lt;List&lt;BookingOutDto&gt;&gt;&gt;
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @return CompletableFuture&lt;ApiResponse&lt;BookingPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<List<BookingOutDto>>> getAccBookingsWithHttpInfo() throws ApiException {
+  public CompletableFuture<ApiResponse<BookingPage>> getAccBookingsWithHttpInfo(Integer limit, Integer offset) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getAccBookingsRequestBuilder();
+      HttpRequest.Builder localVarRequestBuilder = getAccBookingsRequestBuilder(limit, offset);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -434,10 +439,10 @@ public class BookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<List<BookingOutDto>>(
+                  new ApiResponse<BookingPage>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<List<BookingOutDto>>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingPage>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -450,13 +455,30 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder getAccBookingsRequestBuilder() throws ApiException {
+  private HttpRequest.Builder getAccBookingsRequestBuilder(Integer limit, Integer offset) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
     String localVarPath = "/v1/book/profiles";
 
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    List<Pair> localVarQueryParams = new ArrayList<>();
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "limit";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("limit", limit));
+    localVarQueryParameterBaseName = "offset";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("offset", offset));
+
+    if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
+      StringJoiner queryJoiner = new StringJoiner("&");
+      localVarQueryParams.forEach(p -> queryJoiner.add(p.getName() + '=' + p.getValue()));
+      if (localVarQueryStringJoiner.length() != 0) {
+        queryJoiner.add(localVarQueryStringJoiner.toString());
+      }
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath + '?' + queryJoiner.toString()));
+    } else {
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    }
 
     localVarRequestBuilder.header("Accept", "application/json");
 

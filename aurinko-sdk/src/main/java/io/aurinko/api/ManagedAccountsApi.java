@@ -92,13 +92,14 @@ public class ManagedAccountsApi {
    * @param userAccount  (optional)
    * @param userId  (optional)
    * @param recycleKeys  (optional
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountSaveResult> upsertManagedAccount(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<AccountSaveResult> upsertManagedAccount(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = upsertManagedAccountRequestBuilder(accId, userAccount, userId, recycleKeys, apiAccountInDto);
+      HttpRequest.Builder localVarRequestBuilder = upsertManagedAccountRequestBuilder(accId, userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -127,13 +128,14 @@ public class ManagedAccountsApi {
    * @param userAccount  (optional)
    * @param userId  (optional)
    * @param recycleKeys  (optional
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertManagedAccountWithHttpInfo(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertManagedAccountWithHttpInfo(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = upsertManagedAccountRequestBuilder(accId, userAccount, userId, recycleKeys, apiAccountInDto);
+      HttpRequest.Builder localVarRequestBuilder = upsertManagedAccountRequestBuilder(accId, userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -162,7 +164,7 @@ public class ManagedAccountsApi {
     }
   }
 
-  private HttpRequest.Builder upsertManagedAccountRequestBuilder(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  private HttpRequest.Builder upsertManagedAccountRequestBuilder(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
     // verify the required parameter 'accId' is set
     if (accId == null) {
       throw new ApiException(400, "Missing the required parameter 'accId' when calling upsertManagedAccount");
@@ -182,6 +184,8 @@ public class ManagedAccountsApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("userId", userId));
     localVarQueryParameterBaseName = "recycleKeys";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("multi", "recycleKeys", recycleKeys));
+    localVarQueryParameterBaseName = "ensureAccess";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureAccess", ensureAccess));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

@@ -91,9 +91,10 @@ public class AccountsApiTest {
         UserAccountType userAccount = null;
         String userId = null;
         List<ServiceKey> recycleKeys = null;
+        Boolean ensureAccess = null;
         ApiAccountInDto apiAccountInDto = null;
         CompletableFuture<AccountSaveResult> response = 
-        api.upsertPersonal(userAccount, userId, recycleKeys, apiAccountInDto);
+        api.upsertPersonal(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
         
         // TODO: test validations
     }

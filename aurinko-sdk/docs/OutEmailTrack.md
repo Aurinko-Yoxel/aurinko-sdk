@@ -10,7 +10,6 @@
 |**threadReplies** | **Boolean** |  |  [optional] |
 |**opens** | **Boolean** |  |  [optional] |
 |**trackOpensAfterSendDelay** | **Integer** | number of seconds to wait after a send before enabling tracking |  [optional] |
-|**links** | **Boolean** |  |  [optional] |
 |**context** | **String** | User-defined tracking data that will be associated with this email. |  [optional] |
 
 

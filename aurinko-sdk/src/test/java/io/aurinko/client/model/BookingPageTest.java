@@ -18,152 +18,58 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
+import io.aurinko.client.model.BookingOutDto;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Model tests for TrackingData
+ * Model tests for BookingPage
  */
-public class TrackingDataTest {
-    private final TrackingData model = new TrackingData();
+public class BookingPageTest {
+    private final BookingPage model = new BookingPage();
 
     /**
-     * Model tests for TrackingData
+     * Model tests for BookingPage
      */
     @Test
-    public void testTrackingData() {
-        // TODO: test TrackingData
+    public void testBookingPage() {
+        // TODO: test BookingPage
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'offset'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
+    public void offsetTest() {
+        // TODO: test offset
     }
 
     /**
-     * Test the property 'messageId'
+     * Test the property 'totalSize'
      */
     @Test
-    public void messageIdTest() {
-        // TODO: test messageId
+    public void totalSizeTest() {
+        // TODO: test totalSize
     }
 
     /**
-     * Test the property 'inetMessageId'
+     * Test the property 'done'
      */
     @Test
-    public void inetMessageIdTest() {
-        // TODO: test inetMessageId
+    public void doneTest() {
+        // TODO: test done
     }
 
     /**
-     * Test the property 'threadId'
+     * Test the property 'records'
      */
     @Test
-    public void threadIdTest() {
-        // TODO: test threadId
-    }
-
-    /**
-     * Test the property 'sendDate'
-     */
-    @Test
-    public void sendDateTest() {
-        // TODO: test sendDate
-    }
-
-    /**
-     * Test the property 'lastActivityTime'
-     */
-    @Test
-    public void lastActivityTimeTest() {
-        // TODO: test lastActivityTime
-    }
-
-    /**
-     * Test the property 'lastRespondedTime'
-     */
-    @Test
-    public void lastRespondedTimeTest() {
-        // TODO: test lastRespondedTime
-    }
-
-    /**
-     * Test the property 'trackReplies'
-     */
-    @Test
-    public void trackRepliesTest() {
-        // TODO: test trackReplies
-    }
-
-    /**
-     * Test the property 'trackOpens'
-     */
-    @Test
-    public void trackOpensTest() {
-        // TODO: test trackOpens
-    }
-
-    /**
-     * Test the property 'trackingCode'
-     */
-    @Test
-    public void trackingCodeTest() {
-        // TODO: test trackingCode
-    }
-
-    /**
-     * Test the property 'context'
-     */
-    @Test
-    public void contextTest() {
-        // TODO: test context
-    }
-
-    /**
-     * Test the property 'location'
-     */
-    @Test
-    public void locationTest() {
-        // TODO: test location
-    }
-
-    /**
-     * Test the property 'userAgent'
-     */
-    @Test
-    public void userAgentTest() {
-        // TODO: test userAgent
-    }
-
-    /**
-     * Test the property 'remoteAddr'
-     */
-    @Test
-    public void remoteAddrTest() {
-        // TODO: test remoteAddr
-    }
-
-    /**
-     * Test the property 'ignoreOpenClicks'
-     */
-    @Test
-    public void ignoreOpenClicksTest() {
-        // TODO: test ignoreOpenClicks
-    }
-
-    /**
-     * Test the property 'hasBounced'
-     */
-    @Test
-    public void hasBouncedTest() {
-        // TODO: test hasBounced
+    public void recordsTest() {
+        // TODO: test records
     }
 
 }

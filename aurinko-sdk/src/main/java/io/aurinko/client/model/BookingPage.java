@@ -24,138 +24,149 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.BookingOutDto;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * OutEmailTrack
+ * BookingPage
  */
 @JsonPropertyOrder({
-  OutEmailTrack.JSON_PROPERTY_THREAD_REPLIES,
-  OutEmailTrack.JSON_PROPERTY_OPENS,
-  OutEmailTrack.JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY,
-  OutEmailTrack.JSON_PROPERTY_CONTEXT
+  BookingPage.JSON_PROPERTY_OFFSET,
+  BookingPage.JSON_PROPERTY_TOTAL_SIZE,
+  BookingPage.JSON_PROPERTY_DONE,
+  BookingPage.JSON_PROPERTY_RECORDS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class OutEmailTrack {
-  public static final String JSON_PROPERTY_THREAD_REPLIES = "threadReplies";
-  private Boolean threadReplies;
+public class BookingPage {
+  public static final String JSON_PROPERTY_OFFSET = "offset";
+  private Integer offset;
 
-  public static final String JSON_PROPERTY_OPENS = "opens";
-  private Boolean opens;
+  public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
+  private Long totalSize;
 
-  public static final String JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY = "trackOpensAfterSendDelay";
-  private Integer trackOpensAfterSendDelay = 5;
+  public static final String JSON_PROPERTY_DONE = "done";
+  private Boolean done;
 
-  public static final String JSON_PROPERTY_CONTEXT = "context";
-  private String context;
+  public static final String JSON_PROPERTY_RECORDS = "records";
+  private List<BookingOutDto> records;
 
-  public OutEmailTrack() { 
+  public BookingPage() { 
   }
 
-  public OutEmailTrack threadReplies(Boolean threadReplies) {
-    this.threadReplies = threadReplies;
+  public BookingPage offset(Integer offset) {
+    this.offset = offset;
     return this;
   }
 
    /**
-   * Get threadReplies
-   * @return threadReplies
+   * Get offset
+   * @return offset
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_THREAD_REPLIES)
+  @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getThreadReplies() {
-    return threadReplies;
+  public Integer getOffset() {
+    return offset;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_THREAD_REPLIES)
+  @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreadReplies(Boolean threadReplies) {
-    this.threadReplies = threadReplies;
+  public void setOffset(Integer offset) {
+    this.offset = offset;
   }
 
 
-  public OutEmailTrack opens(Boolean opens) {
-    this.opens = opens;
+  public BookingPage totalSize(Long totalSize) {
+    this.totalSize = totalSize;
     return this;
   }
 
    /**
-   * Get opens
-   * @return opens
+   * Get totalSize
+   * @return totalSize
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OPENS)
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getOpens() {
-    return opens;
+  public Long getTotalSize() {
+    return totalSize;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OPENS)
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOpens(Boolean opens) {
-    this.opens = opens;
+  public void setTotalSize(Long totalSize) {
+    this.totalSize = totalSize;
   }
 
 
-  public OutEmailTrack trackOpensAfterSendDelay(Integer trackOpensAfterSendDelay) {
-    this.trackOpensAfterSendDelay = trackOpensAfterSendDelay;
+  public BookingPage done(Boolean done) {
+    this.done = done;
     return this;
   }
 
    /**
-   * number of seconds to wait after a send before enabling tracking
-   * @return trackOpensAfterSendDelay
+   * Get done
+   * @return done
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY)
+  @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getTrackOpensAfterSendDelay() {
-    return trackOpensAfterSendDelay;
+  public Boolean getDone() {
+    return done;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY)
+  @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackOpensAfterSendDelay(Integer trackOpensAfterSendDelay) {
-    this.trackOpensAfterSendDelay = trackOpensAfterSendDelay;
+  public void setDone(Boolean done) {
+    this.done = done;
   }
 
 
-  public OutEmailTrack context(String context) {
-    this.context = context;
+  public BookingPage records(List<BookingOutDto> records) {
+    this.records = records;
+    return this;
+  }
+
+  public BookingPage addRecordsItem(BookingOutDto recordsItem) {
+    if (this.records == null) {
+      this.records = new ArrayList<>();
+    }
+    this.records.add(recordsItem);
     return this;
   }
 
    /**
-   * User-defined tracking data that will be associated with this email.
-   * @return context
+   * Get records
+   * @return records
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONTEXT)
+  @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getContext() {
-    return context;
+  public List<BookingOutDto> getRecords() {
+    return records;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONTEXT)
+  @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(String context) {
-    this.context = context;
+  public void setRecords(List<BookingOutDto> records) {
+    this.records = records;
   }
 
 
   /**
-   * Return true if this OutEmailTrack object is equal to o.
+   * Return true if this BookingPage object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -165,26 +176,26 @@ public class OutEmailTrack {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OutEmailTrack outEmailTrack = (OutEmailTrack) o;
-    return Objects.equals(this.threadReplies, outEmailTrack.threadReplies) &&
-        Objects.equals(this.opens, outEmailTrack.opens) &&
-        Objects.equals(this.trackOpensAfterSendDelay, outEmailTrack.trackOpensAfterSendDelay) &&
-        Objects.equals(this.context, outEmailTrack.context);
+    BookingPage bookingPage = (BookingPage) o;
+    return Objects.equals(this.offset, bookingPage.offset) &&
+        Objects.equals(this.totalSize, bookingPage.totalSize) &&
+        Objects.equals(this.done, bookingPage.done) &&
+        Objects.equals(this.records, bookingPage.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(threadReplies, opens, trackOpensAfterSendDelay, context);
+    return Objects.hash(offset, totalSize, done, records);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OutEmailTrack {\n");
-    sb.append("    threadReplies: ").append(toIndentedString(threadReplies)).append("\n");
-    sb.append("    opens: ").append(toIndentedString(opens)).append("\n");
-    sb.append("    trackOpensAfterSendDelay: ").append(toIndentedString(trackOpensAfterSendDelay)).append("\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
+    sb.append("class BookingPage {\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
+    sb.append("    done: ").append(toIndentedString(done)).append("\n");
+    sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -232,24 +243,29 @@ public class OutEmailTrack {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `threadReplies` to the URL query string
-    if (getThreadReplies() != null) {
-      joiner.add(String.format("%sthreadReplies%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `offset` to the URL query string
+    if (getOffset() != null) {
+      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `opens` to the URL query string
-    if (getOpens() != null) {
-      joiner.add(String.format("%sopens%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOpens()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `totalSize` to the URL query string
+    if (getTotalSize() != null) {
+      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `trackOpensAfterSendDelay` to the URL query string
-    if (getTrackOpensAfterSendDelay() != null) {
-      joiner.add(String.format("%strackOpensAfterSendDelay%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackOpensAfterSendDelay()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `done` to the URL query string
+    if (getDone() != null) {
+      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `context` to the URL query string
-    if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `records` to the URL query string
+    if (getRecords() != null) {
+      for (int i = 0; i < getRecords().size(); i++) {
+        if (getRecords().get(i) != null) {
+          joiner.add(getRecords().get(i).toUrlQueryString(String.format("%srecords%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

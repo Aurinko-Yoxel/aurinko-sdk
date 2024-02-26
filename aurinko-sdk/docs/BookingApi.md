@@ -632,7 +632,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 
 ## getAccBookings
 
-> CompletableFuture<List<BookingOutDto>> getAccBookings()
+> CompletableFuture<BookingPage> getAccBookings(limit, offset)
 
 Get booking profiles
 
@@ -697,8 +697,10 @@ public class Example {
         ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         BookingApi apiInstance = new BookingApi(defaultClient);
+        Integer limit = 50; // Integer | page size
+        Integer offset = 0; // Integer | return records offset by the given number
         try {
-            CompletableFuture<List<BookingOutDto>> result = apiInstance.getAccBookings();
+            CompletableFuture<BookingPage> result = apiInstance.getAccBookings(limit, offset);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling BookingApi#getAccBookings");
@@ -713,11 +715,15 @@ public class Example {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| page size | [optional] [default to 50] |
+| **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
 
 ### Return type
 
-CompletableFuture<[**List&lt;BookingOutDto&gt;**](BookingOutDto.md)>
+CompletableFuture<[**BookingPage**](BookingPage.md)>
 
 
 ### Authorization
@@ -737,7 +743,7 @@ CompletableFuture<[**List&lt;BookingOutDto&gt;**](BookingOutDto.md)>
 
 ## getAccBookingsWithHttpInfo
 
-> CompletableFuture<ApiResponse<List<BookingOutDto>>> getAccBookings getAccBookingsWithHttpInfo()
+> CompletableFuture<ApiResponse<BookingPage>> getAccBookings getAccBookingsWithHttpInfo(limit, offset)
 
 Get booking profiles
 
@@ -803,8 +809,10 @@ public class Example {
         ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         BookingApi apiInstance = new BookingApi(defaultClient);
+        Integer limit = 50; // Integer | page size
+        Integer offset = 0; // Integer | return records offset by the given number
         try {
-            CompletableFuture<ApiResponse<List<BookingOutDto>>> response = apiInstance.getAccBookingsWithHttpInfo();
+            CompletableFuture<ApiResponse<BookingPage>> response = apiInstance.getAccBookingsWithHttpInfo(limit, offset);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -828,11 +836,15 @@ public class Example {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| page size | [optional] [default to 50] |
+| **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
 
 ### Return type
 
-CompletableFuture<ApiResponse<[**List&lt;BookingOutDto&gt;**](BookingOutDto.md)>>
+CompletableFuture<ApiResponse<[**BookingPage**](BookingPage.md)>>
 
 
 ### Authorization

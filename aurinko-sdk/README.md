@@ -160,8 +160,8 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**authorizeUserWithHttpInfo**](docs/AuthApi.md#authorizeUserWithHttpInfo) | **GET** /v1/auth/authorizeUser | Start a user session authorization flow
 *AuthApi* | [**getAccessTokenByCode**](docs/AuthApi.md#getAccessTokenByCode) | **GET** /v1/auth/token/{code} | Get access token, Deprecated use POST instead
 *AuthApi* | [**getAccessTokenByCodeWithHttpInfo**](docs/AuthApi.md#getAccessTokenByCodeWithHttpInfo) | **GET** /v1/auth/token/{code} | Get access token, Deprecated use POST instead
-*AuthApi* | [**prepareAuth**](docs/AuthApi.md#prepareAuth) | **POST** /v1/auth/prepare | Prepare an authorization flow (with external authentication data)
-*AuthApi* | [**prepareAuthWithHttpInfo**](docs/AuthApi.md#prepareAuthWithHttpInfo) | **POST** /v1/auth/prepare | Prepare an authorization flow (with external authentication data)
+*AuthApi* | [**prepareAuth**](docs/AuthApi.md#prepareAuth) | **POST** /v1/auth/prepare | Validate an external identity token
+*AuthApi* | [**prepareAuthWithHttpInfo**](docs/AuthApi.md#prepareAuthWithHttpInfo) | **POST** /v1/auth/prepare | Validate an external identity token
 *BookingApi* | [**create**](docs/BookingApi.md#create) | **POST** /v1/book/profiles | Create a booking profile
 *BookingApi* | [**createWithHttpInfo**](docs/BookingApi.md#createWithHttpInfo) | **POST** /v1/book/profiles | Create a booking profile
 *BookingApi* | [**createMeeting**](docs/BookingApi.md#createMeeting) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
@@ -364,6 +364,7 @@ Class | Method | HTTP request | Description
  - [BodyType](docs/BodyType.md)
  - [BookingInDto](docs/BookingInDto.md)
  - [BookingOutDto](docs/BookingOutDto.md)
+ - [BookingPage](docs/BookingPage.md)
  - [BookingSuccessOutDto](docs/BookingSuccessOutDto.md)
  - [BookingTimesOutDto](docs/BookingTimesOutDto.md)
  - [BookingUpdateDto](docs/BookingUpdateDto.md)

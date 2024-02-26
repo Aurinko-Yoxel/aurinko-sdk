@@ -290,13 +290,14 @@ public class AccountsApi {
    * @param userAccount  (optional)
    * @param userId ID of a user this account should be attached to. (optional)
    * @param recycleKeys  (optional
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountSaveResult> upsertPersonal(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<AccountSaveResult> upsertPersonal(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = upsertPersonalRequestBuilder(userAccount, userId, recycleKeys, apiAccountInDto);
+      HttpRequest.Builder localVarRequestBuilder = upsertPersonalRequestBuilder(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -324,13 +325,14 @@ public class AccountsApi {
    * @param userAccount  (optional)
    * @param userId ID of a user this account should be attached to. (optional)
    * @param recycleKeys  (optional
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertPersonalWithHttpInfo(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertPersonalWithHttpInfo(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = upsertPersonalRequestBuilder(userAccount, userId, recycleKeys, apiAccountInDto);
+      HttpRequest.Builder localVarRequestBuilder = upsertPersonalRequestBuilder(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -359,7 +361,7 @@ public class AccountsApi {
     }
   }
 
-  private HttpRequest.Builder upsertPersonalRequestBuilder(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  private HttpRequest.Builder upsertPersonalRequestBuilder(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -374,6 +376,8 @@ public class AccountsApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("userId", userId));
     localVarQueryParameterBaseName = "recycleKeys";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("multi", "recycleKeys", recycleKeys));
+    localVarQueryParameterBaseName = "ensureAccess";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureAccess", ensureAccess));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

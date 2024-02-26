@@ -42,7 +42,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   TrackingData.JSON_PROPERTY_LAST_RESPONDED_TIME,
   TrackingData.JSON_PROPERTY_TRACK_REPLIES,
   TrackingData.JSON_PROPERTY_TRACK_OPENS,
-  TrackingData.JSON_PROPERTY_TRACK_LINKS,
   TrackingData.JSON_PROPERTY_TRACKING_CODE,
   TrackingData.JSON_PROPERTY_CONTEXT,
   TrackingData.JSON_PROPERTY_LOCATION,
@@ -79,9 +78,6 @@ public class TrackingData {
 
   public static final String JSON_PROPERTY_TRACK_OPENS = "trackOpens";
   private Boolean trackOpens;
-
-  public static final String JSON_PROPERTY_TRACK_LINKS = "trackLinks";
-  private Boolean trackLinks;
 
   public static final String JSON_PROPERTY_TRACKING_CODE = "trackingCode";
   private String trackingCode;
@@ -332,31 +328,6 @@ public class TrackingData {
   }
 
 
-  public TrackingData trackLinks(Boolean trackLinks) {
-    this.trackLinks = trackLinks;
-    return this;
-  }
-
-   /**
-   * Get trackLinks
-   * @return trackLinks
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TRACK_LINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getTrackLinks() {
-    return trackLinks;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TRACK_LINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackLinks(Boolean trackLinks) {
-    this.trackLinks = trackLinks;
-  }
-
-
   public TrackingData trackingCode(String trackingCode) {
     this.trackingCode = trackingCode;
     return this;
@@ -553,7 +524,6 @@ public class TrackingData {
         Objects.equals(this.lastRespondedTime, trackingData.lastRespondedTime) &&
         Objects.equals(this.trackReplies, trackingData.trackReplies) &&
         Objects.equals(this.trackOpens, trackingData.trackOpens) &&
-        Objects.equals(this.trackLinks, trackingData.trackLinks) &&
         Objects.equals(this.trackingCode, trackingData.trackingCode) &&
         Objects.equals(this.context, trackingData.context) &&
         Objects.equals(this.location, trackingData.location) &&
@@ -565,7 +535,7 @@ public class TrackingData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, messageId, inetMessageId, threadId, sendDate, lastActivityTime, lastRespondedTime, trackReplies, trackOpens, trackLinks, trackingCode, context, location, userAgent, remoteAddr, ignoreOpenClicks, hasBounced);
+    return Objects.hash(id, messageId, inetMessageId, threadId, sendDate, lastActivityTime, lastRespondedTime, trackReplies, trackOpens, trackingCode, context, location, userAgent, remoteAddr, ignoreOpenClicks, hasBounced);
   }
 
   @Override
@@ -581,7 +551,6 @@ public class TrackingData {
     sb.append("    lastRespondedTime: ").append(toIndentedString(lastRespondedTime)).append("\n");
     sb.append("    trackReplies: ").append(toIndentedString(trackReplies)).append("\n");
     sb.append("    trackOpens: ").append(toIndentedString(trackOpens)).append("\n");
-    sb.append("    trackLinks: ").append(toIndentedString(trackLinks)).append("\n");
     sb.append("    trackingCode: ").append(toIndentedString(trackingCode)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
@@ -679,11 +648,6 @@ public class TrackingData {
     // add `trackOpens` to the URL query string
     if (getTrackOpens() != null) {
       joiner.add(String.format("%strackOpens%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackOpens()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `trackLinks` to the URL query string
-    if (getTrackLinks() != null) {
-      joiner.add(String.format("%strackLinks%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackLinks()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `trackingCode` to the URL query string

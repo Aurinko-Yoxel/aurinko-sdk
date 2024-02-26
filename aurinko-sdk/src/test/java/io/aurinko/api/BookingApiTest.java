@@ -16,6 +16,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.BookingInDto;
 import io.aurinko.client.model.BookingOutDto;
+import io.aurinko.client.model.BookingPage;
 import io.aurinko.client.model.BookingSuccessOutDto;
 import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.BookingUpdateDto;
@@ -104,8 +105,10 @@ public class BookingApiTest {
      */
     @Test
     public void getAccBookingsTest() throws ApiException {
-        CompletableFuture<List<BookingOutDto>> response = 
-        api.getAccBookings();
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingPage> response = 
+        api.getAccBookings(limit, offset);
         
         // TODO: test validations
     }

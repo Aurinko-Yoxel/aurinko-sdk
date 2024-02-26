@@ -20,6 +20,7 @@ docs/BodyType.md
 docs/BookingApi.md
 docs/BookingInDto.md
 docs/BookingOutDto.md
+docs/BookingPage.md
 docs/BookingSuccessOutDto.md
 docs/BookingTimesOutDto.md
 docs/BookingUpdateDto.md
@@ -213,6 +214,7 @@ src/main/java/io/aurinko/client/model/Attendee.java
 src/main/java/io/aurinko/client/model/BodyType.java
 src/main/java/io/aurinko/client/model/BookingInDto.java
 src/main/java/io/aurinko/client/model/BookingOutDto.java
+src/main/java/io/aurinko/client/model/BookingPage.java
 src/main/java/io/aurinko/client/model/BookingSuccessOutDto.java
 src/main/java/io/aurinko/client/model/BookingTimesOutDto.java
 src/main/java/io/aurinko/client/model/BookingUpdateDto.java
@@ -368,6 +370,7 @@ src/test/java/io/aurinko/client/model/AttendeeTest.java
 src/test/java/io/aurinko/client/model/BodyTypeTest.java
 src/test/java/io/aurinko/client/model/BookingInDtoTest.java
 src/test/java/io/aurinko/client/model/BookingOutDtoTest.java
+src/test/java/io/aurinko/client/model/BookingPageTest.java
 src/test/java/io/aurinko/client/model/BookingSuccessOutDtoTest.java
 src/test/java/io/aurinko/client/model/BookingTimesOutDtoTest.java
 src/test/java/io/aurinko/client/model/BookingUpdateDtoTest.java

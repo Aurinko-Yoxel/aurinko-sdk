@@ -194,13 +194,14 @@ public class AuthApi {
    * @param clientOrgId Allows clients to group accounts based on their internal organization data. (optional)
    * @param serverUrl Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. (optional)
    * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param recycle Indicates whether to reuse an existing account instead of creating a new one during authentication. (optional)
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorize(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean recycle) throws ApiException {
+  public CompletableFuture<Void> authorize(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, Boolean recycle) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle);
+      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -230,13 +231,14 @@ public class AuthApi {
    * @param clientOrgId Allows clients to group accounts based on their internal organization data. (optional)
    * @param serverUrl Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. (optional)
    * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param recycle Indicates whether to reuse an existing account instead of creating a new one during authentication. (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean recycle) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, Boolean recycle) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, recycle);
+      HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -257,7 +259,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean recycle) throws ApiException {
+  private HttpRequest.Builder authorizeRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, Boolean recycle) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
       throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorize");
@@ -302,6 +304,8 @@ public class AuthApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("serverUrl", serverUrl));
     localVarQueryParameterBaseName = "ensureScopes";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureScopes", ensureScopes));
+    localVarQueryParameterBaseName = "ensureAccess";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureAccess", ensureAccess));
     localVarQueryParameterBaseName = "recycle";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("recycle", recycle));
 
@@ -482,13 +486,14 @@ public class AuthApi {
    * @param userSignature A string that is generated by concatenating &#x60;userId&#x60; and &#x60;timestamp&#x60;, then hashing with HmacSHA256 using the application&#39;s &#x60;clientSecret&#x60;, then encoding in Hex, base64, or base64 web format. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request Works in conjunction with &#x60;userId&#x60; and &#x60;timestamp&#x60; to authorize the addition of secondary account. (optional)
    * @param serverUrl Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. (optional)
    * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param token Token from the /auth/prepare endpoint. (optional)
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorizeUser(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, String token) throws ApiException {
+  public CompletableFuture<Void> authorizeUser(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, String token) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeUserRequestBuilder(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token);
+      HttpRequest.Builder localVarRequestBuilder = authorizeUserRequestBuilder(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -522,13 +527,14 @@ public class AuthApi {
    * @param userSignature A string that is generated by concatenating &#x60;userId&#x60; and &#x60;timestamp&#x60;, then hashing with HmacSHA256 using the application&#39;s &#x60;clientSecret&#x60;, then encoding in Hex, base64, or base64 web format. Should be used only when &#x60;userAccount&#x3D;secondary&#x60; and user cookie is not present in the request Works in conjunction with &#x60;userId&#x60; and &#x60;timestamp&#x60; to authorize the addition of secondary account. (optional)
    * @param serverUrl Can be used in the form-based authentication to specify the URL of the server to which the user intends to authenticate. When included, it automatically populates the corresponding input field on the authentication form. (optional)
    * @param ensureScopes When set to true, Aurinko will check if a user granted all requested permissions. (optional)
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param token Token from the /auth/prepare endpoint. (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeUserWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, String token) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeUserWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, String token) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = authorizeUserRequestBuilder(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, token);
+      HttpRequest.Builder localVarRequestBuilder = authorizeUserRequestBuilder(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -549,7 +555,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeUserRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, String token) throws ApiException {
+  private HttpRequest.Builder authorizeUserRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, String token) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
       throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorizeUser");
@@ -606,6 +612,8 @@ public class AuthApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("serverUrl", serverUrl));
     localVarQueryParameterBaseName = "ensureScopes";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureScopes", ensureScopes));
+    localVarQueryParameterBaseName = "ensureAccess";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("ensureAccess", ensureAccess));
     localVarQueryParameterBaseName = "token";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("token", token));
 
@@ -725,8 +733,8 @@ public class AuthApi {
     return localVarRequestBuilder;
   }
   /**
-   * Prepare an authorization flow (with external authentication data)
-   * Aurinko&#39;s standard user authentication uses cookies or session tokens. For clients using Office365 add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).  To use exchange identity token, do the following: 1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details. 2. Make the call to &#x60;/auth/prepare&#x60; with these HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; &lt;br&gt;   This call returns a temporary token: &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;. 3. Use the temporary token from &#x60;/auth/prepare&#x60; at the &#x60;/authorizeUser&#x60; endpoint. Pass it as a query parameter: &#x60;?token&#x3D;your-temporary-token&#x60;.  Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API, client applications now can use exchange identity token by authenticating API requests with: - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
+   * Validate an external identity token
+   * This method is for Office365 web add-ins that want to implement external authentication based on [Exchange Identity Token](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token).  Here are the steps involved in establishing an Aurinko User session:  1. Your Office 365 web add-in gets the Exchange identity token (see the link above for how it is done).  2. Makes a POST call to the &#x60;/auth/prepare&#x60; endpoint with the following HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60;       Auriko validates the identity token and provides a temporary token if the ID is valid:      &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;  3. The addin then calls the &#x60;/authorizeUser&#x60; endpoint with the temporary token, using the query parameter    &#x60;?token&#x3D;your-temporary-token&#x60;.  Upon successful completion of the steps a new Aurinko User is created or an existing User is re-authorized. And from now on this identity token is recognized by Aurinko and is associated with the User session.  From here on the add-in can access Aurinko API with its Exchange identity token, this way:  - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
    * @return CompletableFuture&lt;PreparedAuthToken&gt;
    * @throws ApiException if fails to make API call
    */
@@ -755,8 +763,8 @@ public class AuthApi {
   }
 
   /**
-   * Prepare an authorization flow (with external authentication data)
-   * Aurinko&#39;s standard user authentication uses cookies or session tokens. For clients using Office365 add-in applications, Aurinko also supports ExchangeIdToken for external authentication (See https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token for more details).  To use exchange identity token, do the following: 1. Get an ExchangeIdToken from the Office365 add-in application. See the link above for more details. 2. Make the call to &#x60;/auth/prepare&#x60; with these HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; &lt;br&gt;   This call returns a temporary token: &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;. 3. Use the temporary token from &#x60;/auth/prepare&#x60; at the &#x60;/authorizeUser&#x60; endpoint. Pass it as a query parameter: &#x60;?token&#x3D;your-temporary-token&#x60;.  Post-authentication, a new user is created or an existing user is re-authorized. To access Aurinko API, client applications now can use exchange identity token by authenticating API requests with: - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
+   * Validate an external identity token
+   * This method is for Office365 web add-ins that want to implement external authentication based on [Exchange Identity Token](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/inside-the-identity-token).  Here are the steps involved in establishing an Aurinko User session:  1. Your Office 365 web add-in gets the Exchange identity token (see the link above for how it is done).  2. Makes a POST call to the &#x60;/auth/prepare&#x60; endpoint with the following HTTP headers:   - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60;   - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60;       Auriko validates the identity token and provides a temporary token if the ID is valid:      &#x60;{ \&quot;token\&quot;: \&quot;your-temporary-token\&quot; }&#x60;  3. The addin then calls the &#x60;/authorizeUser&#x60; endpoint with the temporary token, using the query parameter    &#x60;?token&#x3D;your-temporary-token&#x60;.  Upon successful completion of the steps a new Aurinko User is created or an existing User is re-authorized. And from now on this identity token is recognized by Aurinko and is associated with the User session.  From here on the add-in can access Aurinko API with its Exchange identity token, this way:  - &#x60;X-Aurinko-Auth-Type&#x60;: &#x60;exchangeIdToken&#x60; - &#x60;Authorization&#x60;: &#x60;Bearer &lt;your_exchange_id_token&gt;&#x60; 
    * @return CompletableFuture&lt;ApiResponse&lt;PreparedAuthToken&gt;&gt;
    * @throws ApiException if fails to make API call
    */

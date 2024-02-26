@@ -62,14 +62,6 @@ public class OutEmailTrackTest {
     }
 
     /**
-     * Test the property 'links'
-     */
-    @Test
-    public void linksTest() {
-        // TODO: test links
-    }
-
-    /**
      * Test the property 'context'
      */
     @Test

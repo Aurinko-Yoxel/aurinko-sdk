@@ -335,7 +335,7 @@ CompletableFuture<ApiResponse<[**AccountsPage**](AccountsPage.md)>>
 
 ## upsertPersonal
 
-> CompletableFuture<AccountSaveResult> upsertPersonal(userAccount, userId, recycleKeys, apiAccountInDto)
+> CompletableFuture<AccountSaveResult> upsertPersonal(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto)
 
 Upsert an account
 
@@ -365,9 +365,10 @@ public class Example {
         UserAccountType userAccount = UserAccountType.fromValue("primary"); // UserAccountType | 
         String userId = "userId_example"; // String | ID of a user this account should be attached to.
         List<ServiceKey> recycleKeys = Arrays.asList(); // List<ServiceKey> | 
+        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
         ApiAccountInDto apiAccountInDto = new ApiAccountInDto(); // ApiAccountInDto | 
         try {
-            CompletableFuture<AccountSaveResult> result = apiInstance.upsertPersonal(userAccount, userId, recycleKeys, apiAccountInDto);
+            CompletableFuture<AccountSaveResult> result = apiInstance.upsertPersonal(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountsApi#upsertPersonal");
@@ -388,6 +389,7 @@ public class Example {
 | **userAccount** | [**UserAccountType**](.md)|  | [optional] [enum: primary, secondary] |
 | **userId** | **String**| ID of a user this account should be attached to. | [optional] |
 | **recycleKeys** | [**List&lt;ServiceKey&gt;**](ServiceKey.md)|  | [optional] |
+| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **apiAccountInDto** | [**ApiAccountInDto**](ApiAccountInDto.md)|  | [optional] |
 
 ### Return type
@@ -412,7 +414,7 @@ CompletableFuture<[**AccountSaveResult**](AccountSaveResult.md)>
 
 ## upsertPersonalWithHttpInfo
 
-> CompletableFuture<ApiResponse<AccountSaveResult>> upsertPersonal upsertPersonalWithHttpInfo(userAccount, userId, recycleKeys, apiAccountInDto)
+> CompletableFuture<ApiResponse<AccountSaveResult>> upsertPersonal upsertPersonalWithHttpInfo(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto)
 
 Upsert an account
 
@@ -443,9 +445,10 @@ public class Example {
         UserAccountType userAccount = UserAccountType.fromValue("primary"); // UserAccountType | 
         String userId = "userId_example"; // String | ID of a user this account should be attached to.
         List<ServiceKey> recycleKeys = Arrays.asList(); // List<ServiceKey> | 
+        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
         ApiAccountInDto apiAccountInDto = new ApiAccountInDto(); // ApiAccountInDto | 
         try {
-            CompletableFuture<ApiResponse<AccountSaveResult>> response = apiInstance.upsertPersonalWithHttpInfo(userAccount, userId, recycleKeys, apiAccountInDto);
+            CompletableFuture<ApiResponse<AccountSaveResult>> response = apiInstance.upsertPersonalWithHttpInfo(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -475,6 +478,7 @@ public class Example {
 | **userAccount** | [**UserAccountType**](.md)|  | [optional] [enum: primary, secondary] |
 | **userId** | **String**| ID of a user this account should be attached to. | [optional] |
 | **recycleKeys** | [**List&lt;ServiceKey&gt;**](ServiceKey.md)|  | [optional] |
+| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **apiAccountInDto** | [**ApiAccountInDto**](ApiAccountInDto.md)|  | [optional] |
 
 ### Return type
