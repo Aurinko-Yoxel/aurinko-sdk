@@ -68,6 +68,7 @@ docs/EmailHeader.md
 docs/EmailMessage.md
 docs/EmailMessagesPage.md
 docs/EmailMessagesPageNext.md
+docs/EmailSendError.md
 docs/EmailSendResponse.md
 docs/EmailSyncApi.md
 docs/EmailTrackingApi.md
@@ -256,6 +257,7 @@ src/main/java/io/aurinko/client/model/EmailHeader.java
 src/main/java/io/aurinko/client/model/EmailMessage.java
 src/main/java/io/aurinko/client/model/EmailMessagesPage.java
 src/main/java/io/aurinko/client/model/EmailMessagesPageNext.java
+src/main/java/io/aurinko/client/model/EmailSendError.java
 src/main/java/io/aurinko/client/model/EmailSendResponse.java
 src/main/java/io/aurinko/client/model/EmailTrackingData.java
 src/main/java/io/aurinko/client/model/EmailTrackingEvent.java
@@ -412,6 +414,7 @@ src/test/java/io/aurinko/client/model/EmailHeaderTest.java
 src/test/java/io/aurinko/client/model/EmailMessageTest.java
 src/test/java/io/aurinko/client/model/EmailMessagesPageNextTest.java
 src/test/java/io/aurinko/client/model/EmailMessagesPageTest.java
+src/test/java/io/aurinko/client/model/EmailSendErrorTest.java
 src/test/java/io/aurinko/client/model/EmailSendResponseTest.java
 src/test/java/io/aurinko/client/model/EmailTrackingDataTest.java
 src/test/java/io/aurinko/client/model/EmailTrackingEventPageNextTest.java

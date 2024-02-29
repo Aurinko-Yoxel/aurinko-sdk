@@ -1367,7 +1367,7 @@ paths:
             schema:
               $ref: '#/components/schemas/OutgoingEmail'
       responses:
-        "200":
+        "201":
           content:
             application/json:
               schema:
@@ -4973,6 +4973,29 @@ components:
             type: string
           type: array
       type: object
+    EmailSendError:
+      example:
+        errorMessage: errorMessage
+        failedSteps:
+        - tracking
+        - tracking
+      properties:
+        failedSteps:
+          items:
+            description: "Action that should have been performed, but were not performed\
+              \ due to an error"
+            enum:
+            - tracking
+            - followUp
+            - keywords
+            - returnIds
+            type: string
+          type: array
+        errorMessage:
+          description: An error occurred after a successful submission while processing
+            the result
+          type: string
+      type: object
     TaskListUpdate:
       example:
         title: title
@@ -6800,7 +6823,13 @@ components:
     EmailSendResponse:
       example:
         threadId: threadId
+        processingStatus: Ok
         id: id
+        processingError:
+          errorMessage: errorMessage
+          failedSteps:
+          - tracking
+          - tracking
         status: Ok
       properties:
         status:
@@ -6811,6 +6840,13 @@ components:
           type: string
         threadId:
           type: string
+        processingStatus:
+          enum:
+          - Ok
+          - Incomplete
+          type: string
+        processingError:
+          $ref: '#/components/schemas/EmailSendError'
       type: object
     Sensitivity:
       enum:

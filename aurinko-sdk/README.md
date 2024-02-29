@@ -406,6 +406,7 @@ Class | Method | HTTP request | Description
  - [EmailMessage](docs/EmailMessage.md)
  - [EmailMessagesPage](docs/EmailMessagesPage.md)
  - [EmailMessagesPageNext](docs/EmailMessagesPageNext.md)
+ - [EmailSendError](docs/EmailSendError.md)
  - [EmailSendResponse](docs/EmailSendResponse.md)
  - [EmailTrackingData](docs/EmailTrackingData.md)
  - [EmailTrackingEvent](docs/EmailTrackingEvent.md)

@@ -18,64 +18,41 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.EmailSendError;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Model tests for EmailSendResponse
+ * Model tests for EmailSendError
  */
-public class EmailSendResponseTest {
-    private final EmailSendResponse model = new EmailSendResponse();
+public class EmailSendErrorTest {
+    private final EmailSendError model = new EmailSendError();
 
     /**
-     * Model tests for EmailSendResponse
+     * Model tests for EmailSendError
      */
     @Test
-    public void testEmailSendResponse() {
-        // TODO: test EmailSendResponse
+    public void testEmailSendError() {
+        // TODO: test EmailSendError
     }
 
     /**
-     * Test the property 'status'
+     * Test the property 'failedSteps'
      */
     @Test
-    public void statusTest() {
-        // TODO: test status
+    public void failedStepsTest() {
+        // TODO: test failedSteps
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'errorMessage'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'threadId'
-     */
-    @Test
-    public void threadIdTest() {
-        // TODO: test threadId
-    }
-
-    /**
-     * Test the property 'processingStatus'
-     */
-    @Test
-    public void processingStatusTest() {
-        // TODO: test processingStatus
-    }
-
-    /**
-     * Test the property 'processingError'
-     */
-    @Test
-    public void processingErrorTest() {
-        // TODO: test processingError
+    public void errorMessageTest() {
+        // TODO: test errorMessage
     }
 
 }

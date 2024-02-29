@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.EmailSendError;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -34,7 +35,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
   EmailSendResponse.JSON_PROPERTY_STATUS,
   EmailSendResponse.JSON_PROPERTY_ID,
-  EmailSendResponse.JSON_PROPERTY_THREAD_ID
+  EmailSendResponse.JSON_PROPERTY_THREAD_ID,
+  EmailSendResponse.JSON_PROPERTY_PROCESSING_STATUS,
+  EmailSendResponse.JSON_PROPERTY_PROCESSING_ERROR
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EmailSendResponse {
@@ -81,6 +84,49 @@ public class EmailSendResponse {
 
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
   private String threadId;
+
+  /**
+   * Gets or Sets processingStatus
+   */
+  public enum ProcessingStatusEnum {
+    OK("Ok"),
+    
+    INCOMPLETE("Incomplete"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+
+    private String value;
+
+    ProcessingStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ProcessingStatusEnum fromValue(String value) {
+      for (ProcessingStatusEnum b : ProcessingStatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+  }
+
+  public static final String JSON_PROPERTY_PROCESSING_STATUS = "processingStatus";
+  private ProcessingStatusEnum processingStatus;
+
+  public static final String JSON_PROPERTY_PROCESSING_ERROR = "processingError";
+  private EmailSendError processingError;
 
   public EmailSendResponse() { 
   }
@@ -160,6 +206,56 @@ public class EmailSendResponse {
   }
 
 
+  public EmailSendResponse processingStatus(ProcessingStatusEnum processingStatus) {
+    this.processingStatus = processingStatus;
+    return this;
+  }
+
+   /**
+   * Get processingStatus
+   * @return processingStatus
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PROCESSING_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ProcessingStatusEnum getProcessingStatus() {
+    return processingStatus;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PROCESSING_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProcessingStatus(ProcessingStatusEnum processingStatus) {
+    this.processingStatus = processingStatus;
+  }
+
+
+  public EmailSendResponse processingError(EmailSendError processingError) {
+    this.processingError = processingError;
+    return this;
+  }
+
+   /**
+   * Get processingError
+   * @return processingError
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PROCESSING_ERROR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public EmailSendError getProcessingError() {
+    return processingError;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PROCESSING_ERROR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProcessingError(EmailSendError processingError) {
+    this.processingError = processingError;
+  }
+
+
   /**
    * Return true if this EmailSendResponse object is equal to o.
    */
@@ -174,12 +270,14 @@ public class EmailSendResponse {
     EmailSendResponse emailSendResponse = (EmailSendResponse) o;
     return Objects.equals(this.status, emailSendResponse.status) &&
         Objects.equals(this.id, emailSendResponse.id) &&
-        Objects.equals(this.threadId, emailSendResponse.threadId);
+        Objects.equals(this.threadId, emailSendResponse.threadId) &&
+        Objects.equals(this.processingStatus, emailSendResponse.processingStatus) &&
+        Objects.equals(this.processingError, emailSendResponse.processingError);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, id, threadId);
+    return Objects.hash(status, id, threadId, processingStatus, processingError);
   }
 
   @Override
@@ -189,6 +287,8 @@ public class EmailSendResponse {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    threadId: ").append(toIndentedString(threadId)).append("\n");
+    sb.append("    processingStatus: ").append(toIndentedString(processingStatus)).append("\n");
+    sb.append("    processingError: ").append(toIndentedString(processingError)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -249,6 +349,16 @@ public class EmailSendResponse {
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
       joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `processingStatus` to the URL query string
+    if (getProcessingStatus() != null) {
+      joiner.add(String.format("%sprocessingStatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getProcessingStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `processingError` to the URL query string
+    if (getProcessingError() != null) {
+      joiner.add(getProcessingError().toUrlQueryString(prefix + "processingError" + suffix));
     }
 
     return joiner.toString();

@@ -1320,7 +1320,7 @@ CompletableFuture<[**EmailSendResponse**](EmailSendResponse.md)>
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **201** | Success |  -  |
 
 ## sendWithHttpInfo
 
@@ -1442,7 +1442,7 @@ CompletableFuture<ApiResponse<[**EmailSendResponse**](EmailSendResponse.md)>>
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **201** | Success |  -  |
 
 
 ## updateMessageStatus
