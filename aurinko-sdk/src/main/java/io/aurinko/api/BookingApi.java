@@ -24,6 +24,7 @@ import io.aurinko.client.model.BookingSuccessOutDto;
 import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.BookingUpdateDto;
 import io.aurinko.client.model.CreateMeetingDto;
+import io.aurinko.client.model.CreateMeetingResponse;
 import io.aurinko.client.model.WeekWorkSchedule;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -189,10 +190,10 @@ public class BookingApi {
    * @param aurinkoClientId Application client Id (required)
    * @param name Booking profile name (required)
    * @param createMeetingDto  (optional)
-   * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
+   * @return CompletableFuture&lt;CreateMeetingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> createMeeting(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<CreateMeetingResponse> createMeeting(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -204,7 +205,7 @@ public class BookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingSuccessOutDto>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateMeetingResponse>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -222,10 +223,10 @@ public class BookingApi {
    * @param aurinkoClientId Application client Id (required)
    * @param name Booking profile name (required)
    * @param createMeetingDto  (optional)
-   * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
+   * @return CompletableFuture&lt;ApiResponse&lt;CreateMeetingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> createMeetingWithHttpInfo(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<ApiResponse<CreateMeetingResponse>> createMeetingWithHttpInfo(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -240,10 +241,10 @@ public class BookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<BookingSuccessOutDto>(
+                  new ApiResponse<CreateMeetingResponse>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingSuccessOutDto>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateMeetingResponse>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));

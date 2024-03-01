@@ -3024,7 +3024,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BookingSuccessOutDto'
+                $ref: '#/components/schemas/CreateMeetingResponse'
           description: Success
         "401":
           description: Authentication information is missing or invalid
@@ -8232,6 +8232,17 @@ components:
           items:
             $ref: '#/components/schemas/Task'
           type: array
+      type: object
+    CreateMeetingResponse:
+      example:
+        created: true
+        id: id
+      properties:
+        created:
+          type: boolean
+        id:
+          description: Created id of event in calendar
+          type: string
       type: object
     SuggestMeetingTimesRequest:
       example:

@@ -254,7 +254,7 @@ CompletableFuture<ApiResponse<[**BookingOutDto**](BookingOutDto.md)>>
 
 ## createMeeting
 
-> CompletableFuture<BookingSuccessOutDto> createMeeting(aurinkoClientId, name, createMeetingDto)
+> CompletableFuture<CreateMeetingResponse> createMeeting(aurinkoClientId, name, createMeetingDto)
 
 Create a meeting
 
@@ -279,7 +279,7 @@ public class Example {
         String name = "name_example"; // String | Booking profile name
         CreateMeetingDto createMeetingDto = new CreateMeetingDto(); // CreateMeetingDto | 
         try {
-            CompletableFuture<BookingSuccessOutDto> result = apiInstance.createMeeting(aurinkoClientId, name, createMeetingDto);
+            CompletableFuture<CreateMeetingResponse> result = apiInstance.createMeeting(aurinkoClientId, name, createMeetingDto);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling BookingApi#createMeeting");
@@ -303,7 +303,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
+CompletableFuture<[**CreateMeetingResponse**](CreateMeetingResponse.md)>
 
 
 ### Authorization
@@ -323,7 +323,7 @@ No authorization required
 
 ## createMeetingWithHttpInfo
 
-> CompletableFuture<ApiResponse<BookingSuccessOutDto>> createMeeting createMeetingWithHttpInfo(aurinkoClientId, name, createMeetingDto)
+> CompletableFuture<ApiResponse<CreateMeetingResponse>> createMeeting createMeetingWithHttpInfo(aurinkoClientId, name, createMeetingDto)
 
 Create a meeting
 
@@ -349,7 +349,7 @@ public class Example {
         String name = "name_example"; // String | Booking profile name
         CreateMeetingDto createMeetingDto = new CreateMeetingDto(); // CreateMeetingDto | 
         try {
-            CompletableFuture<ApiResponse<BookingSuccessOutDto>> response = apiInstance.createMeetingWithHttpInfo(aurinkoClientId, name, createMeetingDto);
+            CompletableFuture<ApiResponse<CreateMeetingResponse>> response = apiInstance.createMeetingWithHttpInfo(aurinkoClientId, name, createMeetingDto);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -382,7 +382,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>>
+CompletableFuture<ApiResponse<[**CreateMeetingResponse**](CreateMeetingResponse.md)>>
 
 
 ### Authorization

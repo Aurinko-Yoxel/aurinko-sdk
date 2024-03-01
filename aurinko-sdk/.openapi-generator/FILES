@@ -46,6 +46,7 @@ docs/ContactsPage.md
 docs/ConversationDripStatus.md
 docs/ConvertDraft.md
 docs/CreateMeetingDto.md
+docs/CreateMeetingResponse.md
 docs/DayOfWeek.md
 docs/DayWorkSchedule.md
 docs/DeletedEmailMessage.md
@@ -237,6 +238,7 @@ src/main/java/io/aurinko/client/model/ContactsPage.java
 src/main/java/io/aurinko/client/model/ConversationDripStatus.java
 src/main/java/io/aurinko/client/model/ConvertDraft.java
 src/main/java/io/aurinko/client/model/CreateMeetingDto.java
+src/main/java/io/aurinko/client/model/CreateMeetingResponse.java
 src/main/java/io/aurinko/client/model/DayOfWeek.java
 src/main/java/io/aurinko/client/model/DayWorkSchedule.java
 src/main/java/io/aurinko/client/model/DeletedEmailMessage.java
@@ -394,6 +396,7 @@ src/test/java/io/aurinko/client/model/ContactsPageTest.java
 src/test/java/io/aurinko/client/model/ConversationDripStatusTest.java
 src/test/java/io/aurinko/client/model/ConvertDraftTest.java
 src/test/java/io/aurinko/client/model/CreateMeetingDtoTest.java
+src/test/java/io/aurinko/client/model/CreateMeetingResponseTest.java
 src/test/java/io/aurinko/client/model/DayOfWeekTest.java
 src/test/java/io/aurinko/client/model/DayWorkScheduleTest.java
 src/test/java/io/aurinko/client/model/DeletedEmailMessageTest.java

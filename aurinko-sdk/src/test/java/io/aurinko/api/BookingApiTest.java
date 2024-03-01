@@ -21,6 +21,7 @@ import io.aurinko.client.model.BookingSuccessOutDto;
 import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.BookingUpdateDto;
 import io.aurinko.client.model.CreateMeetingDto;
+import io.aurinko.client.model.CreateMeetingResponse;
 import io.aurinko.client.model.WeekWorkSchedule;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -72,7 +73,7 @@ public class BookingApiTest {
         String aurinkoClientId = null;
         String name = null;
         CreateMeetingDto createMeetingDto = null;
-        CompletableFuture<BookingSuccessOutDto> response = 
+        CompletableFuture<CreateMeetingResponse> response = 
         api.createMeeting(aurinkoClientId, name, createMeetingDto);
         
         // TODO: test validations
