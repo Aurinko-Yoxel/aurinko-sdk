@@ -26,7 +26,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.AdditionalField;
 import io.aurinko.client.model.BookingMeetingTime;
-import io.aurinko.client.model.ModelInt;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,7 +83,7 @@ public class BookingTimesOutDto {
   private List<AdditionalField> additionalFields;
 
   public static final String JSON_PROPERTY_LIMIT = "limit";
-  private ModelInt limit = null;
+  private Integer limit = null;
 
   public static final String JSON_PROPERTY_OFFSET = "offset";
   private Integer offset = null;
@@ -358,7 +357,7 @@ public class BookingTimesOutDto {
   }
 
 
-  public BookingTimesOutDto limit(ModelInt limit) {
+  public BookingTimesOutDto limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -371,14 +370,14 @@ public class BookingTimesOutDto {
   @JsonProperty(JSON_PROPERTY_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public ModelInt getLimit() {
+  public Integer getLimit() {
     return limit;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLimit(ModelInt limit) {
+  public void setLimit(Integer limit) {
     this.limit = limit;
   }
 

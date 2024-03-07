@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.AdditionalField;
 import io.aurinko.client.model.BookingMeetingTime;
-import io.aurinko.client.model.ModelInt;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;

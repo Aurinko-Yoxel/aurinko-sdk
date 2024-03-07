@@ -6838,7 +6838,7 @@ components:
           type: array
         limit:
           description: Next request limit
-          type: Int
+          type: int
         offset:
           description: Next request offset
           type: int

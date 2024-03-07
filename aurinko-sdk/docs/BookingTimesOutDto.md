@@ -17,7 +17,7 @@
 |**primaryColor** | **String** | Primary Color, taken from the application settings. |  [optional] |
 |**secondaryColor** | **String** | The second Color, taken from the application settings. |  [optional] |
 |**additionalFields** | [**List&lt;AdditionalField&gt;**](AdditionalField.md) | List of substitution variables like {{name}}, {{openMeetingUrl}},... |  [optional] |
-|**limit** | **ModelInt** | Next request limit |  [optional] |
+|**limit** | **Integer** | Next request limit |  [optional] |
 |**offset** | **Integer** | Next request offset |  [optional] |
 
 
