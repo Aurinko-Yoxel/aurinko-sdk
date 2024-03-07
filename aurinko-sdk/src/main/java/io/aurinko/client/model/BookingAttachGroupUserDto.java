@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,112 +31,83 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * SelectedMeetingTime
+ * BookingAttachGroupUserDto
  */
 @JsonPropertyOrder({
-  SelectedMeetingTime.JSON_PROPERTY_START,
-  SelectedMeetingTime.JSON_PROPERTY_END,
-  SelectedMeetingTime.JSON_PROPERTY_USER_IDS
+  BookingAttachGroupUserDto.JSON_PROPERTY_ID,
+  BookingAttachGroupUserDto.JSON_PROPERTY_ACCOUNTS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SelectedMeetingTime {
-  public static final String JSON_PROPERTY_START = "start";
-  private OffsetDateTime start;
+public class BookingAttachGroupUserDto {
+  public static final String JSON_PROPERTY_ID = "id";
+  private String id;
 
-  public static final String JSON_PROPERTY_END = "end";
-  private OffsetDateTime end;
+  public static final String JSON_PROPERTY_ACCOUNTS = "accounts";
+  private List<Long> accounts;
 
-  public static final String JSON_PROPERTY_USER_IDS = "userIds";
-  private List<String> userIds;
-
-  public SelectedMeetingTime() { 
+  public BookingAttachGroupUserDto() { 
   }
 
-  public SelectedMeetingTime start(OffsetDateTime start) {
-    this.start = start;
+  public BookingAttachGroupUserDto id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get start
-   * @return start
+   * User id
+   * @return id
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START)
+  @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OffsetDateTime getStart() {
-    return start;
+  public String getId() {
+    return id;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_START)
+  @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
-    this.start = start;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
-  public SelectedMeetingTime end(OffsetDateTime end) {
-    this.end = end;
+  public BookingAttachGroupUserDto accounts(List<Long> accounts) {
+    this.accounts = accounts;
     return this;
   }
 
-   /**
-   * Get end
-   * @return end
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public OffsetDateTime getEnd() {
-    return end;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
-    this.end = end;
-  }
-
-
-  public SelectedMeetingTime userIds(List<String> userIds) {
-    this.userIds = userIds;
-    return this;
-  }
-
-  public SelectedMeetingTime addUserIdsItem(String userIdsItem) {
-    if (this.userIds == null) {
-      this.userIds = new ArrayList<>();
+  public BookingAttachGroupUserDto addAccountsItem(Long accountsItem) {
+    if (this.accounts == null) {
+      this.accounts = new ArrayList<>();
     }
-    this.userIds.add(userIdsItem);
+    this.accounts.add(accountsItem);
     return this;
   }
 
    /**
-   * Get userIds
-   * @return userIds
+   * Get accounts
+   * @return accounts
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<String> getUserIds() {
-    return userIds;
+  public List<Long> getAccounts() {
+    return accounts;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserIds(List<String> userIds) {
-    this.userIds = userIds;
+  public void setAccounts(List<Long> accounts) {
+    this.accounts = accounts;
   }
 
 
   /**
-   * Return true if this SelectedMeetingTime object is equal to o.
+   * Return true if this BookingAttachGroupUserDto object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -147,24 +117,22 @@ public class SelectedMeetingTime {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SelectedMeetingTime selectedMeetingTime = (SelectedMeetingTime) o;
-    return Objects.equals(this.start, selectedMeetingTime.start) &&
-        Objects.equals(this.end, selectedMeetingTime.end) &&
-        Objects.equals(this.userIds, selectedMeetingTime.userIds);
+    BookingAttachGroupUserDto bookingAttachGroupUserDto = (BookingAttachGroupUserDto) o;
+    return Objects.equals(this.id, bookingAttachGroupUserDto.id) &&
+        Objects.equals(this.accounts, bookingAttachGroupUserDto.accounts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end, userIds);
+    return Objects.hash(id, accounts);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SelectedMeetingTime {\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("class BookingAttachGroupUserDto {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    accounts: ").append(toIndentedString(accounts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -212,22 +180,17 @@ public class SelectedMeetingTime {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `start` to the URL query string
-    if (getStart() != null) {
-      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `end` to the URL query string
-    if (getEnd() != null) {
-      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `userIds` to the URL query string
-    if (getUserIds() != null) {
-      for (int i = 0; i < getUserIds().size(); i++) {
-        joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
+    // add `accounts` to the URL query string
+    if (getAccounts() != null) {
+      for (int i = 0; i < getAccounts().size(); i++) {
+        joiner.add(String.format("%saccounts%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(String.valueOf(getAccounts().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

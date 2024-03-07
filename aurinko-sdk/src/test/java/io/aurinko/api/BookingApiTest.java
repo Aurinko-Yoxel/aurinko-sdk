@@ -18,10 +18,7 @@ import io.aurinko.client.model.BookingInDto;
 import io.aurinko.client.model.BookingOutDto;
 import io.aurinko.client.model.BookingPage;
 import io.aurinko.client.model.BookingSuccessOutDto;
-import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.BookingUpdateDto;
-import io.aurinko.client.model.CreateMeetingDto;
-import io.aurinko.client.model.CreateMeetingResponse;
 import io.aurinko.client.model.WeekWorkSchedule;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -56,25 +53,6 @@ public class BookingApiTest {
         BookingInDto bookingInDto = null;
         CompletableFuture<BookingOutDto> response = 
         api.create(bookingInDto);
-        
-        // TODO: test validations
-    }
-    
-    /**
-     * Create a meeting
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createMeetingTest() throws ApiException {
-        String aurinkoClientId = null;
-        String name = null;
-        CreateMeetingDto createMeetingDto = null;
-        CompletableFuture<CreateMeetingResponse> response = 
-        api.createMeeting(aurinkoClientId, name, createMeetingDto);
         
         // TODO: test validations
     }
@@ -127,24 +105,6 @@ public class BookingApiTest {
         Long id = null;
         CompletableFuture<BookingOutDto> response = 
         api.getBooking(id);
-        
-        // TODO: test validations
-    }
-    
-    /**
-     * Get available meeting times
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getMeetingTimesTest() throws ApiException {
-        String aurinkoClientId = null;
-        String name = null;
-        CompletableFuture<BookingTimesOutDto> response = 
-        api.getMeetingTimes(aurinkoClientId, name);
         
         // TODO: test validations
     }

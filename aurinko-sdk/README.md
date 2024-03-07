@@ -162,22 +162,22 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**getAccessTokenByCodeWithHttpInfo**](docs/AuthApi.md#getAccessTokenByCodeWithHttpInfo) | **GET** /v1/auth/token/{code} | Get access token, Deprecated use POST instead
 *AuthApi* | [**prepareAuth**](docs/AuthApi.md#prepareAuth) | **POST** /v1/auth/prepare | Validate an external identity token
 *AuthApi* | [**prepareAuthWithHttpInfo**](docs/AuthApi.md#prepareAuthWithHttpInfo) | **POST** /v1/auth/prepare | Validate an external identity token
-*BookingApi* | [**create**](docs/BookingApi.md#create) | **POST** /v1/book/profiles | Create a booking profile
-*BookingApi* | [**createWithHttpInfo**](docs/BookingApi.md#createWithHttpInfo) | **POST** /v1/book/profiles | Create a booking profile
-*BookingApi* | [**createMeeting**](docs/BookingApi.md#createMeeting) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
-*BookingApi* | [**createMeetingWithHttpInfo**](docs/BookingApi.md#createMeetingWithHttpInfo) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
-*BookingApi* | [**deleteBooking**](docs/BookingApi.md#deleteBooking) | **DELETE** /v1/book/profiles/{id} | Delete a booking profile by id
-*BookingApi* | [**deleteBookingWithHttpInfo**](docs/BookingApi.md#deleteBookingWithHttpInfo) | **DELETE** /v1/book/profiles/{id} | Delete a booking profile by id
-*BookingApi* | [**getAccBookings**](docs/BookingApi.md#getAccBookings) | **GET** /v1/book/profiles | Get booking profiles
-*BookingApi* | [**getAccBookingsWithHttpInfo**](docs/BookingApi.md#getAccBookingsWithHttpInfo) | **GET** /v1/book/profiles | Get booking profiles
-*BookingApi* | [**getBooking**](docs/BookingApi.md#getBooking) | **GET** /v1/book/profiles/{id} | Get a booking profile by id
-*BookingApi* | [**getBookingWithHttpInfo**](docs/BookingApi.md#getBookingWithHttpInfo) | **GET** /v1/book/profiles/{id} | Get a booking profile by id
-*BookingApi* | [**getMeetingTimes**](docs/BookingApi.md#getMeetingTimes) | **GET** /v1/book/{aurinkoClientId}/{name}/meeting | Get available meeting times
-*BookingApi* | [**getMeetingTimesWithHttpInfo**](docs/BookingApi.md#getMeetingTimesWithHttpInfo) | **GET** /v1/book/{aurinkoClientId}/{name}/meeting | Get available meeting times
-*BookingApi* | [**updateBooking**](docs/BookingApi.md#updateBooking) | **PATCH** /v1/book/profiles/{id} | Update a booking profile
-*BookingApi* | [**updateBookingWithHttpInfo**](docs/BookingApi.md#updateBookingWithHttpInfo) | **PATCH** /v1/book/profiles/{id} | Update a booking profile
-*BookingApi* | [**workHours**](docs/BookingApi.md#workHours) | **GET** /v1/book/workHours | Get user work hours
-*BookingApi* | [**workHoursWithHttpInfo**](docs/BookingApi.md#workHoursWithHttpInfo) | **GET** /v1/book/workHours | Get user work hours
+*AvailabilityApi* | [**createMeeting**](docs/AvailabilityApi.md#createMeeting) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
+*AvailabilityApi* | [**createMeetingWithHttpInfo**](docs/AvailabilityApi.md#createMeetingWithHttpInfo) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
+*AvailabilityApi* | [**getMeetingTimes**](docs/AvailabilityApi.md#getMeetingTimes) | **GET** /v1/book/{aurinkoClientId}/{name}/meeting | Get available meeting times
+*AvailabilityApi* | [**getMeetingTimesWithHttpInfo**](docs/AvailabilityApi.md#getMeetingTimesWithHttpInfo) | **GET** /v1/book/{aurinkoClientId}/{name}/meeting | Get available meeting times
+*BookingApi* | [**create**](docs/BookingApi.md#create) | **POST** /v1/book/account/profiles | Create a booking profile
+*BookingApi* | [**createWithHttpInfo**](docs/BookingApi.md#createWithHttpInfo) | **POST** /v1/book/account/profiles | Create a booking profile
+*BookingApi* | [**deleteBooking**](docs/BookingApi.md#deleteBooking) | **DELETE** /v1/book/account/profiles/{id} | Delete a booking profile by id
+*BookingApi* | [**deleteBookingWithHttpInfo**](docs/BookingApi.md#deleteBookingWithHttpInfo) | **DELETE** /v1/book/account/profiles/{id} | Delete a booking profile by id
+*BookingApi* | [**getAccBookings**](docs/BookingApi.md#getAccBookings) | **GET** /v1/book/account/profiles | Get booking profiles
+*BookingApi* | [**getAccBookingsWithHttpInfo**](docs/BookingApi.md#getAccBookingsWithHttpInfo) | **GET** /v1/book/account/profiles | Get booking profiles
+*BookingApi* | [**getBooking**](docs/BookingApi.md#getBooking) | **GET** /v1/book/account/profiles/{id} | Get a booking profile by id
+*BookingApi* | [**getBookingWithHttpInfo**](docs/BookingApi.md#getBookingWithHttpInfo) | **GET** /v1/book/account/profiles/{id} | Get a booking profile by id
+*BookingApi* | [**updateBooking**](docs/BookingApi.md#updateBooking) | **PATCH** /v1/book/account/profiles/{id} | Update a booking profile
+*BookingApi* | [**updateBookingWithHttpInfo**](docs/BookingApi.md#updateBookingWithHttpInfo) | **PATCH** /v1/book/account/profiles/{id} | Update a booking profile
+*BookingApi* | [**workHours**](docs/BookingApi.md#workHours) | **GET** /v1/book/account/workHours | Get user work hours
+*BookingApi* | [**workHoursWithHttpInfo**](docs/BookingApi.md#workHoursWithHttpInfo) | **GET** /v1/book/account/workHours | Get user work hours
 *CalSyncApi* | [**calSyncDeleted**](docs/CalSyncApi.md#calSyncDeleted) | **GET** /v1/calendars/{calendarId}/sync/deleted | Request deleted events (deltas)
 *CalSyncApi* | [**calSyncDeletedWithHttpInfo**](docs/CalSyncApi.md#calSyncDeletedWithHttpInfo) | **GET** /v1/calendars/{calendarId}/sync/deleted | Request deleted events (deltas)
 *CalSyncApi* | [**calSyncStart**](docs/CalSyncApi.md#calSyncStart) | **POST** /v1/calendars/{calendarId}/sync | Start a new calendar sync
@@ -284,6 +284,22 @@ Class | Method | HTTP request | Description
 *FreeBusyScheduleApi* | [**freeBusyWithHttpInfo**](docs/FreeBusyScheduleApi.md#freeBusyWithHttpInfo) | **POST** /v1/calendars/freeBusy | Get the free/busy availability information for a collection of users, or resources
 *FreeBusyScheduleApi* | [**suggestMeetingTimes**](docs/FreeBusyScheduleApi.md#suggestMeetingTimes) | **POST** /v1/calendars/suggestMeetingTimes | Suggest meeting times for a collection of users, or resources
 *FreeBusyScheduleApi* | [**suggestMeetingTimesWithHttpInfo**](docs/FreeBusyScheduleApi.md#suggestMeetingTimesWithHttpInfo) | **POST** /v1/calendars/suggestMeetingTimes | Suggest meeting times for a collection of users, or resources
+*GroupBookingApi* | [**attachUsersGroupBooking**](docs/GroupBookingApi.md#attachUsersGroupBooking) | **POST** /v1/book/group/profiles/{id}/attachUsers | Assign users to group booking
+*GroupBookingApi* | [**attachUsersGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#attachUsersGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/attachUsers | Assign users to group booking
+*GroupBookingApi* | [**attachedUsersGroupBooking**](docs/GroupBookingApi.md#attachedUsersGroupBooking) | **GET** /v1/book/group/profiles/{id}/attachUsers | List users of a group booking profile
+*GroupBookingApi* | [**attachedUsersGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#attachedUsersGroupBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/attachUsers | List users of a group booking profile
+*GroupBookingApi* | [**createGroupBooking**](docs/GroupBookingApi.md#createGroupBooking) | **POST** /v1/book/group/profiles | Create a group booking profile
+*GroupBookingApi* | [**createGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#createGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles | Create a group booking profile
+*GroupBookingApi* | [**deleteGroupBooking**](docs/GroupBookingApi.md#deleteGroupBooking) | **DELETE** /v1/book/group/profiles/{id} | Delete a group booking profile by id
+*GroupBookingApi* | [**deleteGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#deleteGroupBookingWithHttpInfo) | **DELETE** /v1/book/group/profiles/{id} | Delete a group booking profile by id
+*GroupBookingApi* | [**detachUsersGroupBooking**](docs/GroupBookingApi.md#detachUsersGroupBooking) | **POST** /v1/book/group/profiles/{id}/detachUsers | Remove users from group booking
+*GroupBookingApi* | [**detachUsersGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#detachUsersGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/detachUsers | Remove users from group booking
+*GroupBookingApi* | [**getGroupBooking**](docs/GroupBookingApi.md#getGroupBooking) | **GET** /v1/book/group/profiles/{id} | Get a group booking profile by id
+*GroupBookingApi* | [**getGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#getGroupBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id} | Get a group booking profile by id
+*GroupBookingApi* | [**getGroupBookings**](docs/GroupBookingApi.md#getGroupBookings) | **GET** /v1/book/group/profiles | Get group booking profiles
+*GroupBookingApi* | [**getGroupBookingsWithHttpInfo**](docs/GroupBookingApi.md#getGroupBookingsWithHttpInfo) | **GET** /v1/book/group/profiles | Get group booking profiles
+*GroupBookingApi* | [**updateGroupBooking**](docs/GroupBookingApi.md#updateGroupBooking) | **PATCH** /v1/book/group/profiles/{id} | Update a group booking profile
+*GroupBookingApi* | [**updateGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#updateGroupBookingWithHttpInfo) | **PATCH** /v1/book/group/profiles/{id} | Update a group booking profile
 *ManagedAccountsApi* | [**upsertManagedAccount**](docs/ManagedAccountsApi.md#upsertManagedAccount) | **POST** /v1/am/svc_accounts/{accId}/accounts | Upsert a managed account
 *ManagedAccountsApi* | [**upsertManagedAccountWithHttpInfo**](docs/ManagedAccountsApi.md#upsertManagedAccountWithHttpInfo) | **POST** /v1/am/svc_accounts/{accId}/accounts | Upsert a managed account
 *MessagesApi* | [**conversation**](docs/MessagesApi.md#conversation) | **GET** /v1/email/conversations/{threadId} | Get messages in a conversation
@@ -342,6 +358,8 @@ Class | Method | HTTP request | Description
 *UserApi* | [**logoutWithHttpInfo**](docs/UserApi.md#logoutWithHttpInfo) | **POST** /v1/user/logout | Log out a user
 *UserApi* | [**logoutAccount**](docs/UserApi.md#logoutAccount) | **DELETE** /v1/user/accounts/{id} | Delete a user account
 *UserApi* | [**logoutAccountWithHttpInfo**](docs/UserApi.md#logoutAccountWithHttpInfo) | **DELETE** /v1/user/accounts/{id} | Delete a user account
+*UserApi* | [**updateSettings**](docs/UserApi.md#updateSettings) | **PATCH** /v1/user/settings | Change user settings
+*UserApi* | [**updateSettingsWithHttpInfo**](docs/UserApi.md#updateSettingsWithHttpInfo) | **PATCH** /v1/user/settings | Change user settings
 *WebhooksApi* | [**getSubscription**](docs/WebhooksApi.md#getSubscription) | **GET** /v1/subscriptions/{id} | Check a subscription status
 *WebhooksApi* | [**getSubscriptionWithHttpInfo**](docs/WebhooksApi.md#getSubscriptionWithHttpInfo) | **GET** /v1/subscriptions/{id} | Check a subscription status
 *WebhooksApi* | [**getSubscriptions**](docs/WebhooksApi.md#getSubscriptions) | **GET** /v1/subscriptions | Get a list of push event subscriptions
@@ -362,12 +380,18 @@ Class | Method | HTTP request | Description
  - [ApiAccountOutDto](docs/ApiAccountOutDto.md)
  - [Attendee](docs/Attendee.md)
  - [BodyType](docs/BodyType.md)
+ - [BookingAttachGroupUserDto](docs/BookingAttachGroupUserDto.md)
+ - [BookingAttachGroupUsersDto](docs/BookingAttachGroupUsersDto.md)
+ - [BookingAttachedDto](docs/BookingAttachedDto.md)
+ - [BookingAttachedUserPage](docs/BookingAttachedUserPage.md)
  - [BookingInDto](docs/BookingInDto.md)
+ - [BookingMeetingTime](docs/BookingMeetingTime.md)
  - [BookingOutDto](docs/BookingOutDto.md)
  - [BookingPage](docs/BookingPage.md)
  - [BookingSuccessOutDto](docs/BookingSuccessOutDto.md)
  - [BookingTimesOutDto](docs/BookingTimesOutDto.md)
  - [BookingUpdateDto](docs/BookingUpdateDto.md)
+ - [BookingWorkHours](docs/BookingWorkHours.md)
  - [Calendar](docs/Calendar.md)
  - [CalendarCreate](docs/CalendarCreate.md)
  - [CalendarUpdate](docs/CalendarUpdate.md)
@@ -417,6 +441,7 @@ Class | Method | HTTP request | Description
  - [EndUserAccountsPage](docs/EndUserAccountsPage.md)
  - [EndUserDto](docs/EndUserDto.md)
  - [EndUserExtIdType](docs/EndUserExtIdType.md)
+ - [EndUserSettingsDto](docs/EndUserSettingsDto.md)
  - [Event](docs/Event.md)
  - [EventDateTime](docs/EventDateTime.md)
  - [EventOrId](docs/EventOrId.md)
@@ -433,7 +458,6 @@ Class | Method | HTTP request | Description
  - [FreeBusySchedulePage](docs/FreeBusySchedulePage.md)
  - [MeetingAttendee](docs/MeetingAttendee.md)
  - [MeetingInfo](docs/MeetingInfo.md)
- - [MeetingTime](docs/MeetingTime.md)
  - [OccurrenceInfo](docs/OccurrenceInfo.md)
  - [OkResponse](docs/OkResponse.md)
  - [OnlineMeetingDetails](docs/OnlineMeetingDetails.md)

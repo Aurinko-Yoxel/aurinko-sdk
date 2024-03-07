@@ -24,120 +24,52 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
+import io.aurinko.client.model.WeekWorkSchedule;
 import java.util.Arrays;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * SelectedMeetingTime
+ * BookingWorkHours
  */
 @JsonPropertyOrder({
-  SelectedMeetingTime.JSON_PROPERTY_START,
-  SelectedMeetingTime.JSON_PROPERTY_END,
-  SelectedMeetingTime.JSON_PROPERTY_USER_IDS
+  BookingWorkHours.JSON_PROPERTY_WORK_HOURS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SelectedMeetingTime {
-  public static final String JSON_PROPERTY_START = "start";
-  private OffsetDateTime start;
+public class BookingWorkHours {
+  public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
+  private WeekWorkSchedule workHours;
 
-  public static final String JSON_PROPERTY_END = "end";
-  private OffsetDateTime end;
-
-  public static final String JSON_PROPERTY_USER_IDS = "userIds";
-  private List<String> userIds;
-
-  public SelectedMeetingTime() { 
+  public BookingWorkHours() { 
   }
 
-  public SelectedMeetingTime start(OffsetDateTime start) {
-    this.start = start;
+  public BookingWorkHours workHours(WeekWorkSchedule workHours) {
+    this.workHours = workHours;
     return this;
   }
 
    /**
-   * Get start
-   * @return start
+   * Get workHours
+   * @return workHours
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START)
+  @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OffsetDateTime getStart() {
-    return start;
+  public WeekWorkSchedule getWorkHours() {
+    return workHours;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_START)
+  @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
-    this.start = start;
-  }
-
-
-  public SelectedMeetingTime end(OffsetDateTime end) {
-    this.end = end;
-    return this;
-  }
-
-   /**
-   * Get end
-   * @return end
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public OffsetDateTime getEnd() {
-    return end;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
-    this.end = end;
-  }
-
-
-  public SelectedMeetingTime userIds(List<String> userIds) {
-    this.userIds = userIds;
-    return this;
-  }
-
-  public SelectedMeetingTime addUserIdsItem(String userIdsItem) {
-    if (this.userIds == null) {
-      this.userIds = new ArrayList<>();
-    }
-    this.userIds.add(userIdsItem);
-    return this;
-  }
-
-   /**
-   * Get userIds
-   * @return userIds
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<String> getUserIds() {
-    return userIds;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserIds(List<String> userIds) {
-    this.userIds = userIds;
+  public void setWorkHours(WeekWorkSchedule workHours) {
+    this.workHours = workHours;
   }
 
 
   /**
-   * Return true if this SelectedMeetingTime object is equal to o.
+   * Return true if this BookingWorkHours object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -147,24 +79,20 @@ public class SelectedMeetingTime {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SelectedMeetingTime selectedMeetingTime = (SelectedMeetingTime) o;
-    return Objects.equals(this.start, selectedMeetingTime.start) &&
-        Objects.equals(this.end, selectedMeetingTime.end) &&
-        Objects.equals(this.userIds, selectedMeetingTime.userIds);
+    BookingWorkHours bookingWorkHours = (BookingWorkHours) o;
+    return Objects.equals(this.workHours, bookingWorkHours.workHours);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end, userIds);
+    return Objects.hash(workHours);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SelectedMeetingTime {\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("class BookingWorkHours {\n");
+    sb.append("    workHours: ").append(toIndentedString(workHours)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -212,23 +140,9 @@ public class SelectedMeetingTime {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `start` to the URL query string
-    if (getStart() != null) {
-      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `end` to the URL query string
-    if (getEnd() != null) {
-      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `userIds` to the URL query string
-    if (getUserIds() != null) {
-      for (int i = 0; i < getUserIds().size(); i++) {
-        joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
+    // add `workHours` to the URL query string
+    if (getWorkHours() != null) {
+      joiner.add(getWorkHours().toUrlQueryString(prefix + "workHours" + suffix));
     }
 
     return joiner.toString();

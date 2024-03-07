@@ -72,6 +72,14 @@ public class BookingUpdateDtoTest {
     }
 
     /**
+     * Test the property 'endTime'
+     */
+    @Test
+    public void endTimeTest() {
+        // TODO: test endTime
+    }
+
+    /**
      * Test the property 'timeAvailableFor'
      */
     @Test

@@ -24,81 +24,52 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
+import io.aurinko.client.model.WeekWorkSchedule;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * MeetingTime
+ * EndUserSettingsDto
  */
 @JsonPropertyOrder({
-  MeetingTime.JSON_PROPERTY_START,
-  MeetingTime.JSON_PROPERTY_END
+  EndUserSettingsDto.JSON_PROPERTY_WORK_HOURS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class MeetingTime {
-  public static final String JSON_PROPERTY_START = "start";
-  private OffsetDateTime start;
+public class EndUserSettingsDto {
+  public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
+  private WeekWorkSchedule workHours;
 
-  public static final String JSON_PROPERTY_END = "end";
-  private OffsetDateTime end;
-
-  public MeetingTime() { 
+  public EndUserSettingsDto() { 
   }
 
-  public MeetingTime start(OffsetDateTime start) {
-    this.start = start;
+  public EndUserSettingsDto workHours(WeekWorkSchedule workHours) {
+    this.workHours = workHours;
     return this;
   }
 
    /**
-   * Get start
-   * @return start
+   * Get workHours
+   * @return workHours
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START)
+  @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OffsetDateTime getStart() {
-    return start;
+  public WeekWorkSchedule getWorkHours() {
+    return workHours;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_START)
+  @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
-    this.start = start;
-  }
-
-
-  public MeetingTime end(OffsetDateTime end) {
-    this.end = end;
-    return this;
-  }
-
-   /**
-   * Get end
-   * @return end
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public OffsetDateTime getEnd() {
-    return end;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
-    this.end = end;
+  public void setWorkHours(WeekWorkSchedule workHours) {
+    this.workHours = workHours;
   }
 
 
   /**
-   * Return true if this MeetingTime object is equal to o.
+   * Return true if this EndUserSettingsDto object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -108,22 +79,20 @@ public class MeetingTime {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MeetingTime meetingTime = (MeetingTime) o;
-    return Objects.equals(this.start, meetingTime.start) &&
-        Objects.equals(this.end, meetingTime.end);
+    EndUserSettingsDto endUserSettingsDto = (EndUserSettingsDto) o;
+    return Objects.equals(this.workHours, endUserSettingsDto.workHours);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end);
+    return Objects.hash(workHours);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MeetingTime {\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
+    sb.append("class EndUserSettingsDto {\n");
+    sb.append("    workHours: ").append(toIndentedString(workHours)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -171,14 +140,9 @@ public class MeetingTime {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `start` to the URL query string
-    if (getStart() != null) {
-      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `end` to the URL query string
-    if (getEnd() != null) {
-      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `workHours` to the URL query string
+    if (getWorkHours() != null) {
+      joiner.add(getWorkHours().toUrlQueryString(prefix + "workHours" + suffix));
     }
 
     return joiner.toString();

@@ -21,10 +21,7 @@ import io.aurinko.client.model.BookingInDto;
 import io.aurinko.client.model.BookingOutDto;
 import io.aurinko.client.model.BookingPage;
 import io.aurinko.client.model.BookingSuccessOutDto;
-import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.BookingUpdateDto;
-import io.aurinko.client.model.CreateMeetingDto;
-import io.aurinko.client.model.CreateMeetingResponse;
 import io.aurinko.client.model.WeekWorkSchedule;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -163,7 +160,7 @@ public class BookingApi {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/profiles";
+    String localVarPath = "/v1/book/account/profiles";
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
@@ -172,114 +169,6 @@ public class BookingApi {
 
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingInDto);
-      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-  /**
-   * Create a meeting
-   * 
-   * @param aurinkoClientId Application client Id (required)
-   * @param name Booking profile name (required)
-   * @param createMeetingDto  (optional)
-   * @return CompletableFuture&lt;CreateMeetingResponse&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public CompletableFuture<CreateMeetingResponse> createMeeting(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
-    try {
-      HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, createMeetingDto);
-      return memberVarHttpClient.sendAsync(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
-            if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("createMeeting", localVarResponse));
-            }
-            try {
-              String responseBody = localVarResponse.body();
-              return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateMeetingResponse>() {})
-              );
-            } catch (IOException e) {
-              return CompletableFuture.failedFuture(new ApiException(e));
-            }
-      });
-    }
-    catch (ApiException e) {
-      return CompletableFuture.failedFuture(e);
-    }
-  }
-
-  /**
-   * Create a meeting
-   * 
-   * @param aurinkoClientId Application client Id (required)
-   * @param name Booking profile name (required)
-   * @param createMeetingDto  (optional)
-   * @return CompletableFuture&lt;ApiResponse&lt;CreateMeetingResponse&gt;&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public CompletableFuture<ApiResponse<CreateMeetingResponse>> createMeetingWithHttpInfo(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
-    try {
-      HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, createMeetingDto);
-      return memberVarHttpClient.sendAsync(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
-            if (memberVarAsyncResponseInterceptor != null) {
-              memberVarAsyncResponseInterceptor.accept(localVarResponse);
-            }
-            if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("createMeeting", localVarResponse));
-            }
-            try {
-              String responseBody = localVarResponse.body();
-              return CompletableFuture.completedFuture(
-                  new ApiResponse<CreateMeetingResponse>(
-                      localVarResponse.statusCode(),
-                      localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateMeetingResponse>() {}))
-              );
-            } catch (IOException e) {
-              return CompletableFuture.failedFuture(new ApiException(e));
-            }
-        }
-      );
-    }
-    catch (ApiException e) {
-      return CompletableFuture.failedFuture(e);
-    }
-  }
-
-  private HttpRequest.Builder createMeetingRequestBuilder(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
-    // verify the required parameter 'aurinkoClientId' is set
-    if (aurinkoClientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'aurinkoClientId' when calling createMeeting");
-    }
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new ApiException(400, "Missing the required parameter 'name' when calling createMeeting");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/v1/book/{aurinkoClientId}/{name}/meeting"
-        .replace("{aurinkoClientId}", ApiClient.urlEncode(aurinkoClientId.toString()))
-        .replace("{name}", ApiClient.urlEncode(name.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createMeetingDto);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -369,7 +258,7 @@ public class BookingApi {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/profiles/{id}"
+    String localVarPath = "/v1/book/account/profiles/{id}"
         .replace("{id}", ApiClient.urlEncode(id.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
@@ -460,7 +349,7 @@ public class BookingApi {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/profiles";
+    String localVarPath = "/v1/book/account/profiles";
 
     List<Pair> localVarQueryParams = new ArrayList<>();
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
@@ -569,108 +458,8 @@ public class BookingApi {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/profiles/{id}"
+    String localVarPath = "/v1/book/account/profiles/{id}"
         .replace("{id}", ApiClient.urlEncode(id.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-  /**
-   * Get available meeting times
-   * 
-   * @param aurinkoClientId Application client Id (required)
-   * @param name Booking profile name (required)
-   * @return CompletableFuture&lt;BookingTimesOutDto&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public CompletableFuture<BookingTimesOutDto> getMeetingTimes(String aurinkoClientId, String name) throws ApiException {
-    try {
-      HttpRequest.Builder localVarRequestBuilder = getMeetingTimesRequestBuilder(aurinkoClientId, name);
-      return memberVarHttpClient.sendAsync(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
-            if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("getMeetingTimes", localVarResponse));
-            }
-            try {
-              String responseBody = localVarResponse.body();
-              return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingTimesOutDto>() {})
-              );
-            } catch (IOException e) {
-              return CompletableFuture.failedFuture(new ApiException(e));
-            }
-      });
-    }
-    catch (ApiException e) {
-      return CompletableFuture.failedFuture(e);
-    }
-  }
-
-  /**
-   * Get available meeting times
-   * 
-   * @param aurinkoClientId Application client Id (required)
-   * @param name Booking profile name (required)
-   * @return CompletableFuture&lt;ApiResponse&lt;BookingTimesOutDto&gt;&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public CompletableFuture<ApiResponse<BookingTimesOutDto>> getMeetingTimesWithHttpInfo(String aurinkoClientId, String name) throws ApiException {
-    try {
-      HttpRequest.Builder localVarRequestBuilder = getMeetingTimesRequestBuilder(aurinkoClientId, name);
-      return memberVarHttpClient.sendAsync(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
-            if (memberVarAsyncResponseInterceptor != null) {
-              memberVarAsyncResponseInterceptor.accept(localVarResponse);
-            }
-            if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("getMeetingTimes", localVarResponse));
-            }
-            try {
-              String responseBody = localVarResponse.body();
-              return CompletableFuture.completedFuture(
-                  new ApiResponse<BookingTimesOutDto>(
-                      localVarResponse.statusCode(),
-                      localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingTimesOutDto>() {}))
-              );
-            } catch (IOException e) {
-              return CompletableFuture.failedFuture(new ApiException(e));
-            }
-        }
-      );
-    }
-    catch (ApiException e) {
-      return CompletableFuture.failedFuture(e);
-    }
-  }
-
-  private HttpRequest.Builder getMeetingTimesRequestBuilder(String aurinkoClientId, String name) throws ApiException {
-    // verify the required parameter 'aurinkoClientId' is set
-    if (aurinkoClientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'aurinkoClientId' when calling getMeetingTimes");
-    }
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new ApiException(400, "Missing the required parameter 'name' when calling getMeetingTimes");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/v1/book/{aurinkoClientId}/{name}/meeting"
-        .replace("{aurinkoClientId}", ApiClient.urlEncode(aurinkoClientId.toString()))
-        .replace("{name}", ApiClient.urlEncode(name.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
@@ -764,7 +553,7 @@ public class BookingApi {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/profiles/{id}"
+    String localVarPath = "/v1/book/account/profiles/{id}"
         .replace("{id}", ApiClient.urlEncode(id.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
@@ -857,7 +646,7 @@ public class BookingApi {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/workHours";
+    String localVarPath = "/v1/book/account/workHours";
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 

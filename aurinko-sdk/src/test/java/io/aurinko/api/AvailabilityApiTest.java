@@ -11,47 +11,69 @@
  */
 
 
-package io.aurinko.client.model;
+package io.aurinko.api;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
-import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.model.BookingTimesOutDto;
+import io.aurinko.client.model.CreateMeetingDto;
+import io.aurinko.client.model.CreateMeetingResponse;
 import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
- * Model tests for MeetingTime
+ * API tests for AvailabilityApi
  */
-public class MeetingTimeTest {
-    private final MeetingTime model = new MeetingTime();
+@Ignore
+public class AvailabilityApiTest {
 
+    private final AvailabilityApi api = new AvailabilityApi();
+
+    
     /**
-     * Model tests for MeetingTime
+     * Create a meeting
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void testMeetingTime() {
-        // TODO: test MeetingTime
+    public void createMeetingTest() throws ApiException {
+        String aurinkoClientId = null;
+        String name = null;
+        CreateMeetingDto createMeetingDto = null;
+        CompletableFuture<CreateMeetingResponse> response = 
+        api.createMeeting(aurinkoClientId, name, createMeetingDto);
+        
+        // TODO: test validations
     }
-
+    
     /**
-     * Test the property 'start'
+     * Get available meeting times
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void startTest() {
-        // TODO: test start
+    public void getMeetingTimesTest() throws ApiException {
+        String aurinkoClientId = null;
+        String name = null;
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingTimesOutDto> response = 
+        api.getMeetingTimes(aurinkoClientId, name, limit, offset);
+        
+        // TODO: test validations
     }
-
-    /**
-     * Test the property 'end'
-     */
-    @Test
-    public void endTest() {
-        // TODO: test end
-    }
-
+    
 }

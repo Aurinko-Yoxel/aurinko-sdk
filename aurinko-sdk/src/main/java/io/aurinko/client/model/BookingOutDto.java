@@ -39,6 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingOutDto.JSON_PROPERTY_DURATION_MINUTES,
   BookingOutDto.JSON_PROPERTY_AVAILABILITY_STEP,
   BookingOutDto.JSON_PROPERTY_START_TIME,
+  BookingOutDto.JSON_PROPERTY_END_TIME,
   BookingOutDto.JSON_PROPERTY_TIME_AVAILABLE_FOR,
   BookingOutDto.JSON_PROPERTY_SUBJECT,
   BookingOutDto.JSON_PROPERTY_DESCRIPTION,
@@ -64,6 +65,9 @@ public class BookingOutDto {
 
   public static final String JSON_PROPERTY_START_TIME = "startTime";
   private OffsetDateTime startTime;
+
+  public static final String JSON_PROPERTY_END_TIME = "endTime";
+  private OffsetDateTime endTime;
 
   public static final String JSON_PROPERTY_TIME_AVAILABLE_FOR = "timeAvailableFor";
   private String timeAvailableFor;
@@ -173,7 +177,7 @@ public class BookingOutDto {
   }
 
    /**
-   * Determines the interval at which new meeting slots are made available throughout the working hours.
+   * Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30.
    * @return availabilityStep
   **/
   @javax.annotation.Nullable
@@ -214,6 +218,31 @@ public class BookingOutDto {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStartTime(OffsetDateTime startTime) {
     this.startTime = startTime;
+  }
+
+
+  public BookingOutDto endTime(OffsetDateTime endTime) {
+    this.endTime = endTime;
+    return this;
+  }
+
+   /**
+   * The ending of the formation of intervals. If the time specified here is in the past, the intervals will be empty, regardless of the Start time parameter.
+   * @return endTime
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_END_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getEndTime() {
+    return endTime;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_END_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEndTime(OffsetDateTime endTime) {
+    this.endTime = endTime;
   }
 
 
@@ -434,6 +463,7 @@ public class BookingOutDto {
         Objects.equals(this.durationMinutes, bookingOutDto.durationMinutes) &&
         Objects.equals(this.availabilityStep, bookingOutDto.availabilityStep) &&
         Objects.equals(this.startTime, bookingOutDto.startTime) &&
+        Objects.equals(this.endTime, bookingOutDto.endTime) &&
         Objects.equals(this.timeAvailableFor, bookingOutDto.timeAvailableFor) &&
         Objects.equals(this.subject, bookingOutDto.subject) &&
         Objects.equals(this.description, bookingOutDto.description) &&
@@ -446,7 +476,7 @@ public class BookingOutDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, durationMinutes, availabilityStep, startTime, timeAvailableFor, subject, description, location, workHours, context, startConference, openMeetingUrl);
+    return Objects.hash(id, name, durationMinutes, availabilityStep, startTime, endTime, timeAvailableFor, subject, description, location, workHours, context, startConference, openMeetingUrl);
   }
 
   @Override
@@ -458,6 +488,7 @@ public class BookingOutDto {
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
     sb.append("    availabilityStep: ").append(toIndentedString(availabilityStep)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    timeAvailableFor: ").append(toIndentedString(timeAvailableFor)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -536,6 +567,11 @@ public class BookingOutDto {
     // add `startTime` to the URL query string
     if (getStartTime() != null) {
       joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `endTime` to the URL query string
+    if (getEndTime() != null) {
+      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEndTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `timeAvailableFor` to the URL query string

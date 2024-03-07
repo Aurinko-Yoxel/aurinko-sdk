@@ -1,14 +1,13 @@
 
 
-# MeetingTime
+# BookingWorkHours
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**start** | **OffsetDateTime** |  |  [optional] |
-|**end** | **OffsetDateTime** |  |  [optional] |
+|**workHours** | [**WeekWorkSchedule**](WeekWorkSchedule.md) |  |  [optional] |
 
 
 

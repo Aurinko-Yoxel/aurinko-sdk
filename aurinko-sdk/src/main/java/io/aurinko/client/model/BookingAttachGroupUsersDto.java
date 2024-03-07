@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
+import io.aurinko.client.model.BookingAttachGroupUserDto;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,112 +32,54 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * SelectedMeetingTime
+ * BookingAttachGroupUsersDto
  */
 @JsonPropertyOrder({
-  SelectedMeetingTime.JSON_PROPERTY_START,
-  SelectedMeetingTime.JSON_PROPERTY_END,
-  SelectedMeetingTime.JSON_PROPERTY_USER_IDS
+  BookingAttachGroupUsersDto.JSON_PROPERTY_USERS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SelectedMeetingTime {
-  public static final String JSON_PROPERTY_START = "start";
-  private OffsetDateTime start;
+public class BookingAttachGroupUsersDto {
+  public static final String JSON_PROPERTY_USERS = "users";
+  private List<BookingAttachGroupUserDto> users;
 
-  public static final String JSON_PROPERTY_END = "end";
-  private OffsetDateTime end;
-
-  public static final String JSON_PROPERTY_USER_IDS = "userIds";
-  private List<String> userIds;
-
-  public SelectedMeetingTime() { 
+  public BookingAttachGroupUsersDto() { 
   }
 
-  public SelectedMeetingTime start(OffsetDateTime start) {
-    this.start = start;
+  public BookingAttachGroupUsersDto users(List<BookingAttachGroupUserDto> users) {
+    this.users = users;
     return this;
   }
 
-   /**
-   * Get start
-   * @return start
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public OffsetDateTime getStart() {
-    return start;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_START)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
-    this.start = start;
-  }
-
-
-  public SelectedMeetingTime end(OffsetDateTime end) {
-    this.end = end;
-    return this;
-  }
-
-   /**
-   * Get end
-   * @return end
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public OffsetDateTime getEnd() {
-    return end;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
-    this.end = end;
-  }
-
-
-  public SelectedMeetingTime userIds(List<String> userIds) {
-    this.userIds = userIds;
-    return this;
-  }
-
-  public SelectedMeetingTime addUserIdsItem(String userIdsItem) {
-    if (this.userIds == null) {
-      this.userIds = new ArrayList<>();
+  public BookingAttachGroupUsersDto addUsersItem(BookingAttachGroupUserDto usersItem) {
+    if (this.users == null) {
+      this.users = new ArrayList<>();
     }
-    this.userIds.add(userIdsItem);
+    this.users.add(usersItem);
     return this;
   }
 
    /**
-   * Get userIds
-   * @return userIds
+   * Get users
+   * @return users
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<String> getUserIds() {
-    return userIds;
+  public List<BookingAttachGroupUserDto> getUsers() {
+    return users;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserIds(List<String> userIds) {
-    this.userIds = userIds;
+  public void setUsers(List<BookingAttachGroupUserDto> users) {
+    this.users = users;
   }
 
 
   /**
-   * Return true if this SelectedMeetingTime object is equal to o.
+   * Return true if this BookingAttachGroupUsersDto object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -147,24 +89,20 @@ public class SelectedMeetingTime {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SelectedMeetingTime selectedMeetingTime = (SelectedMeetingTime) o;
-    return Objects.equals(this.start, selectedMeetingTime.start) &&
-        Objects.equals(this.end, selectedMeetingTime.end) &&
-        Objects.equals(this.userIds, selectedMeetingTime.userIds);
+    BookingAttachGroupUsersDto bookingAttachGroupUsersDto = (BookingAttachGroupUsersDto) o;
+    return Objects.equals(this.users, bookingAttachGroupUsersDto.users);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end, userIds);
+    return Objects.hash(users);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SelectedMeetingTime {\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("class BookingAttachGroupUsersDto {\n");
+    sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -212,22 +150,13 @@ public class SelectedMeetingTime {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `start` to the URL query string
-    if (getStart() != null) {
-      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `end` to the URL query string
-    if (getEnd() != null) {
-      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `userIds` to the URL query string
-    if (getUserIds() != null) {
-      for (int i = 0; i < getUserIds().size(); i++) {
-        joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `users` to the URL query string
+    if (getUsers() != null) {
+      for (int i = 0; i < getUsers().size(); i++) {
+        if (getUsers().get(i) != null) {
+          joiner.add(getUsers().get(i).toUrlQueryString(String.format("%susers%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
       }
     }
 

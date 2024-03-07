@@ -25,7 +25,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.AdditionalField;
-import io.aurinko.client.model.MeetingTime;
+import io.aurinko.client.model.BookingMeetingTime;
+import io.aurinko.client.model.ModelInt;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,23 +41,29 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingTimesOutDto.JSON_PROPERTY_ITEMS,
   BookingTimesOutDto.JSON_PROPERTY_START_TIME,
   BookingTimesOutDto.JSON_PROPERTY_END_TIME,
+  BookingTimesOutDto.JSON_PROPERTY_TIME_AVAILABLE_FOR,
   BookingTimesOutDto.JSON_PROPERTY_DURATION_MINUTES,
   BookingTimesOutDto.JSON_PROPERTY_AVAILABILITY_STEP,
   BookingTimesOutDto.JSON_PROPERTY_SUBJECT,
   BookingTimesOutDto.JSON_PROPERTY_PRIMARY_COLOR,
   BookingTimesOutDto.JSON_PROPERTY_SECONDARY_COLOR,
-  BookingTimesOutDto.JSON_PROPERTY_ADDITIONAL_FIELDS
+  BookingTimesOutDto.JSON_PROPERTY_ADDITIONAL_FIELDS,
+  BookingTimesOutDto.JSON_PROPERTY_LIMIT,
+  BookingTimesOutDto.JSON_PROPERTY_OFFSET
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<MeetingTime> items;
+  private List<BookingMeetingTime> items;
 
   public static final String JSON_PROPERTY_START_TIME = "startTime";
   private OffsetDateTime startTime;
 
   public static final String JSON_PROPERTY_END_TIME = "endTime";
   private OffsetDateTime endTime;
+
+  public static final String JSON_PROPERTY_TIME_AVAILABLE_FOR = "timeAvailableFor";
+  private String timeAvailableFor;
 
   public static final String JSON_PROPERTY_DURATION_MINUTES = "durationMinutes";
   private Integer durationMinutes;
@@ -76,15 +83,21 @@ public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ADDITIONAL_FIELDS = "additionalFields";
   private List<AdditionalField> additionalFields;
 
+  public static final String JSON_PROPERTY_LIMIT = "limit";
+  private ModelInt limit = null;
+
+  public static final String JSON_PROPERTY_OFFSET = "offset";
+  private Integer offset = null;
+
   public BookingTimesOutDto() { 
   }
 
-  public BookingTimesOutDto items(List<MeetingTime> items) {
+  public BookingTimesOutDto items(List<BookingMeetingTime> items) {
     this.items = items;
     return this;
   }
 
-  public BookingTimesOutDto addItemsItem(MeetingTime itemsItem) {
+  public BookingTimesOutDto addItemsItem(BookingMeetingTime itemsItem) {
     if (this.items == null) {
       this.items = new ArrayList<>();
     }
@@ -100,14 +113,14 @@ public class BookingTimesOutDto {
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<MeetingTime> getItems() {
+  public List<BookingMeetingTime> getItems() {
     return items;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(List<MeetingTime> items) {
+  public void setItems(List<BookingMeetingTime> items) {
     this.items = items;
   }
 
@@ -162,6 +175,31 @@ public class BookingTimesOutDto {
   }
 
 
+  public BookingTimesOutDto timeAvailableFor(String timeAvailableFor) {
+    this.timeAvailableFor = timeAvailableFor;
+    return this;
+  }
+
+   /**
+   * Time period (in ISO-8601 format) the profile is covering. For example, P3M (3 months), P4W (4 weeks), P5D (5 days).
+   * @return timeAvailableFor
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TIME_AVAILABLE_FOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getTimeAvailableFor() {
+    return timeAvailableFor;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TIME_AVAILABLE_FOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTimeAvailableFor(String timeAvailableFor) {
+    this.timeAvailableFor = timeAvailableFor;
+  }
+
+
   public BookingTimesOutDto durationMinutes(Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
     return this;
@@ -193,7 +231,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Determines the interval at which new meeting slots are made available throughout the working hours.
+   * Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30.
    * @return availabilityStep
   **/
   @javax.annotation.Nullable
@@ -320,6 +358,56 @@ public class BookingTimesOutDto {
   }
 
 
+  public BookingTimesOutDto limit(ModelInt limit) {
+    this.limit = limit;
+    return this;
+  }
+
+   /**
+   * Next request limit
+   * @return limit
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_LIMIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ModelInt getLimit() {
+    return limit;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_LIMIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLimit(ModelInt limit) {
+    this.limit = limit;
+  }
+
+
+  public BookingTimesOutDto offset(Integer offset) {
+    this.offset = offset;
+    return this;
+  }
+
+   /**
+   * Next request offset
+   * @return offset
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OFFSET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getOffset() {
+    return offset;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OFFSET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOffset(Integer offset) {
+    this.offset = offset;
+  }
+
+
   /**
    * Return true if this BookingTimesOutDto object is equal to o.
    */
@@ -335,17 +423,20 @@ public class BookingTimesOutDto {
     return Objects.equals(this.items, bookingTimesOutDto.items) &&
         Objects.equals(this.startTime, bookingTimesOutDto.startTime) &&
         Objects.equals(this.endTime, bookingTimesOutDto.endTime) &&
+        Objects.equals(this.timeAvailableFor, bookingTimesOutDto.timeAvailableFor) &&
         Objects.equals(this.durationMinutes, bookingTimesOutDto.durationMinutes) &&
         Objects.equals(this.availabilityStep, bookingTimesOutDto.availabilityStep) &&
         Objects.equals(this.subject, bookingTimesOutDto.subject) &&
         Objects.equals(this.primaryColor, bookingTimesOutDto.primaryColor) &&
         Objects.equals(this.secondaryColor, bookingTimesOutDto.secondaryColor) &&
-        Objects.equals(this.additionalFields, bookingTimesOutDto.additionalFields);
+        Objects.equals(this.additionalFields, bookingTimesOutDto.additionalFields) &&
+        Objects.equals(this.limit, bookingTimesOutDto.limit) &&
+        Objects.equals(this.offset, bookingTimesOutDto.offset);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(items, startTime, endTime, durationMinutes, availabilityStep, subject, primaryColor, secondaryColor, additionalFields);
+    return Objects.hash(items, startTime, endTime, timeAvailableFor, durationMinutes, availabilityStep, subject, primaryColor, secondaryColor, additionalFields, limit, offset);
   }
 
   @Override
@@ -355,12 +446,15 @@ public class BookingTimesOutDto {
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    sb.append("    timeAvailableFor: ").append(toIndentedString(timeAvailableFor)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
     sb.append("    availabilityStep: ").append(toIndentedString(availabilityStep)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    primaryColor: ").append(toIndentedString(primaryColor)).append("\n");
     sb.append("    secondaryColor: ").append(toIndentedString(secondaryColor)).append("\n");
     sb.append("    additionalFields: ").append(toIndentedString(additionalFields)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -428,6 +522,11 @@ public class BookingTimesOutDto {
       joiner.add(String.format("%sendTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEndTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
+    // add `timeAvailableFor` to the URL query string
+    if (getTimeAvailableFor() != null) {
+      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimeAvailableFor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
       joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
@@ -461,6 +560,16 @@ public class BookingTimesOutDto {
           "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
+    }
+
+    // add `limit` to the URL query string
+    if (getLimit() != null) {
+      joiner.add(String.format("%slimit%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLimit()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `offset` to the URL query string
+    if (getOffset() != null) {
+      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

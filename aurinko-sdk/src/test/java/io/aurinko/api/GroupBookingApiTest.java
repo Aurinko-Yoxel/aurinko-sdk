@@ -14,11 +14,13 @@
 package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
-import io.aurinko.client.model.EndUserAccountDto;
-import io.aurinko.client.model.EndUserAccountsPage;
-import io.aurinko.client.model.EndUserDto;
-import io.aurinko.client.model.EndUserSettingsDto;
-import io.aurinko.client.model.OkResponse;
+import io.aurinko.client.model.BookingAttachGroupUsersDto;
+import io.aurinko.client.model.BookingAttachedUserPage;
+import io.aurinko.client.model.BookingInDto;
+import io.aurinko.client.model.BookingOutDto;
+import io.aurinko.client.model.BookingPage;
+import io.aurinko.client.model.BookingSuccessOutDto;
+import io.aurinko.client.model.BookingUpdateDto;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -31,16 +33,16 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * API tests for UserApi
+ * API tests for GroupBookingApi
  */
 @Ignore
-public class UserApiTest {
+public class GroupBookingApiTest {
 
-    private final UserApi api = new UserApi();
+    private final GroupBookingApi api = new GroupBookingApi();
 
     
     /**
-     * Make a user account &#39;managed&#39;
+     * Assign users to group booking
      *
      * 
      *
@@ -48,17 +50,17 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void copyAsManagedTest() throws ApiException {
+    public void attachUsersGroupBookingTest() throws ApiException {
         Long id = null;
-        String clientOrgId = null;
-        CompletableFuture<EndUserAccountDto> response = 
-        api.copyAsManaged(id, clientOrgId);
+        BookingAttachGroupUsersDto bookingAttachGroupUsersDto = null;
+        CompletableFuture<BookingSuccessOutDto> response = 
+        api.attachUsersGroupBooking(id, bookingAttachGroupUsersDto);
         
         // TODO: test validations
     }
     
     /**
-     * Get user account by id
+     * List users of a group booking profile
      *
      * 
      *
@@ -66,16 +68,18 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getEndUserAccountTest() throws ApiException {
+    public void attachedUsersGroupBookingTest() throws ApiException {
         Long id = null;
-        CompletableFuture<EndUserAccountDto> response = 
-        api.getEndUserAccount(id);
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingAttachedUserPage> response = 
+        api.attachedUsersGroupBooking(id, limit, offset);
         
         // TODO: test validations
     }
     
     /**
-     * Get user accounts
+     * Create a group booking profile
      *
      * 
      *
@@ -83,15 +87,16 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getEndUserAccountsTest() throws ApiException {
-        CompletableFuture<EndUserAccountsPage> response = 
-        api.getEndUserAccounts();
+    public void createGroupBookingTest() throws ApiException {
+        BookingInDto bookingInDto = null;
+        CompletableFuture<BookingOutDto> response = 
+        api.createGroupBooking(bookingInDto);
         
         // TODO: test validations
     }
     
     /**
-     * Get user info
+     * Delete a group booking profile by id
      *
      * 
      *
@@ -99,48 +104,16 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getUserInfoTest() throws ApiException {
-        CompletableFuture<EndUserDto> response = 
-        api.getUserInfo();
-        
-        // TODO: test validations
-    }
-    
-    /**
-     * Log out a user
-     *
-     * Invalidates the user&#39;s session cookie
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void logoutTest() throws ApiException {
-        CompletableFuture<OkResponse> response = 
-        api.logout();
-        
-        // TODO: test validations
-    }
-    
-    /**
-     * Delete a user account
-     *
-     * Deleting a primary account, also invalidates the user&#39;s session cookie (logout).
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void logoutAccountTest() throws ApiException {
+    public void deleteGroupBookingTest() throws ApiException {
         Long id = null;
-        CompletableFuture<OkResponse> response = 
-        api.logoutAccount(id);
+        CompletableFuture<BookingSuccessOutDto> response = 
+        api.deleteGroupBooking(id);
         
         // TODO: test validations
     }
     
     /**
-     * Change user settings
+     * Remove users from group booking
      *
      * 
      *
@@ -148,10 +121,64 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateSettingsTest() throws ApiException {
-        EndUserSettingsDto endUserSettingsDto = null;
-        CompletableFuture<EndUserDto> response = 
-        api.updateSettings(endUserSettingsDto);
+    public void detachUsersGroupBookingTest() throws ApiException {
+        Long id = null;
+        BookingAttachGroupUsersDto bookingAttachGroupUsersDto = null;
+        CompletableFuture<BookingSuccessOutDto> response = 
+        api.detachUsersGroupBooking(id, bookingAttachGroupUsersDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get a group booking profile by id
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getGroupBookingTest() throws ApiException {
+        Long id = null;
+        CompletableFuture<BookingOutDto> response = 
+        api.getGroupBooking(id);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get group booking profiles
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getGroupBookingsTest() throws ApiException {
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingPage> response = 
+        api.getGroupBookings(limit, offset);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a group booking profile
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateGroupBookingTest() throws ApiException {
+        Long id = null;
+        BookingUpdateDto bookingUpdateDto = null;
+        CompletableFuture<BookingSuccessOutDto> response = 
+        api.updateGroupBooking(id, bookingUpdateDto);
         
         // TODO: test validations
     }

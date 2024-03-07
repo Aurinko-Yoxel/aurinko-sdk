@@ -32,15 +32,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * SelectedMeetingTime
+ * BookingMeetingTime
  */
 @JsonPropertyOrder({
-  SelectedMeetingTime.JSON_PROPERTY_START,
-  SelectedMeetingTime.JSON_PROPERTY_END,
-  SelectedMeetingTime.JSON_PROPERTY_USER_IDS
+  BookingMeetingTime.JSON_PROPERTY_START,
+  BookingMeetingTime.JSON_PROPERTY_END,
+  BookingMeetingTime.JSON_PROPERTY_USER_IDS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SelectedMeetingTime {
+public class BookingMeetingTime {
   public static final String JSON_PROPERTY_START = "start";
   private OffsetDateTime start;
 
@@ -50,10 +50,10 @@ public class SelectedMeetingTime {
   public static final String JSON_PROPERTY_USER_IDS = "userIds";
   private List<String> userIds;
 
-  public SelectedMeetingTime() { 
+  public BookingMeetingTime() { 
   }
 
-  public SelectedMeetingTime start(OffsetDateTime start) {
+  public BookingMeetingTime start(OffsetDateTime start) {
     this.start = start;
     return this;
   }
@@ -78,7 +78,7 @@ public class SelectedMeetingTime {
   }
 
 
-  public SelectedMeetingTime end(OffsetDateTime end) {
+  public BookingMeetingTime end(OffsetDateTime end) {
     this.end = end;
     return this;
   }
@@ -103,12 +103,12 @@ public class SelectedMeetingTime {
   }
 
 
-  public SelectedMeetingTime userIds(List<String> userIds) {
+  public BookingMeetingTime userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
 
-  public SelectedMeetingTime addUserIdsItem(String userIdsItem) {
+  public BookingMeetingTime addUserIdsItem(String userIdsItem) {
     if (this.userIds == null) {
       this.userIds = new ArrayList<>();
     }
@@ -137,7 +137,7 @@ public class SelectedMeetingTime {
 
 
   /**
-   * Return true if this SelectedMeetingTime object is equal to o.
+   * Return true if this BookingMeetingTime object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -147,10 +147,10 @@ public class SelectedMeetingTime {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SelectedMeetingTime selectedMeetingTime = (SelectedMeetingTime) o;
-    return Objects.equals(this.start, selectedMeetingTime.start) &&
-        Objects.equals(this.end, selectedMeetingTime.end) &&
-        Objects.equals(this.userIds, selectedMeetingTime.userIds);
+    BookingMeetingTime bookingMeetingTime = (BookingMeetingTime) o;
+    return Objects.equals(this.start, bookingMeetingTime.start) &&
+        Objects.equals(this.end, bookingMeetingTime.end) &&
+        Objects.equals(this.userIds, bookingMeetingTime.userIds);
   }
 
   @Override
@@ -161,7 +161,7 @@ public class SelectedMeetingTime {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SelectedMeetingTime {\n");
+    sb.append("class BookingMeetingTime {\n");
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");

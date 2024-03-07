@@ -1,6 +1,6 @@
 
 
-# SelectedMeetingTime
+# BookingMeetingTime
 
 
 ## Properties

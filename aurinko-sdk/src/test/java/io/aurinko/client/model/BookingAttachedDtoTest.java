@@ -18,10 +18,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.AdditionalField;
-import io.aurinko.client.model.BookingMeetingTime;
-import io.aurinko.client.model.ModelInt;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,113 +26,33 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Model tests for BookingTimesOutDto
+ * Model tests for BookingAttachedDto
  */
-public class BookingTimesOutDtoTest {
-    private final BookingTimesOutDto model = new BookingTimesOutDto();
+public class BookingAttachedDtoTest {
+    private final BookingAttachedDto model = new BookingAttachedDto();
 
     /**
-     * Model tests for BookingTimesOutDto
+     * Model tests for BookingAttachedDto
      */
     @Test
-    public void testBookingTimesOutDto() {
-        // TODO: test BookingTimesOutDto
+    public void testBookingAttachedDto() {
+        // TODO: test BookingAttachedDto
     }
 
     /**
-     * Test the property 'items'
+     * Test the property 'userId'
      */
     @Test
-    public void itemsTest() {
-        // TODO: test items
+    public void userIdTest() {
+        // TODO: test userId
     }
 
     /**
-     * Test the property 'startTime'
+     * Test the property 'accounts'
      */
     @Test
-    public void startTimeTest() {
-        // TODO: test startTime
-    }
-
-    /**
-     * Test the property 'endTime'
-     */
-    @Test
-    public void endTimeTest() {
-        // TODO: test endTime
-    }
-
-    /**
-     * Test the property 'timeAvailableFor'
-     */
-    @Test
-    public void timeAvailableForTest() {
-        // TODO: test timeAvailableFor
-    }
-
-    /**
-     * Test the property 'durationMinutes'
-     */
-    @Test
-    public void durationMinutesTest() {
-        // TODO: test durationMinutes
-    }
-
-    /**
-     * Test the property 'availabilityStep'
-     */
-    @Test
-    public void availabilityStepTest() {
-        // TODO: test availabilityStep
-    }
-
-    /**
-     * Test the property 'subject'
-     */
-    @Test
-    public void subjectTest() {
-        // TODO: test subject
-    }
-
-    /**
-     * Test the property 'primaryColor'
-     */
-    @Test
-    public void primaryColorTest() {
-        // TODO: test primaryColor
-    }
-
-    /**
-     * Test the property 'secondaryColor'
-     */
-    @Test
-    public void secondaryColorTest() {
-        // TODO: test secondaryColor
-    }
-
-    /**
-     * Test the property 'additionalFields'
-     */
-    @Test
-    public void additionalFieldsTest() {
-        // TODO: test additionalFields
-    }
-
-    /**
-     * Test the property 'limit'
-     */
-    @Test
-    public void limitTest() {
-        // TODO: test limit
-    }
-
-    /**
-     * Test the property 'offset'
-     */
-    @Test
-    public void offsetTest() {
-        // TODO: test offset
+    public void accountsTest() {
+        // TODO: test accounts
     }
 
 }
