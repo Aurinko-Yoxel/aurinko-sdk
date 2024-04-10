@@ -68,7 +68,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EndUserAccountDto.JSON_PROPERTY_TRACKING_ACTIVE,
   EndUserAccountDto.JSON_PROPERTY_TEMPLATES_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class EndUserAccountDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

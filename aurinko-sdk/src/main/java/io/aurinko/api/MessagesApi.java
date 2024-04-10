@@ -54,7 +54,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class MessagesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -309,14 +309,15 @@ public class MessagesApi {
    * 
    * @param messageId email message identifier (required)
    * @param bodyType Default html (optional)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @param loadInlines automatically pre-load relevant inline attachments (optional, default to false)
+   * @param stripQuoted strip quoted elements from message body (optional, default to false)
    * @return CompletableFuture&lt;EmailMessage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailMessage> message(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines) throws ApiException {
+  public CompletableFuture<EmailMessage> message(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines);
+      HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -343,14 +344,15 @@ public class MessagesApi {
    * 
    * @param messageId email message identifier (required)
    * @param bodyType Default html (optional)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @param loadInlines automatically pre-load relevant inline attachments (optional, default to false)
+   * @param stripQuoted strip quoted elements from message body (optional, default to false)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailMessage>> messageWithHttpInfo(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailMessage>> messageWithHttpInfo(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines);
+      HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -379,7 +381,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder messageRequestBuilder(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines) throws ApiException {
+  private HttpRequest.Builder messageRequestBuilder(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted) throws ApiException {
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
       throw new ApiException(400, "Missing the required parameter 'messageId' when calling message");
@@ -399,6 +401,8 @@ public class MessagesApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("multi", "nativeProperties", nativeProperties));
     localVarQueryParameterBaseName = "loadInlines";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("loadInlines", loadInlines));
+    localVarQueryParameterBaseName = "stripQuoted";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("stripQuoted", stripQuoted));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");
@@ -429,7 +433,7 @@ public class MessagesApi {
    * @param q Only return messages matching the specified query. For example, \&quot;from:someuser@example.com after:01/01/2020\&quot;  (optional)
    * @param bodyType Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. (optional)
    * @param includeTrashAndJunk  (optional)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @return CompletableFuture&lt;EmailMessagesPageNext&gt;
    * @throws ApiException if fails to make API call
    */
@@ -464,7 +468,7 @@ public class MessagesApi {
    * @param q Only return messages matching the specified query. For example, \&quot;from:someuser@example.com after:01/01/2020\&quot;  (optional)
    * @param bodyType Supported by Google and Office365 accounts only. Body preview (snippet) is returned for other providers. Always, check the omitted[] array to determine if the response contains full body. (optional)
    * @param includeTrashAndJunk  (optional)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessagesPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */

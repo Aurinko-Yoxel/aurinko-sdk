@@ -41,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ContactPostalAddress.JSON_PROPERTY_COUNTRY,
   ContactPostalAddress.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ContactPostalAddress {
   public static final String JSON_PROPERTY_STREET = "street";
   private String street;

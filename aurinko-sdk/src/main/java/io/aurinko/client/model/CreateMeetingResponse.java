@@ -33,15 +33,19 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonPropertyOrder({
   CreateMeetingResponse.JSON_PROPERTY_CREATED,
-  CreateMeetingResponse.JSON_PROPERTY_ID
+  CreateMeetingResponse.JSON_PROPERTY_ID,
+  CreateMeetingResponse.JSON_PROPERTY_USER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class CreateMeetingResponse {
   public static final String JSON_PROPERTY_CREATED = "created";
   private Boolean created;
 
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
+
+  public static final String JSON_PROPERTY_USER_ID = "userId";
+  private String userId;
 
   public CreateMeetingResponse() { 
   }
@@ -96,6 +100,31 @@ public class CreateMeetingResponse {
   }
 
 
+  public CreateMeetingResponse userId(String userId) {
+    this.userId = userId;
+    return this;
+  }
+
+   /**
+   * User id for group booking
+   * @return userId
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getUserId() {
+    return userId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
+
   /**
    * Return true if this CreateMeetingResponse object is equal to o.
    */
@@ -109,12 +138,13 @@ public class CreateMeetingResponse {
     }
     CreateMeetingResponse createMeetingResponse = (CreateMeetingResponse) o;
     return Objects.equals(this.created, createMeetingResponse.created) &&
-        Objects.equals(this.id, createMeetingResponse.id);
+        Objects.equals(this.id, createMeetingResponse.id) &&
+        Objects.equals(this.userId, createMeetingResponse.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, id);
+    return Objects.hash(created, id, userId);
   }
 
   @Override
@@ -123,6 +153,7 @@ public class CreateMeetingResponse {
     sb.append("class CreateMeetingResponse {\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -178,6 +209,11 @@ public class CreateMeetingResponse {
     // add `id` to the URL query string
     if (getId() != null) {
       joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `userId` to the URL query string
+    if (getUserId() != null) {
+      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

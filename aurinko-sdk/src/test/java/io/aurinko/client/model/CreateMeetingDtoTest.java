@@ -19,8 +19,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.SelectedMeetingTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -46,6 +48,14 @@ public class CreateMeetingDtoTest {
     @Test
     public void timeTest() {
         // TODO: test time
+    }
+
+    /**
+     * Test the property 'userIds'
+     */
+    @Test
+    public void userIdsTest() {
+        // TODO: test userIds
     }
 
     /**

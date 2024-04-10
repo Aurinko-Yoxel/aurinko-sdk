@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   DayWorkSchedule.JSON_PROPERTY_DAY_OF_WEEK,
   DayWorkSchedule.JSON_PROPERTY_WORKING_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DayWorkSchedule {
   public static final String JSON_PROPERTY_DAY_OF_WEEK = "dayOfWeek";
   private DayOfWeek dayOfWeek;

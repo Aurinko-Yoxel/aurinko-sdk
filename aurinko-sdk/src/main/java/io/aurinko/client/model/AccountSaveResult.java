@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AccountSaveResult.JSON_PROPERTY_USER_ID,
   AccountSaveResult.JSON_PROPERTY_USER_SESSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class AccountSaveResult {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
   private Long accountId;

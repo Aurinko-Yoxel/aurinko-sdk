@@ -18,8 +18,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.TimeInterval;
 import io.aurinko.client.model.WeekWorkSchedule;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -68,6 +71,22 @@ public class MeetingAttendeeTest {
     @Test
     public void errorTest() {
         // TODO: test error
+    }
+
+    /**
+     * Test the property 'busyIntervals'
+     */
+    @Test
+    public void busyIntervalsTest() {
+        // TODO: test busyIntervals
+    }
+
+    /**
+     * Test the property 'freeIntervals'
+     */
+    @Test
+    public void freeIntervalsTest() {
+        // TODO: test freeIntervals
     }
 
 }

@@ -38,11 +38,11 @@ public class ContactRelationTest {
     }
 
     /**
-     * Test the property 'value'
+     * Test the property 'name'
      */
     @Test
-    public void valueTest() {
-        // TODO: test value
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**

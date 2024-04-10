@@ -4,6 +4,8 @@ Aurinko.io API
 
 - API version: 1.0.0
 
+- Generator version: 7.4.0
+
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with
 many mailbox providers and services like Google, Office 365, Outlook.com, MS Exchange, IMAP.
@@ -280,6 +282,8 @@ Class | Method | HTTP request | Description
 *FollowUpRobotApi* | [**updateConversationDripStatusWithHttpInfo**](docs/FollowUpRobotApi.md#updateConversationDripStatusWithHttpInfo) | **PUT** /v1/followup/conversations/{convoId} | Update a conversation status
 *FollowUpRobotApi* | [**updateRule**](docs/FollowUpRobotApi.md#updateRule) | **PUT** /v1/followup/rules/{id} | Update a follow up rule
 *FollowUpRobotApi* | [**updateRuleWithHttpInfo**](docs/FollowUpRobotApi.md#updateRuleWithHttpInfo) | **PUT** /v1/followup/rules/{id} | Update a follow up rule
+*FreeBusyScheduleApi* | [**calendarWorkhours**](docs/FreeBusyScheduleApi.md#calendarWorkhours) | **POST** /v1/calendars/workHours | Get working hours for a collection of users, or resources.
+*FreeBusyScheduleApi* | [**calendarWorkhoursWithHttpInfo**](docs/FreeBusyScheduleApi.md#calendarWorkhoursWithHttpInfo) | **POST** /v1/calendars/workHours | Get working hours for a collection of users, or resources.
 *FreeBusyScheduleApi* | [**freeBusy**](docs/FreeBusyScheduleApi.md#freeBusy) | **POST** /v1/calendars/freeBusy | Get the free/busy availability information for a collection of users, or resources
 *FreeBusyScheduleApi* | [**freeBusyWithHttpInfo**](docs/FreeBusyScheduleApi.md#freeBusyWithHttpInfo) | **POST** /v1/calendars/freeBusy | Get the free/busy availability information for a collection of users, or resources
 *FreeBusyScheduleApi* | [**suggestMeetingTimes**](docs/FreeBusyScheduleApi.md#suggestMeetingTimes) | **POST** /v1/calendars/suggestMeetingTimes | Suggest meeting times for a collection of users, or resources
@@ -456,6 +460,10 @@ Class | Method | HTTP request | Description
  - [FreeBusyRequest](docs/FreeBusyRequest.md)
  - [FreeBusySchedule](docs/FreeBusySchedule.md)
  - [FreeBusySchedulePage](docs/FreeBusySchedulePage.md)
+ - [GroupBookingInDto](docs/GroupBookingInDto.md)
+ - [GroupBookingOutDto](docs/GroupBookingOutDto.md)
+ - [GroupBookingPage](docs/GroupBookingPage.md)
+ - [GroupBookingUpdateDto](docs/GroupBookingUpdateDto.md)
  - [MeetingAttendee](docs/MeetingAttendee.md)
  - [MeetingInfo](docs/MeetingInfo.md)
  - [OccurrenceInfo](docs/OccurrenceInfo.md)
@@ -490,7 +498,6 @@ Class | Method | HTTP request | Description
  - [SubscriptionsPage](docs/SubscriptionsPage.md)
  - [SuggestMeetingTimesRequest](docs/SuggestMeetingTimesRequest.md)
  - [SuggestMeetingTimesResponse](docs/SuggestMeetingTimesResponse.md)
- - [SuggestMeetingTimesResponseItemsInner](docs/SuggestMeetingTimesResponseItemsInner.md)
  - [SyncStatus](docs/SyncStatus.md)
  - [SyncTasksPage](docs/SyncTasksPage.md)
  - [Task](docs/Task.md)
@@ -506,12 +513,16 @@ Class | Method | HTTP request | Description
  - [TaskUpdate](docs/TaskUpdate.md)
  - [TaskUpdateResponse](docs/TaskUpdateResponse.md)
  - [TasksPage](docs/TasksPage.md)
+ - [TimeInterval](docs/TimeInterval.md)
  - [TokenStatus](docs/TokenStatus.md)
  - [TrackingData](docs/TrackingData.md)
  - [UpdateDraftTrackingIn](docs/UpdateDraftTrackingIn.md)
  - [UpdateMessageStatusData](docs/UpdateMessageStatusData.md)
  - [UserAccountType](docs/UserAccountType.md)
  - [WeekWorkSchedule](docs/WeekWorkSchedule.md)
+ - [WorkHoursRequest](docs/WorkHoursRequest.md)
+ - [WorkHoursResponse](docs/WorkHoursResponse.md)
+ - [WorkHoursResponseItem](docs/WorkHoursResponseItem.md)
  - [WorkingInterval](docs/WorkingInterval.md)
 
 

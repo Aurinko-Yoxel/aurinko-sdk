@@ -55,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ApiAccountInDto.JSON_PROPERTY_SERVER_INFO,
   ApiAccountInDto.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ApiAccountInDto {
   public static final String JSON_PROPERTY_SERVICE_TYPE = "serviceType";
   private ServiceType serviceType;
@@ -120,9 +120,9 @@ public class ApiAccountInDto {
    * Get serviceType
    * @return serviceType
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SERVICE_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public ServiceType getServiceType() {
     return serviceType;
@@ -130,7 +130,7 @@ public class ApiAccountInDto {
 
 
   @JsonProperty(JSON_PROPERTY_SERVICE_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setServiceType(ServiceType serviceType) {
     this.serviceType = serviceType;
   }
@@ -275,7 +275,7 @@ public class ApiAccountInDto {
   }
 
    /**
-   * Get loginString
+   * This or email field must be specified
    * @return loginString
   **/
   @javax.annotation.Nullable
@@ -328,9 +328,9 @@ public class ApiAccountInDto {
    * Get active
    * @return active
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getActive() {
     return active;
@@ -338,7 +338,7 @@ public class ApiAccountInDto {
 
 
   @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setActive(Boolean active) {
     this.active = active;
   }
@@ -450,7 +450,7 @@ public class ApiAccountInDto {
   }
 
    /**
-   * Get email
+   * This or loginString field must be specified
    * @return email
   **/
   @javax.annotation.Nullable

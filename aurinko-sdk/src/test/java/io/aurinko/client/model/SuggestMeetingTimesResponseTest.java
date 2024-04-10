@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.MeetingAttendee;
-import io.aurinko.client.model.SuggestMeetingTimesResponseItemsInner;
+import io.aurinko.client.model.TimeInterval;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

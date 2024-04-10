@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   TaskUpdate.JSON_PROPERTY_START_DATE_TIME,
   TaskUpdate.JSON_PROPERTY_CATEGORIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class TaskUpdate {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;

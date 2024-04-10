@@ -19,11 +19,11 @@ import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BookingAttachGroupUsersDto;
 import io.aurinko.client.model.BookingAttachedUserPage;
-import io.aurinko.client.model.BookingInDto;
-import io.aurinko.client.model.BookingOutDto;
-import io.aurinko.client.model.BookingPage;
 import io.aurinko.client.model.BookingSuccessOutDto;
-import io.aurinko.client.model.BookingUpdateDto;
+import io.aurinko.client.model.GroupBookingInDto;
+import io.aurinko.client.model.GroupBookingOutDto;
+import io.aurinko.client.model.GroupBookingPage;
+import io.aurinko.client.model.GroupBookingUpdateDto;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -52,7 +52,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class GroupBookingApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -306,13 +306,13 @@ public class GroupBookingApi {
   /**
    * Create a group booking profile
    * 
-   * @param bookingInDto  (optional)
-   * @return CompletableFuture&lt;BookingOutDto&gt;
+   * @param groupBookingInDto  (optional)
+   * @return CompletableFuture&lt;GroupBookingOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingOutDto> createGroupBooking(BookingInDto bookingInDto) throws ApiException {
+  public CompletableFuture<GroupBookingOutDto> createGroupBooking(GroupBookingInDto groupBookingInDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = createGroupBookingRequestBuilder(bookingInDto);
+      HttpRequest.Builder localVarRequestBuilder = createGroupBookingRequestBuilder(groupBookingInDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -322,7 +322,7 @@ public class GroupBookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingOutDto>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<GroupBookingOutDto>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -337,13 +337,13 @@ public class GroupBookingApi {
   /**
    * Create a group booking profile
    * 
-   * @param bookingInDto  (optional)
-   * @return CompletableFuture&lt;ApiResponse&lt;BookingOutDto&gt;&gt;
+   * @param groupBookingInDto  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;GroupBookingOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingOutDto>> createGroupBookingWithHttpInfo(BookingInDto bookingInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<GroupBookingOutDto>> createGroupBookingWithHttpInfo(GroupBookingInDto groupBookingInDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = createGroupBookingRequestBuilder(bookingInDto);
+      HttpRequest.Builder localVarRequestBuilder = createGroupBookingRequestBuilder(groupBookingInDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -356,10 +356,10 @@ public class GroupBookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<BookingOutDto>(
+                  new ApiResponse<GroupBookingOutDto>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingOutDto>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<GroupBookingOutDto>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -372,7 +372,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder createGroupBookingRequestBuilder(BookingInDto bookingInDto) throws ApiException {
+  private HttpRequest.Builder createGroupBookingRequestBuilder(GroupBookingInDto groupBookingInDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -384,7 +384,7 @@ public class GroupBookingApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingInDto);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(groupBookingInDto);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -595,10 +595,10 @@ public class GroupBookingApi {
    * Get a group booking profile by id
    * 
    * @param id A booking id (required)
-   * @return CompletableFuture&lt;BookingOutDto&gt;
+   * @return CompletableFuture&lt;GroupBookingOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingOutDto> getGroupBooking(Long id) throws ApiException {
+  public CompletableFuture<GroupBookingOutDto> getGroupBooking(Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getGroupBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -610,7 +610,7 @@ public class GroupBookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingOutDto>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<GroupBookingOutDto>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -626,10 +626,10 @@ public class GroupBookingApi {
    * Get a group booking profile by id
    * 
    * @param id A booking id (required)
-   * @return CompletableFuture&lt;ApiResponse&lt;BookingOutDto&gt;&gt;
+   * @return CompletableFuture&lt;ApiResponse&lt;GroupBookingOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingOutDto>> getGroupBookingWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<GroupBookingOutDto>> getGroupBookingWithHttpInfo(Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getGroupBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -644,10 +644,10 @@ public class GroupBookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<BookingOutDto>(
+                  new ApiResponse<GroupBookingOutDto>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingOutDto>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<GroupBookingOutDto>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -689,10 +689,10 @@ public class GroupBookingApi {
    * 
    * @param limit page size (optional, default to 50)
    * @param offset return records offset by the given number (optional, default to 0)
-   * @return CompletableFuture&lt;BookingPage&gt;
+   * @return CompletableFuture&lt;GroupBookingPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingPage> getGroupBookings(Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<GroupBookingPage> getGroupBookings(Integer limit, Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getGroupBookingsRequestBuilder(limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -704,7 +704,7 @@ public class GroupBookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingPage>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<GroupBookingPage>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -721,10 +721,10 @@ public class GroupBookingApi {
    * 
    * @param limit page size (optional, default to 50)
    * @param offset return records offset by the given number (optional, default to 0)
-   * @return CompletableFuture&lt;ApiResponse&lt;BookingPage&gt;&gt;
+   * @return CompletableFuture&lt;ApiResponse&lt;GroupBookingPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingPage>> getGroupBookingsWithHttpInfo(Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<GroupBookingPage>> getGroupBookingsWithHttpInfo(Integer limit, Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getGroupBookingsRequestBuilder(limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -739,10 +739,10 @@ public class GroupBookingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<BookingPage>(
+                  new ApiResponse<GroupBookingPage>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingPage>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<GroupBookingPage>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -795,13 +795,13 @@ public class GroupBookingApi {
    * Update a group booking profile
    * 
    * @param id A booking id (required)
-   * @param bookingUpdateDto  (optional)
+   * @param groupBookingUpdateDto  (optional)
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> updateGroupBooking(Long id, BookingUpdateDto bookingUpdateDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> updateGroupBooking(Long id, GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = updateGroupBookingRequestBuilder(id, bookingUpdateDto);
+      HttpRequest.Builder localVarRequestBuilder = updateGroupBookingRequestBuilder(id, groupBookingUpdateDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -827,13 +827,13 @@ public class GroupBookingApi {
    * Update a group booking profile
    * 
    * @param id A booking id (required)
-   * @param bookingUpdateDto  (optional)
+   * @param groupBookingUpdateDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> updateGroupBookingWithHttpInfo(Long id, BookingUpdateDto bookingUpdateDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> updateGroupBookingWithHttpInfo(Long id, GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = updateGroupBookingRequestBuilder(id, bookingUpdateDto);
+      HttpRequest.Builder localVarRequestBuilder = updateGroupBookingRequestBuilder(id, groupBookingUpdateDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -862,7 +862,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder updateGroupBookingRequestBuilder(Long id, BookingUpdateDto bookingUpdateDto) throws ApiException {
+  private HttpRequest.Builder updateGroupBookingRequestBuilder(Long id, GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateGroupBooking");
@@ -879,7 +879,7 @@ public class GroupBookingApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingUpdateDto);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(groupBookingUpdateDto);
       localVarRequestBuilder.method("PATCH", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

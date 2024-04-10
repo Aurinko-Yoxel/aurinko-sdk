@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailTrackingData.JSON_PROPERTY_CONTEXT,
   EmailTrackingData.JSON_PROPERTY_LINK_CODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class EmailTrackingData {
   public static final String JSON_PROPERTY_TRACK_REPLIES = "trackReplies";
   private Boolean trackReplies;

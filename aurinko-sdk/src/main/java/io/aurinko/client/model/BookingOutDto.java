@@ -49,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingOutDto.JSON_PROPERTY_START_CONFERENCE,
   BookingOutDto.JSON_PROPERTY_OPEN_MEETING_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class BookingOutDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

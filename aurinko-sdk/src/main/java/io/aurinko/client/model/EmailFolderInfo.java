@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailFolderInfo.JSON_PROPERTY_ID,
   EmailFolderInfo.JSON_PROPERTY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class EmailFolderInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

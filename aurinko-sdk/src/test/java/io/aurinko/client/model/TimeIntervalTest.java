@@ -25,17 +25,17 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Model tests for SuggestMeetingTimesResponseItemsInner
+ * Model tests for TimeInterval
  */
-public class SuggestMeetingTimesResponseItemsInnerTest {
-    private final SuggestMeetingTimesResponseItemsInner model = new SuggestMeetingTimesResponseItemsInner();
+public class TimeIntervalTest {
+    private final TimeInterval model = new TimeInterval();
 
     /**
-     * Model tests for SuggestMeetingTimesResponseItemsInner
+     * Model tests for TimeInterval
      */
     @Test
-    public void testSuggestMeetingTimesResponseItemsInner() {
-        // TODO: test SuggestMeetingTimesResponseItemsInner
+    public void testTimeInterval() {
+        // TODO: test TimeInterval
     }
 
     /**

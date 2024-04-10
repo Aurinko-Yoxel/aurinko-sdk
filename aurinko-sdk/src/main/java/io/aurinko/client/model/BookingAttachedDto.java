@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingAttachedDto.JSON_PROPERTY_USER_ID,
   BookingAttachedDto.JSON_PROPERTY_ACCOUNTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class BookingAttachedDto {
   public static final String JSON_PROPERTY_USER_ID = "userId";
   private String userId;

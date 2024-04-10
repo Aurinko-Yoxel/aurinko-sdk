@@ -50,7 +50,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ConversationDripStatus.JSON_PROPERTY_TARGETS,
   ConversationDripStatus.JSON_PROPERTY_DRIP_RESPONDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ConversationDripStatus {
   public static final String JSON_PROPERTY_CONVO_ID = "convoId";
   private String convoId;

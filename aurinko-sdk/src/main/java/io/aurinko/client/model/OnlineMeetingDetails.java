@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OnlineMeetingDetails.JSON_PROPERTY_SIP,
   OnlineMeetingDetails.JSON_PROPERTY_INFO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class OnlineMeetingDetails {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;

@@ -495,7 +495,7 @@ CompletableFuture<ApiResponse<[**BookingAttachedUserPage**](BookingAttachedUserP
 
 ## createGroupBooking
 
-> CompletableFuture<BookingOutDto> createGroupBooking(bookingInDto)
+> CompletableFuture<GroupBookingOutDto> createGroupBooking(groupBookingInDto)
 
 Create a group booking profile
 
@@ -522,9 +522,9 @@ public class Example {
         AppAuth.setPassword("YOUR PASSWORD");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
-        BookingInDto bookingInDto = new BookingInDto(); // BookingInDto | 
+        GroupBookingInDto groupBookingInDto = new GroupBookingInDto(); // GroupBookingInDto | 
         try {
-            CompletableFuture<BookingOutDto> result = apiInstance.createGroupBooking(bookingInDto);
+            CompletableFuture<GroupBookingOutDto> result = apiInstance.createGroupBooking(groupBookingInDto);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupBookingApi#createGroupBooking");
@@ -542,11 +542,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **bookingInDto** | [**BookingInDto**](BookingInDto.md)|  | [optional] |
+| **groupBookingInDto** | [**GroupBookingInDto**](GroupBookingInDto.md)|  | [optional] |
 
 ### Return type
 
-CompletableFuture<[**BookingOutDto**](BookingOutDto.md)>
+CompletableFuture<[**GroupBookingOutDto**](GroupBookingOutDto.md)>
 
 
 ### Authorization
@@ -566,7 +566,7 @@ CompletableFuture<[**BookingOutDto**](BookingOutDto.md)>
 
 ## createGroupBookingWithHttpInfo
 
-> CompletableFuture<ApiResponse<BookingOutDto>> createGroupBooking createGroupBookingWithHttpInfo(bookingInDto)
+> CompletableFuture<ApiResponse<GroupBookingOutDto>> createGroupBooking createGroupBookingWithHttpInfo(groupBookingInDto)
 
 Create a group booking profile
 
@@ -594,9 +594,9 @@ public class Example {
         AppAuth.setPassword("YOUR PASSWORD");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
-        BookingInDto bookingInDto = new BookingInDto(); // BookingInDto | 
+        GroupBookingInDto groupBookingInDto = new GroupBookingInDto(); // GroupBookingInDto | 
         try {
-            CompletableFuture<ApiResponse<BookingOutDto>> response = apiInstance.createGroupBookingWithHttpInfo(bookingInDto);
+            CompletableFuture<ApiResponse<GroupBookingOutDto>> response = apiInstance.createGroupBookingWithHttpInfo(groupBookingInDto);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -623,11 +623,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **bookingInDto** | [**BookingInDto**](BookingInDto.md)|  | [optional] |
+| **groupBookingInDto** | [**GroupBookingInDto**](GroupBookingInDto.md)|  | [optional] |
 
 ### Return type
 
-CompletableFuture<ApiResponse<[**BookingOutDto**](BookingOutDto.md)>>
+CompletableFuture<ApiResponse<[**GroupBookingOutDto**](GroupBookingOutDto.md)>>
 
 
 ### Authorization
@@ -1110,7 +1110,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 
 ## getGroupBooking
 
-> CompletableFuture<BookingOutDto> getGroupBooking(id)
+> CompletableFuture<GroupBookingOutDto> getGroupBooking(id)
 
 Get a group booking profile by id
 
@@ -1177,7 +1177,7 @@ public class Example {
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
         try {
-            CompletableFuture<BookingOutDto> result = apiInstance.getGroupBooking(id);
+            CompletableFuture<GroupBookingOutDto> result = apiInstance.getGroupBooking(id);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupBookingApi#getGroupBooking");
@@ -1199,7 +1199,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<[**BookingOutDto**](BookingOutDto.md)>
+CompletableFuture<[**GroupBookingOutDto**](GroupBookingOutDto.md)>
 
 
 ### Authorization
@@ -1219,7 +1219,7 @@ CompletableFuture<[**BookingOutDto**](BookingOutDto.md)>
 
 ## getGroupBookingWithHttpInfo
 
-> CompletableFuture<ApiResponse<BookingOutDto>> getGroupBooking getGroupBookingWithHttpInfo(id)
+> CompletableFuture<ApiResponse<GroupBookingOutDto>> getGroupBooking getGroupBookingWithHttpInfo(id)
 
 Get a group booking profile by id
 
@@ -1287,7 +1287,7 @@ public class Example {
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
         try {
-            CompletableFuture<ApiResponse<BookingOutDto>> response = apiInstance.getGroupBookingWithHttpInfo(id);
+            CompletableFuture<ApiResponse<GroupBookingOutDto>> response = apiInstance.getGroupBookingWithHttpInfo(id);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -1318,7 +1318,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<ApiResponse<[**BookingOutDto**](BookingOutDto.md)>>
+CompletableFuture<ApiResponse<[**GroupBookingOutDto**](GroupBookingOutDto.md)>>
 
 
 ### Authorization
@@ -1339,7 +1339,7 @@ CompletableFuture<ApiResponse<[**BookingOutDto**](BookingOutDto.md)>>
 
 ## getGroupBookings
 
-> CompletableFuture<BookingPage> getGroupBookings(limit, offset)
+> CompletableFuture<GroupBookingPage> getGroupBookings(limit, offset)
 
 Get group booking profiles
 
@@ -1407,7 +1407,7 @@ public class Example {
         Integer limit = 50; // Integer | page size
         Integer offset = 0; // Integer | return records offset by the given number
         try {
-            CompletableFuture<BookingPage> result = apiInstance.getGroupBookings(limit, offset);
+            CompletableFuture<GroupBookingPage> result = apiInstance.getGroupBookings(limit, offset);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupBookingApi#getGroupBookings");
@@ -1430,7 +1430,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<[**BookingPage**](BookingPage.md)>
+CompletableFuture<[**GroupBookingPage**](GroupBookingPage.md)>
 
 
 ### Authorization
@@ -1450,7 +1450,7 @@ CompletableFuture<[**BookingPage**](BookingPage.md)>
 
 ## getGroupBookingsWithHttpInfo
 
-> CompletableFuture<ApiResponse<BookingPage>> getGroupBookings getGroupBookingsWithHttpInfo(limit, offset)
+> CompletableFuture<ApiResponse<GroupBookingPage>> getGroupBookings getGroupBookingsWithHttpInfo(limit, offset)
 
 Get group booking profiles
 
@@ -1519,7 +1519,7 @@ public class Example {
         Integer limit = 50; // Integer | page size
         Integer offset = 0; // Integer | return records offset by the given number
         try {
-            CompletableFuture<ApiResponse<BookingPage>> response = apiInstance.getGroupBookingsWithHttpInfo(limit, offset);
+            CompletableFuture<ApiResponse<GroupBookingPage>> response = apiInstance.getGroupBookingsWithHttpInfo(limit, offset);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -1551,7 +1551,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<ApiResponse<[**BookingPage**](BookingPage.md)>>
+CompletableFuture<ApiResponse<[**GroupBookingPage**](GroupBookingPage.md)>>
 
 
 ### Authorization
@@ -1572,7 +1572,7 @@ CompletableFuture<ApiResponse<[**BookingPage**](BookingPage.md)>>
 
 ## updateGroupBooking
 
-> CompletableFuture<BookingSuccessOutDto> updateGroupBooking(id, bookingUpdateDto)
+> CompletableFuture<BookingSuccessOutDto> updateGroupBooking(id, groupBookingUpdateDto)
 
 Update a group booking profile
 
@@ -1638,9 +1638,9 @@ public class Example {
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
-        BookingUpdateDto bookingUpdateDto = new BookingUpdateDto(); // BookingUpdateDto | 
+        GroupBookingUpdateDto groupBookingUpdateDto = new GroupBookingUpdateDto(); // GroupBookingUpdateDto | 
         try {
-            CompletableFuture<BookingSuccessOutDto> result = apiInstance.updateGroupBooking(id, bookingUpdateDto);
+            CompletableFuture<BookingSuccessOutDto> result = apiInstance.updateGroupBooking(id, groupBookingUpdateDto);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupBookingApi#updateGroupBooking");
@@ -1659,7 +1659,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **Long**| A booking id | |
-| **bookingUpdateDto** | [**BookingUpdateDto**](BookingUpdateDto.md)|  | [optional] |
+| **groupBookingUpdateDto** | [**GroupBookingUpdateDto**](GroupBookingUpdateDto.md)|  | [optional] |
 
 ### Return type
 
@@ -1683,7 +1683,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 
 ## updateGroupBookingWithHttpInfo
 
-> CompletableFuture<ApiResponse<BookingSuccessOutDto>> updateGroupBooking updateGroupBookingWithHttpInfo(id, bookingUpdateDto)
+> CompletableFuture<ApiResponse<BookingSuccessOutDto>> updateGroupBooking updateGroupBookingWithHttpInfo(id, groupBookingUpdateDto)
 
 Update a group booking profile
 
@@ -1750,9 +1750,9 @@ public class Example {
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
-        BookingUpdateDto bookingUpdateDto = new BookingUpdateDto(); // BookingUpdateDto | 
+        GroupBookingUpdateDto groupBookingUpdateDto = new GroupBookingUpdateDto(); // GroupBookingUpdateDto | 
         try {
-            CompletableFuture<ApiResponse<BookingSuccessOutDto>> response = apiInstance.updateGroupBookingWithHttpInfo(id, bookingUpdateDto);
+            CompletableFuture<ApiResponse<BookingSuccessOutDto>> response = apiInstance.updateGroupBookingWithHttpInfo(id, groupBookingUpdateDto);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -1780,7 +1780,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **Long**| A booking id | |
-| **bookingUpdateDto** | [**BookingUpdateDto**](BookingUpdateDto.md)|  | [optional] |
+| **groupBookingUpdateDto** | [**GroupBookingUpdateDto**](GroupBookingUpdateDto.md)|  | [optional] |
 
 ### Return type
 

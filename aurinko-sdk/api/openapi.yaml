@@ -143,11 +143,11 @@ tags:
   name: FreeBusySchedule
   x-displayName: Free/Busy schedule
 - description: |
-    Booking profiles allow you to build calendar availability and meeting scheduling apps. List, create, update, and delete booking profiles associated with a calendar (Aurinko account).
+    Booking profiles allow you to build calendar availability and meeting scheduling apps. List, create, update, and delete booking profiles associated with a calendar (Aurinko account). Gather availability information from a calendar and find time slots when the calendar owner is available. Schedule events for a calendar owner.
   name: Booking
   x-displayName: Booking (Accounts)
 - description: |
-    Group Booking profiles allow you to build calendar availability and meeting scheduling for a group of users. Create group booking profiles for multiple Aurinko Users of your application.
+    Group Booking profiles allow you to build calendar availability and meeting scheduling for a group of users. List, create, update, and delete booking profiles associated with a group (Aurinko users). Gather availability information from multiple user calendars and find time slots when at least one user is available. Schedule events for available users.
   name: GroupBooking
   x-displayName: Group Booking (Users)
 - description: |
@@ -165,6 +165,10 @@ tags:
     A draft message is a message which has not been sent yet. The drafts endpoints let you create new drafts, read existing drafts, and send drafts.
   name: Drafts
   x-displayName: Draft messages
+- description: |
+    List email folders, their attributes, and messages.
+  name: EmailFolders
+  x-displayName: Email folders
 - description: |
     Track email opens.
   name: EmailTracking
@@ -277,6 +281,34 @@ paths:
               -d '{
                   "timeMin": "2020-02-03T10:00:00-07:00",
                   "timeMax": "2020-06-03T10:00:00-07:00",
+                  "emails": ["user1@corp.com","user2@corp.com"]
+                 }'
+      x-content-type: application/json
+      x-accepts: application/json
+  /v1/calendars/workHours:
+    post:
+      operationId: calendarWorkhours
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkHoursRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkHoursResponse'
+          description: Success
+      summary: "Get working hours for a collection of users, or resources."
+      tags:
+      - FreeBusySchedule
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -H 'Authorization: Bearer <access token>' \
+              -X POST https://api.aurinko.io/v1/calendars/workHours \
+              -d '{
                   "emails": ["user1@corp.com","user2@corp.com"]
                  }'
       x-content-type: application/json
@@ -1431,6 +1463,16 @@ paths:
         explode: true
         in: query
         name: loadInlines
+        required: false
+        schema:
+          default: false
+          nullable: true
+          type: boolean
+        style: form
+      - description: strip quoted elements from message body
+        explode: true
+        in: query
+        name: stripQuoted
         required: false
         schema:
           default: false
@@ -3002,7 +3044,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BookingPage'
+                $ref: '#/components/schemas/GroupBookingPage'
           description: Success
         "401":
           description: Authentication information is missing or invalid
@@ -3022,13 +3064,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BookingInDto'
+              $ref: '#/components/schemas/GroupBookingInDto'
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BookingOutDto'
+                $ref: '#/components/schemas/GroupBookingOutDto'
           description: Success
         "401":
           description: Authentication information is missing or invalid
@@ -3094,7 +3136,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BookingOutDto'
+                $ref: '#/components/schemas/GroupBookingOutDto'
           description: Success
         "401":
           description: Authentication information is missing or invalid
@@ -3124,7 +3166,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BookingUpdateDto'
+              $ref: '#/components/schemas/GroupBookingUpdateDto'
       responses:
         "200":
           content:
@@ -5391,6 +5433,30 @@ components:
         content:
           type: string
       type: object
+    WorkHoursResponseItem:
+      example:
+        workHours:
+          daySchedules:
+          - dayOfWeek: null
+            workingIntervals:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+          - dayOfWeek: null
+            workingIntervals:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+          timezone: timezone
+        email: email
+      properties:
+        email:
+          type: string
+        workHours:
+          $ref: '#/components/schemas/WeekWorkSchedule'
+      type: object
     DeletedEmailMessage:
       example:
         internetMessageId: internetMessageId
@@ -5857,6 +5923,91 @@ components:
         description:
           type: string
       type: object
+    GroupBookingInDto:
+      example:
+        availabilityStep: 0
+        subject: subject
+        workHours:
+          daySchedules:
+          - dayOfWeek: null
+            workingIntervals:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+          - dayOfWeek: null
+            workingIntervals:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+          timezone: timezone
+        description: description
+        durationMinutes: 30
+        timeAvailableFor: P4W
+        clientOrgId: clientOrgId
+        name: aurDemo - https://calendar.aurinko.io/aurDemo
+        context: context
+        startTime: 2000-01-23T04:56:07.000+00:00
+        location: location
+        endTime: 2000-01-23T04:56:07.000+00:00
+        startConference: true
+        openMeetingUrl: openMeetingUrl
+      properties:
+        name:
+          description: Profile name used in calendar links to identify a profile.
+          example: aurDemo - https://calendar.aurinko.io/aurDemo
+          type: string
+        durationMinutes:
+          description: Duration of the meeting in minutes.
+          example: 30
+          type: integer
+        availabilityStep:
+          description: "Determines the interval at which new meeting slots are made\
+            \ available throughout the working hours. Allowed values are 5, 10, 15,\
+            \ 20, 30."
+          type: integer
+        startTime:
+          description: "The beginning of the formation of intervals. Must be in the\
+            \ future, otherwise the current time will be used."
+          format: date-time
+          type: string
+        endTime:
+          description: "The ending of the formation of intervals. If the time specified\
+            \ here is in the past, the intervals will be empty, regardless of the\
+            \ Start time parameter."
+          format: date-time
+          type: string
+        timeAvailableFor:
+          description: "Time period (in ISO-8601 format) the profile is covering.\
+            \ For example, P3M (3 months), P4W (4 weeks), P5D (5 days)."
+          example: P4W
+          type: string
+        subject:
+          description: Subject for events booked using this profile.
+          type: string
+        description:
+          description: Description for events booked using this profile.
+          type: string
+        location:
+          description: Location for events booked using this profile.
+          type: string
+        workHours:
+          $ref: '#/components/schemas/WeekWorkSchedule'
+        context:
+          description: Custom client data stored for the profile.
+          type: string
+        startConference:
+          description: "Whether to create an online conference (hangoutsMeet, teamsForBusiness,\
+            \ etc.) for the event. Note, not all providers support creating conferences."
+          type: boolean
+        openMeetingUrl:
+          description: "The value of the {{openMeetingUrl}} variable that can be used\
+            \ in the event description or subject."
+          type: string
+        clientOrgId:
+          type: string
+      type: object
     DripRequestDTO:
       example:
         actionVars:
@@ -5960,15 +6111,15 @@ components:
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             timezone: timezone
           error: error
           items:
@@ -5984,15 +6135,15 @@ components:
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             timezone: timezone
           error: error
           items:
@@ -6065,9 +6216,9 @@ components:
         dayOfWeek: null
         workingIntervals:
         - start: 09:00:00
-          end: "61200"
+          end: 17:00:00
         - start: 09:00:00
-          end: "61200"
+          end: 17:00:00
       properties:
         dayOfWeek:
           $ref: '#/components/schemas/DayOfWeek'
@@ -6078,24 +6229,34 @@ components:
       type: object
     MeetingAttendee:
       example:
+        freeIntervals:
+        - start: 2000-01-23T04:56:07.000+00:00
+          end: 2000-01-23T04:56:07.000+00:00
+        - start: 2000-01-23T04:56:07.000+00:00
+          end: 2000-01-23T04:56:07.000+00:00
         timezone: timezone
         workHours:
           daySchedules:
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           timezone: timezone
         error: error
         email: email
+        busyIntervals:
+        - start: 2000-01-23T04:56:07.000+00:00
+          end: 2000-01-23T04:56:07.000+00:00
+        - start: 2000-01-23T04:56:07.000+00:00
+          end: 2000-01-23T04:56:07.000+00:00
       properties:
         email:
           type: string
@@ -6106,6 +6267,22 @@ components:
         error:
           readOnly: true
           type: string
+        busyIntervals:
+          description: "Busy intervals for the attendee. If set, these intervals will\
+            \ be excluded when searching for available meeting times. Can be combined\
+            \ with `freeIntervals`."
+          items:
+            $ref: '#/components/schemas/TimeInterval'
+          type: array
+          writeOnly: true
+        freeIntervals:
+          description: "Free time intervals for the attendee. If set, this parameter\
+            \ will limit the search for available meeting times. Can be combined with\
+            \ `busyIntervals`."
+          items:
+            $ref: '#/components/schemas/TimeInterval'
+          type: array
+          writeOnly: true
       type: object
     FollowupRuleAggregateOut:
       example:
@@ -6271,6 +6448,18 @@ components:
             type: integer
           type: array
       type: object
+    WorkHoursRequest:
+      example:
+        emails:
+        - emails
+        - emails
+      properties:
+        emails:
+          items:
+            format: email
+            type: string
+          type: array
+      type: object
     NativeScope:
       description: Native scope from provider's API.
       type: string
@@ -6430,42 +6619,62 @@ components:
     SuggestMeetingTimesResponse:
       example:
         attendees:
-        - timezone: timezone
+        - freeIntervals:
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          timezone: timezone
           workHours:
             daySchedules:
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             timezone: timezone
           error: error
           email: email
-        - timezone: timezone
+          busyIntervals:
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+        - freeIntervals:
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          timezone: timezone
           workHours:
             daySchedules:
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             timezone: timezone
           error: error
           email: email
+          busyIntervals:
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
         items:
         - start: 2000-01-23T04:56:07.000+00:00
           end: 2000-01-23T04:56:07.000+00:00
@@ -6474,7 +6683,7 @@ components:
       properties:
         items:
           items:
-            $ref: '#/components/schemas/SuggestMeetingTimesResponse_items_inner'
+            $ref: '#/components/schemas/TimeInterval'
           type: array
         attendees:
           items:
@@ -6738,10 +6947,10 @@ components:
       type: object
     ContactRelation:
       example:
+        name: name
         type: manager
-        value: value
       properties:
-        value:
+        name:
           type: string
         type:
           enum:
@@ -6768,8 +6977,6 @@ components:
     BookingTimesOutDto:
       example:
         availabilityStep: 6
-        durationMinutes: 0
-        timeAvailableFor: P4W
         additionalFields:
         - default: default
           name: name
@@ -6777,10 +6984,14 @@ components:
         - default: default
           name: name
           type: type
-        offset: ""
+        offset: 5
         subject: subject
         primaryColor: primaryColor
-        limit: ""
+        done: true
+        durationMinutes: 0
+        totalSize: 5
+        timeAvailableFor: P4W
+        limit: 1
         startTime: 2000-01-23T04:56:07.000+00:00
         endTime: 2000-01-23T04:56:07.000+00:00
         items:
@@ -6838,10 +7049,16 @@ components:
           type: array
         limit:
           description: Next request limit
-          type: int
+          type: integer
         offset:
           description: Next request offset
-          type: int
+          type: integer
+        totalSize:
+          description: Count of related provider's sources
+          type: integer
+        done:
+          description: Is all related provider's sources requested
+          type: boolean
       type: object
     PreparedAuthToken:
       example:
@@ -7181,15 +7398,15 @@ components:
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           timezone: timezone
         description: description
         durationMinutes: 30
@@ -7289,6 +7506,47 @@ components:
       - personal
       - confidential
       type: string
+    WorkHoursResponse:
+      example:
+        items:
+        - workHours:
+            daySchedules:
+            - dayOfWeek: null
+              workingIntervals:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+            - dayOfWeek: null
+              workingIntervals:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+            timezone: timezone
+          email: email
+        - workHours:
+            daySchedules:
+            - dayOfWeek: null
+              workingIntervals:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+            - dayOfWeek: null
+              workingIntervals:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+            timezone: timezone
+          email: email
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/WorkHoursResponseItem'
+          type: array
+      type: object
     ApiAccountOutDto:
       example:
         serviceType: null
@@ -7381,6 +7639,95 @@ components:
         userId:
           type: string
       type: object
+    GroupBookingOutDto:
+      example:
+        availabilityStep: 5
+        subject: subject
+        workHours:
+          daySchedules:
+          - dayOfWeek: null
+            workingIntervals:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+          - dayOfWeek: null
+            workingIntervals:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+          timezone: timezone
+        description: description
+        durationMinutes: 30
+        timeAvailableFor: P4W
+        clientOrgId: clientOrgId
+        name: aurDemo - https://calendar.aurinko.io/aurDemo
+        context: context
+        startTime: 2000-01-23T04:56:07.000+00:00
+        location: location
+        id: 1
+        endTime: 2000-01-23T04:56:07.000+00:00
+        startConference: true
+        openMeetingUrl: openMeetingUrl
+      properties:
+        id:
+          format: int64
+          type: integer
+        name:
+          description: Profile name used in calendar links to identify a profile.
+          example: aurDemo - https://calendar.aurinko.io/aurDemo
+          type: string
+        durationMinutes:
+          description: Duration of the meeting in minutes.
+          example: 30
+          type: integer
+        availabilityStep:
+          description: "Determines the interval at which new meeting slots are made\
+            \ available throughout the working hours. Allowed values are 5, 10, 15,\
+            \ 20, 30."
+          type: integer
+        startTime:
+          description: "The beginning of the formation of intervals. Must be in the\
+            \ future, otherwise the current time will be used."
+          format: date-time
+          type: string
+        endTime:
+          description: "The ending of the formation of intervals. If the time specified\
+            \ here is in the past, the intervals will be empty, regardless of the\
+            \ Start time parameter."
+          format: date-time
+          type: string
+        timeAvailableFor:
+          description: "Time period (in ISO-8601 format) the profile is covering.\
+            \ For example, P3M (3 months), P4W (4 weeks), P5D (5 days)."
+          example: P4W
+          type: string
+        subject:
+          description: Subject for events booked using this profile.
+          type: string
+        description:
+          description: Description for events booked using this profile.
+          type: string
+        location:
+          description: Location for events booked using this profile.
+          type: string
+        workHours:
+          $ref: '#/components/schemas/WeekWorkSchedule'
+        context:
+          description: Custom client data stored for the profile.
+          type: string
+        startConference:
+          description: "Whether to create an online conference (hangoutsMeet, teamsForBusiness,\
+            \ etc.) for the event. Note, not all providers support creating conferences."
+          type: boolean
+        openMeetingUrl:
+          description: "The value of the {{}openMeetingUrl}} variable that can be\
+            \ used in the event description or subject."
+          type: string
+        clientOrgId:
+          type: string
+      type: object
     EndUserSettingsDto:
       example:
         workHours:
@@ -7388,15 +7735,15 @@ components:
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           timezone: timezone
       properties:
         workHours:
@@ -7619,15 +7966,15 @@ components:
         - dayOfWeek: null
           workingIntervals:
           - start: 09:00:00
-            end: "61200"
+            end: 17:00:00
           - start: 09:00:00
-            end: "61200"
+            end: 17:00:00
         - dayOfWeek: null
           workingIntervals:
           - start: 09:00:00
-            end: "61200"
+            end: 17:00:00
           - start: 09:00:00
-            end: "61200"
+            end: 17:00:00
         timezone: timezone
       properties:
         daySchedules:
@@ -7674,6 +8021,7 @@ components:
         serverUrl:
           type: string
         loginString:
+          description: This or email field must be specified
           type: string
         oauthClientId:
           type: string
@@ -7690,6 +8038,7 @@ components:
           format: date-time
           type: string
         email:
+          description: This or loginString field must be specified
           type: string
         name:
           type: string
@@ -7697,6 +8046,9 @@ components:
           type: string
         timezone:
           type: string
+      required:
+      - active
+      - serviceType
       type: object
     TaskUpdateResponse:
       example:
@@ -7776,15 +8128,15 @@ components:
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           timezone: timezone
         description: description
         durationMinutes: 30
@@ -8078,6 +8430,91 @@ components:
             $ref: '#/components/schemas/TaskList'
           type: array
       type: object
+    GroupBookingUpdateDto:
+      example:
+        availabilityStep: 0
+        subject: subject
+        workHours:
+          daySchedules:
+          - dayOfWeek: null
+            workingIntervals:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+          - dayOfWeek: null
+            workingIntervals:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+          timezone: timezone
+        description: description
+        durationMinutes: 30
+        timeAvailableFor: P4W
+        clientOrgId: clientOrgId
+        name: aurDemo - https://calendar.aurinko.io/aurDemo
+        context: context
+        startTime: 2000-01-23T04:56:07.000+00:00
+        location: location
+        endTime: 2000-01-23T04:56:07.000+00:00
+        startConference: true
+        openMeetingUrl: openMeetingUrl
+      properties:
+        name:
+          description: Profile name used in calendar links to identify a profile.
+          example: aurDemo - https://calendar.aurinko.io/aurDemo
+          type: string
+        durationMinutes:
+          description: Duration of the meeting in minutes.
+          example: 30
+          type: integer
+        availabilityStep:
+          description: "Determines the interval at which new meeting slots are made\
+            \ available throughout the working hours. Allowed values are 5, 10, 15,\
+            \ 20, 30."
+          type: integer
+        startTime:
+          description: "The beginning of the formation of intervals. Must be in the\
+            \ future, otherwise the current time will be used."
+          format: date-time
+          type: string
+        endTime:
+          description: "The ending of the formation of intervals. If the time specified\
+            \ here is in the past, the intervals will be empty, regardless of the\
+            \ Start time parameter."
+          format: date-time
+          type: string
+        timeAvailableFor:
+          description: "Time period (in ISO-8601 format) the profile is covering.\
+            \ For example, P3M (3 months), P4W (4 weeks), P5D (5 days)."
+          example: P4W
+          type: string
+        subject:
+          description: Subject for events booked using this profile.
+          type: string
+        description:
+          description: Description for events booked using this profile.
+          type: string
+        location:
+          description: Location for events booked using this profile.
+          type: string
+        workHours:
+          $ref: '#/components/schemas/WeekWorkSchedule'
+        context:
+          description: Custom client data stored for the profile.
+          type: string
+        startConference:
+          description: "Whether to create an online conference (hangoutsMeet, teamsForBusiness,\
+            \ etc.) for the event. Note, not all providers support creating conferences."
+          type: boolean
+        openMeetingUrl:
+          description: "The value of the {{openMeetingUrl}} variable that can be used\
+            \ in the event description or subject."
+          type: string
+        clientOrgId:
+          type: string
+      type: object
     EventDateTime:
       example:
         dateTime: 2000-01-23T04:56:07.000+00:00
@@ -8153,11 +8590,11 @@ components:
       type: object
     CreateMeetingDto:
       example:
+        userIds:
+        - userIds
+        - userIds
         name: name
         time:
-          userIds:
-          - userIds
-          - userIds
           start: 2000-01-23T04:56:07.000+00:00
           end: 2000-01-23T04:56:07.000+00:00
         substitutionData:
@@ -8166,6 +8603,11 @@ components:
       properties:
         time:
           $ref: '#/components/schemas/SelectedMeetingTime'
+        userIds:
+          items:
+            description: User id from available meeting times request
+            type: string
+          type: array
         name:
           description: Username of the person requesting the meeting
           type: string
@@ -8556,10 +8998,10 @@ components:
             department: department
           id: id
           relations:
-          - type: manager
-            value: value
-          - type: manager
-            value: value
+          - name: name
+            type: manager
+          - name: name
+            type: manager
         - birthday: birthday
           addresses:
           - streetLine2: streetLine2
@@ -8631,10 +9073,10 @@ components:
             department: department
           id: id
           relations:
-          - type: manager
-            value: value
-          - type: manager
-            value: value
+          - name: name
+            type: manager
+          - name: name
+            type: manager
         nextPageToken: nextPageToken
         nextDeltaToken: nextDeltaToken
         length: 0
@@ -8730,95 +9172,138 @@ components:
       example:
         created: true
         id: id
+        userId: userId
       properties:
         created:
           type: boolean
         id:
           description: Created id of event in calendar
           type: string
+        userId:
+          description: User id for group booking
+          type: string
       type: object
     SuggestMeetingTimesRequest:
       example:
         availabilityStep: 6
-        freeStatuses: null
+        freeStatuses:
+        - null
+        - null
         durationMinutes: 0
         defaultWorkHours:
           daySchedules:
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           timezone: timezone
         attendees:
-        - timezone: timezone
+        - freeIntervals:
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          timezone: timezone
           workHours:
             daySchedules:
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             timezone: timezone
           error: error
           email: email
-        - timezone: timezone
+          busyIntervals:
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+        - freeIntervals:
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          timezone: timezone
           workHours:
             daySchedules:
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             timezone: timezone
           error: error
           email: email
+          busyIntervals:
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
+          - start: 2000-01-23T04:56:07.000+00:00
+            end: 2000-01-23T04:56:07.000+00:00
         timeMax: 2000-01-23T04:56:07.000+00:00
         timeMin: 2000-01-23T04:56:07.000+00:00
         defaultTimezone: defaultTimezone
       properties:
         timeMin:
+          description: The lower bound of the time interval to search for available
+            meeting times.
           format: date-time
           type: string
         timeMax:
+          description: The upper bound of the time interval to search for available
+            meeting times.
           format: date-time
           type: string
         durationMinutes:
+          description: The duration of the meeting to search time for.
           type: integer
         availabilityStep:
           default: 30
+          description: Determines the interval at which new meeting slots are made
+            available throughout the working hours.
           type: integer
         attendees:
+          description: The attendees to consider when searching for available meeting
+            times.
           items:
             $ref: '#/components/schemas/MeetingAttendee'
           type: array
         defaultTimezone:
+          description: Timezone (IANA) to use when no timezone information is available
+            for the attendees.
           type: string
         defaultWorkHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
         freeStatuses:
-          $ref: '#/components/schemas/ShowAs'
+          default:
+          - free
+          description: The statuses from /freeBusy request to consider as free time
+            for the attendees.
+          items:
+            $ref: '#/components/schemas/ShowAs'
+          type: array
       type: object
     SyncStatus:
       example:
@@ -8907,10 +9392,10 @@ components:
             department: department
           id: id
           relations:
-          - type: manager
-            value: value
-          - type: manager
-            value: value
+          - name: name
+            type: manager
+          - name: name
+            type: manager
         etag: etag
         id: id
       properties:
@@ -9572,7 +10057,6 @@ components:
         messageId: messageId
       properties:
         threadId:
-          readOnly: true
           type: string
         messageId:
           type: string
@@ -9622,6 +10106,83 @@ components:
         actions:
           items:
             $ref: '#/components/schemas/FollowupRuleAction'
+          type: array
+      type: object
+    GroupBookingPage:
+      example:
+        totalSize: 6
+        offset: 0
+        records:
+        - availabilityStep: 5
+          subject: subject
+          workHours:
+            daySchedules:
+            - dayOfWeek: null
+              workingIntervals:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+            - dayOfWeek: null
+              workingIntervals:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+            timezone: timezone
+          description: description
+          durationMinutes: 30
+          timeAvailableFor: P4W
+          clientOrgId: clientOrgId
+          name: aurDemo - https://calendar.aurinko.io/aurDemo
+          context: context
+          startTime: 2000-01-23T04:56:07.000+00:00
+          location: location
+          id: 1
+          endTime: 2000-01-23T04:56:07.000+00:00
+          startConference: true
+          openMeetingUrl: openMeetingUrl
+        - availabilityStep: 5
+          subject: subject
+          workHours:
+            daySchedules:
+            - dayOfWeek: null
+              workingIntervals:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+            - dayOfWeek: null
+              workingIntervals:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+            timezone: timezone
+          description: description
+          durationMinutes: 30
+          timeAvailableFor: P4W
+          clientOrgId: clientOrgId
+          name: aurDemo - https://calendar.aurinko.io/aurDemo
+          context: context
+          startTime: 2000-01-23T04:56:07.000+00:00
+          location: location
+          id: 1
+          endTime: 2000-01-23T04:56:07.000+00:00
+          startConference: true
+          openMeetingUrl: openMeetingUrl
+        done: true
+      properties:
+        offset:
+          type: integer
+        totalSize:
+          format: int64
+          type: integer
+        done:
+          type: boolean
+        records:
+          items:
+            $ref: '#/components/schemas/GroupBookingOutDto'
           type: array
       type: object
     SubscriptionRequest:
@@ -9791,9 +10352,6 @@ components:
       type: object
     SelectedMeetingTime:
       example:
-        userIds:
-        - userIds
-        - userIds
         start: 2000-01-23T04:56:07.000+00:00
         end: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -9803,10 +10361,6 @@ components:
         end:
           format: date-time
           type: string
-        userIds:
-          items:
-            type: string
-          type: array
       type: object
     BookingOutDto:
       example:
@@ -9817,15 +10371,15 @@ components:
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           timezone: timezone
         description: description
         durationMinutes: 30
@@ -9904,6 +10458,18 @@ components:
       - saturday
       - sunday
       type: string
+    TimeInterval:
+      example:
+        start: 2000-01-23T04:56:07.000+00:00
+        end: 2000-01-23T04:56:07.000+00:00
+      properties:
+        start:
+          format: date-time
+          type: string
+        end:
+          format: date-time
+          type: string
+      type: object
     BookingPage:
       example:
         totalSize: 6
@@ -9916,15 +10482,15 @@ components:
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             timezone: timezone
           description: description
           durationMinutes: 30
@@ -9944,15 +10510,15 @@ components:
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             - dayOfWeek: null
               workingIntervals:
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
               - start: 09:00:00
-                end: "61200"
+                end: 17:00:00
             timezone: timezone
           description: description
           durationMinutes: 30
@@ -9982,13 +10548,15 @@ components:
     WorkingInterval:
       example:
         start: 09:00:00
-        end: "61200"
+        end: 17:00:00
       properties:
         start:
           example: 09:00:00
+          pattern: "^\\d{2}:\\d{2}:\\d{2}$"
           type: string
         end:
-          example: "61200"
+          example: 17:00:00
+          pattern: "^\\d{2}:\\d{2}:\\d{2}$"
           type: string
       type: object
     EmailMessagesPage:
@@ -10610,15 +11178,15 @@ components:
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           - dayOfWeek: null
             workingIntervals:
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
             - start: 09:00:00
-              end: "61200"
+              end: 17:00:00
           timezone: timezone
         error: error
         items:
@@ -10715,10 +11283,10 @@ components:
           department: department
         id: id
         relations:
-        - type: manager
-          value: value
-        - type: manager
-          value: value
+        - name: name
+          type: manager
+        - name: name
+          type: manager
       properties:
         id:
           readOnly: true
@@ -10775,6 +11343,7 @@ components:
             type: string
           type: object
         hasPhoto:
+          readOnly: true
           type: boolean
         photo:
           $ref: '#/components/schemas/ContactPhoto'
@@ -11260,18 +11829,6 @@ components:
       enum:
       - exchangeIdentity
       type: string
-    SuggestMeetingTimesResponse_items_inner:
-      example:
-        start: 2000-01-23T04:56:07.000+00:00
-        end: 2000-01-23T04:56:07.000+00:00
-      properties:
-        start:
-          format: date-time
-          type: string
-        end:
-          format: date-time
-          type: string
-      type: object
     Recurrence_ical:
       example:
         rules:
@@ -11468,6 +12025,7 @@ x-tagGroups:
   - Messages
   - EmailSync
   - Drafts
+  - EmailFolders
   - EmailTracking
   - FollowUpRobot
 - name: Calendars

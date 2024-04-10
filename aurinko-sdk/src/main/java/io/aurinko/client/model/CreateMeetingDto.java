@@ -25,8 +25,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.SelectedMeetingTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -36,14 +38,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonPropertyOrder({
   CreateMeetingDto.JSON_PROPERTY_TIME,
+  CreateMeetingDto.JSON_PROPERTY_USER_IDS,
   CreateMeetingDto.JSON_PROPERTY_NAME,
   CreateMeetingDto.JSON_PROPERTY_EMAIL,
   CreateMeetingDto.JSON_PROPERTY_SUBSTITUTION_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class CreateMeetingDto {
   public static final String JSON_PROPERTY_TIME = "time";
   private SelectedMeetingTime time;
+
+  public static final String JSON_PROPERTY_USER_IDS = "userIds";
+  private List<String> userIds;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -79,6 +85,39 @@ public class CreateMeetingDto {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTime(SelectedMeetingTime time) {
     this.time = time;
+  }
+
+
+  public CreateMeetingDto userIds(List<String> userIds) {
+    this.userIds = userIds;
+    return this;
+  }
+
+  public CreateMeetingDto addUserIdsItem(String userIdsItem) {
+    if (this.userIds == null) {
+      this.userIds = new ArrayList<>();
+    }
+    this.userIds.add(userIdsItem);
+    return this;
+  }
+
+   /**
+   * Get userIds
+   * @return userIds
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<String> getUserIds() {
+    return userIds;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUserIds(List<String> userIds) {
+    this.userIds = userIds;
   }
 
 
@@ -178,6 +217,7 @@ public class CreateMeetingDto {
     }
     CreateMeetingDto createMeetingDto = (CreateMeetingDto) o;
     return Objects.equals(this.time, createMeetingDto.time) &&
+        Objects.equals(this.userIds, createMeetingDto.userIds) &&
         Objects.equals(this.name, createMeetingDto.name) &&
         Objects.equals(this.email, createMeetingDto.email) &&
         Objects.equals(this.substitutionData, createMeetingDto.substitutionData);
@@ -185,7 +225,7 @@ public class CreateMeetingDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(time, name, email, substitutionData);
+    return Objects.hash(time, userIds, name, email, substitutionData);
   }
 
   @Override
@@ -193,6 +233,7 @@ public class CreateMeetingDto {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateMeetingDto {\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    substitutionData: ").append(toIndentedString(substitutionData)).append("\n");
@@ -246,6 +287,15 @@ public class CreateMeetingDto {
     // add `time` to the URL query string
     if (getTime() != null) {
       joiner.add(getTime().toUrlQueryString(prefix + "time" + suffix));
+    }
+
+    // add `userIds` to the URL query string
+    if (getUserIds() != null) {
+      for (int i = 0; i < getUserIds().size(); i++) {
+        joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(String.valueOf(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
     }
 
     // add `name` to the URL query string

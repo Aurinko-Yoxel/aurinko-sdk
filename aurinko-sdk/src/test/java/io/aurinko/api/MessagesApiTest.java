@@ -94,8 +94,9 @@ public class MessagesApiTest {
         BodyType bodyType = null;
         List<String> nativeProperties = null;
         Boolean loadInlines = null;
+        Boolean stripQuoted = null;
         CompletableFuture<EmailMessage> response = 
-        api.message(messageId, bodyType, nativeProperties, loadInlines);
+        api.message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
         
         // TODO: test validations
     }

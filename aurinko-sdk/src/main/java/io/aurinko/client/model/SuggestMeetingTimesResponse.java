@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.MeetingAttendee;
-import io.aurinko.client.model.SuggestMeetingTimesResponseItemsInner;
+import io.aurinko.client.model.TimeInterval;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,10 +39,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SuggestMeetingTimesResponse.JSON_PROPERTY_ITEMS,
   SuggestMeetingTimesResponse.JSON_PROPERTY_ATTENDEES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class SuggestMeetingTimesResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<SuggestMeetingTimesResponseItemsInner> items;
+  private List<TimeInterval> items;
 
   public static final String JSON_PROPERTY_ATTENDEES = "attendees";
   private List<MeetingAttendee> attendees;
@@ -50,12 +50,12 @@ public class SuggestMeetingTimesResponse {
   public SuggestMeetingTimesResponse() { 
   }
 
-  public SuggestMeetingTimesResponse items(List<SuggestMeetingTimesResponseItemsInner> items) {
+  public SuggestMeetingTimesResponse items(List<TimeInterval> items) {
     this.items = items;
     return this;
   }
 
-  public SuggestMeetingTimesResponse addItemsItem(SuggestMeetingTimesResponseItemsInner itemsItem) {
+  public SuggestMeetingTimesResponse addItemsItem(TimeInterval itemsItem) {
     if (this.items == null) {
       this.items = new ArrayList<>();
     }
@@ -71,14 +71,14 @@ public class SuggestMeetingTimesResponse {
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SuggestMeetingTimesResponseItemsInner> getItems() {
+  public List<TimeInterval> getItems() {
     return items;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(List<SuggestMeetingTimesResponseItemsInner> items) {
+  public void setItems(List<TimeInterval> items) {
     this.items = items;
   }
 

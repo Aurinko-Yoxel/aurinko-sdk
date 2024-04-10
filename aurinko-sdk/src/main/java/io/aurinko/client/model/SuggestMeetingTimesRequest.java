@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SuggestMeetingTimesRequest.JSON_PROPERTY_DEFAULT_WORK_HOURS,
   SuggestMeetingTimesRequest.JSON_PROPERTY_FREE_STATUSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class SuggestMeetingTimesRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   private OffsetDateTime timeMin;
@@ -71,7 +71,7 @@ public class SuggestMeetingTimesRequest {
   private WeekWorkSchedule defaultWorkHours;
 
   public static final String JSON_PROPERTY_FREE_STATUSES = "freeStatuses";
-  private ShowAs freeStatuses;
+  private List<ShowAs> freeStatuses = new ArrayList<>(Arrays.asList(ShowAs.FREE));
 
   public SuggestMeetingTimesRequest() { 
   }
@@ -82,7 +82,7 @@ public class SuggestMeetingTimesRequest {
   }
 
    /**
-   * Get timeMin
+   * The lower bound of the time interval to search for available meeting times.
    * @return timeMin
   **/
   @javax.annotation.Nullable
@@ -107,7 +107,7 @@ public class SuggestMeetingTimesRequest {
   }
 
    /**
-   * Get timeMax
+   * The upper bound of the time interval to search for available meeting times.
    * @return timeMax
   **/
   @javax.annotation.Nullable
@@ -132,7 +132,7 @@ public class SuggestMeetingTimesRequest {
   }
 
    /**
-   * Get durationMinutes
+   * The duration of the meeting to search time for.
    * @return durationMinutes
   **/
   @javax.annotation.Nullable
@@ -157,7 +157,7 @@ public class SuggestMeetingTimesRequest {
   }
 
    /**
-   * Get availabilityStep
+   * Determines the interval at which new meeting slots are made available throughout the working hours.
    * @return availabilityStep
   **/
   @javax.annotation.Nullable
@@ -190,7 +190,7 @@ public class SuggestMeetingTimesRequest {
   }
 
    /**
-   * Get attendees
+   * The attendees to consider when searching for available meeting times.
    * @return attendees
   **/
   @javax.annotation.Nullable
@@ -215,7 +215,7 @@ public class SuggestMeetingTimesRequest {
   }
 
    /**
-   * Get defaultTimezone
+   * Timezone (IANA) to use when no timezone information is available for the attendees.
    * @return defaultTimezone
   **/
   @javax.annotation.Nullable
@@ -259,27 +259,35 @@ public class SuggestMeetingTimesRequest {
   }
 
 
-  public SuggestMeetingTimesRequest freeStatuses(ShowAs freeStatuses) {
+  public SuggestMeetingTimesRequest freeStatuses(List<ShowAs> freeStatuses) {
     this.freeStatuses = freeStatuses;
     return this;
   }
 
+  public SuggestMeetingTimesRequest addFreeStatusesItem(ShowAs freeStatusesItem) {
+    if (this.freeStatuses == null) {
+      this.freeStatuses = new ArrayList<>(Arrays.asList(ShowAs.FREE));
+    }
+    this.freeStatuses.add(freeStatusesItem);
+    return this;
+  }
+
    /**
-   * Get freeStatuses
+   * The statuses from /freeBusy request to consider as free time for the attendees.
    * @return freeStatuses
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FREE_STATUSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public ShowAs getFreeStatuses() {
+  public List<ShowAs> getFreeStatuses() {
     return freeStatuses;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FREE_STATUSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFreeStatuses(ShowAs freeStatuses) {
+  public void setFreeStatuses(List<ShowAs> freeStatuses) {
     this.freeStatuses = freeStatuses;
   }
 
@@ -412,7 +420,13 @@ public class SuggestMeetingTimesRequest {
 
     // add `freeStatuses` to the URL query string
     if (getFreeStatuses() != null) {
-      joiner.add(String.format("%sfreeStatuses%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFreeStatuses()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      for (int i = 0; i < getFreeStatuses().size(); i++) {
+        if (getFreeStatuses().get(i) != null) {
+          joiner.add(String.format("%sfreeStatuses%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+              URLEncoder.encode(String.valueOf(getFreeStatuses().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+        }
+      }
     }
 
     return joiner.toString();

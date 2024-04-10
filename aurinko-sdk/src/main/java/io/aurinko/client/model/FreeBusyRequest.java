@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FreeBusyRequest.JSON_PROPERTY_TIME_MAX,
   FreeBusyRequest.JSON_PROPERTY_EMAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class FreeBusyRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   private OffsetDateTime timeMin;

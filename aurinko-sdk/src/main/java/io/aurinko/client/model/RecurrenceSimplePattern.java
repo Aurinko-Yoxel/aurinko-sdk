@@ -43,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimplePattern.JSON_PROPERTY_MONTH_OF_YEAR,
   RecurrenceSimplePattern.JSON_PROPERTY_INSTANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class RecurrenceSimplePattern {
   /**
    * Gets or Sets frequency

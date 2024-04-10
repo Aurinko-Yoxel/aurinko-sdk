@@ -53,4 +53,12 @@ public class CreateMeetingResponseTest {
         // TODO: test id
     }
 
+    /**
+     * Test the property 'userId'
+     */
+    @Test
+    public void userIdTest() {
+        // TODO: test userId
+    }
+
 }

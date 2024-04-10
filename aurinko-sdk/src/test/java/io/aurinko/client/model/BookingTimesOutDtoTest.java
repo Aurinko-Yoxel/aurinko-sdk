@@ -138,4 +138,20 @@ public class BookingTimesOutDtoTest {
         // TODO: test offset
     }
 
+    /**
+     * Test the property 'totalSize'
+     */
+    @Test
+    public void totalSizeTest() {
+        // TODO: test totalSize
+    }
+
+    /**
+     * Test the property 'done'
+     */
+    @Test
+    public void doneTest() {
+        // TODO: test done
+    }
+
 }

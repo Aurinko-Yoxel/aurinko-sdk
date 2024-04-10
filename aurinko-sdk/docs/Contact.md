@@ -24,7 +24,7 @@
 |**addresses** | [**List&lt;ContactPostalAddress&gt;**](ContactPostalAddress.md) |  |  [optional] |
 |**urls** | [**List&lt;ContactUrl&gt;**](ContactUrl.md) |  |  [optional] |
 |**nativeProperties** | **Map&lt;String, String&gt;** |  |  [optional] |
-|**hasPhoto** | **Boolean** |  |  [optional] |
+|**hasPhoto** | **Boolean** |  |  [optional] [readonly] |
 |**photo** | [**ContactPhoto**](ContactPhoto.md) |  |  [optional] |
 
 

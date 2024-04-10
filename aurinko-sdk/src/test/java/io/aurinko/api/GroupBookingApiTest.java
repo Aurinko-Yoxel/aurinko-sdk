@@ -16,11 +16,11 @@ package io.aurinko.api;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.BookingAttachGroupUsersDto;
 import io.aurinko.client.model.BookingAttachedUserPage;
-import io.aurinko.client.model.BookingInDto;
-import io.aurinko.client.model.BookingOutDto;
-import io.aurinko.client.model.BookingPage;
 import io.aurinko.client.model.BookingSuccessOutDto;
-import io.aurinko.client.model.BookingUpdateDto;
+import io.aurinko.client.model.GroupBookingInDto;
+import io.aurinko.client.model.GroupBookingOutDto;
+import io.aurinko.client.model.GroupBookingPage;
+import io.aurinko.client.model.GroupBookingUpdateDto;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -88,9 +88,9 @@ public class GroupBookingApiTest {
      */
     @Test
     public void createGroupBookingTest() throws ApiException {
-        BookingInDto bookingInDto = null;
-        CompletableFuture<BookingOutDto> response = 
-        api.createGroupBooking(bookingInDto);
+        GroupBookingInDto groupBookingInDto = null;
+        CompletableFuture<GroupBookingOutDto> response = 
+        api.createGroupBooking(groupBookingInDto);
         
         // TODO: test validations
     }
@@ -141,7 +141,7 @@ public class GroupBookingApiTest {
     @Test
     public void getGroupBookingTest() throws ApiException {
         Long id = null;
-        CompletableFuture<BookingOutDto> response = 
+        CompletableFuture<GroupBookingOutDto> response = 
         api.getGroupBooking(id);
         
         // TODO: test validations
@@ -159,7 +159,7 @@ public class GroupBookingApiTest {
     public void getGroupBookingsTest() throws ApiException {
         Integer limit = null;
         Integer offset = null;
-        CompletableFuture<BookingPage> response = 
+        CompletableFuture<GroupBookingPage> response = 
         api.getGroupBookings(limit, offset);
         
         // TODO: test validations
@@ -176,9 +176,9 @@ public class GroupBookingApiTest {
     @Test
     public void updateGroupBookingTest() throws ApiException {
         Long id = null;
-        BookingUpdateDto bookingUpdateDto = null;
+        GroupBookingUpdateDto groupBookingUpdateDto = null;
         CompletableFuture<BookingSuccessOutDto> response = 
-        api.updateGroupBooking(id, bookingUpdateDto);
+        api.updateGroupBooking(id, groupBookingUpdateDto);
         
         // TODO: test validations
     }

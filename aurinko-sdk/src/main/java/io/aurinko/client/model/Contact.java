@@ -65,7 +65,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Contact.JSON_PROPERTY_HAS_PHOTO,
   Contact.JSON_PROPERTY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class Contact {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -132,13 +132,15 @@ public class Contact {
     @JsonProperty(JSON_PROPERTY_ID) String id, 
     @JsonProperty(JSON_PROPERTY_ETAG) String etag, 
     @JsonProperty(JSON_PROPERTY_CREATED_TIME) OffsetDateTime createdTime, 
-    @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME) OffsetDateTime lastModifiedTime
+    @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME) OffsetDateTime lastModifiedTime, 
+    @JsonProperty(JSON_PROPERTY_HAS_PHOTO) Boolean hasPhoto
   ) {
   this();
     this.id = id;
     this.etag = etag;
     this.createdTime = createdTime;
     this.lastModifiedTime = lastModifiedTime;
+    this.hasPhoto = hasPhoto;
   }
 
    /**
@@ -582,11 +584,6 @@ public class Contact {
   }
 
 
-  public Contact hasPhoto(Boolean hasPhoto) {
-    this.hasPhoto = hasPhoto;
-    return this;
-  }
-
    /**
    * Get hasPhoto
    * @return hasPhoto
@@ -600,11 +597,6 @@ public class Contact {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_HAS_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHasPhoto(Boolean hasPhoto) {
-    this.hasPhoto = hasPhoto;
-  }
 
 
   public Contact photo(ContactPhoto photo) {

@@ -50,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class AuthApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -185,8 +185,8 @@ public class AuthApi {
    * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
    * @param serviceType  (required)
    * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
-   * @param scopes Space separated list of Aurinko defined scopes. (optional
-   * @param nativeScopes Space separated list of provider defined scopes (optional
+   * @param scopes Space separated list of Aurinko defined scopes. (optional)
+   * @param nativeScopes Space separated list of provider defined scopes (optional)
    * @param responseType The type of response expected from the authorization flow. Choose &#x60;token&#x60; to directly receive the authentication token, or &#x60;code&#x60; to obtain a temporary code that can be exchanged for the token using the /auth/token endpoint. (optional, default to code)
    * @param accountId For re-authorizing an existing account. (optional)
    * @param loginHint Is passed as \&quot;login_hint\&quot; in OAuth flows, suggesting user identity for a smoother login process. (optional)
@@ -222,8 +222,8 @@ public class AuthApi {
    * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
    * @param serviceType  (required)
    * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
-   * @param scopes Space separated list of Aurinko defined scopes. (optional
-   * @param nativeScopes Space separated list of provider defined scopes (optional
+   * @param scopes Space separated list of Aurinko defined scopes. (optional)
+   * @param nativeScopes Space separated list of provider defined scopes (optional)
    * @param responseType The type of response expected from the authorization flow. Choose &#x60;token&#x60; to directly receive the authentication token, or &#x60;code&#x60; to obtain a temporary code that can be exchanged for the token using the /auth/token endpoint. (optional, default to code)
    * @param accountId For re-authorizing an existing account. (optional)
    * @param loginHint Is passed as \&quot;login_hint\&quot; in OAuth flows, suggesting user identity for a smoother login process. (optional)
@@ -337,8 +337,8 @@ public class AuthApi {
    * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
    * @param serviceType  (required)
    * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
-   * @param scopes Space separated list of Aurinko defined scopes. (optional
-   * @param nativeScopes Space separated list of provider defined scopes. (optional
+   * @param scopes Space separated list of Aurinko defined scopes. (optional)
+   * @param nativeScopes Space separated list of provider defined scopes. (optional)
    * @param responseType The type of response expected from the authorization flow. Choose &#x60;token&#x60; to directly receive the authentication token, or &#x60;code&#x60; to obtain a temporary code that can be exchanged for the token using the /auth/token endpoint. (optional, default to code)
    * @param accountId For re-authorizing an existing account. (optional)
    * @param state Custom state string (optional)
@@ -370,8 +370,8 @@ public class AuthApi {
    * @param clientId Application Client Id from the Aurinko portal dashboard. (required)
    * @param serviceType  (required)
    * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
-   * @param scopes Space separated list of Aurinko defined scopes. (optional
-   * @param nativeScopes Space separated list of provider defined scopes. (optional
+   * @param scopes Space separated list of Aurinko defined scopes. (optional)
+   * @param nativeScopes Space separated list of provider defined scopes. (optional)
    * @param responseType The type of response expected from the authorization flow. Choose &#x60;token&#x60; to directly receive the authentication token, or &#x60;code&#x60; to obtain a temporary code that can be exchanged for the token using the /auth/token endpoint. (optional, default to code)
    * @param accountId For re-authorizing an existing account. (optional)
    * @param state Custom state string (optional)
@@ -475,8 +475,8 @@ public class AuthApi {
    * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
    * @param accountRole The account&#39;s role in relation to a User. Use &#x60;primary&#x60; for the account to act as a key account; this will create a new User if the primary account doesn&#39;t exist already. If the primary account exists, it&#39;s simply re-authorized without creating a new user. Choose &#x60;secondary&#x60; to associate the account with an already existing User, which requires either existing User cookie or &#x60;userId&#x60; + &#x60;userSignature&#x60; for identification. (required)
    * @param mailboxInfo Relevant only for cookie-based authentication in multi-client setups. When different client apps are connected to a single Aurinko application, this string (commonly the user&#39;s email, but can be any unique identifier) is combined with \&quot;clientId\&quot; to create a distinct authentication cookie name and prevent cookie conflicts. Clients using cookie-based auth must send \&quot;clientId\&quot; and \&quot;mailboxInfo\&quot; via \&quot;X-Aurinko-Client-Id\&quot; and \&quot;X-Aurinko-Mailbox-Info\&quot; HTTP headers for accurate cookie identification. (optional)
-   * @param scopes Space separated list of Aurinko defined scopes. (optional
-   * @param nativeScopes Space separated list of provider defined scopes (optional
+   * @param scopes Space separated list of Aurinko defined scopes. (optional)
+   * @param nativeScopes Space separated list of provider defined scopes (optional)
    * @param responseType The type of response expected from the user authorization flow. For &#x60;primary&#x60; accounts, choose &#x60;cookie&#x60; or &#x60;code&#x60;, for &#x60;secondary&#x60; accounts, choose &#x60;none&#x60;. &#x60;cookie&#x60; will set a cookie in the user&#39;s browser in the callback, &#x60;code&#x60; will return a temporary code that can be exchanged for a user session token using the /auth/token endpoint. &#x60;none&#x60; will return only the status of the operation and information about an occurred error. Because &#x60;secondary&#x60; accounts are linked to an existing and authorized User, they don&#39;t need to receive a token or cookie in the callback. (optional, default to cookie)
    * @param accountId For re-authorizing an existing &#x60;secondary&#x60; account. (optional)
    * @param loginHint Is passed as \&quot;login_hint\&quot; in OAuth flows, suggesting user identity for a smoother login process. (optional)
@@ -516,8 +516,8 @@ public class AuthApi {
    * @param returnUrl Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. (required)
    * @param accountRole The account&#39;s role in relation to a User. Use &#x60;primary&#x60; for the account to act as a key account; this will create a new User if the primary account doesn&#39;t exist already. If the primary account exists, it&#39;s simply re-authorized without creating a new user. Choose &#x60;secondary&#x60; to associate the account with an already existing User, which requires either existing User cookie or &#x60;userId&#x60; + &#x60;userSignature&#x60; for identification. (required)
    * @param mailboxInfo Relevant only for cookie-based authentication in multi-client setups. When different client apps are connected to a single Aurinko application, this string (commonly the user&#39;s email, but can be any unique identifier) is combined with \&quot;clientId\&quot; to create a distinct authentication cookie name and prevent cookie conflicts. Clients using cookie-based auth must send \&quot;clientId\&quot; and \&quot;mailboxInfo\&quot; via \&quot;X-Aurinko-Client-Id\&quot; and \&quot;X-Aurinko-Mailbox-Info\&quot; HTTP headers for accurate cookie identification. (optional)
-   * @param scopes Space separated list of Aurinko defined scopes. (optional
-   * @param nativeScopes Space separated list of provider defined scopes (optional
+   * @param scopes Space separated list of Aurinko defined scopes. (optional)
+   * @param nativeScopes Space separated list of provider defined scopes (optional)
    * @param responseType The type of response expected from the user authorization flow. For &#x60;primary&#x60; accounts, choose &#x60;cookie&#x60; or &#x60;code&#x60;, for &#x60;secondary&#x60; accounts, choose &#x60;none&#x60;. &#x60;cookie&#x60; will set a cookie in the user&#39;s browser in the callback, &#x60;code&#x60; will return a temporary code that can be exchanged for a user session token using the /auth/token endpoint. &#x60;none&#x60; will return only the status of the operation and information about an occurred error. Because &#x60;secondary&#x60; accounts are linked to an existing and authorized User, they don&#39;t need to receive a token or cookie in the callback. (optional, default to cookie)
    * @param accountId For re-authorizing an existing &#x60;secondary&#x60; account. (optional)
    * @param loginHint Is passed as \&quot;login_hint\&quot; in OAuth flows, suggesting user identity for a smoother login process. (optional)

@@ -24,8 +24,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.TimeInterval;
 import io.aurinko.client.model.WeekWorkSchedule;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -36,9 +39,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   MeetingAttendee.JSON_PROPERTY_EMAIL,
   MeetingAttendee.JSON_PROPERTY_TIMEZONE,
   MeetingAttendee.JSON_PROPERTY_WORK_HOURS,
-  MeetingAttendee.JSON_PROPERTY_ERROR
+  MeetingAttendee.JSON_PROPERTY_ERROR,
+  MeetingAttendee.JSON_PROPERTY_BUSY_INTERVALS,
+  MeetingAttendee.JSON_PROPERTY_FREE_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class MeetingAttendee {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
@@ -51,6 +56,12 @@ public class MeetingAttendee {
 
   public static final String JSON_PROPERTY_ERROR = "error";
   private String error;
+
+  public static final String JSON_PROPERTY_BUSY_INTERVALS = "busyIntervals";
+  private List<TimeInterval> busyIntervals;
+
+  public static final String JSON_PROPERTY_FREE_INTERVALS = "freeIntervals";
+  private List<TimeInterval> freeIntervals;
 
   public MeetingAttendee() { 
   }
@@ -153,6 +164,72 @@ public class MeetingAttendee {
 
 
 
+  public MeetingAttendee busyIntervals(List<TimeInterval> busyIntervals) {
+    this.busyIntervals = busyIntervals;
+    return this;
+  }
+
+  public MeetingAttendee addBusyIntervalsItem(TimeInterval busyIntervalsItem) {
+    if (this.busyIntervals == null) {
+      this.busyIntervals = new ArrayList<>();
+    }
+    this.busyIntervals.add(busyIntervalsItem);
+    return this;
+  }
+
+   /**
+   * Busy intervals for the attendee. If set, these intervals will be excluded when searching for available meeting times. Can be combined with &#x60;freeIntervals&#x60;.
+   * @return busyIntervals
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BUSY_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<TimeInterval> getBusyIntervals() {
+    return busyIntervals;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_BUSY_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBusyIntervals(List<TimeInterval> busyIntervals) {
+    this.busyIntervals = busyIntervals;
+  }
+
+
+  public MeetingAttendee freeIntervals(List<TimeInterval> freeIntervals) {
+    this.freeIntervals = freeIntervals;
+    return this;
+  }
+
+  public MeetingAttendee addFreeIntervalsItem(TimeInterval freeIntervalsItem) {
+    if (this.freeIntervals == null) {
+      this.freeIntervals = new ArrayList<>();
+    }
+    this.freeIntervals.add(freeIntervalsItem);
+    return this;
+  }
+
+   /**
+   * Free time intervals for the attendee. If set, this parameter will limit the search for available meeting times. Can be combined with &#x60;busyIntervals&#x60;.
+   * @return freeIntervals
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FREE_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<TimeInterval> getFreeIntervals() {
+    return freeIntervals;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FREE_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFreeIntervals(List<TimeInterval> freeIntervals) {
+    this.freeIntervals = freeIntervals;
+  }
+
+
   /**
    * Return true if this MeetingAttendee object is equal to o.
    */
@@ -168,12 +245,14 @@ public class MeetingAttendee {
     return Objects.equals(this.email, meetingAttendee.email) &&
         Objects.equals(this.timezone, meetingAttendee.timezone) &&
         Objects.equals(this.workHours, meetingAttendee.workHours) &&
-        Objects.equals(this.error, meetingAttendee.error);
+        Objects.equals(this.error, meetingAttendee.error) &&
+        Objects.equals(this.busyIntervals, meetingAttendee.busyIntervals) &&
+        Objects.equals(this.freeIntervals, meetingAttendee.freeIntervals);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, timezone, workHours, error);
+    return Objects.hash(email, timezone, workHours, error, busyIntervals, freeIntervals);
   }
 
   @Override
@@ -184,6 +263,8 @@ public class MeetingAttendee {
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    workHours: ").append(toIndentedString(workHours)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    busyIntervals: ").append(toIndentedString(busyIntervals)).append("\n");
+    sb.append("    freeIntervals: ").append(toIndentedString(freeIntervals)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -249,6 +330,26 @@ public class MeetingAttendee {
     // add `error` to the URL query string
     if (getError() != null) {
       joiner.add(String.format("%serror%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `busyIntervals` to the URL query string
+    if (getBusyIntervals() != null) {
+      for (int i = 0; i < getBusyIntervals().size(); i++) {
+        if (getBusyIntervals().get(i) != null) {
+          joiner.add(getBusyIntervals().get(i).toUrlQueryString(String.format("%sbusyIntervals%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `freeIntervals` to the URL query string
+    if (getFreeIntervals() != null) {
+      for (int i = 0; i < getFreeIntervals().size(); i++) {
+        if (getFreeIntervals().get(i) != null) {
+          joiner.add(getFreeIntervals().get(i).toUrlQueryString(String.format("%sfreeIntervals%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

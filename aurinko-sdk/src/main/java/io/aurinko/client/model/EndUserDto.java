@@ -48,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EndUserDto.JSON_PROPERTY_EXTERNAL_ID_TYPE,
   EndUserDto.JSON_PROPERTY_ACCOUNTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class EndUserDto {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimple.JSON_PROPERTY_PATTERN,
   RecurrenceSimple.JSON_PROPERTY_RANGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class RecurrenceSimple {
   public static final String JSON_PROPERTY_PATTERN = "pattern";
   private RecurrenceSimplePattern pattern;

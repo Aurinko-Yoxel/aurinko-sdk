@@ -25,9 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -36,19 +34,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonPropertyOrder({
   SelectedMeetingTime.JSON_PROPERTY_START,
-  SelectedMeetingTime.JSON_PROPERTY_END,
-  SelectedMeetingTime.JSON_PROPERTY_USER_IDS
+  SelectedMeetingTime.JSON_PROPERTY_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class SelectedMeetingTime {
   public static final String JSON_PROPERTY_START = "start";
   private OffsetDateTime start;
 
   public static final String JSON_PROPERTY_END = "end";
   private OffsetDateTime end;
-
-  public static final String JSON_PROPERTY_USER_IDS = "userIds";
-  private List<String> userIds;
 
   public SelectedMeetingTime() { 
   }
@@ -103,39 +97,6 @@ public class SelectedMeetingTime {
   }
 
 
-  public SelectedMeetingTime userIds(List<String> userIds) {
-    this.userIds = userIds;
-    return this;
-  }
-
-  public SelectedMeetingTime addUserIdsItem(String userIdsItem) {
-    if (this.userIds == null) {
-      this.userIds = new ArrayList<>();
-    }
-    this.userIds.add(userIdsItem);
-    return this;
-  }
-
-   /**
-   * Get userIds
-   * @return userIds
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<String> getUserIds() {
-    return userIds;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserIds(List<String> userIds) {
-    this.userIds = userIds;
-  }
-
-
   /**
    * Return true if this SelectedMeetingTime object is equal to o.
    */
@@ -149,13 +110,12 @@ public class SelectedMeetingTime {
     }
     SelectedMeetingTime selectedMeetingTime = (SelectedMeetingTime) o;
     return Objects.equals(this.start, selectedMeetingTime.start) &&
-        Objects.equals(this.end, selectedMeetingTime.end) &&
-        Objects.equals(this.userIds, selectedMeetingTime.userIds);
+        Objects.equals(this.end, selectedMeetingTime.end);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end, userIds);
+    return Objects.hash(start, end);
   }
 
   @Override
@@ -164,7 +124,6 @@ public class SelectedMeetingTime {
     sb.append("class SelectedMeetingTime {\n");
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -220,15 +179,6 @@ public class SelectedMeetingTime {
     // add `end` to the URL query string
     if (getEnd() != null) {
       joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `userIds` to the URL query string
-    if (getUserIds() != null) {
-      for (int i = 0; i < getUserIds().size(); i++) {
-        joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
     }
 
     return joiner.toString();

@@ -50,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ServicesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -212,7 +212,7 @@ public class ServicesApi {
   /**
    * Upsert a service account
    * 
-   * @param recycleKeys Recycle Keys (optional
+   * @param recycleKeys Recycle Keys (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
@@ -244,7 +244,7 @@ public class ServicesApi {
   /**
    * Upsert a service account
    * 
-   * @param recycleKeys Recycle Keys (optional
+   * @param recycleKeys Recycle Keys (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call

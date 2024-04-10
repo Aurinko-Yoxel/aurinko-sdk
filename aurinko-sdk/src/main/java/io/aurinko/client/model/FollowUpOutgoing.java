@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FollowUpOutgoing.JSON_PROPERTY_RULE_ID,
   FollowUpOutgoing.JSON_PROPERTY_ACTION_VARS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class FollowUpOutgoing {
   public static final String JSON_PROPERTY_RULE_ID = "ruleId";
   private Integer ruleId;

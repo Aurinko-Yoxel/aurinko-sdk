@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   DeletedEmailMessage.JSON_PROPERTY_INTERNET_MESSAGE_ID,
   DeletedEmailMessage.JSON_PROPERTY_TIMESTAMP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DeletedEmailMessage {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

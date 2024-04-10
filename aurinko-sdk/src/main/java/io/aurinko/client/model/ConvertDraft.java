@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ConvertDraft.JSON_PROPERTY_MESSAGE_ID,
   ConvertDraft.JSON_PROPERTY_INTERNET_MESSAGE_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ConvertDraft {
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
   private String threadId;
@@ -50,12 +50,9 @@ public class ConvertDraft {
   public ConvertDraft() { 
   }
 
-  @JsonCreator
-  public ConvertDraft(
-    @JsonProperty(JSON_PROPERTY_THREAD_ID) String threadId
-  ) {
-  this();
+  public ConvertDraft threadId(String threadId) {
     this.threadId = threadId;
+    return this;
   }
 
    /**
@@ -71,6 +68,11 @@ public class ConvertDraft {
   }
 
 
+  @JsonProperty(JSON_PROPERTY_THREAD_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThreadId(String threadId) {
+    this.threadId = threadId;
+  }
 
 
   public ConvertDraft messageId(String messageId) {

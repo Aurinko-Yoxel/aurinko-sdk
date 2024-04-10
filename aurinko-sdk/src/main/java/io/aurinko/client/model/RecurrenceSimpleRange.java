@@ -42,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimpleRange.JSON_PROPERTY_COUNT,
   RecurrenceSimpleRange.JSON_PROPERTY_PATTERN_EXCLUSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class RecurrenceSimpleRange {
   /**
    * Gets or Sets type

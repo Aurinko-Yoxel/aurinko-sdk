@@ -107,6 +107,10 @@ docs/FreeBusySchedule.md
 docs/FreeBusyScheduleApi.md
 docs/FreeBusySchedulePage.md
 docs/GroupBookingApi.md
+docs/GroupBookingInDto.md
+docs/GroupBookingOutDto.md
+docs/GroupBookingPage.md
+docs/GroupBookingUpdateDto.md
 docs/ManagedAccountsApi.md
 docs/MeetingAttendee.md
 docs/MeetingInfo.md
@@ -144,7 +148,6 @@ docs/SubscriptionResponse.md
 docs/SubscriptionsPage.md
 docs/SuggestMeetingTimesRequest.md
 docs/SuggestMeetingTimesResponse.md
-docs/SuggestMeetingTimesResponseItemsInner.md
 docs/SyncStatus.md
 docs/SyncTasksPage.md
 docs/Task.md
@@ -163,6 +166,7 @@ docs/TaskUpdate.md
 docs/TaskUpdateResponse.md
 docs/TasksApi.md
 docs/TasksPage.md
+docs/TimeInterval.md
 docs/TokenStatus.md
 docs/TrackingData.md
 docs/UpdateDraftTrackingIn.md
@@ -171,6 +175,9 @@ docs/UserAccountType.md
 docs/UserApi.md
 docs/WebhooksApi.md
 docs/WeekWorkSchedule.md
+docs/WorkHoursRequest.md
+docs/WorkHoursResponse.md
+docs/WorkHoursResponseItem.md
 docs/WorkingInterval.md
 git_push.sh
 gradle.properties
@@ -300,6 +307,10 @@ src/main/java/io/aurinko/client/model/FreeBusyItem.java
 src/main/java/io/aurinko/client/model/FreeBusyRequest.java
 src/main/java/io/aurinko/client/model/FreeBusySchedule.java
 src/main/java/io/aurinko/client/model/FreeBusySchedulePage.java
+src/main/java/io/aurinko/client/model/GroupBookingInDto.java
+src/main/java/io/aurinko/client/model/GroupBookingOutDto.java
+src/main/java/io/aurinko/client/model/GroupBookingPage.java
+src/main/java/io/aurinko/client/model/GroupBookingUpdateDto.java
 src/main/java/io/aurinko/client/model/MeetingAttendee.java
 src/main/java/io/aurinko/client/model/MeetingInfo.java
 src/main/java/io/aurinko/client/model/OccurrenceInfo.java
@@ -334,7 +345,6 @@ src/main/java/io/aurinko/client/model/SubscriptionResponse.java
 src/main/java/io/aurinko/client/model/SubscriptionsPage.java
 src/main/java/io/aurinko/client/model/SuggestMeetingTimesRequest.java
 src/main/java/io/aurinko/client/model/SuggestMeetingTimesResponse.java
-src/main/java/io/aurinko/client/model/SuggestMeetingTimesResponseItemsInner.java
 src/main/java/io/aurinko/client/model/SyncStatus.java
 src/main/java/io/aurinko/client/model/SyncTasksPage.java
 src/main/java/io/aurinko/client/model/Task.java
@@ -350,12 +360,16 @@ src/main/java/io/aurinko/client/model/TaskStatus.java
 src/main/java/io/aurinko/client/model/TaskUpdate.java
 src/main/java/io/aurinko/client/model/TaskUpdateResponse.java
 src/main/java/io/aurinko/client/model/TasksPage.java
+src/main/java/io/aurinko/client/model/TimeInterval.java
 src/main/java/io/aurinko/client/model/TokenStatus.java
 src/main/java/io/aurinko/client/model/TrackingData.java
 src/main/java/io/aurinko/client/model/UpdateDraftTrackingIn.java
 src/main/java/io/aurinko/client/model/UpdateMessageStatusData.java
 src/main/java/io/aurinko/client/model/UserAccountType.java
 src/main/java/io/aurinko/client/model/WeekWorkSchedule.java
+src/main/java/io/aurinko/client/model/WorkHoursRequest.java
+src/main/java/io/aurinko/client/model/WorkHoursResponse.java
+src/main/java/io/aurinko/client/model/WorkHoursResponseItem.java
 src/main/java/io/aurinko/client/model/WorkingInterval.java
 src/test/java/io/aurinko/api/AccountApiTest.java
 src/test/java/io/aurinko/api/AccountsApiTest.java
@@ -466,6 +480,10 @@ src/test/java/io/aurinko/client/model/FreeBusyItemTest.java
 src/test/java/io/aurinko/client/model/FreeBusyRequestTest.java
 src/test/java/io/aurinko/client/model/FreeBusySchedulePageTest.java
 src/test/java/io/aurinko/client/model/FreeBusyScheduleTest.java
+src/test/java/io/aurinko/client/model/GroupBookingInDtoTest.java
+src/test/java/io/aurinko/client/model/GroupBookingOutDtoTest.java
+src/test/java/io/aurinko/client/model/GroupBookingPageTest.java
+src/test/java/io/aurinko/client/model/GroupBookingUpdateDtoTest.java
 src/test/java/io/aurinko/client/model/MeetingAttendeeTest.java
 src/test/java/io/aurinko/client/model/MeetingInfoTest.java
 src/test/java/io/aurinko/client/model/OccurrenceInfoTest.java
@@ -499,7 +517,6 @@ src/test/java/io/aurinko/client/model/SubscriptionRequestTest.java
 src/test/java/io/aurinko/client/model/SubscriptionResponseTest.java
 src/test/java/io/aurinko/client/model/SubscriptionsPageTest.java
 src/test/java/io/aurinko/client/model/SuggestMeetingTimesRequestTest.java
-src/test/java/io/aurinko/client/model/SuggestMeetingTimesResponseItemsInnerTest.java
 src/test/java/io/aurinko/client/model/SuggestMeetingTimesResponseTest.java
 src/test/java/io/aurinko/client/model/SyncStatusTest.java
 src/test/java/io/aurinko/client/model/SyncTasksPageTest.java
@@ -516,10 +533,14 @@ src/test/java/io/aurinko/client/model/TaskTest.java
 src/test/java/io/aurinko/client/model/TaskUpdateResponseTest.java
 src/test/java/io/aurinko/client/model/TaskUpdateTest.java
 src/test/java/io/aurinko/client/model/TasksPageTest.java
+src/test/java/io/aurinko/client/model/TimeIntervalTest.java
 src/test/java/io/aurinko/client/model/TokenStatusTest.java
 src/test/java/io/aurinko/client/model/TrackingDataTest.java
 src/test/java/io/aurinko/client/model/UpdateDraftTrackingInTest.java
 src/test/java/io/aurinko/client/model/UpdateMessageStatusDataTest.java
 src/test/java/io/aurinko/client/model/UserAccountTypeTest.java
 src/test/java/io/aurinko/client/model/WeekWorkScheduleTest.java
+src/test/java/io/aurinko/client/model/WorkHoursRequestTest.java
+src/test/java/io/aurinko/client/model/WorkHoursResponseItemTest.java
+src/test/java/io/aurinko/client/model/WorkHoursResponseTest.java
 src/test/java/io/aurinko/client/model/WorkingIntervalTest.java

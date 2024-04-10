@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EventDateTime.JSON_PROPERTY_DATE_TIME,
   EventDateTime.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class EventDateTime {
   public static final String JSON_PROPERTY_DATE_ONLY = "dateOnly";
   private LocalDate dateOnly;

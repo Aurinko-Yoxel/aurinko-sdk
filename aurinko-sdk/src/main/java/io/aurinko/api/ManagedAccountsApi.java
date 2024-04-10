@@ -49,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ManagedAccountsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -91,7 +91,7 @@ public class ManagedAccountsApi {
    * @param accId A service account id (required)
    * @param userAccount  (optional)
    * @param userId  (optional)
-   * @param recycleKeys  (optional
+   * @param recycleKeys  (optional)
    * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;AccountSaveResult&gt;
@@ -127,7 +127,7 @@ public class ManagedAccountsApi {
    * @param accId A service account id (required)
    * @param userAccount  (optional)
    * @param userId  (optional)
-   * @param recycleKeys  (optional
+   * @param recycleKeys  (optional)
    * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;

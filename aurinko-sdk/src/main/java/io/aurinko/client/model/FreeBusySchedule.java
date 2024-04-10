@@ -41,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FreeBusySchedule.JSON_PROPERTY_ERROR,
   FreeBusySchedule.JSON_PROPERTY_WORK_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class FreeBusySchedule {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;

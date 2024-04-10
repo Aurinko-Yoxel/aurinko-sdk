@@ -49,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class EmailFoldersApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -185,7 +185,7 @@ public class EmailFoldersApi {
    * @param pageToken  (optional)
    * @param q Only return messages matching the specified query. For example, \&quot;from:someuser@example.com after:01/01/2020\&quot;  (optional)
    * @param bodyType  (optional)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @return CompletableFuture&lt;EmailMessagesPageNext&gt;
    * @throws ApiException if fails to make API call
    */
@@ -220,7 +220,7 @@ public class EmailFoldersApi {
    * @param pageToken  (optional)
    * @param q Only return messages matching the specified query. For example, \&quot;from:someuser@example.com after:01/01/2020\&quot;  (optional)
    * @param bodyType  (optional)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessagesPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */

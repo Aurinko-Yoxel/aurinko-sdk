@@ -21,6 +21,8 @@ import io.aurinko.client.model.FreeBusyRequest;
 import io.aurinko.client.model.FreeBusySchedulePage;
 import io.aurinko.client.model.SuggestMeetingTimesRequest;
 import io.aurinko.client.model.SuggestMeetingTimesResponse;
+import io.aurinko.client.model.WorkHoursRequest;
+import io.aurinko.client.model.WorkHoursResponse;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,7 +51,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class FreeBusyScheduleApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -85,6 +87,100 @@ public class FreeBusyScheduleApi {
     return operationId + " call failed with: " + statusCode + " - " + body;
   }
 
+  /**
+   * Get working hours for a collection of users, or resources.
+   * 
+   * @param workHoursRequest  (optional)
+   * @return CompletableFuture&lt;WorkHoursResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<WorkHoursResponse> calendarWorkhours(WorkHoursRequest workHoursRequest) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = calendarWorkhoursRequestBuilder(workHoursRequest);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("calendarWorkhours", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<WorkHoursResponse>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Get working hours for a collection of users, or resources.
+   * 
+   * @param workHoursRequest  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;WorkHoursResponse&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<WorkHoursResponse>> calendarWorkhoursWithHttpInfo(WorkHoursRequest workHoursRequest) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = calendarWorkhoursRequestBuilder(workHoursRequest);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("calendarWorkhours", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<WorkHoursResponse>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<WorkHoursResponse>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder calendarWorkhoursRequestBuilder(WorkHoursRequest workHoursRequest) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/calendars/workHours";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(workHoursRequest);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
   /**
    * Get the free/busy availability information for a collection of users, or resources
    * 

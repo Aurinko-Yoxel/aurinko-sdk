@@ -52,7 +52,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DraftsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -204,7 +204,7 @@ public class DraftsApi {
    * 
    * @param draftId draft message identifier (required)
    * @param bodyType  (optional)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @param loadInlines automatically pre-load relevant inline attachments (optional, default to false)
    * @return CompletableFuture&lt;EmailDraft&gt;
    * @throws ApiException if fails to make API call
@@ -238,7 +238,7 @@ public class DraftsApi {
    * 
    * @param draftId draft message identifier (required)
    * @param bodyType  (optional)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @param loadInlines automatically pre-load relevant inline attachments (optional, default to false)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailDraft&gt;&gt;
    * @throws ApiException if fails to make API call

@@ -24,81 +24,149 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
+import io.aurinko.client.model.GroupBookingOutDto;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * SuggestMeetingTimesResponseItemsInner
+ * GroupBookingPage
  */
 @JsonPropertyOrder({
-  SuggestMeetingTimesResponseItemsInner.JSON_PROPERTY_START,
-  SuggestMeetingTimesResponseItemsInner.JSON_PROPERTY_END
+  GroupBookingPage.JSON_PROPERTY_OFFSET,
+  GroupBookingPage.JSON_PROPERTY_TOTAL_SIZE,
+  GroupBookingPage.JSON_PROPERTY_DONE,
+  GroupBookingPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SuggestMeetingTimesResponseItemsInner {
-  public static final String JSON_PROPERTY_START = "start";
-  private OffsetDateTime start;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+public class GroupBookingPage {
+  public static final String JSON_PROPERTY_OFFSET = "offset";
+  private Integer offset;
 
-  public static final String JSON_PROPERTY_END = "end";
-  private OffsetDateTime end;
+  public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
+  private Long totalSize;
 
-  public SuggestMeetingTimesResponseItemsInner() { 
+  public static final String JSON_PROPERTY_DONE = "done";
+  private Boolean done;
+
+  public static final String JSON_PROPERTY_RECORDS = "records";
+  private List<GroupBookingOutDto> records;
+
+  public GroupBookingPage() { 
   }
 
-  public SuggestMeetingTimesResponseItemsInner start(OffsetDateTime start) {
-    this.start = start;
+  public GroupBookingPage offset(Integer offset) {
+    this.offset = offset;
     return this;
   }
 
    /**
-   * Get start
-   * @return start
+   * Get offset
+   * @return offset
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START)
+  @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OffsetDateTime getStart() {
-    return start;
+  public Integer getOffset() {
+    return offset;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_START)
+  @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
-    this.start = start;
+  public void setOffset(Integer offset) {
+    this.offset = offset;
   }
 
 
-  public SuggestMeetingTimesResponseItemsInner end(OffsetDateTime end) {
-    this.end = end;
+  public GroupBookingPage totalSize(Long totalSize) {
+    this.totalSize = totalSize;
     return this;
   }
 
    /**
-   * Get end
-   * @return end
+   * Get totalSize
+   * @return totalSize
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_END)
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OffsetDateTime getEnd() {
-    return end;
+  public Long getTotalSize() {
+    return totalSize;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_END)
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
-    this.end = end;
+  public void setTotalSize(Long totalSize) {
+    this.totalSize = totalSize;
+  }
+
+
+  public GroupBookingPage done(Boolean done) {
+    this.done = done;
+    return this;
+  }
+
+   /**
+   * Get done
+   * @return done
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getDone() {
+    return done;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDone(Boolean done) {
+    this.done = done;
+  }
+
+
+  public GroupBookingPage records(List<GroupBookingOutDto> records) {
+    this.records = records;
+    return this;
+  }
+
+  public GroupBookingPage addRecordsItem(GroupBookingOutDto recordsItem) {
+    if (this.records == null) {
+      this.records = new ArrayList<>();
+    }
+    this.records.add(recordsItem);
+    return this;
+  }
+
+   /**
+   * Get records
+   * @return records
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RECORDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<GroupBookingOutDto> getRecords() {
+    return records;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_RECORDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRecords(List<GroupBookingOutDto> records) {
+    this.records = records;
   }
 
 
   /**
-   * Return true if this SuggestMeetingTimesResponse_items_inner object is equal to o.
+   * Return true if this GroupBookingPage object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -108,22 +176,26 @@ public class SuggestMeetingTimesResponseItemsInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SuggestMeetingTimesResponseItemsInner suggestMeetingTimesResponseItemsInner = (SuggestMeetingTimesResponseItemsInner) o;
-    return Objects.equals(this.start, suggestMeetingTimesResponseItemsInner.start) &&
-        Objects.equals(this.end, suggestMeetingTimesResponseItemsInner.end);
+    GroupBookingPage groupBookingPage = (GroupBookingPage) o;
+    return Objects.equals(this.offset, groupBookingPage.offset) &&
+        Objects.equals(this.totalSize, groupBookingPage.totalSize) &&
+        Objects.equals(this.done, groupBookingPage.done) &&
+        Objects.equals(this.records, groupBookingPage.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end);
+    return Objects.hash(offset, totalSize, done, records);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SuggestMeetingTimesResponseItemsInner {\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
+    sb.append("class GroupBookingPage {\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
+    sb.append("    done: ").append(toIndentedString(done)).append("\n");
+    sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -171,14 +243,29 @@ public class SuggestMeetingTimesResponseItemsInner {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `start` to the URL query string
-    if (getStart() != null) {
-      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `offset` to the URL query string
+    if (getOffset() != null) {
+      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `end` to the URL query string
-    if (getEnd() != null) {
-      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `totalSize` to the URL query string
+    if (getTotalSize() != null) {
+      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `done` to the URL query string
+    if (getDone() != null) {
+      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `records` to the URL query string
+    if (getRecords() != null) {
+      for (int i = 0; i < getRecords().size(); i++) {
+        if (getRecords().get(i) != null) {
+          joiner.add(getRecords().get(i).toUrlQueryString(String.format("%srecords%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

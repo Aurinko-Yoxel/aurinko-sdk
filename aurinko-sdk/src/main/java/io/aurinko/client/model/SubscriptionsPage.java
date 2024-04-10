@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SubscriptionsPage.JSON_PROPERTY_DONE,
   SubscriptionsPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class SubscriptionsPage {
   public static final String JSON_PROPERTY_OFFSET = "offset";
   private Integer offset;

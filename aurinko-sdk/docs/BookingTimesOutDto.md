@@ -19,6 +19,8 @@
 |**additionalFields** | [**List&lt;AdditionalField&gt;**](AdditionalField.md) | List of substitution variables like {{name}}, {{openMeetingUrl}},... |  [optional] |
 |**limit** | **Integer** | Next request limit |  [optional] |
 |**offset** | **Integer** | Next request offset |  [optional] |
+|**totalSize** | **Integer** | Count of related provider&#39;s sources |  [optional] |
+|**done** | **Boolean** | Is all related provider&#39;s sources requested |  [optional] |
 
 
 

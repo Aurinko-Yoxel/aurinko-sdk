@@ -489,7 +489,7 @@ CompletableFuture<ApiResponse<[**EmailAttachmentContent**](EmailAttachmentConten
 
 ## message
 
-> CompletableFuture<EmailMessage> message(messageId, bodyType, nativeProperties, loadInlines)
+> CompletableFuture<EmailMessage> message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted)
 
 Get a message
 
@@ -558,8 +558,9 @@ public class Example {
         BodyType bodyType = BodyType.fromValue("html"); // BodyType | Default html
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean loadInlines = false; // Boolean | automatically pre-load relevant inline attachments
+        Boolean stripQuoted = false; // Boolean | strip quoted elements from message body
         try {
-            CompletableFuture<EmailMessage> result = apiInstance.message(messageId, bodyType, nativeProperties, loadInlines);
+            CompletableFuture<EmailMessage> result = apiInstance.message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling MessagesApi#message");
@@ -581,6 +582,7 @@ public class Example {
 | **bodyType** | [**BodyType**](.md)| Default html | [optional] [enum: html, text] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **loadInlines** | **Boolean**| automatically pre-load relevant inline attachments | [optional] [default to false] |
+| **stripQuoted** | **Boolean**| strip quoted elements from message body | [optional] [default to false] |
 
 ### Return type
 
@@ -604,7 +606,7 @@ CompletableFuture<[**EmailMessage**](EmailMessage.md)>
 
 ## messageWithHttpInfo
 
-> CompletableFuture<ApiResponse<EmailMessage>> message messageWithHttpInfo(messageId, bodyType, nativeProperties, loadInlines)
+> CompletableFuture<ApiResponse<EmailMessage>> message messageWithHttpInfo(messageId, bodyType, nativeProperties, loadInlines, stripQuoted)
 
 Get a message
 
@@ -674,8 +676,9 @@ public class Example {
         BodyType bodyType = BodyType.fromValue("html"); // BodyType | Default html
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean loadInlines = false; // Boolean | automatically pre-load relevant inline attachments
+        Boolean stripQuoted = false; // Boolean | strip quoted elements from message body
         try {
-            CompletableFuture<ApiResponse<EmailMessage>> response = apiInstance.messageWithHttpInfo(messageId, bodyType, nativeProperties, loadInlines);
+            CompletableFuture<ApiResponse<EmailMessage>> response = apiInstance.messageWithHttpInfo(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -706,6 +709,7 @@ public class Example {
 | **bodyType** | [**BodyType**](.md)| Default html | [optional] [enum: html, text] |
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **loadInlines** | **Boolean**| automatically pre-load relevant inline attachments | [optional] [default to false] |
+| **stripQuoted** | **Boolean**| strip quoted elements from message body | [optional] [default to false] |
 
 ### Return type
 

@@ -32,13 +32,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * ContactRelation
  */
 @JsonPropertyOrder({
-  ContactRelation.JSON_PROPERTY_VALUE,
+  ContactRelation.JSON_PROPERTY_NAME,
   ContactRelation.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ContactRelation {
-  public static final String JSON_PROPERTY_VALUE = "value";
-  private String value;
+  public static final String JSON_PROPERTY_NAME = "name";
+  private String name;
 
   /**
    * Gets or Sets type
@@ -85,28 +85,28 @@ public class ContactRelation {
   public ContactRelation() { 
   }
 
-  public ContactRelation value(String value) {
-    this.value = value;
+  public ContactRelation name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get value
-   * @return value
+   * Get name
+   * @return name
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getValue() {
-    return value;
+  public String getName() {
+    return name;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(String value) {
-    this.value = value;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -147,20 +147,20 @@ public class ContactRelation {
       return false;
     }
     ContactRelation contactRelation = (ContactRelation) o;
-    return Objects.equals(this.value, contactRelation.value) &&
+    return Objects.equals(this.name, contactRelation.name) &&
         Objects.equals(this.type, contactRelation.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, type);
+    return Objects.hash(name, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContactRelation {\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -209,9 +209,9 @@ public class ContactRelation {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `value` to the URL query string
-    if (getValue() != null) {
-      joiner.add(String.format("%svalue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getValue()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `type` to the URL query string

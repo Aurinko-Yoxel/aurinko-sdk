@@ -1,6 +1,6 @@
 
 
-# SuggestMeetingTimesResponseItemsInner
+# TimeInterval
 
 
 ## Properties

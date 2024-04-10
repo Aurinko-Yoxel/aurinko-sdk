@@ -53,7 +53,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class EventsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -429,7 +429,7 @@ public class EventsApi {
    * 
    * @param calendarId Calendar id (required)
    * @param eventId Event id (required)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @return CompletableFuture&lt;Event&gt;
    * @throws ApiException if fails to make API call
    */
@@ -462,7 +462,7 @@ public class EventsApi {
    * 
    * @param calendarId Calendar id (required)
    * @param eventId Event id (required)
-   * @param nativeProperties  (optional
+   * @param nativeProperties  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;Event&gt;&gt;
    * @throws ApiException if fails to make API call
    */

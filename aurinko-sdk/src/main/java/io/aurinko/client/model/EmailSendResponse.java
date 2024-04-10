@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailSendResponse.JSON_PROPERTY_PROCESSING_STATUS,
   EmailSendResponse.JSON_PROPERTY_PROCESSING_ERROR
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class EmailSendResponse {
   /**
    * Gets or Sets status

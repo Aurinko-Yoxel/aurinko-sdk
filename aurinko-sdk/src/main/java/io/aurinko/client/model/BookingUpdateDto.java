@@ -48,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingUpdateDto.JSON_PROPERTY_START_CONFERENCE,
   BookingUpdateDto.JSON_PROPERTY_OPEN_MEETING_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class BookingUpdateDto {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

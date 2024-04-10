@@ -50,7 +50,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   TrackingData.JSON_PROPERTY_IGNORE_OPEN_CLICKS,
   TrackingData.JSON_PROPERTY_HAS_BOUNCED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class TrackingData {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
