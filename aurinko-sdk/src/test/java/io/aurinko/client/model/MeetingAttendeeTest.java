@@ -23,21 +23,21 @@ import io.aurinko.client.model.WeekWorkSchedule;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for MeetingAttendee
  */
-public class MeetingAttendeeTest {
+class MeetingAttendeeTest {
     private final MeetingAttendee model = new MeetingAttendee();
 
     /**
      * Model tests for MeetingAttendee
      */
     @Test
-    public void testMeetingAttendee() {
+    void testMeetingAttendee() {
         // TODO: test MeetingAttendee
     }
 
@@ -45,7 +45,7 @@ public class MeetingAttendeeTest {
      * Test the property 'email'
      */
     @Test
-    public void emailTest() {
+    void emailTest() {
         // TODO: test email
     }
 
@@ -53,7 +53,7 @@ public class MeetingAttendeeTest {
      * Test the property 'timezone'
      */
     @Test
-    public void timezoneTest() {
+    void timezoneTest() {
         // TODO: test timezone
     }
 
@@ -61,7 +61,7 @@ public class MeetingAttendeeTest {
      * Test the property 'workHours'
      */
     @Test
-    public void workHoursTest() {
+    void workHoursTest() {
         // TODO: test workHours
     }
 
@@ -69,7 +69,7 @@ public class MeetingAttendeeTest {
      * Test the property 'error'
      */
     @Test
-    public void errorTest() {
+    void errorTest() {
         // TODO: test error
     }
 
@@ -77,7 +77,7 @@ public class MeetingAttendeeTest {
      * Test the property 'busyIntervals'
      */
     @Test
-    public void busyIntervalsTest() {
+    void busyIntervalsTest() {
         // TODO: test busyIntervals
     }
 
@@ -85,7 +85,7 @@ public class MeetingAttendeeTest {
      * Test the property 'freeIntervals'
      */
     @Test
-    public void freeIntervalsTest() {
+    void freeIntervalsTest() {
         // TODO: test freeIntervals
     }
 

@@ -13,19 +13,19 @@
 
 package io.aurinko.client.model;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ServiceTypeNonDaemon
  */
-public class ServiceTypeNonDaemonTest {
+class ServiceTypeNonDaemonTest {
     /**
      * Model tests for ServiceTypeNonDaemon
      */
     @Test
-    public void testServiceTypeNonDaemon() {
+    void testServiceTypeNonDaemon() {
         // TODO: test ServiceTypeNonDaemon
     }
 

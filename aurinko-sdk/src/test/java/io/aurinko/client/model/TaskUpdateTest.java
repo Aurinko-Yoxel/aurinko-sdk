@@ -24,21 +24,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for TaskUpdate
  */
-public class TaskUpdateTest {
+class TaskUpdateTest {
     private final TaskUpdate model = new TaskUpdate();
 
     /**
      * Model tests for TaskUpdate
      */
     @Test
-    public void testTaskUpdate() {
+    void testTaskUpdate() {
         // TODO: test TaskUpdate
     }
 
@@ -46,7 +46,7 @@ public class TaskUpdateTest {
      * Test the property 'title'
      */
     @Test
-    public void titleTest() {
+    void titleTest() {
         // TODO: test title
     }
 
@@ -54,7 +54,7 @@ public class TaskUpdateTest {
      * Test the property 'parentId'
      */
     @Test
-    public void parentIdTest() {
+    void parentIdTest() {
         // TODO: test parentId
     }
 
@@ -62,7 +62,7 @@ public class TaskUpdateTest {
      * Test the property 'previousId'
      */
     @Test
-    public void previousIdTest() {
+    void previousIdTest() {
         // TODO: test previousId
     }
 
@@ -70,7 +70,7 @@ public class TaskUpdateTest {
      * Test the property 'notes'
      */
     @Test
-    public void notesTest() {
+    void notesTest() {
         // TODO: test notes
     }
 
@@ -78,7 +78,7 @@ public class TaskUpdateTest {
      * Test the property 'status'
      */
     @Test
-    public void statusTest() {
+    void statusTest() {
         // TODO: test status
     }
 
@@ -86,7 +86,7 @@ public class TaskUpdateTest {
      * Test the property 'importance'
      */
     @Test
-    public void importanceTest() {
+    void importanceTest() {
         // TODO: test importance
     }
 
@@ -94,7 +94,7 @@ public class TaskUpdateTest {
      * Test the property 'due'
      */
     @Test
-    public void dueTest() {
+    void dueTest() {
         // TODO: test due
     }
 
@@ -102,7 +102,7 @@ public class TaskUpdateTest {
      * Test the property 'startDateTime'
      */
     @Test
-    public void startDateTimeTest() {
+    void startDateTimeTest() {
         // TODO: test startDateTime
     }
 
@@ -110,7 +110,7 @@ public class TaskUpdateTest {
      * Test the property 'categories'
      */
     @Test
-    public void categoriesTest() {
+    void categoriesTest() {
         // TODO: test categories
     }
 

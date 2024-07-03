@@ -25,21 +25,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for SuggestMeetingTimesRequest
  */
-public class SuggestMeetingTimesRequestTest {
+class SuggestMeetingTimesRequestTest {
     private final SuggestMeetingTimesRequest model = new SuggestMeetingTimesRequest();
 
     /**
      * Model tests for SuggestMeetingTimesRequest
      */
     @Test
-    public void testSuggestMeetingTimesRequest() {
+    void testSuggestMeetingTimesRequest() {
         // TODO: test SuggestMeetingTimesRequest
     }
 
@@ -47,7 +47,7 @@ public class SuggestMeetingTimesRequestTest {
      * Test the property 'timeMin'
      */
     @Test
-    public void timeMinTest() {
+    void timeMinTest() {
         // TODO: test timeMin
     }
 
@@ -55,7 +55,7 @@ public class SuggestMeetingTimesRequestTest {
      * Test the property 'timeMax'
      */
     @Test
-    public void timeMaxTest() {
+    void timeMaxTest() {
         // TODO: test timeMax
     }
 
@@ -63,7 +63,7 @@ public class SuggestMeetingTimesRequestTest {
      * Test the property 'durationMinutes'
      */
     @Test
-    public void durationMinutesTest() {
+    void durationMinutesTest() {
         // TODO: test durationMinutes
     }
 
@@ -71,7 +71,7 @@ public class SuggestMeetingTimesRequestTest {
      * Test the property 'availabilityStep'
      */
     @Test
-    public void availabilityStepTest() {
+    void availabilityStepTest() {
         // TODO: test availabilityStep
     }
 
@@ -79,7 +79,7 @@ public class SuggestMeetingTimesRequestTest {
      * Test the property 'attendees'
      */
     @Test
-    public void attendeesTest() {
+    void attendeesTest() {
         // TODO: test attendees
     }
 
@@ -87,7 +87,7 @@ public class SuggestMeetingTimesRequestTest {
      * Test the property 'defaultTimezone'
      */
     @Test
-    public void defaultTimezoneTest() {
+    void defaultTimezoneTest() {
         // TODO: test defaultTimezone
     }
 
@@ -95,7 +95,7 @@ public class SuggestMeetingTimesRequestTest {
      * Test the property 'defaultWorkHours'
      */
     @Test
-    public void defaultWorkHoursTest() {
+    void defaultWorkHoursTest() {
         // TODO: test defaultWorkHours
     }
 
@@ -103,7 +103,7 @@ public class SuggestMeetingTimesRequestTest {
      * Test the property 'freeStatuses'
      */
     @Test
-    public void freeStatusesTest() {
+    void freeStatusesTest() {
         // TODO: test freeStatuses
     }
 

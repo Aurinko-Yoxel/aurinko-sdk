@@ -51,7 +51,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class FollowUpRobotApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -181,6 +181,7 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Delete a follow up rule
    * 
@@ -274,6 +275,7 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get a follow up configuration
    * 
@@ -360,6 +362,7 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Check a conversation status
    * 
@@ -453,6 +456,7 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get a list of conversations touched by followup
    * 
@@ -564,6 +568,7 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get follow up rules
    * 
@@ -650,6 +655,7 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Update a follow up configuration
    * 
@@ -744,6 +750,7 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Update a conversation status
    * 
@@ -845,6 +852,7 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Update a follow up rule
    * 
@@ -946,4 +954,5 @@ public class FollowUpRobotApi {
     }
     return localVarRequestBuilder;
   }
+
 }

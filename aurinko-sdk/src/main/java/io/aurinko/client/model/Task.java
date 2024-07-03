@@ -55,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Task.JSON_PROPERTY_OWNER,
   Task.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Task {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -91,13 +91,13 @@ public class Task {
   private OffsetDateTime completed;
 
   public static final String JSON_PROPERTY_LINKS = "links";
-  private List<TaskLink> links;
+  private List<TaskLink> links = new ArrayList<>();
 
   public static final String JSON_PROPERTY_START_DATE_TIME = "startDateTime";
   private OffsetDateTime startDateTime;
 
   public static final String JSON_PROPERTY_CATEGORIES = "categories";
-  private List<String> categories;
+  private List<String> categories = new ArrayList<>();
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   private String owner;
@@ -138,7 +138,7 @@ public class Task {
   }
 
   public static final String JSON_PROPERTY_OMITTED = "omitted";
-  private List<OmittedEnum> omitted;
+  private List<OmittedEnum> omitted = new ArrayList<>();
 
   public Task() { 
   }

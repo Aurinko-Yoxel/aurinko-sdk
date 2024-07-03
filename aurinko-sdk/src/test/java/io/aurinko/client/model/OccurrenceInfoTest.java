@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.EventDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for OccurrenceInfo
  */
-public class OccurrenceInfoTest {
+class OccurrenceInfoTest {
     private final OccurrenceInfo model = new OccurrenceInfo();
 
     /**
      * Model tests for OccurrenceInfo
      */
     @Test
-    public void testOccurrenceInfo() {
+    void testOccurrenceInfo() {
         // TODO: test OccurrenceInfo
     }
 
@@ -42,7 +42,7 @@ public class OccurrenceInfoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class OccurrenceInfoTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 
@@ -58,7 +58,7 @@ public class OccurrenceInfoTest {
      * Test the property 'originalStart'
      */
     @Test
-    public void originalStartTest() {
+    void originalStartTest() {
         // TODO: test originalStart
     }
 
@@ -66,7 +66,7 @@ public class OccurrenceInfoTest {
      * Test the property 'start'
      */
     @Test
-    public void startTest() {
+    void startTest() {
         // TODO: test start
     }
 
@@ -74,7 +74,7 @@ public class OccurrenceInfoTest {
      * Test the property 'masterId'
      */
     @Test
-    public void masterIdTest() {
+    void masterIdTest() {
         // TODO: test masterId
     }
 

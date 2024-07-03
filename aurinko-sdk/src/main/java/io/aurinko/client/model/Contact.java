@@ -65,7 +65,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Contact.JSON_PROPERTY_HAS_PHOTO,
   Contact.JSON_PROPERTY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Contact {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -92,28 +92,28 @@ public class Contact {
   private ContactCompany company;
 
   public static final String JSON_PROPERTY_RELATIONS = "relations";
-  private List<ContactRelation> relations;
+  private List<ContactRelation> relations = new ArrayList<>();
 
   public static final String JSON_PROPERTY_BIRTHDAY = "birthday";
   private String birthday;
 
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
-  private List<String> keywords;
+  private List<String> keywords = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NOTES = "notes";
   private String notes;
 
   public static final String JSON_PROPERTY_EMAIL_ADDRESSES = "emailAddresses";
-  private List<ContactEmailAddress> emailAddresses;
+  private List<ContactEmailAddress> emailAddresses = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PHONE_NUMBERS = "phoneNumbers";
-  private List<ContactPhoneNumber> phoneNumbers;
+  private List<ContactPhoneNumber> phoneNumbers = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ADDRESSES = "addresses";
-  private List<ContactPostalAddress> addresses;
+  private List<ContactPostalAddress> addresses = new ArrayList<>();
 
   public static final String JSON_PROPERTY_URLS = "urls";
-  private List<ContactUrl> urls;
+  private List<ContactUrl> urls = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NATIVE_PROPERTIES = "nativeProperties";
   private Map<String, String> nativeProperties = new HashMap<>();

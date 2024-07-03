@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for WorkingInterval
  */
-public class WorkingIntervalTest {
+class WorkingIntervalTest {
     private final WorkingInterval model = new WorkingInterval();
 
     /**
      * Model tests for WorkingInterval
      */
     @Test
-    public void testWorkingInterval() {
+    void testWorkingInterval() {
         // TODO: test WorkingInterval
     }
 
@@ -41,7 +41,7 @@ public class WorkingIntervalTest {
      * Test the property 'start'
      */
     @Test
-    public void startTest() {
+    void startTest() {
         // TODO: test start
     }
 
@@ -49,7 +49,7 @@ public class WorkingIntervalTest {
      * Test the property 'end'
      */
     @Test
-    public void endTest() {
+    void endTest() {
         // TODO: test end
     }
 

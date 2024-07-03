@@ -48,7 +48,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ContSyncApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -191,6 +191,7 @@ public class ContSyncApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Start a new contacts sync
    * For Office 365, Outlook.com, and MS Exchange accounts this method works with the default Contacts folder only. For Gmail accounts it processes all user contacts except &#39;Other contacts&#39;. 
@@ -277,6 +278,7 @@ public class ContSyncApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Request changed contacts (deltas)
    * 
@@ -384,4 +386,5 @@ public class ContSyncApi {
     }
     return localVarRequestBuilder;
   }
+
 }

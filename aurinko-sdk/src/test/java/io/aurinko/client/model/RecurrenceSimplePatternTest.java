@@ -22,21 +22,21 @@ import io.aurinko.client.model.DayOfWeek;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for RecurrenceSimplePattern
  */
-public class RecurrenceSimplePatternTest {
+class RecurrenceSimplePatternTest {
     private final RecurrenceSimplePattern model = new RecurrenceSimplePattern();
 
     /**
      * Model tests for RecurrenceSimplePattern
      */
     @Test
-    public void testRecurrenceSimplePattern() {
+    void testRecurrenceSimplePattern() {
         // TODO: test RecurrenceSimplePattern
     }
 
@@ -44,7 +44,7 @@ public class RecurrenceSimplePatternTest {
      * Test the property 'frequency'
      */
     @Test
-    public void frequencyTest() {
+    void frequencyTest() {
         // TODO: test frequency
     }
 
@@ -52,7 +52,7 @@ public class RecurrenceSimplePatternTest {
      * Test the property 'interval'
      */
     @Test
-    public void intervalTest() {
+    void intervalTest() {
         // TODO: test interval
     }
 
@@ -60,7 +60,7 @@ public class RecurrenceSimplePatternTest {
      * Test the property 'daysOfWeek'
      */
     @Test
-    public void daysOfWeekTest() {
+    void daysOfWeekTest() {
         // TODO: test daysOfWeek
     }
 
@@ -68,7 +68,7 @@ public class RecurrenceSimplePatternTest {
      * Test the property 'weekStart'
      */
     @Test
-    public void weekStartTest() {
+    void weekStartTest() {
         // TODO: test weekStart
     }
 
@@ -76,7 +76,7 @@ public class RecurrenceSimplePatternTest {
      * Test the property 'dayOfMonth'
      */
     @Test
-    public void dayOfMonthTest() {
+    void dayOfMonthTest() {
         // TODO: test dayOfMonth
     }
 
@@ -84,7 +84,7 @@ public class RecurrenceSimplePatternTest {
      * Test the property 'monthOfYear'
      */
     @Test
-    public void monthOfYearTest() {
+    void monthOfYearTest() {
         // TODO: test monthOfYear
     }
 
@@ -92,7 +92,7 @@ public class RecurrenceSimplePatternTest {
      * Test the property 'instance'
      */
     @Test
-    public void instanceTest() {
+    void instanceTest() {
         // TODO: test instance
     }
 

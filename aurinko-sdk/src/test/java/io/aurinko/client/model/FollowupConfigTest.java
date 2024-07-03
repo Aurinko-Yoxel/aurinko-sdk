@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for FollowupConfig
  */
-public class FollowupConfigTest {
+class FollowupConfigTest {
     private final FollowupConfig model = new FollowupConfig();
 
     /**
      * Model tests for FollowupConfig
      */
     @Test
-    public void testFollowupConfig() {
+    void testFollowupConfig() {
         // TODO: test FollowupConfig
     }
 
@@ -43,7 +43,7 @@ public class FollowupConfigTest {
      * Test the property 'timezone'
      */
     @Test
-    public void timezoneTest() {
+    void timezoneTest() {
         // TODO: test timezone
     }
 
@@ -51,7 +51,7 @@ public class FollowupConfigTest {
      * Test the property 'emailAliases'
      */
     @Test
-    public void emailAliasesTest() {
+    void emailAliasesTest() {
         // TODO: test emailAliases
     }
 

@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.OutEmailTrack;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for RewriteHtml
  */
-public class RewriteHtmlTest {
+class RewriteHtmlTest {
     private final RewriteHtml model = new RewriteHtml();
 
     /**
      * Model tests for RewriteHtml
      */
     @Test
-    public void testRewriteHtml() {
+    void testRewriteHtml() {
         // TODO: test RewriteHtml
     }
 
@@ -42,7 +42,7 @@ public class RewriteHtmlTest {
      * Test the property 'htmlText'
      */
     @Test
-    public void htmlTextTest() {
+    void htmlTextTest() {
         // TODO: test htmlText
     }
 
@@ -50,7 +50,7 @@ public class RewriteHtmlTest {
      * Test the property 'tracking'
      */
     @Test
-    public void trackingTest() {
+    void trackingTest() {
         // TODO: test tracking
     }
 

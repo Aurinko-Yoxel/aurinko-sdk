@@ -28,21 +28,21 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailMessage
  */
-public class EmailMessageTest {
+class EmailMessageTest {
     private final EmailMessage model = new EmailMessage();
 
     /**
      * Model tests for EmailMessage
      */
     @Test
-    public void testEmailMessage() {
+    void testEmailMessage() {
         // TODO: test EmailMessage
     }
 
@@ -50,7 +50,7 @@ public class EmailMessageTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -58,7 +58,7 @@ public class EmailMessageTest {
      * Test the property 'threadId'
      */
     @Test
-    public void threadIdTest() {
+    void threadIdTest() {
         // TODO: test threadId
     }
 
@@ -66,7 +66,7 @@ public class EmailMessageTest {
      * Test the property 'createdTime'
      */
     @Test
-    public void createdTimeTest() {
+    void createdTimeTest() {
         // TODO: test createdTime
     }
 
@@ -74,7 +74,7 @@ public class EmailMessageTest {
      * Test the property 'lastModifiedTime'
      */
     @Test
-    public void lastModifiedTimeTest() {
+    void lastModifiedTimeTest() {
         // TODO: test lastModifiedTime
     }
 
@@ -82,7 +82,7 @@ public class EmailMessageTest {
      * Test the property 'sentAt'
      */
     @Test
-    public void sentAtTest() {
+    void sentAtTest() {
         // TODO: test sentAt
     }
 
@@ -90,7 +90,7 @@ public class EmailMessageTest {
      * Test the property 'receivedAt'
      */
     @Test
-    public void receivedAtTest() {
+    void receivedAtTest() {
         // TODO: test receivedAt
     }
 
@@ -98,7 +98,7 @@ public class EmailMessageTest {
      * Test the property 'internetMessageId'
      */
     @Test
-    public void internetMessageIdTest() {
+    void internetMessageIdTest() {
         // TODO: test internetMessageId
     }
 
@@ -106,7 +106,7 @@ public class EmailMessageTest {
      * Test the property 'subject'
      */
     @Test
-    public void subjectTest() {
+    void subjectTest() {
         // TODO: test subject
     }
 
@@ -114,7 +114,7 @@ public class EmailMessageTest {
      * Test the property 'sysLabels'
      */
     @Test
-    public void sysLabelsTest() {
+    void sysLabelsTest() {
         // TODO: test sysLabels
     }
 
@@ -122,7 +122,7 @@ public class EmailMessageTest {
      * Test the property 'keywords'
      */
     @Test
-    public void keywordsTest() {
+    void keywordsTest() {
         // TODO: test keywords
     }
 
@@ -130,7 +130,7 @@ public class EmailMessageTest {
      * Test the property 'sysClassifications'
      */
     @Test
-    public void sysClassificationsTest() {
+    void sysClassificationsTest() {
         // TODO: test sysClassifications
     }
 
@@ -138,7 +138,7 @@ public class EmailMessageTest {
      * Test the property 'sensitivity'
      */
     @Test
-    public void sensitivityTest() {
+    void sensitivityTest() {
         // TODO: test sensitivity
     }
 
@@ -146,7 +146,7 @@ public class EmailMessageTest {
      * Test the property 'meetingMessageMethod'
      */
     @Test
-    public void meetingMessageMethodTest() {
+    void meetingMessageMethodTest() {
         // TODO: test meetingMessageMethod
     }
 
@@ -154,7 +154,7 @@ public class EmailMessageTest {
      * Test the property 'from'
      */
     @Test
-    public void fromTest() {
+    void fromTest() {
         // TODO: test from
     }
 
@@ -162,7 +162,7 @@ public class EmailMessageTest {
      * Test the property 'to'
      */
     @Test
-    public void toTest() {
+    void toTest() {
         // TODO: test to
     }
 
@@ -170,7 +170,7 @@ public class EmailMessageTest {
      * Test the property 'cc'
      */
     @Test
-    public void ccTest() {
+    void ccTest() {
         // TODO: test cc
     }
 
@@ -178,7 +178,7 @@ public class EmailMessageTest {
      * Test the property 'bcc'
      */
     @Test
-    public void bccTest() {
+    void bccTest() {
         // TODO: test bcc
     }
 
@@ -186,7 +186,7 @@ public class EmailMessageTest {
      * Test the property 'replyTo'
      */
     @Test
-    public void replyToTest() {
+    void replyToTest() {
         // TODO: test replyTo
     }
 
@@ -194,7 +194,7 @@ public class EmailMessageTest {
      * Test the property 'hasAttachments'
      */
     @Test
-    public void hasAttachmentsTest() {
+    void hasAttachmentsTest() {
         // TODO: test hasAttachments
     }
 
@@ -202,7 +202,7 @@ public class EmailMessageTest {
      * Test the property 'body'
      */
     @Test
-    public void bodyTest() {
+    void bodyTest() {
         // TODO: test body
     }
 
@@ -210,7 +210,7 @@ public class EmailMessageTest {
      * Test the property 'bodySnippet'
      */
     @Test
-    public void bodySnippetTest() {
+    void bodySnippetTest() {
         // TODO: test bodySnippet
     }
 
@@ -218,7 +218,7 @@ public class EmailMessageTest {
      * Test the property 'attachments'
      */
     @Test
-    public void attachmentsTest() {
+    void attachmentsTest() {
         // TODO: test attachments
     }
 
@@ -226,7 +226,7 @@ public class EmailMessageTest {
      * Test the property 'inReplyTo'
      */
     @Test
-    public void inReplyToTest() {
+    void inReplyToTest() {
         // TODO: test inReplyTo
     }
 
@@ -234,7 +234,7 @@ public class EmailMessageTest {
      * Test the property 'references'
      */
     @Test
-    public void referencesTest() {
+    void referencesTest() {
         // TODO: test references
     }
 
@@ -242,7 +242,7 @@ public class EmailMessageTest {
      * Test the property 'threadIndex'
      */
     @Test
-    public void threadIndexTest() {
+    void threadIndexTest() {
         // TODO: test threadIndex
     }
 
@@ -250,7 +250,7 @@ public class EmailMessageTest {
      * Test the property 'internetHeaders'
      */
     @Test
-    public void internetHeadersTest() {
+    void internetHeadersTest() {
         // TODO: test internetHeaders
     }
 
@@ -258,7 +258,7 @@ public class EmailMessageTest {
      * Test the property 'nativeProperties'
      */
     @Test
-    public void nativePropertiesTest() {
+    void nativePropertiesTest() {
         // TODO: test nativeProperties
     }
 
@@ -266,7 +266,7 @@ public class EmailMessageTest {
      * Test the property 'folderId'
      */
     @Test
-    public void folderIdTest() {
+    void folderIdTest() {
         // TODO: test folderId
     }
 
@@ -274,7 +274,7 @@ public class EmailMessageTest {
      * Test the property 'omitted'
      */
     @Test
-    public void omittedTest() {
+    void omittedTest() {
         // TODO: test omitted
     }
 

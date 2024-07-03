@@ -49,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CalSyncApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -199,6 +199,7 @@ public class CalSyncApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Start a new calendar sync
    * 
@@ -321,6 +322,7 @@ public class CalSyncApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Request changed events (deltas)
    * 
@@ -435,4 +437,5 @@ public class CalSyncApi {
     }
     return localVarRequestBuilder;
   }
+
 }

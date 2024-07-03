@@ -41,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailAttachment.JSON_PROPERTY_CONTENT,
   EmailAttachment.JSON_PROPERTY_CONTENT_LOCATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailAttachment {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

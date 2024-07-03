@@ -19,25 +19,26 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.Attendee;
+import io.aurinko.client.model.MeetingResponseType;
 import io.aurinko.client.model.OnlineMeetingDetails;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for MeetingInfo
  */
-public class MeetingInfoTest {
+class MeetingInfoTest {
     private final MeetingInfo model = new MeetingInfo();
 
     /**
      * Model tests for MeetingInfo
      */
     @Test
-    public void testMeetingInfo() {
+    void testMeetingInfo() {
         // TODO: test MeetingInfo
     }
 
@@ -45,7 +46,7 @@ public class MeetingInfoTest {
      * Test the property 'canceled'
      */
     @Test
-    public void canceledTest() {
+    void canceledTest() {
         // TODO: test canceled
     }
 
@@ -53,7 +54,7 @@ public class MeetingInfoTest {
      * Test the property 'attendees'
      */
     @Test
-    public void attendeesTest() {
+    void attendeesTest() {
         // TODO: test attendees
     }
 
@@ -61,7 +62,7 @@ public class MeetingInfoTest {
      * Test the property 'response'
      */
     @Test
-    public void responseTest() {
+    void responseTest() {
         // TODO: test response
     }
 
@@ -69,7 +70,7 @@ public class MeetingInfoTest {
      * Test the property 'attendeePermissions'
      */
     @Test
-    public void attendeePermissionsTest() {
+    void attendeePermissionsTest() {
         // TODO: test attendeePermissions
     }
 
@@ -77,7 +78,7 @@ public class MeetingInfoTest {
      * Test the property 'onlineMeeting'
      */
     @Test
-    public void onlineMeetingTest() {
+    void onlineMeetingTest() {
         // TODO: test onlineMeeting
     }
 
@@ -85,7 +86,7 @@ public class MeetingInfoTest {
      * Test the property 'onlineMeetingProvider'
      */
     @Test
-    public void onlineMeetingProviderTest() {
+    void onlineMeetingProviderTest() {
         // TODO: test onlineMeetingProvider
     }
 
@@ -93,7 +94,7 @@ public class MeetingInfoTest {
      * Test the property 'onlineMeetingDetails'
      */
     @Test
-    public void onlineMeetingDetailsTest() {
+    void onlineMeetingDetailsTest() {
         // TODO: test onlineMeetingDetails
     }
 

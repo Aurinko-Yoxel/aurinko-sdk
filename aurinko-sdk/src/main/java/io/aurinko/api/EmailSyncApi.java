@@ -49,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailSyncApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -192,6 +192,7 @@ public class EmailSyncApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Start a new email sync
    * 
@@ -299,6 +300,7 @@ public class EmailSyncApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Request changed emails (deltas)
    * 
@@ -406,4 +408,5 @@ public class EmailSyncApi {
     }
     return localVarRequestBuilder;
   }
+
 }

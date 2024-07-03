@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for DeletedEmailMessage
  */
-public class DeletedEmailMessageTest {
+class DeletedEmailMessageTest {
     private final DeletedEmailMessage model = new DeletedEmailMessage();
 
     /**
      * Model tests for DeletedEmailMessage
      */
     @Test
-    public void testDeletedEmailMessage() {
+    void testDeletedEmailMessage() {
         // TODO: test DeletedEmailMessage
     }
 
@@ -42,7 +42,7 @@ public class DeletedEmailMessageTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class DeletedEmailMessageTest {
      * Test the property 'folderId'
      */
     @Test
-    public void folderIdTest() {
+    void folderIdTest() {
         // TODO: test folderId
     }
 
@@ -58,7 +58,7 @@ public class DeletedEmailMessageTest {
      * Test the property 'internetMessageId'
      */
     @Test
-    public void internetMessageIdTest() {
+    void internetMessageIdTest() {
         // TODO: test internetMessageId
     }
 
@@ -66,7 +66,7 @@ public class DeletedEmailMessageTest {
      * Test the property 'timestamp'
      */
     @Test
-    public void timestampTest() {
+    void timestampTest() {
         // TODO: test timestamp
     }
 

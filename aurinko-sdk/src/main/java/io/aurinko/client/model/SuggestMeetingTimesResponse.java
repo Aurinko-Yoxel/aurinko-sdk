@@ -39,13 +39,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SuggestMeetingTimesResponse.JSON_PROPERTY_ITEMS,
   SuggestMeetingTimesResponse.JSON_PROPERTY_ATTENDEES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class SuggestMeetingTimesResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<TimeInterval> items;
+  private List<TimeInterval> items = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ATTENDEES = "attendees";
-  private List<MeetingAttendee> attendees;
+  private List<MeetingAttendee> attendees = new ArrayList<>();
 
   public SuggestMeetingTimesResponse() { 
   }

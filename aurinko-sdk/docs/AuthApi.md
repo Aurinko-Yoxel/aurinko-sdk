@@ -174,7 +174,7 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 
 ## authorize
 
-> CompletableFuture<Void> authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle)
+> CompletableFuture<Void> authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle, authEmail)
 
 Start an account authorization flow
 
@@ -209,8 +209,9 @@ public class Example {
         Boolean ensureScopes = true; // Boolean | When set to true, Aurinko will check if a user granted all requested permissions.
         Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
         Boolean recycle = true; // Boolean | Indicates whether to reuse an existing account instead of creating a new one during authentication.
+        String authEmail = "authEmail_example"; // String | Email address that must be used for authentication. Aurinko will fail the authentication flow if the email address does not match the one provided.
         try {
-            CompletableFuture<Void> result = apiInstance.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle);
+            CompletableFuture<Void> result = apiInstance.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle, authEmail);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthApi#authorize");
             System.err.println("Status code: " + e.getCode());
@@ -241,6 +242,7 @@ public class Example {
 | **ensureScopes** | **Boolean**| When set to true, Aurinko will check if a user granted all requested permissions. | [optional] |
 | **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **recycle** | **Boolean**| Indicates whether to reuse an existing account instead of creating a new one during authentication. | [optional] |
+| **authEmail** | **String**| Email address that must be used for authentication. Aurinko will fail the authentication flow if the email address does not match the one provided. | [optional] |
 
 ### Return type
 
@@ -263,7 +265,7 @@ No authorization required
 
 ## authorizeWithHttpInfo
 
-> CompletableFuture<ApiResponse<Void>> authorize authorizeWithHttpInfo(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle)
+> CompletableFuture<ApiResponse<Void>> authorize authorizeWithHttpInfo(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle, authEmail)
 
 Start an account authorization flow
 
@@ -299,8 +301,9 @@ public class Example {
         Boolean ensureScopes = true; // Boolean | When set to true, Aurinko will check if a user granted all requested permissions.
         Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
         Boolean recycle = true; // Boolean | Indicates whether to reuse an existing account instead of creating a new one during authentication.
+        String authEmail = "authEmail_example"; // String | Email address that must be used for authentication. Aurinko will fail the authentication flow if the email address does not match the one provided.
         try {
-            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeWithHttpInfo(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle);
+            CompletableFuture<ApiResponse<Void>> response = apiInstance.authorizeWithHttpInfo(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle, authEmail);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
         } catch (InterruptedException | ExecutionException e) {
@@ -340,6 +343,7 @@ public class Example {
 | **ensureScopes** | **Boolean**| When set to true, Aurinko will check if a user granted all requested permissions. | [optional] |
 | **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **recycle** | **Boolean**| Indicates whether to reuse an existing account instead of creating a new one during authentication. | [optional] |
+| **authEmail** | **String**| Email address that must be used for authentication. Aurinko will fail the authentication flow if the email address does not match the one provided. | [optional] |
 
 ### Return type
 

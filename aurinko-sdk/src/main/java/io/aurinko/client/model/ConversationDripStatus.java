@@ -50,7 +50,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ConversationDripStatus.JSON_PROPERTY_TARGETS,
   ConversationDripStatus.JSON_PROPERTY_DRIP_RESPONDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ConversationDripStatus {
   public static final String JSON_PROPERTY_CONVO_ID = "convoId";
   private String convoId;
@@ -105,7 +105,7 @@ public class ConversationDripStatus {
   private StatusEnum status;
 
   public static final String JSON_PROPERTY_RULE = "rule";
-  private List<FollowupRuleAggregateOut> rule;
+  private List<FollowupRuleAggregateOut> rule = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DRIP_STARTED_AT = "dripStartedAt";
   private OffsetDateTime dripStartedAt;
@@ -123,7 +123,7 @@ public class ConversationDripStatus {
   private Map<String, String> actionVars = new HashMap<>();
 
   public static final String JSON_PROPERTY_TARGETS = "targets";
-  private List<String> targets;
+  private List<String> targets = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DRIP_RESPONDER = "dripResponder";
   private String dripResponder;

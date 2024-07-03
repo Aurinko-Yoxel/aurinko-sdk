@@ -25,21 +25,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for Task
  */
-public class TaskTest {
+class TaskTest {
     private final Task model = new Task();
 
     /**
      * Model tests for Task
      */
     @Test
-    public void testTask() {
+    void testTask() {
         // TODO: test Task
     }
 
@@ -47,7 +47,7 @@ public class TaskTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -55,7 +55,7 @@ public class TaskTest {
      * Test the property 'etag'
      */
     @Test
-    public void etagTest() {
+    void etagTest() {
         // TODO: test etag
     }
 
@@ -63,7 +63,7 @@ public class TaskTest {
      * Test the property 'title'
      */
     @Test
-    public void titleTest() {
+    void titleTest() {
         // TODO: test title
     }
 
@@ -71,7 +71,7 @@ public class TaskTest {
      * Test the property 'lastModifiedTime'
      */
     @Test
-    public void lastModifiedTimeTest() {
+    void lastModifiedTimeTest() {
         // TODO: test lastModifiedTime
     }
 
@@ -79,7 +79,7 @@ public class TaskTest {
      * Test the property 'parentId'
      */
     @Test
-    public void parentIdTest() {
+    void parentIdTest() {
         // TODO: test parentId
     }
 
@@ -87,7 +87,7 @@ public class TaskTest {
      * Test the property 'position'
      */
     @Test
-    public void positionTest() {
+    void positionTest() {
         // TODO: test position
     }
 
@@ -95,7 +95,7 @@ public class TaskTest {
      * Test the property 'notes'
      */
     @Test
-    public void notesTest() {
+    void notesTest() {
         // TODO: test notes
     }
 
@@ -103,7 +103,7 @@ public class TaskTest {
      * Test the property 'status'
      */
     @Test
-    public void statusTest() {
+    void statusTest() {
         // TODO: test status
     }
 
@@ -111,7 +111,7 @@ public class TaskTest {
      * Test the property 'importance'
      */
     @Test
-    public void importanceTest() {
+    void importanceTest() {
         // TODO: test importance
     }
 
@@ -119,7 +119,7 @@ public class TaskTest {
      * Test the property 'due'
      */
     @Test
-    public void dueTest() {
+    void dueTest() {
         // TODO: test due
     }
 
@@ -127,7 +127,7 @@ public class TaskTest {
      * Test the property 'completed'
      */
     @Test
-    public void completedTest() {
+    void completedTest() {
         // TODO: test completed
     }
 
@@ -135,7 +135,7 @@ public class TaskTest {
      * Test the property 'links'
      */
     @Test
-    public void linksTest() {
+    void linksTest() {
         // TODO: test links
     }
 
@@ -143,7 +143,7 @@ public class TaskTest {
      * Test the property 'startDateTime'
      */
     @Test
-    public void startDateTimeTest() {
+    void startDateTimeTest() {
         // TODO: test startDateTime
     }
 
@@ -151,7 +151,7 @@ public class TaskTest {
      * Test the property 'categories'
      */
     @Test
-    public void categoriesTest() {
+    void categoriesTest() {
         // TODO: test categories
     }
 
@@ -159,7 +159,7 @@ public class TaskTest {
      * Test the property 'owner'
      */
     @Test
-    public void ownerTest() {
+    void ownerTest() {
         // TODO: test owner
     }
 
@@ -167,7 +167,7 @@ public class TaskTest {
      * Test the property 'omitted'
      */
     @Test
-    public void omittedTest() {
+    void omittedTest() {
         // TODO: test omitted
     }
 

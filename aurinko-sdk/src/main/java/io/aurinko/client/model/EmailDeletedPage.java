@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailDeletedPage.JSON_PROPERTY_LENGTH,
   EmailDeletedPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailDeletedPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   private String nextPageToken;
@@ -52,7 +52,7 @@ public class EmailDeletedPage {
   private Integer length;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
-  private List<DeletedEmailMessage> records;
+  private List<DeletedEmailMessage> records = new ArrayList<>();
 
   public EmailDeletedPage() { 
   }

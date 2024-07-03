@@ -68,7 +68,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Event.JSON_PROPERTY_ATTACHMENTS,
   Event.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Event {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -167,7 +167,7 @@ public class Event {
   private Sensitivity sensitivity;
 
   public static final String JSON_PROPERTY_CATEGORIES = "categories";
-  private List<String> categories;
+  private List<String> categories = new ArrayList<>();
 
   public static final String JSON_PROPERTY_HTML_LINK = "htmlLink";
   private String htmlLink;
@@ -176,7 +176,7 @@ public class Event {
   private Boolean hasAttachments;
 
   public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
-  private List<EmailAttachment> attachments;
+  private List<EmailAttachment> attachments = new ArrayList<>();
 
   /**
    * Gets or Sets omitted
@@ -218,7 +218,7 @@ public class Event {
   }
 
   public static final String JSON_PROPERTY_OMITTED = "omitted";
-  private List<OmittedEnum> omitted;
+  private List<OmittedEnum> omitted = new ArrayList<>();
 
   public Event() { 
   }

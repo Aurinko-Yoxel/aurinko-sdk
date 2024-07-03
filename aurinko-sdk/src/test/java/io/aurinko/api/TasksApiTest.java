@@ -60,7 +60,7 @@ public class TasksApiTest {
     }
     
     /**
-     * Delete a task list by id
+     * Delete a task by id
      *
      * 
      *

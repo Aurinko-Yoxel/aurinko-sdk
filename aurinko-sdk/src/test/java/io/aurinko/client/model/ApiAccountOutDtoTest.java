@@ -26,21 +26,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ApiAccountOutDto
  */
-public class ApiAccountOutDtoTest {
+class ApiAccountOutDtoTest {
     private final ApiAccountOutDto model = new ApiAccountOutDto();
 
     /**
      * Model tests for ApiAccountOutDto
      */
     @Test
-    public void testApiAccountOutDto() {
+    void testApiAccountOutDto() {
         // TODO: test ApiAccountOutDto
     }
 
@@ -48,7 +48,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -56,7 +56,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'parentId'
      */
     @Test
-    public void parentIdTest() {
+    void parentIdTest() {
         // TODO: test parentId
     }
 
@@ -64,7 +64,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'serviceType'
      */
     @Test
-    public void serviceTypeTest() {
+    void serviceTypeTest() {
         // TODO: test serviceType
     }
 
@@ -72,7 +72,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'active'
      */
     @Test
-    public void activeTest() {
+    void activeTest() {
         // TODO: test active
     }
 
@@ -80,7 +80,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'tokenStatus'
      */
     @Test
-    public void tokenStatusTest() {
+    void tokenStatusTest() {
         // TODO: test tokenStatus
     }
 
@@ -88,7 +88,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'tokenError'
      */
     @Test
-    public void tokenErrorTest() {
+    void tokenErrorTest() {
         // TODO: test tokenError
     }
 
@@ -96,7 +96,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 
@@ -104,7 +104,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'daemon'
      */
     @Test
-    public void daemonTest() {
+    void daemonTest() {
         // TODO: test daemon
     }
 
@@ -112,7 +112,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'loginString'
      */
     @Test
-    public void loginStringTest() {
+    void loginStringTest() {
         // TODO: test loginString
     }
 
@@ -120,7 +120,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'email'
      */
     @Test
-    public void emailTest() {
+    void emailTest() {
         // TODO: test email
     }
 
@@ -128,7 +128,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'mailboxAddress'
      */
     @Test
-    public void mailboxAddressTest() {
+    void mailboxAddressTest() {
         // TODO: test mailboxAddress
     }
 
@@ -136,7 +136,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -144,7 +144,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'name2'
      */
     @Test
-    public void name2Test() {
+    void name2Test() {
         // TODO: test name2
     }
 
@@ -152,7 +152,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'serverUrl'
      */
     @Test
-    public void serverUrlTest() {
+    void serverUrlTest() {
         // TODO: test serverUrl
     }
 
@@ -160,7 +160,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'serverUrl2'
      */
     @Test
-    public void serverUrl2Test() {
+    void serverUrl2Test() {
         // TODO: test serverUrl2
     }
 
@@ -168,7 +168,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'clientOrgId'
      */
     @Test
-    public void clientOrgIdTest() {
+    void clientOrgIdTest() {
         // TODO: test clientOrgId
     }
 
@@ -176,7 +176,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'authUserId'
      */
     @Test
-    public void authUserIdTest() {
+    void authUserIdTest() {
         // TODO: test authUserId
     }
 
@@ -184,7 +184,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'authOrgId'
      */
     @Test
-    public void authOrgIdTest() {
+    void authOrgIdTest() {
         // TODO: test authOrgId
     }
 
@@ -192,7 +192,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'timezone'
      */
     @Test
-    public void timezoneTest() {
+    void timezoneTest() {
         // TODO: test timezone
     }
 
@@ -200,7 +200,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'tokenIssuedAt'
      */
     @Test
-    public void tokenIssuedAtTest() {
+    void tokenIssuedAtTest() {
         // TODO: test tokenIssuedAt
     }
 
@@ -208,7 +208,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'authScopes'
      */
     @Test
-    public void authScopesTest() {
+    void authScopesTest() {
         // TODO: test authScopes
     }
 
@@ -216,7 +216,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'authNativeScopes'
      */
     @Test
-    public void authNativeScopesTest() {
+    void authNativeScopesTest() {
         // TODO: test authNativeScopes
     }
 
@@ -224,7 +224,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'authObtainedAt'
      */
     @Test
-    public void authObtainedAtTest() {
+    void authObtainedAtTest() {
         // TODO: test authObtainedAt
     }
 
@@ -232,7 +232,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'authExpiresAt'
      */
     @Test
-    public void authExpiresAtTest() {
+    void authExpiresAtTest() {
         // TODO: test authExpiresAt
     }
 
@@ -240,7 +240,7 @@ public class ApiAccountOutDtoTest {
      * Test the property 'userId'
      */
     @Test
-    public void userIdTest() {
+    void userIdTest() {
         // TODO: test userId
     }
 

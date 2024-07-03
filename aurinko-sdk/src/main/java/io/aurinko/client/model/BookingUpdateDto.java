@@ -48,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingUpdateDto.JSON_PROPERTY_START_CONFERENCE,
   BookingUpdateDto.JSON_PROPERTY_OPEN_MEETING_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BookingUpdateDto {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -148,7 +148,7 @@ public class BookingUpdateDto {
   }
 
    /**
-   * Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30.
+   * Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30, 60.
    * @return availabilityStep
   **/
   @javax.annotation.Nullable

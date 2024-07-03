@@ -46,7 +46,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class AccountApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -153,6 +153,7 @@ public class AccountApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Delete the token and revoke all provider authentication data associated with it
    * 
@@ -224,6 +225,7 @@ public class AccountApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get account status
    * 
@@ -310,4 +312,5 @@ public class AccountApi {
     }
     return localVarRequestBuilder;
   }
+
 }

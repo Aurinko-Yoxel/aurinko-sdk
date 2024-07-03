@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for CalendarUpdate
  */
-public class CalendarUpdateTest {
+class CalendarUpdateTest {
     private final CalendarUpdate model = new CalendarUpdate();
 
     /**
      * Model tests for CalendarUpdate
      */
     @Test
-    public void testCalendarUpdate() {
+    void testCalendarUpdate() {
         // TODO: test CalendarUpdate
     }
 
@@ -41,7 +41,7 @@ public class CalendarUpdateTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -49,7 +49,7 @@ public class CalendarUpdateTest {
      * Test the property 'description'
      */
     @Test
-    public void descriptionTest() {
+    void descriptionTest() {
         // TODO: test description
     }
 

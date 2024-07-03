@@ -6,8 +6,8 @@ All URIs are relative to *https://api.aurinko.io*
 |------------- | ------------- | -------------|
 | [**createTask**](TasksApi.md#createTask) | **POST** /v1/tasklists/{taskListId}/tasks | Create a task |
 | [**createTaskWithHttpInfo**](TasksApi.md#createTaskWithHttpInfo) | **POST** /v1/tasklists/{taskListId}/tasks | Create a task |
-| [**deleteTask**](TasksApi.md#deleteTask) | **DELETE** /v1/tasklists/{taskListId}/tasks/{id} | Delete a task list by id |
-| [**deleteTaskWithHttpInfo**](TasksApi.md#deleteTaskWithHttpInfo) | **DELETE** /v1/tasklists/{taskListId}/tasks/{id} | Delete a task list by id |
+| [**deleteTask**](TasksApi.md#deleteTask) | **DELETE** /v1/tasklists/{taskListId}/tasks/{id} | Delete a task by id |
+| [**deleteTaskWithHttpInfo**](TasksApi.md#deleteTaskWithHttpInfo) | **DELETE** /v1/tasklists/{taskListId}/tasks/{id} | Delete a task by id |
 | [**task**](TasksApi.md#task) | **GET** /v1/tasklists/{taskListId}/tasks/{id} | Request a task by id |
 | [**taskWithHttpInfo**](TasksApi.md#taskWithHttpInfo) | **GET** /v1/tasklists/{taskListId}/tasks/{id} | Request a task by id |
 | [**tasksList**](TasksApi.md#tasksList) | **GET** /v1/tasklists/{taskListId}/tasks | Request list of tasks |
@@ -252,7 +252,7 @@ CompletableFuture<ApiResponse<[**TaskCreateResponse**](TaskCreateResponse.md)>>
 
 > CompletableFuture<OkResponse> deleteTask(taskListId, id)
 
-Delete a task list by id
+Delete a task by id
 
 ### Example
 
@@ -362,7 +362,7 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 
 > CompletableFuture<ApiResponse<OkResponse>> deleteTask deleteTaskWithHttpInfo(taskListId, id)
 
-Delete a task list by id
+Delete a task by id
 
 ### Example
 

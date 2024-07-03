@@ -23,21 +23,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for RecurrenceSimpleRange
  */
-public class RecurrenceSimpleRangeTest {
+class RecurrenceSimpleRangeTest {
     private final RecurrenceSimpleRange model = new RecurrenceSimpleRange();
 
     /**
      * Model tests for RecurrenceSimpleRange
      */
     @Test
-    public void testRecurrenceSimpleRange() {
+    void testRecurrenceSimpleRange() {
         // TODO: test RecurrenceSimpleRange
     }
 
@@ -45,7 +45,7 @@ public class RecurrenceSimpleRangeTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 
@@ -53,7 +53,7 @@ public class RecurrenceSimpleRangeTest {
      * Test the property 'recurrenceStart'
      */
     @Test
-    public void recurrenceStartTest() {
+    void recurrenceStartTest() {
         // TODO: test recurrenceStart
     }
 
@@ -61,7 +61,7 @@ public class RecurrenceSimpleRangeTest {
      * Test the property 'recurrenceEnd'
      */
     @Test
-    public void recurrenceEndTest() {
+    void recurrenceEndTest() {
         // TODO: test recurrenceEnd
     }
 
@@ -69,7 +69,7 @@ public class RecurrenceSimpleRangeTest {
      * Test the property 'count'
      */
     @Test
-    public void countTest() {
+    void countTest() {
         // TODO: test count
     }
 
@@ -77,7 +77,7 @@ public class RecurrenceSimpleRangeTest {
      * Test the property 'patternExclusions'
      */
     @Test
-    public void patternExclusionsTest() {
+    void patternExclusionsTest() {
         // TODO: test patternExclusions
     }
 

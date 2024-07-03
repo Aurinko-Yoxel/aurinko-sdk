@@ -54,7 +54,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class MessagesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -204,6 +204,7 @@ public class MessagesApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get a message attachment
    * 
@@ -304,6 +305,7 @@ public class MessagesApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get a message
    * 
@@ -426,6 +428,7 @@ public class MessagesApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * List email messages
    * 
@@ -545,6 +548,7 @@ public class MessagesApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Reply to a message
    * 
@@ -667,6 +671,7 @@ public class MessagesApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Send a new message
    * 
@@ -782,6 +787,7 @@ public class MessagesApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Update a message&#39;s status
    * 
@@ -883,4 +889,5 @@ public class MessagesApi {
     }
     return localVarRequestBuilder;
   }
+
 }

@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for WorkHoursRequest
  */
-public class WorkHoursRequestTest {
+class WorkHoursRequestTest {
     private final WorkHoursRequest model = new WorkHoursRequest();
 
     /**
      * Model tests for WorkHoursRequest
      */
     @Test
-    public void testWorkHoursRequest() {
+    void testWorkHoursRequest() {
         // TODO: test WorkHoursRequest
     }
 
@@ -43,7 +43,7 @@ public class WorkHoursRequestTest {
      * Test the property 'emails'
      */
     @Test
-    public void emailsTest() {
+    void emailsTest() {
         // TODO: test emails
     }
 

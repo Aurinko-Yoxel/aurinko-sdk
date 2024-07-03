@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ScheduledDraft
  */
-public class ScheduledDraftTest {
+class ScheduledDraftTest {
     private final ScheduledDraft model = new ScheduledDraft();
 
     /**
      * Model tests for ScheduledDraft
      */
     @Test
-    public void testScheduledDraft() {
+    void testScheduledDraft() {
         // TODO: test ScheduledDraft
     }
 
@@ -42,7 +42,7 @@ public class ScheduledDraftTest {
      * Test the property 'jobId'
      */
     @Test
-    public void jobIdTest() {
+    void jobIdTest() {
         // TODO: test jobId
     }
 
@@ -50,7 +50,7 @@ public class ScheduledDraftTest {
      * Test the property 'sendTime'
      */
     @Test
-    public void sendTimeTest() {
+    void sendTimeTest() {
         // TODO: test sendTime
     }
 
@@ -58,7 +58,7 @@ public class ScheduledDraftTest {
      * Test the property 'status'
      */
     @Test
-    public void statusTest() {
+    void statusTest() {
         // TODO: test status
     }
 
@@ -66,7 +66,7 @@ public class ScheduledDraftTest {
      * Test the property 'errorMessage'
      */
     @Test
-    public void errorMessageTest() {
+    void errorMessageTest() {
         // TODO: test errorMessage
     }
 

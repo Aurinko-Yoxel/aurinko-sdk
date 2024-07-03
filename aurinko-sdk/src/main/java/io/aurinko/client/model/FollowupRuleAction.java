@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FollowupRuleAction.JSON_PROPERTY_INTERVAL_DAYS,
   FollowupRuleAction.JSON_PROPERTY_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class FollowupRuleAction {
   public static final String JSON_PROPERTY_INTERVAL_DAYS = "intervalDays";
   private Integer intervalDays;

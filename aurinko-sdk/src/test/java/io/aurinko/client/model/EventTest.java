@@ -30,21 +30,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for Event
  */
-public class EventTest {
+class EventTest {
     private final Event model = new Event();
 
     /**
      * Model tests for Event
      */
     @Test
-    public void testEvent() {
+    void testEvent() {
         // TODO: test Event
     }
 
@@ -52,7 +52,7 @@ public class EventTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -60,7 +60,7 @@ public class EventTest {
      * Test the property 'etag'
      */
     @Test
-    public void etagTest() {
+    void etagTest() {
         // TODO: test etag
     }
 
@@ -68,7 +68,7 @@ public class EventTest {
      * Test the property 'calendarId'
      */
     @Test
-    public void calendarIdTest() {
+    void calendarIdTest() {
         // TODO: test calendarId
     }
 
@@ -76,7 +76,7 @@ public class EventTest {
      * Test the property 'createdTime'
      */
     @Test
-    public void createdTimeTest() {
+    void createdTimeTest() {
         // TODO: test createdTime
     }
 
@@ -84,7 +84,7 @@ public class EventTest {
      * Test the property 'lastModifiedTime'
      */
     @Test
-    public void lastModifiedTimeTest() {
+    void lastModifiedTimeTest() {
         // TODO: test lastModifiedTime
     }
 
@@ -92,7 +92,7 @@ public class EventTest {
      * Test the property 'subject'
      */
     @Test
-    public void subjectTest() {
+    void subjectTest() {
         // TODO: test subject
     }
 
@@ -100,7 +100,7 @@ public class EventTest {
      * Test the property 'description'
      */
     @Test
-    public void descriptionTest() {
+    void descriptionTest() {
         // TODO: test description
     }
 
@@ -108,7 +108,7 @@ public class EventTest {
      * Test the property 'location'
      */
     @Test
-    public void locationTest() {
+    void locationTest() {
         // TODO: test location
     }
 
@@ -116,7 +116,7 @@ public class EventTest {
      * Test the property 'start'
      */
     @Test
-    public void startTest() {
+    void startTest() {
         // TODO: test start
     }
 
@@ -124,7 +124,7 @@ public class EventTest {
      * Test the property 'end'
      */
     @Test
-    public void endTest() {
+    void endTest() {
         // TODO: test end
     }
 
@@ -132,7 +132,7 @@ public class EventTest {
      * Test the property 'organizer'
      */
     @Test
-    public void organizerTest() {
+    void organizerTest() {
         // TODO: test organizer
     }
 
@@ -140,7 +140,7 @@ public class EventTest {
      * Test the property 'meetingInfo'
      */
     @Test
-    public void meetingInfoTest() {
+    void meetingInfoTest() {
         // TODO: test meetingInfo
     }
 
@@ -148,7 +148,7 @@ public class EventTest {
      * Test the property 'recurrenceType'
      */
     @Test
-    public void recurrenceTypeTest() {
+    void recurrenceTypeTest() {
         // TODO: test recurrenceType
     }
 
@@ -156,7 +156,7 @@ public class EventTest {
      * Test the property 'recurrence'
      */
     @Test
-    public void recurrenceTest() {
+    void recurrenceTest() {
         // TODO: test recurrence
     }
 
@@ -164,7 +164,7 @@ public class EventTest {
      * Test the property 'occurrenceInfo'
      */
     @Test
-    public void occurrenceInfoTest() {
+    void occurrenceInfoTest() {
         // TODO: test occurrenceInfo
     }
 
@@ -172,7 +172,7 @@ public class EventTest {
      * Test the property 'iCalUid'
      */
     @Test
-    public void iCalUidTest() {
+    void iCalUidTest() {
         // TODO: test iCalUid
     }
 
@@ -180,7 +180,7 @@ public class EventTest {
      * Test the property 'globalId'
      */
     @Test
-    public void globalIdTest() {
+    void globalIdTest() {
         // TODO: test globalId
     }
 
@@ -188,7 +188,7 @@ public class EventTest {
      * Test the property 'showAs'
      */
     @Test
-    public void showAsTest() {
+    void showAsTest() {
         // TODO: test showAs
     }
 
@@ -196,7 +196,7 @@ public class EventTest {
      * Test the property 'sensitivity'
      */
     @Test
-    public void sensitivityTest() {
+    void sensitivityTest() {
         // TODO: test sensitivity
     }
 
@@ -204,7 +204,7 @@ public class EventTest {
      * Test the property 'categories'
      */
     @Test
-    public void categoriesTest() {
+    void categoriesTest() {
         // TODO: test categories
     }
 
@@ -212,7 +212,7 @@ public class EventTest {
      * Test the property 'htmlLink'
      */
     @Test
-    public void htmlLinkTest() {
+    void htmlLinkTest() {
         // TODO: test htmlLink
     }
 
@@ -220,7 +220,7 @@ public class EventTest {
      * Test the property 'hasAttachments'
      */
     @Test
-    public void hasAttachmentsTest() {
+    void hasAttachmentsTest() {
         // TODO: test hasAttachments
     }
 
@@ -228,7 +228,7 @@ public class EventTest {
      * Test the property 'attachments'
      */
     @Test
-    public void attachmentsTest() {
+    void attachmentsTest() {
         // TODO: test attachments
     }
 
@@ -236,7 +236,7 @@ public class EventTest {
      * Test the property 'omitted'
      */
     @Test
-    public void omittedTest() {
+    void omittedTest() {
         // TODO: test omitted
     }
 

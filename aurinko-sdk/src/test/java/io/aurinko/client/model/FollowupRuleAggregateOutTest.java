@@ -22,21 +22,21 @@ import io.aurinko.client.model.FollowupRuleAction;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for FollowupRuleAggregateOut
  */
-public class FollowupRuleAggregateOutTest {
+class FollowupRuleAggregateOutTest {
     private final FollowupRuleAggregateOut model = new FollowupRuleAggregateOut();
 
     /**
      * Model tests for FollowupRuleAggregateOut
      */
     @Test
-    public void testFollowupRuleAggregateOut() {
+    void testFollowupRuleAggregateOut() {
         // TODO: test FollowupRuleAggregateOut
     }
 
@@ -44,7 +44,7 @@ public class FollowupRuleAggregateOutTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -52,7 +52,7 @@ public class FollowupRuleAggregateOutTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -60,7 +60,7 @@ public class FollowupRuleAggregateOutTest {
      * Test the property 'expectThreadResponse'
      */
     @Test
-    public void expectThreadResponseTest() {
+    void expectThreadResponseTest() {
         // TODO: test expectThreadResponse
     }
 
@@ -68,7 +68,7 @@ public class FollowupRuleAggregateOutTest {
      * Test the property 'templateBody'
      */
     @Test
-    public void templateBodyTest() {
+    void templateBodyTest() {
         // TODO: test templateBody
     }
 
@@ -76,7 +76,7 @@ public class FollowupRuleAggregateOutTest {
      * Test the property 'templateSubject'
      */
     @Test
-    public void templateSubjectTest() {
+    void templateSubjectTest() {
         // TODO: test templateSubject
     }
 
@@ -84,7 +84,7 @@ public class FollowupRuleAggregateOutTest {
      * Test the property 'actions'
      */
     @Test
-    public void actionsTest() {
+    void actionsTest() {
         // TODO: test actions
     }
 

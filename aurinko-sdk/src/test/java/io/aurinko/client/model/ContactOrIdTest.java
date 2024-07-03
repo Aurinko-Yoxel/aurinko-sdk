@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.Contact;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ContactOrId
  */
-public class ContactOrIdTest {
+class ContactOrIdTest {
     private final ContactOrId model = new ContactOrId();
 
     /**
      * Model tests for ContactOrId
      */
     @Test
-    public void testContactOrId() {
+    void testContactOrId() {
         // TODO: test ContactOrId
     }
 
@@ -42,7 +42,7 @@ public class ContactOrIdTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class ContactOrIdTest {
      * Test the property 'etag'
      */
     @Test
-    public void etagTest() {
+    void etagTest() {
         // TODO: test etag
     }
 
@@ -58,7 +58,7 @@ public class ContactOrIdTest {
      * Test the property 'record'
      */
     @Test
-    public void recordTest() {
+    void recordTest() {
         // TODO: test record
     }
 

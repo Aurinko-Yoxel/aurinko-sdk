@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for OnlineMeetingDetails
  */
-public class OnlineMeetingDetailsTest {
+class OnlineMeetingDetailsTest {
     private final OnlineMeetingDetails model = new OnlineMeetingDetails();
 
     /**
      * Model tests for OnlineMeetingDetails
      */
     @Test
-    public void testOnlineMeetingDetails() {
+    void testOnlineMeetingDetails() {
         // TODO: test OnlineMeetingDetails
     }
 
@@ -41,7 +41,7 @@ public class OnlineMeetingDetailsTest {
      * Test the property 'url'
      */
     @Test
-    public void urlTest() {
+    void urlTest() {
         // TODO: test url
     }
 
@@ -49,7 +49,7 @@ public class OnlineMeetingDetailsTest {
      * Test the property 'phone'
      */
     @Test
-    public void phoneTest() {
+    void phoneTest() {
         // TODO: test phone
     }
 
@@ -57,7 +57,7 @@ public class OnlineMeetingDetailsTest {
      * Test the property 'pin'
      */
     @Test
-    public void pinTest() {
+    void pinTest() {
         // TODO: test pin
     }
 
@@ -65,7 +65,7 @@ public class OnlineMeetingDetailsTest {
      * Test the property 'regionCode'
      */
     @Test
-    public void regionCodeTest() {
+    void regionCodeTest() {
         // TODO: test regionCode
     }
 
@@ -73,7 +73,7 @@ public class OnlineMeetingDetailsTest {
      * Test the property 'sip'
      */
     @Test
-    public void sipTest() {
+    void sipTest() {
         // TODO: test sip
     }
 
@@ -81,7 +81,7 @@ public class OnlineMeetingDetailsTest {
      * Test the property 'infoUrl'
      */
     @Test
-    public void infoUrlTest() {
+    void infoUrlTest() {
         // TODO: test infoUrl
     }
 

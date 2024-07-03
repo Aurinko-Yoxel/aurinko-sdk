@@ -22,21 +22,21 @@ import io.aurinko.client.model.Event;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EventsPage
  */
-public class EventsPageTest {
+class EventsPageTest {
     private final EventsPage model = new EventsPage();
 
     /**
      * Model tests for EventsPage
      */
     @Test
-    public void testEventsPage() {
+    void testEventsPage() {
         // TODO: test EventsPage
     }
 
@@ -44,7 +44,7 @@ public class EventsPageTest {
      * Test the property 'nextPageToken'
      */
     @Test
-    public void nextPageTokenTest() {
+    void nextPageTokenTest() {
         // TODO: test nextPageToken
     }
 
@@ -52,7 +52,7 @@ public class EventsPageTest {
      * Test the property 'nextDeltaToken'
      */
     @Test
-    public void nextDeltaTokenTest() {
+    void nextDeltaTokenTest() {
         // TODO: test nextDeltaToken
     }
 
@@ -60,7 +60,7 @@ public class EventsPageTest {
      * Test the property 'length'
      */
     @Test
-    public void lengthTest() {
+    void lengthTest() {
         // TODO: test length
     }
 
@@ -68,7 +68,7 @@ public class EventsPageTest {
      * Test the property 'records'
      */
     @Test
-    public void recordsTest() {
+    void recordsTest() {
         // TODO: test records
     }
 

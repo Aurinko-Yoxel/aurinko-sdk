@@ -10,7 +10,7 @@
 |**id** | **Long** |  |  [optional] |
 |**parentId** | **Long** |  |  [optional] |
 |**serviceType** | **ServiceType** |  |  [optional] |
-|**active** | **Boolean** |  |  [optional] |
+|**active** | **Boolean** | The account is always active in the current API version |  [optional] |
 |**tokenStatus** | **TokenStatus** |  |  [optional] |
 |**tokenError** | **String** |  |  [optional] |
 |**type** | **AccountType** |  |  [optional] |

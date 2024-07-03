@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ContactPostalAddress
  */
-public class ContactPostalAddressTest {
+class ContactPostalAddressTest {
     private final ContactPostalAddress model = new ContactPostalAddress();
 
     /**
      * Model tests for ContactPostalAddress
      */
     @Test
-    public void testContactPostalAddress() {
+    void testContactPostalAddress() {
         // TODO: test ContactPostalAddress
     }
 
@@ -41,7 +41,7 @@ public class ContactPostalAddressTest {
      * Test the property 'street'
      */
     @Test
-    public void streetTest() {
+    void streetTest() {
         // TODO: test street
     }
 
@@ -49,7 +49,7 @@ public class ContactPostalAddressTest {
      * Test the property 'streetLine2'
      */
     @Test
-    public void streetLine2Test() {
+    void streetLine2Test() {
         // TODO: test streetLine2
     }
 
@@ -57,7 +57,7 @@ public class ContactPostalAddressTest {
      * Test the property 'poBox'
      */
     @Test
-    public void poBoxTest() {
+    void poBoxTest() {
         // TODO: test poBox
     }
 
@@ -65,7 +65,7 @@ public class ContactPostalAddressTest {
      * Test the property 'city'
      */
     @Test
-    public void cityTest() {
+    void cityTest() {
         // TODO: test city
     }
 
@@ -73,7 +73,7 @@ public class ContactPostalAddressTest {
      * Test the property 'state'
      */
     @Test
-    public void stateTest() {
+    void stateTest() {
         // TODO: test state
     }
 
@@ -81,7 +81,7 @@ public class ContactPostalAddressTest {
      * Test the property 'postalCode'
      */
     @Test
-    public void postalCodeTest() {
+    void postalCodeTest() {
         // TODO: test postalCode
     }
 
@@ -89,7 +89,7 @@ public class ContactPostalAddressTest {
      * Test the property 'country'
      */
     @Test
-    public void countryTest() {
+    void countryTest() {
         // TODO: test country
     }
 
@@ -97,7 +97,7 @@ public class ContactPostalAddressTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 

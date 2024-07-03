@@ -22,21 +22,21 @@ import io.aurinko.client.model.WorkHoursResponseItem;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for WorkHoursResponse
  */
-public class WorkHoursResponseTest {
+class WorkHoursResponseTest {
     private final WorkHoursResponse model = new WorkHoursResponse();
 
     /**
      * Model tests for WorkHoursResponse
      */
     @Test
-    public void testWorkHoursResponse() {
+    void testWorkHoursResponse() {
         // TODO: test WorkHoursResponse
     }
 
@@ -44,7 +44,7 @@ public class WorkHoursResponseTest {
      * Test the property 'items'
      */
     @Test
-    public void itemsTest() {
+    void itemsTest() {
         // TODO: test items
     }
 

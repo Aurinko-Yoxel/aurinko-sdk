@@ -22,21 +22,21 @@ import io.aurinko.client.model.EmailFolderInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailFolderInfoPage
  */
-public class EmailFolderInfoPageTest {
+class EmailFolderInfoPageTest {
     private final EmailFolderInfoPage model = new EmailFolderInfoPage();
 
     /**
      * Model tests for EmailFolderInfoPage
      */
     @Test
-    public void testEmailFolderInfoPage() {
+    void testEmailFolderInfoPage() {
         // TODO: test EmailFolderInfoPage
     }
 
@@ -44,7 +44,7 @@ public class EmailFolderInfoPageTest {
      * Test the property 'length'
      */
     @Test
-    public void lengthTest() {
+    void lengthTest() {
         // TODO: test length
     }
 
@@ -52,7 +52,7 @@ public class EmailFolderInfoPageTest {
      * Test the property 'records'
      */
     @Test
-    public void recordsTest() {
+    void recordsTest() {
         // TODO: test records
     }
 

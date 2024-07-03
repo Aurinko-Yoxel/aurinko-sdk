@@ -114,6 +114,8 @@ docs/GroupBookingUpdateDto.md
 docs/ManagedAccountsApi.md
 docs/MeetingAttendee.md
 docs/MeetingInfo.md
+docs/MeetingResponse.md
+docs/MeetingResponseType.md
 docs/MessagesApi.md
 docs/OccurrenceInfo.md
 docs/OkResponse.md
@@ -313,6 +315,8 @@ src/main/java/io/aurinko/client/model/GroupBookingPage.java
 src/main/java/io/aurinko/client/model/GroupBookingUpdateDto.java
 src/main/java/io/aurinko/client/model/MeetingAttendee.java
 src/main/java/io/aurinko/client/model/MeetingInfo.java
+src/main/java/io/aurinko/client/model/MeetingResponse.java
+src/main/java/io/aurinko/client/model/MeetingResponseType.java
 src/main/java/io/aurinko/client/model/OccurrenceInfo.java
 src/main/java/io/aurinko/client/model/OkResponse.java
 src/main/java/io/aurinko/client/model/OnlineMeetingDetails.java
@@ -486,6 +490,8 @@ src/test/java/io/aurinko/client/model/GroupBookingPageTest.java
 src/test/java/io/aurinko/client/model/GroupBookingUpdateDtoTest.java
 src/test/java/io/aurinko/client/model/MeetingAttendeeTest.java
 src/test/java/io/aurinko/client/model/MeetingInfoTest.java
+src/test/java/io/aurinko/client/model/MeetingResponseTest.java
+src/test/java/io/aurinko/client/model/MeetingResponseTypeTest.java
 src/test/java/io/aurinko/client/model/OccurrenceInfoTest.java
 src/test/java/io/aurinko/client/model/OkResponseTest.java
 src/test/java/io/aurinko/client/model/OnlineMeetingDetailsTest.java

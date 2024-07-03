@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailAddress
  */
-public class EmailAddressTest {
+class EmailAddressTest {
     private final EmailAddress model = new EmailAddress();
 
     /**
      * Model tests for EmailAddress
      */
     @Test
-    public void testEmailAddress() {
+    void testEmailAddress() {
         // TODO: test EmailAddress
     }
 
@@ -41,7 +41,7 @@ public class EmailAddressTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -49,7 +49,7 @@ public class EmailAddressTest {
      * Test the property 'address'
      */
     @Test
-    public void addressTest() {
+    void addressTest() {
         // TODO: test address
     }
 
@@ -57,7 +57,7 @@ public class EmailAddressTest {
      * Test the property 'raw'
      */
     @Test
-    public void rawTest() {
+    void rawTest() {
         // TODO: test raw
     }
 

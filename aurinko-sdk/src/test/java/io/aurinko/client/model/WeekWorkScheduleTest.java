@@ -22,21 +22,21 @@ import io.aurinko.client.model.DayWorkSchedule;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for WeekWorkSchedule
  */
-public class WeekWorkScheduleTest {
+class WeekWorkScheduleTest {
     private final WeekWorkSchedule model = new WeekWorkSchedule();
 
     /**
      * Model tests for WeekWorkSchedule
      */
     @Test
-    public void testWeekWorkSchedule() {
+    void testWeekWorkSchedule() {
         // TODO: test WeekWorkSchedule
     }
 
@@ -44,7 +44,7 @@ public class WeekWorkScheduleTest {
      * Test the property 'daySchedules'
      */
     @Test
-    public void daySchedulesTest() {
+    void daySchedulesTest() {
         // TODO: test daySchedules
     }
 
@@ -52,7 +52,7 @@ public class WeekWorkScheduleTest {
      * Test the property 'timezone'
      */
     @Test
-    public void timezoneTest() {
+    void timezoneTest() {
         // TODO: test timezone
     }
 

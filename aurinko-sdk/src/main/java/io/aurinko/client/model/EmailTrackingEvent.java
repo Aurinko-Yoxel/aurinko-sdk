@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailTrackingEvent.JSON_PROPERTY_CONTEXT,
   EmailTrackingEvent.JSON_PROPERTY_TRACKING_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailTrackingEvent {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

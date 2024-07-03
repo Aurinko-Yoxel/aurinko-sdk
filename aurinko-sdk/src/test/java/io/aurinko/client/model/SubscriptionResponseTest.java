@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for SubscriptionResponse
  */
-public class SubscriptionResponseTest {
+class SubscriptionResponseTest {
     private final SubscriptionResponse model = new SubscriptionResponse();
 
     /**
      * Model tests for SubscriptionResponse
      */
     @Test
-    public void testSubscriptionResponse() {
+    void testSubscriptionResponse() {
         // TODO: test SubscriptionResponse
     }
 
@@ -42,7 +42,7 @@ public class SubscriptionResponseTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class SubscriptionResponseTest {
      * Test the property 'resource'
      */
     @Test
-    public void resourceTest() {
+    void resourceTest() {
         // TODO: test resource
     }
 
@@ -58,7 +58,7 @@ public class SubscriptionResponseTest {
      * Test the property 'notificationUrl'
      */
     @Test
-    public void notificationUrlTest() {
+    void notificationUrlTest() {
         // TODO: test notificationUrl
     }
 
@@ -66,7 +66,7 @@ public class SubscriptionResponseTest {
      * Test the property 'active'
      */
     @Test
-    public void activeTest() {
+    void activeTest() {
         // TODO: test active
     }
 
@@ -74,7 +74,7 @@ public class SubscriptionResponseTest {
      * Test the property 'failSince'
      */
     @Test
-    public void failSinceTest() {
+    void failSinceTest() {
         // TODO: test failSince
     }
 
@@ -82,7 +82,7 @@ public class SubscriptionResponseTest {
      * Test the property 'failDescription'
      */
     @Test
-    public void failDescriptionTest() {
+    void failDescriptionTest() {
         // TODO: test failDescription
     }
 

@@ -51,7 +51,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BookingApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -181,6 +181,7 @@ public class BookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Delete a booking profile by id
    * 
@@ -274,6 +275,7 @@ public class BookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get booking profiles
    * 
@@ -381,6 +383,7 @@ public class BookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get a booking profile by id
    * 
@@ -474,6 +477,7 @@ public class BookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Update a booking profile
    * 
@@ -575,6 +579,7 @@ public class BookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get user work hours
    * 
@@ -661,4 +666,5 @@ public class BookingApi {
     }
     return localVarRequestBuilder;
   }
+
 }

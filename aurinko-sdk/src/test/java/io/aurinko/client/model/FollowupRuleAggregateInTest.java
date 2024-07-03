@@ -22,21 +22,21 @@ import io.aurinko.client.model.FollowupRuleAction;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for FollowupRuleAggregateIn
  */
-public class FollowupRuleAggregateInTest {
+class FollowupRuleAggregateInTest {
     private final FollowupRuleAggregateIn model = new FollowupRuleAggregateIn();
 
     /**
      * Model tests for FollowupRuleAggregateIn
      */
     @Test
-    public void testFollowupRuleAggregateIn() {
+    void testFollowupRuleAggregateIn() {
         // TODO: test FollowupRuleAggregateIn
     }
 
@@ -44,7 +44,7 @@ public class FollowupRuleAggregateInTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -52,7 +52,7 @@ public class FollowupRuleAggregateInTest {
      * Test the property 'expectThreadResponse'
      */
     @Test
-    public void expectThreadResponseTest() {
+    void expectThreadResponseTest() {
         // TODO: test expectThreadResponse
     }
 
@@ -60,7 +60,7 @@ public class FollowupRuleAggregateInTest {
      * Test the property 'templateBody'
      */
     @Test
-    public void templateBodyTest() {
+    void templateBodyTest() {
         // TODO: test templateBody
     }
 
@@ -68,7 +68,7 @@ public class FollowupRuleAggregateInTest {
      * Test the property 'templateSubject'
      */
     @Test
-    public void templateSubjectTest() {
+    void templateSubjectTest() {
         // TODO: test templateSubject
     }
 
@@ -76,7 +76,7 @@ public class FollowupRuleAggregateInTest {
      * Test the property 'actions'
      */
     @Test
-    public void actionsTest() {
+    void actionsTest() {
         // TODO: test actions
     }
 

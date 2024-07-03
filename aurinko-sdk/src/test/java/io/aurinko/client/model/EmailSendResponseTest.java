@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.EmailSendError;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailSendResponse
  */
-public class EmailSendResponseTest {
+class EmailSendResponseTest {
     private final EmailSendResponse model = new EmailSendResponse();
 
     /**
      * Model tests for EmailSendResponse
      */
     @Test
-    public void testEmailSendResponse() {
+    void testEmailSendResponse() {
         // TODO: test EmailSendResponse
     }
 
@@ -42,7 +42,7 @@ public class EmailSendResponseTest {
      * Test the property 'status'
      */
     @Test
-    public void statusTest() {
+    void statusTest() {
         // TODO: test status
     }
 
@@ -50,7 +50,7 @@ public class EmailSendResponseTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -58,7 +58,7 @@ public class EmailSendResponseTest {
      * Test the property 'threadId'
      */
     @Test
-    public void threadIdTest() {
+    void threadIdTest() {
         // TODO: test threadId
     }
 
@@ -66,7 +66,7 @@ public class EmailSendResponseTest {
      * Test the property 'processingStatus'
      */
     @Test
-    public void processingStatusTest() {
+    void processingStatusTest() {
         // TODO: test processingStatus
     }
 
@@ -74,7 +74,7 @@ public class EmailSendResponseTest {
      * Test the property 'processingError'
      */
     @Test
-    public void processingErrorTest() {
+    void processingErrorTest() {
         // TODO: test processingError
     }
 

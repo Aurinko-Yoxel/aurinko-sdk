@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for UpdateMessageStatusData
  */
-public class UpdateMessageStatusDataTest {
+class UpdateMessageStatusDataTest {
     private final UpdateMessageStatusData model = new UpdateMessageStatusData();
 
     /**
      * Model tests for UpdateMessageStatusData
      */
     @Test
-    public void testUpdateMessageStatusData() {
+    void testUpdateMessageStatusData() {
         // TODO: test UpdateMessageStatusData
     }
 
@@ -43,7 +43,7 @@ public class UpdateMessageStatusDataTest {
      * Test the property 'unread'
      */
     @Test
-    public void unreadTest() {
+    void unreadTest() {
         // TODO: test unread
     }
 
@@ -51,7 +51,7 @@ public class UpdateMessageStatusDataTest {
      * Test the property 'keywords'
      */
     @Test
-    public void keywordsTest() {
+    void keywordsTest() {
         // TODO: test keywords
     }
 

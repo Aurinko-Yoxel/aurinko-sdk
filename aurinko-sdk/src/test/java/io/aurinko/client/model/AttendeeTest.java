@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.EmailAddress;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for Attendee
  */
-public class AttendeeTest {
+class AttendeeTest {
     private final Attendee model = new Attendee();
 
     /**
      * Model tests for Attendee
      */
     @Test
-    public void testAttendee() {
+    void testAttendee() {
         // TODO: test Attendee
     }
 
@@ -42,7 +42,7 @@ public class AttendeeTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class AttendeeTest {
      * Test the property 'emailAddress'
      */
     @Test
-    public void emailAddressTest() {
+    void emailAddressTest() {
         // TODO: test emailAddress
     }
 
@@ -58,7 +58,7 @@ public class AttendeeTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 
@@ -66,7 +66,7 @@ public class AttendeeTest {
      * Test the property 'response'
      */
     @Test
-    public void responseTest() {
+    void responseTest() {
         // TODO: test response
     }
 
@@ -74,7 +74,7 @@ public class AttendeeTest {
      * Test the property 'comment'
      */
     @Test
-    public void commentTest() {
+    void commentTest() {
         // TODO: test comment
     }
 

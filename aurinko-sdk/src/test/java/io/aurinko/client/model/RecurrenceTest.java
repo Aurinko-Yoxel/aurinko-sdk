@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.RecurrenceIcal;
 import io.aurinko.client.model.RecurrenceSimple;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for Recurrence
  */
-public class RecurrenceTest {
+class RecurrenceTest {
     private final Recurrence model = new Recurrence();
 
     /**
      * Model tests for Recurrence
      */
     @Test
-    public void testRecurrence() {
+    void testRecurrence() {
         // TODO: test Recurrence
     }
 
@@ -43,7 +43,7 @@ public class RecurrenceTest {
      * Test the property 'original'
      */
     @Test
-    public void originalTest() {
+    void originalTest() {
         // TODO: test original
     }
 
@@ -51,7 +51,7 @@ public class RecurrenceTest {
      * Test the property 'ical'
      */
     @Test
-    public void icalTest() {
+    void icalTest() {
         // TODO: test ical
     }
 
@@ -59,7 +59,7 @@ public class RecurrenceTest {
      * Test the property 'simple'
      */
     @Test
-    public void simpleTest() {
+    void simpleTest() {
         // TODO: test simple
     }
 

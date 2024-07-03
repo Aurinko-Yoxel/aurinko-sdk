@@ -54,7 +54,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailTrackingApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -191,6 +191,7 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Modify tracking data
    * 
@@ -306,6 +307,7 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * List tracking data
    * 
@@ -425,6 +427,7 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Purge recent activity for a user
    * 
@@ -537,6 +540,7 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Set ignore open/click tracking for а message
    * 
@@ -652,6 +656,7 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get tracking data by Id
    * 
@@ -745,6 +750,7 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get tracking event by Id
    * 
@@ -845,6 +851,7 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * List tracking events
    * 
@@ -959,6 +966,7 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Modify draft&#39;s tracking
    * 
@@ -1060,4 +1068,5 @@ public class EmailTrackingApi {
     }
     return localVarRequestBuilder;
   }
+
 }

@@ -68,7 +68,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EndUserAccountDto.JSON_PROPERTY_TRACKING_ACTIVE,
   EndUserAccountDto.JSON_PROPERTY_TEMPLATES_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EndUserAccountDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -125,16 +125,16 @@ public class EndUserAccountDto {
   private TokenStatus tokenStatus;
 
   public static final String JSON_PROPERTY_SCOPES = "scopes";
-  private List<Scope> scopes;
+  private List<Scope> scopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AUTH_SCOPES = "authScopes";
-  private List<Scope> authScopes;
+  private List<Scope> authScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NATIVE_SCOPES = "nativeScopes";
-  private List<String> nativeScopes;
+  private List<String> nativeScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AUTH_NATIVE_SCOPES = "authNativeScopes";
-  private List<String> authNativeScopes;
+  private List<String> authNativeScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_HAS_API_ERRORS = "hasApiErrors";
   private Boolean hasApiErrors;
@@ -282,7 +282,7 @@ public class EndUserAccountDto {
   }
 
    /**
-   * Get active
+   * The account is always active in the current API version
    * @return active
   **/
   @javax.annotation.Nullable

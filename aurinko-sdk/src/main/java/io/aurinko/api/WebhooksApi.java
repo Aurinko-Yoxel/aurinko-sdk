@@ -48,7 +48,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhooksApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -177,6 +177,7 @@ public class WebhooksApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get a list of push event subscriptions
    * 
@@ -288,6 +289,7 @@ public class WebhooksApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Create a push event subscription
    * 
@@ -382,6 +384,7 @@ public class WebhooksApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Remove a subscription
    * 
@@ -460,4 +463,5 @@ public class WebhooksApi {
     }
     return localVarRequestBuilder;
   }
+
 }

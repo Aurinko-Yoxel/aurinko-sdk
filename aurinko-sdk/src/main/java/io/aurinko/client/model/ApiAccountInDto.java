@@ -48,6 +48,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ApiAccountInDto.JSON_PROPERTY_ACTIVE,
   ApiAccountInDto.JSON_PROPERTY_AUTH_STRING1,
   ApiAccountInDto.JSON_PROPERTY_AUTH_STRING2,
+  ApiAccountInDto.JSON_PROPERTY_PASSWORD,
   ApiAccountInDto.JSON_PROPERTY_AUTH_OBTAINED_AT,
   ApiAccountInDto.JSON_PROPERTY_AUTH_EXPIRES_AT,
   ApiAccountInDto.JSON_PROPERTY_EMAIL,
@@ -55,13 +56,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ApiAccountInDto.JSON_PROPERTY_SERVER_INFO,
   ApiAccountInDto.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ApiAccountInDto {
   public static final String JSON_PROPERTY_SERVICE_TYPE = "serviceType";
   private ServiceType serviceType;
 
   public static final String JSON_PROPERTY_AUTH_SCOPES = "authScopes";
-  private List<Scope> authScopes;
+  private List<Scope> authScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AUTH_ORG_ID = "authOrgId";
   private String authOrgId;
@@ -89,6 +90,9 @@ public class ApiAccountInDto {
 
   public static final String JSON_PROPERTY_AUTH_STRING2 = "authString2";
   private String authString2;
+
+  public static final String JSON_PROPERTY_PASSWORD = "password";
+  private String password;
 
   public static final String JSON_PROPERTY_AUTH_OBTAINED_AT = "authObtainedAt";
   private OffsetDateTime authObtainedAt;
@@ -325,7 +329,7 @@ public class ApiAccountInDto {
   }
 
    /**
-   * Get active
+   * The account is always active in the current API version
    * @return active
   **/
   @javax.annotation.Nonnull
@@ -391,6 +395,31 @@ public class ApiAccountInDto {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthString2(String authString2) {
     this.authString2 = authString2;
+  }
+
+
+  public ApiAccountInDto password(String password) {
+    this.password = password;
+    return this;
+  }
+
+   /**
+   * Password for IMAP accounts
+   * @return password
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PASSWORD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getPassword() {
+    return password;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PASSWORD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPassword(String password) {
+    this.password = password;
   }
 
 
@@ -567,6 +596,7 @@ public class ApiAccountInDto {
         Objects.equals(this.active, apiAccountInDto.active) &&
         Objects.equals(this.authString1, apiAccountInDto.authString1) &&
         Objects.equals(this.authString2, apiAccountInDto.authString2) &&
+        Objects.equals(this.password, apiAccountInDto.password) &&
         Objects.equals(this.authObtainedAt, apiAccountInDto.authObtainedAt) &&
         Objects.equals(this.authExpiresAt, apiAccountInDto.authExpiresAt) &&
         Objects.equals(this.email, apiAccountInDto.email) &&
@@ -577,7 +607,7 @@ public class ApiAccountInDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(serviceType, authScopes, authOrgId, authUserId, clientOrgId, serverUrl, loginString, oauthClientId, active, authString1, authString2, authObtainedAt, authExpiresAt, email, name, serverInfo, timezone);
+    return Objects.hash(serviceType, authScopes, authOrgId, authUserId, clientOrgId, serverUrl, loginString, oauthClientId, active, authString1, authString2, password, authObtainedAt, authExpiresAt, email, name, serverInfo, timezone);
   }
 
   @Override
@@ -595,6 +625,7 @@ public class ApiAccountInDto {
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    authString1: ").append(toIndentedString(authString1)).append("\n");
     sb.append("    authString2: ").append(toIndentedString(authString2)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    authObtainedAt: ").append(toIndentedString(authObtainedAt)).append("\n");
     sb.append("    authExpiresAt: ").append(toIndentedString(authExpiresAt)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
@@ -707,6 +738,11 @@ public class ApiAccountInDto {
     // add `authString2` to the URL query string
     if (getAuthString2() != null) {
       joiner.add(String.format("%sauthString2%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAuthString2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `password` to the URL query string
+    if (getPassword() != null) {
+      joiner.add(String.format("%spassword%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPassword()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `authObtainedAt` to the URL query string

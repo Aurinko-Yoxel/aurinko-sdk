@@ -49,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailFoldersApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -178,6 +178,7 @@ public class EmailFoldersApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * List email messages in a specified folder
    * 
@@ -300,6 +301,7 @@ public class EmailFoldersApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * List email folders
    * 
@@ -403,4 +405,5 @@ public class EmailFoldersApi {
     }
     return localVarRequestBuilder;
   }
+
 }

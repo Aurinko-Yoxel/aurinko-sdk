@@ -22,21 +22,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for BookingMeetingTime
  */
-public class BookingMeetingTimeTest {
+class BookingMeetingTimeTest {
     private final BookingMeetingTime model = new BookingMeetingTime();
 
     /**
      * Model tests for BookingMeetingTime
      */
     @Test
-    public void testBookingMeetingTime() {
+    void testBookingMeetingTime() {
         // TODO: test BookingMeetingTime
     }
 
@@ -44,7 +44,7 @@ public class BookingMeetingTimeTest {
      * Test the property 'start'
      */
     @Test
-    public void startTest() {
+    void startTest() {
         // TODO: test start
     }
 
@@ -52,7 +52,7 @@ public class BookingMeetingTimeTest {
      * Test the property 'end'
      */
     @Test
-    public void endTest() {
+    void endTest() {
         // TODO: test end
     }
 
@@ -60,7 +60,7 @@ public class BookingMeetingTimeTest {
      * Test the property 'userIds'
      */
     @Test
-    public void userIdsTest() {
+    void userIdsTest() {
         // TODO: test userIds
     }
 

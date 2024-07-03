@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.Attendee;
+import io.aurinko.client.model.MeetingResponseType;
 import io.aurinko.client.model.OnlineMeetingDetails;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,57 +45,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class MeetingInfo {
   public static final String JSON_PROPERTY_CANCELED = "canceled";
   private Boolean canceled;
 
   public static final String JSON_PROPERTY_ATTENDEES = "attendees";
-  private List<Attendee> attendees;
-
-  /**
-   * Gets or Sets response
-   */
-  public enum ResponseEnum {
-    NORESPONSE("noResponse"),
-    
-    DECLINED("declined"),
-    
-    TENTATIVE("tentative"),
-    
-    ACCEPTED("accepted"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
-
-    private String value;
-
-    ResponseEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ResponseEnum fromValue(String value) {
-      for (ResponseEnum b : ResponseEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-  }
+  private List<Attendee> attendees = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RESPONSE = "response";
-  private ResponseEnum response;
+  private MeetingResponseType response;
 
   /**
    * Gets or Sets attendeePermissions
@@ -136,7 +96,7 @@ public class MeetingInfo {
   }
 
   public static final String JSON_PROPERTY_ATTENDEE_PERMISSIONS = "attendeePermissions";
-  private List<AttendeePermissionsEnum> attendeePermissions;
+  private List<AttendeePermissionsEnum> attendeePermissions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ONLINE_MEETING = "onlineMeeting";
   private Boolean onlineMeeting;
@@ -152,12 +112,10 @@ public class MeetingInfo {
 
   @JsonCreator
   public MeetingInfo(
-    @JsonProperty(JSON_PROPERTY_CANCELED) Boolean canceled, 
-    @JsonProperty(JSON_PROPERTY_RESPONSE) ResponseEnum response
+    @JsonProperty(JSON_PROPERTY_CANCELED) Boolean canceled
   ) {
   this();
     this.canceled = canceled;
-    this.response = response;
   }
 
    /**
@@ -208,6 +166,11 @@ public class MeetingInfo {
   }
 
 
+  public MeetingInfo response(MeetingResponseType response) {
+    this.response = response;
+    return this;
+  }
+
    /**
    * Get response
    * @return response
@@ -216,11 +179,16 @@ public class MeetingInfo {
   @JsonProperty(JSON_PROPERTY_RESPONSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public ResponseEnum getResponse() {
+  public MeetingResponseType getResponse() {
     return response;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_RESPONSE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setResponse(MeetingResponseType response) {
+    this.response = response;
+  }
 
 
   public MeetingInfo attendeePermissions(List<AttendeePermissionsEnum> attendeePermissions) {

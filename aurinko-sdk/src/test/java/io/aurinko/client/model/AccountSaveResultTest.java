@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for AccountSaveResult
  */
-public class AccountSaveResultTest {
+class AccountSaveResultTest {
     private final AccountSaveResult model = new AccountSaveResult();
 
     /**
      * Model tests for AccountSaveResult
      */
     @Test
-    public void testAccountSaveResult() {
+    void testAccountSaveResult() {
         // TODO: test AccountSaveResult
     }
 
@@ -41,7 +41,7 @@ public class AccountSaveResultTest {
      * Test the property 'accountId'
      */
     @Test
-    public void accountIdTest() {
+    void accountIdTest() {
         // TODO: test accountId
     }
 
@@ -49,7 +49,7 @@ public class AccountSaveResultTest {
      * Test the property 'accessToken'
      */
     @Test
-    public void accessTokenTest() {
+    void accessTokenTest() {
         // TODO: test accessToken
     }
 
@@ -57,7 +57,7 @@ public class AccountSaveResultTest {
      * Test the property 'userId'
      */
     @Test
-    public void userIdTest() {
+    void userIdTest() {
         // TODO: test userId
     }
 
@@ -65,7 +65,7 @@ public class AccountSaveResultTest {
      * Test the property 'userSession'
      */
     @Test
-    public void userSessionTest() {
+    void userSessionTest() {
         // TODO: test userSession
     }
 

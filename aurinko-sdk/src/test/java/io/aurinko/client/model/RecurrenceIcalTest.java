@@ -22,21 +22,21 @@ import io.aurinko.client.model.EventDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for RecurrenceIcal
  */
-public class RecurrenceIcalTest {
+class RecurrenceIcalTest {
     private final RecurrenceIcal model = new RecurrenceIcal();
 
     /**
      * Model tests for RecurrenceIcal
      */
     @Test
-    public void testRecurrenceIcal() {
+    void testRecurrenceIcal() {
         // TODO: test RecurrenceIcal
     }
 
@@ -44,7 +44,7 @@ public class RecurrenceIcalTest {
      * Test the property 'rules'
      */
     @Test
-    public void rulesTest() {
+    void rulesTest() {
         // TODO: test rules
     }
 
@@ -52,7 +52,7 @@ public class RecurrenceIcalTest {
      * Test the property 'recurrenceStart'
      */
     @Test
-    public void recurrenceStartTest() {
+    void recurrenceStartTest() {
         // TODO: test recurrenceStart
     }
 

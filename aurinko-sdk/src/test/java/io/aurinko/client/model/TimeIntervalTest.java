@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for TimeInterval
  */
-public class TimeIntervalTest {
+class TimeIntervalTest {
     private final TimeInterval model = new TimeInterval();
 
     /**
      * Model tests for TimeInterval
      */
     @Test
-    public void testTimeInterval() {
+    void testTimeInterval() {
         // TODO: test TimeInterval
     }
 
@@ -42,7 +42,7 @@ public class TimeIntervalTest {
      * Test the property 'start'
      */
     @Test
-    public void startTest() {
+    void startTest() {
         // TODO: test start
     }
 
@@ -50,7 +50,7 @@ public class TimeIntervalTest {
      * Test the property 'end'
      */
     @Test
-    public void endTest() {
+    void endTest() {
         // TODO: test end
     }
 

@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   WorkHoursResponseItem.JSON_PROPERTY_EMAIL,
   WorkHoursResponseItem.JSON_PROPERTY_WORK_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WorkHoursResponseItem {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;

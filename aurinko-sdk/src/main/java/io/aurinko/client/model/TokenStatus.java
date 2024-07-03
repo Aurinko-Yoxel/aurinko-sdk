@@ -26,17 +26,15 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets TokenStatus
+ * * active - means the token is active and ready for use * invalid - means that Aurinko failed to access provider API with authentication data.    Basically it indicates that Aurinko has received a 401 http status from provider and marked this token as non-active. * dead - this is a special variant of \&quot;invalid\&quot; status that can occur only with OAuth 2.0 accounts.    It means that Aurinko failed to refresh OAuth access token and received \&quot;invalid_grant\&quot; error which indicates    that the access/refresh tokens pair cannot be used anymore and is basically dead.    The difference between invalid and dead is that with invalid tokens Aurinko will still try to    access provider API and with dead Aurinko won&#39;t even attempt:    trying to use dead token, Aurinko will just return 401 without making calls to the provider. 
  */
 public enum TokenStatus {
   
-  DEAD("dead"),
+  ACTIVE("active"),
   
   INVALID("invalid"),
   
-  ACTIVE("active"),
-  
-  REQUIRED("required"),
+  DEAD("dead"),
   
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 

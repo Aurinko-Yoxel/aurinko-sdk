@@ -22,21 +22,21 @@ import io.aurinko.client.model.BookingAttachGroupUserDto;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for BookingAttachGroupUsersDto
  */
-public class BookingAttachGroupUsersDtoTest {
+class BookingAttachGroupUsersDtoTest {
     private final BookingAttachGroupUsersDto model = new BookingAttachGroupUsersDto();
 
     /**
      * Model tests for BookingAttachGroupUsersDto
      */
     @Test
-    public void testBookingAttachGroupUsersDto() {
+    void testBookingAttachGroupUsersDto() {
         // TODO: test BookingAttachGroupUsersDto
     }
 
@@ -44,7 +44,7 @@ public class BookingAttachGroupUsersDtoTest {
      * Test the property 'users'
      */
     @Test
-    public void usersTest() {
+    void usersTest() {
         // TODO: test users
     }
 

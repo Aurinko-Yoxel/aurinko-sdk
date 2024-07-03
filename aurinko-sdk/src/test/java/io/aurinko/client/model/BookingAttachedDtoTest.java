@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for BookingAttachedDto
  */
-public class BookingAttachedDtoTest {
+class BookingAttachedDtoTest {
     private final BookingAttachedDto model = new BookingAttachedDto();
 
     /**
      * Model tests for BookingAttachedDto
      */
     @Test
-    public void testBookingAttachedDto() {
+    void testBookingAttachedDto() {
         // TODO: test BookingAttachedDto
     }
 
@@ -43,7 +43,7 @@ public class BookingAttachedDtoTest {
      * Test the property 'userId'
      */
     @Test
-    public void userIdTest() {
+    void userIdTest() {
         // TODO: test userId
     }
 
@@ -51,7 +51,7 @@ public class BookingAttachedDtoTest {
      * Test the property 'accounts'
      */
     @Test
-    public void accountsTest() {
+    void accountsTest() {
         // TODO: test accounts
     }
 

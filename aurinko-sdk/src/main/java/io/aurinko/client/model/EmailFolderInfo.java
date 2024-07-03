@@ -33,9 +33,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonPropertyOrder({
   EmailFolderInfo.JSON_PROPERTY_ID,
-  EmailFolderInfo.JSON_PROPERTY_NAME
+  EmailFolderInfo.JSON_PROPERTY_NAME,
+  EmailFolderInfo.JSON_PROPERTY_FULL_NAME,
+  EmailFolderInfo.JSON_PROPERTY_IS_FOLDER,
+  EmailFolderInfo.JSON_PROPERTY_IS_LABEL,
+  EmailFolderInfo.JSON_PROPERTY_PARENT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailFolderInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -43,17 +47,37 @@ public class EmailFolderInfo {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
+  public static final String JSON_PROPERTY_FULL_NAME = "fullName";
+  private String fullName;
+
+  public static final String JSON_PROPERTY_IS_FOLDER = "isFolder";
+  private Boolean isFolder;
+
+  public static final String JSON_PROPERTY_IS_LABEL = "isLabel";
+  private Boolean isLabel;
+
+  public static final String JSON_PROPERTY_PARENT_ID = "parentId";
+  private String parentId;
+
   public EmailFolderInfo() { 
   }
 
   @JsonCreator
   public EmailFolderInfo(
     @JsonProperty(JSON_PROPERTY_ID) String id, 
-    @JsonProperty(JSON_PROPERTY_NAME) String name
+    @JsonProperty(JSON_PROPERTY_NAME) String name, 
+    @JsonProperty(JSON_PROPERTY_FULL_NAME) String fullName, 
+    @JsonProperty(JSON_PROPERTY_IS_FOLDER) Boolean isFolder, 
+    @JsonProperty(JSON_PROPERTY_IS_LABEL) Boolean isLabel, 
+    @JsonProperty(JSON_PROPERTY_PARENT_ID) String parentId
   ) {
   this();
     this.id = id;
     this.name = name;
+    this.fullName = fullName;
+    this.isFolder = isFolder;
+    this.isLabel = isLabel;
+    this.parentId = parentId;
   }
 
    /**
@@ -86,6 +110,66 @@ public class EmailFolderInfo {
 
 
 
+   /**
+   * Get fullName
+   * @return fullName
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getFullName() {
+    return fullName;
+  }
+
+
+
+
+   /**
+   * Get isFolder
+   * @return isFolder
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_IS_FOLDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getIsFolder() {
+    return isFolder;
+  }
+
+
+
+
+   /**
+   * Get isLabel
+   * @return isLabel
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_IS_LABEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getIsLabel() {
+    return isLabel;
+  }
+
+
+
+
+   /**
+   * Get parentId
+   * @return parentId
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PARENT_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getParentId() {
+    return parentId;
+  }
+
+
+
+
   /**
    * Return true if this EmailFolderInfo object is equal to o.
    */
@@ -99,12 +183,16 @@ public class EmailFolderInfo {
     }
     EmailFolderInfo emailFolderInfo = (EmailFolderInfo) o;
     return Objects.equals(this.id, emailFolderInfo.id) &&
-        Objects.equals(this.name, emailFolderInfo.name);
+        Objects.equals(this.name, emailFolderInfo.name) &&
+        Objects.equals(this.fullName, emailFolderInfo.fullName) &&
+        Objects.equals(this.isFolder, emailFolderInfo.isFolder) &&
+        Objects.equals(this.isLabel, emailFolderInfo.isLabel) &&
+        Objects.equals(this.parentId, emailFolderInfo.parentId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(id, name, fullName, isFolder, isLabel, parentId);
   }
 
   @Override
@@ -113,6 +201,10 @@ public class EmailFolderInfo {
     sb.append("class EmailFolderInfo {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
+    sb.append("    isFolder: ").append(toIndentedString(isFolder)).append("\n");
+    sb.append("    isLabel: ").append(toIndentedString(isLabel)).append("\n");
+    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -168,6 +260,26 @@ public class EmailFolderInfo {
     // add `name` to the URL query string
     if (getName() != null) {
       joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `fullName` to the URL query string
+    if (getFullName() != null) {
+      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `isFolder` to the URL query string
+    if (getIsFolder() != null) {
+      joiner.add(String.format("%sisFolder%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsFolder()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `isLabel` to the URL query string
+    if (getIsLabel() != null) {
+      joiner.add(String.format("%sisLabel%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsLabel()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `parentId` to the URL query string
+    if (getParentId() != null) {
+      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.EmailMessage;
 import io.aurinko.client.model.ScheduledDraft;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailDraft
  */
-public class EmailDraftTest {
+class EmailDraftTest {
     private final EmailDraft model = new EmailDraft();
 
     /**
      * Model tests for EmailDraft
      */
     @Test
-    public void testEmailDraft() {
+    void testEmailDraft() {
         // TODO: test EmailDraft
     }
 
@@ -43,7 +43,7 @@ public class EmailDraftTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -51,7 +51,7 @@ public class EmailDraftTest {
      * Test the property 'message'
      */
     @Test
-    public void messageTest() {
+    void messageTest() {
         // TODO: test message
     }
 
@@ -59,7 +59,7 @@ public class EmailDraftTest {
      * Test the property 'scheduled'
      */
     @Test
-    public void scheduledTest() {
+    void scheduledTest() {
         // TODO: test scheduled
     }
 

@@ -22,21 +22,21 @@ import io.aurinko.client.model.EndUserAccountDto;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EndUserAccountsPage
  */
-public class EndUserAccountsPageTest {
+class EndUserAccountsPageTest {
     private final EndUserAccountsPage model = new EndUserAccountsPage();
 
     /**
      * Model tests for EndUserAccountsPage
      */
     @Test
-    public void testEndUserAccountsPage() {
+    void testEndUserAccountsPage() {
         // TODO: test EndUserAccountsPage
     }
 
@@ -44,7 +44,7 @@ public class EndUserAccountsPageTest {
      * Test the property 'nextPageToken'
      */
     @Test
-    public void nextPageTokenTest() {
+    void nextPageTokenTest() {
         // TODO: test nextPageToken
     }
 
@@ -52,7 +52,7 @@ public class EndUserAccountsPageTest {
      * Test the property 'length'
      */
     @Test
-    public void lengthTest() {
+    void lengthTest() {
         // TODO: test length
     }
 
@@ -60,7 +60,7 @@ public class EndUserAccountsPageTest {
      * Test the property 'records'
      */
     @Test
-    public void recordsTest() {
+    void recordsTest() {
         // TODO: test records
     }
 

@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   TasksPage.JSON_PROPERTY_LENGTH,
   TasksPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class TasksPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   private String nextPageToken;
@@ -48,7 +48,7 @@ public class TasksPage {
   private Integer length;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
-  private List<Task> records;
+  private List<Task> records = new ArrayList<>();
 
   public TasksPage() { 
   }

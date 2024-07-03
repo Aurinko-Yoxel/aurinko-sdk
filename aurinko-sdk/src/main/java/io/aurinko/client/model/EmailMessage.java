@@ -71,7 +71,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailMessage.JSON_PROPERTY_FOLDER_ID,
   EmailMessage.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailMessage {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -147,10 +147,10 @@ public class EmailMessage {
   }
 
   public static final String JSON_PROPERTY_SYS_LABELS = "sysLabels";
-  private List<SysLabelsEnum> sysLabels;
+  private List<SysLabelsEnum> sysLabels = new ArrayList<>();
 
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
-  private List<String> keywords;
+  private List<String> keywords = new ArrayList<>();
 
   /**
    * Gets or Sets sysClassifications
@@ -196,7 +196,7 @@ public class EmailMessage {
   }
 
   public static final String JSON_PROPERTY_SYS_CLASSIFICATIONS = "sysClassifications";
-  private List<SysClassificationsEnum> sysClassifications;
+  private List<SysClassificationsEnum> sysClassifications = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SENSITIVITY = "sensitivity";
   private Sensitivity sensitivity;
@@ -251,16 +251,16 @@ public class EmailMessage {
   private EmailAddress from;
 
   public static final String JSON_PROPERTY_TO = "to";
-  private List<EmailAddress> to;
+  private List<EmailAddress> to = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CC = "cc";
-  private List<EmailAddress> cc;
+  private List<EmailAddress> cc = new ArrayList<>();
 
   public static final String JSON_PROPERTY_BCC = "bcc";
-  private List<EmailAddress> bcc;
+  private List<EmailAddress> bcc = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REPLY_TO = "replyTo";
-  private List<EmailAddress> replyTo;
+  private List<EmailAddress> replyTo = new ArrayList<>();
 
   public static final String JSON_PROPERTY_HAS_ATTACHMENTS = "hasAttachments";
   private Boolean hasAttachments;
@@ -272,7 +272,7 @@ public class EmailMessage {
   private String bodySnippet;
 
   public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
-  private List<EmailAttachment> attachments;
+  private List<EmailAttachment> attachments = new ArrayList<>();
 
   public static final String JSON_PROPERTY_IN_REPLY_TO = "inReplyTo";
   private String inReplyTo;
@@ -284,7 +284,7 @@ public class EmailMessage {
   private String threadIndex;
 
   public static final String JSON_PROPERTY_INTERNET_HEADERS = "internetHeaders";
-  private List<EmailHeader> internetHeaders;
+  private List<EmailHeader> internetHeaders = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NATIVE_PROPERTIES = "nativeProperties";
   private Map<String, String> nativeProperties = new HashMap<>();
@@ -336,7 +336,7 @@ public class EmailMessage {
   }
 
   public static final String JSON_PROPERTY_OMITTED = "omitted";
-  private List<OmittedEnum> omitted;
+  private List<OmittedEnum> omitted = new ArrayList<>();
 
   public EmailMessage() { 
   }

@@ -32,21 +32,21 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for Contact
  */
-public class ContactTest {
+class ContactTest {
     private final Contact model = new Contact();
 
     /**
      * Model tests for Contact
      */
     @Test
-    public void testContact() {
+    void testContact() {
         // TODO: test Contact
     }
 
@@ -54,7 +54,7 @@ public class ContactTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -62,7 +62,7 @@ public class ContactTest {
      * Test the property 'etag'
      */
     @Test
-    public void etagTest() {
+    void etagTest() {
         // TODO: test etag
     }
 
@@ -70,7 +70,7 @@ public class ContactTest {
      * Test the property 'createdTime'
      */
     @Test
-    public void createdTimeTest() {
+    void createdTimeTest() {
         // TODO: test createdTime
     }
 
@@ -78,7 +78,7 @@ public class ContactTest {
      * Test the property 'lastModifiedTime'
      */
     @Test
-    public void lastModifiedTimeTest() {
+    void lastModifiedTimeTest() {
         // TODO: test lastModifiedTime
     }
 
@@ -86,7 +86,7 @@ public class ContactTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -94,7 +94,7 @@ public class ContactTest {
      * Test the property 'nickName'
      */
     @Test
-    public void nickNameTest() {
+    void nickNameTest() {
         // TODO: test nickName
     }
 
@@ -102,7 +102,7 @@ public class ContactTest {
      * Test the property 'fileAs'
      */
     @Test
-    public void fileAsTest() {
+    void fileAsTest() {
         // TODO: test fileAs
     }
 
@@ -110,7 +110,7 @@ public class ContactTest {
      * Test the property 'company'
      */
     @Test
-    public void companyTest() {
+    void companyTest() {
         // TODO: test company
     }
 
@@ -118,7 +118,7 @@ public class ContactTest {
      * Test the property 'relations'
      */
     @Test
-    public void relationsTest() {
+    void relationsTest() {
         // TODO: test relations
     }
 
@@ -126,7 +126,7 @@ public class ContactTest {
      * Test the property 'birthday'
      */
     @Test
-    public void birthdayTest() {
+    void birthdayTest() {
         // TODO: test birthday
     }
 
@@ -134,7 +134,7 @@ public class ContactTest {
      * Test the property 'keywords'
      */
     @Test
-    public void keywordsTest() {
+    void keywordsTest() {
         // TODO: test keywords
     }
 
@@ -142,7 +142,7 @@ public class ContactTest {
      * Test the property 'notes'
      */
     @Test
-    public void notesTest() {
+    void notesTest() {
         // TODO: test notes
     }
 
@@ -150,7 +150,7 @@ public class ContactTest {
      * Test the property 'emailAddresses'
      */
     @Test
-    public void emailAddressesTest() {
+    void emailAddressesTest() {
         // TODO: test emailAddresses
     }
 
@@ -158,7 +158,7 @@ public class ContactTest {
      * Test the property 'phoneNumbers'
      */
     @Test
-    public void phoneNumbersTest() {
+    void phoneNumbersTest() {
         // TODO: test phoneNumbers
     }
 
@@ -166,7 +166,7 @@ public class ContactTest {
      * Test the property 'addresses'
      */
     @Test
-    public void addressesTest() {
+    void addressesTest() {
         // TODO: test addresses
     }
 
@@ -174,7 +174,7 @@ public class ContactTest {
      * Test the property 'urls'
      */
     @Test
-    public void urlsTest() {
+    void urlsTest() {
         // TODO: test urls
     }
 
@@ -182,7 +182,7 @@ public class ContactTest {
      * Test the property 'nativeProperties'
      */
     @Test
-    public void nativePropertiesTest() {
+    void nativePropertiesTest() {
         // TODO: test nativeProperties
     }
 
@@ -190,7 +190,7 @@ public class ContactTest {
      * Test the property 'hasPhoto'
      */
     @Test
-    public void hasPhotoTest() {
+    void hasPhotoTest() {
         // TODO: test hasPhoto
     }
 
@@ -198,7 +198,7 @@ public class ContactTest {
      * Test the property 'photo'
      */
     @Test
-    public void photoTest() {
+    void photoTest() {
         // TODO: test photo
     }
 

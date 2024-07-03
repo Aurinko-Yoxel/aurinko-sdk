@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailSendError.JSON_PROPERTY_FAILED_STEPS,
   EmailSendError.JSON_PROPERTY_ERROR_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailSendError {
   /**
    * Action that should have been performed, but were not performed due to an error
@@ -81,7 +81,7 @@ public class EmailSendError {
   }
 
   public static final String JSON_PROPERTY_FAILED_STEPS = "failedSteps";
-  private List<FailedStepsEnum> failedSteps;
+  private List<FailedStepsEnum> failedSteps = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ERROR_MESSAGE = "errorMessage";
   private String errorMessage;

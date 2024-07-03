@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailAttachmentContent
  */
-public class EmailAttachmentContentTest {
+class EmailAttachmentContentTest {
     private final EmailAttachmentContent model = new EmailAttachmentContent();
 
     /**
      * Model tests for EmailAttachmentContent
      */
     @Test
-    public void testEmailAttachmentContent() {
+    void testEmailAttachmentContent() {
         // TODO: test EmailAttachmentContent
     }
 
@@ -41,7 +41,7 @@ public class EmailAttachmentContentTest {
      * Test the property 'content'
      */
     @Test
-    public void contentTest() {
+    void contentTest() {
         // TODO: test content
     }
 

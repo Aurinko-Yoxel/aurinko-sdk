@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailHeader
  */
-public class EmailHeaderTest {
+class EmailHeaderTest {
     private final EmailHeader model = new EmailHeader();
 
     /**
      * Model tests for EmailHeader
      */
     @Test
-    public void testEmailHeader() {
+    void testEmailHeader() {
         // TODO: test EmailHeader
     }
 
@@ -41,7 +41,7 @@ public class EmailHeaderTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -49,7 +49,7 @@ public class EmailHeaderTest {
      * Test the property 'value'
      */
     @Test
-    public void valueTest() {
+    void valueTest() {
         // TODO: test value
     }
 

@@ -22,21 +22,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for FreeBusyRequest
  */
-public class FreeBusyRequestTest {
+class FreeBusyRequestTest {
     private final FreeBusyRequest model = new FreeBusyRequest();
 
     /**
      * Model tests for FreeBusyRequest
      */
     @Test
-    public void testFreeBusyRequest() {
+    void testFreeBusyRequest() {
         // TODO: test FreeBusyRequest
     }
 
@@ -44,7 +44,7 @@ public class FreeBusyRequestTest {
      * Test the property 'timeMin'
      */
     @Test
-    public void timeMinTest() {
+    void timeMinTest() {
         // TODO: test timeMin
     }
 
@@ -52,7 +52,7 @@ public class FreeBusyRequestTest {
      * Test the property 'timeMax'
      */
     @Test
-    public void timeMaxTest() {
+    void timeMaxTest() {
         // TODO: test timeMax
     }
 
@@ -60,7 +60,7 @@ public class FreeBusyRequestTest {
      * Test the property 'emails'
      */
     @Test
-    public void emailsTest() {
+    void emailsTest() {
         // TODO: test emails
     }
 

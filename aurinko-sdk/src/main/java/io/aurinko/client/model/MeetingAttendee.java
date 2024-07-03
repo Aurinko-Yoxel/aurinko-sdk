@@ -43,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   MeetingAttendee.JSON_PROPERTY_BUSY_INTERVALS,
   MeetingAttendee.JSON_PROPERTY_FREE_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class MeetingAttendee {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
@@ -58,10 +58,10 @@ public class MeetingAttendee {
   private String error;
 
   public static final String JSON_PROPERTY_BUSY_INTERVALS = "busyIntervals";
-  private List<TimeInterval> busyIntervals;
+  private List<TimeInterval> busyIntervals = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FREE_INTERVALS = "freeIntervals";
-  private List<TimeInterval> freeIntervals;
+  private List<TimeInterval> freeIntervals = new ArrayList<>();
 
   public MeetingAttendee() { 
   }

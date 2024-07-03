@@ -22,21 +22,21 @@ import io.aurinko.client.model.FreeBusySchedule;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for FreeBusySchedulePage
  */
-public class FreeBusySchedulePageTest {
+class FreeBusySchedulePageTest {
     private final FreeBusySchedulePage model = new FreeBusySchedulePage();
 
     /**
      * Model tests for FreeBusySchedulePage
      */
     @Test
-    public void testFreeBusySchedulePage() {
+    void testFreeBusySchedulePage() {
         // TODO: test FreeBusySchedulePage
     }
 
@@ -44,7 +44,7 @@ public class FreeBusySchedulePageTest {
      * Test the property 'records'
      */
     @Test
-    public void recordsTest() {
+    void recordsTest() {
         // TODO: test records
     }
 

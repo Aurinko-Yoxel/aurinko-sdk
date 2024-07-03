@@ -24,21 +24,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EndUserDto
  */
-public class EndUserDtoTest {
+class EndUserDtoTest {
     private final EndUserDto model = new EndUserDto();
 
     /**
      * Model tests for EndUserDto
      */
     @Test
-    public void testEndUserDto() {
+    void testEndUserDto() {
         // TODO: test EndUserDto
     }
 
@@ -46,7 +46,7 @@ public class EndUserDtoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -54,7 +54,7 @@ public class EndUserDtoTest {
      * Test the property 'appId'
      */
     @Test
-    public void appIdTest() {
+    void appIdTest() {
         // TODO: test appId
     }
 
@@ -62,7 +62,7 @@ public class EndUserDtoTest {
      * Test the property 'email'
      */
     @Test
-    public void emailTest() {
+    void emailTest() {
         // TODO: test email
     }
 
@@ -70,7 +70,7 @@ public class EndUserDtoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -78,7 +78,7 @@ public class EndUserDtoTest {
      * Test the property 'authOrgId'
      */
     @Test
-    public void authOrgIdTest() {
+    void authOrgIdTest() {
         // TODO: test authOrgId
     }
 
@@ -86,7 +86,7 @@ public class EndUserDtoTest {
      * Test the property 'createdAt'
      */
     @Test
-    public void createdAtTest() {
+    void createdAtTest() {
         // TODO: test createdAt
     }
 
@@ -94,7 +94,7 @@ public class EndUserDtoTest {
      * Test the property 'lastActivity'
      */
     @Test
-    public void lastActivityTest() {
+    void lastActivityTest() {
         // TODO: test lastActivity
     }
 
@@ -102,7 +102,7 @@ public class EndUserDtoTest {
      * Test the property 'trustedIdentity'
      */
     @Test
-    public void trustedIdentityTest() {
+    void trustedIdentityTest() {
         // TODO: test trustedIdentity
     }
 
@@ -110,7 +110,7 @@ public class EndUserDtoTest {
      * Test the property 'externalIdType'
      */
     @Test
-    public void externalIdTypeTest() {
+    void externalIdTypeTest() {
         // TODO: test externalIdType
     }
 
@@ -118,7 +118,7 @@ public class EndUserDtoTest {
      * Test the property 'accounts'
      */
     @Test
-    public void accountsTest() {
+    void accountsTest() {
         // TODO: test accounts
     }
 

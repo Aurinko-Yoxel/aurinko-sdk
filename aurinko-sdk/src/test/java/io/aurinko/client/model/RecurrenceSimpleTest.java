@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.RecurrenceSimplePattern;
 import io.aurinko.client.model.RecurrenceSimpleRange;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for RecurrenceSimple
  */
-public class RecurrenceSimpleTest {
+class RecurrenceSimpleTest {
     private final RecurrenceSimple model = new RecurrenceSimple();
 
     /**
      * Model tests for RecurrenceSimple
      */
     @Test
-    public void testRecurrenceSimple() {
+    void testRecurrenceSimple() {
         // TODO: test RecurrenceSimple
     }
 
@@ -43,7 +43,7 @@ public class RecurrenceSimpleTest {
      * Test the property 'pattern'
      */
     @Test
-    public void patternTest() {
+    void patternTest() {
         // TODO: test pattern
     }
 
@@ -51,7 +51,7 @@ public class RecurrenceSimpleTest {
      * Test the property 'range'
      */
     @Test
-    public void rangeTest() {
+    void rangeTest() {
         // TODO: test range
     }
 

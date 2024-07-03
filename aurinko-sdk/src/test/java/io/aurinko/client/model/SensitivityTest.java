@@ -13,19 +13,19 @@
 
 package io.aurinko.client.model;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for Sensitivity
  */
-public class SensitivityTest {
+class SensitivityTest {
     /**
      * Model tests for Sensitivity
      */
     @Test
-    public void testSensitivity() {
+    void testSensitivity() {
         // TODO: test Sensitivity
     }
 

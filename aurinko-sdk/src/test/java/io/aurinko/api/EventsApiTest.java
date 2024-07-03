@@ -19,6 +19,7 @@ import io.aurinko.client.model.EmailAttachmentContent;
 import io.aurinko.client.model.Event;
 import io.aurinko.client.model.EventOrId;
 import io.aurinko.client.model.EventsPageNext;
+import io.aurinko.client.model.MeetingResponse;
 import java.time.OffsetDateTime;
 import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.SeriesInfo;
@@ -230,12 +231,10 @@ public class EventsApiTest {
     public void updateMeetingResponseTest() throws ApiException {
         String calendarId = null;
         String eventId = null;
-        String ifMatch = null;
         Boolean notifyAttendees = null;
-        Boolean returnRecord = null;
-        Event event = null;
+        MeetingResponse meetingResponse = null;
         CompletableFuture<OkResponse> response = 
-        api.updateMeetingResponse(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event);
+        api.updateMeetingResponse(calendarId, eventId, notifyAttendees, meetingResponse);
         
         // TODO: test validations
     }

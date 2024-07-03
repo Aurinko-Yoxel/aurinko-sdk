@@ -24,21 +24,21 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for DripRequestDTO
  */
-public class DripRequestDTOTest {
+class DripRequestDTOTest {
     private final DripRequestDTO model = new DripRequestDTO();
 
     /**
      * Model tests for DripRequestDTO
      */
     @Test
-    public void testDripRequestDTO() {
+    void testDripRequestDTO() {
         // TODO: test DripRequestDTO
     }
 
@@ -46,7 +46,7 @@ public class DripRequestDTOTest {
      * Test the property 'status'
      */
     @Test
-    public void statusTest() {
+    void statusTest() {
         // TODO: test status
     }
 
@@ -54,7 +54,7 @@ public class DripRequestDTOTest {
      * Test the property 'ruleId'
      */
     @Test
-    public void ruleIdTest() {
+    void ruleIdTest() {
         // TODO: test ruleId
     }
 
@@ -62,7 +62,7 @@ public class DripRequestDTOTest {
      * Test the property 'dripAfter'
      */
     @Test
-    public void dripAfterTest() {
+    void dripAfterTest() {
         // TODO: test dripAfter
     }
 
@@ -70,7 +70,7 @@ public class DripRequestDTOTest {
      * Test the property 'targets'
      */
     @Test
-    public void targetsTest() {
+    void targetsTest() {
         // TODO: test targets
     }
 
@@ -78,7 +78,7 @@ public class DripRequestDTOTest {
      * Test the property 'actionVars'
      */
     @Test
-    public void actionVarsTest() {
+    void actionVarsTest() {
         // TODO: test actionVars
     }
 

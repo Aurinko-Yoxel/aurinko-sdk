@@ -52,7 +52,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class TasksApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -189,8 +189,9 @@ public class TasksApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
-   * Delete a task list by id
+   * Delete a task by id
    * 
    * @param taskListId Task list id (required)
    * @param id Task id (required)
@@ -222,7 +223,7 @@ public class TasksApi {
   }
 
   /**
-   * Delete a task list by id
+   * Delete a task by id
    * 
    * @param taskListId Task list id (required)
    * @param id Task id (required)
@@ -289,6 +290,7 @@ public class TasksApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Request a task by id
    * 
@@ -389,6 +391,7 @@ public class TasksApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Request list of tasks
    * 
@@ -499,6 +502,7 @@ public class TasksApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Update a task
    * 
@@ -612,4 +616,5 @@ public class TasksApi {
     }
     return localVarRequestBuilder;
   }
+
 }

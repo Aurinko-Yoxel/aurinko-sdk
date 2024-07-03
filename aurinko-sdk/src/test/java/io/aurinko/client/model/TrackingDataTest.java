@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for TrackingData
  */
-public class TrackingDataTest {
+class TrackingDataTest {
     private final TrackingData model = new TrackingData();
 
     /**
      * Model tests for TrackingData
      */
     @Test
-    public void testTrackingData() {
+    void testTrackingData() {
         // TODO: test TrackingData
     }
 
@@ -42,7 +42,7 @@ public class TrackingDataTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class TrackingDataTest {
      * Test the property 'messageId'
      */
     @Test
-    public void messageIdTest() {
+    void messageIdTest() {
         // TODO: test messageId
     }
 
@@ -58,7 +58,7 @@ public class TrackingDataTest {
      * Test the property 'inetMessageId'
      */
     @Test
-    public void inetMessageIdTest() {
+    void inetMessageIdTest() {
         // TODO: test inetMessageId
     }
 
@@ -66,7 +66,7 @@ public class TrackingDataTest {
      * Test the property 'threadId'
      */
     @Test
-    public void threadIdTest() {
+    void threadIdTest() {
         // TODO: test threadId
     }
 
@@ -74,7 +74,7 @@ public class TrackingDataTest {
      * Test the property 'sendDate'
      */
     @Test
-    public void sendDateTest() {
+    void sendDateTest() {
         // TODO: test sendDate
     }
 
@@ -82,7 +82,7 @@ public class TrackingDataTest {
      * Test the property 'lastActivityTime'
      */
     @Test
-    public void lastActivityTimeTest() {
+    void lastActivityTimeTest() {
         // TODO: test lastActivityTime
     }
 
@@ -90,7 +90,7 @@ public class TrackingDataTest {
      * Test the property 'lastRespondedTime'
      */
     @Test
-    public void lastRespondedTimeTest() {
+    void lastRespondedTimeTest() {
         // TODO: test lastRespondedTime
     }
 
@@ -98,7 +98,7 @@ public class TrackingDataTest {
      * Test the property 'trackReplies'
      */
     @Test
-    public void trackRepliesTest() {
+    void trackRepliesTest() {
         // TODO: test trackReplies
     }
 
@@ -106,7 +106,7 @@ public class TrackingDataTest {
      * Test the property 'trackOpens'
      */
     @Test
-    public void trackOpensTest() {
+    void trackOpensTest() {
         // TODO: test trackOpens
     }
 
@@ -114,7 +114,7 @@ public class TrackingDataTest {
      * Test the property 'trackingCode'
      */
     @Test
-    public void trackingCodeTest() {
+    void trackingCodeTest() {
         // TODO: test trackingCode
     }
 
@@ -122,7 +122,7 @@ public class TrackingDataTest {
      * Test the property 'context'
      */
     @Test
-    public void contextTest() {
+    void contextTest() {
         // TODO: test context
     }
 
@@ -130,7 +130,7 @@ public class TrackingDataTest {
      * Test the property 'location'
      */
     @Test
-    public void locationTest() {
+    void locationTest() {
         // TODO: test location
     }
 
@@ -138,7 +138,7 @@ public class TrackingDataTest {
      * Test the property 'userAgent'
      */
     @Test
-    public void userAgentTest() {
+    void userAgentTest() {
         // TODO: test userAgent
     }
 
@@ -146,7 +146,7 @@ public class TrackingDataTest {
      * Test the property 'remoteAddr'
      */
     @Test
-    public void remoteAddrTest() {
+    void remoteAddrTest() {
         // TODO: test remoteAddr
     }
 
@@ -154,7 +154,7 @@ public class TrackingDataTest {
      * Test the property 'ignoreOpenClicks'
      */
     @Test
-    public void ignoreOpenClicksTest() {
+    void ignoreOpenClicksTest() {
         // TODO: test ignoreOpenClicks
     }
 
@@ -162,7 +162,7 @@ public class TrackingDataTest {
      * Test the property 'hasBounced'
      */
     @Test
-    public void hasBouncedTest() {
+    void hasBouncedTest() {
         // TODO: test hasBounced
     }
 

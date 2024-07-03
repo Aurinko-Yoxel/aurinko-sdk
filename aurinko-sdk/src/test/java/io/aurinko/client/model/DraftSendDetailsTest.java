@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.OutEmailTrack;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for DraftSendDetails
  */
-public class DraftSendDetailsTest {
+class DraftSendDetailsTest {
     private final DraftSendDetails model = new DraftSendDetails();
 
     /**
      * Model tests for DraftSendDetails
      */
     @Test
-    public void testDraftSendDetails() {
+    void testDraftSendDetails() {
         // TODO: test DraftSendDetails
     }
 
@@ -42,7 +42,7 @@ public class DraftSendDetailsTest {
      * Test the property 'tracking'
      */
     @Test
-    public void trackingTest() {
+    void trackingTest() {
         // TODO: test tracking
     }
 

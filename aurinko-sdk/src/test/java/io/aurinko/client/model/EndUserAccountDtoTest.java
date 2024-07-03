@@ -28,21 +28,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EndUserAccountDto
  */
-public class EndUserAccountDtoTest {
+class EndUserAccountDtoTest {
     private final EndUserAccountDto model = new EndUserAccountDto();
 
     /**
      * Model tests for EndUserAccountDto
      */
     @Test
-    public void testEndUserAccountDto() {
+    void testEndUserAccountDto() {
         // TODO: test EndUserAccountDto
     }
 
@@ -50,7 +50,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -58,7 +58,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'parentId'
      */
     @Test
-    public void parentIdTest() {
+    void parentIdTest() {
         // TODO: test parentId
     }
 
@@ -66,7 +66,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'serviceType'
      */
     @Test
-    public void serviceTypeTest() {
+    void serviceTypeTest() {
         // TODO: test serviceType
     }
 
@@ -74,7 +74,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'userAccountType'
      */
     @Test
-    public void userAccountTypeTest() {
+    void userAccountTypeTest() {
         // TODO: test userAccountType
     }
 
@@ -82,7 +82,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 
@@ -90,7 +90,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'active'
      */
     @Test
-    public void activeTest() {
+    void activeTest() {
         // TODO: test active
     }
 
@@ -98,7 +98,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'loginString'
      */
     @Test
-    public void loginStringTest() {
+    void loginStringTest() {
         // TODO: test loginString
     }
 
@@ -106,7 +106,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'email'
      */
     @Test
-    public void emailTest() {
+    void emailTest() {
         // TODO: test email
     }
 
@@ -114,7 +114,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -122,7 +122,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'serverUrl'
      */
     @Test
-    public void serverUrlTest() {
+    void serverUrlTest() {
         // TODO: test serverUrl
     }
 
@@ -130,7 +130,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'serverUrl2'
      */
     @Test
-    public void serverUrl2Test() {
+    void serverUrl2Test() {
         // TODO: test serverUrl2
     }
 
@@ -138,7 +138,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'clientOrgId'
      */
     @Test
-    public void clientOrgIdTest() {
+    void clientOrgIdTest() {
         // TODO: test clientOrgId
     }
 
@@ -146,7 +146,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'authUserId'
      */
     @Test
-    public void authUserIdTest() {
+    void authUserIdTest() {
         // TODO: test authUserId
     }
 
@@ -154,7 +154,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'authOrgId'
      */
     @Test
-    public void authOrgIdTest() {
+    void authOrgIdTest() {
         // TODO: test authOrgId
     }
 
@@ -162,7 +162,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'timezone'
      */
     @Test
-    public void timezoneTest() {
+    void timezoneTest() {
         // TODO: test timezone
     }
 
@@ -170,7 +170,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'authObtainedAt'
      */
     @Test
-    public void authObtainedAtTest() {
+    void authObtainedAtTest() {
         // TODO: test authObtainedAt
     }
 
@@ -178,7 +178,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'organization'
      */
     @Test
-    public void organizationTest() {
+    void organizationTest() {
         // TODO: test organization
     }
 
@@ -186,7 +186,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'tokenStatus'
      */
     @Test
-    public void tokenStatusTest() {
+    void tokenStatusTest() {
         // TODO: test tokenStatus
     }
 
@@ -194,7 +194,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'scopes'
      */
     @Test
-    public void scopesTest() {
+    void scopesTest() {
         // TODO: test scopes
     }
 
@@ -202,7 +202,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'authScopes'
      */
     @Test
-    public void authScopesTest() {
+    void authScopesTest() {
         // TODO: test authScopes
     }
 
@@ -210,7 +210,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'nativeScopes'
      */
     @Test
-    public void nativeScopesTest() {
+    void nativeScopesTest() {
         // TODO: test nativeScopes
     }
 
@@ -218,7 +218,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'authNativeScopes'
      */
     @Test
-    public void authNativeScopesTest() {
+    void authNativeScopesTest() {
         // TODO: test authNativeScopes
     }
 
@@ -226,7 +226,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'hasApiErrors'
      */
     @Test
-    public void hasApiErrorsTest() {
+    void hasApiErrorsTest() {
         // TODO: test hasApiErrors
     }
 
@@ -234,7 +234,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'bookingCount'
      */
     @Test
-    public void bookingCountTest() {
+    void bookingCountTest() {
         // TODO: test bookingCount
     }
 
@@ -242,7 +242,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'trackingActive'
      */
     @Test
-    public void trackingActiveTest() {
+    void trackingActiveTest() {
         // TODO: test trackingActive
     }
 
@@ -250,7 +250,7 @@ public class EndUserAccountDtoTest {
      * Test the property 'templatesCount'
      */
     @Test
-    public void templatesCountTest() {
+    void templatesCountTest() {
         // TODO: test templatesCount
     }
 

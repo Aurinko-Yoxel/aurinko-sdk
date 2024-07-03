@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for Calendar
  */
-public class CalendarTest {
+class CalendarTest {
     private final Calendar model = new Calendar();
 
     /**
      * Model tests for Calendar
      */
     @Test
-    public void testCalendar() {
+    void testCalendar() {
         // TODO: test Calendar
     }
 
@@ -41,7 +41,7 @@ public class CalendarTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -49,7 +49,7 @@ public class CalendarTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -57,7 +57,7 @@ public class CalendarTest {
      * Test the property 'color'
      */
     @Test
-    public void colorTest() {
+    void colorTest() {
         // TODO: test color
     }
 
@@ -65,7 +65,7 @@ public class CalendarTest {
      * Test the property 'description'
      */
     @Test
-    public void descriptionTest() {
+    void descriptionTest() {
         // TODO: test description
     }
 
@@ -73,7 +73,7 @@ public class CalendarTest {
      * Test the property 'accessRole'
      */
     @Test
-    public void accessRoleTest() {
+    void accessRoleTest() {
         // TODO: test accessRole
     }
 
@@ -81,7 +81,7 @@ public class CalendarTest {
      * Test the property 'primary'
      */
     @Test
-    public void primaryTest() {
+    void primaryTest() {
         // TODO: test primary
     }
 

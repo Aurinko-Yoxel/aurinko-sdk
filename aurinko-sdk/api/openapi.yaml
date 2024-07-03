@@ -284,7 +284,8 @@ paths:
                   "emails": ["user1@corp.com","user2@corp.com"]
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/workHours:
     post:
       operationId: calendarWorkhours
@@ -312,7 +313,8 @@ paths:
                   "emails": ["user1@corp.com","user2@corp.com"]
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/suggestMeetingTimes:
     post:
       operationId: suggestMeetingTimes
@@ -347,7 +349,8 @@ paths:
                   "defaultTimezone": "America/New_York"
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars:
     get:
       operationId: calendars
@@ -385,7 +388,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X GET https://api.aurinko.io/v1/calendars
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: createCalendar
       requestBody:
@@ -410,7 +414,8 @@ paths:
               -X POST https://api.aurinko.io/v1/calendars \
               -d '{ "name": "New calendar" }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{id}:
     get:
       operationId: calendarById
@@ -438,7 +443,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X GET https://api.aurinko.io/v1/calendars/primary
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       operationId: updateCalendar
       parameters:
@@ -472,7 +478,8 @@ paths:
               -X PATCH https://api.aurinko.io/v1/calendars/{calendarId} \
               -d '{ "name": "Updated calendar" }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/sync:
     post:
       operationId: calSyncStart
@@ -522,7 +529,8 @@ paths:
               -G https://api.aurinko.io/v1/calendars/primary/sync \
               -d timeMin=2019-06-03T10:00:00-07:00 \
               -d timeMax=2020-06-03T10:00:00-07:00
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/sync/updated:
     get:
       operationId: calSyncUpdated
@@ -570,7 +578,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/calendars/primary/sync/updated \
               -d deltaToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/sync/deleted:
     get:
       operationId: calSyncDeleted
@@ -618,7 +627,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/calendars/primary/sync/deleted \
               -d deltaToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/events/range:
     get:
       operationId: range
@@ -676,7 +686,8 @@ paths:
               -G https://api.aurinko.io/v1/calendars/primary/events/range \
               -d timeMin=2019-06-03T10:00:00-07:00 \
               -d timeMax=2020-06-03T10:00:00-07:00
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/events/find:
     get:
       operationId: eventsByICalUIds
@@ -725,7 +736,8 @@ paths:
               -G https://api.aurinko.io/v1/calendars/primary/events/find \
               -d ICalUid=ABCID1 \
               -d ICalUid=XYZID2
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/events/{eventId}:
     delete:
       operationId: deleteEvent
@@ -766,7 +778,8 @@ paths:
         source: |-
           curl -X DELETE -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/calendars/primary/events/<eventId>
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: event
       parameters:
@@ -811,7 +824,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/calendars/primary/events/{id}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       operationId: updateEvent
       parameters:
@@ -901,7 +915,8 @@ paths:
                   }
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/events/{masterId}/series:
     get:
       operationId: seriesInfo
@@ -937,7 +952,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/calendars/primary/events/{masterId}/series
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/events/{masterId}/occurrences/{ost}:
     get:
       operationId: occurrenceByOrigStart
@@ -982,7 +998,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/calendars/primary/events/{masterId}/occurrences/2020-04-01
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/events:
     post:
       operationId: createEvent
@@ -1063,7 +1080,8 @@ paths:
                   }
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/events/{eventId}/response:
     put:
       operationId: updateMeetingResponse
@@ -1093,30 +1111,11 @@ paths:
           nullable: true
           type: boolean
         style: form
-      - description: Whether response must contain a record that has been updated.
-          This can result in an additional request to provider API.
-        explode: true
-        in: query
-        name: returnRecord
-        required: false
-        schema:
-          default: true
-          type: boolean
-        style: form
-      - description: The HTTP entity tag of the resource (ETag). Used for web cache
-          validation.
-        explode: false
-        in: header
-        name: If-Match
-        required: true
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Event'
+              $ref: '#/components/schemas/MeetingResponse'
       responses:
         "200":
           content:
@@ -1131,29 +1130,14 @@ paths:
       - lang: cURL
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
-              -X PATCH https://api.aurinko.io/v1/calendars/primary/events/{eventId}?notifyAttendees=true \
+              -X PUT https://api.aurinko.io/v1/calendars/primary/events/{eventId}/response?notifyAttendees=true \
               -d '{
-                  "subject": "Business lunch",
-                  "location": "Another cool place",
-                  "start": {
-                      "dateTime": "2020-02-05T10:00:00Z",
-                      "timezone": "America/Los_Angeles"
-                  },
-                  "end": {
-                      "dateTime": "2020-02-05T11:00:00Z",
-                      "timezone": "America/Los_Angeles"
-                  },
-                  "meetingInfo": {
-                      "attendees": [
-                          {
-                              "emailAddress": {"address": "partner@example.com"},
-                              "type": "required"
-                          }
-                      ]
-                  }
+                    "response": "accepted",
+                    "comment": "Welcome"
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/calendars/{calendarId}/events/{eventId}/attachments/{attachmentId}:
     get:
       operationId: attachment
@@ -1197,7 +1181,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/email/messages/{msgId}/attachments/{attId}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/sync:
     post:
       operationId: emailSyncStart
@@ -1234,7 +1219,8 @@ paths:
           curl -X POST -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/sync \
               -d daysWithin=7
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/sync/updated:
     get:
       operationId: emailSyncUpdated
@@ -1274,7 +1260,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/sync/updated \
               -d deltaToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/sync/deleted:
     get:
       operationId: emailSyncDeleted
@@ -1314,7 +1301,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/sync/deleted \
               -d deltaToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/messages:
     get:
       operationId: messages
@@ -1381,7 +1369,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/messages
               -d q='text to:{address_or_name}'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: send
       parameters:
@@ -1428,7 +1417,8 @@ paths:
                   "cc": [{"address": "guest@example.com"}]
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/messages/{messageId}:
     get:
       operationId: message
@@ -1503,7 +1493,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/email/messages/{id}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/messages/{messageId}/status:
     post:
       operationId: updateMessageStatus
@@ -1539,7 +1530,8 @@ paths:
                   "unread": true
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/conversations/{threadId}:
     get:
       operationId: conversation
@@ -1585,7 +1577,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/email/conversations/{threadId}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/messages/{messageId}/reply:
     post:
       operationId: reply
@@ -1641,7 +1634,8 @@ paths:
                   "cc": [{"address": "guest@example.com"}]
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/messages/{messageId}/attachments/{attachmentId}:
     get:
       operationId: emailAttachment
@@ -1677,7 +1671,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/email/messages/{msgId}/attachments/{attId}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/folders:
     get:
       operationId: folders
@@ -1705,7 +1700,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/folders
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/folders/{folderId}:
     get:
       operationId: folder
@@ -1733,7 +1729,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/email/folders/{id}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/folders/{folderId}/messages:
     get:
       operationId: folderEmails
@@ -1796,7 +1793,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/messages
               -d q='text to:{address_or_name}'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/drafts:
     post:
       operationId: createDraft
@@ -1835,7 +1833,8 @@ paths:
                   "cc": [{"address": "guest@example.com"}]
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/drafts/{draftId}:
     get:
       operationId: getDraft
@@ -1890,7 +1889,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/email/drafts/{id}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/drafts/{draftId}/send:
     post:
       operationId: sendDraft
@@ -1933,7 +1933,8 @@ paths:
           curl -H 'Authorization: Bearer <access token>' \
               -X POST https://api.aurinko.io/v1/email/drafts/{draftId}/send?sendTime=2021-04-28T15:40:00Z \
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/draftTracking/create:
     post:
       operationId: createDraftTracking
@@ -1983,7 +1984,8 @@ paths:
                   }
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/draftTracking/{draftId}/convert:
     patch:
       operationId: convertDraftTracking
@@ -2021,7 +2023,8 @@ paths:
                   "internetMessageId": "<internetMessageId>"
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/draftTracking/{draftId}:
     patch:
       operationId: updateDraftTracking
@@ -2058,7 +2061,8 @@ paths:
                   "context": "<context>"
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/tracking:
     get:
       operationId: getTracking
@@ -2127,7 +2131,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/tracking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/tracking/purgeMyTracking:
     post:
       operationId: purgeMyTracking
@@ -2164,7 +2169,8 @@ paths:
           curl -H 'Authorization: Bearer <access token>' \
                -H 'User-Agent: <User-Agent>' \
               -X POST https://api.aurinko.io/v1/email/tracking/purgeMyTracking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/tracking/ignoreOpenClicks:
     post:
       operationId: switchOpenClicks
@@ -2210,7 +2216,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X POST https://api.aurinko.io/v1/email/tracking/ignoreOpenClicks
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/tracking/{id}:
     get:
       operationId: trackingById
@@ -2239,7 +2246,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/tracking/{id}'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/tracking/{id}/events:
     get:
       operationId: trackingEvents
@@ -2290,7 +2298,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/tracking/{id}/events
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/email/tracking/{trackingId}/events/{id}:
     get:
       operationId: trackingEventById
@@ -2328,7 +2337,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/email/tracking/{trackingId}/events/{id}'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/followup/config:
     get:
       operationId: getConfig
@@ -2342,7 +2352,8 @@ paths:
       summary: Get a follow up configuration
       tags:
       - FollowUpRobot
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
       operationId: updateConfig
       requestBody:
@@ -2361,7 +2372,8 @@ paths:
       tags:
       - FollowUpRobot
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/followup/rules:
     get:
       operationId: getRules
@@ -2375,7 +2387,8 @@ paths:
       summary: Get follow up rules
       tags:
       - FollowUpRobot
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: createRule
       requestBody:
@@ -2394,7 +2407,8 @@ paths:
       tags:
       - FollowUpRobot
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/followup/rules/{id}:
     delete:
       operationId: deleteRule
@@ -2417,7 +2431,8 @@ paths:
       summary: Delete a follow up rule
       tags:
       - FollowUpRobot
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
       operationId: updateRule
       parameters:
@@ -2445,7 +2460,8 @@ paths:
       tags:
       - FollowUpRobot
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/followup/conversations:
     get:
       operationId: getConversationsDripStatus
@@ -2491,7 +2507,8 @@ paths:
       summary: Get a list of conversations touched by followup
       tags:
       - FollowUpRobot
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/followup/conversations/{convoId}:
     get:
       operationId: getConversationDripStatus
@@ -2514,7 +2531,8 @@ paths:
       summary: Check a conversation status
       tags:
       - FollowUpRobot
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
       operationId: updateConversationDripStatus
       parameters:
@@ -2542,7 +2560,8 @@ paths:
       tags:
       - FollowUpRobot
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/contacts/sync:
     post:
       description: |
@@ -2563,7 +2582,8 @@ paths:
         source: |-
           curl -X POST -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/contacts/sync
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/contacts/sync/updated:
     get:
       operationId: contSyncUpdated
@@ -2603,7 +2623,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/contacts/sync/updated \
               -d deltaToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/contacts/sync/deleted:
     get:
       operationId: contSyncDeleted
@@ -2643,7 +2664,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/contacts/sync/deleted \
               -d deltaToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/contacts/{contId}:
     delete:
       operationId: deleteContact
@@ -2669,7 +2691,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X DELETE https://api.aurinko.io/v1/contacts/{contId}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: contact
       parameters:
@@ -2730,7 +2753,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/contacts/{id}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       operationId: updateContact
       parameters:
@@ -2783,7 +2807,8 @@ paths:
                            ]
                   }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/contacts:
     post:
       operationId: createContact
@@ -2818,7 +2843,8 @@ paths:
                            ]
                           }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/book/account/workHours:
     get:
       operationId: workHours
@@ -2840,7 +2866,8 @@ paths:
       summary: Get user work hours
       tags:
       - Booking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/book/account/profiles:
     get:
       operationId: getAccBookings
@@ -2885,7 +2912,8 @@ paths:
       summary: Get booking profiles
       tags:
       - Booking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: create
       requestBody:
@@ -2912,7 +2940,8 @@ paths:
       tags:
       - Booking
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/book/account/profiles/{id}:
     delete:
       operationId: deleteBooking
@@ -2944,7 +2973,8 @@ paths:
       summary: Delete a booking profile by id
       tags:
       - Booking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: getBooking
       parameters:
@@ -2975,7 +3005,8 @@ paths:
       summary: Get a booking profile by id
       tags:
       - Booking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       operationId: updateBooking
       parameters:
@@ -3012,7 +3043,8 @@ paths:
       tags:
       - Booking
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/book/group/profiles:
     get:
       operationId: getGroupBookings
@@ -3057,7 +3089,8 @@ paths:
       summary: Get group booking profiles
       tags:
       - GroupBooking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: createGroupBooking
       requestBody:
@@ -3086,7 +3119,8 @@ paths:
       tags:
       - GroupBooking
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/book/group/profiles/{id}:
     delete:
       operationId: deleteGroupBooking
@@ -3118,7 +3152,8 @@ paths:
       summary: Delete a group booking profile by id
       tags:
       - GroupBooking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: getGroupBooking
       parameters:
@@ -3149,7 +3184,8 @@ paths:
       summary: Get a group booking profile by id
       tags:
       - GroupBooking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       operationId: updateGroupBooking
       parameters:
@@ -3186,7 +3222,8 @@ paths:
       tags:
       - GroupBooking
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/book/group/profiles/{id}/attachUsers:
     get:
       operationId: attachedUsersGroupBooking
@@ -3240,7 +3277,8 @@ paths:
       summary: List users of a group booking profile
       tags:
       - GroupBooking
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: attachUsersGroupBooking
       parameters:
@@ -3277,7 +3315,8 @@ paths:
       tags:
       - GroupBooking
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/book/group/profiles/{id}/detachUsers:
     post:
       operationId: detachUsersGroupBooking
@@ -3315,7 +3354,8 @@ paths:
       tags:
       - GroupBooking
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/book/{aurinkoClientId}/{name}/meeting:
     get:
       operationId: getMeetingTimes
@@ -3369,7 +3409,8 @@ paths:
       summary: Get available meeting times
       tags:
       - Availability
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: createMeeting
       parameters:
@@ -3414,7 +3455,8 @@ paths:
       tags:
       - Availability
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/user:
     get:
       operationId: getUserInfo
@@ -3439,7 +3481,8 @@ paths:
           curl -X GET --cookie "<END_USER_COOKIE>" \
               -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
               https://api.aurinko.io/v1/user
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/user/settings:
     patch:
       operationId: updateSettings
@@ -3470,7 +3513,8 @@ paths:
               -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
               https://api.aurinko.io/v1/user/settings
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/user/accounts:
     get:
       operationId: getEndUserAccounts
@@ -3495,7 +3539,8 @@ paths:
           curl -X GET --cookie "<END_USER_COOKIE>" \
               -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
               https://api.aurinko.io/v1/user/accounts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/user/accounts/{id}:
     delete:
       description: "Deleting a primary account, also invalidates the user's session\
@@ -3532,7 +3577,8 @@ paths:
           curl -X DELETE --cookie "<END_USER_COOKIE>" \
               -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
               https://api.aurinko.io/v1/user/accounts/<id>
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: getEndUserAccount
       parameters:
@@ -3566,7 +3612,8 @@ paths:
           curl -X GET --cookie "<END_USER_COOKIE>" \
               -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
               https://api.aurinko.io/v1/user/accounts/<id>
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/user/accounts/{id}/managed:
     post:
       operationId: copyAsManaged
@@ -3609,7 +3656,8 @@ paths:
           curl -X POST --cookie "<END_USER_COOKIE>" \
               -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
               https://api.aurinko.io/v1/user/accounts/<id>/managed
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/user/logout:
     post:
       description: Invalidates the user's session cookie
@@ -3635,7 +3683,8 @@ paths:
           curl -X POST --cookie "<END_USER_COOKIE>" \
               -H 'X-Aurinko-ClientId: <CLIENT_ID>' \
               https://api.aurinko.io/v1/user/logout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/account:
     delete:
       operationId: deleteAccount
@@ -3652,7 +3701,8 @@ paths:
         source: |-
           curl -X DELETE -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/account
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: getMyAccount
       responses:
@@ -3672,7 +3722,8 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/account
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/account/token:
     delete:
       operationId: deleteToken
@@ -3690,7 +3741,8 @@ paths:
         source: |-
           curl -X DELETE -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/account/token
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/am/accounts:
     get:
       operationId: getAccounts
@@ -3767,7 +3819,8 @@ paths:
         source: |-
           curl -u ClientId:Secret -X GET https://api.aurinko.io/v1/am/accounts \
               -G -d clientOrgId='12345'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: upsertPersonal
       parameters:
@@ -3834,7 +3887,8 @@ paths:
       tags:
       - Accounts
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/am/accounts/{id}:
     delete:
       operationId: amAccountDelete
@@ -3866,7 +3920,45 @@ paths:
       x-codeSamples:
       - lang: cURL
         source: curl -u ClientId:Secret -X DELETE https://api.aurinko.io/v1/am/accounts/12345
-      x-accepts: application/json
+      x-accepts:
+      - application/json
+    get:
+      operationId: getAccount
+      parameters:
+      - description: account id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiAccountOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      security:
+      - AppAuth: []
+      summary: Get account by id
+      tags:
+      - Accounts
+      x-codeSamples:
+      - lang: cURL
+        source: "curl -u ClientId:Secret -X GET https://api.aurinko.io/v1/am/accounts/{id}"
+      x-accepts:
+      - application/json
   /v1/am/svc_accounts:
     get:
       operationId: getSvcAccounts
@@ -3952,7 +4044,8 @@ paths:
         source: |-
           curl -u ClientId:Secret -X GET https://api.aurinko.io/v1/am/svc_accounts \
               -G -d clientOrgId='12345'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: upsertServiceAccount
       parameters:
@@ -3993,7 +4086,8 @@ paths:
       tags:
       - Services
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/am/svc_accounts/{accId}/accounts:
     post:
       operationId: upsertManagedAccount
@@ -4069,7 +4163,8 @@ paths:
       tags:
       - Managed accounts
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/auth/prepare:
     post:
       description: |
@@ -4108,7 +4203,8 @@ paths:
       summary: Validate an external identity token
       tags:
       - Auth
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/auth/authorize:
     get:
       operationId: authorize
@@ -4258,6 +4354,16 @@ paths:
           nullable: true
           type: boolean
         style: form
+      - description: Email address that must be used for authentication. Aurinko will
+          fail the authentication flow if the email address does not match the one
+          provided.
+        explode: true
+        in: query
+        name: authEmail
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "303":
           description: Redirect
@@ -4275,7 +4381,8 @@ paths:
               -d responseType='code' \
               -d returnUrl='https://yourapp.com/aurinko-redirect' \
               -d state='CustomStateString'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/auth/authorizeDaemon:
     get:
       operationId: authorizeDaemon
@@ -4398,7 +4505,8 @@ paths:
               -d scopes='Calendar.ReadWrite Mail.Read Mail.Send' \
               -d returnUrl='https://yourapp.com/aurinko-redirect' \
               -d state='CustomStateString'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/auth/authorizeUser:
     get:
       description: "This endpoint is used to authorize accounts that are linked to\
@@ -4636,7 +4744,8 @@ paths:
               -d responseType='cookie' \
               -d returnUrl='https://yourapp.com/aurinko-redirect' \
               -d state='CustomStateString'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/auth/token/{code}:
     get:
       operationId: getAccessTokenByCode
@@ -4672,7 +4781,8 @@ paths:
       x-codeSamples:
       - lang: cURL
         source: curl -u ClientId:Secret -X GET https://api.aurinko.io/v1/auth/token/<code>
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: authCodeExchange
       parameters:
@@ -4707,7 +4817,8 @@ paths:
       x-codeSamples:
       - lang: cURL
         source: curl -u ClientId:Secret -X POST https://api.aurinko.io/v1/auth/token/<code>
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/subscriptions:
     get:
       operationId: getSubscriptions
@@ -4759,7 +4870,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X POST https://api.aurinko.io/v1/subscriptions
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: subscribe
       requestBody:
@@ -4789,7 +4901,8 @@ paths:
                   "notificationUrl": "https://myapp.com/push"
                  }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/subscriptions/{id}:
     delete:
       operationId: unsubscribe
@@ -4809,7 +4922,8 @@ paths:
       summary: Remove a subscription
       tags:
       - Webhooks
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: getSubscription
       parameters:
@@ -4832,7 +4946,8 @@ paths:
       summary: Check a subscription status
       tags:
       - Webhooks
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/tasklists:
     get:
       operationId: taskListsList
@@ -4862,7 +4977,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X GET https://api.aurinko.io/v1/tasklists
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: createTaskList
       requestBody:
@@ -4887,7 +5003,8 @@ paths:
               -X POST https://api.aurinko.io/v1/tasklists \
               -d '{ "title": "New task list" }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/tasklists/{taskListId}:
     delete:
       operationId: deleteTaskList
@@ -4915,7 +5032,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X DELETE https://api.aurinko.io/v1/tasklists/{taskListId}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: taskList
       parameters:
@@ -4942,7 +5060,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X GET https://api.aurinko.io/v1/tasklists/{taskListId}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       operationId: updateTaskList
       parameters:
@@ -4985,7 +5104,8 @@ paths:
               -X PATCH https://api.aurinko.io/v1/tasklists \
               -d '{ "title": "New task list" }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/tasklists/{taskListId}/sync:
     post:
       operationId: taskSyncStart
@@ -5024,7 +5144,8 @@ paths:
           curl -X POST -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/tasklists/{taskListId}/sync \
               -d skipCompletedBeforeDate='2023-05-29T10:58:27Z'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/tasklists/{taskListId}/sync/updated:
     get:
       operationId: taskSyncUpdated
@@ -5072,7 +5193,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/tasklists/{taskListId}/sync/updated \
               -d deltaToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/tasklists/{taskListId}/sync/deleted:
     get:
       operationId: taskSyncDeleted
@@ -5120,7 +5242,8 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               -G https://api.aurinko.io/v1/tasklists/{taskListId}/sync/deleted \
               -d deltaToken='a8b7c6d5e4f3g2h1'
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/tasklists/{taskListId}/tasks:
     get:
       operationId: tasksList
@@ -5158,7 +5281,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X GET https://api.aurinko.io/v1/tasklists/{taskListId}/tasks
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: createTask
       parameters:
@@ -5192,7 +5316,8 @@ paths:
               -X POST https://api.aurinko.io/v1/tasklists/{taskListId}/tasks \
               -d '{ "title": "New task list" }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v1/tasklists/{taskListId}/tasks/{id}:
     delete:
       operationId: deleteTask
@@ -5220,7 +5345,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
-      summary: Delete a task list by id
+      summary: Delete a task by id
       tags:
       - Tasks
       x-codeSamples:
@@ -5228,7 +5353,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X DELETE https://api.aurinko.io/v1/tasklists/{taskListId}/tasks/{id}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: task
       parameters:
@@ -5263,7 +5389,8 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X GET https://api.aurinko.io/v1/tasklists/{taskListId}/tasks/{id}
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       operationId: updateTask
       parameters:
@@ -5314,7 +5441,8 @@ paths:
               -X PATCH https://api.aurinko.io/v1/tasklists \
               -d '{ "title": "New task list" }'
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
 components:
   responses:
     UnauthorizedError:
@@ -5965,7 +6093,7 @@ components:
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
-            \ 20, 30."
+            \ 20, 30, 60."
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -6616,6 +6744,13 @@ components:
         tracking:
           $ref: '#/components/schemas/OutEmailTrack'
       type: object
+    MeetingResponseType:
+      enum:
+      - noResponse
+      - declined
+      - tentative
+      - accepted
+      type: string
     SuggestMeetingTimesResponse:
       example:
         attendees:
@@ -6823,11 +6958,20 @@ components:
           type: boolean
       type: object
     TokenStatus:
+      description: |
+        * active - means the token is active and ready for use
+        * invalid - means that Aurinko failed to access provider API with authentication data.
+           Basically it indicates that Aurinko has received a 401 http status from provider and marked this token as non-active.
+        * dead - this is a special variant of "invalid" status that can occur only with OAuth 2.0 accounts.
+           It means that Aurinko failed to refresh OAuth access token and received "invalid_grant" error which indicates
+           that the access/refresh tokens pair cannot be used anymore and is basically dead.
+           The difference between invalid and dead is that with invalid tokens Aurinko will still try to
+           access provider API and with dead Aurinko won't even attempt:
+           trying to use dead token, Aurinko will just return 401 without making calls to the provider.
       enum:
-      - dead
-      - invalid
       - active
-      - required
+      - invalid
+      - dead
       type: string
     BookingAttachGroupUserDto:
       example:
@@ -6864,6 +7008,18 @@ components:
           type: string
         yomiCompanyName:
           type: string
+      type: object
+    MeetingResponse:
+      example:
+        response: null
+        comment: comment
+      properties:
+        response:
+          $ref: '#/components/schemas/MeetingResponseType'
+        comment:
+          type: string
+      required:
+      - response
       type: object
     TaskLink:
       example:
@@ -7031,7 +7187,7 @@ components:
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
-            \ 20, 30."
+            \ 20, 30, 60."
           type: integer
         subject:
           description: Subject for events booked using this profile.
@@ -7430,7 +7586,7 @@ components:
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
-            \ 20, 30."
+            \ 20, 30, 60."
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -7588,6 +7744,7 @@ components:
         serviceType:
           $ref: '#/components/schemas/ServiceType'
         active:
+          description: The account is always active in the current API version
           type: boolean
         tokenStatus:
           $ref: '#/components/schemas/TokenStatus'
@@ -7685,7 +7842,7 @@ components:
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
-            \ 20, 30."
+            \ 20, 30, 60."
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -7853,7 +8010,7 @@ components:
             comment: comment
             id: id
             type: required
-          response: noResponse
+          response: null
           attendeePermissions:
           - inviteOthers
           - inviteOthers
@@ -7993,6 +8150,7 @@ components:
         authOrgId: authOrgId
         timezone: timezone
         active: true
+        password: password
         authScopes:
         - null
         - null
@@ -8026,10 +8184,14 @@ components:
         oauthClientId:
           type: string
         active:
+          description: The account is always active in the current API version
           type: boolean
         authString1:
           type: string
         authString2:
+          type: string
+        password:
+          description: Password for IMAP accounts
           type: string
         authObtainedAt:
           format: date-time
@@ -8160,7 +8322,7 @@ components:
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
-            \ 20, 30."
+            \ 20, 30, 60."
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -8472,7 +8634,7 @@ components:
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
-            \ 20, 30."
+            \ 20, 30, 60."
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -9608,6 +9770,7 @@ components:
         type:
           $ref: '#/components/schemas/AccountType'
         active:
+          description: The account is always active in the current API version
           type: boolean
         loginString:
           type: string
@@ -9949,7 +10112,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: noResponse
+            response: null
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -10216,7 +10379,7 @@ components:
           comment: comment
           id: id
           type: required
-        response: noResponse
+        response: null
         attendeePermissions:
         - inviteOthers
         - inviteOthers
@@ -10237,13 +10400,7 @@ components:
             $ref: '#/components/schemas/Attendee'
           type: array
         response:
-          enum:
-          - noResponse
-          - declined
-          - tentative
-          - accepted
-          readOnly: true
-          type: string
+          $ref: '#/components/schemas/MeetingResponseType'
         attendeePermissions:
           items:
             enum:
@@ -10323,13 +10480,29 @@ components:
       type: object
     EmailFolderInfo:
       example:
+        isFolder: true
+        isLabel: true
         name: name
+        fullName: fullName
         id: id
+        parentId: parentId
       properties:
         id:
           readOnly: true
           type: string
         name:
+          readOnly: true
+          type: string
+        fullName:
+          readOnly: true
+          type: string
+        isFolder:
+          readOnly: true
+          type: boolean
+        isLabel:
+          readOnly: true
+          type: boolean
+        parentId:
           readOnly: true
           type: string
       type: object
@@ -10407,7 +10580,7 @@ components:
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
-            \ 20, 30."
+            \ 20, 30, 60."
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -10855,7 +11028,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: noResponse
+            response: null
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -10987,7 +11160,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: noResponse
+            response: null
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -11104,10 +11277,18 @@ components:
     EmailFolderInfoPage:
       example:
         records:
-        - name: name
+        - isFolder: true
+          isLabel: true
+          name: name
+          fullName: fullName
           id: id
-        - name: name
+          parentId: parentId
+        - isFolder: true
+          isLabel: true
+          name: name
+          fullName: fullName
           id: id
+          parentId: parentId
         length: 0
       properties:
         length:
@@ -11473,7 +11654,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: noResponse
+            response: null
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -11605,7 +11786,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: noResponse
+            response: null
             attendeePermissions:
             - inviteOthers
             - inviteOthers

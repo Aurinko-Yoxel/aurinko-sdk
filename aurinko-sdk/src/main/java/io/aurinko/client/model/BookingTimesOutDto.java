@@ -52,10 +52,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingTimesOutDto.JSON_PROPERTY_TOTAL_SIZE,
   BookingTimesOutDto.JSON_PROPERTY_DONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<BookingMeetingTime> items;
+  private List<BookingMeetingTime> items = new ArrayList<>();
 
   public static final String JSON_PROPERTY_START_TIME = "startTime";
   private OffsetDateTime startTime;
@@ -82,7 +82,7 @@ public class BookingTimesOutDto {
   private String secondaryColor;
 
   public static final String JSON_PROPERTY_ADDITIONAL_FIELDS = "additionalFields";
-  private List<AdditionalField> additionalFields;
+  private List<AdditionalField> additionalFields = new ArrayList<>();
 
   public static final String JSON_PROPERTY_LIMIT = "limit";
   private Integer limit;
@@ -238,7 +238,7 @@ public class BookingTimesOutDto {
   }
 
    /**
-   * Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30.
+   * Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30, 60.
    * @return availabilityStep
   **/
   @javax.annotation.Nullable

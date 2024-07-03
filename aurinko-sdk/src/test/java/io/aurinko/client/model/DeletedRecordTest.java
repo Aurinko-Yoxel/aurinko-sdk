@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for DeletedRecord
  */
-public class DeletedRecordTest {
+class DeletedRecordTest {
     private final DeletedRecord model = new DeletedRecord();
 
     /**
      * Model tests for DeletedRecord
      */
     @Test
-    public void testDeletedRecord() {
+    void testDeletedRecord() {
         // TODO: test DeletedRecord
     }
 
@@ -42,7 +42,7 @@ public class DeletedRecordTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class DeletedRecordTest {
      * Test the property 'timestamp'
      */
     @Test
-    public void timestampTest() {
+    void timestampTest() {
         // TODO: test timestamp
     }
 

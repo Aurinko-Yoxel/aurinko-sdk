@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   CalendarsPage.JSON_PROPERTY_LENGTH,
   CalendarsPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CalendarsPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   private String nextPageToken;
@@ -48,7 +48,7 @@ public class CalendarsPage {
   private Integer length;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
-  private List<Calendar> records;
+  private List<Calendar> records = new ArrayList<>();
 
   public CalendarsPage() { 
   }

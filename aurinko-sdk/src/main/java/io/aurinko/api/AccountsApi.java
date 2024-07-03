@@ -20,6 +20,7 @@ import io.aurinko.client.Pair;
 import io.aurinko.client.model.AccountSaveResult;
 import io.aurinko.client.model.AccountsPage;
 import io.aurinko.client.model.ApiAccountInDto;
+import io.aurinko.client.model.ApiAccountOutDto;
 import io.aurinko.client.model.ServiceKey;
 import io.aurinko.client.model.ServiceTypeNonDaemon;
 import io.aurinko.client.model.UserAccountType;
@@ -51,7 +52,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class AccountsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -165,6 +166,101 @@ public class AccountsApi {
     }
     return localVarRequestBuilder;
   }
+
+  /**
+   * Get account by id
+   * 
+   * @param id account id (required)
+   * @return CompletableFuture&lt;ApiAccountOutDto&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiAccountOutDto> getAccount(Long id) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = getAccountRequestBuilder(id);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("getAccount", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<ApiAccountOutDto>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Get account by id
+   * 
+   * @param id account id (required)
+   * @return CompletableFuture&lt;ApiResponse&lt;ApiAccountOutDto&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<ApiAccountOutDto>> getAccountWithHttpInfo(Long id) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = getAccountRequestBuilder(id);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("getAccount", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<ApiAccountOutDto>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<ApiAccountOutDto>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder getAccountRequestBuilder(Long id) throws ApiException {
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getAccount");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/am/accounts/{id}"
+        .replace("{id}", ApiClient.urlEncode(id.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
   /**
    * Get accounts
    * 
@@ -284,6 +380,7 @@ public class AccountsApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Upsert an account
    * 
@@ -407,4 +504,5 @@ public class AccountsApi {
     }
     return localVarRequestBuilder;
   }
+
 }

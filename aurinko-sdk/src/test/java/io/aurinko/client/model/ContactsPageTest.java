@@ -22,21 +22,21 @@ import io.aurinko.client.model.Contact;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ContactsPage
  */
-public class ContactsPageTest {
+class ContactsPageTest {
     private final ContactsPage model = new ContactsPage();
 
     /**
      * Model tests for ContactsPage
      */
     @Test
-    public void testContactsPage() {
+    void testContactsPage() {
         // TODO: test ContactsPage
     }
 
@@ -44,7 +44,7 @@ public class ContactsPageTest {
      * Test the property 'nextPageToken'
      */
     @Test
-    public void nextPageTokenTest() {
+    void nextPageTokenTest() {
         // TODO: test nextPageToken
     }
 
@@ -52,7 +52,7 @@ public class ContactsPageTest {
      * Test the property 'nextDeltaToken'
      */
     @Test
-    public void nextDeltaTokenTest() {
+    void nextDeltaTokenTest() {
         // TODO: test nextDeltaToken
     }
 
@@ -60,7 +60,7 @@ public class ContactsPageTest {
      * Test the property 'length'
      */
     @Test
-    public void lengthTest() {
+    void lengthTest() {
         // TODO: test length
     }
 
@@ -68,7 +68,7 @@ public class ContactsPageTest {
      * Test the property 'records'
      */
     @Test
-    public void recordsTest() {
+    void recordsTest() {
         // TODO: test records
     }
 

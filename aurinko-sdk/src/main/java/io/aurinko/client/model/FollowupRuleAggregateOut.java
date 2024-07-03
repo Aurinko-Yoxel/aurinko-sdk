@@ -42,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FollowupRuleAggregateOut.JSON_PROPERTY_TEMPLATE_SUBJECT,
   FollowupRuleAggregateOut.JSON_PROPERTY_ACTIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class FollowupRuleAggregateOut {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;
@@ -60,7 +60,7 @@ public class FollowupRuleAggregateOut {
   private String templateSubject;
 
   public static final String JSON_PROPERTY_ACTIONS = "actions";
-  private List<FollowupRuleAction> actions;
+  private List<FollowupRuleAction> actions = new ArrayList<>();
 
   public FollowupRuleAggregateOut() { 
   }

@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for UpdateDraftTrackingIn
  */
-public class UpdateDraftTrackingInTest {
+class UpdateDraftTrackingInTest {
     private final UpdateDraftTrackingIn model = new UpdateDraftTrackingIn();
 
     /**
      * Model tests for UpdateDraftTrackingIn
      */
     @Test
-    public void testUpdateDraftTrackingIn() {
+    void testUpdateDraftTrackingIn() {
         // TODO: test UpdateDraftTrackingIn
     }
 
@@ -41,7 +41,7 @@ public class UpdateDraftTrackingInTest {
      * Test the property 'context'
      */
     @Test
-    public void contextTest() {
+    void contextTest() {
         // TODO: test context
     }
 

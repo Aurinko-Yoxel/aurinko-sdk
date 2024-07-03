@@ -50,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class UserApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -196,6 +196,7 @@ public class UserApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get user account by id
    * 
@@ -289,6 +290,7 @@ public class UserApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get user accounts
    * 
@@ -375,6 +377,7 @@ public class UserApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get user info
    * 
@@ -461,6 +464,7 @@ public class UserApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Log out a user
    * Invalidates the user&#39;s session cookie
@@ -547,6 +551,7 @@ public class UserApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Delete a user account
    * Deleting a primary account, also invalidates the user&#39;s session cookie (logout).
@@ -640,6 +645,7 @@ public class UserApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Change user settings
    * 
@@ -734,4 +740,5 @@ public class UserApi {
     }
     return localVarRequestBuilder;
   }
+
 }

@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for OutEmailTrack
  */
-public class OutEmailTrackTest {
+class OutEmailTrackTest {
     private final OutEmailTrack model = new OutEmailTrack();
 
     /**
      * Model tests for OutEmailTrack
      */
     @Test
-    public void testOutEmailTrack() {
+    void testOutEmailTrack() {
         // TODO: test OutEmailTrack
     }
 
@@ -41,7 +41,7 @@ public class OutEmailTrackTest {
      * Test the property 'threadReplies'
      */
     @Test
-    public void threadRepliesTest() {
+    void threadRepliesTest() {
         // TODO: test threadReplies
     }
 
@@ -49,7 +49,7 @@ public class OutEmailTrackTest {
      * Test the property 'opens'
      */
     @Test
-    public void opensTest() {
+    void opensTest() {
         // TODO: test opens
     }
 
@@ -57,7 +57,7 @@ public class OutEmailTrackTest {
      * Test the property 'trackOpensAfterSendDelay'
      */
     @Test
-    public void trackOpensAfterSendDelayTest() {
+    void trackOpensAfterSendDelayTest() {
         // TODO: test trackOpensAfterSendDelay
     }
 
@@ -65,7 +65,7 @@ public class OutEmailTrackTest {
      * Test the property 'context'
      */
     @Test
-    public void contextTest() {
+    void contextTest() {
         // TODO: test context
     }
 

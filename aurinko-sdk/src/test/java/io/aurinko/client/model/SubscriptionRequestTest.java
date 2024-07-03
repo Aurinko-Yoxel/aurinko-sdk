@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for SubscriptionRequest
  */
-public class SubscriptionRequestTest {
+class SubscriptionRequestTest {
     private final SubscriptionRequest model = new SubscriptionRequest();
 
     /**
      * Model tests for SubscriptionRequest
      */
     @Test
-    public void testSubscriptionRequest() {
+    void testSubscriptionRequest() {
         // TODO: test SubscriptionRequest
     }
 
@@ -41,7 +41,7 @@ public class SubscriptionRequestTest {
      * Test the property 'resource'
      */
     @Test
-    public void resourceTest() {
+    void resourceTest() {
         // TODO: test resource
     }
 
@@ -49,7 +49,7 @@ public class SubscriptionRequestTest {
      * Test the property 'notificationUrl'
      */
     @Test
-    public void notificationUrlTest() {
+    void notificationUrlTest() {
         // TODO: test notificationUrl
     }
 

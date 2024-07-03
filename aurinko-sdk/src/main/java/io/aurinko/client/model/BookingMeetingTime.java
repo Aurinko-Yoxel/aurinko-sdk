@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingMeetingTime.JSON_PROPERTY_END,
   BookingMeetingTime.JSON_PROPERTY_USER_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BookingMeetingTime {
   public static final String JSON_PROPERTY_START = "start";
   private OffsetDateTime start;
@@ -48,7 +48,7 @@ public class BookingMeetingTime {
   private OffsetDateTime end;
 
   public static final String JSON_PROPERTY_USER_IDS = "userIds";
-  private List<String> userIds;
+  private List<String> userIds = new ArrayList<>();
 
   public BookingMeetingTime() { 
   }

@@ -23,21 +23,21 @@ import io.aurinko.client.model.WorkingInterval;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for DayWorkSchedule
  */
-public class DayWorkScheduleTest {
+class DayWorkScheduleTest {
     private final DayWorkSchedule model = new DayWorkSchedule();
 
     /**
      * Model tests for DayWorkSchedule
      */
     @Test
-    public void testDayWorkSchedule() {
+    void testDayWorkSchedule() {
         // TODO: test DayWorkSchedule
     }
 
@@ -45,7 +45,7 @@ public class DayWorkScheduleTest {
      * Test the property 'dayOfWeek'
      */
     @Test
-    public void dayOfWeekTest() {
+    void dayOfWeekTest() {
         // TODO: test dayOfWeek
     }
 
@@ -53,7 +53,7 @@ public class DayWorkScheduleTest {
      * Test the property 'workingIntervals'
      */
     @Test
-    public void workingIntervalsTest() {
+    void workingIntervalsTest() {
         // TODO: test workingIntervals
     }
 

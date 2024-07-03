@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailAttachment
  */
-public class EmailAttachmentTest {
+class EmailAttachmentTest {
     private final EmailAttachment model = new EmailAttachment();
 
     /**
      * Model tests for EmailAttachment
      */
     @Test
-    public void testEmailAttachment() {
+    void testEmailAttachment() {
         // TODO: test EmailAttachment
     }
 
@@ -41,7 +41,7 @@ public class EmailAttachmentTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -49,7 +49,7 @@ public class EmailAttachmentTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -57,7 +57,7 @@ public class EmailAttachmentTest {
      * Test the property 'mimeType'
      */
     @Test
-    public void mimeTypeTest() {
+    void mimeTypeTest() {
         // TODO: test mimeType
     }
 
@@ -65,7 +65,7 @@ public class EmailAttachmentTest {
      * Test the property 'size'
      */
     @Test
-    public void sizeTest() {
+    void sizeTest() {
         // TODO: test size
     }
 
@@ -73,7 +73,7 @@ public class EmailAttachmentTest {
      * Test the property 'inline'
      */
     @Test
-    public void inlineTest() {
+    void inlineTest() {
         // TODO: test inline
     }
 
@@ -81,7 +81,7 @@ public class EmailAttachmentTest {
      * Test the property 'contentId'
      */
     @Test
-    public void contentIdTest() {
+    void contentIdTest() {
         // TODO: test contentId
     }
 
@@ -89,7 +89,7 @@ public class EmailAttachmentTest {
      * Test the property 'content'
      */
     @Test
-    public void contentTest() {
+    void contentTest() {
         // TODO: test content
     }
 
@@ -97,7 +97,7 @@ public class EmailAttachmentTest {
      * Test the property 'contentLocation'
      */
     @Test
-    public void contentLocationTest() {
+    void contentLocationTest() {
         // TODO: test contentLocation
     }
 

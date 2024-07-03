@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.Event;
 import io.aurinko.client.model.OnlineMeetingDetails;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EventOrId
  */
-public class EventOrIdTest {
+class EventOrIdTest {
     private final EventOrId model = new EventOrId();
 
     /**
      * Model tests for EventOrId
      */
     @Test
-    public void testEventOrId() {
+    void testEventOrId() {
         // TODO: test EventOrId
     }
 
@@ -43,7 +43,7 @@ public class EventOrIdTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -51,7 +51,7 @@ public class EventOrIdTest {
      * Test the property 'etag'
      */
     @Test
-    public void etagTest() {
+    void etagTest() {
         // TODO: test etag
     }
 
@@ -59,7 +59,7 @@ public class EventOrIdTest {
      * Test the property 'iCalUId'
      */
     @Test
-    public void iCalUIdTest() {
+    void iCalUIdTest() {
         // TODO: test iCalUId
     }
 
@@ -67,7 +67,7 @@ public class EventOrIdTest {
      * Test the property 'globalId'
      */
     @Test
-    public void globalIdTest() {
+    void globalIdTest() {
         // TODO: test globalId
     }
 
@@ -75,7 +75,7 @@ public class EventOrIdTest {
      * Test the property 'record'
      */
     @Test
-    public void recordTest() {
+    void recordTest() {
         // TODO: test record
     }
 
@@ -83,7 +83,7 @@ public class EventOrIdTest {
      * Test the property 'onlineMeetingProvider'
      */
     @Test
-    public void onlineMeetingProviderTest() {
+    void onlineMeetingProviderTest() {
         // TODO: test onlineMeetingProvider
     }
 
@@ -91,7 +91,7 @@ public class EventOrIdTest {
      * Test the property 'onlineMeetingDetails'
      */
     @Test
-    public void onlineMeetingDetailsTest() {
+    void onlineMeetingDetailsTest() {
         // TODO: test onlineMeetingDetails
     }
 

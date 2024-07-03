@@ -24,21 +24,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ApiAccountInDto
  */
-public class ApiAccountInDtoTest {
+class ApiAccountInDtoTest {
     private final ApiAccountInDto model = new ApiAccountInDto();
 
     /**
      * Model tests for ApiAccountInDto
      */
     @Test
-    public void testApiAccountInDto() {
+    void testApiAccountInDto() {
         // TODO: test ApiAccountInDto
     }
 
@@ -46,7 +46,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'serviceType'
      */
     @Test
-    public void serviceTypeTest() {
+    void serviceTypeTest() {
         // TODO: test serviceType
     }
 
@@ -54,7 +54,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'authScopes'
      */
     @Test
-    public void authScopesTest() {
+    void authScopesTest() {
         // TODO: test authScopes
     }
 
@@ -62,7 +62,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'authOrgId'
      */
     @Test
-    public void authOrgIdTest() {
+    void authOrgIdTest() {
         // TODO: test authOrgId
     }
 
@@ -70,7 +70,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'authUserId'
      */
     @Test
-    public void authUserIdTest() {
+    void authUserIdTest() {
         // TODO: test authUserId
     }
 
@@ -78,7 +78,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'clientOrgId'
      */
     @Test
-    public void clientOrgIdTest() {
+    void clientOrgIdTest() {
         // TODO: test clientOrgId
     }
 
@@ -86,7 +86,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'serverUrl'
      */
     @Test
-    public void serverUrlTest() {
+    void serverUrlTest() {
         // TODO: test serverUrl
     }
 
@@ -94,7 +94,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'loginString'
      */
     @Test
-    public void loginStringTest() {
+    void loginStringTest() {
         // TODO: test loginString
     }
 
@@ -102,7 +102,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'oauthClientId'
      */
     @Test
-    public void oauthClientIdTest() {
+    void oauthClientIdTest() {
         // TODO: test oauthClientId
     }
 
@@ -110,7 +110,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'active'
      */
     @Test
-    public void activeTest() {
+    void activeTest() {
         // TODO: test active
     }
 
@@ -118,7 +118,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'authString1'
      */
     @Test
-    public void authString1Test() {
+    void authString1Test() {
         // TODO: test authString1
     }
 
@@ -126,15 +126,23 @@ public class ApiAccountInDtoTest {
      * Test the property 'authString2'
      */
     @Test
-    public void authString2Test() {
+    void authString2Test() {
         // TODO: test authString2
+    }
+
+    /**
+     * Test the property 'password'
+     */
+    @Test
+    void passwordTest() {
+        // TODO: test password
     }
 
     /**
      * Test the property 'authObtainedAt'
      */
     @Test
-    public void authObtainedAtTest() {
+    void authObtainedAtTest() {
         // TODO: test authObtainedAt
     }
 
@@ -142,7 +150,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'authExpiresAt'
      */
     @Test
-    public void authExpiresAtTest() {
+    void authExpiresAtTest() {
         // TODO: test authExpiresAt
     }
 
@@ -150,7 +158,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'email'
      */
     @Test
-    public void emailTest() {
+    void emailTest() {
         // TODO: test email
     }
 
@@ -158,7 +166,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -166,7 +174,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'serverInfo'
      */
     @Test
-    public void serverInfoTest() {
+    void serverInfoTest() {
         // TODO: test serverInfo
     }
 
@@ -174,7 +182,7 @@ public class ApiAccountInDtoTest {
      * Test the property 'timezone'
      */
     @Test
-    public void timezoneTest() {
+    void timezoneTest() {
         // TODO: test timezone
     }
 

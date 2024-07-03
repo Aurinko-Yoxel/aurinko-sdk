@@ -22,21 +22,21 @@ import io.aurinko.client.model.DeletedEmailMessage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailDeletedPage
  */
-public class EmailDeletedPageTest {
+class EmailDeletedPageTest {
     private final EmailDeletedPage model = new EmailDeletedPage();
 
     /**
      * Model tests for EmailDeletedPage
      */
     @Test
-    public void testEmailDeletedPage() {
+    void testEmailDeletedPage() {
         // TODO: test EmailDeletedPage
     }
 
@@ -44,7 +44,7 @@ public class EmailDeletedPageTest {
      * Test the property 'nextPageToken'
      */
     @Test
-    public void nextPageTokenTest() {
+    void nextPageTokenTest() {
         // TODO: test nextPageToken
     }
 
@@ -52,7 +52,7 @@ public class EmailDeletedPageTest {
      * Test the property 'nextDeltaToken'
      */
     @Test
-    public void nextDeltaTokenTest() {
+    void nextDeltaTokenTest() {
         // TODO: test nextDeltaToken
     }
 
@@ -60,7 +60,7 @@ public class EmailDeletedPageTest {
      * Test the property 'length'
      */
     @Test
-    public void lengthTest() {
+    void lengthTest() {
         // TODO: test length
     }
 
@@ -68,7 +68,7 @@ public class EmailDeletedPageTest {
      * Test the property 'records'
      */
     @Test
-    public void recordsTest() {
+    void recordsTest() {
         // TODO: test records
     }
 

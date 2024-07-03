@@ -55,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OutgoingEmail.JSON_PROPERTY_FOLLOW_UP,
   OutgoingEmail.JSON_PROPERTY_KEYWORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OutgoingEmail {
   public static final String JSON_PROPERTY_FROM = "from";
   private EmailAddress from;
@@ -76,22 +76,22 @@ public class OutgoingEmail {
   private String threadId;
 
   public static final String JSON_PROPERTY_TO = "to";
-  private List<EmailAddress> to;
+  private List<EmailAddress> to = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CC = "cc";
-  private List<EmailAddress> cc;
+  private List<EmailAddress> cc = new ArrayList<>();
 
   public static final String JSON_PROPERTY_BCC = "bcc";
-  private List<EmailAddress> bcc;
+  private List<EmailAddress> bcc = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REPLY_TO = "replyTo";
-  private List<EmailAddress> replyTo;
+  private List<EmailAddress> replyTo = new ArrayList<>();
 
   public static final String JSON_PROPERTY_X_HEADERS = "xHeaders";
-  private List<EmailHeader> xHeaders;
+  private List<EmailHeader> xHeaders = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
-  private List<OutgoingEmailAttachment> attachments;
+  private List<OutgoingEmailAttachment> attachments = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TRACKING = "tracking";
   private OutEmailTrack tracking;
@@ -100,7 +100,7 @@ public class OutgoingEmail {
   private FollowUpOutgoing followUp;
 
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
-  private List<String> keywords;
+  private List<String> keywords = new ArrayList<>();
 
   public OutgoingEmail() { 
   }

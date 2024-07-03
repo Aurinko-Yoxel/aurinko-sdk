@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ContactUrl
  */
-public class ContactUrlTest {
+class ContactUrlTest {
     private final ContactUrl model = new ContactUrl();
 
     /**
      * Model tests for ContactUrl
      */
     @Test
-    public void testContactUrl() {
+    void testContactUrl() {
         // TODO: test ContactUrl
     }
 
@@ -41,7 +41,7 @@ public class ContactUrlTest {
      * Test the property 'href'
      */
     @Test
-    public void hrefTest() {
+    void hrefTest() {
         // TODO: test href
     }
 
@@ -49,7 +49,7 @@ public class ContactUrlTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 

@@ -65,7 +65,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ApiAccountOutDto.JSON_PROPERTY_AUTH_EXPIRES_AT,
   ApiAccountOutDto.JSON_PROPERTY_USER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ApiAccountOutDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -128,10 +128,10 @@ public class ApiAccountOutDto {
   private OffsetDateTime tokenIssuedAt;
 
   public static final String JSON_PROPERTY_AUTH_SCOPES = "authScopes";
-  private List<Scope> authScopes;
+  private List<Scope> authScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AUTH_NATIVE_SCOPES = "authNativeScopes";
-  private List<String> authNativeScopes;
+  private List<String> authNativeScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AUTH_OBTAINED_AT = "authObtainedAt";
   private OffsetDateTime authObtainedAt;
@@ -226,7 +226,7 @@ public class ApiAccountOutDto {
   }
 
    /**
-   * Get active
+   * The account is always active in the current API version
    * @return active
   **/
   @javax.annotation.Nullable

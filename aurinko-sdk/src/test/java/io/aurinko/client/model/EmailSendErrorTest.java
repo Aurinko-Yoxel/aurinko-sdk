@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailSendError
  */
-public class EmailSendErrorTest {
+class EmailSendErrorTest {
     private final EmailSendError model = new EmailSendError();
 
     /**
      * Model tests for EmailSendError
      */
     @Test
-    public void testEmailSendError() {
+    void testEmailSendError() {
         // TODO: test EmailSendError
     }
 
@@ -43,7 +43,7 @@ public class EmailSendErrorTest {
      * Test the property 'failedSteps'
      */
     @Test
-    public void failedStepsTest() {
+    void failedStepsTest() {
         // TODO: test failedSteps
     }
 
@@ -51,7 +51,7 @@ public class EmailSendErrorTest {
      * Test the property 'errorMessage'
      */
     @Test
-    public void errorMessageTest() {
+    void errorMessageTest() {
         // TODO: test errorMessage
     }
 

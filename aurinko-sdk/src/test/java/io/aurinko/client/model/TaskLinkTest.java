@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for TaskLink
  */
-public class TaskLinkTest {
+class TaskLinkTest {
     private final TaskLink model = new TaskLink();
 
     /**
      * Model tests for TaskLink
      */
     @Test
-    public void testTaskLink() {
+    void testTaskLink() {
         // TODO: test TaskLink
     }
 
@@ -41,7 +41,7 @@ public class TaskLinkTest {
      * Test the property 'source'
      */
     @Test
-    public void sourceTest() {
+    void sourceTest() {
         // TODO: test source
     }
 
@@ -49,7 +49,7 @@ public class TaskLinkTest {
      * Test the property 'description'
      */
     @Test
-    public void descriptionTest() {
+    void descriptionTest() {
         // TODO: test description
     }
 
@@ -57,7 +57,7 @@ public class TaskLinkTest {
      * Test the property 'link'
      */
     @Test
-    public void linkTest() {
+    void linkTest() {
         // TODO: test link
     }
 

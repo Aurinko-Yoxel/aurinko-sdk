@@ -13,19 +13,19 @@
 
 package io.aurinko.client.model;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for TaskImportance
  */
-public class TaskImportanceTest {
+class TaskImportanceTest {
     /**
      * Model tests for TaskImportance
      */
     @Test
-    public void testTaskImportance() {
+    void testTaskImportance() {
         // TODO: test TaskImportance
     }
 

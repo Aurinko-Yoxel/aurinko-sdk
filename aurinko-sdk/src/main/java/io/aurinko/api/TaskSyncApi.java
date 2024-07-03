@@ -49,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class TaskSyncApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -199,6 +199,7 @@ public class TaskSyncApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Start a new task sync
    * 
@@ -309,6 +310,7 @@ public class TaskSyncApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Request changed tasks (deltas)
    * 
@@ -423,4 +425,5 @@ public class TaskSyncApi {
     }
     return localVarRequestBuilder;
   }
+
 }

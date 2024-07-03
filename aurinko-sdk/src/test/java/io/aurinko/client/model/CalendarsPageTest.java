@@ -22,21 +22,21 @@ import io.aurinko.client.model.Calendar;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for CalendarsPage
  */
-public class CalendarsPageTest {
+class CalendarsPageTest {
     private final CalendarsPage model = new CalendarsPage();
 
     /**
      * Model tests for CalendarsPage
      */
     @Test
-    public void testCalendarsPage() {
+    void testCalendarsPage() {
         // TODO: test CalendarsPage
     }
 
@@ -44,7 +44,7 @@ public class CalendarsPageTest {
      * Test the property 'nextPageToken'
      */
     @Test
-    public void nextPageTokenTest() {
+    void nextPageTokenTest() {
         // TODO: test nextPageToken
     }
 
@@ -52,7 +52,7 @@ public class CalendarsPageTest {
      * Test the property 'length'
      */
     @Test
-    public void lengthTest() {
+    void lengthTest() {
         // TODO: test length
     }
 
@@ -60,7 +60,7 @@ public class CalendarsPageTest {
      * Test the property 'records'
      */
     @Test
-    public void recordsTest() {
+    void recordsTest() {
         // TODO: test records
     }
 

@@ -52,7 +52,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class GroupBookingApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -189,6 +189,7 @@ public class GroupBookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * List users of a group booking profile
    * 
@@ -303,6 +304,7 @@ public class GroupBookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Create a group booking profile
    * 
@@ -397,6 +399,7 @@ public class GroupBookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Delete a group booking profile by id
    * 
@@ -490,6 +493,7 @@ public class GroupBookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Remove users from group booking
    * 
@@ -591,6 +595,7 @@ public class GroupBookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get a group booking profile by id
    * 
@@ -684,6 +689,7 @@ public class GroupBookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Get group booking profiles
    * 
@@ -791,6 +797,7 @@ public class GroupBookingApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Update a group booking profile
    * 
@@ -892,4 +899,5 @@ public class GroupBookingApi {
     }
     return localVarRequestBuilder;
   }
+
 }

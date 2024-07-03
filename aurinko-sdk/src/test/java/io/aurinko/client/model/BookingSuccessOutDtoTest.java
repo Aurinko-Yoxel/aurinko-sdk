@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for BookingSuccessOutDto
  */
-public class BookingSuccessOutDtoTest {
+class BookingSuccessOutDtoTest {
     private final BookingSuccessOutDto model = new BookingSuccessOutDto();
 
     /**
      * Model tests for BookingSuccessOutDto
      */
     @Test
-    public void testBookingSuccessOutDto() {
+    void testBookingSuccessOutDto() {
         // TODO: test BookingSuccessOutDto
     }
 
@@ -41,7 +41,7 @@ public class BookingSuccessOutDtoTest {
      * Test the property 'status'
      */
     @Test
-    public void statusTest() {
+    void statusTest() {
         // TODO: test status
     }
 

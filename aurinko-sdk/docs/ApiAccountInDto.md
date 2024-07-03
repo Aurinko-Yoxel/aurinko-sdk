@@ -15,9 +15,10 @@
 |**serverUrl** | **String** |  |  [optional] |
 |**loginString** | **String** | This or email field must be specified |  [optional] |
 |**oauthClientId** | **String** |  |  [optional] |
-|**active** | **Boolean** |  |  |
+|**active** | **Boolean** | The account is always active in the current API version |  |
 |**authString1** | **String** |  |  [optional] |
 |**authString2** | **String** |  |  [optional] |
+|**password** | **String** | Password for IMAP accounts |  [optional] |
 |**authObtainedAt** | **OffsetDateTime** |  |  [optional] |
 |**authExpiresAt** | **OffsetDateTime** |  |  [optional] |
 |**email** | **String** | This or loginString field must be specified |  [optional] |

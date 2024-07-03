@@ -13,19 +13,19 @@
 
 package io.aurinko.client.model;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EndUserExtIdType
  */
-public class EndUserExtIdTypeTest {
+class EndUserExtIdTypeTest {
     /**
      * Model tests for EndUserExtIdType
      */
     @Test
-    public void testEndUserExtIdType() {
+    void testEndUserExtIdType() {
         // TODO: test EndUserExtIdType
     }
 

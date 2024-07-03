@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailTrackingEvent
  */
-public class EmailTrackingEventTest {
+class EmailTrackingEventTest {
     private final EmailTrackingEvent model = new EmailTrackingEvent();
 
     /**
      * Model tests for EmailTrackingEvent
      */
     @Test
-    public void testEmailTrackingEvent() {
+    void testEmailTrackingEvent() {
         // TODO: test EmailTrackingEvent
     }
 
@@ -42,7 +42,7 @@ public class EmailTrackingEventTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class EmailTrackingEventTest {
      * Test the property 'createdAt'
      */
     @Test
-    public void createdAtTest() {
+    void createdAtTest() {
         // TODO: test createdAt
     }
 
@@ -58,7 +58,7 @@ public class EmailTrackingEventTest {
      * Test the property 'eventType'
      */
     @Test
-    public void eventTypeTest() {
+    void eventTypeTest() {
         // TODO: test eventType
     }
 
@@ -66,7 +66,7 @@ public class EmailTrackingEventTest {
      * Test the property 'location'
      */
     @Test
-    public void locationTest() {
+    void locationTest() {
         // TODO: test location
     }
 
@@ -74,7 +74,7 @@ public class EmailTrackingEventTest {
      * Test the property 'userAgent'
      */
     @Test
-    public void userAgentTest() {
+    void userAgentTest() {
         // TODO: test userAgent
     }
 
@@ -82,7 +82,7 @@ public class EmailTrackingEventTest {
      * Test the property 'referrer'
      */
     @Test
-    public void referrerTest() {
+    void referrerTest() {
         // TODO: test referrer
     }
 
@@ -90,7 +90,7 @@ public class EmailTrackingEventTest {
      * Test the property 'remoteAddr'
      */
     @Test
-    public void remoteAddrTest() {
+    void remoteAddrTest() {
         // TODO: test remoteAddr
     }
 
@@ -98,7 +98,7 @@ public class EmailTrackingEventTest {
      * Test the property 'threadId'
      */
     @Test
-    public void threadIdTest() {
+    void threadIdTest() {
         // TODO: test threadId
     }
 
@@ -106,7 +106,7 @@ public class EmailTrackingEventTest {
      * Test the property 'messageId'
      */
     @Test
-    public void messageIdTest() {
+    void messageIdTest() {
         // TODO: test messageId
     }
 
@@ -114,7 +114,7 @@ public class EmailTrackingEventTest {
      * Test the property 'internetMessageId'
      */
     @Test
-    public void internetMessageIdTest() {
+    void internetMessageIdTest() {
         // TODO: test internetMessageId
     }
 
@@ -122,7 +122,7 @@ public class EmailTrackingEventTest {
      * Test the property 'trackingId'
      */
     @Test
-    public void trackingIdTest() {
+    void trackingIdTest() {
         // TODO: test trackingId
     }
 
@@ -130,7 +130,7 @@ public class EmailTrackingEventTest {
      * Test the property 'context'
      */
     @Test
-    public void contextTest() {
+    void contextTest() {
         // TODO: test context
     }
 
@@ -138,7 +138,7 @@ public class EmailTrackingEventTest {
      * Test the property 'trackingCode'
      */
     @Test
-    public void trackingCodeTest() {
+    void trackingCodeTest() {
         // TODO: test trackingCode
     }
 

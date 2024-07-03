@@ -24,21 +24,21 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for BookingTimesOutDto
  */
-public class BookingTimesOutDtoTest {
+class BookingTimesOutDtoTest {
     private final BookingTimesOutDto model = new BookingTimesOutDto();
 
     /**
      * Model tests for BookingTimesOutDto
      */
     @Test
-    public void testBookingTimesOutDto() {
+    void testBookingTimesOutDto() {
         // TODO: test BookingTimesOutDto
     }
 
@@ -46,7 +46,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'items'
      */
     @Test
-    public void itemsTest() {
+    void itemsTest() {
         // TODO: test items
     }
 
@@ -54,7 +54,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'startTime'
      */
     @Test
-    public void startTimeTest() {
+    void startTimeTest() {
         // TODO: test startTime
     }
 
@@ -62,7 +62,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'endTime'
      */
     @Test
-    public void endTimeTest() {
+    void endTimeTest() {
         // TODO: test endTime
     }
 
@@ -70,7 +70,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'timeAvailableFor'
      */
     @Test
-    public void timeAvailableForTest() {
+    void timeAvailableForTest() {
         // TODO: test timeAvailableFor
     }
 
@@ -78,7 +78,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'durationMinutes'
      */
     @Test
-    public void durationMinutesTest() {
+    void durationMinutesTest() {
         // TODO: test durationMinutes
     }
 
@@ -86,7 +86,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'availabilityStep'
      */
     @Test
-    public void availabilityStepTest() {
+    void availabilityStepTest() {
         // TODO: test availabilityStep
     }
 
@@ -94,7 +94,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'subject'
      */
     @Test
-    public void subjectTest() {
+    void subjectTest() {
         // TODO: test subject
     }
 
@@ -102,7 +102,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'primaryColor'
      */
     @Test
-    public void primaryColorTest() {
+    void primaryColorTest() {
         // TODO: test primaryColor
     }
 
@@ -110,7 +110,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'secondaryColor'
      */
     @Test
-    public void secondaryColorTest() {
+    void secondaryColorTest() {
         // TODO: test secondaryColor
     }
 
@@ -118,7 +118,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'additionalFields'
      */
     @Test
-    public void additionalFieldsTest() {
+    void additionalFieldsTest() {
         // TODO: test additionalFields
     }
 
@@ -126,7 +126,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'limit'
      */
     @Test
-    public void limitTest() {
+    void limitTest() {
         // TODO: test limit
     }
 
@@ -134,7 +134,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'offset'
      */
     @Test
-    public void offsetTest() {
+    void offsetTest() {
         // TODO: test offset
     }
 
@@ -142,7 +142,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'totalSize'
      */
     @Test
-    public void totalSizeTest() {
+    void totalSizeTest() {
         // TODO: test totalSize
     }
 
@@ -150,7 +150,7 @@ public class BookingTimesOutDtoTest {
      * Test the property 'done'
      */
     @Test
-    public void doneTest() {
+    void doneTest() {
         // TODO: test done
     }
 

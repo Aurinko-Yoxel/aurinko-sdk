@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailTrackingEventPageNext.JSON_PROPERTY_DONE,
   EmailTrackingEventPageNext.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EmailTrackingEventPageNext {
   public static final String JSON_PROPERTY_OFFSET = "offset";
   private Integer offset;
@@ -52,7 +52,7 @@ public class EmailTrackingEventPageNext {
   private Boolean done;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
-  private List<EmailTrackingEvent> records;
+  private List<EmailTrackingEvent> records = new ArrayList<>();
 
   public EmailTrackingEventPageNext() { 
   }

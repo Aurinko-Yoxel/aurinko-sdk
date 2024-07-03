@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for SyncStatus
  */
-public class SyncStatusTest {
+class SyncStatusTest {
     private final SyncStatus model = new SyncStatus();
 
     /**
      * Model tests for SyncStatus
      */
     @Test
-    public void testSyncStatus() {
+    void testSyncStatus() {
         // TODO: test SyncStatus
     }
 
@@ -41,7 +41,7 @@ public class SyncStatusTest {
      * Test the property 'syncUpdatedToken'
      */
     @Test
-    public void syncUpdatedTokenTest() {
+    void syncUpdatedTokenTest() {
         // TODO: test syncUpdatedToken
     }
 
@@ -49,7 +49,7 @@ public class SyncStatusTest {
      * Test the property 'syncDeletedToken'
      */
     @Test
-    public void syncDeletedTokenTest() {
+    void syncDeletedTokenTest() {
         // TODO: test syncDeletedToken
     }
 
@@ -57,7 +57,7 @@ public class SyncStatusTest {
      * Test the property 'ready'
      */
     @Test
-    public void readyTest() {
+    void readyTest() {
         // TODO: test ready
     }
 

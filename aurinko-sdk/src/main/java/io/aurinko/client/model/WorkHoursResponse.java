@@ -37,10 +37,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
   WorkHoursResponse.JSON_PROPERTY_ITEMS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WorkHoursResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<WorkHoursResponseItem> items;
+  private List<WorkHoursResponseItem> items = new ArrayList<>();
 
   public WorkHoursResponse() { 
   }

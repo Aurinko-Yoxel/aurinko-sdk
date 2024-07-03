@@ -23,21 +23,21 @@ import io.aurinko.client.model.WeekWorkSchedule;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for FreeBusySchedule
  */
-public class FreeBusyScheduleTest {
+class FreeBusyScheduleTest {
     private final FreeBusySchedule model = new FreeBusySchedule();
 
     /**
      * Model tests for FreeBusySchedule
      */
     @Test
-    public void testFreeBusySchedule() {
+    void testFreeBusySchedule() {
         // TODO: test FreeBusySchedule
     }
 
@@ -45,7 +45,7 @@ public class FreeBusyScheduleTest {
      * Test the property 'email'
      */
     @Test
-    public void emailTest() {
+    void emailTest() {
         // TODO: test email
     }
 
@@ -53,7 +53,7 @@ public class FreeBusyScheduleTest {
      * Test the property 'items'
      */
     @Test
-    public void itemsTest() {
+    void itemsTest() {
         // TODO: test items
     }
 
@@ -61,7 +61,7 @@ public class FreeBusyScheduleTest {
      * Test the property 'error'
      */
     @Test
-    public void errorTest() {
+    void errorTest() {
         // TODO: test error
     }
 
@@ -69,7 +69,7 @@ public class FreeBusyScheduleTest {
      * Test the property 'workHours'
      */
     @Test
-    public void workHoursTest() {
+    void workHoursTest() {
         // TODO: test workHours
     }
 

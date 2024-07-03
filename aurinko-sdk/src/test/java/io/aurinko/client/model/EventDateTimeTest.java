@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EventDateTime
  */
-public class EventDateTimeTest {
+class EventDateTimeTest {
     private final EventDateTime model = new EventDateTime();
 
     /**
      * Model tests for EventDateTime
      */
     @Test
-    public void testEventDateTime() {
+    void testEventDateTime() {
         // TODO: test EventDateTime
     }
 
@@ -43,7 +43,7 @@ public class EventDateTimeTest {
      * Test the property 'dateOnly'
      */
     @Test
-    public void dateOnlyTest() {
+    void dateOnlyTest() {
         // TODO: test dateOnly
     }
 
@@ -51,7 +51,7 @@ public class EventDateTimeTest {
      * Test the property 'dateTime'
      */
     @Test
-    public void dateTimeTest() {
+    void dateTimeTest() {
         // TODO: test dateTime
     }
 
@@ -59,7 +59,7 @@ public class EventDateTimeTest {
      * Test the property 'timezone'
      */
     @Test
-    public void timezoneTest() {
+    void timezoneTest() {
         // TODO: test timezone
     }
 

@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ContactCompany
  */
-public class ContactCompanyTest {
+class ContactCompanyTest {
     private final ContactCompany model = new ContactCompany();
 
     /**
      * Model tests for ContactCompany
      */
     @Test
-    public void testContactCompany() {
+    void testContactCompany() {
         // TODO: test ContactCompany
     }
 
@@ -41,7 +41,7 @@ public class ContactCompanyTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -49,7 +49,7 @@ public class ContactCompanyTest {
      * Test the property 'officeLocation'
      */
     @Test
-    public void officeLocationTest() {
+    void officeLocationTest() {
         // TODO: test officeLocation
     }
 
@@ -57,7 +57,7 @@ public class ContactCompanyTest {
      * Test the property 'department'
      */
     @Test
-    public void departmentTest() {
+    void departmentTest() {
         // TODO: test department
     }
 
@@ -65,7 +65,7 @@ public class ContactCompanyTest {
      * Test the property 'jobTitle'
      */
     @Test
-    public void jobTitleTest() {
+    void jobTitleTest() {
         // TODO: test jobTitle
     }
 
@@ -73,7 +73,7 @@ public class ContactCompanyTest {
      * Test the property 'yomiCompanyName'
      */
     @Test
-    public void yomiCompanyNameTest() {
+    void yomiCompanyNameTest() {
         // TODO: test yomiCompanyName
     }
 

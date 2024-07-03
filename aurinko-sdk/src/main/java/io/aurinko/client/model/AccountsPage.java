@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AccountsPage.JSON_PROPERTY_DONE,
   AccountsPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class AccountsPage {
   public static final String JSON_PROPERTY_OFFSET = "offset";
   private Integer offset;
@@ -52,7 +52,7 @@ public class AccountsPage {
   private Boolean done;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
-  private List<ApiAccountOutDto> records;
+  private List<ApiAccountOutDto> records = new ArrayList<>();
 
   public AccountsPage() { 
   }

@@ -5,13 +5,11 @@
 ## Enum
 
 
-* `DEAD` (value: `"dead"`)
+* `ACTIVE` (value: `"active"`)
 
 * `INVALID` (value: `"invalid"`)
 
-* `ACTIVE` (value: `"active"`)
-
-* `REQUIRED` (value: `"required"`)
+* `DEAD` (value: `"dead"`)
 
 * `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
 

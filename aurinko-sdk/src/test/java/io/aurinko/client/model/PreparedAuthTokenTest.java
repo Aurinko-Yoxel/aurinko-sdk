@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for PreparedAuthToken
  */
-public class PreparedAuthTokenTest {
+class PreparedAuthTokenTest {
     private final PreparedAuthToken model = new PreparedAuthToken();
 
     /**
      * Model tests for PreparedAuthToken
      */
     @Test
-    public void testPreparedAuthToken() {
+    void testPreparedAuthToken() {
         // TODO: test PreparedAuthToken
     }
 
@@ -41,7 +41,7 @@ public class PreparedAuthTokenTest {
      * Test the property 'token'
      */
     @Test
-    public void tokenTest() {
+    void tokenTest() {
         // TODO: test token
     }
 

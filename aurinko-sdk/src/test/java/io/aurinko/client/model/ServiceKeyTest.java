@@ -13,19 +13,19 @@
 
 package io.aurinko.client.model;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ServiceKey
  */
-public class ServiceKeyTest {
+class ServiceKeyTest {
     /**
      * Model tests for ServiceKey
      */
     @Test
-    public void testServiceKey() {
+    void testServiceKey() {
         // TODO: test ServiceKey
     }
 

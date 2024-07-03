@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   GroupBookingPage.JSON_PROPERTY_DONE,
   GroupBookingPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class GroupBookingPage {
   public static final String JSON_PROPERTY_OFFSET = "offset";
   private Integer offset;
@@ -52,7 +52,7 @@ public class GroupBookingPage {
   private Boolean done;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
-  private List<GroupBookingOutDto> records;
+  private List<GroupBookingOutDto> records = new ArrayList<>();
 
   public GroupBookingPage() { 
   }

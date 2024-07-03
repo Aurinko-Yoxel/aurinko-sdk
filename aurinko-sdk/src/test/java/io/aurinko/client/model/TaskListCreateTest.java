@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for TaskListCreate
  */
-public class TaskListCreateTest {
+class TaskListCreateTest {
     private final TaskListCreate model = new TaskListCreate();
 
     /**
      * Model tests for TaskListCreate
      */
     @Test
-    public void testTaskListCreate() {
+    void testTaskListCreate() {
         // TODO: test TaskListCreate
     }
 
@@ -41,7 +41,7 @@ public class TaskListCreateTest {
      * Test the property 'title'
      */
     @Test
-    public void titleTest() {
+    void titleTest() {
         // TODO: test title
     }
 

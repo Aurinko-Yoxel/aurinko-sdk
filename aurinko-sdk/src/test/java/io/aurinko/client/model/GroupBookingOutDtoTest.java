@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.WeekWorkSchedule;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for GroupBookingOutDto
  */
-public class GroupBookingOutDtoTest {
+class GroupBookingOutDtoTest {
     private final GroupBookingOutDto model = new GroupBookingOutDto();
 
     /**
      * Model tests for GroupBookingOutDto
      */
     @Test
-    public void testGroupBookingOutDto() {
+    void testGroupBookingOutDto() {
         // TODO: test GroupBookingOutDto
     }
 
@@ -43,7 +43,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -51,7 +51,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -59,7 +59,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'durationMinutes'
      */
     @Test
-    public void durationMinutesTest() {
+    void durationMinutesTest() {
         // TODO: test durationMinutes
     }
 
@@ -67,7 +67,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'availabilityStep'
      */
     @Test
-    public void availabilityStepTest() {
+    void availabilityStepTest() {
         // TODO: test availabilityStep
     }
 
@@ -75,7 +75,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'startTime'
      */
     @Test
-    public void startTimeTest() {
+    void startTimeTest() {
         // TODO: test startTime
     }
 
@@ -83,7 +83,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'endTime'
      */
     @Test
-    public void endTimeTest() {
+    void endTimeTest() {
         // TODO: test endTime
     }
 
@@ -91,7 +91,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'timeAvailableFor'
      */
     @Test
-    public void timeAvailableForTest() {
+    void timeAvailableForTest() {
         // TODO: test timeAvailableFor
     }
 
@@ -99,7 +99,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'subject'
      */
     @Test
-    public void subjectTest() {
+    void subjectTest() {
         // TODO: test subject
     }
 
@@ -107,7 +107,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'description'
      */
     @Test
-    public void descriptionTest() {
+    void descriptionTest() {
         // TODO: test description
     }
 
@@ -115,7 +115,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'location'
      */
     @Test
-    public void locationTest() {
+    void locationTest() {
         // TODO: test location
     }
 
@@ -123,7 +123,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'workHours'
      */
     @Test
-    public void workHoursTest() {
+    void workHoursTest() {
         // TODO: test workHours
     }
 
@@ -131,7 +131,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'context'
      */
     @Test
-    public void contextTest() {
+    void contextTest() {
         // TODO: test context
     }
 
@@ -139,7 +139,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'startConference'
      */
     @Test
-    public void startConferenceTest() {
+    void startConferenceTest() {
         // TODO: test startConference
     }
 
@@ -147,7 +147,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'openMeetingUrl'
      */
     @Test
-    public void openMeetingUrlTest() {
+    void openMeetingUrlTest() {
         // TODO: test openMeetingUrl
     }
 
@@ -155,7 +155,7 @@ public class GroupBookingOutDtoTest {
      * Test the property 'clientOrgId'
      */
     @Test
-    public void clientOrgIdTest() {
+    void clientOrgIdTest() {
         // TODO: test clientOrgId
     }
 

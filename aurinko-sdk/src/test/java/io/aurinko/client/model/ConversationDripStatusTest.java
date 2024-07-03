@@ -25,21 +25,21 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ConversationDripStatus
  */
-public class ConversationDripStatusTest {
+class ConversationDripStatusTest {
     private final ConversationDripStatus model = new ConversationDripStatus();
 
     /**
      * Model tests for ConversationDripStatus
      */
     @Test
-    public void testConversationDripStatus() {
+    void testConversationDripStatus() {
         // TODO: test ConversationDripStatus
     }
 
@@ -47,7 +47,7 @@ public class ConversationDripStatusTest {
      * Test the property 'convoId'
      */
     @Test
-    public void convoIdTest() {
+    void convoIdTest() {
         // TODO: test convoId
     }
 
@@ -55,7 +55,7 @@ public class ConversationDripStatusTest {
      * Test the property 'subject'
      */
     @Test
-    public void subjectTest() {
+    void subjectTest() {
         // TODO: test subject
     }
 
@@ -63,7 +63,7 @@ public class ConversationDripStatusTest {
      * Test the property 'status'
      */
     @Test
-    public void statusTest() {
+    void statusTest() {
         // TODO: test status
     }
 
@@ -71,7 +71,7 @@ public class ConversationDripStatusTest {
      * Test the property 'rule'
      */
     @Test
-    public void ruleTest() {
+    void ruleTest() {
         // TODO: test rule
     }
 
@@ -79,7 +79,7 @@ public class ConversationDripStatusTest {
      * Test the property 'dripStartedAt'
      */
     @Test
-    public void dripStartedAtTest() {
+    void dripStartedAtTest() {
         // TODO: test dripStartedAt
     }
 
@@ -87,7 +87,7 @@ public class ConversationDripStatusTest {
      * Test the property 'dripLastNum'
      */
     @Test
-    public void dripLastNumTest() {
+    void dripLastNumTest() {
         // TODO: test dripLastNum
     }
 
@@ -95,7 +95,7 @@ public class ConversationDripStatusTest {
      * Test the property 'dripError'
      */
     @Test
-    public void dripErrorTest() {
+    void dripErrorTest() {
         // TODO: test dripError
     }
 
@@ -103,7 +103,7 @@ public class ConversationDripStatusTest {
      * Test the property 'dripEndedAt'
      */
     @Test
-    public void dripEndedAtTest() {
+    void dripEndedAtTest() {
         // TODO: test dripEndedAt
     }
 
@@ -111,7 +111,7 @@ public class ConversationDripStatusTest {
      * Test the property 'actionVars'
      */
     @Test
-    public void actionVarsTest() {
+    void actionVarsTest() {
         // TODO: test actionVars
     }
 
@@ -119,7 +119,7 @@ public class ConversationDripStatusTest {
      * Test the property 'targets'
      */
     @Test
-    public void targetsTest() {
+    void targetsTest() {
         // TODO: test targets
     }
 
@@ -127,7 +127,7 @@ public class ConversationDripStatusTest {
      * Test the property 'dripResponder'
      */
     @Test
-    public void dripResponderTest() {
+    void dripResponderTest() {
         // TODO: test dripResponder
     }
 

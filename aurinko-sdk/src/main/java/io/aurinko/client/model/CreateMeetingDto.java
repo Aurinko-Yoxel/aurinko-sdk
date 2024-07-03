@@ -43,13 +43,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   CreateMeetingDto.JSON_PROPERTY_EMAIL,
   CreateMeetingDto.JSON_PROPERTY_SUBSTITUTION_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CreateMeetingDto {
   public static final String JSON_PROPERTY_TIME = "time";
   private SelectedMeetingTime time;
 
   public static final String JSON_PROPERTY_USER_IDS = "userIds";
-  private List<String> userIds;
+  private List<String> userIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

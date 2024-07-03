@@ -4,7 +4,7 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Generator version: 7.4.0
+- Generator version: 7.5.0
 
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with
@@ -148,6 +148,8 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**getMyAccountWithHttpInfo**](docs/AccountApi.md#getMyAccountWithHttpInfo) | **GET** /v1/account | Get account status
 *AccountsApi* | [**amAccountDelete**](docs/AccountsApi.md#amAccountDelete) | **DELETE** /v1/am/accounts/{id} | Delete account by ID
 *AccountsApi* | [**amAccountDeleteWithHttpInfo**](docs/AccountsApi.md#amAccountDeleteWithHttpInfo) | **DELETE** /v1/am/accounts/{id} | Delete account by ID
+*AccountsApi* | [**getAccount**](docs/AccountsApi.md#getAccount) | **GET** /v1/am/accounts/{id} | Get account by id
+*AccountsApi* | [**getAccountWithHttpInfo**](docs/AccountsApi.md#getAccountWithHttpInfo) | **GET** /v1/am/accounts/{id} | Get account by id
 *AccountsApi* | [**getAccounts**](docs/AccountsApi.md#getAccounts) | **GET** /v1/am/accounts | Get accounts
 *AccountsApi* | [**getAccountsWithHttpInfo**](docs/AccountsApi.md#getAccountsWithHttpInfo) | **GET** /v1/am/accounts | Get accounts
 *AccountsApi* | [**upsertPersonal**](docs/AccountsApi.md#upsertPersonal) | **POST** /v1/am/accounts | Upsert an account
@@ -342,8 +344,8 @@ Class | Method | HTTP request | Description
 *TaskSyncApi* | [**taskSyncUpdatedWithHttpInfo**](docs/TaskSyncApi.md#taskSyncUpdatedWithHttpInfo) | **GET** /v1/tasklists/{taskListId}/sync/updated | Request changed tasks (deltas)
 *TasksApi* | [**createTask**](docs/TasksApi.md#createTask) | **POST** /v1/tasklists/{taskListId}/tasks | Create a task
 *TasksApi* | [**createTaskWithHttpInfo**](docs/TasksApi.md#createTaskWithHttpInfo) | **POST** /v1/tasklists/{taskListId}/tasks | Create a task
-*TasksApi* | [**deleteTask**](docs/TasksApi.md#deleteTask) | **DELETE** /v1/tasklists/{taskListId}/tasks/{id} | Delete a task list by id
-*TasksApi* | [**deleteTaskWithHttpInfo**](docs/TasksApi.md#deleteTaskWithHttpInfo) | **DELETE** /v1/tasklists/{taskListId}/tasks/{id} | Delete a task list by id
+*TasksApi* | [**deleteTask**](docs/TasksApi.md#deleteTask) | **DELETE** /v1/tasklists/{taskListId}/tasks/{id} | Delete a task by id
+*TasksApi* | [**deleteTaskWithHttpInfo**](docs/TasksApi.md#deleteTaskWithHttpInfo) | **DELETE** /v1/tasklists/{taskListId}/tasks/{id} | Delete a task by id
 *TasksApi* | [**task**](docs/TasksApi.md#task) | **GET** /v1/tasklists/{taskListId}/tasks/{id} | Request a task by id
 *TasksApi* | [**taskWithHttpInfo**](docs/TasksApi.md#taskWithHttpInfo) | **GET** /v1/tasklists/{taskListId}/tasks/{id} | Request a task by id
 *TasksApi* | [**tasksList**](docs/TasksApi.md#tasksList) | **GET** /v1/tasklists/{taskListId}/tasks | Request list of tasks
@@ -466,6 +468,8 @@ Class | Method | HTTP request | Description
  - [GroupBookingUpdateDto](docs/GroupBookingUpdateDto.md)
  - [MeetingAttendee](docs/MeetingAttendee.md)
  - [MeetingInfo](docs/MeetingInfo.md)
+ - [MeetingResponse](docs/MeetingResponse.md)
+ - [MeetingResponseType](docs/MeetingResponseType.md)
  - [OccurrenceInfo](docs/OccurrenceInfo.md)
  - [OkResponse](docs/OkResponse.md)
  - [OnlineMeetingDetails](docs/OnlineMeetingDetails.md)

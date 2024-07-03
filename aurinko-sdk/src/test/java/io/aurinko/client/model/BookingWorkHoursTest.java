@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.WeekWorkSchedule;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for BookingWorkHours
  */
-public class BookingWorkHoursTest {
+class BookingWorkHoursTest {
     private final BookingWorkHours model = new BookingWorkHours();
 
     /**
      * Model tests for BookingWorkHours
      */
     @Test
-    public void testBookingWorkHours() {
+    void testBookingWorkHours() {
         // TODO: test BookingWorkHours
     }
 
@@ -42,7 +42,7 @@ public class BookingWorkHoursTest {
      * Test the property 'workHours'
      */
     @Test
-    public void workHoursTest() {
+    void workHoursTest() {
         // TODO: test workHours
     }
 

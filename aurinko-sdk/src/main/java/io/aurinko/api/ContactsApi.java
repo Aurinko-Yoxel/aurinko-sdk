@@ -48,7 +48,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ContactsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -206,6 +206,7 @@ public class ContactsApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Create a new contact
    * 
@@ -300,6 +301,7 @@ public class ContactsApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Delete a contact
    * 
@@ -378,6 +380,7 @@ public class ContactsApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * Update a contact
    * 
@@ -488,4 +491,5 @@ public class ContactsApi {
     }
     return localVarRequestBuilder;
   }
+
 }

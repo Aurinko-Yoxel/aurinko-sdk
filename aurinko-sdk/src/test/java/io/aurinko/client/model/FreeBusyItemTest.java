@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.ShowAs;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for FreeBusyItem
  */
-public class FreeBusyItemTest {
+class FreeBusyItemTest {
     private final FreeBusyItem model = new FreeBusyItem();
 
     /**
      * Model tests for FreeBusyItem
      */
     @Test
-    public void testFreeBusyItem() {
+    void testFreeBusyItem() {
         // TODO: test FreeBusyItem
     }
 
@@ -43,7 +43,7 @@ public class FreeBusyItemTest {
      * Test the property 'start'
      */
     @Test
-    public void startTest() {
+    void startTest() {
         // TODO: test start
     }
 
@@ -51,7 +51,7 @@ public class FreeBusyItemTest {
      * Test the property 'end'
      */
     @Test
-    public void endTest() {
+    void endTest() {
         // TODO: test end
     }
 
@@ -59,7 +59,7 @@ public class FreeBusyItemTest {
      * Test the property 'status'
      */
     @Test
-    public void statusTest() {
+    void statusTest() {
         // TODO: test status
     }
 

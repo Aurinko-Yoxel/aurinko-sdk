@@ -26,21 +26,21 @@ import io.aurinko.client.model.OutgoingEmailAttachment;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for OutgoingEmailReply
  */
-public class OutgoingEmailReplyTest {
+class OutgoingEmailReplyTest {
     private final OutgoingEmailReply model = new OutgoingEmailReply();
 
     /**
      * Model tests for OutgoingEmailReply
      */
     @Test
-    public void testOutgoingEmailReply() {
+    void testOutgoingEmailReply() {
         // TODO: test OutgoingEmailReply
     }
 
@@ -48,7 +48,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'from'
      */
     @Test
-    public void fromTest() {
+    void fromTest() {
         // TODO: test from
     }
 
@@ -56,7 +56,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'subject'
      */
     @Test
-    public void subjectTest() {
+    void subjectTest() {
         // TODO: test subject
     }
 
@@ -64,7 +64,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'body'
      */
     @Test
-    public void bodyTest() {
+    void bodyTest() {
         // TODO: test body
     }
 
@@ -72,7 +72,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'to'
      */
     @Test
-    public void toTest() {
+    void toTest() {
         // TODO: test to
     }
 
@@ -80,7 +80,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'cc'
      */
     @Test
-    public void ccTest() {
+    void ccTest() {
         // TODO: test cc
     }
 
@@ -88,7 +88,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'bcc'
      */
     @Test
-    public void bccTest() {
+    void bccTest() {
         // TODO: test bcc
     }
 
@@ -96,7 +96,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'replyTo'
      */
     @Test
-    public void replyToTest() {
+    void replyToTest() {
         // TODO: test replyTo
     }
 
@@ -104,7 +104,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'xHeaders'
      */
     @Test
-    public void xHeadersTest() {
+    void xHeadersTest() {
         // TODO: test xHeaders
     }
 
@@ -112,7 +112,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'attachments'
      */
     @Test
-    public void attachmentsTest() {
+    void attachmentsTest() {
         // TODO: test attachments
     }
 
@@ -120,7 +120,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'tracking'
      */
     @Test
-    public void trackingTest() {
+    void trackingTest() {
         // TODO: test tracking
     }
 
@@ -128,7 +128,7 @@ public class OutgoingEmailReplyTest {
      * Test the property 'followUp'
      */
     @Test
-    public void followUpTest() {
+    void followUpTest() {
         // TODO: test followUp
     }
 

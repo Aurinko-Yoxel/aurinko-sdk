@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailFolderInfo
  */
-public class EmailFolderInfoTest {
+class EmailFolderInfoTest {
     private final EmailFolderInfo model = new EmailFolderInfo();
 
     /**
      * Model tests for EmailFolderInfo
      */
     @Test
-    public void testEmailFolderInfo() {
+    void testEmailFolderInfo() {
         // TODO: test EmailFolderInfo
     }
 
@@ -41,7 +41,7 @@ public class EmailFolderInfoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -49,8 +49,40 @@ public class EmailFolderInfoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'fullName'
+     */
+    @Test
+    void fullNameTest() {
+        // TODO: test fullName
+    }
+
+    /**
+     * Test the property 'isFolder'
+     */
+    @Test
+    void isFolderTest() {
+        // TODO: test isFolder
+    }
+
+    /**
+     * Test the property 'isLabel'
+     */
+    @Test
+    void isLabelTest() {
+        // TODO: test isLabel
+    }
+
+    /**
+     * Test the property 'parentId'
+     */
+    @Test
+    void parentIdTest() {
+        // TODO: test parentId
     }
 
 }

@@ -23,21 +23,21 @@ import io.aurinko.client.model.Recurrence;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for SeriesInfo
  */
-public class SeriesInfoTest {
+class SeriesInfoTest {
     private final SeriesInfo model = new SeriesInfo();
 
     /**
      * Model tests for SeriesInfo
      */
     @Test
-    public void testSeriesInfo() {
+    void testSeriesInfo() {
         // TODO: test SeriesInfo
     }
 
@@ -45,7 +45,7 @@ public class SeriesInfoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -53,7 +53,7 @@ public class SeriesInfoTest {
      * Test the property 'globalId'
      */
     @Test
-    public void globalIdTest() {
+    void globalIdTest() {
         // TODO: test globalId
     }
 
@@ -61,7 +61,7 @@ public class SeriesInfoTest {
      * Test the property 'recurrence'
      */
     @Test
-    public void recurrenceTest() {
+    void recurrenceTest() {
         // TODO: test recurrence
     }
 
@@ -69,7 +69,7 @@ public class SeriesInfoTest {
      * Test the property 'modifiedOccurrences'
      */
     @Test
-    public void modifiedOccurrencesTest() {
+    void modifiedOccurrencesTest() {
         // TODO: test modifiedOccurrences
     }
 
@@ -77,7 +77,7 @@ public class SeriesInfoTest {
      * Test the property 'deletedOccurrences'
      */
     @Test
-    public void deletedOccurrencesTest() {
+    void deletedOccurrencesTest() {
         // TODO: test deletedOccurrences
     }
 

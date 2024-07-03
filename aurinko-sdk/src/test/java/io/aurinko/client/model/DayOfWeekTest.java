@@ -13,19 +13,19 @@
 
 package io.aurinko.client.model;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for DayOfWeek
  */
-public class DayOfWeekTest {
+class DayOfWeekTest {
     /**
      * Model tests for DayOfWeek
      */
     @Test
-    public void testDayOfWeek() {
+    void testDayOfWeek() {
         // TODO: test DayOfWeek
     }
 

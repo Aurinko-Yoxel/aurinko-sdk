@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SubscriptionRequest.JSON_PROPERTY_RESOURCE,
   SubscriptionRequest.JSON_PROPERTY_NOTIFICATION_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class SubscriptionRequest {
   public static final String JSON_PROPERTY_RESOURCE = "resource";
   private String resource;

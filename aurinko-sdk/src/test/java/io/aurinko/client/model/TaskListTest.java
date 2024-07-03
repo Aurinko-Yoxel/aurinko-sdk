@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for TaskList
  */
-public class TaskListTest {
+class TaskListTest {
     private final TaskList model = new TaskList();
 
     /**
      * Model tests for TaskList
      */
     @Test
-    public void testTaskList() {
+    void testTaskList() {
         // TODO: test TaskList
     }
 
@@ -42,7 +42,7 @@ public class TaskListTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -50,7 +50,7 @@ public class TaskListTest {
      * Test the property 'etag'
      */
     @Test
-    public void etagTest() {
+    void etagTest() {
         // TODO: test etag
     }
 
@@ -58,7 +58,7 @@ public class TaskListTest {
      * Test the property 'title'
      */
     @Test
-    public void titleTest() {
+    void titleTest() {
         // TODO: test title
     }
 
@@ -66,7 +66,7 @@ public class TaskListTest {
      * Test the property 'owner'
      */
     @Test
-    public void ownerTest() {
+    void ownerTest() {
         // TODO: test owner
     }
 
@@ -74,7 +74,7 @@ public class TaskListTest {
      * Test the property 'shared'
      */
     @Test
-    public void sharedTest() {
+    void sharedTest() {
         // TODO: test shared
     }
 
@@ -82,7 +82,7 @@ public class TaskListTest {
      * Test the property 'defaultList'
      */
     @Test
-    public void defaultListTest() {
+    void defaultListTest() {
         // TODO: test defaultList
     }
 
@@ -90,7 +90,7 @@ public class TaskListTest {
      * Test the property 'emailsList'
      */
     @Test
-    public void emailsListTest() {
+    void emailsListTest() {
         // TODO: test emailsList
     }
 
@@ -98,7 +98,7 @@ public class TaskListTest {
      * Test the property 'lastModifiedTime'
      */
     @Test
-    public void lastModifiedTimeTest() {
+    void lastModifiedTimeTest() {
         // TODO: test lastModifiedTime
     }
 

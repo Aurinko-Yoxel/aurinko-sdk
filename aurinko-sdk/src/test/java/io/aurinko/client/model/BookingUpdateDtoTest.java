@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.WeekWorkSchedule;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for BookingUpdateDto
  */
-public class BookingUpdateDtoTest {
+class BookingUpdateDtoTest {
     private final BookingUpdateDto model = new BookingUpdateDto();
 
     /**
      * Model tests for BookingUpdateDto
      */
     @Test
-    public void testBookingUpdateDto() {
+    void testBookingUpdateDto() {
         // TODO: test BookingUpdateDto
     }
 
@@ -43,7 +43,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -51,7 +51,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'durationMinutes'
      */
     @Test
-    public void durationMinutesTest() {
+    void durationMinutesTest() {
         // TODO: test durationMinutes
     }
 
@@ -59,7 +59,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'availabilityStep'
      */
     @Test
-    public void availabilityStepTest() {
+    void availabilityStepTest() {
         // TODO: test availabilityStep
     }
 
@@ -67,7 +67,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'startTime'
      */
     @Test
-    public void startTimeTest() {
+    void startTimeTest() {
         // TODO: test startTime
     }
 
@@ -75,7 +75,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'endTime'
      */
     @Test
-    public void endTimeTest() {
+    void endTimeTest() {
         // TODO: test endTime
     }
 
@@ -83,7 +83,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'timeAvailableFor'
      */
     @Test
-    public void timeAvailableForTest() {
+    void timeAvailableForTest() {
         // TODO: test timeAvailableFor
     }
 
@@ -91,7 +91,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'subject'
      */
     @Test
-    public void subjectTest() {
+    void subjectTest() {
         // TODO: test subject
     }
 
@@ -99,7 +99,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'description'
      */
     @Test
-    public void descriptionTest() {
+    void descriptionTest() {
         // TODO: test description
     }
 
@@ -107,7 +107,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'location'
      */
     @Test
-    public void locationTest() {
+    void locationTest() {
         // TODO: test location
     }
 
@@ -115,7 +115,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'workHours'
      */
     @Test
-    public void workHoursTest() {
+    void workHoursTest() {
         // TODO: test workHours
     }
 
@@ -123,7 +123,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'context'
      */
     @Test
-    public void contextTest() {
+    void contextTest() {
         // TODO: test context
     }
 
@@ -131,7 +131,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'startConference'
      */
     @Test
-    public void startConferenceTest() {
+    void startConferenceTest() {
         // TODO: test startConference
     }
 
@@ -139,7 +139,7 @@ public class BookingUpdateDtoTest {
      * Test the property 'openMeetingUrl'
      */
     @Test
-    public void openMeetingUrlTest() {
+    void openMeetingUrlTest() {
         // TODO: test openMeetingUrl
     }
 

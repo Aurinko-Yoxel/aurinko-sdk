@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ContactPhoneNumber
  */
-public class ContactPhoneNumberTest {
+class ContactPhoneNumberTest {
     private final ContactPhoneNumber model = new ContactPhoneNumber();
 
     /**
      * Model tests for ContactPhoneNumber
      */
     @Test
-    public void testContactPhoneNumber() {
+    void testContactPhoneNumber() {
         // TODO: test ContactPhoneNumber
     }
 
@@ -41,7 +41,7 @@ public class ContactPhoneNumberTest {
      * Test the property 'number'
      */
     @Test
-    public void numberTest() {
+    void numberTest() {
         // TODO: test number
     }
 
@@ -49,7 +49,7 @@ public class ContactPhoneNumberTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 
@@ -57,7 +57,7 @@ public class ContactPhoneNumberTest {
      * Test the property 'canonicalForm'
      */
     @Test
-    public void canonicalFormTest() {
+    void canonicalFormTest() {
         // TODO: test canonicalForm
     }
 

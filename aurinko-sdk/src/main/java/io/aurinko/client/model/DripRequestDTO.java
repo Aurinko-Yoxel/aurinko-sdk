@@ -43,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   DripRequestDTO.JSON_PROPERTY_TARGETS,
   DripRequestDTO.JSON_PROPERTY_ACTION_VARS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DripRequestDTO {
   /**
    * Gets or Sets status
@@ -92,7 +92,7 @@ public class DripRequestDTO {
   private OffsetDateTime dripAfter;
 
   public static final String JSON_PROPERTY_TARGETS = "targets";
-  private List<String> targets;
+  private List<String> targets = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ACTION_VARS = "actionVars";
   private Map<String, String> actionVars = new HashMap<>();

@@ -24,21 +24,21 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for CreateMeetingDto
  */
-public class CreateMeetingDtoTest {
+class CreateMeetingDtoTest {
     private final CreateMeetingDto model = new CreateMeetingDto();
 
     /**
      * Model tests for CreateMeetingDto
      */
     @Test
-    public void testCreateMeetingDto() {
+    void testCreateMeetingDto() {
         // TODO: test CreateMeetingDto
     }
 
@@ -46,7 +46,7 @@ public class CreateMeetingDtoTest {
      * Test the property 'time'
      */
     @Test
-    public void timeTest() {
+    void timeTest() {
         // TODO: test time
     }
 
@@ -54,7 +54,7 @@ public class CreateMeetingDtoTest {
      * Test the property 'userIds'
      */
     @Test
-    public void userIdsTest() {
+    void userIdsTest() {
         // TODO: test userIds
     }
 
@@ -62,7 +62,7 @@ public class CreateMeetingDtoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -70,7 +70,7 @@ public class CreateMeetingDtoTest {
      * Test the property 'email'
      */
     @Test
-    public void emailTest() {
+    void emailTest() {
         // TODO: test email
     }
 
@@ -78,7 +78,7 @@ public class CreateMeetingDtoTest {
      * Test the property 'substitutionData'
      */
     @Test
-    public void substitutionDataTest() {
+    void substitutionDataTest() {
         // TODO: test substitutionData
     }
 

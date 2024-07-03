@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for OutgoingEmailAttachment
  */
-public class OutgoingEmailAttachmentTest {
+class OutgoingEmailAttachmentTest {
     private final OutgoingEmailAttachment model = new OutgoingEmailAttachment();
 
     /**
      * Model tests for OutgoingEmailAttachment
      */
     @Test
-    public void testOutgoingEmailAttachment() {
+    void testOutgoingEmailAttachment() {
         // TODO: test OutgoingEmailAttachment
     }
 
@@ -41,7 +41,7 @@ public class OutgoingEmailAttachmentTest {
      * Test the property 'inline'
      */
     @Test
-    public void inlineTest() {
+    void inlineTest() {
         // TODO: test inline
     }
 
@@ -49,7 +49,7 @@ public class OutgoingEmailAttachmentTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -57,7 +57,7 @@ public class OutgoingEmailAttachmentTest {
      * Test the property 'mimeType'
      */
     @Test
-    public void mimeTypeTest() {
+    void mimeTypeTest() {
         // TODO: test mimeType
     }
 
@@ -65,7 +65,7 @@ public class OutgoingEmailAttachmentTest {
      * Test the property 'contentId'
      */
     @Test
-    public void contentIdTest() {
+    void contentIdTest() {
         // TODO: test contentId
     }
 
@@ -73,7 +73,7 @@ public class OutgoingEmailAttachmentTest {
      * Test the property 'content'
      */
     @Test
-    public void contentTest() {
+    void contentTest() {
         // TODO: test content
     }
 

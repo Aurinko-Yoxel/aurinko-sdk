@@ -37,13 +37,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingAttachedDto.JSON_PROPERTY_USER_ID,
   BookingAttachedDto.JSON_PROPERTY_ACCOUNTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BookingAttachedDto {
   public static final String JSON_PROPERTY_USER_ID = "userId";
   private String userId;
 
   public static final String JSON_PROPERTY_ACCOUNTS = "accounts";
-  private List<Long> accounts;
+  private List<Long> accounts = new ArrayList<>();
 
   public BookingAttachedDto() { 
   }

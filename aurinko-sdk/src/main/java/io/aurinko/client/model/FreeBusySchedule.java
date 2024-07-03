@@ -41,13 +41,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FreeBusySchedule.JSON_PROPERTY_ERROR,
   FreeBusySchedule.JSON_PROPERTY_WORK_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class FreeBusySchedule {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
 
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<FreeBusyItem> items;
+  private List<FreeBusyItem> items = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ERROR = "error";
   private String error;

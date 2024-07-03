@@ -43,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimplePattern.JSON_PROPERTY_MONTH_OF_YEAR,
   RecurrenceSimplePattern.JSON_PROPERTY_INSTANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class RecurrenceSimplePattern {
   /**
    * Gets or Sets frequency
@@ -97,7 +97,7 @@ public class RecurrenceSimplePattern {
   private Integer interval = 1;
 
   public static final String JSON_PROPERTY_DAYS_OF_WEEK = "daysOfWeek";
-  private List<DayOfWeek> daysOfWeek;
+  private List<DayOfWeek> daysOfWeek = new ArrayList<>();
 
   /**
    * Gets or Sets weekStart

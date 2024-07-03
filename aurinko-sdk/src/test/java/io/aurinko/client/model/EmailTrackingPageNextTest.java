@@ -22,21 +22,21 @@ import io.aurinko.client.model.TrackingData;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailTrackingPageNext
  */
-public class EmailTrackingPageNextTest {
+class EmailTrackingPageNextTest {
     private final EmailTrackingPageNext model = new EmailTrackingPageNext();
 
     /**
      * Model tests for EmailTrackingPageNext
      */
     @Test
-    public void testEmailTrackingPageNext() {
+    void testEmailTrackingPageNext() {
         // TODO: test EmailTrackingPageNext
     }
 
@@ -44,7 +44,7 @@ public class EmailTrackingPageNextTest {
      * Test the property 'offset'
      */
     @Test
-    public void offsetTest() {
+    void offsetTest() {
         // TODO: test offset
     }
 
@@ -52,7 +52,7 @@ public class EmailTrackingPageNextTest {
      * Test the property 'totalSize'
      */
     @Test
-    public void totalSizeTest() {
+    void totalSizeTest() {
         // TODO: test totalSize
     }
 
@@ -60,7 +60,7 @@ public class EmailTrackingPageNextTest {
      * Test the property 'done'
      */
     @Test
-    public void doneTest() {
+    void doneTest() {
         // TODO: test done
     }
 
@@ -68,7 +68,7 @@ public class EmailTrackingPageNextTest {
      * Test the property 'records'
      */
     @Test
-    public void recordsTest() {
+    void recordsTest() {
         // TODO: test records
     }
 

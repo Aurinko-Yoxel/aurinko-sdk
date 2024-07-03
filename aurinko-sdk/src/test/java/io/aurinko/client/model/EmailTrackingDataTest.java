@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for EmailTrackingData
  */
-public class EmailTrackingDataTest {
+class EmailTrackingDataTest {
     private final EmailTrackingData model = new EmailTrackingData();
 
     /**
      * Model tests for EmailTrackingData
      */
     @Test
-    public void testEmailTrackingData() {
+    void testEmailTrackingData() {
         // TODO: test EmailTrackingData
     }
 
@@ -43,7 +43,7 @@ public class EmailTrackingDataTest {
      * Test the property 'trackReplies'
      */
     @Test
-    public void trackRepliesTest() {
+    void trackRepliesTest() {
         // TODO: test trackReplies
     }
 
@@ -51,7 +51,7 @@ public class EmailTrackingDataTest {
      * Test the property 'htmlBody'
      */
     @Test
-    public void htmlBodyTest() {
+    void htmlBodyTest() {
         // TODO: test htmlBody
     }
 
@@ -59,7 +59,7 @@ public class EmailTrackingDataTest {
      * Test the property 'trackingCode'
      */
     @Test
-    public void trackingCodeTest() {
+    void trackingCodeTest() {
         // TODO: test trackingCode
     }
 
@@ -67,7 +67,7 @@ public class EmailTrackingDataTest {
      * Test the property 'context'
      */
     @Test
-    public void contextTest() {
+    void contextTest() {
         // TODO: test context
     }
 
@@ -75,7 +75,7 @@ public class EmailTrackingDataTest {
      * Test the property 'linkCodes'
      */
     @Test
-    public void linkCodesTest() {
+    void linkCodesTest() {
         // TODO: test linkCodes
     }
 

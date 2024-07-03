@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for CreateMeetingResponse
  */
-public class CreateMeetingResponseTest {
+class CreateMeetingResponseTest {
     private final CreateMeetingResponse model = new CreateMeetingResponse();
 
     /**
      * Model tests for CreateMeetingResponse
      */
     @Test
-    public void testCreateMeetingResponse() {
+    void testCreateMeetingResponse() {
         // TODO: test CreateMeetingResponse
     }
 
@@ -41,7 +41,7 @@ public class CreateMeetingResponseTest {
      * Test the property 'created'
      */
     @Test
-    public void createdTest() {
+    void createdTest() {
         // TODO: test created
     }
 
@@ -49,7 +49,7 @@ public class CreateMeetingResponseTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -57,7 +57,7 @@ public class CreateMeetingResponseTest {
      * Test the property 'userId'
      */
     @Test
-    public void userIdTest() {
+    void userIdTest() {
         // TODO: test userId
     }
 

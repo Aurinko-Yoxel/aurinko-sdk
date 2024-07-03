@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ContactPhoto
  */
-public class ContactPhotoTest {
+class ContactPhotoTest {
     private final ContactPhoto model = new ContactPhoto();
 
     /**
      * Model tests for ContactPhoto
      */
     @Test
-    public void testContactPhoto() {
+    void testContactPhoto() {
         // TODO: test ContactPhoto
     }
 
@@ -41,7 +41,7 @@ public class ContactPhotoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -49,7 +49,7 @@ public class ContactPhotoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -57,7 +57,7 @@ public class ContactPhotoTest {
      * Test the property 'mimeType'
      */
     @Test
-    public void mimeTypeTest() {
+    void mimeTypeTest() {
         // TODO: test mimeType
     }
 
@@ -65,7 +65,7 @@ public class ContactPhotoTest {
      * Test the property 'content'
      */
     @Test
-    public void contentTest() {
+    void contentTest() {
         // TODO: test content
     }
 

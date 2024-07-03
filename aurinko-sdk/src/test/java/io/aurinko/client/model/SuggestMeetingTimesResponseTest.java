@@ -23,21 +23,21 @@ import io.aurinko.client.model.TimeInterval;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for SuggestMeetingTimesResponse
  */
-public class SuggestMeetingTimesResponseTest {
+class SuggestMeetingTimesResponseTest {
     private final SuggestMeetingTimesResponse model = new SuggestMeetingTimesResponse();
 
     /**
      * Model tests for SuggestMeetingTimesResponse
      */
     @Test
-    public void testSuggestMeetingTimesResponse() {
+    void testSuggestMeetingTimesResponse() {
         // TODO: test SuggestMeetingTimesResponse
     }
 
@@ -45,7 +45,7 @@ public class SuggestMeetingTimesResponseTest {
      * Test the property 'items'
      */
     @Test
-    public void itemsTest() {
+    void itemsTest() {
         // TODO: test items
     }
 
@@ -53,7 +53,7 @@ public class SuggestMeetingTimesResponseTest {
      * Test the property 'attendees'
      */
     @Test
-    public void attendeesTest() {
+    void attendeesTest() {
         // TODO: test attendees
     }
 

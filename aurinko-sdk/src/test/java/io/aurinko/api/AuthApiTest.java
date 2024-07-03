@@ -80,8 +80,9 @@ public class AuthApiTest {
         Boolean ensureScopes = null;
         Boolean ensureAccess = null;
         Boolean recycle = null;
+        String authEmail = null;
         
-        CompletableFuture<Void> response = api.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle);
+        CompletableFuture<Void> response = api.authorize(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle, authEmail);
         
         // TODO: test validations
     }

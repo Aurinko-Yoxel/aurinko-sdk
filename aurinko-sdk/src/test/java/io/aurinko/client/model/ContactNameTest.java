@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ContactName
  */
-public class ContactNameTest {
+class ContactNameTest {
     private final ContactName model = new ContactName();
 
     /**
      * Model tests for ContactName
      */
     @Test
-    public void testContactName() {
+    void testContactName() {
         // TODO: test ContactName
     }
 
@@ -41,7 +41,7 @@ public class ContactNameTest {
      * Test the property 'displayName'
      */
     @Test
-    public void displayNameTest() {
+    void displayNameTest() {
         // TODO: test displayName
     }
 
@@ -49,7 +49,7 @@ public class ContactNameTest {
      * Test the property 'prefix'
      */
     @Test
-    public void prefixTest() {
+    void prefixTest() {
         // TODO: test prefix
     }
 
@@ -57,7 +57,7 @@ public class ContactNameTest {
      * Test the property 'givenName'
      */
     @Test
-    public void givenNameTest() {
+    void givenNameTest() {
         // TODO: test givenName
     }
 
@@ -65,7 +65,7 @@ public class ContactNameTest {
      * Test the property 'middleName'
      */
     @Test
-    public void middleNameTest() {
+    void middleNameTest() {
         // TODO: test middleName
     }
 
@@ -73,7 +73,7 @@ public class ContactNameTest {
      * Test the property 'familyName'
      */
     @Test
-    public void familyNameTest() {
+    void familyNameTest() {
         // TODO: test familyName
     }
 
@@ -81,7 +81,7 @@ public class ContactNameTest {
      * Test the property 'suffix'
      */
     @Test
-    public void suffixTest() {
+    void suffixTest() {
         // TODO: test suffix
     }
 
@@ -89,7 +89,7 @@ public class ContactNameTest {
      * Test the property 'yomiGivenName'
      */
     @Test
-    public void yomiGivenNameTest() {
+    void yomiGivenNameTest() {
         // TODO: test yomiGivenName
     }
 
@@ -97,7 +97,7 @@ public class ContactNameTest {
      * Test the property 'yomiFamilyName'
      */
     @Test
-    public void yomiFamilyNameTest() {
+    void yomiFamilyNameTest() {
         // TODO: test yomiFamilyName
     }
 

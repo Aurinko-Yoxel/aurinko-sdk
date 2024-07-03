@@ -26,21 +26,21 @@ import io.aurinko.client.model.OutgoingEmailAttachment;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for OutgoingEmail
  */
-public class OutgoingEmailTest {
+class OutgoingEmailTest {
     private final OutgoingEmail model = new OutgoingEmail();
 
     /**
      * Model tests for OutgoingEmail
      */
     @Test
-    public void testOutgoingEmail() {
+    void testOutgoingEmail() {
         // TODO: test OutgoingEmail
     }
 
@@ -48,7 +48,7 @@ public class OutgoingEmailTest {
      * Test the property 'from'
      */
     @Test
-    public void fromTest() {
+    void fromTest() {
         // TODO: test from
     }
 
@@ -56,7 +56,7 @@ public class OutgoingEmailTest {
      * Test the property 'subject'
      */
     @Test
-    public void subjectTest() {
+    void subjectTest() {
         // TODO: test subject
     }
 
@@ -64,7 +64,7 @@ public class OutgoingEmailTest {
      * Test the property 'body'
      */
     @Test
-    public void bodyTest() {
+    void bodyTest() {
         // TODO: test body
     }
 
@@ -72,7 +72,7 @@ public class OutgoingEmailTest {
      * Test the property 'inReplyTo'
      */
     @Test
-    public void inReplyToTest() {
+    void inReplyToTest() {
         // TODO: test inReplyTo
     }
 
@@ -80,7 +80,7 @@ public class OutgoingEmailTest {
      * Test the property 'references'
      */
     @Test
-    public void referencesTest() {
+    void referencesTest() {
         // TODO: test references
     }
 
@@ -88,7 +88,7 @@ public class OutgoingEmailTest {
      * Test the property 'threadId'
      */
     @Test
-    public void threadIdTest() {
+    void threadIdTest() {
         // TODO: test threadId
     }
 
@@ -96,7 +96,7 @@ public class OutgoingEmailTest {
      * Test the property 'to'
      */
     @Test
-    public void toTest() {
+    void toTest() {
         // TODO: test to
     }
 
@@ -104,7 +104,7 @@ public class OutgoingEmailTest {
      * Test the property 'cc'
      */
     @Test
-    public void ccTest() {
+    void ccTest() {
         // TODO: test cc
     }
 
@@ -112,7 +112,7 @@ public class OutgoingEmailTest {
      * Test the property 'bcc'
      */
     @Test
-    public void bccTest() {
+    void bccTest() {
         // TODO: test bcc
     }
 
@@ -120,7 +120,7 @@ public class OutgoingEmailTest {
      * Test the property 'replyTo'
      */
     @Test
-    public void replyToTest() {
+    void replyToTest() {
         // TODO: test replyTo
     }
 
@@ -128,7 +128,7 @@ public class OutgoingEmailTest {
      * Test the property 'xHeaders'
      */
     @Test
-    public void xHeadersTest() {
+    void xHeadersTest() {
         // TODO: test xHeaders
     }
 
@@ -136,7 +136,7 @@ public class OutgoingEmailTest {
      * Test the property 'attachments'
      */
     @Test
-    public void attachmentsTest() {
+    void attachmentsTest() {
         // TODO: test attachments
     }
 
@@ -144,7 +144,7 @@ public class OutgoingEmailTest {
      * Test the property 'tracking'
      */
     @Test
-    public void trackingTest() {
+    void trackingTest() {
         // TODO: test tracking
     }
 
@@ -152,7 +152,7 @@ public class OutgoingEmailTest {
      * Test the property 'followUp'
      */
     @Test
-    public void followUpTest() {
+    void followUpTest() {
         // TODO: test followUp
     }
 
@@ -160,7 +160,7 @@ public class OutgoingEmailTest {
      * Test the property 'keywords'
      */
     @Test
-    public void keywordsTest() {
+    void keywordsTest() {
         // TODO: test keywords
     }
 

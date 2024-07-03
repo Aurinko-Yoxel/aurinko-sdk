@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.WeekWorkSchedule;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for WorkHoursResponseItem
  */
-public class WorkHoursResponseItemTest {
+class WorkHoursResponseItemTest {
     private final WorkHoursResponseItem model = new WorkHoursResponseItem();
 
     /**
      * Model tests for WorkHoursResponseItem
      */
     @Test
-    public void testWorkHoursResponseItem() {
+    void testWorkHoursResponseItem() {
         // TODO: test WorkHoursResponseItem
     }
 
@@ -42,7 +42,7 @@ public class WorkHoursResponseItemTest {
      * Test the property 'email'
      */
     @Test
-    public void emailTest() {
+    void emailTest() {
         // TODO: test email
     }
 
@@ -50,7 +50,7 @@ public class WorkHoursResponseItemTest {
      * Test the property 'workHours'
      */
     @Test
-    public void workHoursTest() {
+    void workHoursTest() {
         // TODO: test workHours
     }
 

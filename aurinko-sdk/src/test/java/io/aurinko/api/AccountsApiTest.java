@@ -17,6 +17,7 @@ import io.aurinko.client.ApiException;
 import io.aurinko.client.model.AccountSaveResult;
 import io.aurinko.client.model.AccountsPage;
 import io.aurinko.client.model.ApiAccountInDto;
+import io.aurinko.client.model.ApiAccountOutDto;
 import io.aurinko.client.model.ServiceKey;
 import io.aurinko.client.model.ServiceTypeNonDaemon;
 import io.aurinko.client.model.UserAccountType;
@@ -53,6 +54,23 @@ public class AccountsApiTest {
         Long id = null;
         
         CompletableFuture<Void> response = api.amAccountDelete(id);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get account by id
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAccountTest() throws ApiException {
+        Long id = null;
+        CompletableFuture<ApiAccountOutDto> response = 
+        api.getAccount(id);
         
         // TODO: test validations
     }

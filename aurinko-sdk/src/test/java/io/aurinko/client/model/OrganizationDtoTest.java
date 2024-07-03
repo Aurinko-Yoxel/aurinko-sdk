@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.ServiceProvider;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for OrganizationDto
  */
-public class OrganizationDtoTest {
+class OrganizationDtoTest {
     private final OrganizationDto model = new OrganizationDto();
 
     /**
      * Model tests for OrganizationDto
      */
     @Test
-    public void testOrganizationDto() {
+    void testOrganizationDto() {
         // TODO: test OrganizationDto
     }
 
@@ -43,7 +43,7 @@ public class OrganizationDtoTest {
      * Test the property 'id'
      */
     @Test
-    public void idTest() {
+    void idTest() {
         // TODO: test id
     }
 
@@ -51,7 +51,7 @@ public class OrganizationDtoTest {
      * Test the property 'serviceProvider'
      */
     @Test
-    public void serviceProviderTest() {
+    void serviceProviderTest() {
         // TODO: test serviceProvider
     }
 
@@ -59,7 +59,7 @@ public class OrganizationDtoTest {
      * Test the property 'xid'
      */
     @Test
-    public void xidTest() {
+    void xidTest() {
         // TODO: test xid
     }
 
@@ -67,7 +67,7 @@ public class OrganizationDtoTest {
      * Test the property 'domain'
      */
     @Test
-    public void domainTest() {
+    void domainTest() {
         // TODO: test domain
     }
 
@@ -75,7 +75,7 @@ public class OrganizationDtoTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -83,7 +83,7 @@ public class OrganizationDtoTest {
      * Test the property 'createdAt'
      */
     @Test
-    public void createdAtTest() {
+    void createdAtTest() {
         // TODO: test createdAt
     }
 

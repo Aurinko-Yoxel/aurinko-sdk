@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SuggestMeetingTimesRequest.JSON_PROPERTY_DEFAULT_WORK_HOURS,
   SuggestMeetingTimesRequest.JSON_PROPERTY_FREE_STATUSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class SuggestMeetingTimesRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   private OffsetDateTime timeMin;
@@ -62,7 +62,7 @@ public class SuggestMeetingTimesRequest {
   private Integer availabilityStep = 30;
 
   public static final String JSON_PROPERTY_ATTENDEES = "attendees";
-  private List<MeetingAttendee> attendees;
+  private List<MeetingAttendee> attendees = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DEFAULT_TIMEZONE = "defaultTimezone";
   private String defaultTimezone;

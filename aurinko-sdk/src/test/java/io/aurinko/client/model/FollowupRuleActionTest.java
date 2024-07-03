@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for FollowupRuleAction
  */
-public class FollowupRuleActionTest {
+class FollowupRuleActionTest {
     private final FollowupRuleAction model = new FollowupRuleAction();
 
     /**
      * Model tests for FollowupRuleAction
      */
     @Test
-    public void testFollowupRuleAction() {
+    void testFollowupRuleAction() {
         // TODO: test FollowupRuleAction
     }
 
@@ -41,7 +41,7 @@ public class FollowupRuleActionTest {
      * Test the property 'intervalDays'
      */
     @Test
-    public void intervalDaysTest() {
+    void intervalDaysTest() {
         // TODO: test intervalDays
     }
 
@@ -49,7 +49,7 @@ public class FollowupRuleActionTest {
      * Test the property 'message'
      */
     @Test
-    public void messageTest() {
+    void messageTest() {
         // TODO: test message
     }
 

@@ -12,7 +12,7 @@
 |**serviceType** | **ServiceType** |  |  [optional] |
 |**userAccountType** | **UserAccountType** |  |  [optional] |
 |**type** | **AccountType** |  |  [optional] |
-|**active** | **Boolean** |  |  [optional] |
+|**active** | **Boolean** | The account is always active in the current API version |  [optional] |
 |**loginString** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |

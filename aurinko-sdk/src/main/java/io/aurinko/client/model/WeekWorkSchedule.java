@@ -38,10 +38,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   WeekWorkSchedule.JSON_PROPERTY_DAY_SCHEDULES,
   WeekWorkSchedule.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WeekWorkSchedule {
   public static final String JSON_PROPERTY_DAY_SCHEDULES = "daySchedules";
-  private List<DayWorkSchedule> daySchedules;
+  private List<DayWorkSchedule> daySchedules = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;

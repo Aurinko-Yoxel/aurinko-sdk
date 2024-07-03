@@ -6,6 +6,8 @@ All URIs are relative to *https://api.aurinko.io*
 |------------- | ------------- | -------------|
 | [**amAccountDelete**](AccountsApi.md#amAccountDelete) | **DELETE** /v1/am/accounts/{id} | Delete account by ID |
 | [**amAccountDeleteWithHttpInfo**](AccountsApi.md#amAccountDeleteWithHttpInfo) | **DELETE** /v1/am/accounts/{id} | Delete account by ID |
+| [**getAccount**](AccountsApi.md#getAccount) | **GET** /v1/am/accounts/{id} | Get account by id |
+| [**getAccountWithHttpInfo**](AccountsApi.md#getAccountWithHttpInfo) | **GET** /v1/am/accounts/{id} | Get account by id |
 | [**getAccounts**](AccountsApi.md#getAccounts) | **GET** /v1/am/accounts | Get accounts |
 | [**getAccountsWithHttpInfo**](AccountsApi.md#getAccountsWithHttpInfo) | **GET** /v1/am/accounts | Get accounts |
 | [**upsertPersonal**](AccountsApi.md#upsertPersonal) | **POST** /v1/am/accounts | Upsert an account |
@@ -156,6 +158,159 @@ CompletableFuture<ApiResponse<Void>>
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+
+## getAccount
+
+> CompletableFuture<ApiAccountOutDto> getAccount(id)
+
+Get account by id
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.AccountsApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        AccountsApi apiInstance = new AccountsApi(defaultClient);
+        Long id = 56L; // Long | account id
+        try {
+            CompletableFuture<ApiAccountOutDto> result = apiInstance.getAccount(id);
+            System.out.println(result.get());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountsApi#getAccount");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| account id | |
+
+### Return type
+
+CompletableFuture<[**ApiAccountOutDto**](ApiAccountOutDto.md)>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+## getAccountWithHttpInfo
+
+> CompletableFuture<ApiResponse<ApiAccountOutDto>> getAccount getAccountWithHttpInfo(id)
+
+Get account by id
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.AccountsApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        AccountsApi apiInstance = new AccountsApi(defaultClient);
+        Long id = 56L; // Long | account id
+        try {
+            CompletableFuture<ApiResponse<ApiAccountOutDto>> response = apiInstance.getAccountWithHttpInfo(id);
+            System.out.println("Status code: " + response.get().getStatusCode());
+            System.out.println("Response headers: " + response.get().getHeaders());
+            System.out.println("Response body: " + response.get().getData());
+        } catch (InterruptedException | ExecutionException e) {
+            ApiException apiException = (ApiException)e.getCause();
+            System.err.println("Exception when calling AccountsApi#getAccount");
+            System.err.println("Status code: " + apiException.getCode());
+            System.err.println("Response headers: " + apiException.getResponseHeaders());
+            System.err.println("Reason: " + apiException.getResponseBody());
+            e.printStackTrace();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountsApi#getAccount");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| account id | |
+
+### Return type
+
+CompletableFuture<ApiResponse<[**ApiAccountOutDto**](ApiAccountOutDto.md)>>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

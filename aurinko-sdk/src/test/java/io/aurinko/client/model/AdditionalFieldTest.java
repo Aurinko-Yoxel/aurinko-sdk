@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for AdditionalField
  */
-public class AdditionalFieldTest {
+class AdditionalFieldTest {
     private final AdditionalField model = new AdditionalField();
 
     /**
      * Model tests for AdditionalField
      */
     @Test
-    public void testAdditionalField() {
+    void testAdditionalField() {
         // TODO: test AdditionalField
     }
 
@@ -41,7 +41,7 @@ public class AdditionalFieldTest {
      * Test the property 'name'
      */
     @Test
-    public void nameTest() {
+    void nameTest() {
         // TODO: test name
     }
 
@@ -49,7 +49,7 @@ public class AdditionalFieldTest {
      * Test the property 'type'
      */
     @Test
-    public void typeTest() {
+    void typeTest() {
         // TODO: test type
     }
 
@@ -57,7 +57,7 @@ public class AdditionalFieldTest {
      * Test the property '_default'
      */
     @Test
-    public void _defaultTest() {
+    void _defaultTest() {
         // TODO: test _default
     }
 

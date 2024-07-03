@@ -19,21 +19,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Model tests for ConvertDraft
  */
-public class ConvertDraftTest {
+class ConvertDraftTest {
     private final ConvertDraft model = new ConvertDraft();
 
     /**
      * Model tests for ConvertDraft
      */
     @Test
-    public void testConvertDraft() {
+    void testConvertDraft() {
         // TODO: test ConvertDraft
     }
 
@@ -41,7 +41,7 @@ public class ConvertDraftTest {
      * Test the property 'threadId'
      */
     @Test
-    public void threadIdTest() {
+    void threadIdTest() {
         // TODO: test threadId
     }
 
@@ -49,7 +49,7 @@ public class ConvertDraftTest {
      * Test the property 'messageId'
      */
     @Test
-    public void messageIdTest() {
+    void messageIdTest() {
         // TODO: test messageId
     }
 
@@ -57,7 +57,7 @@ public class ConvertDraftTest {
      * Test the property 'internetMessageId'
      */
     @Test
-    public void internetMessageIdTest() {
+    void internetMessageIdTest() {
         // TODO: test internetMessageId
     }
 
