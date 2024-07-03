@@ -19,8 +19,8 @@ import io.aurinko.client.model.TaskList;
 import io.aurinko.client.model.TaskListCreate;
 import io.aurinko.client.model.TaskListPage;
 import io.aurinko.client.model.TaskListUpdate;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for TaskListsApi
  */
-@Ignore
+@Disabled
 public class TaskListsApiTest {
 
     private final TaskListsApi api = new TaskListsApi();

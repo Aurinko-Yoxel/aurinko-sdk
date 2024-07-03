@@ -30,6 +30,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * Recurrence
  */
@@ -38,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Recurrence.JSON_PROPERTY_ICAL,
   Recurrence.JSON_PROPERTY_SIMPLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Recurrence {
   /**
    * Gets or Sets original
@@ -97,14 +98,13 @@ public class Recurrence {
     this.original = original;
   }
 
-   /**
+  /**
    * Get original
    * @return original
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ORIGINAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OriginalEnum getOriginal() {
     return original;
   }
@@ -117,14 +117,13 @@ public class Recurrence {
     return this;
   }
 
-   /**
+  /**
    * Get ical
    * @return ical
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ICAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public RecurrenceIcal getIcal() {
     return ical;
   }
@@ -142,14 +141,13 @@ public class Recurrence {
     return this;
   }
 
-   /**
+  /**
    * Get simple
    * @return simple
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SIMPLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public RecurrenceSimple getSimple() {
     return simple;
   }
@@ -240,7 +238,7 @@ public class Recurrence {
 
     // add `original` to the URL query string
     if (getOriginal() != null) {
-      joiner.add(String.format("%soriginal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOriginal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%soriginal%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOriginal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `ical` to the URL query string

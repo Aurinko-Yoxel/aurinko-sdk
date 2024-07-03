@@ -19,8 +19,8 @@ import io.aurinko.client.model.EndUserAccountsPage;
 import io.aurinko.client.model.EndUserDto;
 import io.aurinko.client.model.EndUserSettingsDto;
 import io.aurinko.client.model.OkResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for UserApi
  */
-@Ignore
+@Disabled
 public class UserApiTest {
 
     private final UserApi api = new UserApi();

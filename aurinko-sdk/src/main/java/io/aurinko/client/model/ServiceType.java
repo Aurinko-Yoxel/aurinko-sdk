@@ -32,7 +32,7 @@ public enum ServiceType {
   
   GOOGLE("Google"),
   
-  GOOGLEBOT("GoogleBot"),
+  GOOGLE_BOT("GoogleBot"),
   
   OFFICE365("Office365"),
   
@@ -46,55 +46,55 @@ public enum ServiceType {
   
   REPFABRIC("Repfabric"),
   
-  MSTEAMSBOT("MsTeamsBot"),
+  MS_TEAMS_BOT("MsTeamsBot"),
   
   SLACK("Slack"),
   
-  SLACKBOT("SlackBot"),
+  SLACK_BOT("SlackBot"),
   
-  SUGARCRM("SugarCRM"),
+  SUGAR_CRM("SugarCRM"),
   
-  HIGHLEVEL("HighLevel"),
+  HIGH_LEVEL("HighLevel"),
   
   HUBSPOT("Hubspot"),
   
   ZOOM("Zoom"),
   
-  ZOOMBOT("ZoomBot"),
+  ZOOM_BOT("ZoomBot"),
   
   WEBEX("Webex"),
   
-  WEBEXBOT("WebexBot"),
+  WEBEX_BOT("WebexBot"),
   
   PIPEDRIVE("Pipedrive"),
   
-  ECLIPSEERP("EclipseERP"),
+  ECLIPSE_ERP("EclipseERP"),
   
-  AUTOQUOTES("AutoQuotes"),
+  AUTO_QUOTES("AutoQuotes"),
   
   TEAMWORK("Teamwork"),
   
-  NETSUITE("NetSuite"),
+  NET_SUITE("NetSuite"),
   
-  MCTRADE("MCTrade"),
+  MC_TRADE("MCTrade"),
   
-  SPECPATH("SpecPath"),
+  SPEC_PATH("SpecPath"),
   
   ZOHO("Zoho"),
   
   CLIENTIFY("Clientify"),
   
-  QUICKBOOKS("QuickBooks"),
+  QUICK_BOOKS("QuickBooks"),
   
-  ACTIVECAMPAIGN("ActiveCampaign"),
+  ACTIVE_CAMPAIGN("ActiveCampaign"),
   
   CREATIO("Creatio"),
   
-  CONSTANTCONTACT("ConstantContact"),
+  CONSTANT_CONTACT("ConstantContact"),
   
   FISHBOWL("Fishbowl"),
   
-  ICLOUD("iCloud"),
+  I_CLOUD("iCloud"),
   
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 

@@ -35,6 +35,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * OutgoingEmail
  */
@@ -55,7 +56,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OutgoingEmail.JSON_PROPERTY_FOLLOW_UP,
   OutgoingEmail.JSON_PROPERTY_KEYWORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class OutgoingEmail {
   public static final String JSON_PROPERTY_FROM = "from";
   private EmailAddress from;
@@ -110,14 +111,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get from
    * @return from
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FROM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EmailAddress getFrom() {
     return from;
   }
@@ -135,14 +135,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get subject
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSubject() {
     return subject;
   }
@@ -160,14 +159,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get body
    * @return body
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BODY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getBody() {
     return body;
   }
@@ -185,14 +183,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get inReplyTo
    * @return inReplyTo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IN_REPLY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getInReplyTo() {
     return inReplyTo;
   }
@@ -210,14 +207,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get references
    * @return references
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getReferences() {
     return references;
   }
@@ -235,14 +231,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get threadId
    * @return threadId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getThreadId() {
     return threadId;
   }
@@ -268,14 +263,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get to
    * @return to
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAddress> getTo() {
     return to;
   }
@@ -301,14 +295,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get cc
    * @return cc
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAddress> getCc() {
     return cc;
   }
@@ -334,14 +327,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get bcc
    * @return bcc
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BCC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAddress> getBcc() {
     return bcc;
   }
@@ -367,14 +359,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get replyTo
    * @return replyTo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REPLY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAddress> getReplyTo() {
     return replyTo;
   }
@@ -400,14 +391,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get xHeaders
    * @return xHeaders
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_X_HEADERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailHeader> getxHeaders() {
     return xHeaders;
   }
@@ -433,14 +423,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get attachments
    * @return attachments
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<OutgoingEmailAttachment> getAttachments() {
     return attachments;
   }
@@ -458,14 +447,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get tracking
    * @return tracking
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OutEmailTrack getTracking() {
     return tracking;
   }
@@ -483,14 +471,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get followUp
    * @return followUp
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FOLLOW_UP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public FollowUpOutgoing getFollowUp() {
     return followUp;
   }
@@ -516,14 +503,13 @@ public class OutgoingEmail {
     return this;
   }
 
-   /**
+  /**
    * Get keywords
    * @return keywords
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getKeywords() {
     return keywords;
   }
@@ -643,27 +629,27 @@ public class OutgoingEmail {
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `body` to the URL query string
     if (getBody() != null) {
-      joiner.add(String.format("%sbody%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `inReplyTo` to the URL query string
     if (getInReplyTo() != null) {
-      joiner.add(String.format("%sinReplyTo%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInReplyTo()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinReplyTo%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInReplyTo()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `references` to the URL query string
     if (getReferences() != null) {
-      joiner.add(String.format("%sreferences%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReferences()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sreferences%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReferences()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `to` to the URL query string
@@ -741,7 +727,7 @@ public class OutgoingEmail {
       for (int i = 0; i < getKeywords().size(); i++) {
         joiner.add(String.format("%skeywords%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

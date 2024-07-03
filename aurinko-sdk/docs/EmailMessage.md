@@ -85,11 +85,11 @@
 
 | Name | Value |
 |---- | -----|
-| THREADID | &quot;threadId&quot; |
+| THREAD_ID | &quot;threadId&quot; |
 | BODY | &quot;body&quot; |
 | ATTACHMENTS | &quot;attachments&quot; |
 | RECIPIENTS | &quot;recipients&quot; |
-| INTERNETHEADERS | &quot;internetHeaders&quot; |
+| INTERNET_HEADERS | &quot;internetHeaders&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

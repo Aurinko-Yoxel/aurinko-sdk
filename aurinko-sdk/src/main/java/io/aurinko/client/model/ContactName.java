@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * ContactName
  */
@@ -41,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ContactName.JSON_PROPERTY_YOMI_GIVEN_NAME,
   ContactName.JSON_PROPERTY_YOMI_FAMILY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ContactName {
   public static final String JSON_PROPERTY_DISPLAY_NAME = "displayName";
   private String displayName;
@@ -75,14 +76,13 @@ public class ContactName {
     return this;
   }
 
-   /**
+  /**
    * Get displayName
    * @return displayName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISPLAY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDisplayName() {
     return displayName;
   }
@@ -100,14 +100,13 @@ public class ContactName {
     return this;
   }
 
-   /**
+  /**
    * Get prefix
    * @return prefix
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PREFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPrefix() {
     return prefix;
   }
@@ -125,14 +124,13 @@ public class ContactName {
     return this;
   }
 
-   /**
+  /**
    * Get givenName
    * @return givenName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getGivenName() {
     return givenName;
   }
@@ -150,14 +148,13 @@ public class ContactName {
     return this;
   }
 
-   /**
+  /**
    * Get middleName
    * @return middleName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMiddleName() {
     return middleName;
   }
@@ -175,14 +172,13 @@ public class ContactName {
     return this;
   }
 
-   /**
+  /**
    * Get familyName
    * @return familyName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFamilyName() {
     return familyName;
   }
@@ -200,14 +196,13 @@ public class ContactName {
     return this;
   }
 
-   /**
+  /**
    * Get suffix
    * @return suffix
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUFFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSuffix() {
     return suffix;
   }
@@ -225,14 +220,13 @@ public class ContactName {
     return this;
   }
 
-   /**
+  /**
    * Get yomiGivenName
    * @return yomiGivenName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_YOMI_GIVEN_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getYomiGivenName() {
     return yomiGivenName;
   }
@@ -250,14 +244,13 @@ public class ContactName {
     return this;
   }
 
-   /**
+  /**
    * Get yomiFamilyName
    * @return yomiFamilyName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_YOMI_FAMILY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getYomiFamilyName() {
     return yomiFamilyName;
   }
@@ -358,42 +351,42 @@ public class ContactName {
 
     // add `displayName` to the URL query string
     if (getDisplayName() != null) {
-      joiner.add(String.format("%sdisplayName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDisplayName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdisplayName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDisplayName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `prefix` to the URL query string
     if (getPrefix() != null) {
-      joiner.add(String.format("%sprefix%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPrefix()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprefix%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPrefix()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMiddleName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMiddleName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `suffix` to the URL query string
     if (getSuffix() != null) {
-      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSuffix()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSuffix()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `yomiGivenName` to the URL query string
     if (getYomiGivenName() != null) {
-      joiner.add(String.format("%syomiGivenName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getYomiGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%syomiGivenName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getYomiGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `yomiFamilyName` to the URL query string
     if (getYomiFamilyName() != null) {
-      joiner.add(String.format("%syomiFamilyName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getYomiFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%syomiFamilyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getYomiFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

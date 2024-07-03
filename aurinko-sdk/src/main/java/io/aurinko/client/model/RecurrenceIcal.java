@@ -31,6 +31,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * RecurrenceIcal
  */
@@ -38,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceIcal.JSON_PROPERTY_RULES,
   RecurrenceIcal.JSON_PROPERTY_RECURRENCE_START
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class RecurrenceIcal {
   public static final String JSON_PROPERTY_RULES = "rules";
   private List<String> rules = new ArrayList<>();
@@ -62,14 +63,13 @@ public class RecurrenceIcal {
     return this;
   }
 
-   /**
+  /**
    * Get rules
    * @return rules
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RULES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getRules() {
     return rules;
   }
@@ -87,14 +87,13 @@ public class RecurrenceIcal {
     return this;
   }
 
-   /**
+  /**
    * Get recurrenceStart
    * @return recurrenceStart
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECURRENCE_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EventDateTime getRecurrenceStart() {
     return recurrenceStart;
   }
@@ -186,7 +185,7 @@ public class RecurrenceIcal {
       for (int i = 0; i < getRules().size(); i++) {
         joiner.add(String.format("%srules%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getRules().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getRules().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

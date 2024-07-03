@@ -11,7 +11,7 @@
 
 * `TENTATIVE` (value: `"tentative"`)
 
-* `OUTOFOFFICE` (value: `"outOfOffice"`)
+* `OUT_OF_OFFICE` (value: `"outOfOffice"`)
 
 * `UNKNOWN` (value: `"unknown"`)
 

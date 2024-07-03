@@ -31,13 +31,14 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * BookingAttachGroupUsersDto
  */
 @JsonPropertyOrder({
   BookingAttachGroupUsersDto.JSON_PROPERTY_USERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingAttachGroupUsersDto {
   public static final String JSON_PROPERTY_USERS = "users";
   private List<BookingAttachGroupUserDto> users = new ArrayList<>();
@@ -58,14 +59,13 @@ public class BookingAttachGroupUsersDto {
     return this;
   }
 
-   /**
+  /**
    * Get users
    * @return users
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<BookingAttachGroupUserDto> getUsers() {
     return users;
   }

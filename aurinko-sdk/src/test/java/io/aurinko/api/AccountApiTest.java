@@ -15,8 +15,8 @@ package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.ApiAccountOutDto;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for AccountApi
  */
-@Ignore
+@Disabled
 public class AccountApiTest {
 
     private final AccountApi api = new AccountApi();

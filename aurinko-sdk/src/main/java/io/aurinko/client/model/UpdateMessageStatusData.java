@@ -30,6 +30,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * UpdateMessageStatusData
  */
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   UpdateMessageStatusData.JSON_PROPERTY_UNREAD,
   UpdateMessageStatusData.JSON_PROPERTY_KEYWORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class UpdateMessageStatusData {
   public static final String JSON_PROPERTY_UNREAD = "unread";
   private Boolean unread;
@@ -53,14 +54,13 @@ public class UpdateMessageStatusData {
     return this;
   }
 
-   /**
+  /**
    * Get unread
    * @return unread
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_UNREAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getUnread() {
     return unread;
   }
@@ -86,14 +86,13 @@ public class UpdateMessageStatusData {
     return this;
   }
 
-   /**
+  /**
    * Get keywords
    * @return keywords
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getKeywords() {
     return keywords;
   }
@@ -182,7 +181,7 @@ public class UpdateMessageStatusData {
 
     // add `unread` to the URL query string
     if (getUnread() != null) {
-      joiner.add(String.format("%sunread%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUnread()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sunread%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUnread()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `keywords` to the URL query string
@@ -190,7 +189,7 @@ public class UpdateMessageStatusData {
       for (int i = 0; i < getKeywords().size(); i++) {
         joiner.add(String.format("%skeywords%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

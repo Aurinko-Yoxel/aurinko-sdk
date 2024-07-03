@@ -34,6 +34,7 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * ConversationDripStatus
  */
@@ -50,7 +51,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ConversationDripStatus.JSON_PROPERTY_TARGETS,
   ConversationDripStatus.JSON_PROPERTY_DRIP_RESPONDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ConversationDripStatus {
   public static final String JSON_PROPERTY_CONVO_ID = "convoId";
   private String convoId;
@@ -70,7 +71,7 @@ public class ConversationDripStatus {
     
     FINISHED("finished"),
     
-    RULEINCOMPLETE("ruleIncomplete"),
+    RULE_INCOMPLETE("ruleIncomplete"),
     
     UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
@@ -136,14 +137,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get convoId
    * @return convoId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONVO_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getConvoId() {
     return convoId;
   }
@@ -161,14 +161,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get subject
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSubject() {
     return subject;
   }
@@ -186,14 +185,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public StatusEnum getStatus() {
     return status;
   }
@@ -219,14 +217,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get rule
    * @return rule
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RULE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<FollowupRuleAggregateOut> getRule() {
     return rule;
   }
@@ -244,14 +241,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get dripStartedAt
    * @return dripStartedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DRIP_STARTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getDripStartedAt() {
     return dripStartedAt;
   }
@@ -269,14 +265,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get dripLastNum
    * @return dripLastNum
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DRIP_LAST_NUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getDripLastNum() {
     return dripLastNum;
   }
@@ -294,14 +289,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get dripError
    * @return dripError
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DRIP_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDripError() {
     return dripError;
   }
@@ -319,14 +313,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get dripEndedAt
    * @return dripEndedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DRIP_ENDED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getDripEndedAt() {
     return dripEndedAt;
   }
@@ -352,14 +345,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get actionVars
    * @return actionVars
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACTION_VARS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Map<String, String> getActionVars() {
     return actionVars;
   }
@@ -385,14 +377,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get targets
    * @return targets
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TARGETS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getTargets() {
     return targets;
   }
@@ -410,14 +401,13 @@ public class ConversationDripStatus {
     return this;
   }
 
-   /**
+  /**
    * Get dripResponder
    * @return dripResponder
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DRIP_RESPONDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDripResponder() {
     return dripResponder;
   }
@@ -524,17 +514,17 @@ public class ConversationDripStatus {
 
     // add `convoId` to the URL query string
     if (getConvoId() != null) {
-      joiner.add(String.format("%sconvoId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getConvoId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sconvoId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getConvoId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `rule` to the URL query string
@@ -549,22 +539,22 @@ public class ConversationDripStatus {
 
     // add `dripStartedAt` to the URL query string
     if (getDripStartedAt() != null) {
-      joiner.add(String.format("%sdripStartedAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDripStartedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripStartedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripStartedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `dripLastNum` to the URL query string
     if (getDripLastNum() != null) {
-      joiner.add(String.format("%sdripLastNum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDripLastNum()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripLastNum%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripLastNum()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `dripError` to the URL query string
     if (getDripError() != null) {
-      joiner.add(String.format("%sdripError%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDripError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripError%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `dripEndedAt` to the URL query string
     if (getDripEndedAt() != null) {
-      joiner.add(String.format("%sdripEndedAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDripEndedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripEndedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripEndedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `actionVars` to the URL query string
@@ -572,7 +562,7 @@ public class ConversationDripStatus {
       for (String _key : getActionVars().keySet()) {
         joiner.add(String.format("%sactionVars%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getActionVars().get(_key), URLEncoder.encode(String.valueOf(getActionVars().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getActionVars().get(_key), URLEncoder.encode(ApiClient.valueToString(getActionVars().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
@@ -581,13 +571,13 @@ public class ConversationDripStatus {
       for (int i = 0; i < getTargets().size(); i++) {
         joiner.add(String.format("%stargets%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getTargets().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getTargets().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `dripResponder` to the URL query string
     if (getDripResponder() != null) {
-      joiner.add(String.format("%sdripResponder%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDripResponder()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripResponder%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripResponder()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

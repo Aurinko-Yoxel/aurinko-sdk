@@ -31,6 +31,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * BookingMeetingTime
  */
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingMeetingTime.JSON_PROPERTY_END,
   BookingMeetingTime.JSON_PROPERTY_USER_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingMeetingTime {
   public static final String JSON_PROPERTY_START = "start";
   private OffsetDateTime start;
@@ -58,14 +59,13 @@ public class BookingMeetingTime {
     return this;
   }
 
-   /**
+  /**
    * Get start
    * @return start
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getStart() {
     return start;
   }
@@ -83,14 +83,13 @@ public class BookingMeetingTime {
     return this;
   }
 
-   /**
+  /**
    * Get end
    * @return end
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getEnd() {
     return end;
   }
@@ -116,14 +115,13 @@ public class BookingMeetingTime {
     return this;
   }
 
-   /**
+  /**
    * Get userIds
    * @return userIds
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getUserIds() {
     return userIds;
   }
@@ -214,12 +212,12 @@ public class BookingMeetingTime {
 
     // add `start` to the URL query string
     if (getStart() != null) {
-      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `end` to the URL query string
     if (getEnd() != null) {
-      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `userIds` to the URL query string
@@ -227,7 +225,7 @@ public class BookingMeetingTime {
       for (int i = 0; i < getUserIds().size(); i++) {
         joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

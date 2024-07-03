@@ -32,6 +32,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * SeriesInfo
  */
@@ -42,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SeriesInfo.JSON_PROPERTY_MODIFIED_OCCURRENCES,
   SeriesInfo.JSON_PROPERTY_DELETED_OCCURRENCES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class SeriesInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -76,14 +77,13 @@ public class SeriesInfo {
     this.deletedOccurrences = deletedOccurrences;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -91,14 +91,13 @@ public class SeriesInfo {
 
 
 
-   /**
+  /**
    * Get globalId
    * @return globalId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_GLOBAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getGlobalId() {
     return globalId;
   }
@@ -111,14 +110,13 @@ public class SeriesInfo {
     return this;
   }
 
-   /**
+  /**
    * Get recurrence
    * @return recurrence
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECURRENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Recurrence getRecurrence() {
     return recurrence;
   }
@@ -131,14 +129,13 @@ public class SeriesInfo {
   }
 
 
-   /**
+  /**
    * Get modifiedOccurrences
    * @return modifiedOccurrences
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MODIFIED_OCCURRENCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<OccurrenceInfo> getModifiedOccurrences() {
     return modifiedOccurrences;
   }
@@ -146,14 +143,13 @@ public class SeriesInfo {
 
 
 
-   /**
+  /**
    * Get deletedOccurrences
    * @return deletedOccurrences
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DELETED_OCCURRENCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<OccurrenceInfo> getDeletedOccurrences() {
     return deletedOccurrences;
   }
@@ -243,12 +239,12 @@ public class SeriesInfo {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `globalId` to the URL query string
     if (getGlobalId() != null) {
-      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `recurrence` to the URL query string

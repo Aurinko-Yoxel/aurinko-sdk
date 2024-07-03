@@ -23,8 +23,8 @@ import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.RewriteHtml;
 import io.aurinko.client.model.TrackingData;
 import io.aurinko.client.model.UpdateDraftTrackingIn;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for EmailTrackingApi
  */
-@Ignore
+@Disabled
 public class EmailTrackingApiTest {
 
     private final EmailTrackingApi api = new EmailTrackingApi();

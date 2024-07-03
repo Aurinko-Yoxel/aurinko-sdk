@@ -32,21 +32,21 @@ public enum ServiceTypeDaemon {
   
   GOOGLE("Google"),
   
-  GOOGLEBOT("GoogleBot"),
+  GOOGLE_BOT("GoogleBot"),
   
   OFFICE365("Office365"),
   
   EWS("EWS"),
   
-  MSTEAMSBOT("MsTeamsBot"),
+  MS_TEAMS_BOT("MsTeamsBot"),
   
   SLACK("Slack"),
   
-  SLACKBOT("SlackBot"),
+  SLACK_BOT("SlackBot"),
   
-  ZOOMBOT("ZoomBot"),
+  ZOOM_BOT("ZoomBot"),
   
-  MCTRADE("MCTrade"),
+  MC_TRADE("MCTrade"),
   
   ZOHO("Zoho"),
   

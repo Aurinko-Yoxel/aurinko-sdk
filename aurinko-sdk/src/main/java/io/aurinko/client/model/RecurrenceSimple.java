@@ -30,6 +30,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * RecurrenceSimple
  */
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimple.JSON_PROPERTY_PATTERN,
   RecurrenceSimple.JSON_PROPERTY_RANGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class RecurrenceSimple {
   public static final String JSON_PROPERTY_PATTERN = "pattern";
   private RecurrenceSimplePattern pattern;
@@ -53,14 +54,13 @@ public class RecurrenceSimple {
     return this;
   }
 
-   /**
+  /**
    * Get pattern
    * @return pattern
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PATTERN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public RecurrenceSimplePattern getPattern() {
     return pattern;
   }
@@ -78,14 +78,13 @@ public class RecurrenceSimple {
     return this;
   }
 
-   /**
+  /**
    * Get range
    * @return range
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RANGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public RecurrenceSimpleRange getRange() {
     return range;
   }

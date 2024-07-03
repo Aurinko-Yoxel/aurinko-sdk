@@ -30,13 +30,14 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * WorkHoursRequest
  */
 @JsonPropertyOrder({
   WorkHoursRequest.JSON_PROPERTY_EMAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class WorkHoursRequest {
   public static final String JSON_PROPERTY_EMAILS = "emails";
   private List<String> emails = new ArrayList<>();
@@ -57,14 +58,13 @@ public class WorkHoursRequest {
     return this;
   }
 
-   /**
+  /**
    * Get emails
    * @return emails
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getEmails() {
     return emails;
   }
@@ -154,7 +154,7 @@ public class WorkHoursRequest {
       for (int i = 0; i < getEmails().size(); i++) {
         joiner.add(String.format("%semails%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getEmails().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getEmails().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

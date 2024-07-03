@@ -19,9 +19,9 @@
 
 * `AOL` (value: `"AOL"`)
 
-* `ICLOUD` (value: `"iCloud"`)
+* `I_CLOUD` (value: `"iCloud"`)
 
-* `BIGPOND` (value: `"BigPond"`)
+* `BIG_POND` (value: `"BigPond"`)
 
 * `FASTMAIL` (value: `"Fastmail"`)
 
@@ -31,25 +31,25 @@
 
 * `SALESFLARE` (value: `"Salesflare"`)
 
-* `SUGARCRM` (value: `"SugarCRM"`)
+* `SUGAR_CRM` (value: `"SugarCRM"`)
 
-* `HIGHLEVEL` (value: `"HighLevel"`)
+* `HIGH_LEVEL` (value: `"HighLevel"`)
 
 * `HUBSPOT` (value: `"Hubspot"`)
 
 * `PIPEDRIVE` (value: `"Pipedrive"`)
 
-* `AUTOQUOTES` (value: `"AutoQuotes"`)
+* `AUTO_QUOTES` (value: `"AutoQuotes"`)
 
-* `SPECPATH` (value: `"SpecPath"`)
+* `SPEC_PATH` (value: `"SpecPath"`)
 
 * `CLIENTIFY` (value: `"Clientify"`)
 
 * `TEAMWORK` (value: `"Teamwork"`)
 
-* `ECLIPSEERP` (value: `"EclipseERP"`)
+* `ECLIPSE_ERP` (value: `"EclipseERP"`)
 
-* `NETSUITE` (value: `"NetSuite"`)
+* `NET_SUITE` (value: `"NetSuite"`)
 
 * `FISHBOWL` (value: `"Fishbowl"`)
 
@@ -59,15 +59,15 @@
 
 * `WEBEX` (value: `"Webex"`)
 
-* `MCTRADE` (value: `"MCTrade"`)
+* `MC_TRADE` (value: `"MCTrade"`)
 
 * `CREATIO` (value: `"Creatio"`)
 
-* `QUICKBOOKS` (value: `"QuickBooks"`)
+* `QUICK_BOOKS` (value: `"QuickBooks"`)
 
-* `ACTIVECAMPAIGN` (value: `"ActiveCampaign"`)
+* `ACTIVE_CAMPAIGN` (value: `"ActiveCampaign"`)
 
-* `CONSTANTCONTACT` (value: `"ConstantContact"`)
+* `CONSTANT_CONTACT` (value: `"ConstantContact"`)
 
 * `YOXEL` (value: `"Yoxel"`)
 

@@ -17,8 +17,8 @@ import io.aurinko.client.ApiException;
 import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.CreateMeetingDto;
 import io.aurinko.client.model.CreateMeetingResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for AvailabilityApi
  */
-@Ignore
+@Disabled
 public class AvailabilityApiTest {
 
     private final AvailabilityApi api = new AvailabilityApi();

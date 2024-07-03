@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * ContactPhoneNumber
  */
@@ -36,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ContactPhoneNumber.JSON_PROPERTY_TYPE,
   ContactPhoneNumber.JSON_PROPERTY_CANONICAL_FORM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ContactPhoneNumber {
   public static final String JSON_PROPERTY_NUMBER = "number";
   private String number;
@@ -53,25 +54,25 @@ public class ContactPhoneNumber {
     
     MOBILE("mobile"),
     
-    WORKMOBILE("workMobile"),
+    WORK_MOBILE("workMobile"),
     
     MAIN("main"),
     
-    COMPANYMAIN("companyMain"),
+    COMPANY_MAIN("companyMain"),
     
     ASSISTANT("assistant"),
     
-    WORKFAX("workFax"),
+    WORK_FAX("workFax"),
     
-    HOMEFAX("homeFax"),
+    HOME_FAX("homeFax"),
     
-    OTHERFAX("otherFax"),
+    OTHER_FAX("otherFax"),
     
     CALLBACK("callback"),
     
     PAGER("pager"),
     
-    WORKPAGER("workPager"),
+    WORK_PAGER("workPager"),
     
     RADIO("radio"),
     
@@ -130,14 +131,13 @@ public class ContactPhoneNumber {
     return this;
   }
 
-   /**
+  /**
    * Get number
    * @return number
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNumber() {
     return number;
   }
@@ -155,14 +155,13 @@ public class ContactPhoneNumber {
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public TypeEnum getType() {
     return type;
   }
@@ -175,14 +174,13 @@ public class ContactPhoneNumber {
   }
 
 
-   /**
+  /**
    * Get canonicalForm
    * @return canonicalForm
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CANONICAL_FORM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCanonicalForm() {
     return canonicalForm;
   }
@@ -268,17 +266,17 @@ public class ContactPhoneNumber {
 
     // add `number` to the URL query string
     if (getNumber() != null) {
-      joiner.add(String.format("%snumber%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `canonicalForm` to the URL query string
     if (getCanonicalForm() != null) {
-      joiner.add(String.format("%scanonicalForm%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCanonicalForm()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scanonicalForm%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCanonicalForm()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

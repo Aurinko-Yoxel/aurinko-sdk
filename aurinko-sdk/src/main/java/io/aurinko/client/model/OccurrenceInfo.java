@@ -29,6 +29,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * OccurrenceInfo
  */
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OccurrenceInfo.JSON_PROPERTY_START,
   OccurrenceInfo.JSON_PROPERTY_MASTER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class OccurrenceInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -103,14 +104,13 @@ public class OccurrenceInfo {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -128,14 +128,13 @@ public class OccurrenceInfo {
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public TypeEnum getType() {
     return type;
   }
@@ -153,14 +152,13 @@ public class OccurrenceInfo {
     return this;
   }
 
-   /**
+  /**
    * Get originalStart
    * @return originalStart
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ORIGINAL_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EventDateTime getOriginalStart() {
     return originalStart;
   }
@@ -178,14 +176,13 @@ public class OccurrenceInfo {
     return this;
   }
 
-   /**
+  /**
    * Get start
    * @return start
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EventDateTime getStart() {
     return start;
   }
@@ -203,14 +200,13 @@ public class OccurrenceInfo {
     return this;
   }
 
-   /**
+  /**
    * Get masterId
    * @return masterId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MASTER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMasterId() {
     return masterId;
   }
@@ -305,12 +301,12 @@ public class OccurrenceInfo {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `originalStart` to the URL query string
@@ -325,7 +321,7 @@ public class OccurrenceInfo {
 
     // add `masterId` to the URL query string
     if (getMasterId() != null) {
-      joiner.add(String.format("%smasterId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMasterId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smasterId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMasterId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

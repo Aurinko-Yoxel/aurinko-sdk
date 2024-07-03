@@ -35,6 +35,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * ApiAccountOutDto
  */
@@ -65,7 +66,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ApiAccountOutDto.JSON_PROPERTY_AUTH_EXPIRES_AT,
   ApiAccountOutDto.JSON_PROPERTY_USER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ApiAccountOutDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -150,14 +151,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Long getId() {
     return id;
   }
@@ -175,14 +175,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get parentId
    * @return parentId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Long getParentId() {
     return parentId;
   }
@@ -200,14 +199,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get serviceType
    * @return serviceType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SERVICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ServiceType getServiceType() {
     return serviceType;
   }
@@ -225,14 +223,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * The account is always active in the current API version
    * @return active
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getActive() {
     return active;
   }
@@ -250,14 +247,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get tokenStatus
    * @return tokenStatus
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TOKEN_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public TokenStatus getTokenStatus() {
     return tokenStatus;
   }
@@ -275,14 +271,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get tokenError
    * @return tokenError
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TOKEN_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTokenError() {
     return tokenError;
   }
@@ -300,14 +295,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public AccountType getType() {
     return type;
   }
@@ -325,14 +319,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get daemon
    * @return daemon
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DAEMON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getDaemon() {
     return daemon;
   }
@@ -350,14 +343,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get loginString
    * @return loginString
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LOGIN_STRING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLoginString() {
     return loginString;
   }
@@ -375,14 +367,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEmail() {
     return email;
   }
@@ -400,14 +391,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get mailboxAddress
    * @return mailboxAddress
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MAILBOX_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMailboxAddress() {
     return mailboxAddress;
   }
@@ -425,14 +415,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -450,14 +439,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get name2
    * @return name2
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName2() {
     return name2;
   }
@@ -475,14 +463,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get serverUrl
    * @return serverUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SERVER_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getServerUrl() {
     return serverUrl;
   }
@@ -500,14 +487,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get serverUrl2
    * @return serverUrl2
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SERVER_URL2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getServerUrl2() {
     return serverUrl2;
   }
@@ -525,14 +511,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get clientOrgId
    * @return clientOrgId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CLIENT_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getClientOrgId() {
     return clientOrgId;
   }
@@ -550,14 +535,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get authUserId
    * @return authUserId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTH_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAuthUserId() {
     return authUserId;
   }
@@ -575,14 +559,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get authOrgId
    * @return authOrgId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTH_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAuthOrgId() {
     return authOrgId;
   }
@@ -600,14 +583,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get timezone
    * @return timezone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTimezone() {
     return timezone;
   }
@@ -625,14 +607,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get tokenIssuedAt
    * @return tokenIssuedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TOKEN_ISSUED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getTokenIssuedAt() {
     return tokenIssuedAt;
   }
@@ -658,14 +639,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get authScopes
    * @return authScopes
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTH_SCOPES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<Scope> getAuthScopes() {
     return authScopes;
   }
@@ -691,14 +671,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get authNativeScopes
    * @return authNativeScopes
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTH_NATIVE_SCOPES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getAuthNativeScopes() {
     return authNativeScopes;
   }
@@ -716,14 +695,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get authObtainedAt
    * @return authObtainedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTH_OBTAINED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getAuthObtainedAt() {
     return authObtainedAt;
   }
@@ -741,14 +719,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get authExpiresAt
    * @return authExpiresAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTH_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getAuthExpiresAt() {
     return authExpiresAt;
   }
@@ -766,14 +743,13 @@ public class ApiAccountOutDto {
     return this;
   }
 
-   /**
+  /**
    * Get userId
    * @return userId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getUserId() {
     return userId;
   }
@@ -908,102 +884,102 @@ public class ApiAccountOutDto {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `parentId` to the URL query string
     if (getParentId() != null) {
-      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `serviceType` to the URL query string
     if (getServiceType() != null) {
-      joiner.add(String.format("%sserviceType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getServiceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserviceType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `active` to the URL query string
     if (getActive() != null) {
-      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `tokenStatus` to the URL query string
     if (getTokenStatus() != null) {
-      joiner.add(String.format("%stokenStatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTokenStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stokenStatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTokenStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `tokenError` to the URL query string
     if (getTokenError() != null) {
-      joiner.add(String.format("%stokenError%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTokenError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stokenError%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTokenError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `daemon` to the URL query string
     if (getDaemon() != null) {
-      joiner.add(String.format("%sdaemon%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDaemon()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdaemon%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDaemon()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `loginString` to the URL query string
     if (getLoginString() != null) {
-      joiner.add(String.format("%sloginString%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLoginString()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sloginString%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLoginString()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `mailboxAddress` to the URL query string
     if (getMailboxAddress() != null) {
-      joiner.add(String.format("%smailboxAddress%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMailboxAddress()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smailboxAddress%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMailboxAddress()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `name2` to the URL query string
     if (getName2() != null) {
-      joiner.add(String.format("%sname2%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `serverUrl` to the URL query string
     if (getServerUrl() != null) {
-      joiner.add(String.format("%sserverUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getServerUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserverUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServerUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `serverUrl2` to the URL query string
     if (getServerUrl2() != null) {
-      joiner.add(String.format("%sserverUrl2%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getServerUrl2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserverUrl2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServerUrl2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `clientOrgId` to the URL query string
     if (getClientOrgId() != null) {
-      joiner.add(String.format("%sclientOrgId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getClientOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sclientOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getClientOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `authUserId` to the URL query string
     if (getAuthUserId() != null) {
-      joiner.add(String.format("%sauthUserId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAuthUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthUserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `authOrgId` to the URL query string
     if (getAuthOrgId() != null) {
-      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAuthOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `tokenIssuedAt` to the URL query string
     if (getTokenIssuedAt() != null) {
-      joiner.add(String.format("%stokenIssuedAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTokenIssuedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stokenIssuedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTokenIssuedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `authScopes` to the URL query string
@@ -1012,7 +988,7 @@ public class ApiAccountOutDto {
         if (getAuthScopes().get(i) != null) {
           joiner.add(String.format("%sauthScopes%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(String.valueOf(getAuthScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              URLEncoder.encode(ApiClient.valueToString(getAuthScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
         }
       }
     }
@@ -1022,23 +998,23 @@ public class ApiAccountOutDto {
       for (int i = 0; i < getAuthNativeScopes().size(); i++) {
         joiner.add(String.format("%sauthNativeScopes%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getAuthNativeScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getAuthNativeScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `authObtainedAt` to the URL query string
     if (getAuthObtainedAt() != null) {
-      joiner.add(String.format("%sauthObtainedAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAuthObtainedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthObtainedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthObtainedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `authExpiresAt` to the URL query string
     if (getAuthExpiresAt() != null) {
-      joiner.add(String.format("%sauthExpiresAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAuthExpiresAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthExpiresAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthExpiresAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `userId` to the URL query string
     if (getUserId() != null) {
-      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

@@ -18,8 +18,8 @@ import io.aurinko.client.model.AccountSaveResult;
 import io.aurinko.client.model.ApiAccountInDto;
 import io.aurinko.client.model.ServiceKey;
 import io.aurinko.client.model.UserAccountType;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for ManagedAccountsApi
  */
-@Ignore
+@Disabled
 public class ManagedAccountsApiTest {
 
     private final ManagedAccountsApi api = new ManagedAccountsApi();

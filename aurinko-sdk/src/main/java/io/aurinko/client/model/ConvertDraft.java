@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * ConvertDraft
  */
@@ -36,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ConvertDraft.JSON_PROPERTY_MESSAGE_ID,
   ConvertDraft.JSON_PROPERTY_INTERNET_MESSAGE_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ConvertDraft {
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
   private String threadId;
@@ -55,14 +56,13 @@ public class ConvertDraft {
     return this;
   }
 
-   /**
+  /**
    * Get threadId
    * @return threadId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getThreadId() {
     return threadId;
   }
@@ -80,14 +80,13 @@ public class ConvertDraft {
     return this;
   }
 
-   /**
+  /**
    * Get messageId
    * @return messageId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMessageId() {
     return messageId;
   }
@@ -105,14 +104,13 @@ public class ConvertDraft {
     return this;
   }
 
-   /**
+  /**
    * Get internetMessageId
    * @return internetMessageId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INTERNET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getInternetMessageId() {
     return internetMessageId;
   }
@@ -203,17 +201,17 @@ public class ConvertDraft {
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `messageId` to the URL query string
     if (getMessageId() != null) {
-      joiner.add(String.format("%smessageId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `internetMessageId` to the URL query string
     if (getInternetMessageId() != null) {
-      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

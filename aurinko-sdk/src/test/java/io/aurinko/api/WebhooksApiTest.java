@@ -17,8 +17,8 @@ import io.aurinko.client.ApiException;
 import io.aurinko.client.model.SubscriptionRequest;
 import io.aurinko.client.model.SubscriptionResponse;
 import io.aurinko.client.model.SubscriptionsPage;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for WebhooksApi
  */
-@Ignore
+@Disabled
 public class WebhooksApiTest {
 
     private final WebhooksApi api = new WebhooksApi();

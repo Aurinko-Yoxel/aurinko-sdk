@@ -24,9 +24,9 @@
 | DAILY | &quot;daily&quot; |
 | WEEKLY | &quot;weekly&quot; |
 | MONTHLY | &quot;monthly&quot; |
-| MONTHLYRELATIVE | &quot;monthlyRelative&quot; |
+| MONTHLY_RELATIVE | &quot;monthlyRelative&quot; |
 | YEARLY | &quot;yearly&quot; |
-| YEARLYRELATIVE | &quot;yearlyRelative&quot; |
+| YEARLY_RELATIVE | &quot;yearlyRelative&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

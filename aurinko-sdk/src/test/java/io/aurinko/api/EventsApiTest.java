@@ -23,8 +23,8 @@ import io.aurinko.client.model.MeetingResponse;
 import java.time.OffsetDateTime;
 import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.SeriesInfo;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for EventsApi
  */
-@Ignore
+@Disabled
 public class EventsApiTest {
 
     private final EventsApi api = new EventsApi();

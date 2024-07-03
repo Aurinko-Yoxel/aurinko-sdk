@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * SyncStatus
  */
@@ -36,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SyncStatus.JSON_PROPERTY_SYNC_DELETED_TOKEN,
   SyncStatus.JSON_PROPERTY_READY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class SyncStatus {
   public static final String JSON_PROPERTY_SYNC_UPDATED_TOKEN = "syncUpdatedToken";
   private String syncUpdatedToken;
@@ -55,14 +56,13 @@ public class SyncStatus {
     return this;
   }
 
-   /**
+  /**
    * Get syncUpdatedToken
    * @return syncUpdatedToken
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SYNC_UPDATED_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSyncUpdatedToken() {
     return syncUpdatedToken;
   }
@@ -80,14 +80,13 @@ public class SyncStatus {
     return this;
   }
 
-   /**
+  /**
    * Get syncDeletedToken
    * @return syncDeletedToken
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SYNC_DELETED_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSyncDeletedToken() {
     return syncDeletedToken;
   }
@@ -105,14 +104,13 @@ public class SyncStatus {
     return this;
   }
 
-   /**
+  /**
    * Get ready
    * @return ready
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_READY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getReady() {
     return ready;
   }
@@ -203,17 +201,17 @@ public class SyncStatus {
 
     // add `syncUpdatedToken` to the URL query string
     if (getSyncUpdatedToken() != null) {
-      joiner.add(String.format("%ssyncUpdatedToken%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSyncUpdatedToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssyncUpdatedToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSyncUpdatedToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `syncDeletedToken` to the URL query string
     if (getSyncDeletedToken() != null) {
-      joiner.add(String.format("%ssyncDeletedToken%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSyncDeletedToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssyncDeletedToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSyncDeletedToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `ready` to the URL query string
     if (getReady() != null) {
-      joiner.add(String.format("%sready%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReady()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sready%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReady()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

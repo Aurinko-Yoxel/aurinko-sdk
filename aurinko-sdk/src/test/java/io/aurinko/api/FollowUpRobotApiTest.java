@@ -20,8 +20,8 @@ import io.aurinko.client.model.FollowupConfig;
 import io.aurinko.client.model.FollowupRuleAggregateIn;
 import io.aurinko.client.model.FollowupRuleAggregateOut;
 import io.aurinko.client.model.OkResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +34,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for FollowUpRobotApi
  */
-@Ignore
+@Disabled
 public class FollowUpRobotApiTest {
 
     private final FollowUpRobotApi api = new FollowUpRobotApi();

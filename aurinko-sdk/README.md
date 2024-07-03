@@ -4,7 +4,7 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Generator version: 7.5.0
+- Generator version: 7.7.0
 
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with

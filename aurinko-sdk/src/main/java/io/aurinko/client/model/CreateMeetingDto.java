@@ -33,6 +33,7 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * CreateMeetingDto
  */
@@ -43,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   CreateMeetingDto.JSON_PROPERTY_EMAIL,
   CreateMeetingDto.JSON_PROPERTY_SUBSTITUTION_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class CreateMeetingDto {
   public static final String JSON_PROPERTY_TIME = "time";
   private SelectedMeetingTime time;
@@ -68,14 +69,13 @@ public class CreateMeetingDto {
     return this;
   }
 
-   /**
+  /**
    * Get time
    * @return time
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public SelectedMeetingTime getTime() {
     return time;
   }
@@ -101,14 +101,13 @@ public class CreateMeetingDto {
     return this;
   }
 
-   /**
+  /**
    * Get userIds
    * @return userIds
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getUserIds() {
     return userIds;
   }
@@ -126,14 +125,13 @@ public class CreateMeetingDto {
     return this;
   }
 
-   /**
+  /**
    * Username of the person requesting the meeting
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -151,14 +149,13 @@ public class CreateMeetingDto {
     return this;
   }
 
-   /**
+  /**
    * Email of the person requesting the meeting
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEmail() {
     return email;
   }
@@ -184,14 +181,13 @@ public class CreateMeetingDto {
     return this;
   }
 
-   /**
+  /**
    * Data for substitution instead of templates, key - value
    * @return substitutionData
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBSTITUTION_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Map<String, String> getSubstitutionData() {
     return substitutionData;
   }
@@ -294,18 +290,18 @@ public class CreateMeetingDto {
       for (int i = 0; i < getUserIds().size(); i++) {
         joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `substitutionData` to the URL query string
@@ -313,7 +309,7 @@ public class CreateMeetingDto {
       for (String _key : getSubstitutionData().keySet()) {
         joiner.add(String.format("%ssubstitutionData%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getSubstitutionData().get(_key), URLEncoder.encode(String.valueOf(getSubstitutionData().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getSubstitutionData().get(_key), URLEncoder.encode(ApiClient.valueToString(getSubstitutionData().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

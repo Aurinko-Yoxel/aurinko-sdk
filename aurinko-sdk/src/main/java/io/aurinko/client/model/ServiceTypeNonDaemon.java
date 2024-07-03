@@ -46,9 +46,9 @@ public enum ServiceTypeNonDaemon {
   
   SLACK("Slack"),
   
-  SUGARCRM("SugarCRM"),
+  SUGAR_CRM("SugarCRM"),
   
-  HIGHLEVEL("HighLevel"),
+  HIGH_LEVEL("HighLevel"),
   
   HUBSPOT("Hubspot"),
   
@@ -56,35 +56,35 @@ public enum ServiceTypeNonDaemon {
   
   WEBEX("Webex"),
   
-  WEBEXBOT("WebexBot"),
+  WEBEX_BOT("WebexBot"),
   
   PIPEDRIVE("Pipedrive"),
   
-  ECLIPSEERP("EclipseERP"),
+  ECLIPSE_ERP("EclipseERP"),
   
-  AUTOQUOTES("AutoQuotes"),
+  AUTO_QUOTES("AutoQuotes"),
   
   TEAMWORK("Teamwork"),
   
-  NETSUITE("NetSuite"),
+  NET_SUITE("NetSuite"),
   
-  SPECPATH("SpecPath"),
+  SPEC_PATH("SpecPath"),
   
   ZOHO("Zoho"),
   
   CLIENTIFY("Clientify"),
   
-  QUICKBOOKS("QuickBooks"),
+  QUICK_BOOKS("QuickBooks"),
   
-  ACTIVECAMPAIGN("ActiveCampaign"),
+  ACTIVE_CAMPAIGN("ActiveCampaign"),
   
   CREATIO("Creatio"),
   
-  CONSTANTCONTACT("ConstantContact"),
+  CONSTANT_CONTACT("ConstantContact"),
   
   FISHBOWL("Fishbowl"),
   
-  ICLOUD("iCloud"),
+  I_CLOUD("iCloud"),
   
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 

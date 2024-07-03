@@ -44,9 +44,9 @@ public enum ServiceProvider {
   
   AOL("AOL"),
   
-  ICLOUD("iCloud"),
+  I_CLOUD("iCloud"),
   
-  BIGPOND("BigPond"),
+  BIG_POND("BigPond"),
   
   FASTMAIL("Fastmail"),
   
@@ -56,25 +56,25 @@ public enum ServiceProvider {
   
   SALESFLARE("Salesflare"),
   
-  SUGARCRM("SugarCRM"),
+  SUGAR_CRM("SugarCRM"),
   
-  HIGHLEVEL("HighLevel"),
+  HIGH_LEVEL("HighLevel"),
   
   HUBSPOT("Hubspot"),
   
   PIPEDRIVE("Pipedrive"),
   
-  AUTOQUOTES("AutoQuotes"),
+  AUTO_QUOTES("AutoQuotes"),
   
-  SPECPATH("SpecPath"),
+  SPEC_PATH("SpecPath"),
   
   CLIENTIFY("Clientify"),
   
   TEAMWORK("Teamwork"),
   
-  ECLIPSEERP("EclipseERP"),
+  ECLIPSE_ERP("EclipseERP"),
   
-  NETSUITE("NetSuite"),
+  NET_SUITE("NetSuite"),
   
   FISHBOWL("Fishbowl"),
   
@@ -84,15 +84,15 @@ public enum ServiceProvider {
   
   WEBEX("Webex"),
   
-  MCTRADE("MCTrade"),
+  MC_TRADE("MCTrade"),
   
   CREATIO("Creatio"),
   
-  QUICKBOOKS("QuickBooks"),
+  QUICK_BOOKS("QuickBooks"),
   
-  ACTIVECAMPAIGN("ActiveCampaign"),
+  ACTIVE_CAMPAIGN("ActiveCampaign"),
   
-  CONSTANTCONTACT("ConstantContact"),
+  CONSTANT_CONTACT("ConstantContact"),
   
   YOXEL("Yoxel"),
   

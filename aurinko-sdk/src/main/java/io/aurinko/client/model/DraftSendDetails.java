@@ -29,13 +29,14 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * DraftSendDetails
  */
 @JsonPropertyOrder({
   DraftSendDetails.JSON_PROPERTY_TRACKING
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class DraftSendDetails {
   public static final String JSON_PROPERTY_TRACKING = "tracking";
   private OutEmailTrack tracking;
@@ -48,14 +49,13 @@ public class DraftSendDetails {
     return this;
   }
 
-   /**
+  /**
    * Get tracking
    * @return tracking
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OutEmailTrack getTracking() {
     return tracking;
   }

@@ -30,6 +30,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EmailDraft
  */
@@ -38,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailDraft.JSON_PROPERTY_MESSAGE,
   EmailDraft.JSON_PROPERTY_SCHEDULED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EmailDraft {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -60,14 +61,13 @@ public class EmailDraft {
     this.id = id;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -80,14 +80,13 @@ public class EmailDraft {
     return this;
   }
 
-   /**
+  /**
    * Get message
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EmailMessage getMessage() {
     return message;
   }
@@ -105,14 +104,13 @@ public class EmailDraft {
     return this;
   }
 
-   /**
+  /**
    * Get scheduled
    * @return scheduled
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SCHEDULED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ScheduledDraft getScheduled() {
     return scheduled;
   }
@@ -203,7 +201,7 @@ public class EmailDraft {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `message` to the URL query string

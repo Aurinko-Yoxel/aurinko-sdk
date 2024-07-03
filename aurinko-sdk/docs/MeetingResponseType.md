@@ -5,7 +5,7 @@
 ## Enum
 
 
-* `NORESPONSE` (value: `"noResponse"`)
+* `NO_RESPONSE` (value: `"noResponse"`)
 
 * `DECLINED` (value: `"declined"`)
 

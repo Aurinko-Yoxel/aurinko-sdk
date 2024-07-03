@@ -17,9 +17,9 @@
 | Name | Value |
 |---- | -----|
 | TRACKING | &quot;tracking&quot; |
-| FOLLOWUP | &quot;followUp&quot; |
+| FOLLOW_UP | &quot;followUp&quot; |
 | KEYWORDS | &quot;keywords&quot; |
-| RETURNIDS | &quot;returnIds&quot; |
+| RETURN_IDS | &quot;returnIds&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

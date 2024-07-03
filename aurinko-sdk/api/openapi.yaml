@@ -5476,13 +5476,13 @@ components:
         notes: notes
         startDateTime: 2000-01-23T04:56:07.000+00:00
         due: 2000-01-23T04:56:07.000+00:00
-        importance: null
+        importance: low
         categories:
         - categories
         - categories
         title: title
         parentId: parentId
-        status: null
+        status: notStarted
       properties:
         title:
           type: string
@@ -5565,13 +5565,13 @@ components:
       example:
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -5611,7 +5611,7 @@ components:
           owner: owner
           lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           notes: notes
-          importance: null
+          importance: low
           completed: 2000-01-23T04:56:07.000+00:00
           title: title
           parentId: parentId
@@ -5633,7 +5633,7 @@ components:
           categories:
           - categories
           - categories
-          status: null
+          status: notStarted
         etag: etag
         id: id
       properties:
@@ -5725,7 +5725,7 @@ components:
           omitted:
           - threadId
           - threadId
-          sensitivity: null
+          sensitivity: normal
           to:
           - address: address
             name: name
@@ -5810,7 +5810,7 @@ components:
           omitted:
           - threadId
           - threadId
-          sensitivity: null
+          sensitivity: normal
           to:
           - address: address
             name: name
@@ -6019,7 +6019,7 @@ components:
         createdAt: 2000-01-23T04:56:07.000+00:00
         xid: xid
         domain: domain
-        serviceProvider: null
+        serviceProvider: Office365
         name: name
         id: 5
       properties:
@@ -6057,13 +6057,13 @@ components:
         subject: subject
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -6173,13 +6173,13 @@ components:
         notes: notes
         startDateTime: 2000-01-23T04:56:07.000+00:00
         due: 2000-01-23T04:56:07.000+00:00
-        importance: null
+        importance: low
         categories:
         - categories
         - categories
         title: title
         parentId: parentId
-        status: null
+        status: notStarted
       properties:
         title:
           type: string
@@ -6236,13 +6236,13 @@ components:
         records:
         - workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -6253,20 +6253,20 @@ components:
           items:
           - start: 2000-01-23T04:56:07.000+00:00
             end: 2000-01-23T04:56:07.000+00:00
-            status: null
+            status: free
           - start: 2000-01-23T04:56:07.000+00:00
             end: 2000-01-23T04:56:07.000+00:00
-            status: null
+            status: free
           email: email
         - workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -6277,10 +6277,10 @@ components:
           items:
           - start: 2000-01-23T04:56:07.000+00:00
             end: 2000-01-23T04:56:07.000+00:00
-            status: null
+            status: free
           - start: 2000-01-23T04:56:07.000+00:00
             end: 2000-01-23T04:56:07.000+00:00
-            status: null
+            status: free
           email: email
       properties:
         records:
@@ -6341,7 +6341,7 @@ components:
       type: object
     DayWorkSchedule:
       example:
-        dayOfWeek: null
+        dayOfWeek: monday
         workingIntervals:
         - start: 09:00:00
           end: 17:00:00
@@ -6365,13 +6365,13 @@ components:
         timezone: timezone
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -6449,13 +6449,13 @@ components:
         lastActivity: 2000-01-23T04:56:07.000+00:00
         id: id
         accounts:
-        - serviceType: null
+        - serviceType: Google
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
-          tokenStatus: null
+          tokenStatus: active
           loginString: loginString
           timezone: timezone
           trackingActive: true
-          type: null
+          type: daemon
           authNativeScopes:
           - null
           - null
@@ -6480,22 +6480,22 @@ components:
             createdAt: 2000-01-23T04:56:07.000+00:00
             xid: xid
             domain: domain
-            serviceProvider: null
+            serviceProvider: Office365
             name: name
             id: 5
           name: name
           scopes:
-          - null
-          - null
+          - Calendar.Read
+          - Calendar.Read
           bookingCount: 5
-          userAccountType: null
-        - serviceType: null
+          userAccountType: primary
+        - serviceType: Google
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
-          tokenStatus: null
+          tokenStatus: active
           loginString: loginString
           timezone: timezone
           trackingActive: true
-          type: null
+          type: daemon
           authNativeScopes:
           - null
           - null
@@ -6520,18 +6520,18 @@ components:
             createdAt: 2000-01-23T04:56:07.000+00:00
             xid: xid
             domain: domain
-            serviceProvider: null
+            serviceProvider: Office365
             name: name
             id: 5
           name: name
           scopes:
-          - null
-          - null
+          - Calendar.Read
+          - Calendar.Read
           bookingCount: 5
-          userAccountType: null
+          userAccountType: primary
         trustedIdentity: true
         email: email
-        externalIdType: null
+        externalIdType: exchangeIdentity
       properties:
         id:
           type: string
@@ -6762,13 +6762,13 @@ components:
           timezone: timezone
           workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -6790,13 +6790,13 @@ components:
           timezone: timezone
           workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -6830,20 +6830,20 @@ components:
         totalSize: 6
         offset: 0
         records:
-        - serviceType: null
-          tokenStatus: null
+        - serviceType: Google
+          tokenStatus: active
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
           loginString: loginString
           timezone: timezone
           tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
-          type: null
+          type: daemon
           authNativeScopes:
           - null
           - null
           tokenError: tokenError
           authScopes:
-          - null
-          - null
+          - Calendar.Read
+          - Calendar.Read
           serverUrl: serverUrl
           clientOrgId: clientOrgId
           authExpiresAt: 2000-01-23T04:56:07.000+00:00
@@ -6859,20 +6859,20 @@ components:
           authUserId: authUserId
           name: name
           name2: name2
-        - serviceType: null
-          tokenStatus: null
+        - serviceType: Google
+          tokenStatus: active
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
           loginString: loginString
           timezone: timezone
           tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
-          type: null
+          type: daemon
           authNativeScopes:
           - null
           - null
           tokenError: tokenError
           authScopes:
-          - null
-          - null
+          - Calendar.Read
+          - Calendar.Read
           serverUrl: serverUrl
           clientOrgId: clientOrgId
           authExpiresAt: 2000-01-23T04:56:07.000+00:00
@@ -7011,7 +7011,7 @@ components:
       type: object
     MeetingResponse:
       example:
-        response: null
+        response: noResponse
         comment: comment
       properties:
         response:
@@ -7040,7 +7040,7 @@ components:
         - owner: owner
           lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           notes: notes
-          importance: null
+          importance: low
           completed: 2000-01-23T04:56:07.000+00:00
           title: title
           parentId: parentId
@@ -7062,11 +7062,11 @@ components:
           categories:
           - categories
           - categories
-          status: null
+          status: notStarted
         - owner: owner
           lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           notes: notes
-          importance: null
+          importance: low
           completed: 2000-01-23T04:56:07.000+00:00
           title: title
           parentId: parentId
@@ -7088,7 +7088,7 @@ components:
           categories:
           - categories
           - categories
-          status: null
+          status: notStarted
         nextPageToken: nextPageToken
         length: 0
       properties:
@@ -7379,7 +7379,7 @@ components:
           omitted:
           - threadId
           - threadId
-          sensitivity: null
+          sensitivity: normal
           to:
           - address: address
             name: name
@@ -7445,13 +7445,13 @@ components:
     EndUserAccountsPage:
       example:
         records:
-        - serviceType: null
+        - serviceType: Google
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
-          tokenStatus: null
+          tokenStatus: active
           loginString: loginString
           timezone: timezone
           trackingActive: true
-          type: null
+          type: daemon
           authNativeScopes:
           - null
           - null
@@ -7476,22 +7476,22 @@ components:
             createdAt: 2000-01-23T04:56:07.000+00:00
             xid: xid
             domain: domain
-            serviceProvider: null
+            serviceProvider: Office365
             name: name
             id: 5
           name: name
           scopes:
-          - null
-          - null
+          - Calendar.Read
+          - Calendar.Read
           bookingCount: 5
-          userAccountType: null
-        - serviceType: null
+          userAccountType: primary
+        - serviceType: Google
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
-          tokenStatus: null
+          tokenStatus: active
           loginString: loginString
           timezone: timezone
           trackingActive: true
-          type: null
+          type: daemon
           authNativeScopes:
           - null
           - null
@@ -7516,15 +7516,15 @@ components:
             createdAt: 2000-01-23T04:56:07.000+00:00
             xid: xid
             domain: domain
-            serviceProvider: null
+            serviceProvider: Office365
             name: name
             id: 5
           name: name
           scopes:
-          - null
-          - null
+          - Calendar.Read
+          - Calendar.Read
           bookingCount: 5
-          userAccountType: null
+          userAccountType: primary
         nextPageToken: nextPageToken
         length: 0
       properties:
@@ -7551,13 +7551,13 @@ components:
         subject: subject
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -7667,13 +7667,13 @@ components:
         items:
         - workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -7683,13 +7683,13 @@ components:
           email: email
         - workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -7705,20 +7705,20 @@ components:
       type: object
     ApiAccountOutDto:
       example:
-        serviceType: null
-        tokenStatus: null
+        serviceType: Google
+        tokenStatus: active
         authObtainedAt: 2000-01-23T04:56:07.000+00:00
         loginString: loginString
         timezone: timezone
         tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
-        type: null
+        type: daemon
         authNativeScopes:
         - null
         - null
         tokenError: tokenError
         authScopes:
-        - null
-        - null
+        - Calendar.Read
+        - Calendar.Read
         serverUrl: serverUrl
         clientOrgId: clientOrgId
         authExpiresAt: 2000-01-23T04:56:07.000+00:00
@@ -7802,13 +7802,13 @@ components:
         subject: subject
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -7889,13 +7889,13 @@ components:
       example:
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -7926,7 +7926,7 @@ components:
           mimeType: mimeType
           contentLocation: contentLocation
           content: content
-        showAs: null
+        showAs: free
         subject: subject
         htmlLink: htmlLink
         iCalUid: iCalUid
@@ -7955,8 +7955,8 @@ components:
               dayOfMonth: 5
               interval: 6
               daysOfWeek:
-              - null
-              - null
+              - monday
+              - monday
               frequency: daily
             range:
               patternExclusions:
@@ -8010,7 +8010,7 @@ components:
             comment: comment
             id: id
             type: required
-          response: null
+          response: noResponse
           attendeePermissions:
           - inviteOthers
           - inviteOthers
@@ -8023,7 +8023,7 @@ components:
             sip: sip
             url: url
         id: id
-        sensitivity: null
+        sensitivity: normal
         categories:
         - categories
         - categories
@@ -8120,13 +8120,13 @@ components:
     WeekWorkSchedule:
       example:
         daySchedules:
-        - dayOfWeek: null
+        - dayOfWeek: monday
           workingIntervals:
           - start: 09:00:00
             end: 17:00:00
           - start: 09:00:00
             end: 17:00:00
-        - dayOfWeek: null
+        - dayOfWeek: monday
           workingIntervals:
           - start: 09:00:00
             end: 17:00:00
@@ -8143,7 +8143,7 @@ components:
       type: object
     ApiAccountInDto:
       example:
-        serviceType: null
+        serviceType: Google
         authObtainedAt: 2000-01-23T04:56:07.000+00:00
         oauthClientId: oauthClientId
         loginString: loginString
@@ -8152,8 +8152,8 @@ components:
         active: true
         password: password
         authScopes:
-        - null
-        - null
+        - Calendar.Read
+        - Calendar.Read
         serverInfo: serverInfo
         authUserId: authUserId
         clientOrgId: clientOrgId
@@ -8218,7 +8218,7 @@ components:
           owner: owner
           lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           notes: notes
-          importance: null
+          importance: low
           completed: 2000-01-23T04:56:07.000+00:00
           title: title
           parentId: parentId
@@ -8240,7 +8240,7 @@ components:
           categories:
           - categories
           - categories
-          status: null
+          status: notStarted
         etag: etag
         id: id
       properties:
@@ -8287,13 +8287,13 @@ components:
         subject: subject
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -8382,8 +8382,8 @@ components:
             dayOfMonth: 5
             interval: 6
             daysOfWeek:
-            - null
-            - null
+            - monday
+            - monday
             frequency: daily
           range:
             patternExclusions:
@@ -8417,7 +8417,7 @@ components:
         owner: owner
         lastModifiedTime: 2000-01-23T04:56:07.000+00:00
         notes: notes
-        importance: null
+        importance: low
         completed: 2000-01-23T04:56:07.000+00:00
         title: title
         parentId: parentId
@@ -8439,7 +8439,7 @@ components:
         categories:
         - categories
         - categories
-        status: null
+        status: notStarted
       properties:
         id:
           type: string
@@ -8598,13 +8598,13 @@ components:
         subject: subject
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -8946,7 +8946,7 @@ components:
         omitted:
         - threadId
         - threadId
-        sensitivity: null
+        sensitivity: normal
         to:
         - address: address
           name: name
@@ -9263,7 +9263,7 @@ components:
         - owner: owner
           lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           notes: notes
-          importance: null
+          importance: low
           completed: 2000-01-23T04:56:07.000+00:00
           title: title
           parentId: parentId
@@ -9285,11 +9285,11 @@ components:
           categories:
           - categories
           - categories
-          status: null
+          status: notStarted
         - owner: owner
           lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           notes: notes
-          importance: null
+          importance: low
           completed: 2000-01-23T04:56:07.000+00:00
           title: title
           parentId: parentId
@@ -9311,7 +9311,7 @@ components:
           categories:
           - categories
           - categories
-          status: null
+          status: notStarted
         nextPageToken: nextPageToken
         nextDeltaToken: nextDeltaToken
         length: 0
@@ -9349,18 +9349,18 @@ components:
       example:
         availabilityStep: 6
         freeStatuses:
-        - null
-        - null
+        - free
+        - free
         durationMinutes: 0
         defaultWorkHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -9376,13 +9376,13 @@ components:
           timezone: timezone
           workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -9404,13 +9404,13 @@ components:
           timezone: timezone
           workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -9716,13 +9716,13 @@ components:
       type: object
     EndUserAccountDto:
       example:
-        serviceType: null
+        serviceType: Google
         authObtainedAt: 2000-01-23T04:56:07.000+00:00
-        tokenStatus: null
+        tokenStatus: active
         loginString: loginString
         timezone: timezone
         trackingActive: true
-        type: null
+        type: daemon
         authNativeScopes:
         - null
         - null
@@ -9747,15 +9747,15 @@ components:
           createdAt: 2000-01-23T04:56:07.000+00:00
           xid: xid
           domain: domain
-          serviceProvider: null
+          serviceProvider: Office365
           name: name
           id: 5
         name: name
         scopes:
-        - null
-        - null
+        - Calendar.Read
+        - Calendar.Read
         bookingCount: 5
-        userAccountType: null
+        userAccountType: primary
       properties:
         id:
           format: int64
@@ -9842,8 +9842,8 @@ components:
               dayOfMonth: 5
               interval: 6
               daysOfWeek:
-              - null
-              - null
+              - monday
+              - monday
               frequency: daily
             range:
               patternExclusions:
@@ -10028,7 +10028,7 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: null
+          showAs: free
           subject: subject
           htmlLink: htmlLink
           iCalUid: iCalUid
@@ -10057,8 +10057,8 @@ components:
                 dayOfMonth: 5
                 interval: 6
                 daysOfWeek:
-                - null
-                - null
+                - monday
+                - monday
                 frequency: daily
               range:
                 patternExclusions:
@@ -10112,7 +10112,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: null
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -10125,7 +10125,7 @@ components:
               sip: sip
               url: url
           id: id
-          sensitivity: null
+          sensitivity: normal
           categories:
           - categories
           - categories
@@ -10280,13 +10280,13 @@ components:
           subject: subject
           workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -10309,13 +10309,13 @@ components:
           subject: subject
           workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -10379,7 +10379,7 @@ components:
           comment: comment
           id: id
           type: required
-        response: null
+        response: noResponse
         attendeePermissions:
         - inviteOthers
         - inviteOthers
@@ -10541,13 +10541,13 @@ components:
         subject: subject
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -10652,13 +10652,13 @@ components:
           subject: subject
           workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -10680,13 +10680,13 @@ components:
           subject: subject
           workHours:
             daySchedules:
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
               - start: 09:00:00
                 end: 17:00:00
-            - dayOfWeek: null
+            - dayOfWeek: monday
               workingIntervals:
               - start: 09:00:00
                 end: 17:00:00
@@ -10811,7 +10811,7 @@ components:
           omitted:
           - threadId
           - threadId
-          sensitivity: null
+          sensitivity: normal
           to:
           - address: address
             name: name
@@ -10896,7 +10896,7 @@ components:
           omitted:
           - threadId
           - threadId
-          sensitivity: null
+          sensitivity: normal
           to:
           - address: address
             name: name
@@ -10944,7 +10944,7 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: null
+          showAs: free
           subject: subject
           htmlLink: htmlLink
           iCalUid: iCalUid
@@ -10973,8 +10973,8 @@ components:
                 dayOfMonth: 5
                 interval: 6
                 daysOfWeek:
-                - null
-                - null
+                - monday
+                - monday
                 frequency: daily
               range:
                 patternExclusions:
@@ -11028,7 +11028,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: null
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -11041,7 +11041,7 @@ components:
               sip: sip
               url: url
           id: id
-          sensitivity: null
+          sensitivity: normal
           categories:
           - categories
           - categories
@@ -11076,7 +11076,7 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: null
+          showAs: free
           subject: subject
           htmlLink: htmlLink
           iCalUid: iCalUid
@@ -11105,8 +11105,8 @@ components:
                 dayOfMonth: 5
                 interval: 6
                 daysOfWeek:
-                - null
-                - null
+                - monday
+                - monday
                 frequency: daily
               range:
                 patternExclusions:
@@ -11160,7 +11160,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: null
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -11173,7 +11173,7 @@ components:
               sip: sip
               url: url
           id: id
-          sensitivity: null
+          sensitivity: normal
           categories:
           - categories
           - categories
@@ -11302,7 +11302,7 @@ components:
       example:
         start: 2000-01-23T04:56:07.000+00:00
         end: 2000-01-23T04:56:07.000+00:00
-        status: null
+        status: free
       properties:
         start:
           format: date-time
@@ -11356,13 +11356,13 @@ components:
       example:
         workHours:
           daySchedules:
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
             - start: 09:00:00
               end: 17:00:00
-          - dayOfWeek: null
+          - dayOfWeek: monday
             workingIntervals:
             - start: 09:00:00
               end: 17:00:00
@@ -11373,10 +11373,10 @@ components:
         items:
         - start: 2000-01-23T04:56:07.000+00:00
           end: 2000-01-23T04:56:07.000+00:00
-          status: null
+          status: free
         - start: 2000-01-23T04:56:07.000+00:00
           end: 2000-01-23T04:56:07.000+00:00
-          status: null
+          status: free
         email: email
       properties:
         email:
@@ -11570,7 +11570,7 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: null
+          showAs: free
           subject: subject
           htmlLink: htmlLink
           iCalUid: iCalUid
@@ -11599,8 +11599,8 @@ components:
                 dayOfMonth: 5
                 interval: 6
                 daysOfWeek:
-                - null
-                - null
+                - monday
+                - monday
                 frequency: daily
               range:
                 patternExclusions:
@@ -11654,7 +11654,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: null
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -11667,7 +11667,7 @@ components:
               sip: sip
               url: url
           id: id
-          sensitivity: null
+          sensitivity: normal
           categories:
           - categories
           - categories
@@ -11702,7 +11702,7 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: null
+          showAs: free
           subject: subject
           htmlLink: htmlLink
           iCalUid: iCalUid
@@ -11731,8 +11731,8 @@ components:
                 dayOfMonth: 5
                 interval: 6
                 daysOfWeek:
-                - null
-                - null
+                - monday
+                - monday
                 frequency: daily
               range:
                 patternExclusions:
@@ -11786,7 +11786,7 @@ components:
               comment: comment
               id: id
               type: required
-            response: null
+            response: noResponse
             attendeePermissions:
             - inviteOthers
             - inviteOthers
@@ -11799,7 +11799,7 @@ components:
               sip: sip
               url: url
           id: id
-          sensitivity: null
+          sensitivity: normal
           categories:
           - categories
           - categories
@@ -12035,8 +12035,8 @@ components:
         dayOfMonth: 5
         interval: 6
         daysOfWeek:
-        - null
-        - null
+        - monday
+        - monday
         frequency: daily
       properties:
         frequency:
@@ -12123,8 +12123,8 @@ components:
           dayOfMonth: 5
           interval: 6
           daysOfWeek:
-          - null
-          - null
+          - monday
+          - monday
           frequency: daily
         range:
           patternExclusions:

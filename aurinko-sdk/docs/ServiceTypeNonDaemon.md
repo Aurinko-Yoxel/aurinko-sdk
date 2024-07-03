@@ -21,9 +21,9 @@
 
 * `SLACK` (value: `"Slack"`)
 
-* `SUGARCRM` (value: `"SugarCRM"`)
+* `SUGAR_CRM` (value: `"SugarCRM"`)
 
-* `HIGHLEVEL` (value: `"HighLevel"`)
+* `HIGH_LEVEL` (value: `"HighLevel"`)
 
 * `HUBSPOT` (value: `"Hubspot"`)
 
@@ -31,35 +31,35 @@
 
 * `WEBEX` (value: `"Webex"`)
 
-* `WEBEXBOT` (value: `"WebexBot"`)
+* `WEBEX_BOT` (value: `"WebexBot"`)
 
 * `PIPEDRIVE` (value: `"Pipedrive"`)
 
-* `ECLIPSEERP` (value: `"EclipseERP"`)
+* `ECLIPSE_ERP` (value: `"EclipseERP"`)
 
-* `AUTOQUOTES` (value: `"AutoQuotes"`)
+* `AUTO_QUOTES` (value: `"AutoQuotes"`)
 
 * `TEAMWORK` (value: `"Teamwork"`)
 
-* `NETSUITE` (value: `"NetSuite"`)
+* `NET_SUITE` (value: `"NetSuite"`)
 
-* `SPECPATH` (value: `"SpecPath"`)
+* `SPEC_PATH` (value: `"SpecPath"`)
 
 * `ZOHO` (value: `"Zoho"`)
 
 * `CLIENTIFY` (value: `"Clientify"`)
 
-* `QUICKBOOKS` (value: `"QuickBooks"`)
+* `QUICK_BOOKS` (value: `"QuickBooks"`)
 
-* `ACTIVECAMPAIGN` (value: `"ActiveCampaign"`)
+* `ACTIVE_CAMPAIGN` (value: `"ActiveCampaign"`)
 
 * `CREATIO` (value: `"Creatio"`)
 
-* `CONSTANTCONTACT` (value: `"ConstantContact"`)
+* `CONSTANT_CONTACT` (value: `"ConstantContact"`)
 
 * `FISHBOWL` (value: `"Fishbowl"`)
 
-* `ICLOUD` (value: `"iCloud"`)
+* `I_CLOUD` (value: `"iCloud"`)
 
 * `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
 

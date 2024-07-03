@@ -18,8 +18,8 @@ import io.aurinko.client.model.BodyType;
 import io.aurinko.client.model.EmailDeletedPage;
 import io.aurinko.client.model.EmailMessagesPage;
 import io.aurinko.client.model.SyncStatus;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for EmailSyncApi
  */
-@Ignore
+@Disabled
 public class EmailSyncApiTest {
 
     private final EmailSyncApi api = new EmailSyncApi();

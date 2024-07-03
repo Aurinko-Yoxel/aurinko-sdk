@@ -5,13 +5,13 @@
 ## Enum
 
 
-* `NOTSTARTED` (value: `"notStarted"`)
+* `NOT_STARTED` (value: `"notStarted"`)
 
-* `INPROGRESS` (value: `"inProgress"`)
+* `IN_PROGRESS` (value: `"inProgress"`)
 
 * `COMPLETED` (value: `"completed"`)
 
-* `WAITINGONOTHERS` (value: `"waitingOnOthers"`)
+* `WAITING_ON_OTHERS` (value: `"waitingOnOthers"`)
 
 * `DEFERRED` (value: `"deferred"`)
 

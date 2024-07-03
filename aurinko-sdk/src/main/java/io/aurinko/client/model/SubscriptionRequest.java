@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * SubscriptionRequest
  */
@@ -35,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SubscriptionRequest.JSON_PROPERTY_RESOURCE,
   SubscriptionRequest.JSON_PROPERTY_NOTIFICATION_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class SubscriptionRequest {
   public static final String JSON_PROPERTY_RESOURCE = "resource";
   private String resource;
@@ -51,14 +52,13 @@ public class SubscriptionRequest {
     return this;
   }
 
-   /**
+  /**
    * Get resource
    * @return resource
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESOURCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getResource() {
     return resource;
   }
@@ -76,14 +76,13 @@ public class SubscriptionRequest {
     return this;
   }
 
-   /**
+  /**
    * Get notificationUrl
    * @return notificationUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NOTIFICATION_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNotificationUrl() {
     return notificationUrl;
   }
@@ -172,12 +171,12 @@ public class SubscriptionRequest {
 
     // add `resource` to the URL query string
     if (getResource() != null) {
-      joiner.add(String.format("%sresource%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getResource()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresource%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResource()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `notificationUrl` to the URL query string
     if (getNotificationUrl() != null) {
-      joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNotificationUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotificationUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

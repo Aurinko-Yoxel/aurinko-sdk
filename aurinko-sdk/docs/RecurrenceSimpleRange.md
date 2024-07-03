@@ -19,8 +19,8 @@
 
 | Name | Value |
 |---- | -----|
-| BYDATE | &quot;byDate&quot; |
-| BYCOUNT | &quot;byCount&quot; |
+| BY_DATE | &quot;byDate&quot; |
+| BY_COUNT | &quot;byCount&quot; |
 | UNBOUNDED | &quot;unbounded&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 

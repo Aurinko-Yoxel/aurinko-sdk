@@ -18,8 +18,8 @@ import io.aurinko.client.model.Calendar;
 import io.aurinko.client.model.CalendarCreate;
 import io.aurinko.client.model.CalendarUpdate;
 import io.aurinko.client.model.CalendarsPage;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for CalendarsApi
  */
-@Ignore
+@Disabled
 public class CalendarsApiTest {
 
     private final CalendarsApi api = new CalendarsApi();

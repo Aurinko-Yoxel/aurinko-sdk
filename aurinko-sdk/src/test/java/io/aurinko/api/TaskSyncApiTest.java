@@ -18,8 +18,8 @@ import io.aurinko.client.model.DeletedPage;
 import java.time.OffsetDateTime;
 import io.aurinko.client.model.SyncStatus;
 import io.aurinko.client.model.SyncTasksPage;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for TaskSyncApi
  */
-@Ignore
+@Disabled
 public class TaskSyncApiTest {
 
     private final TaskSyncApi api = new TaskSyncApi();

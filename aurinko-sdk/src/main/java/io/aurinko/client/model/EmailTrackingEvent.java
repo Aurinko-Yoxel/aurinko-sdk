@@ -29,6 +29,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EmailTrackingEvent
  */
@@ -47,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailTrackingEvent.JSON_PROPERTY_CONTEXT,
   EmailTrackingEvent.JSON_PROPERTY_TRACKING_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EmailTrackingEvent {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -65,7 +66,7 @@ public class EmailTrackingEvent {
     
     REPLY("reply"),
     
-    REPLYBOUNCE("replyBounce"),
+    REPLY_BOUNCE("replyBounce"),
     
     UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
@@ -137,14 +138,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Long getId() {
     return id;
   }
@@ -162,14 +162,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -187,14 +186,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get eventType
    * @return eventType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EVENT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EventTypeEnum getEventType() {
     return eventType;
   }
@@ -212,14 +210,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLocation() {
     return location;
   }
@@ -237,14 +234,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get userAgent
    * @return userAgent
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USER_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getUserAgent() {
     return userAgent;
   }
@@ -262,14 +258,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get referrer
    * @return referrer
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERRER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getReferrer() {
     return referrer;
   }
@@ -287,14 +282,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get remoteAddr
    * @return remoteAddr
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REMOTE_ADDR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getRemoteAddr() {
     return remoteAddr;
   }
@@ -312,14 +306,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get threadId
    * @return threadId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getThreadId() {
     return threadId;
   }
@@ -337,14 +330,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get messageId
    * @return messageId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMessageId() {
     return messageId;
   }
@@ -362,14 +354,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get internetMessageId
    * @return internetMessageId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INTERNET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getInternetMessageId() {
     return internetMessageId;
   }
@@ -387,14 +378,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get trackingId
    * @return trackingId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Long getTrackingId() {
     return trackingId;
   }
@@ -412,14 +402,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get context
    * @return context
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getContext() {
     return context;
   }
@@ -437,14 +426,13 @@ public class EmailTrackingEvent {
     return this;
   }
 
-   /**
+  /**
    * Get trackingCode
    * @return trackingCode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTrackingCode() {
     return trackingCode;
   }
@@ -555,67 +543,67 @@ public class EmailTrackingEvent {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `createdAt` to the URL query string
     if (getCreatedAt() != null) {
-      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreatedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `eventType` to the URL query string
     if (getEventType() != null) {
-      joiner.add(String.format("%seventType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEventType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%seventType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEventType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `location` to the URL query string
     if (getLocation() != null) {
-      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `userAgent` to the URL query string
     if (getUserAgent() != null) {
-      joiner.add(String.format("%suserAgent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUserAgent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserAgent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserAgent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `referrer` to the URL query string
     if (getReferrer() != null) {
-      joiner.add(String.format("%sreferrer%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReferrer()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sreferrer%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReferrer()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `remoteAddr` to the URL query string
     if (getRemoteAddr() != null) {
-      joiner.add(String.format("%sremoteAddr%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRemoteAddr()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sremoteAddr%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRemoteAddr()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `messageId` to the URL query string
     if (getMessageId() != null) {
-      joiner.add(String.format("%smessageId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `internetMessageId` to the URL query string
     if (getInternetMessageId() != null) {
-      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `trackingId` to the URL query string
     if (getTrackingId() != null) {
-      joiner.add(String.format("%strackingId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackingId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackingId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `trackingCode` to the URL query string
     if (getTrackingCode() != null) {
-      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackingCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

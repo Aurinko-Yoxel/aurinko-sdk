@@ -32,6 +32,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * MeetingAttendee
  */
@@ -43,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   MeetingAttendee.JSON_PROPERTY_BUSY_INTERVALS,
   MeetingAttendee.JSON_PROPERTY_FREE_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class MeetingAttendee {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
@@ -79,14 +80,13 @@ public class MeetingAttendee {
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEmail() {
     return email;
   }
@@ -104,14 +104,13 @@ public class MeetingAttendee {
     return this;
   }
 
-   /**
+  /**
    * Get timezone
    * @return timezone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTimezone() {
     return timezone;
   }
@@ -129,14 +128,13 @@ public class MeetingAttendee {
     return this;
   }
 
-   /**
+  /**
    * Get workHours
    * @return workHours
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public WeekWorkSchedule getWorkHours() {
     return workHours;
   }
@@ -149,14 +147,13 @@ public class MeetingAttendee {
   }
 
 
-   /**
+  /**
    * Get error
    * @return error
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getError() {
     return error;
   }
@@ -177,14 +174,13 @@ public class MeetingAttendee {
     return this;
   }
 
-   /**
+  /**
    * Busy intervals for the attendee. If set, these intervals will be excluded when searching for available meeting times. Can be combined with &#x60;freeIntervals&#x60;.
    * @return busyIntervals
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BUSY_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<TimeInterval> getBusyIntervals() {
     return busyIntervals;
   }
@@ -210,14 +206,13 @@ public class MeetingAttendee {
     return this;
   }
 
-   /**
+  /**
    * Free time intervals for the attendee. If set, this parameter will limit the search for available meeting times. Can be combined with &#x60;busyIntervals&#x60;.
    * @return freeIntervals
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FREE_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<TimeInterval> getFreeIntervals() {
     return freeIntervals;
   }
@@ -314,12 +309,12 @@ public class MeetingAttendee {
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `workHours` to the URL query string
@@ -329,7 +324,7 @@ public class MeetingAttendee {
 
     // add `error` to the URL query string
     if (getError() != null) {
-      joiner.add(String.format("%serror%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%serror%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `busyIntervals` to the URL query string

@@ -21,8 +21,8 @@ import io.aurinko.client.model.EmailDraftResponse;
 import io.aurinko.client.model.EmailDraftSendStatus;
 import java.time.OffsetDateTime;
 import io.aurinko.client.model.OutgoingEmail;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +35,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for DraftsApi
  */
-@Ignore
+@Disabled
 public class DraftsApiTest {
 
     private final DraftsApi api = new DraftsApi();

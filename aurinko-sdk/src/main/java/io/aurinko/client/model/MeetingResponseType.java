@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum MeetingResponseType {
   
-  NORESPONSE("noResponse"),
+  NO_RESPONSE("noResponse"),
   
   DECLINED("declined"),
   

@@ -30,6 +30,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EmailSendError
  */
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailSendError.JSON_PROPERTY_FAILED_STEPS,
   EmailSendError.JSON_PROPERTY_ERROR_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EmailSendError {
   /**
    * Action that should have been performed, but were not performed due to an error
@@ -45,11 +46,11 @@ public class EmailSendError {
   public enum FailedStepsEnum {
     TRACKING("tracking"),
     
-    FOLLOWUP("followUp"),
+    FOLLOW_UP("followUp"),
     
     KEYWORDS("keywords"),
     
-    RETURNIDS("returnIds"),
+    RETURN_IDS("returnIds"),
     
     UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
@@ -102,14 +103,13 @@ public class EmailSendError {
     return this;
   }
 
-   /**
+  /**
    * Get failedSteps
    * @return failedSteps
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILED_STEPS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<FailedStepsEnum> getFailedSteps() {
     return failedSteps;
   }
@@ -127,14 +127,13 @@ public class EmailSendError {
     return this;
   }
 
-   /**
+  /**
    * An error occurred after a successful submission while processing the result
    * @return errorMessage
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getErrorMessage() {
     return errorMessage;
   }
@@ -226,13 +225,13 @@ public class EmailSendError {
       for (int i = 0; i < getFailedSteps().size(); i++) {
         joiner.add(String.format("%sfailedSteps%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getFailedSteps().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getFailedSteps().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `errorMessage` to the URL query string
     if (getErrorMessage() != null) {
-      joiner.add(String.format("%serrorMessage%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getErrorMessage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%serrorMessage%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getErrorMessage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

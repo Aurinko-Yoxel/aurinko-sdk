@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * OutEmailTrack
  */
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OutEmailTrack.JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY,
   OutEmailTrack.JSON_PROPERTY_CONTEXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class OutEmailTrack {
   public static final String JSON_PROPERTY_THREAD_REPLIES = "threadReplies";
   private Boolean threadReplies;
@@ -59,14 +60,13 @@ public class OutEmailTrack {
     return this;
   }
 
-   /**
+  /**
    * Get threadReplies
    * @return threadReplies
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREAD_REPLIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getThreadReplies() {
     return threadReplies;
   }
@@ -84,14 +84,13 @@ public class OutEmailTrack {
     return this;
   }
 
-   /**
+  /**
    * Get opens
    * @return opens
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OPENS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getOpens() {
     return opens;
   }
@@ -109,14 +108,13 @@ public class OutEmailTrack {
     return this;
   }
 
-   /**
+  /**
    * number of seconds to wait after a send before enabling tracking
    * @return trackOpensAfterSendDelay
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getTrackOpensAfterSendDelay() {
     return trackOpensAfterSendDelay;
   }
@@ -134,14 +132,13 @@ public class OutEmailTrack {
     return this;
   }
 
-   /**
+  /**
    * User-defined tracking data that will be associated with this email.
    * @return context
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getContext() {
     return context;
   }
@@ -234,22 +231,22 @@ public class OutEmailTrack {
 
     // add `threadReplies` to the URL query string
     if (getThreadReplies() != null) {
-      joiner.add(String.format("%sthreadReplies%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadReplies%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `opens` to the URL query string
     if (getOpens() != null) {
-      joiner.add(String.format("%sopens%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOpens()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sopens%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOpens()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `trackOpensAfterSendDelay` to the URL query string
     if (getTrackOpensAfterSendDelay() != null) {
-      joiner.add(String.format("%strackOpensAfterSendDelay%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackOpensAfterSendDelay()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackOpensAfterSendDelay%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackOpensAfterSendDelay()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

@@ -21,8 +21,8 @@ import io.aurinko.client.model.ApiAccountOutDto;
 import io.aurinko.client.model.ServiceKey;
 import io.aurinko.client.model.ServiceTypeNonDaemon;
 import io.aurinko.client.model.UserAccountType;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +35,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for AccountsApi
  */
-@Ignore
+@Disabled
 public class AccountsApiTest {
 
     private final AccountsApi api = new AccountsApi();

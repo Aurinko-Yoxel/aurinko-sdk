@@ -29,6 +29,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * TaskList
  */
@@ -42,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   TaskList.JSON_PROPERTY_EMAILS_LIST,
   TaskList.JSON_PROPERTY_LAST_MODIFIED_TIME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class TaskList {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -76,14 +77,13 @@ public class TaskList {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -101,14 +101,13 @@ public class TaskList {
     return this;
   }
 
-   /**
+  /**
    * Get etag
    * @return etag
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ETAG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEtag() {
     return etag;
   }
@@ -126,14 +125,13 @@ public class TaskList {
     return this;
   }
 
-   /**
+  /**
    * Get title
    * @return title
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTitle() {
     return title;
   }
@@ -151,14 +149,13 @@ public class TaskList {
     return this;
   }
 
-   /**
+  /**
    * Get owner
    * @return owner
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getOwner() {
     return owner;
   }
@@ -176,14 +173,13 @@ public class TaskList {
     return this;
   }
 
-   /**
+  /**
    * Get shared
    * @return shared
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getShared() {
     return shared;
   }
@@ -201,14 +197,13 @@ public class TaskList {
     return this;
   }
 
-   /**
+  /**
    * Get defaultList
    * @return defaultList
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getDefaultList() {
     return defaultList;
   }
@@ -226,14 +221,13 @@ public class TaskList {
     return this;
   }
 
-   /**
+  /**
    * Get emailsList
    * @return emailsList
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAILS_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getEmailsList() {
     return emailsList;
   }
@@ -251,14 +245,13 @@ public class TaskList {
     return this;
   }
 
-   /**
+  /**
    * Get lastModifiedTime
    * @return lastModifiedTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getLastModifiedTime() {
     return lastModifiedTime;
   }
@@ -359,42 +352,42 @@ public class TaskList {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
-      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `owner` to the URL query string
     if (getOwner() != null) {
-      joiner.add(String.format("%sowner%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOwner()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sowner%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOwner()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `shared` to the URL query string
     if (getShared() != null) {
-      joiner.add(String.format("%sshared%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getShared()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sshared%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getShared()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `defaultList` to the URL query string
     if (getDefaultList() != null) {
-      joiner.add(String.format("%sdefaultList%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDefaultList()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdefaultList%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDefaultList()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `emailsList` to the URL query string
     if (getEmailsList() != null) {
-      joiner.add(String.format("%semailsList%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEmailsList()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semailsList%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmailsList()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

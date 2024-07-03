@@ -31,6 +31,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EmailFolderInfoPage
  */
@@ -38,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailFolderInfoPage.JSON_PROPERTY_LENGTH,
   EmailFolderInfoPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EmailFolderInfoPage {
   public static final String JSON_PROPERTY_LENGTH = "length";
   private Integer length;
@@ -54,14 +55,13 @@ public class EmailFolderInfoPage {
     return this;
   }
 
-   /**
+  /**
    * Get length
    * @return length
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LENGTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getLength() {
     return length;
   }
@@ -87,14 +87,13 @@ public class EmailFolderInfoPage {
     return this;
   }
 
-   /**
+  /**
    * Get records
    * @return records
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailFolderInfo> getRecords() {
     return records;
   }
@@ -183,7 +182,7 @@ public class EmailFolderInfoPage {
 
     // add `length` to the URL query string
     if (getLength() != null) {
-      joiner.add(String.format("%slength%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLength()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slength%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLength()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `records` to the URL query string

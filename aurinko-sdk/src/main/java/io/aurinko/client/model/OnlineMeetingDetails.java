@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * OnlineMeetingDetails
  */
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OnlineMeetingDetails.JSON_PROPERTY_SIP,
   OnlineMeetingDetails.JSON_PROPERTY_INFO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class OnlineMeetingDetails {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -83,14 +84,13 @@ public class OnlineMeetingDetails {
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getUrl() {
     return url;
   }
@@ -103,14 +103,13 @@ public class OnlineMeetingDetails {
   }
 
 
-   /**
+  /**
    * Get phone
    * @return phone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPhone() {
     return phone;
   }
@@ -118,14 +117,13 @@ public class OnlineMeetingDetails {
 
 
 
-   /**
+  /**
    * Get pin
    * @return pin
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPin() {
     return pin;
   }
@@ -133,14 +131,13 @@ public class OnlineMeetingDetails {
 
 
 
-   /**
+  /**
    * Get regionCode
    * @return regionCode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REGION_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getRegionCode() {
     return regionCode;
   }
@@ -148,14 +145,13 @@ public class OnlineMeetingDetails {
 
 
 
-   /**
+  /**
    * Get sip
    * @return sip
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SIP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSip() {
     return sip;
   }
@@ -163,14 +159,13 @@ public class OnlineMeetingDetails {
 
 
 
-   /**
+  /**
    * Get infoUrl
    * @return infoUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INFO_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getInfoUrl() {
     return infoUrl;
   }
@@ -262,32 +257,32 @@ public class OnlineMeetingDetails {
 
     // add `url` to the URL query string
     if (getUrl() != null) {
-      joiner.add(String.format("%surl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%surl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `phone` to the URL query string
     if (getPhone() != null) {
-      joiner.add(String.format("%sphone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPhone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sphone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPhone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `pin` to the URL query string
     if (getPin() != null) {
-      joiner.add(String.format("%spin%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%spin%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `regionCode` to the URL query string
     if (getRegionCode() != null) {
-      joiner.add(String.format("%sregionCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRegionCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sregionCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRegionCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `sip` to the URL query string
     if (getSip() != null) {
-      joiner.add(String.format("%ssip%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSip()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssip%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSip()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `infoUrl` to the URL query string
     if (getInfoUrl() != null) {
-      joiner.add(String.format("%sinfoUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInfoUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinfoUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInfoUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

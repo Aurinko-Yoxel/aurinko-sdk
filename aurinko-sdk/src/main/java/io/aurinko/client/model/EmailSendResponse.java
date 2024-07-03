@@ -29,6 +29,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EmailSendResponse
  */
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailSendResponse.JSON_PROPERTY_PROCESSING_STATUS,
   EmailSendResponse.JSON_PROPERTY_PROCESSING_ERROR
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EmailSendResponse {
   /**
    * Gets or Sets status
@@ -136,14 +137,13 @@ public class EmailSendResponse {
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public StatusEnum getStatus() {
     return status;
   }
@@ -161,14 +161,13 @@ public class EmailSendResponse {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -186,14 +185,13 @@ public class EmailSendResponse {
     return this;
   }
 
-   /**
+  /**
    * Get threadId
    * @return threadId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getThreadId() {
     return threadId;
   }
@@ -211,14 +209,13 @@ public class EmailSendResponse {
     return this;
   }
 
-   /**
+  /**
    * Get processingStatus
    * @return processingStatus
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PROCESSING_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ProcessingStatusEnum getProcessingStatus() {
     return processingStatus;
   }
@@ -236,14 +233,13 @@ public class EmailSendResponse {
     return this;
   }
 
-   /**
+  /**
    * Get processingError
    * @return processingError
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PROCESSING_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EmailSendError getProcessingError() {
     return processingError;
   }
@@ -338,22 +334,22 @@ public class EmailSendResponse {
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `processingStatus` to the URL query string
     if (getProcessingStatus() != null) {
-      joiner.add(String.format("%sprocessingStatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getProcessingStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprocessingStatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getProcessingStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `processingError` to the URL query string

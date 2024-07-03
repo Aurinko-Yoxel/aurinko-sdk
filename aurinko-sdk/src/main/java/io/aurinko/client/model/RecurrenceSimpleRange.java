@@ -32,6 +32,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * RecurrenceSimpleRange
  */
@@ -42,15 +43,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimpleRange.JSON_PROPERTY_COUNT,
   RecurrenceSimpleRange.JSON_PROPERTY_PATTERN_EXCLUSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class RecurrenceSimpleRange {
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    BYDATE("byDate"),
+    BY_DATE("byDate"),
     
-    BYCOUNT("byCount"),
+    BY_COUNT("byCount"),
     
     UNBOUNDED("unbounded"),
     
@@ -114,14 +115,13 @@ public class RecurrenceSimpleRange {
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public TypeEnum getType() {
     return type;
   }
@@ -139,14 +139,13 @@ public class RecurrenceSimpleRange {
     return this;
   }
 
-   /**
+  /**
    * Get recurrenceStart
    * @return recurrenceStart
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECURRENCE_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EventDateTime getRecurrenceStart() {
     return recurrenceStart;
   }
@@ -164,14 +163,13 @@ public class RecurrenceSimpleRange {
     return this;
   }
 
-   /**
+  /**
    * Get recurrenceEnd
    * @return recurrenceEnd
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECURRENCE_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getRecurrenceEnd() {
     return recurrenceEnd;
   }
@@ -189,15 +187,14 @@ public class RecurrenceSimpleRange {
     return this;
   }
 
-   /**
+  /**
    * Get count
    * minimum: 1
    * @return count
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getCount() {
     return count;
   }
@@ -210,14 +207,13 @@ public class RecurrenceSimpleRange {
   }
 
 
-   /**
+  /**
    * Get patternExclusions
    * @return patternExclusions
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PATTERN_EXCLUSIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EventDateTime> getPatternExclusions() {
     return patternExclusions;
   }
@@ -307,7 +303,7 @@ public class RecurrenceSimpleRange {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `recurrenceStart` to the URL query string
@@ -317,12 +313,12 @@ public class RecurrenceSimpleRange {
 
     // add `recurrenceEnd` to the URL query string
     if (getRecurrenceEnd() != null) {
-      joiner.add(String.format("%srecurrenceEnd%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRecurrenceEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%srecurrenceEnd%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRecurrenceEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `count` to the URL query string
     if (getCount() != null) {
-      joiner.add(String.format("%scount%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCount()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scount%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCount()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `patternExclusions` to the URL query string

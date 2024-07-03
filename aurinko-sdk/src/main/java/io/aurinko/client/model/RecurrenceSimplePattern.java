@@ -31,6 +31,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * RecurrenceSimplePattern
  */
@@ -43,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RecurrenceSimplePattern.JSON_PROPERTY_MONTH_OF_YEAR,
   RecurrenceSimplePattern.JSON_PROPERTY_INSTANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class RecurrenceSimplePattern {
   /**
    * Gets or Sets frequency
@@ -55,11 +56,11 @@ public class RecurrenceSimplePattern {
     
     MONTHLY("monthly"),
     
-    MONTHLYRELATIVE("monthlyRelative"),
+    MONTHLY_RELATIVE("monthlyRelative"),
     
     YEARLY("yearly"),
     
-    YEARLYRELATIVE("yearlyRelative"),
+    YEARLY_RELATIVE("yearlyRelative"),
     
     UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
@@ -199,14 +200,13 @@ public class RecurrenceSimplePattern {
     return this;
   }
 
-   /**
+  /**
    * Get frequency
    * @return frequency
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FREQUENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public FrequencyEnum getFrequency() {
     return frequency;
   }
@@ -224,14 +224,13 @@ public class RecurrenceSimplePattern {
     return this;
   }
 
-   /**
+  /**
    * Get interval
    * @return interval
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INTERVAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getInterval() {
     return interval;
   }
@@ -257,14 +256,13 @@ public class RecurrenceSimplePattern {
     return this;
   }
 
-   /**
+  /**
    * Get daysOfWeek
    * @return daysOfWeek
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DAYS_OF_WEEK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<DayOfWeek> getDaysOfWeek() {
     return daysOfWeek;
   }
@@ -282,14 +280,13 @@ public class RecurrenceSimplePattern {
     return this;
   }
 
-   /**
+  /**
    * Get weekStart
    * @return weekStart
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WEEK_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public WeekStartEnum getWeekStart() {
     return weekStart;
   }
@@ -307,16 +304,15 @@ public class RecurrenceSimplePattern {
     return this;
   }
 
-   /**
+  /**
    * Get dayOfMonth
    * minimum: 1
    * maximum: 31
    * @return dayOfMonth
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DAY_OF_MONTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getDayOfMonth() {
     return dayOfMonth;
   }
@@ -334,16 +330,15 @@ public class RecurrenceSimplePattern {
     return this;
   }
 
-   /**
+  /**
    * Get monthOfYear
    * minimum: 1
    * maximum: 12
    * @return monthOfYear
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTH_OF_YEAR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getMonthOfYear() {
     return monthOfYear;
   }
@@ -361,14 +356,13 @@ public class RecurrenceSimplePattern {
     return this;
   }
 
-   /**
+  /**
    * Get instance
    * @return instance
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INSTANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public InstanceEnum getInstance() {
     return instance;
   }
@@ -467,12 +461,12 @@ public class RecurrenceSimplePattern {
 
     // add `frequency` to the URL query string
     if (getFrequency() != null) {
-      joiner.add(String.format("%sfrequency%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFrequency()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfrequency%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFrequency()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `interval` to the URL query string
     if (getInterval() != null) {
-      joiner.add(String.format("%sinterval%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInterval()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinterval%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInterval()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `daysOfWeek` to the URL query string
@@ -481,29 +475,29 @@ public class RecurrenceSimplePattern {
         if (getDaysOfWeek().get(i) != null) {
           joiner.add(String.format("%sdaysOfWeek%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(String.valueOf(getDaysOfWeek().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              URLEncoder.encode(ApiClient.valueToString(getDaysOfWeek().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
         }
       }
     }
 
     // add `weekStart` to the URL query string
     if (getWeekStart() != null) {
-      joiner.add(String.format("%sweekStart%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getWeekStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sweekStart%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getWeekStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `dayOfMonth` to the URL query string
     if (getDayOfMonth() != null) {
-      joiner.add(String.format("%sdayOfMonth%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDayOfMonth()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdayOfMonth%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDayOfMonth()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `monthOfYear` to the URL query string
     if (getMonthOfYear() != null) {
-      joiner.add(String.format("%smonthOfYear%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMonthOfYear()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smonthOfYear%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMonthOfYear()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `instance` to the URL query string
     if (getInstance() != null) {
-      joiner.add(String.format("%sinstance%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInstance()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinstance%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInstance()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

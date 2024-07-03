@@ -19,8 +19,8 @@ import io.aurinko.client.model.PreparedAuthToken;
 import io.aurinko.client.model.Scope;
 import io.aurinko.client.model.ServiceTypeDaemon;
 import io.aurinko.client.model.ServiceTypeNonDaemon;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for AuthApi
  */
-@Ignore
+@Disabled
 public class AuthApiTest {
 
     private final AuthApi api = new AuthApi();

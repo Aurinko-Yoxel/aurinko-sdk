@@ -32,11 +32,11 @@ public enum Scope {
   
   CALENDAR_READ("Calendar.Read"),
   
-  CALENDAR_READWRITE("Calendar.ReadWrite"),
+  CALENDAR_READ_WRITE("Calendar.ReadWrite"),
   
   MAIL_READ("Mail.Read"),
   
-  MAIL_READWRITE("Mail.ReadWrite"),
+  MAIL_READ_WRITE("Mail.ReadWrite"),
   
   MAIL_SEND("Mail.Send"),
   
@@ -46,11 +46,11 @@ public enum Scope {
   
   CONTACTS_READ("Contacts.Read"),
   
-  CONTACTS_READWRITE("Contacts.ReadWrite"),
+  CONTACTS_READ_WRITE("Contacts.ReadWrite"),
   
   TASKS_READ("Tasks.Read"),
   
-  TASKS_READWRITE("Tasks.ReadWrite"),
+  TASKS_READ_WRITE("Tasks.ReadWrite"),
   
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 

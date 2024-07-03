@@ -7,7 +7,7 @@
 
 * `GOOGLE` (value: `"Google"`)
 
-* `GOOGLEBOT` (value: `"GoogleBot"`)
+* `GOOGLE_BOT` (value: `"GoogleBot"`)
 
 * `OFFICE365` (value: `"Office365"`)
 
@@ -21,55 +21,55 @@
 
 * `REPFABRIC` (value: `"Repfabric"`)
 
-* `MSTEAMSBOT` (value: `"MsTeamsBot"`)
+* `MS_TEAMS_BOT` (value: `"MsTeamsBot"`)
 
 * `SLACK` (value: `"Slack"`)
 
-* `SLACKBOT` (value: `"SlackBot"`)
+* `SLACK_BOT` (value: `"SlackBot"`)
 
-* `SUGARCRM` (value: `"SugarCRM"`)
+* `SUGAR_CRM` (value: `"SugarCRM"`)
 
-* `HIGHLEVEL` (value: `"HighLevel"`)
+* `HIGH_LEVEL` (value: `"HighLevel"`)
 
 * `HUBSPOT` (value: `"Hubspot"`)
 
 * `ZOOM` (value: `"Zoom"`)
 
-* `ZOOMBOT` (value: `"ZoomBot"`)
+* `ZOOM_BOT` (value: `"ZoomBot"`)
 
 * `WEBEX` (value: `"Webex"`)
 
-* `WEBEXBOT` (value: `"WebexBot"`)
+* `WEBEX_BOT` (value: `"WebexBot"`)
 
 * `PIPEDRIVE` (value: `"Pipedrive"`)
 
-* `ECLIPSEERP` (value: `"EclipseERP"`)
+* `ECLIPSE_ERP` (value: `"EclipseERP"`)
 
-* `AUTOQUOTES` (value: `"AutoQuotes"`)
+* `AUTO_QUOTES` (value: `"AutoQuotes"`)
 
 * `TEAMWORK` (value: `"Teamwork"`)
 
-* `NETSUITE` (value: `"NetSuite"`)
+* `NET_SUITE` (value: `"NetSuite"`)
 
-* `MCTRADE` (value: `"MCTrade"`)
+* `MC_TRADE` (value: `"MCTrade"`)
 
-* `SPECPATH` (value: `"SpecPath"`)
+* `SPEC_PATH` (value: `"SpecPath"`)
 
 * `ZOHO` (value: `"Zoho"`)
 
 * `CLIENTIFY` (value: `"Clientify"`)
 
-* `QUICKBOOKS` (value: `"QuickBooks"`)
+* `QUICK_BOOKS` (value: `"QuickBooks"`)
 
-* `ACTIVECAMPAIGN` (value: `"ActiveCampaign"`)
+* `ACTIVE_CAMPAIGN` (value: `"ActiveCampaign"`)
 
 * `CREATIO` (value: `"Creatio"`)
 
-* `CONSTANTCONTACT` (value: `"ConstantContact"`)
+* `CONSTANT_CONTACT` (value: `"ConstantContact"`)
 
 * `FISHBOWL` (value: `"Fishbowl"`)
 
-* `ICLOUD` (value: `"iCloud"`)
+* `I_CLOUD` (value: `"iCloud"`)
 
 * `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
 

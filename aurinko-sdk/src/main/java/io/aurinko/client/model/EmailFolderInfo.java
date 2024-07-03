@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EmailFolderInfo
  */
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailFolderInfo.JSON_PROPERTY_IS_LABEL,
   EmailFolderInfo.JSON_PROPERTY_PARENT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EmailFolderInfo {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -80,14 +81,13 @@ public class EmailFolderInfo {
     this.parentId = parentId;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -95,14 +95,13 @@ public class EmailFolderInfo {
 
 
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -110,14 +109,13 @@ public class EmailFolderInfo {
 
 
 
-   /**
+  /**
    * Get fullName
    * @return fullName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFullName() {
     return fullName;
   }
@@ -125,14 +123,13 @@ public class EmailFolderInfo {
 
 
 
-   /**
+  /**
    * Get isFolder
    * @return isFolder
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IS_FOLDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getIsFolder() {
     return isFolder;
   }
@@ -140,14 +137,13 @@ public class EmailFolderInfo {
 
 
 
-   /**
+  /**
    * Get isLabel
    * @return isLabel
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IS_LABEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getIsLabel() {
     return isLabel;
   }
@@ -155,14 +151,13 @@ public class EmailFolderInfo {
 
 
 
-   /**
+  /**
    * Get parentId
    * @return parentId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getParentId() {
     return parentId;
   }
@@ -254,32 +249,32 @@ public class EmailFolderInfo {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `isFolder` to the URL query string
     if (getIsFolder() != null) {
-      joiner.add(String.format("%sisFolder%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsFolder()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sisFolder%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIsFolder()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `isLabel` to the URL query string
     if (getIsLabel() != null) {
-      joiner.add(String.format("%sisLabel%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsLabel()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sisLabel%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIsLabel()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `parentId` to the URL query string
     if (getParentId() != null) {
-      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

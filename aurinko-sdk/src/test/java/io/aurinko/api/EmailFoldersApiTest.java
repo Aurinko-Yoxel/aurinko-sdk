@@ -18,8 +18,8 @@ import io.aurinko.client.model.BodyType;
 import io.aurinko.client.model.EmailFolderInfo;
 import io.aurinko.client.model.EmailFolderInfoPage;
 import io.aurinko.client.model.EmailMessagesPageNext;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for EmailFoldersApi
  */
-@Ignore
+@Disabled
 public class EmailFoldersApiTest {
 
     private final EmailFoldersApi api = new EmailFoldersApi();

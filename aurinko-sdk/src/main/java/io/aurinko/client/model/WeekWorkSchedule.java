@@ -31,6 +31,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * WeekWorkSchedule
  */
@@ -38,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   WeekWorkSchedule.JSON_PROPERTY_DAY_SCHEDULES,
   WeekWorkSchedule.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class WeekWorkSchedule {
   public static final String JSON_PROPERTY_DAY_SCHEDULES = "daySchedules";
   private List<DayWorkSchedule> daySchedules = new ArrayList<>();
@@ -62,14 +63,13 @@ public class WeekWorkSchedule {
     return this;
   }
 
-   /**
+  /**
    * Get daySchedules
    * @return daySchedules
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DAY_SCHEDULES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<DayWorkSchedule> getDaySchedules() {
     return daySchedules;
   }
@@ -87,14 +87,13 @@ public class WeekWorkSchedule {
     return this;
   }
 
-   /**
+  /**
    * Get timezone
    * @return timezone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTimezone() {
     return timezone;
   }
@@ -193,7 +192,7 @@ public class WeekWorkSchedule {
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

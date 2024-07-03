@@ -7,15 +7,15 @@
 
 * `EMAIL` (value: `"email"`)
 
-* `ORGID` (value: `"orgId"`)
+* `ORG_ID` (value: `"orgId"`)
 
-* `USERID` (value: `"userId"`)
+* `USER_ID` (value: `"userId"`)
 
-* `SERVERURL` (value: `"serverUrl"`)
+* `SERVER_URL` (value: `"serverUrl"`)
 
 * `USERNAME` (value: `"username"`)
 
-* `CLIENTORGID` (value: `"clientOrgId"`)
+* `CLIENT_ORG_ID` (value: `"clientOrgId"`)
 
 * `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
 

@@ -23,8 +23,8 @@ import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.OutgoingEmail;
 import io.aurinko.client.model.OutgoingEmailReply;
 import io.aurinko.client.model.UpdateMessageStatusData;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for MessagesApi
  */
-@Ignore
+@Disabled
 public class MessagesApiTest {
 
     private final MessagesApi api = new MessagesApi();

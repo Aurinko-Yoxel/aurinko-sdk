@@ -34,6 +34,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * Task
  */
@@ -55,7 +56,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Task.JSON_PROPERTY_OWNER,
   Task.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Task {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -156,14 +157,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -181,14 +181,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get etag
    * @return etag
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ETAG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEtag() {
     return etag;
   }
@@ -206,14 +205,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get title
    * @return title
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTitle() {
     return title;
   }
@@ -231,14 +229,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get lastModifiedTime
    * @return lastModifiedTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getLastModifiedTime() {
     return lastModifiedTime;
   }
@@ -256,14 +253,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get parentId
    * @return parentId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getParentId() {
     return parentId;
   }
@@ -281,14 +277,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get position
    * @return position
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPosition() {
     return position;
   }
@@ -306,14 +301,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get notes
    * @return notes
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNotes() {
     return notes;
   }
@@ -331,14 +325,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public TaskStatus getStatus() {
     return status;
   }
@@ -356,14 +349,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get importance
    * @return importance
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IMPORTANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public TaskImportance getImportance() {
     return importance;
   }
@@ -381,14 +373,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get due
    * @return due
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getDue() {
     return due;
   }
@@ -406,14 +397,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get completed
    * @return completed
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COMPLETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCompleted() {
     return completed;
   }
@@ -439,14 +429,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LINKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<TaskLink> getLinks() {
     return links;
   }
@@ -464,14 +453,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get startDateTime
    * @return startDateTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getStartDateTime() {
     return startDateTime;
   }
@@ -497,14 +485,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get categories
    * @return categories
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getCategories() {
     return categories;
   }
@@ -522,14 +509,13 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Get owner
    * @return owner
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getOwner() {
     return owner;
   }
@@ -542,14 +528,13 @@ public class Task {
   }
 
 
-   /**
+  /**
    * Get omitted
    * @return omitted
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OMITTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<OmittedEnum> getOmitted() {
     return omitted;
   }
@@ -661,57 +646,57 @@ public class Task {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
-      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `parentId` to the URL query string
     if (getParentId() != null) {
-      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `position` to the URL query string
     if (getPosition() != null) {
-      joiner.add(String.format("%sposition%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPosition()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sposition%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPosition()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `notes` to the URL query string
     if (getNotes() != null) {
-      joiner.add(String.format("%snotes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNotes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `importance` to the URL query string
     if (getImportance() != null) {
-      joiner.add(String.format("%simportance%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getImportance()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%simportance%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getImportance()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `due` to the URL query string
     if (getDue() != null) {
-      joiner.add(String.format("%sdue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDue()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdue%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDue()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `completed` to the URL query string
     if (getCompleted() != null) {
-      joiner.add(String.format("%scompleted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCompleted()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scompleted%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCompleted()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `links` to the URL query string
@@ -726,7 +711,7 @@ public class Task {
 
     // add `startDateTime` to the URL query string
     if (getStartDateTime() != null) {
-      joiner.add(String.format("%sstartDateTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartDateTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartDateTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartDateTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `categories` to the URL query string
@@ -734,13 +719,13 @@ public class Task {
       for (int i = 0; i < getCategories().size(); i++) {
         joiner.add(String.format("%scategories%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getCategories().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getCategories().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `owner` to the URL query string
     if (getOwner() != null) {
-      joiner.add(String.format("%sowner%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOwner()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sowner%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOwner()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `omitted` to the URL query string
@@ -748,7 +733,7 @@ public class Task {
       for (int i = 0; i < getOmitted().size(); i++) {
         joiner.add(String.format("%somitted%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

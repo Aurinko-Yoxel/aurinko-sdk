@@ -41,6 +41,7 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * Contact
  */
@@ -65,7 +66,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Contact.JSON_PROPERTY_HAS_PHOTO,
   Contact.JSON_PROPERTY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Contact {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -143,14 +144,13 @@ public class Contact {
     this.hasPhoto = hasPhoto;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -158,14 +158,13 @@ public class Contact {
 
 
 
-   /**
+  /**
    * Get etag
    * @return etag
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ETAG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEtag() {
     return etag;
   }
@@ -173,14 +172,13 @@ public class Contact {
 
 
 
-   /**
+  /**
    * Get createdTime
    * @return createdTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedTime() {
     return createdTime;
   }
@@ -188,14 +186,13 @@ public class Contact {
 
 
 
-   /**
+  /**
    * Get lastModifiedTime
    * @return lastModifiedTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getLastModifiedTime() {
     return lastModifiedTime;
   }
@@ -208,14 +205,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ContactName getName() {
     return name;
   }
@@ -233,14 +229,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get nickName
    * @return nickName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NICK_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNickName() {
     return nickName;
   }
@@ -258,14 +253,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get fileAs
    * @return fileAs
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FILE_AS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFileAs() {
     return fileAs;
   }
@@ -283,14 +277,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get company
    * @return company
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COMPANY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ContactCompany getCompany() {
     return company;
   }
@@ -316,14 +309,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get relations
    * @return relations
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RELATIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<ContactRelation> getRelations() {
     return relations;
   }
@@ -341,14 +333,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get birthday
    * @return birthday
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BIRTHDAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getBirthday() {
     return birthday;
   }
@@ -374,14 +365,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get keywords
    * @return keywords
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getKeywords() {
     return keywords;
   }
@@ -399,14 +389,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get notes
    * @return notes
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNotes() {
     return notes;
   }
@@ -432,14 +421,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get emailAddresses
    * @return emailAddresses
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL_ADDRESSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<ContactEmailAddress> getEmailAddresses() {
     return emailAddresses;
   }
@@ -465,14 +453,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get phoneNumbers
    * @return phoneNumbers
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE_NUMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<ContactPhoneNumber> getPhoneNumbers() {
     return phoneNumbers;
   }
@@ -498,14 +485,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get addresses
    * @return addresses
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ADDRESSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<ContactPostalAddress> getAddresses() {
     return addresses;
   }
@@ -531,14 +517,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get urls
    * @return urls
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_URLS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<ContactUrl> getUrls() {
     return urls;
   }
@@ -564,14 +549,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get nativeProperties
    * @return nativeProperties
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NATIVE_PROPERTIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Map<String, String> getNativeProperties() {
     return nativeProperties;
   }
@@ -584,14 +568,13 @@ public class Contact {
   }
 
 
-   /**
+  /**
    * Get hasPhoto
    * @return hasPhoto
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_HAS_PHOTO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getHasPhoto() {
     return hasPhoto;
   }
@@ -604,14 +587,13 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * Get photo
    * @return photo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHOTO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ContactPhoto getPhoto() {
     return photo;
   }
@@ -734,22 +716,22 @@ public class Contact {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `createdTime` to the URL query string
     if (getCreatedTime() != null) {
-      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `name` to the URL query string
@@ -759,12 +741,12 @@ public class Contact {
 
     // add `nickName` to the URL query string
     if (getNickName() != null) {
-      joiner.add(String.format("%snickName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNickName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snickName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNickName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `fileAs` to the URL query string
     if (getFileAs() != null) {
-      joiner.add(String.format("%sfileAs%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFileAs()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfileAs%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFileAs()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `company` to the URL query string
@@ -784,7 +766,7 @@ public class Contact {
 
     // add `birthday` to the URL query string
     if (getBirthday() != null) {
-      joiner.add(String.format("%sbirthday%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBirthday()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbirthday%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBirthday()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `keywords` to the URL query string
@@ -792,13 +774,13 @@ public class Contact {
       for (int i = 0; i < getKeywords().size(); i++) {
         joiner.add(String.format("%skeywords%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `notes` to the URL query string
     if (getNotes() != null) {
-      joiner.add(String.format("%snotes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNotes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `emailAddresses` to the URL query string
@@ -846,13 +828,13 @@ public class Contact {
       for (String _key : getNativeProperties().keySet()) {
         joiner.add(String.format("%snativeProperties%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getNativeProperties().get(_key), URLEncoder.encode(String.valueOf(getNativeProperties().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getNativeProperties().get(_key), URLEncoder.encode(ApiClient.valueToString(getNativeProperties().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `hasPhoto` to the URL query string
     if (getHasPhoto() != null) {
-      joiner.add(String.format("%shasPhoto%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHasPhoto()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shasPhoto%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHasPhoto()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `photo` to the URL query string

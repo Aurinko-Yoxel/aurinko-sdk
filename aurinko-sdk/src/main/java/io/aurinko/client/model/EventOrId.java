@@ -30,6 +30,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EventOrId
  */
@@ -42,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EventOrId.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   EventOrId.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EventOrId {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -82,14 +83,13 @@ public class EventOrId {
     this.globalId = globalId;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -97,14 +97,13 @@ public class EventOrId {
 
 
 
-   /**
+  /**
    * Get etag
    * @return etag
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ETAG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEtag() {
     return etag;
   }
@@ -112,14 +111,13 @@ public class EventOrId {
 
 
 
-   /**
+  /**
    * Get iCalUId
    * @return iCalUId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_I_CAL_U_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getiCalUId() {
     return iCalUId;
   }
@@ -127,14 +125,13 @@ public class EventOrId {
 
 
 
-   /**
+  /**
    * Get globalId
    * @return globalId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_GLOBAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getGlobalId() {
     return globalId;
   }
@@ -147,14 +144,13 @@ public class EventOrId {
     return this;
   }
 
-   /**
+  /**
    * Get record
    * @return record
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECORD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Event getRecord() {
     return record;
   }
@@ -172,14 +168,13 @@ public class EventOrId {
     return this;
   }
 
-   /**
+  /**
    * Value of provider, for example hangoutsMeet, teamsForBusiness, skypeForBusiness, skypeForConsumer
    * @return onlineMeetingProvider
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getOnlineMeetingProvider() {
     return onlineMeetingProvider;
   }
@@ -197,14 +192,13 @@ public class EventOrId {
     return this;
   }
 
-   /**
+  /**
    * Get onlineMeetingDetails
    * @return onlineMeetingDetails
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_DETAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OnlineMeetingDetails getOnlineMeetingDetails() {
     return onlineMeetingDetails;
   }
@@ -303,22 +297,22 @@ public class EventOrId {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `iCalUId` to the URL query string
     if (getiCalUId() != null) {
-      joiner.add(String.format("%siCalUId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getiCalUId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%siCalUId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getiCalUId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `globalId` to the URL query string
     if (getGlobalId() != null) {
-      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `record` to the URL query string
@@ -328,7 +322,7 @@ public class EventOrId {
 
     // add `onlineMeetingProvider` to the URL query string
     if (getOnlineMeetingProvider() != null) {
-      joiner.add(String.format("%sonlineMeetingProvider%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOnlineMeetingProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sonlineMeetingProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOnlineMeetingProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `onlineMeetingDetails` to the URL query string

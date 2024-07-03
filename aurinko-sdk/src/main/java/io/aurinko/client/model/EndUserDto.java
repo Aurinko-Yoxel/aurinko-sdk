@@ -33,6 +33,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EndUserDto
  */
@@ -48,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EndUserDto.JSON_PROPERTY_EXTERNAL_ID_TYPE,
   EndUserDto.JSON_PROPERTY_ACCOUNTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EndUserDto {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -88,14 +89,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -113,14 +113,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get appId
    * @return appId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_APP_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Long getAppId() {
     return appId;
   }
@@ -138,14 +137,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEmail() {
     return email;
   }
@@ -163,14 +161,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -188,14 +185,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get authOrgId
    * @return authOrgId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTH_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAuthOrgId() {
     return authOrgId;
   }
@@ -213,14 +209,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -238,14 +233,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get lastActivity
    * @return lastActivity
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_ACTIVITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getLastActivity() {
     return lastActivity;
   }
@@ -263,14 +257,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get trustedIdentity
    * @return trustedIdentity
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRUSTED_IDENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getTrustedIdentity() {
     return trustedIdentity;
   }
@@ -288,14 +281,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get externalIdType
    * @return externalIdType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXTERNAL_ID_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EndUserExtIdType getExternalIdType() {
     return externalIdType;
   }
@@ -321,14 +313,13 @@ public class EndUserDto {
     return this;
   }
 
-   /**
+  /**
    * Get accounts
    * @return accounts
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EndUserAccountDto> getAccounts() {
     return accounts;
   }
@@ -433,47 +424,47 @@ public class EndUserDto {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `appId` to the URL query string
     if (getAppId() != null) {
-      joiner.add(String.format("%sappId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAppId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sappId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAppId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `authOrgId` to the URL query string
     if (getAuthOrgId() != null) {
-      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAuthOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `createdAt` to the URL query string
     if (getCreatedAt() != null) {
-      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreatedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `lastActivity` to the URL query string
     if (getLastActivity() != null) {
-      joiner.add(String.format("%slastActivity%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastActivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastActivity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastActivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `trustedIdentity` to the URL query string
     if (getTrustedIdentity() != null) {
-      joiner.add(String.format("%strustedIdentity%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrustedIdentity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strustedIdentity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrustedIdentity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `externalIdType` to the URL query string
     if (getExternalIdType() != null) {
-      joiner.add(String.format("%sexternalIdType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getExternalIdType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sexternalIdType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExternalIdType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `accounts` to the URL query string

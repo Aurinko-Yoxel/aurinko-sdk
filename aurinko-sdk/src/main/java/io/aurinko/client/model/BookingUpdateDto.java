@@ -30,6 +30,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * BookingUpdateDto
  */
@@ -48,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingUpdateDto.JSON_PROPERTY_START_CONFERENCE,
   BookingUpdateDto.JSON_PROPERTY_OPEN_MEETING_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingUpdateDto {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -97,14 +98,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Profile name used in calendar links to identify a profile.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -122,14 +122,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Duration of the meeting in minutes.
    * @return durationMinutes
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DURATION_MINUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getDurationMinutes() {
     return durationMinutes;
   }
@@ -147,14 +146,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30, 60.
    * @return availabilityStep
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getAvailabilityStep() {
     return availabilityStep;
   }
@@ -172,14 +170,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * The beginning of the formation of intervals. Must be in the future, otherwise the current time will be used.
    * @return startTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_START_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getStartTime() {
     return startTime;
   }
@@ -197,14 +194,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * The ending of the formation of intervals. If the time specified here is in the past, the intervals will be empty, regardless of the Start time parameter.
    * @return endTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_END_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getEndTime() {
     return endTime;
   }
@@ -222,14 +218,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Time period (in ISO-8601 format) the profile is covering. For example, P3M (3 months), P4W (4 weeks), P5D (5 days).
    * @return timeAvailableFor
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIME_AVAILABLE_FOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTimeAvailableFor() {
     return timeAvailableFor;
   }
@@ -247,14 +242,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Subject for events booked using this profile.
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSubject() {
     return subject;
   }
@@ -272,14 +266,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Description for events booked using this profile.
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDescription() {
     return description;
   }
@@ -297,14 +290,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Location for events booked using this profile.
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLocation() {
     return location;
   }
@@ -322,14 +314,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Get workHours
    * @return workHours
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public WeekWorkSchedule getWorkHours() {
     return workHours;
   }
@@ -347,14 +338,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Custom client data stored for the profile.
    * @return context
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getContext() {
     return context;
   }
@@ -372,14 +362,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * Whether to create an online conference (hangoutsMeet, teamsForBusiness, etc.) for the event. Note, not all providers support creating conferences.
    * @return startConference
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_START_CONFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getStartConference() {
     return startConference;
   }
@@ -397,14 +386,13 @@ public class BookingUpdateDto {
     return this;
   }
 
-   /**
+  /**
    * The value of the {{openMeetingUrl}} variable that can be used in the event description or subject.
    * @return openMeetingUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OPEN_MEETING_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getOpenMeetingUrl() {
     return openMeetingUrl;
   }
@@ -515,47 +503,47 @@ public class BookingUpdateDto {
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
-      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `availabilityStep` to the URL query string
     if (getAvailabilityStep() != null) {
-      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `startTime` to the URL query string
     if (getStartTime() != null) {
-      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `endTime` to the URL query string
     if (getEndTime() != null) {
-      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEndTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEndTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `timeAvailableFor` to the URL query string
     if (getTimeAvailableFor() != null) {
-      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimeAvailableFor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeAvailableFor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `location` to the URL query string
     if (getLocation() != null) {
-      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `workHours` to the URL query string
@@ -565,17 +553,17 @@ public class BookingUpdateDto {
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `startConference` to the URL query string
     if (getStartConference() != null) {
-      joiner.add(String.format("%sstartConference%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartConference()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartConference%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartConference()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `openMeetingUrl` to the URL query string
     if (getOpenMeetingUrl() != null) {
-      joiner.add(String.format("%sopenMeetingUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOpenMeetingUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sopenMeetingUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOpenMeetingUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

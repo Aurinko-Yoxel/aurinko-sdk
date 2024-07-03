@@ -21,8 +21,8 @@ import io.aurinko.client.model.GroupBookingInDto;
 import io.aurinko.client.model.GroupBookingOutDto;
 import io.aurinko.client.model.GroupBookingPage;
 import io.aurinko.client.model.GroupBookingUpdateDto;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +35,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for GroupBookingApi
  */
-@Ignore
+@Disabled
 public class GroupBookingApiTest {
 
     private final GroupBookingApi api = new GroupBookingApi();

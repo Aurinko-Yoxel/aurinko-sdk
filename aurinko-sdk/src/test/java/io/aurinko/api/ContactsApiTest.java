@@ -17,8 +17,8 @@ import io.aurinko.client.ApiException;
 import io.aurinko.client.model.BodyType;
 import io.aurinko.client.model.Contact;
 import io.aurinko.client.model.ContactOrId;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for ContactsApi
  */
-@Ignore
+@Disabled
 public class ContactsApiTest {
 
     private final ContactsApi api = new ContactsApi();

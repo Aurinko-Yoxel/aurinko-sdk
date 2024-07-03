@@ -30,13 +30,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum TaskStatus {
   
-  NOTSTARTED("notStarted"),
+  NOT_STARTED("notStarted"),
   
-  INPROGRESS("inProgress"),
+  IN_PROGRESS("inProgress"),
   
   COMPLETED("completed"),
   
-  WAITINGONOTHERS("waitingOnOthers"),
+  WAITING_ON_OTHERS("waitingOnOthers"),
   
   DEFERRED("deferred"),
   

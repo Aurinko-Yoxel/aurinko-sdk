@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * OutgoingEmailAttachment
  */
@@ -38,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OutgoingEmailAttachment.JSON_PROPERTY_CONTENT_ID,
   OutgoingEmailAttachment.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class OutgoingEmailAttachment {
   public static final String JSON_PROPERTY_INLINE = "inline";
   private Boolean inline;
@@ -63,14 +64,13 @@ public class OutgoingEmailAttachment {
     return this;
   }
 
-   /**
+  /**
    * Get inline
    * @return inline
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INLINE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getInline() {
     return inline;
   }
@@ -88,14 +88,13 @@ public class OutgoingEmailAttachment {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -113,14 +112,13 @@ public class OutgoingEmailAttachment {
     return this;
   }
 
-   /**
+  /**
    * Get mimeType
    * @return mimeType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MIME_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMimeType() {
     return mimeType;
   }
@@ -138,14 +136,13 @@ public class OutgoingEmailAttachment {
     return this;
   }
 
-   /**
+  /**
    * Get contentId
    * @return contentId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getContentId() {
     return contentId;
   }
@@ -163,14 +160,13 @@ public class OutgoingEmailAttachment {
     return this;
   }
 
-   /**
+  /**
    * Get content
    * @return content
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getContent() {
     return content;
   }
@@ -265,27 +261,27 @@ public class OutgoingEmailAttachment {
 
     // add `inline` to the URL query string
     if (getInline() != null) {
-      joiner.add(String.format("%sinline%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInline()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinline%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInline()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `mimeType` to the URL query string
     if (getMimeType() != null) {
-      joiner.add(String.format("%smimeType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMimeType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smimeType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMimeType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `contentId` to the URL query string
     if (getContentId() != null) {
-      joiner.add(String.format("%scontentId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `content` to the URL query string
     if (getContent() != null) {
-      joiner.add(String.format("%scontent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

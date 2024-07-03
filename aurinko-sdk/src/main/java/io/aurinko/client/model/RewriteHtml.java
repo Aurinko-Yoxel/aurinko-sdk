@@ -29,6 +29,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * RewriteHtml
  */
@@ -36,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RewriteHtml.JSON_PROPERTY_HTML_TEXT,
   RewriteHtml.JSON_PROPERTY_TRACKING
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class RewriteHtml {
   public static final String JSON_PROPERTY_HTML_TEXT = "htmlText";
   private String htmlText;
@@ -52,14 +53,13 @@ public class RewriteHtml {
     return this;
   }
 
-   /**
+  /**
    * Get htmlText
    * @return htmlText
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_HTML_TEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getHtmlText() {
     return htmlText;
   }
@@ -77,14 +77,13 @@ public class RewriteHtml {
     return this;
   }
 
-   /**
+  /**
    * Get tracking
    * @return tracking
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OutEmailTrack getTracking() {
     return tracking;
   }
@@ -173,7 +172,7 @@ public class RewriteHtml {
 
     // add `htmlText` to the URL query string
     if (getHtmlText() != null) {
-      joiner.add(String.format("%shtmlText%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHtmlText()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shtmlText%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHtmlText()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `tracking` to the URL query string

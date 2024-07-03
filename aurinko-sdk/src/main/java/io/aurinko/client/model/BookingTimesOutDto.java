@@ -33,6 +33,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * BookingTimesOutDto
  */
@@ -52,7 +53,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingTimesOutDto.JSON_PROPERTY_TOTAL_SIZE,
   BookingTimesOutDto.JSON_PROPERTY_DONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ITEMS = "items";
   private List<BookingMeetingTime> items = new ArrayList<>();
@@ -112,14 +113,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * List of available meeting slots.
    * @return items
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<BookingMeetingTime> getItems() {
     return items;
   }
@@ -137,14 +137,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Start time of available meeting slots.
    * @return startTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_START_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getStartTime() {
     return startTime;
   }
@@ -162,14 +161,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * End time of available meeting slots.
    * @return endTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_END_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getEndTime() {
     return endTime;
   }
@@ -187,14 +185,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Time period (in ISO-8601 format) the profile is covering. For example, P3M (3 months), P4W (4 weeks), P5D (5 days).
    * @return timeAvailableFor
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIME_AVAILABLE_FOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTimeAvailableFor() {
     return timeAvailableFor;
   }
@@ -212,14 +209,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Length of meeting in minutes
    * @return durationMinutes
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DURATION_MINUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getDurationMinutes() {
     return durationMinutes;
   }
@@ -237,14 +233,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30, 60.
    * @return availabilityStep
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getAvailabilityStep() {
     return availabilityStep;
   }
@@ -262,14 +257,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Subject for events booked using this profile.
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSubject() {
     return subject;
   }
@@ -287,14 +281,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Primary Color, taken from the application settings.
    * @return primaryColor
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRIMARY_COLOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPrimaryColor() {
     return primaryColor;
   }
@@ -312,14 +305,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * The second Color, taken from the application settings.
    * @return secondaryColor
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SECONDARY_COLOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSecondaryColor() {
     return secondaryColor;
   }
@@ -345,14 +337,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * List of substitution variables like {{name}}, {{openMeetingUrl}},...
    * @return additionalFields
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ADDITIONAL_FIELDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<AdditionalField> getAdditionalFields() {
     return additionalFields;
   }
@@ -370,14 +361,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Next request limit
    * @return limit
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getLimit() {
     return limit;
   }
@@ -395,14 +385,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Next request offset
    * @return offset
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getOffset() {
     return offset;
   }
@@ -420,14 +409,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Count of related provider&#39;s sources
    * @return totalSize
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getTotalSize() {
     return totalSize;
   }
@@ -445,14 +433,13 @@ public class BookingTimesOutDto {
     return this;
   }
 
-   /**
+  /**
    * Is all related provider&#39;s sources requested
    * @return done
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getDone() {
     return done;
   }
@@ -575,42 +562,42 @@ public class BookingTimesOutDto {
 
     // add `startTime` to the URL query string
     if (getStartTime() != null) {
-      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `endTime` to the URL query string
     if (getEndTime() != null) {
-      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEndTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEndTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `timeAvailableFor` to the URL query string
     if (getTimeAvailableFor() != null) {
-      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimeAvailableFor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeAvailableFor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
-      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `availabilityStep` to the URL query string
     if (getAvailabilityStep() != null) {
-      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `primaryColor` to the URL query string
     if (getPrimaryColor() != null) {
-      joiner.add(String.format("%sprimaryColor%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPrimaryColor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprimaryColor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPrimaryColor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `secondaryColor` to the URL query string
     if (getSecondaryColor() != null) {
-      joiner.add(String.format("%ssecondaryColor%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSecondaryColor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssecondaryColor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSecondaryColor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `additionalFields` to the URL query string
@@ -625,22 +612,22 @@ public class BookingTimesOutDto {
 
     // add `limit` to the URL query string
     if (getLimit() != null) {
-      joiner.add(String.format("%slimit%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLimit()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slimit%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLimit()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `offset` to the URL query string
     if (getOffset() != null) {
-      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `totalSize` to the URL query string
     if (getTotalSize() != null) {
-      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `done` to the URL query string
     if (getDone() != null) {
-      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

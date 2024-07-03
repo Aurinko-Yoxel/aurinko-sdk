@@ -31,6 +31,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * FreeBusyRequest
  */
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FreeBusyRequest.JSON_PROPERTY_TIME_MAX,
   FreeBusyRequest.JSON_PROPERTY_EMAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class FreeBusyRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   private OffsetDateTime timeMin;
@@ -58,14 +59,13 @@ public class FreeBusyRequest {
     return this;
   }
 
-   /**
+  /**
    * Get timeMin
    * @return timeMin
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIME_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getTimeMin() {
     return timeMin;
   }
@@ -83,14 +83,13 @@ public class FreeBusyRequest {
     return this;
   }
 
-   /**
+  /**
    * Get timeMax
    * @return timeMax
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIME_MAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getTimeMax() {
     return timeMax;
   }
@@ -116,14 +115,13 @@ public class FreeBusyRequest {
     return this;
   }
 
-   /**
+  /**
    * Get emails
    * @return emails
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getEmails() {
     return emails;
   }
@@ -214,12 +212,12 @@ public class FreeBusyRequest {
 
     // add `timeMin` to the URL query string
     if (getTimeMin() != null) {
-      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimeMin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `timeMax` to the URL query string
     if (getTimeMax() != null) {
-      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimeMax()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMax()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `emails` to the URL query string
@@ -227,7 +225,7 @@ public class FreeBusyRequest {
       for (int i = 0; i < getEmails().size(); i++) {
         joiner.add(String.format("%semails%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getEmails().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getEmails().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

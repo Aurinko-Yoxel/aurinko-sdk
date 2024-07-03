@@ -32,6 +32,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * SuggestMeetingTimesResponse
  */
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SuggestMeetingTimesResponse.JSON_PROPERTY_ITEMS,
   SuggestMeetingTimesResponse.JSON_PROPERTY_ATTENDEES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class SuggestMeetingTimesResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
   private List<TimeInterval> items = new ArrayList<>();
@@ -63,14 +64,13 @@ public class SuggestMeetingTimesResponse {
     return this;
   }
 
-   /**
+  /**
    * Get items
    * @return items
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<TimeInterval> getItems() {
     return items;
   }
@@ -96,14 +96,13 @@ public class SuggestMeetingTimesResponse {
     return this;
   }
 
-   /**
+  /**
    * Get attendees
    * @return attendees
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ATTENDEES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<MeetingAttendee> getAttendees() {
     return attendees;
   }

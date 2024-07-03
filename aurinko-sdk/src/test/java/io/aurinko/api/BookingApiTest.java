@@ -20,8 +20,8 @@ import io.aurinko.client.model.BookingPage;
 import io.aurinko.client.model.BookingSuccessOutDto;
 import io.aurinko.client.model.BookingUpdateDto;
 import io.aurinko.client.model.WeekWorkSchedule;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +34,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for BookingApi
  */
-@Ignore
+@Disabled
 public class BookingApiTest {
 
     private final BookingApi api = new BookingApi();

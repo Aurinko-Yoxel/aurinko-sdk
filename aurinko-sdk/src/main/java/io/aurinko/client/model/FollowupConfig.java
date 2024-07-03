@@ -30,6 +30,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * FollowupConfig
  */
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FollowupConfig.JSON_PROPERTY_TIMEZONE,
   FollowupConfig.JSON_PROPERTY_EMAIL_ALIASES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class FollowupConfig {
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
@@ -53,14 +54,13 @@ public class FollowupConfig {
     return this;
   }
 
-   /**
+  /**
    * Get timezone
    * @return timezone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTimezone() {
     return timezone;
   }
@@ -86,14 +86,13 @@ public class FollowupConfig {
     return this;
   }
 
-   /**
+  /**
    * Get emailAliases
    * @return emailAliases
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL_ALIASES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getEmailAliases() {
     return emailAliases;
   }
@@ -182,7 +181,7 @@ public class FollowupConfig {
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `emailAliases` to the URL query string
@@ -190,7 +189,7 @@ public class FollowupConfig {
       for (int i = 0; i < getEmailAliases().size(); i++) {
         joiner.add(String.format("%semailAliases%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getEmailAliases().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getEmailAliases().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

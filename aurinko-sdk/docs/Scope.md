@@ -7,11 +7,11 @@
 
 * `CALENDAR_READ` (value: `"Calendar.Read"`)
 
-* `CALENDAR_READWRITE` (value: `"Calendar.ReadWrite"`)
+* `CALENDAR_READ_WRITE` (value: `"Calendar.ReadWrite"`)
 
 * `MAIL_READ` (value: `"Mail.Read"`)
 
-* `MAIL_READWRITE` (value: `"Mail.ReadWrite"`)
+* `MAIL_READ_WRITE` (value: `"Mail.ReadWrite"`)
 
 * `MAIL_SEND` (value: `"Mail.Send"`)
 
@@ -21,11 +21,11 @@
 
 * `CONTACTS_READ` (value: `"Contacts.Read"`)
 
-* `CONTACTS_READWRITE` (value: `"Contacts.ReadWrite"`)
+* `CONTACTS_READ_WRITE` (value: `"Contacts.ReadWrite"`)
 
 * `TASKS_READ` (value: `"Tasks.Read"`)
 
-* `TASKS_READWRITE` (value: `"Tasks.ReadWrite"`)
+* `TASKS_READ_WRITE` (value: `"Tasks.ReadWrite"`)
 
 * `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
 

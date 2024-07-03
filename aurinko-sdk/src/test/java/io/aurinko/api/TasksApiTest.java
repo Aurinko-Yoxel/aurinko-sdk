@@ -21,8 +21,8 @@ import io.aurinko.client.model.TaskCreateResponse;
 import io.aurinko.client.model.TaskUpdate;
 import io.aurinko.client.model.TaskUpdateResponse;
 import io.aurinko.client.model.TasksPage;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +35,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for TasksApi
  */
-@Ignore
+@Disabled
 public class TasksApiTest {
 
     private final TasksApi api = new TasksApi();

@@ -21,9 +21,9 @@
 
 | Name | Value |
 |---- | -----|
-| INVITEOTHERS | &quot;inviteOthers&quot; |
+| INVITE_OTHERS | &quot;inviteOthers&quot; |
 | MODIFY | &quot;modify&quot; |
-| SEEOTHERS | &quot;seeOthers&quot; |
+| SEE_OTHERS | &quot;seeOthers&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

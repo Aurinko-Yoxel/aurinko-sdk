@@ -37,6 +37,7 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EmailMessage
  */
@@ -71,7 +72,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailMessage.JSON_PROPERTY_FOLDER_ID,
   EmailMessage.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EmailMessage {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -296,7 +297,7 @@ public class EmailMessage {
    * Gets or Sets omitted
    */
   public enum OmittedEnum {
-    THREADID("threadId"),
+    THREAD_ID("threadId"),
     
     BODY("body"),
     
@@ -304,7 +305,7 @@ public class EmailMessage {
     
     RECIPIENTS("recipients"),
     
-    INTERNETHEADERS("internetHeaders"),
+    INTERNET_HEADERS("internetHeaders"),
     
     UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
@@ -383,14 +384,13 @@ public class EmailMessage {
     this.omitted = omitted;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -398,14 +398,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get threadId
    * @return threadId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getThreadId() {
     return threadId;
   }
@@ -413,14 +412,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get createdTime
    * @return createdTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedTime() {
     return createdTime;
   }
@@ -428,14 +426,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get lastModifiedTime
    * @return lastModifiedTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getLastModifiedTime() {
     return lastModifiedTime;
   }
@@ -443,14 +440,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get sentAt
    * @return sentAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SENT_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getSentAt() {
     return sentAt;
   }
@@ -458,14 +454,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get receivedAt
    * @return receivedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getReceivedAt() {
     return receivedAt;
   }
@@ -473,14 +468,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get internetMessageId
    * @return internetMessageId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INTERNET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getInternetMessageId() {
     return internetMessageId;
   }
@@ -488,14 +482,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get subject
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSubject() {
     return subject;
   }
@@ -503,14 +496,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get sysLabels
    * @return sysLabels
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SYS_LABELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<SysLabelsEnum> getSysLabels() {
     return sysLabels;
   }
@@ -531,14 +523,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get keywords
    * @return keywords
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getKeywords() {
     return keywords;
   }
@@ -551,14 +542,13 @@ public class EmailMessage {
   }
 
 
-   /**
+  /**
    * Get sysClassifications
    * @return sysClassifications
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SYS_CLASSIFICATIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<SysClassificationsEnum> getSysClassifications() {
     return sysClassifications;
   }
@@ -571,14 +561,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get sensitivity
    * @return sensitivity
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SENSITIVITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Sensitivity getSensitivity() {
     return sensitivity;
   }
@@ -596,14 +585,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get meetingMessageMethod
    * @return meetingMessageMethod
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MEETING_MESSAGE_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public MeetingMessageMethodEnum getMeetingMessageMethod() {
     return meetingMessageMethod;
   }
@@ -621,14 +609,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get from
    * @return from
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FROM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EmailAddress getFrom() {
     return from;
   }
@@ -654,14 +641,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get to
    * @return to
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAddress> getTo() {
     return to;
   }
@@ -687,14 +673,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get cc
    * @return cc
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAddress> getCc() {
     return cc;
   }
@@ -720,14 +705,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get bcc
    * @return bcc
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BCC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAddress> getBcc() {
     return bcc;
   }
@@ -753,14 +737,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get replyTo
    * @return replyTo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REPLY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAddress> getReplyTo() {
     return replyTo;
   }
@@ -773,14 +756,13 @@ public class EmailMessage {
   }
 
 
-   /**
+  /**
    * Get hasAttachments
    * @return hasAttachments
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_HAS_ATTACHMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getHasAttachments() {
     return hasAttachments;
   }
@@ -788,14 +770,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get body
    * @return body
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BODY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getBody() {
     return body;
   }
@@ -803,14 +784,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get bodySnippet
    * @return bodySnippet
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BODY_SNIPPET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getBodySnippet() {
     return bodySnippet;
   }
@@ -831,14 +811,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get attachments
    * @return attachments
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAttachment> getAttachments() {
     return attachments;
   }
@@ -851,14 +830,13 @@ public class EmailMessage {
   }
 
 
-   /**
+  /**
    * Get inReplyTo
    * @return inReplyTo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IN_REPLY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getInReplyTo() {
     return inReplyTo;
   }
@@ -866,14 +844,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get references
    * @return references
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getReferences() {
     return references;
   }
@@ -881,14 +858,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get threadIndex
    * @return threadIndex
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREAD_INDEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getThreadIndex() {
     return threadIndex;
   }
@@ -909,14 +885,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get internetHeaders
    * @return internetHeaders
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INTERNET_HEADERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailHeader> getInternetHeaders() {
     return internetHeaders;
   }
@@ -942,14 +917,13 @@ public class EmailMessage {
     return this;
   }
 
-   /**
+  /**
    * Get nativeProperties
    * @return nativeProperties
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NATIVE_PROPERTIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Map<String, String> getNativeProperties() {
     return nativeProperties;
   }
@@ -962,14 +936,13 @@ public class EmailMessage {
   }
 
 
-   /**
+  /**
    * Get folderId
    * @return folderId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FOLDER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFolderId() {
     return folderId;
   }
@@ -977,14 +950,13 @@ public class EmailMessage {
 
 
 
-   /**
+  /**
    * Get omitted
    * @return omitted
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OMITTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<OmittedEnum> getOmitted() {
     return omitted;
   }
@@ -1122,42 +1094,42 @@ public class EmailMessage {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `createdTime` to the URL query string
     if (getCreatedTime() != null) {
-      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `sentAt` to the URL query string
     if (getSentAt() != null) {
-      joiner.add(String.format("%ssentAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSentAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssentAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSentAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `receivedAt` to the URL query string
     if (getReceivedAt() != null) {
-      joiner.add(String.format("%sreceivedAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReceivedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sreceivedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReceivedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `internetMessageId` to the URL query string
     if (getInternetMessageId() != null) {
-      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `sysLabels` to the URL query string
@@ -1165,7 +1137,7 @@ public class EmailMessage {
       for (int i = 0; i < getSysLabels().size(); i++) {
         joiner.add(String.format("%ssysLabels%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getSysLabels().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getSysLabels().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
@@ -1174,7 +1146,7 @@ public class EmailMessage {
       for (int i = 0; i < getKeywords().size(); i++) {
         joiner.add(String.format("%skeywords%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
@@ -1183,18 +1155,18 @@ public class EmailMessage {
       for (int i = 0; i < getSysClassifications().size(); i++) {
         joiner.add(String.format("%ssysClassifications%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getSysClassifications().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getSysClassifications().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `sensitivity` to the URL query string
     if (getSensitivity() != null) {
-      joiner.add(String.format("%ssensitivity%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSensitivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssensitivity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSensitivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `meetingMessageMethod` to the URL query string
     if (getMeetingMessageMethod() != null) {
-      joiner.add(String.format("%smeetingMessageMethod%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMeetingMessageMethod()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smeetingMessageMethod%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMeetingMessageMethod()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `from` to the URL query string
@@ -1244,17 +1216,17 @@ public class EmailMessage {
 
     // add `hasAttachments` to the URL query string
     if (getHasAttachments() != null) {
-      joiner.add(String.format("%shasAttachments%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHasAttachments()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shasAttachments%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHasAttachments()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `body` to the URL query string
     if (getBody() != null) {
-      joiner.add(String.format("%sbody%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `bodySnippet` to the URL query string
     if (getBodySnippet() != null) {
-      joiner.add(String.format("%sbodySnippet%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBodySnippet()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbodySnippet%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBodySnippet()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `attachments` to the URL query string
@@ -1269,17 +1241,17 @@ public class EmailMessage {
 
     // add `inReplyTo` to the URL query string
     if (getInReplyTo() != null) {
-      joiner.add(String.format("%sinReplyTo%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInReplyTo()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinReplyTo%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInReplyTo()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `references` to the URL query string
     if (getReferences() != null) {
-      joiner.add(String.format("%sreferences%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReferences()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sreferences%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReferences()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `threadIndex` to the URL query string
     if (getThreadIndex() != null) {
-      joiner.add(String.format("%sthreadIndex%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getThreadIndex()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadIndex%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadIndex()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `internetHeaders` to the URL query string
@@ -1297,13 +1269,13 @@ public class EmailMessage {
       for (String _key : getNativeProperties().keySet()) {
         joiner.add(String.format("%snativeProperties%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getNativeProperties().get(_key), URLEncoder.encode(String.valueOf(getNativeProperties().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getNativeProperties().get(_key), URLEncoder.encode(ApiClient.valueToString(getNativeProperties().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `folderId` to the URL query string
     if (getFolderId() != null) {
-      joiner.add(String.format("%sfolderId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFolderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfolderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFolderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `omitted` to the URL query string
@@ -1311,7 +1283,7 @@ public class EmailMessage {
       for (int i = 0; i < getOmitted().size(); i++) {
         joiner.add(String.format("%somitted%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

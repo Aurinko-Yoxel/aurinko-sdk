@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * ContactCompany
  */
@@ -38,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ContactCompany.JSON_PROPERTY_JOB_TITLE,
   ContactCompany.JSON_PROPERTY_YOMI_COMPANY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ContactCompany {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -63,14 +64,13 @@ public class ContactCompany {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -88,14 +88,13 @@ public class ContactCompany {
     return this;
   }
 
-   /**
+  /**
    * Get officeLocation
    * @return officeLocation
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OFFICE_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getOfficeLocation() {
     return officeLocation;
   }
@@ -113,14 +112,13 @@ public class ContactCompany {
     return this;
   }
 
-   /**
+  /**
    * Get department
    * @return department
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEPARTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDepartment() {
     return department;
   }
@@ -138,14 +136,13 @@ public class ContactCompany {
     return this;
   }
 
-   /**
+  /**
    * Get jobTitle
    * @return jobTitle
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_JOB_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getJobTitle() {
     return jobTitle;
   }
@@ -163,14 +160,13 @@ public class ContactCompany {
     return this;
   }
 
-   /**
+  /**
    * Get yomiCompanyName
    * @return yomiCompanyName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_YOMI_COMPANY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getYomiCompanyName() {
     return yomiCompanyName;
   }
@@ -265,27 +261,27 @@ public class ContactCompany {
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `officeLocation` to the URL query string
     if (getOfficeLocation() != null) {
-      joiner.add(String.format("%sofficeLocation%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOfficeLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sofficeLocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOfficeLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `department` to the URL query string
     if (getDepartment() != null) {
-      joiner.add(String.format("%sdepartment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDepartment()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdepartment%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDepartment()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `jobTitle` to the URL query string
     if (getJobTitle() != null) {
-      joiner.add(String.format("%sjobTitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getJobTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sjobTitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getJobTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `yomiCompanyName` to the URL query string
     if (getYomiCompanyName() != null) {
-      joiner.add(String.format("%syomiCompanyName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getYomiCompanyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%syomiCompanyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getYomiCompanyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

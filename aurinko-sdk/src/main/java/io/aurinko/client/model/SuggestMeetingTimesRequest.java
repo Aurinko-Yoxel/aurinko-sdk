@@ -34,6 +34,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * SuggestMeetingTimesRequest
  */
@@ -47,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SuggestMeetingTimesRequest.JSON_PROPERTY_DEFAULT_WORK_HOURS,
   SuggestMeetingTimesRequest.JSON_PROPERTY_FREE_STATUSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class SuggestMeetingTimesRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   private OffsetDateTime timeMin;
@@ -81,14 +82,13 @@ public class SuggestMeetingTimesRequest {
     return this;
   }
 
-   /**
+  /**
    * The lower bound of the time interval to search for available meeting times.
    * @return timeMin
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIME_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getTimeMin() {
     return timeMin;
   }
@@ -106,14 +106,13 @@ public class SuggestMeetingTimesRequest {
     return this;
   }
 
-   /**
+  /**
    * The upper bound of the time interval to search for available meeting times.
    * @return timeMax
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TIME_MAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getTimeMax() {
     return timeMax;
   }
@@ -131,14 +130,13 @@ public class SuggestMeetingTimesRequest {
     return this;
   }
 
-   /**
+  /**
    * The duration of the meeting to search time for.
    * @return durationMinutes
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DURATION_MINUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getDurationMinutes() {
     return durationMinutes;
   }
@@ -156,14 +154,13 @@ public class SuggestMeetingTimesRequest {
     return this;
   }
 
-   /**
+  /**
    * Determines the interval at which new meeting slots are made available throughout the working hours.
    * @return availabilityStep
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getAvailabilityStep() {
     return availabilityStep;
   }
@@ -189,14 +186,13 @@ public class SuggestMeetingTimesRequest {
     return this;
   }
 
-   /**
+  /**
    * The attendees to consider when searching for available meeting times.
    * @return attendees
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ATTENDEES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<MeetingAttendee> getAttendees() {
     return attendees;
   }
@@ -214,14 +210,13 @@ public class SuggestMeetingTimesRequest {
     return this;
   }
 
-   /**
+  /**
    * Timezone (IANA) to use when no timezone information is available for the attendees.
    * @return defaultTimezone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDefaultTimezone() {
     return defaultTimezone;
   }
@@ -239,14 +234,13 @@ public class SuggestMeetingTimesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get defaultWorkHours
    * @return defaultWorkHours
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public WeekWorkSchedule getDefaultWorkHours() {
     return defaultWorkHours;
   }
@@ -272,14 +266,13 @@ public class SuggestMeetingTimesRequest {
     return this;
   }
 
-   /**
+  /**
    * The statuses from /freeBusy request to consider as free time for the attendees.
    * @return freeStatuses
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FREE_STATUSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<ShowAs> getFreeStatuses() {
     return freeStatuses;
   }
@@ -380,22 +373,22 @@ public class SuggestMeetingTimesRequest {
 
     // add `timeMin` to the URL query string
     if (getTimeMin() != null) {
-      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimeMin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `timeMax` to the URL query string
     if (getTimeMax() != null) {
-      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTimeMax()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMax()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
-      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `availabilityStep` to the URL query string
     if (getAvailabilityStep() != null) {
-      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `attendees` to the URL query string
@@ -410,7 +403,7 @@ public class SuggestMeetingTimesRequest {
 
     // add `defaultTimezone` to the URL query string
     if (getDefaultTimezone() != null) {
-      joiner.add(String.format("%sdefaultTimezone%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDefaultTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdefaultTimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDefaultTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `defaultWorkHours` to the URL query string
@@ -424,7 +417,7 @@ public class SuggestMeetingTimesRequest {
         if (getFreeStatuses().get(i) != null) {
           joiner.add(String.format("%sfreeStatuses%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(String.valueOf(getFreeStatuses().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              URLEncoder.encode(ApiClient.valueToString(getFreeStatuses().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
         }
       }
     }

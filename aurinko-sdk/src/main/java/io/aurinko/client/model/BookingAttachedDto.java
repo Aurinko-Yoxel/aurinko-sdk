@@ -30,6 +30,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * BookingAttachedDto
  */
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BookingAttachedDto.JSON_PROPERTY_USER_ID,
   BookingAttachedDto.JSON_PROPERTY_ACCOUNTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingAttachedDto {
   public static final String JSON_PROPERTY_USER_ID = "userId";
   private String userId;
@@ -53,14 +54,13 @@ public class BookingAttachedDto {
     return this;
   }
 
-   /**
+  /**
    * User id
    * @return userId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getUserId() {
     return userId;
   }
@@ -86,14 +86,13 @@ public class BookingAttachedDto {
     return this;
   }
 
-   /**
+  /**
    * Get accounts
    * @return accounts
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<Long> getAccounts() {
     return accounts;
   }
@@ -182,7 +181,7 @@ public class BookingAttachedDto {
 
     // add `userId` to the URL query string
     if (getUserId() != null) {
-      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `accounts` to the URL query string
@@ -190,7 +189,7 @@ public class BookingAttachedDto {
       for (int i = 0; i < getAccounts().size(); i++) {
         joiner.add(String.format("%saccounts%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getAccounts().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getAccounts().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

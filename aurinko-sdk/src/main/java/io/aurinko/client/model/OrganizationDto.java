@@ -30,6 +30,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * OrganizationDto
  */
@@ -41,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   OrganizationDto.JSON_PROPERTY_NAME,
   OrganizationDto.JSON_PROPERTY_CREATED_AT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class OrganizationDto {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -69,14 +70,13 @@ public class OrganizationDto {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Long getId() {
     return id;
   }
@@ -94,14 +94,13 @@ public class OrganizationDto {
     return this;
   }
 
-   /**
+  /**
    * Get serviceProvider
    * @return serviceProvider
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SERVICE_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ServiceProvider getServiceProvider() {
     return serviceProvider;
   }
@@ -119,14 +118,13 @@ public class OrganizationDto {
     return this;
   }
 
-   /**
+  /**
    * Get xid
    * @return xid
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_XID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getXid() {
     return xid;
   }
@@ -144,14 +142,13 @@ public class OrganizationDto {
     return this;
   }
 
-   /**
+  /**
    * Get domain
    * @return domain
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DOMAIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDomain() {
     return domain;
   }
@@ -169,14 +166,13 @@ public class OrganizationDto {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -194,14 +190,13 @@ public class OrganizationDto {
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -298,32 +293,32 @@ public class OrganizationDto {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `serviceProvider` to the URL query string
     if (getServiceProvider() != null) {
-      joiner.add(String.format("%sserviceProvider%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getServiceProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserviceProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `xid` to the URL query string
     if (getXid() != null) {
-      joiner.add(String.format("%sxid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getXid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sxid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getXid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `domain` to the URL query string
     if (getDomain() != null) {
-      joiner.add(String.format("%sdomain%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDomain()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdomain%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDomain()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `createdAt` to the URL query string
     if (getCreatedAt() != null) {
-      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreatedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

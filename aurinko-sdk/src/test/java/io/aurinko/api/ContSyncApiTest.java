@@ -17,8 +17,8 @@ import io.aurinko.client.ApiException;
 import io.aurinko.client.model.ContactsPage;
 import io.aurinko.client.model.DeletedPage;
 import io.aurinko.client.model.SyncStatus;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for ContSyncApi
  */
-@Ignore
+@Disabled
 public class ContSyncApiTest {
 
     private final ContSyncApi api = new ContSyncApi();

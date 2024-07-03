@@ -20,8 +20,8 @@ import io.aurinko.client.model.SuggestMeetingTimesRequest;
 import io.aurinko.client.model.SuggestMeetingTimesResponse;
 import io.aurinko.client.model.WorkHoursRequest;
 import io.aurinko.client.model.WorkHoursResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +34,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * API tests for FreeBusyScheduleApi
  */
-@Ignore
+@Disabled
 public class FreeBusyScheduleApiTest {
 
     private final FreeBusyScheduleApi api = new FreeBusyScheduleApi();

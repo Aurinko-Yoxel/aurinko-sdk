@@ -32,6 +32,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * DayWorkSchedule
  */
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   DayWorkSchedule.JSON_PROPERTY_DAY_OF_WEEK,
   DayWorkSchedule.JSON_PROPERTY_WORKING_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class DayWorkSchedule {
   public static final String JSON_PROPERTY_DAY_OF_WEEK = "dayOfWeek";
   private DayOfWeek dayOfWeek;
@@ -55,14 +56,13 @@ public class DayWorkSchedule {
     return this;
   }
 
-   /**
+  /**
    * Get dayOfWeek
    * @return dayOfWeek
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DAY_OF_WEEK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DayOfWeek getDayOfWeek() {
     return dayOfWeek;
   }
@@ -88,14 +88,13 @@ public class DayWorkSchedule {
     return this;
   }
 
-   /**
+  /**
    * Get workingIntervals
    * @return workingIntervals
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WORKING_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<WorkingInterval> getWorkingIntervals() {
     return workingIntervals;
   }
@@ -184,7 +183,7 @@ public class DayWorkSchedule {
 
     // add `dayOfWeek` to the URL query string
     if (getDayOfWeek() != null) {
-      joiner.add(String.format("%sdayOfWeek%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDayOfWeek()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdayOfWeek%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDayOfWeek()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `workingIntervals` to the URL query string

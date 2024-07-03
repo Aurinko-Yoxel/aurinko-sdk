@@ -32,15 +32,15 @@ public enum ServiceKey {
   
   EMAIL("email"),
   
-  ORGID("orgId"),
+  ORG_ID("orgId"),
   
-  USERID("userId"),
+  USER_ID("userId"),
   
-  SERVERURL("serverUrl"),
+  SERVER_URL("serverUrl"),
   
   USERNAME("username"),
   
-  CLIENTORGID("clientOrgId"),
+  CLIENT_ORG_ID("clientOrgId"),
   
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 

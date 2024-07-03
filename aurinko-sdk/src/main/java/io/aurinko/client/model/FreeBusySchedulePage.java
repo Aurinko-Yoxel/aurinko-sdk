@@ -31,13 +31,14 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * FreeBusySchedulePage
  */
 @JsonPropertyOrder({
   FreeBusySchedulePage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class FreeBusySchedulePage {
   public static final String JSON_PROPERTY_RECORDS = "records";
   private List<FreeBusySchedule> records = new ArrayList<>();
@@ -58,14 +59,13 @@ public class FreeBusySchedulePage {
     return this;
   }
 
-   /**
+  /**
    * Get records
    * @return records
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<FreeBusySchedule> getRecords() {
     return records;
   }

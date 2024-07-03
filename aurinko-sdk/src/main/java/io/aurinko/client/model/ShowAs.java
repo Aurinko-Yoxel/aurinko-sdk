@@ -36,7 +36,7 @@ public enum ShowAs {
   
   TENTATIVE("tentative"),
   
-  OUTOFOFFICE("outOfOffice"),
+  OUT_OF_OFFICE("outOfOffice"),
   
   UNKNOWN("unknown"),
   

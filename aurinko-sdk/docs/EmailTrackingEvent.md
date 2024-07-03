@@ -30,7 +30,7 @@
 | OPEN | &quot;open&quot; |
 | CLICK | &quot;click&quot; |
 | REPLY | &quot;reply&quot; |
-| REPLYBOUNCE | &quot;replyBounce&quot; |
+| REPLY_BOUNCE | &quot;replyBounce&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

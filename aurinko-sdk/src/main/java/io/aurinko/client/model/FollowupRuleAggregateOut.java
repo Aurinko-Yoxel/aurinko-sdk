@@ -31,6 +31,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * FollowupRuleAggregateOut
  */
@@ -42,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FollowupRuleAggregateOut.JSON_PROPERTY_TEMPLATE_SUBJECT,
   FollowupRuleAggregateOut.JSON_PROPERTY_ACTIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class FollowupRuleAggregateOut {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;
@@ -70,14 +71,13 @@ public class FollowupRuleAggregateOut {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getId() {
     return id;
   }
@@ -95,14 +95,13 @@ public class FollowupRuleAggregateOut {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getName() {
     return name;
   }
@@ -120,14 +119,13 @@ public class FollowupRuleAggregateOut {
     return this;
   }
 
-   /**
+  /**
    * Get expectThreadResponse
    * @return expectThreadResponse
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPECT_THREAD_RESPONSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getExpectThreadResponse() {
     return expectThreadResponse;
   }
@@ -145,14 +143,13 @@ public class FollowupRuleAggregateOut {
     return this;
   }
 
-   /**
+  /**
    * Get templateBody
    * @return templateBody
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TEMPLATE_BODY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTemplateBody() {
     return templateBody;
   }
@@ -170,14 +167,13 @@ public class FollowupRuleAggregateOut {
     return this;
   }
 
-   /**
+  /**
    * Get templateSubject
    * @return templateSubject
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TEMPLATE_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTemplateSubject() {
     return templateSubject;
   }
@@ -203,14 +199,13 @@ public class FollowupRuleAggregateOut {
     return this;
   }
 
-   /**
+  /**
    * Get actions
    * @return actions
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<FollowupRuleAction> getActions() {
     return actions;
   }
@@ -307,27 +302,27 @@ public class FollowupRuleAggregateOut {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `expectThreadResponse` to the URL query string
     if (getExpectThreadResponse() != null) {
-      joiner.add(String.format("%sexpectThreadResponse%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getExpectThreadResponse()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sexpectThreadResponse%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExpectThreadResponse()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `templateBody` to the URL query string
     if (getTemplateBody() != null) {
-      joiner.add(String.format("%stemplateBody%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTemplateBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stemplateBody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTemplateBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `templateSubject` to the URL query string
     if (getTemplateSubject() != null) {
-      joiner.add(String.format("%stemplateSubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTemplateSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stemplateSubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTemplateSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `actions` to the URL query string

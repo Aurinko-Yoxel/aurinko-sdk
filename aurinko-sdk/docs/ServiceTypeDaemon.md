@@ -7,21 +7,21 @@
 
 * `GOOGLE` (value: `"Google"`)
 
-* `GOOGLEBOT` (value: `"GoogleBot"`)
+* `GOOGLE_BOT` (value: `"GoogleBot"`)
 
 * `OFFICE365` (value: `"Office365"`)
 
 * `EWS` (value: `"EWS"`)
 
-* `MSTEAMSBOT` (value: `"MsTeamsBot"`)
+* `MS_TEAMS_BOT` (value: `"MsTeamsBot"`)
 
 * `SLACK` (value: `"Slack"`)
 
-* `SLACKBOT` (value: `"SlackBot"`)
+* `SLACK_BOT` (value: `"SlackBot"`)
 
-* `ZOOMBOT` (value: `"ZoomBot"`)
+* `ZOOM_BOT` (value: `"ZoomBot"`)
 
-* `MCTRADE` (value: `"MCTrade"`)
+* `MC_TRADE` (value: `"MCTrade"`)
 
 * `ZOHO` (value: `"Zoho"`)
 

@@ -29,6 +29,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * SubscriptionResponse
  */
@@ -40,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SubscriptionResponse.JSON_PROPERTY_FAIL_SINCE,
   SubscriptionResponse.JSON_PROPERTY_FAIL_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class SubscriptionResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -68,14 +69,13 @@ public class SubscriptionResponse {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Long getId() {
     return id;
   }
@@ -93,14 +93,13 @@ public class SubscriptionResponse {
     return this;
   }
 
-   /**
+  /**
    * Get resource
    * @return resource
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESOURCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getResource() {
     return resource;
   }
@@ -118,14 +117,13 @@ public class SubscriptionResponse {
     return this;
   }
 
-   /**
+  /**
    * Get notificationUrl
    * @return notificationUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NOTIFICATION_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNotificationUrl() {
     return notificationUrl;
   }
@@ -143,14 +141,13 @@ public class SubscriptionResponse {
     return this;
   }
 
-   /**
+  /**
    * Get active
    * @return active
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getActive() {
     return active;
   }
@@ -168,14 +165,13 @@ public class SubscriptionResponse {
     return this;
   }
 
-   /**
+  /**
    * Get failSince
    * @return failSince
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAIL_SINCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getFailSince() {
     return failSince;
   }
@@ -193,14 +189,13 @@ public class SubscriptionResponse {
     return this;
   }
 
-   /**
+  /**
    * Get failDescription
    * @return failDescription
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAIL_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFailDescription() {
     return failDescription;
   }
@@ -297,32 +292,32 @@ public class SubscriptionResponse {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `resource` to the URL query string
     if (getResource() != null) {
-      joiner.add(String.format("%sresource%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getResource()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresource%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResource()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `notificationUrl` to the URL query string
     if (getNotificationUrl() != null) {
-      joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNotificationUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotificationUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `active` to the URL query string
     if (getActive() != null) {
-      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `failSince` to the URL query string
     if (getFailSince() != null) {
-      joiner.add(String.format("%sfailSince%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFailSince()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfailSince%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFailSince()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `failDescription` to the URL query string
     if (getFailDescription() != null) {
-      joiner.add(String.format("%sfailDescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFailDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfailDescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFailDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

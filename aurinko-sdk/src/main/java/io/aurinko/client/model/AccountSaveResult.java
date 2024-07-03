@@ -28,6 +28,7 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * AccountSaveResult
  */
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AccountSaveResult.JSON_PROPERTY_USER_ID,
   AccountSaveResult.JSON_PROPERTY_USER_SESSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class AccountSaveResult {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
   private Long accountId;
@@ -59,14 +60,13 @@ public class AccountSaveResult {
     return this;
   }
 
-   /**
+  /**
    * Get accountId
    * @return accountId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Long getAccountId() {
     return accountId;
   }
@@ -84,14 +84,13 @@ public class AccountSaveResult {
     return this;
   }
 
-   /**
+  /**
    * Get accessToken
    * @return accessToken
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCESS_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAccessToken() {
     return accessToken;
   }
@@ -109,14 +108,13 @@ public class AccountSaveResult {
     return this;
   }
 
-   /**
+  /**
    * Get userId
    * @return userId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getUserId() {
     return userId;
   }
@@ -134,14 +132,13 @@ public class AccountSaveResult {
     return this;
   }
 
-   /**
+  /**
    * Get userSession
    * @return userSession
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USER_SESSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getUserSession() {
     return userSession;
   }
@@ -234,22 +231,22 @@ public class AccountSaveResult {
 
     // add `accountId` to the URL query string
     if (getAccountId() != null) {
-      joiner.add(String.format("%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%saccountId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAccountId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `accessToken` to the URL query string
     if (getAccessToken() != null) {
-      joiner.add(String.format("%saccessToken%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccessToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%saccessToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAccessToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `userId` to the URL query string
     if (getUserId() != null) {
-      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `userSession` to the URL query string
     if (getUserSession() != null) {
-      joiner.add(String.format("%suserSession%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUserSession()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserSession%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserSession()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum EndUserExtIdType {
   
-  EXCHANGEIDENTITY("exchangeIdentity"),
+  EXCHANGE_IDENTITY("exchangeIdentity"),
   
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 

@@ -30,6 +30,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * EmailTrackingData
  */
@@ -40,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EmailTrackingData.JSON_PROPERTY_CONTEXT,
   EmailTrackingData.JSON_PROPERTY_LINK_CODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class EmailTrackingData {
   public static final String JSON_PROPERTY_TRACK_REPLIES = "trackReplies";
   private Boolean trackReplies;
@@ -65,14 +66,13 @@ public class EmailTrackingData {
     return this;
   }
 
-   /**
+  /**
    * Get trackReplies
    * @return trackReplies
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACK_REPLIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getTrackReplies() {
     return trackReplies;
   }
@@ -90,14 +90,13 @@ public class EmailTrackingData {
     return this;
   }
 
-   /**
+  /**
    * Get htmlBody
    * @return htmlBody
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_HTML_BODY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getHtmlBody() {
     return htmlBody;
   }
@@ -115,14 +114,13 @@ public class EmailTrackingData {
     return this;
   }
 
-   /**
+  /**
    * Get trackingCode
    * @return trackingCode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTrackingCode() {
     return trackingCode;
   }
@@ -140,14 +138,13 @@ public class EmailTrackingData {
     return this;
   }
 
-   /**
+  /**
    * Get context
    * @return context
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getContext() {
     return context;
   }
@@ -173,14 +170,13 @@ public class EmailTrackingData {
     return this;
   }
 
-   /**
+  /**
    * Get linkCodes
    * @return linkCodes
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LINK_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<Object> getLinkCodes() {
     return linkCodes;
   }
@@ -275,22 +271,22 @@ public class EmailTrackingData {
 
     // add `trackReplies` to the URL query string
     if (getTrackReplies() != null) {
-      joiner.add(String.format("%strackReplies%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackReplies%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `htmlBody` to the URL query string
     if (getHtmlBody() != null) {
-      joiner.add(String.format("%shtmlBody%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHtmlBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shtmlBody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHtmlBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `trackingCode` to the URL query string
     if (getTrackingCode() != null) {
-      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTrackingCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `linkCodes` to the URL query string
@@ -298,7 +294,7 @@ public class EmailTrackingData {
       for (int i = 0; i < getLinkCodes().size(); i++) {
         joiner.add(String.format("%slinkCodes%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getLinkCodes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getLinkCodes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

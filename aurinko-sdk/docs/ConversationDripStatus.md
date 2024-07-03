@@ -29,7 +29,7 @@
 | ACTIVE | &quot;active&quot; |
 | FAILED | &quot;failed&quot; |
 | FINISHED | &quot;finished&quot; |
-| RULEINCOMPLETE | &quot;ruleIncomplete&quot; |
+| RULE_INCOMPLETE | &quot;ruleIncomplete&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

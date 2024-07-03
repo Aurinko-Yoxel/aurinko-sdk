@@ -31,13 +31,14 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * WorkHoursResponse
  */
 @JsonPropertyOrder({
   WorkHoursResponse.JSON_PROPERTY_ITEMS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class WorkHoursResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
   private List<WorkHoursResponseItem> items = new ArrayList<>();
@@ -58,14 +59,13 @@ public class WorkHoursResponse {
     return this;
   }
 
-   /**
+  /**
    * Get items
    * @return items
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<WorkHoursResponseItem> getItems() {
     return items;
   }

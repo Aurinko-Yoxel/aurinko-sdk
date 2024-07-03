@@ -33,6 +33,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * MeetingInfo
  */
@@ -45,7 +46,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class MeetingInfo {
   public static final String JSON_PROPERTY_CANCELED = "canceled";
   private Boolean canceled;
@@ -60,11 +61,11 @@ public class MeetingInfo {
    * Gets or Sets attendeePermissions
    */
   public enum AttendeePermissionsEnum {
-    INVITEOTHERS("inviteOthers"),
+    INVITE_OTHERS("inviteOthers"),
     
     MODIFY("modify"),
     
-    SEEOTHERS("seeOthers"),
+    SEE_OTHERS("seeOthers"),
     
     UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
@@ -118,14 +119,13 @@ public class MeetingInfo {
     this.canceled = canceled;
   }
 
-   /**
+  /**
    * Get canceled
    * @return canceled
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CANCELED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getCanceled() {
     return canceled;
   }
@@ -146,14 +146,13 @@ public class MeetingInfo {
     return this;
   }
 
-   /**
+  /**
    * Get attendees
    * @return attendees
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ATTENDEES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<Attendee> getAttendees() {
     return attendees;
   }
@@ -171,14 +170,13 @@ public class MeetingInfo {
     return this;
   }
 
-   /**
+  /**
    * Get response
    * @return response
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESPONSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public MeetingResponseType getResponse() {
     return response;
   }
@@ -204,14 +202,13 @@ public class MeetingInfo {
     return this;
   }
 
-   /**
+  /**
    * Get attendeePermissions
    * @return attendeePermissions
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ATTENDEE_PERMISSIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<AttendeePermissionsEnum> getAttendeePermissions() {
     return attendeePermissions;
   }
@@ -229,14 +226,13 @@ public class MeetingInfo {
     return this;
   }
 
-   /**
+  /**
    * Assumes default onlineMeetingProvider (&#39;hangoutsMeet&#39; or &#39;teamsForBusiness&#39;)
    * @return onlineMeeting
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getOnlineMeeting() {
     return onlineMeeting;
   }
@@ -254,14 +250,13 @@ public class MeetingInfo {
     return this;
   }
 
-   /**
+  /**
    * Value of provider, for example hangoutsMeet, teamsForBusiness, skypeForBusiness, skypeForConsumer
    * @return onlineMeetingProvider
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getOnlineMeetingProvider() {
     return onlineMeetingProvider;
   }
@@ -279,14 +274,13 @@ public class MeetingInfo {
     return this;
   }
 
-   /**
+  /**
    * Get onlineMeetingDetails
    * @return onlineMeetingDetails
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_DETAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OnlineMeetingDetails getOnlineMeetingDetails() {
     return onlineMeetingDetails;
   }
@@ -385,7 +379,7 @@ public class MeetingInfo {
 
     // add `canceled` to the URL query string
     if (getCanceled() != null) {
-      joiner.add(String.format("%scanceled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCanceled()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scanceled%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCanceled()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `attendees` to the URL query string
@@ -400,7 +394,7 @@ public class MeetingInfo {
 
     // add `response` to the URL query string
     if (getResponse() != null) {
-      joiner.add(String.format("%sresponse%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getResponse()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresponse%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResponse()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `attendeePermissions` to the URL query string
@@ -408,18 +402,18 @@ public class MeetingInfo {
       for (int i = 0; i < getAttendeePermissions().size(); i++) {
         joiner.add(String.format("%sattendeePermissions%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getAttendeePermissions().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getAttendeePermissions().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `onlineMeeting` to the URL query string
     if (getOnlineMeeting() != null) {
-      joiner.add(String.format("%sonlineMeeting%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOnlineMeeting()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sonlineMeeting%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOnlineMeeting()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `onlineMeetingProvider` to the URL query string
     if (getOnlineMeetingProvider() != null) {
-      joiner.add(String.format("%sonlineMeetingProvider%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOnlineMeetingProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sonlineMeetingProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOnlineMeetingProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `onlineMeetingDetails` to the URL query string

@@ -39,6 +39,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import io.aurinko.client.ApiClient;
 /**
  * Event
  */
@@ -68,7 +69,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Event.JSON_PROPERTY_ATTACHMENTS,
   Event.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Event {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -251,14 +252,13 @@ public class Event {
     this.omitted = omitted;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getId() {
     return id;
   }
@@ -266,14 +266,13 @@ public class Event {
 
 
 
-   /**
+  /**
    * Get etag
    * @return etag
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ETAG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEtag() {
     return etag;
   }
@@ -281,14 +280,13 @@ public class Event {
 
 
 
-   /**
+  /**
    * Get calendarId
    * @return calendarId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CALENDAR_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCalendarId() {
     return calendarId;
   }
@@ -296,14 +294,13 @@ public class Event {
 
 
 
-   /**
+  /**
    * Get createdTime
    * @return createdTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedTime() {
     return createdTime;
   }
@@ -311,14 +308,13 @@ public class Event {
 
 
 
-   /**
+  /**
    * Get lastModifiedTime
    * @return lastModifiedTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getLastModifiedTime() {
     return lastModifiedTime;
   }
@@ -331,14 +327,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get subject
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSubject() {
     return subject;
   }
@@ -356,14 +351,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDescription() {
     return description;
   }
@@ -381,14 +375,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLocation() {
     return location;
   }
@@ -406,14 +399,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get start
    * @return start
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EventDateTime getStart() {
     return start;
   }
@@ -431,14 +423,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get end
    * @return end
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EventDateTime getEnd() {
     return end;
   }
@@ -456,14 +447,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get organizer
    * @return organizer
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ORGANIZER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Organizer getOrganizer() {
     return organizer;
   }
@@ -481,14 +471,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get meetingInfo
    * @return meetingInfo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MEETING_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public MeetingInfo getMeetingInfo() {
     return meetingInfo;
   }
@@ -501,14 +490,13 @@ public class Event {
   }
 
 
-   /**
+  /**
    * Get recurrenceType
    * @return recurrenceType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECURRENCE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public RecurrenceTypeEnum getRecurrenceType() {
     return recurrenceType;
   }
@@ -521,14 +509,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get recurrence
    * @return recurrence
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECURRENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Recurrence getRecurrence() {
     return recurrence;
   }
@@ -546,14 +533,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get occurrenceInfo
    * @return occurrenceInfo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OCCURRENCE_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OccurrenceInfo getOccurrenceInfo() {
     return occurrenceInfo;
   }
@@ -566,14 +552,13 @@ public class Event {
   }
 
 
-   /**
+  /**
    * Get iCalUid
    * @return iCalUid
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_I_CAL_UID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getiCalUid() {
     return iCalUid;
   }
@@ -581,14 +566,13 @@ public class Event {
 
 
 
-   /**
+  /**
    * Get globalId
    * @return globalId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_GLOBAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getGlobalId() {
     return globalId;
   }
@@ -601,14 +585,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get showAs
    * @return showAs
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHOW_AS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ShowAs getShowAs() {
     return showAs;
   }
@@ -626,14 +609,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get sensitivity
    * @return sensitivity
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SENSITIVITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Sensitivity getSensitivity() {
     return sensitivity;
   }
@@ -646,14 +628,13 @@ public class Event {
   }
 
 
-   /**
+  /**
    * Get categories
    * @return categories
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getCategories() {
     return categories;
   }
@@ -666,14 +647,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get htmlLink
    * @return htmlLink
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_HTML_LINK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getHtmlLink() {
     return htmlLink;
   }
@@ -686,14 +666,13 @@ public class Event {
   }
 
 
-   /**
+  /**
    * Get hasAttachments
    * @return hasAttachments
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_HAS_ATTACHMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getHasAttachments() {
     return hasAttachments;
   }
@@ -714,14 +693,13 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get attachments
    * @return attachments
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<EmailAttachment> getAttachments() {
     return attachments;
   }
@@ -734,14 +712,13 @@ public class Event {
   }
 
 
-   /**
+  /**
    * Get omitted
    * @return omitted
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OMITTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<OmittedEnum> getOmitted() {
     return omitted;
   }
@@ -869,42 +846,42 @@ public class Event {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `calendarId` to the URL query string
     if (getCalendarId() != null) {
-      joiner.add(String.format("%scalendarId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCalendarId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scalendarId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCalendarId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `createdTime` to the URL query string
     if (getCreatedTime() != null) {
-      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `location` to the URL query string
     if (getLocation() != null) {
-      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `start` to the URL query string
@@ -929,7 +906,7 @@ public class Event {
 
     // add `recurrenceType` to the URL query string
     if (getRecurrenceType() != null) {
-      joiner.add(String.format("%srecurrenceType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRecurrenceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%srecurrenceType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRecurrenceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `recurrence` to the URL query string
@@ -944,22 +921,22 @@ public class Event {
 
     // add `iCalUid` to the URL query string
     if (getiCalUid() != null) {
-      joiner.add(String.format("%siCalUid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getiCalUid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%siCalUid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getiCalUid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `globalId` to the URL query string
     if (getGlobalId() != null) {
-      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `showAs` to the URL query string
     if (getShowAs() != null) {
-      joiner.add(String.format("%sshowAs%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getShowAs()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sshowAs%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getShowAs()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `sensitivity` to the URL query string
     if (getSensitivity() != null) {
-      joiner.add(String.format("%ssensitivity%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSensitivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssensitivity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSensitivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `categories` to the URL query string
@@ -967,18 +944,18 @@ public class Event {
       for (int i = 0; i < getCategories().size(); i++) {
         joiner.add(String.format("%scategories%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getCategories().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getCategories().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
     // add `htmlLink` to the URL query string
     if (getHtmlLink() != null) {
-      joiner.add(String.format("%shtmlLink%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHtmlLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shtmlLink%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHtmlLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `hasAttachments` to the URL query string
     if (getHasAttachments() != null) {
-      joiner.add(String.format("%shasAttachments%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHasAttachments()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shasAttachments%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHasAttachments()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `attachments` to the URL query string
@@ -996,7 +973,7 @@ public class Event {
       for (int i = 0; i < getOmitted().size(); i++) {
         joiner.add(String.format("%somitted%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(String.valueOf(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 
