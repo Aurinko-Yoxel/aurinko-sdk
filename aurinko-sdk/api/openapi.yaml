@@ -57,17 +57,6 @@ security:
   ClientIdHeader: []
   AccountIdHeader: []
 tags:
-- name: calendar
-- name: email
-- name: followup
-- name: contact
-- name: booking
-- name: user
-- name: account
-- name: am
-- name: auth
-- name: subscriptions
-- name: task
 - description: |
     Aurinko's Unified OAuth Flows are backed by providers’ OAuth2 flows (i.e. Google, Office 365, Salesforce, HubSpot,...)
     or by secure password-based authentications (i.e. MS Exchange, IMAP accounts). The following three flows are supported:
@@ -1943,12 +1932,12 @@ paths:
         explode: true
         in: query
         name: draftId
-        required: false
+        required: true
         schema:
           nullable: true
           type: string
         style: form
-      - description: "if draft was not found, turn on tracking anyway"
+      - description: "if draft was not found, store tracking data anyway"
         explode: true
         in: query
         name: ignoreNotFound
@@ -1969,7 +1958,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailTrackingData'
           description: Success
-      summary: Modify tracking data
+      summary: Create tracking for a draft message
       tags:
       - EmailTracking
       x-codeSamples:
@@ -2216,6 +2205,78 @@ paths:
         source: |-
           curl -H 'Authorization: Bearer <access token>' \
               -X POST https://api.aurinko.io/v1/email/tracking/ignoreOpenClicks
+      x-accepts:
+      - application/json
+  /v1/email/tracking/events:
+    get:
+      operationId: getTrackingEvents
+      parameters:
+      - description: conversation id
+        explode: true
+        in: query
+        name: threadId
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: event start dateTime (strictly greater)
+        explode: true
+        in: query
+        name: from
+        required: false
+        schema:
+          format: datetime
+          nullable: true
+          type: string
+        style: form
+      - description: event end dateTime (smaller or equal)
+        explode: true
+        in: query
+        name: to
+        required: false
+        schema:
+          format: datetime
+          nullable: true
+          type: string
+        style: form
+      - description: page size
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 50
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      - description: return records offset by the given number
+        explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailTrackingEventPageNext'
+          description: Success
+      summary: List all tracking events
+      tags:
+      - EmailTracking
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET -H 'Authorization: Bearer <access token>' \
+              -G https://api.aurinko.io/v1/email/tracking/events
       x-accepts:
       - application/json
   /v1/email/tracking/{id}:

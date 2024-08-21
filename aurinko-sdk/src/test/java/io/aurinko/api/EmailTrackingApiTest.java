@@ -62,7 +62,7 @@ public class EmailTrackingApiTest {
     }
     
     /**
-     * Modify tracking data
+     * Create tracking for a draft message
      *
      * 
      *
@@ -97,6 +97,27 @@ public class EmailTrackingApiTest {
         String threadId = null;
         CompletableFuture<EmailTrackingPageNext> response = 
         api.getTracking(withActivityOnly, limit, offset, contextContains, threadId);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * List all tracking events
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTrackingEventsTest() throws ApiException {
+        String threadId = null;
+        String from = null;
+        String to = null;
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<EmailTrackingEventPageNext> response = 
+        api.getTrackingEvents(threadId, from, to, limit, offset);
         
         // TODO: test validations
     }

@@ -230,10 +230,12 @@ Class | Method | HTTP request | Description
 *EmailSyncApi* | [**emailSyncUpdatedWithHttpInfo**](docs/EmailSyncApi.md#emailSyncUpdatedWithHttpInfo) | **GET** /v1/email/sync/updated | Request changed emails (deltas)
 *EmailTrackingApi* | [**convertDraftTracking**](docs/EmailTrackingApi.md#convertDraftTracking) | **PATCH** /v1/email/draftTracking/{draftId}/convert | Mark draft&#39;s tracking as sent
 *EmailTrackingApi* | [**convertDraftTrackingWithHttpInfo**](docs/EmailTrackingApi.md#convertDraftTrackingWithHttpInfo) | **PATCH** /v1/email/draftTracking/{draftId}/convert | Mark draft&#39;s tracking as sent
-*EmailTrackingApi* | [**createDraftTracking**](docs/EmailTrackingApi.md#createDraftTracking) | **POST** /v1/email/draftTracking/create | Modify tracking data
-*EmailTrackingApi* | [**createDraftTrackingWithHttpInfo**](docs/EmailTrackingApi.md#createDraftTrackingWithHttpInfo) | **POST** /v1/email/draftTracking/create | Modify tracking data
+*EmailTrackingApi* | [**createDraftTracking**](docs/EmailTrackingApi.md#createDraftTracking) | **POST** /v1/email/draftTracking/create | Create tracking for a draft message
+*EmailTrackingApi* | [**createDraftTrackingWithHttpInfo**](docs/EmailTrackingApi.md#createDraftTrackingWithHttpInfo) | **POST** /v1/email/draftTracking/create | Create tracking for a draft message
 *EmailTrackingApi* | [**getTracking**](docs/EmailTrackingApi.md#getTracking) | **GET** /v1/email/tracking | List tracking data
 *EmailTrackingApi* | [**getTrackingWithHttpInfo**](docs/EmailTrackingApi.md#getTrackingWithHttpInfo) | **GET** /v1/email/tracking | List tracking data
+*EmailTrackingApi* | [**getTrackingEvents**](docs/EmailTrackingApi.md#getTrackingEvents) | **GET** /v1/email/tracking/events | List all tracking events
+*EmailTrackingApi* | [**getTrackingEventsWithHttpInfo**](docs/EmailTrackingApi.md#getTrackingEventsWithHttpInfo) | **GET** /v1/email/tracking/events | List all tracking events
 *EmailTrackingApi* | [**purgeMyTracking**](docs/EmailTrackingApi.md#purgeMyTracking) | **POST** /v1/email/tracking/purgeMyTracking | Purge recent activity for a user
 *EmailTrackingApi* | [**purgeMyTrackingWithHttpInfo**](docs/EmailTrackingApi.md#purgeMyTrackingWithHttpInfo) | **POST** /v1/email/tracking/purgeMyTracking | Purge recent activity for a user
 *EmailTrackingApi* | [**switchOpenClicks**](docs/EmailTrackingApi.md#switchOpenClicks) | **POST** /v1/email/tracking/ignoreOpenClicks | Set ignore open/click tracking for а message

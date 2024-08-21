@@ -193,10 +193,10 @@ public class EmailTrackingApi {
   }
 
   /**
-   * Modify tracking data
+   * Create tracking for a draft message
    * 
-   * @param draftId an identifier of a draft message for start tracking (optional)
-   * @param ignoreNotFound if draft was not found, turn on tracking anyway (optional)
+   * @param draftId an identifier of a draft message for start tracking (required)
+   * @param ignoreNotFound if draft was not found, store tracking data anyway (optional)
    * @param rewriteHtml  (optional)
    * @return CompletableFuture&lt;EmailTrackingData&gt;
    * @throws ApiException if fails to make API call
@@ -226,10 +226,10 @@ public class EmailTrackingApi {
   }
 
   /**
-   * Modify tracking data
+   * Create tracking for a draft message
    * 
-   * @param draftId an identifier of a draft message for start tracking (optional)
-   * @param ignoreNotFound if draft was not found, turn on tracking anyway (optional)
+   * @param draftId an identifier of a draft message for start tracking (required)
+   * @param ignoreNotFound if draft was not found, store tracking data anyway (optional)
    * @param rewriteHtml  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailTrackingData&gt;&gt;
    * @throws ApiException if fails to make API call
@@ -266,6 +266,10 @@ public class EmailTrackingApi {
   }
 
   private HttpRequest.Builder createDraftTrackingRequestBuilder(String draftId, String ignoreNotFound, RewriteHtml rewriteHtml) throws ApiException {
+    // verify the required parameter 'draftId' is set
+    if (draftId == null) {
+      throw new ApiException(400, "Missing the required parameter 'draftId' when calling createDraftTracking");
+    }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -404,6 +408,126 @@ public class EmailTrackingApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("contextContains", contextContains));
     localVarQueryParameterBaseName = "threadId";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("threadId", threadId));
+
+    if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
+      StringJoiner queryJoiner = new StringJoiner("&");
+      localVarQueryParams.forEach(p -> queryJoiner.add(p.getName() + '=' + p.getValue()));
+      if (localVarQueryStringJoiner.length() != 0) {
+        queryJoiner.add(localVarQueryStringJoiner.toString());
+      }
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath + '?' + queryJoiner.toString()));
+    } else {
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    }
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * List all tracking events
+   * 
+   * @param threadId conversation id (optional)
+   * @param from event start dateTime (strictly greater) (optional)
+   * @param to event end dateTime (smaller or equal) (optional)
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @return CompletableFuture&lt;EmailTrackingEventPageNext&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<EmailTrackingEventPageNext> getTrackingEvents(String threadId, String from, String to, Integer limit, Integer offset) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = getTrackingEventsRequestBuilder(threadId, from, to, limit, offset);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("getTrackingEvents", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailTrackingEventPageNext>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * List all tracking events
+   * 
+   * @param threadId conversation id (optional)
+   * @param from event start dateTime (strictly greater) (optional)
+   * @param to event end dateTime (smaller or equal) (optional)
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @return CompletableFuture&lt;ApiResponse&lt;EmailTrackingEventPageNext&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<EmailTrackingEventPageNext>> getTrackingEventsWithHttpInfo(String threadId, String from, String to, Integer limit, Integer offset) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = getTrackingEventsRequestBuilder(threadId, from, to, limit, offset);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("getTrackingEvents", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<EmailTrackingEventPageNext>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailTrackingEventPageNext>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder getTrackingEventsRequestBuilder(String threadId, String from, String to, Integer limit, Integer offset) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/email/tracking/events";
+
+    List<Pair> localVarQueryParams = new ArrayList<>();
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "threadId";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("threadId", threadId));
+    localVarQueryParameterBaseName = "from";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("from", from));
+    localVarQueryParameterBaseName = "to";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("to", to));
+    localVarQueryParameterBaseName = "limit";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("limit", limit));
+    localVarQueryParameterBaseName = "offset";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("offset", offset));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");
