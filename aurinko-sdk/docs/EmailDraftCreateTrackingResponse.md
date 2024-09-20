@@ -1,6 +1,6 @@
 
 
-# EmailTrackingData
+# EmailDraftCreateTrackingResponse
 
 
 ## Properties
@@ -12,6 +12,7 @@
 |**trackingCode** | **String** |  |  [optional] |
 |**context** | **String** |  |  [optional] |
 |**linkCodes** | **List&lt;Object&gt;** |  |  [optional] |
+|**trackingId** | **String** | A tracking identifier for the sent message |  [optional] |
 
 
 

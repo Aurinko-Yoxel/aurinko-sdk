@@ -17,8 +17,12 @@ import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Pair;
 
-import io.aurinko.client.model.BookingAttachGroupUsersDto;
-import io.aurinko.client.model.BookingAttachedUserPage;
+import io.aurinko.client.model.BookingAttachAccountsDto;
+import io.aurinko.client.model.BookingAttachGroupsDto;
+import io.aurinko.client.model.BookingAttachedAccountsPage;
+import io.aurinko.client.model.BookingAttachedGroupsPage;
+import io.aurinko.client.model.BookingDetachGroupAccountsDto;
+import io.aurinko.client.model.BookingDetachGroupsDto;
 import io.aurinko.client.model.BookingSuccessOutDto;
 import io.aurinko.client.model.GroupBookingInDto;
 import io.aurinko.client.model.GroupBookingOutDto;
@@ -89,21 +93,21 @@ public class GroupBookingApi {
   }
 
   /**
-   * Assign users to group booking
+   * Assign accounts to group booking
    * 
    * @param id A booking id (required)
-   * @param bookingAttachGroupUsersDto  (optional)
+   * @param bookingAttachAccountsDto  (optional)
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> attachUsersGroupBooking(Long id, BookingAttachGroupUsersDto bookingAttachGroupUsersDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> attachAccountsGroupBooking(Long id, BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = attachUsersGroupBookingRequestBuilder(id, bookingAttachGroupUsersDto);
+      HttpRequest.Builder localVarRequestBuilder = attachAccountsGroupBookingRequestBuilder(id, bookingAttachAccountsDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
             if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("attachUsersGroupBooking", localVarResponse));
+              return CompletableFuture.failedFuture(getApiException("attachAccountsGroupBooking", localVarResponse));
             }
             try {
               String responseBody = localVarResponse.body();
@@ -121,16 +125,16 @@ public class GroupBookingApi {
   }
 
   /**
-   * Assign users to group booking
+   * Assign accounts to group booking
    * 
    * @param id A booking id (required)
-   * @param bookingAttachGroupUsersDto  (optional)
+   * @param bookingAttachAccountsDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> attachUsersGroupBookingWithHttpInfo(Long id, BookingAttachGroupUsersDto bookingAttachGroupUsersDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> attachAccountsGroupBookingWithHttpInfo(Long id, BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = attachUsersGroupBookingRequestBuilder(id, bookingAttachGroupUsersDto);
+      HttpRequest.Builder localVarRequestBuilder = attachAccountsGroupBookingRequestBuilder(id, bookingAttachAccountsDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -138,7 +142,7 @@ public class GroupBookingApi {
               memberVarAsyncResponseInterceptor.accept(localVarResponse);
             }
             if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("attachUsersGroupBooking", localVarResponse));
+              return CompletableFuture.failedFuture(getApiException("attachAccountsGroupBooking", localVarResponse));
             }
             try {
               String responseBody = localVarResponse.body();
@@ -159,15 +163,15 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder attachUsersGroupBookingRequestBuilder(Long id, BookingAttachGroupUsersDto bookingAttachGroupUsersDto) throws ApiException {
+  private HttpRequest.Builder attachAccountsGroupBookingRequestBuilder(Long id, BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling attachUsersGroupBooking");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling attachAccountsGroupBooking");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/group/profiles/{id}/attachUsers"
+    String localVarPath = "/v1/book/group/profiles/{id}/attachAccounts"
         .replace("{id}", ApiClient.urlEncode(id.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
@@ -176,7 +180,7 @@ public class GroupBookingApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingAttachGroupUsersDto);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingAttachAccountsDto);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -191,27 +195,26 @@ public class GroupBookingApi {
   }
 
   /**
-   * List users of a group booking profile
+   * Assign groups to group booking
    * 
    * @param id A booking id (required)
-   * @param limit page size (optional, default to 50)
-   * @param offset return records offset by the given number (optional, default to 0)
-   * @return CompletableFuture&lt;BookingAttachedUserPage&gt;
+   * @param bookingAttachGroupsDto  (optional)
+   * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingAttachedUserPage> attachedUsersGroupBooking(Long id, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> attachGroupsBooking(Long id, BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = attachedUsersGroupBookingRequestBuilder(id, limit, offset);
+      HttpRequest.Builder localVarRequestBuilder = attachGroupsBookingRequestBuilder(id, bookingAttachGroupsDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
             if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("attachedUsersGroupBooking", localVarResponse));
+              return CompletableFuture.failedFuture(getApiException("attachGroupsBooking", localVarResponse));
             }
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingAttachedUserPage>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingSuccessOutDto>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -224,17 +227,16 @@ public class GroupBookingApi {
   }
 
   /**
-   * List users of a group booking profile
+   * Assign groups to group booking
    * 
    * @param id A booking id (required)
-   * @param limit page size (optional, default to 50)
-   * @param offset return records offset by the given number (optional, default to 0)
-   * @return CompletableFuture&lt;ApiResponse&lt;BookingAttachedUserPage&gt;&gt;
+   * @param bookingAttachGroupsDto  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingAttachedUserPage>> attachedUsersGroupBookingWithHttpInfo(Long id, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> attachGroupsBookingWithHttpInfo(Long id, BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = attachedUsersGroupBookingRequestBuilder(id, limit, offset);
+      HttpRequest.Builder localVarRequestBuilder = attachGroupsBookingRequestBuilder(id, bookingAttachGroupsDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -242,15 +244,15 @@ public class GroupBookingApi {
               memberVarAsyncResponseInterceptor.accept(localVarResponse);
             }
             if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("attachedUsersGroupBooking", localVarResponse));
+              return CompletableFuture.failedFuture(getApiException("attachGroupsBooking", localVarResponse));
             }
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<BookingAttachedUserPage>(
+                  new ApiResponse<BookingSuccessOutDto>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingAttachedUserPage>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingSuccessOutDto>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -263,15 +265,234 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder attachedUsersGroupBookingRequestBuilder(Long id, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder attachGroupsBookingRequestBuilder(Long id, BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling attachedUsersGroupBooking");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling attachGroupsBooking");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/group/profiles/{id}/attachUsers"
+    String localVarPath = "/v1/book/group/profiles/{id}/attachGroups"
+        .replace("{id}", ApiClient.urlEncode(id.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingAttachGroupsDto);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * List accounts of a group booking profile
+   * 
+   * @param id A booking id (required)
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @return CompletableFuture&lt;BookingAttachedAccountsPage&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<BookingAttachedAccountsPage> attachedAccountsGroupBooking(Long id, Integer limit, Integer offset) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = attachedAccountsGroupBookingRequestBuilder(id, limit, offset);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("attachedAccountsGroupBooking", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingAttachedAccountsPage>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * List accounts of a group booking profile
+   * 
+   * @param id A booking id (required)
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @return CompletableFuture&lt;ApiResponse&lt;BookingAttachedAccountsPage&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<BookingAttachedAccountsPage>> attachedAccountsGroupBookingWithHttpInfo(Long id, Integer limit, Integer offset) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = attachedAccountsGroupBookingRequestBuilder(id, limit, offset);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("attachedAccountsGroupBooking", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<BookingAttachedAccountsPage>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingAttachedAccountsPage>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder attachedAccountsGroupBookingRequestBuilder(Long id, Integer limit, Integer offset) throws ApiException {
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling attachedAccountsGroupBooking");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/book/group/profiles/{id}/attachAccounts"
+        .replace("{id}", ApiClient.urlEncode(id.toString()));
+
+    List<Pair> localVarQueryParams = new ArrayList<>();
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "limit";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("limit", limit));
+    localVarQueryParameterBaseName = "offset";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("offset", offset));
+
+    if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
+      StringJoiner queryJoiner = new StringJoiner("&");
+      localVarQueryParams.forEach(p -> queryJoiner.add(p.getName() + '=' + p.getValue()));
+      if (localVarQueryStringJoiner.length() != 0) {
+        queryJoiner.add(localVarQueryStringJoiner.toString());
+      }
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath + '?' + queryJoiner.toString()));
+    } else {
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    }
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * List groups of a group booking profile
+   * 
+   * @param id A booking id (required)
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @return CompletableFuture&lt;BookingAttachedGroupsPage&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<BookingAttachedGroupsPage> attachedGroupsBooking(Long id, Integer limit, Integer offset) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = attachedGroupsBookingRequestBuilder(id, limit, offset);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("attachedGroupsBooking", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingAttachedGroupsPage>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * List groups of a group booking profile
+   * 
+   * @param id A booking id (required)
+   * @param limit page size (optional, default to 50)
+   * @param offset return records offset by the given number (optional, default to 0)
+   * @return CompletableFuture&lt;ApiResponse&lt;BookingAttachedGroupsPage&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<BookingAttachedGroupsPage>> attachedGroupsBookingWithHttpInfo(Long id, Integer limit, Integer offset) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = attachedGroupsBookingRequestBuilder(id, limit, offset);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("attachedGroupsBooking", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<BookingAttachedGroupsPage>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingAttachedGroupsPage>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder attachedGroupsBookingRequestBuilder(Long id, Integer limit, Integer offset) throws ApiException {
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling attachedGroupsBooking");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/book/group/profiles/{id}/attachGroups"
         .replace("{id}", ApiClient.urlEncode(id.toString()));
 
     List<Pair> localVarQueryParams = new ArrayList<>();
@@ -495,21 +716,21 @@ public class GroupBookingApi {
   }
 
   /**
-   * Remove users from group booking
+   * Remove accounts from group booking
    * 
    * @param id A booking id (required)
-   * @param bookingAttachGroupUsersDto  (optional)
+   * @param bookingDetachGroupAccountsDto  (optional)
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> detachUsersGroupBooking(Long id, BookingAttachGroupUsersDto bookingAttachGroupUsersDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> detachAccountsGroupBooking(Long id, BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = detachUsersGroupBookingRequestBuilder(id, bookingAttachGroupUsersDto);
+      HttpRequest.Builder localVarRequestBuilder = detachAccountsGroupBookingRequestBuilder(id, bookingDetachGroupAccountsDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
             if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("detachUsersGroupBooking", localVarResponse));
+              return CompletableFuture.failedFuture(getApiException("detachAccountsGroupBooking", localVarResponse));
             }
             try {
               String responseBody = localVarResponse.body();
@@ -527,16 +748,16 @@ public class GroupBookingApi {
   }
 
   /**
-   * Remove users from group booking
+   * Remove accounts from group booking
    * 
    * @param id A booking id (required)
-   * @param bookingAttachGroupUsersDto  (optional)
+   * @param bookingDetachGroupAccountsDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> detachUsersGroupBookingWithHttpInfo(Long id, BookingAttachGroupUsersDto bookingAttachGroupUsersDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> detachAccountsGroupBookingWithHttpInfo(Long id, BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = detachUsersGroupBookingRequestBuilder(id, bookingAttachGroupUsersDto);
+      HttpRequest.Builder localVarRequestBuilder = detachAccountsGroupBookingRequestBuilder(id, bookingDetachGroupAccountsDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -544,7 +765,7 @@ public class GroupBookingApi {
               memberVarAsyncResponseInterceptor.accept(localVarResponse);
             }
             if (localVarResponse.statusCode()/ 100 != 2) {
-              return CompletableFuture.failedFuture(getApiException("detachUsersGroupBooking", localVarResponse));
+              return CompletableFuture.failedFuture(getApiException("detachAccountsGroupBooking", localVarResponse));
             }
             try {
               String responseBody = localVarResponse.body();
@@ -565,15 +786,15 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder detachUsersGroupBookingRequestBuilder(Long id, BookingAttachGroupUsersDto bookingAttachGroupUsersDto) throws ApiException {
+  private HttpRequest.Builder detachAccountsGroupBookingRequestBuilder(Long id, BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling detachUsersGroupBooking");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling detachAccountsGroupBooking");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
-    String localVarPath = "/v1/book/group/profiles/{id}/detachUsers"
+    String localVarPath = "/v1/book/group/profiles/{id}/detachAccounts"
         .replace("{id}", ApiClient.urlEncode(id.toString()));
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
@@ -582,7 +803,109 @@ public class GroupBookingApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingAttachGroupUsersDto);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingDetachGroupAccountsDto);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Remove groups from group booking
+   * 
+   * @param id A booking id (required)
+   * @param bookingDetachGroupsDto  (optional)
+   * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<BookingSuccessOutDto> detachGroupsBooking(Long id, BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = detachGroupsBookingRequestBuilder(id, bookingDetachGroupsDto);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("detachGroupsBooking", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingSuccessOutDto>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Remove groups from group booking
+   * 
+   * @param id A booking id (required)
+   * @param bookingDetachGroupsDto  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> detachGroupsBookingWithHttpInfo(Long id, BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = detachGroupsBookingRequestBuilder(id, bookingDetachGroupsDto);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("detachGroupsBooking", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<BookingSuccessOutDto>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingSuccessOutDto>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder detachGroupsBookingRequestBuilder(Long id, BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling detachGroupsBooking");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/book/group/profiles/{id}/detachGroups"
+        .replace("{id}", ApiClient.urlEncode(id.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingDetachGroupsDto);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

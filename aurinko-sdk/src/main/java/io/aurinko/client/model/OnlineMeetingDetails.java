@@ -65,6 +65,7 @@ public class OnlineMeetingDetails {
 
   @JsonCreator
   public OnlineMeetingDetails(
+    @JsonProperty(JSON_PROPERTY_URL) String url, 
     @JsonProperty(JSON_PROPERTY_PHONE) String phone, 
     @JsonProperty(JSON_PROPERTY_PIN) String pin, 
     @JsonProperty(JSON_PROPERTY_REGION_CODE) String regionCode, 
@@ -72,16 +73,12 @@ public class OnlineMeetingDetails {
     @JsonProperty(JSON_PROPERTY_INFO_URL) String infoUrl
   ) {
   this();
+    this.url = url;
     this.phone = phone;
     this.pin = pin;
     this.regionCode = regionCode;
     this.sip = sip;
     this.infoUrl = infoUrl;
-  }
-
-  public OnlineMeetingDetails url(String url) {
-    this.url = url;
-    return this;
   }
 
   /**
@@ -96,11 +93,6 @@ public class OnlineMeetingDetails {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(String url) {
-    this.url = url;
-  }
 
 
   /**

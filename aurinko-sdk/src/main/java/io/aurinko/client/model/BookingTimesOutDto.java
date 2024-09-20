@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.AdditionalField;
-import io.aurinko.client.model.BookingMeetingTime;
+import io.aurinko.client.model.BookingMeetingInterval;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,7 +56,7 @@ import io.aurinko.client.ApiClient;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<BookingMeetingTime> items = new ArrayList<>();
+  private List<BookingMeetingInterval> items = new ArrayList<>();
 
   public static final String JSON_PROPERTY_START_TIME = "startTime";
   private OffsetDateTime startTime;
@@ -100,12 +100,12 @@ public class BookingTimesOutDto {
   public BookingTimesOutDto() { 
   }
 
-  public BookingTimesOutDto items(List<BookingMeetingTime> items) {
+  public BookingTimesOutDto items(List<BookingMeetingInterval> items) {
     this.items = items;
     return this;
   }
 
-  public BookingTimesOutDto addItemsItem(BookingMeetingTime itemsItem) {
+  public BookingTimesOutDto addItemsItem(BookingMeetingInterval itemsItem) {
     if (this.items == null) {
       this.items = new ArrayList<>();
     }
@@ -120,14 +120,14 @@ public class BookingTimesOutDto {
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<BookingMeetingTime> getItems() {
+  public List<BookingMeetingInterval> getItems() {
     return items;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(List<BookingMeetingTime> items) {
+  public void setItems(List<BookingMeetingInterval> items) {
     this.items = items;
   }
 

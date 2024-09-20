@@ -29,6 +29,7 @@
 |---- | -----|
 | OPEN | &quot;open&quot; |
 | CLICK | &quot;click&quot; |
+| INITIAL | &quot;initial&quot; |
 | REPLY | &quot;reply&quot; |
 | REPLY_BOUNCE | &quot;replyBounce&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |

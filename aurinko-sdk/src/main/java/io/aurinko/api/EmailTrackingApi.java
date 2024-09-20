@@ -18,7 +18,7 @@ import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.ConvertDraft;
-import io.aurinko.client.model.EmailTrackingData;
+import io.aurinko.client.model.EmailDraftCreateTrackingResponse;
 import io.aurinko.client.model.EmailTrackingEvent;
 import io.aurinko.client.model.EmailTrackingEventPageNext;
 import io.aurinko.client.model.EmailTrackingPageNext;
@@ -198,10 +198,10 @@ public class EmailTrackingApi {
    * @param draftId an identifier of a draft message for start tracking (required)
    * @param ignoreNotFound if draft was not found, store tracking data anyway (optional)
    * @param rewriteHtml  (optional)
-   * @return CompletableFuture&lt;EmailTrackingData&gt;
+   * @return CompletableFuture&lt;EmailDraftCreateTrackingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailTrackingData> createDraftTracking(String draftId, String ignoreNotFound, RewriteHtml rewriteHtml) throws ApiException {
+  public CompletableFuture<EmailDraftCreateTrackingResponse> createDraftTracking(String draftId, String ignoreNotFound, RewriteHtml rewriteHtml) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createDraftTrackingRequestBuilder(draftId, ignoreNotFound, rewriteHtml);
       return memberVarHttpClient.sendAsync(
@@ -213,7 +213,7 @@ public class EmailTrackingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailTrackingData>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailDraftCreateTrackingResponse>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -231,10 +231,10 @@ public class EmailTrackingApi {
    * @param draftId an identifier of a draft message for start tracking (required)
    * @param ignoreNotFound if draft was not found, store tracking data anyway (optional)
    * @param rewriteHtml  (optional)
-   * @return CompletableFuture&lt;ApiResponse&lt;EmailTrackingData&gt;&gt;
+   * @return CompletableFuture&lt;ApiResponse&lt;EmailDraftCreateTrackingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailTrackingData>> createDraftTrackingWithHttpInfo(String draftId, String ignoreNotFound, RewriteHtml rewriteHtml) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailDraftCreateTrackingResponse>> createDraftTrackingWithHttpInfo(String draftId, String ignoreNotFound, RewriteHtml rewriteHtml) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createDraftTrackingRequestBuilder(draftId, ignoreNotFound, rewriteHtml);
       return memberVarHttpClient.sendAsync(
@@ -249,10 +249,10 @@ public class EmailTrackingApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<EmailTrackingData>(
+                  new ApiResponse<EmailDraftCreateTrackingResponse>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailTrackingData>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailDraftCreateTrackingResponse>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));

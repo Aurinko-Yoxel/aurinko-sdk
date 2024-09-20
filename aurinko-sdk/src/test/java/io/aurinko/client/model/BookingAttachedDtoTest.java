@@ -40,19 +40,19 @@ class BookingAttachedDtoTest {
     }
 
     /**
-     * Test the property 'userId'
+     * Test the property 'extId'
      */
     @Test
-    void userIdTest() {
-        // TODO: test userId
+    void extIdTest() {
+        // TODO: test extId
     }
 
     /**
-     * Test the property 'accounts'
+     * Test the property 'accountIds'
      */
     @Test
-    void accountsTest() {
-        // TODO: test accounts
+    void accountIdsTest() {
+        // TODO: test accountIds
     }
 
 }

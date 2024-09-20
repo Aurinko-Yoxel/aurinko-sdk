@@ -37,6 +37,7 @@ import io.aurinko.client.ApiClient;
   EmailSendResponse.JSON_PROPERTY_STATUS,
   EmailSendResponse.JSON_PROPERTY_ID,
   EmailSendResponse.JSON_PROPERTY_THREAD_ID,
+  EmailSendResponse.JSON_PROPERTY_TRACKING_ID,
   EmailSendResponse.JSON_PROPERTY_PROCESSING_STATUS,
   EmailSendResponse.JSON_PROPERTY_PROCESSING_ERROR
 })
@@ -85,6 +86,9 @@ public class EmailSendResponse {
 
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
   private String threadId;
+
+  public static final String JSON_PROPERTY_TRACKING_ID = "trackingId";
+  private String trackingId;
 
   /**
    * Gets or Sets processingStatus
@@ -204,6 +208,30 @@ public class EmailSendResponse {
   }
 
 
+  public EmailSendResponse trackingId(String trackingId) {
+    this.trackingId = trackingId;
+    return this;
+  }
+
+  /**
+   * A tracking identifier for the sent message
+   * @return trackingId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TRACKING_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getTrackingId() {
+    return trackingId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TRACKING_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTrackingId(String trackingId) {
+    this.trackingId = trackingId;
+  }
+
+
   public EmailSendResponse processingStatus(ProcessingStatusEnum processingStatus) {
     this.processingStatus = processingStatus;
     return this;
@@ -267,13 +295,14 @@ public class EmailSendResponse {
     return Objects.equals(this.status, emailSendResponse.status) &&
         Objects.equals(this.id, emailSendResponse.id) &&
         Objects.equals(this.threadId, emailSendResponse.threadId) &&
+        Objects.equals(this.trackingId, emailSendResponse.trackingId) &&
         Objects.equals(this.processingStatus, emailSendResponse.processingStatus) &&
         Objects.equals(this.processingError, emailSendResponse.processingError);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, id, threadId, processingStatus, processingError);
+    return Objects.hash(status, id, threadId, trackingId, processingStatus, processingError);
   }
 
   @Override
@@ -283,6 +312,7 @@ public class EmailSendResponse {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    threadId: ").append(toIndentedString(threadId)).append("\n");
+    sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
     sb.append("    processingStatus: ").append(toIndentedString(processingStatus)).append("\n");
     sb.append("    processingError: ").append(toIndentedString(processingError)).append("\n");
     sb.append("}");
@@ -345,6 +375,11 @@ public class EmailSendResponse {
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
       joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `trackingId` to the URL query string
+    if (getTrackingId() != null) {
+      joiner.add(String.format("%strackingId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `processingStatus` to the URL query string

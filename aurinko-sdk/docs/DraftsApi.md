@@ -485,7 +485,7 @@ CompletableFuture<ApiResponse<[**EmailDraft**](EmailDraft.md)>>
 
 ## sendDraft
 
-> CompletableFuture<EmailDraftSendStatus> sendDraft(draftId, sendTime, draftSendDetails)
+> CompletableFuture<EmailDraftSendResponse> sendDraft(draftId, sendTime, draftSendDetails)
 
 Send a draft message
 
@@ -554,7 +554,7 @@ public class Example {
         OffsetDateTime sendTime = OffsetDateTime.now(); // OffsetDateTime | 
         DraftSendDetails draftSendDetails = new DraftSendDetails(); // DraftSendDetails | 
         try {
-            CompletableFuture<EmailDraftSendStatus> result = apiInstance.sendDraft(draftId, sendTime, draftSendDetails);
+            CompletableFuture<EmailDraftSendResponse> result = apiInstance.sendDraft(draftId, sendTime, draftSendDetails);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling DraftsApi#sendDraft");
@@ -578,7 +578,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<[**EmailDraftSendStatus**](EmailDraftSendStatus.md)>
+CompletableFuture<[**EmailDraftSendResponse**](EmailDraftSendResponse.md)>
 
 
 ### Authorization
@@ -597,7 +597,7 @@ CompletableFuture<[**EmailDraftSendStatus**](EmailDraftSendStatus.md)>
 
 ## sendDraftWithHttpInfo
 
-> CompletableFuture<ApiResponse<EmailDraftSendStatus>> sendDraft sendDraftWithHttpInfo(draftId, sendTime, draftSendDetails)
+> CompletableFuture<ApiResponse<EmailDraftSendResponse>> sendDraft sendDraftWithHttpInfo(draftId, sendTime, draftSendDetails)
 
 Send a draft message
 
@@ -667,7 +667,7 @@ public class Example {
         OffsetDateTime sendTime = OffsetDateTime.now(); // OffsetDateTime | 
         DraftSendDetails draftSendDetails = new DraftSendDetails(); // DraftSendDetails | 
         try {
-            CompletableFuture<ApiResponse<EmailDraftSendStatus>> response = apiInstance.sendDraftWithHttpInfo(draftId, sendTime, draftSendDetails);
+            CompletableFuture<ApiResponse<EmailDraftSendResponse>> response = apiInstance.sendDraftWithHttpInfo(draftId, sendTime, draftSendDetails);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -700,7 +700,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<ApiResponse<[**EmailDraftSendStatus**](EmailDraftSendStatus.md)>>
+CompletableFuture<ApiResponse<[**EmailDraftSendResponse**](EmailDraftSendResponse.md)>>
 
 
 ### Authorization

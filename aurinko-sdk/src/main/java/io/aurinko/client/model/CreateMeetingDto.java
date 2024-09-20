@@ -39,7 +39,8 @@ import io.aurinko.client.ApiClient;
  */
 @JsonPropertyOrder({
   CreateMeetingDto.JSON_PROPERTY_TIME,
-  CreateMeetingDto.JSON_PROPERTY_USER_IDS,
+  CreateMeetingDto.JSON_PROPERTY_GROUP_XIDS,
+  CreateMeetingDto.JSON_PROPERTY_ACCOUNT_IDS,
   CreateMeetingDto.JSON_PROPERTY_NAME,
   CreateMeetingDto.JSON_PROPERTY_EMAIL,
   CreateMeetingDto.JSON_PROPERTY_SUBSTITUTION_DATA
@@ -49,8 +50,11 @@ public class CreateMeetingDto {
   public static final String JSON_PROPERTY_TIME = "time";
   private SelectedMeetingTime time;
 
-  public static final String JSON_PROPERTY_USER_IDS = "userIds";
-  private List<String> userIds = new ArrayList<>();
+  public static final String JSON_PROPERTY_GROUP_XIDS = "groupXids";
+  private List<String> groupXids = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  private List<Long> accountIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -88,35 +92,67 @@ public class CreateMeetingDto {
   }
 
 
-  public CreateMeetingDto userIds(List<String> userIds) {
-    this.userIds = userIds;
+  public CreateMeetingDto groupXids(List<String> groupXids) {
+    this.groupXids = groupXids;
     return this;
   }
 
-  public CreateMeetingDto addUserIdsItem(String userIdsItem) {
-    if (this.userIds == null) {
-      this.userIds = new ArrayList<>();
+  public CreateMeetingDto addGroupXidsItem(String groupXidsItem) {
+    if (this.groupXids == null) {
+      this.groupXids = new ArrayList<>();
     }
-    this.userIds.add(userIdsItem);
+    this.groupXids.add(groupXidsItem);
     return this;
   }
 
   /**
-   * Get userIds
-   * @return userIds
+   * Get groupXids
+   * @return groupXids
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonProperty(JSON_PROPERTY_GROUP_XIDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<String> getUserIds() {
-    return userIds;
+  public List<String> getGroupXids() {
+    return groupXids;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonProperty(JSON_PROPERTY_GROUP_XIDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserIds(List<String> userIds) {
-    this.userIds = userIds;
+  public void setGroupXids(List<String> groupXids) {
+    this.groupXids = groupXids;
+  }
+
+
+  public CreateMeetingDto accountIds(List<Long> accountIds) {
+    this.accountIds = accountIds;
+    return this;
+  }
+
+  public CreateMeetingDto addAccountIdsItem(Long accountIdsItem) {
+    if (this.accountIds == null) {
+      this.accountIds = new ArrayList<>();
+    }
+    this.accountIds.add(accountIdsItem);
+    return this;
+  }
+
+  /**
+   * Get accountIds
+   * @return accountIds
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<Long> getAccountIds() {
+    return accountIds;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAccountIds(List<Long> accountIds) {
+    this.accountIds = accountIds;
   }
 
 
@@ -213,7 +249,8 @@ public class CreateMeetingDto {
     }
     CreateMeetingDto createMeetingDto = (CreateMeetingDto) o;
     return Objects.equals(this.time, createMeetingDto.time) &&
-        Objects.equals(this.userIds, createMeetingDto.userIds) &&
+        Objects.equals(this.groupXids, createMeetingDto.groupXids) &&
+        Objects.equals(this.accountIds, createMeetingDto.accountIds) &&
         Objects.equals(this.name, createMeetingDto.name) &&
         Objects.equals(this.email, createMeetingDto.email) &&
         Objects.equals(this.substitutionData, createMeetingDto.substitutionData);
@@ -221,7 +258,7 @@ public class CreateMeetingDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(time, userIds, name, email, substitutionData);
+    return Objects.hash(time, groupXids, accountIds, name, email, substitutionData);
   }
 
   @Override
@@ -229,7 +266,8 @@ public class CreateMeetingDto {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateMeetingDto {\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("    groupXids: ").append(toIndentedString(groupXids)).append("\n");
+    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    substitutionData: ").append(toIndentedString(substitutionData)).append("\n");
@@ -285,12 +323,21 @@ public class CreateMeetingDto {
       joiner.add(getTime().toUrlQueryString(prefix + "time" + suffix));
     }
 
-    // add `userIds` to the URL query string
-    if (getUserIds() != null) {
-      for (int i = 0; i < getUserIds().size(); i++) {
-        joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
+    // add `groupXids` to the URL query string
+    if (getGroupXids() != null) {
+      for (int i = 0; i < getGroupXids().size(); i++) {
+        joiner.add(String.format("%sgroupXids%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getGroupXids().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    // add `accountIds` to the URL query string
+    if (getAccountIds() != null) {
+      for (int i = 0; i < getAccountIds().size(); i++) {
+        joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

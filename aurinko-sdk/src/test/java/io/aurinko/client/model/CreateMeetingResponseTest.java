@@ -54,11 +54,11 @@ class CreateMeetingResponseTest {
     }
 
     /**
-     * Test the property 'userId'
+     * Test the property 'groupXid'
      */
     @Test
-    void userIdTest() {
-        // TODO: test userId
+    void groupXidTest() {
+        // TODO: test groupXid
     }
 
 }

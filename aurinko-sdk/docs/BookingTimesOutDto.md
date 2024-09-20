@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**items** | [**List&lt;BookingMeetingTime&gt;**](BookingMeetingTime.md) | List of available meeting slots. |  [optional] |
+|**items** | [**List&lt;BookingMeetingInterval&gt;**](BookingMeetingInterval.md) | List of available meeting slots. |  [optional] |
 |**startTime** | **OffsetDateTime** | Start time of available meeting slots. |  [optional] |
 |**endTime** | **OffsetDateTime** | End time of available meeting slots. |  [optional] |
 |**timeAvailableFor** | **String** | Time period (in ISO-8601 format) the profile is covering. For example, P3M (3 months), P4W (4 weeks), P5D (5 days). |  [optional] |

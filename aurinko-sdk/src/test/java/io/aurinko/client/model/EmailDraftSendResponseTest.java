@@ -18,41 +18,39 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BookingAttachGroupUserDto
+ * Model tests for EmailDraftSendResponse
  */
-class BookingAttachGroupUserDtoTest {
-    private final BookingAttachGroupUserDto model = new BookingAttachGroupUserDto();
+class EmailDraftSendResponseTest {
+    private final EmailDraftSendResponse model = new EmailDraftSendResponse();
 
     /**
-     * Model tests for BookingAttachGroupUserDto
+     * Model tests for EmailDraftSendResponse
      */
     @Test
-    void testBookingAttachGroupUserDto() {
-        // TODO: test BookingAttachGroupUserDto
+    void testEmailDraftSendResponse() {
+        // TODO: test EmailDraftSendResponse
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'status'
      */
     @Test
-    void idTest() {
-        // TODO: test id
+    void statusTest() {
+        // TODO: test status
     }
 
     /**
-     * Test the property 'accounts'
+     * Test the property 'trackingId'
      */
     @Test
-    void accountsTest() {
-        // TODO: test accounts
+    void trackingIdTest() {
+        // TODO: test trackingId
     }
 
 }

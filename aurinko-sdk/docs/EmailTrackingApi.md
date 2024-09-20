@@ -260,7 +260,7 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 
 ## createDraftTracking
 
-> CompletableFuture<EmailTrackingData> createDraftTracking(draftId, ignoreNotFound, rewriteHtml)
+> CompletableFuture<EmailDraftCreateTrackingResponse> createDraftTracking(draftId, ignoreNotFound, rewriteHtml)
 
 Create tracking for a draft message
 
@@ -329,7 +329,7 @@ public class Example {
         String ignoreNotFound = "ignoreNotFound_example"; // String | if draft was not found, store tracking data anyway
         RewriteHtml rewriteHtml = new RewriteHtml(); // RewriteHtml | 
         try {
-            CompletableFuture<EmailTrackingData> result = apiInstance.createDraftTracking(draftId, ignoreNotFound, rewriteHtml);
+            CompletableFuture<EmailDraftCreateTrackingResponse> result = apiInstance.createDraftTracking(draftId, ignoreNotFound, rewriteHtml);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling EmailTrackingApi#createDraftTracking");
@@ -353,7 +353,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<[**EmailTrackingData**](EmailTrackingData.md)>
+CompletableFuture<[**EmailDraftCreateTrackingResponse**](EmailDraftCreateTrackingResponse.md)>
 
 
 ### Authorization
@@ -372,7 +372,7 @@ CompletableFuture<[**EmailTrackingData**](EmailTrackingData.md)>
 
 ## createDraftTrackingWithHttpInfo
 
-> CompletableFuture<ApiResponse<EmailTrackingData>> createDraftTracking createDraftTrackingWithHttpInfo(draftId, ignoreNotFound, rewriteHtml)
+> CompletableFuture<ApiResponse<EmailDraftCreateTrackingResponse>> createDraftTracking createDraftTrackingWithHttpInfo(draftId, ignoreNotFound, rewriteHtml)
 
 Create tracking for a draft message
 
@@ -442,7 +442,7 @@ public class Example {
         String ignoreNotFound = "ignoreNotFound_example"; // String | if draft was not found, store tracking data anyway
         RewriteHtml rewriteHtml = new RewriteHtml(); // RewriteHtml | 
         try {
-            CompletableFuture<ApiResponse<EmailTrackingData>> response = apiInstance.createDraftTrackingWithHttpInfo(draftId, ignoreNotFound, rewriteHtml);
+            CompletableFuture<ApiResponse<EmailDraftCreateTrackingResponse>> response = apiInstance.createDraftTrackingWithHttpInfo(draftId, ignoreNotFound, rewriteHtml);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -475,7 +475,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<ApiResponse<[**EmailTrackingData**](EmailTrackingData.md)>>
+CompletableFuture<ApiResponse<[**EmailDraftCreateTrackingResponse**](EmailDraftCreateTrackingResponse.md)>>
 
 
 ### Authorization

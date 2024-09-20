@@ -15,7 +15,7 @@ package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.ConvertDraft;
-import io.aurinko.client.model.EmailTrackingData;
+import io.aurinko.client.model.EmailDraftCreateTrackingResponse;
 import io.aurinko.client.model.EmailTrackingEvent;
 import io.aurinko.client.model.EmailTrackingEventPageNext;
 import io.aurinko.client.model.EmailTrackingPageNext;
@@ -74,7 +74,7 @@ public class EmailTrackingApiTest {
         String draftId = null;
         String ignoreNotFound = null;
         RewriteHtml rewriteHtml = null;
-        CompletableFuture<EmailTrackingData> response = 
+        CompletableFuture<EmailDraftCreateTrackingResponse> response = 
         api.createDraftTracking(draftId, ignoreNotFound, rewriteHtml);
         
         // TODO: test validations

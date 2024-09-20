@@ -35,73 +35,73 @@ import io.aurinko.client.ApiClient;
  * BookingAttachedDto
  */
 @JsonPropertyOrder({
-  BookingAttachedDto.JSON_PROPERTY_USER_ID,
-  BookingAttachedDto.JSON_PROPERTY_ACCOUNTS
+  BookingAttachedDto.JSON_PROPERTY_EXT_ID,
+  BookingAttachedDto.JSON_PROPERTY_ACCOUNT_IDS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingAttachedDto {
-  public static final String JSON_PROPERTY_USER_ID = "userId";
-  private String userId;
+  public static final String JSON_PROPERTY_EXT_ID = "extId";
+  private String extId;
 
-  public static final String JSON_PROPERTY_ACCOUNTS = "accounts";
-  private List<Long> accounts = new ArrayList<>();
+  public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  private List<Long> accountIds = new ArrayList<>();
 
   public BookingAttachedDto() { 
   }
 
-  public BookingAttachedDto userId(String userId) {
-    this.userId = userId;
+  public BookingAttachedDto extId(String extId) {
+    this.extId = extId;
     return this;
   }
 
   /**
-   * User id
-   * @return userId
+   * External identifier
+   * @return extId
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonProperty(JSON_PROPERTY_EXT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getUserId() {
-    return userId;
+  public String getExtId() {
+    return extId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonProperty(JSON_PROPERTY_EXT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserId(String userId) {
-    this.userId = userId;
+  public void setExtId(String extId) {
+    this.extId = extId;
   }
 
 
-  public BookingAttachedDto accounts(List<Long> accounts) {
-    this.accounts = accounts;
+  public BookingAttachedDto accountIds(List<Long> accountIds) {
+    this.accountIds = accountIds;
     return this;
   }
 
-  public BookingAttachedDto addAccountsItem(Long accountsItem) {
-    if (this.accounts == null) {
-      this.accounts = new ArrayList<>();
+  public BookingAttachedDto addAccountIdsItem(Long accountIdsItem) {
+    if (this.accountIds == null) {
+      this.accountIds = new ArrayList<>();
     }
-    this.accounts.add(accountsItem);
+    this.accountIds.add(accountIdsItem);
     return this;
   }
 
   /**
-   * Get accounts
-   * @return accounts
+   * Get accountIds
+   * @return accountIds
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACCOUNTS)
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<Long> getAccounts() {
-    return accounts;
+  public List<Long> getAccountIds() {
+    return accountIds;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACCOUNTS)
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccounts(List<Long> accounts) {
-    this.accounts = accounts;
+  public void setAccountIds(List<Long> accountIds) {
+    this.accountIds = accountIds;
   }
 
 
@@ -117,21 +117,21 @@ public class BookingAttachedDto {
       return false;
     }
     BookingAttachedDto bookingAttachedDto = (BookingAttachedDto) o;
-    return Objects.equals(this.userId, bookingAttachedDto.userId) &&
-        Objects.equals(this.accounts, bookingAttachedDto.accounts);
+    return Objects.equals(this.extId, bookingAttachedDto.extId) &&
+        Objects.equals(this.accountIds, bookingAttachedDto.accountIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, accounts);
+    return Objects.hash(extId, accountIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BookingAttachedDto {\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    accounts: ").append(toIndentedString(accounts)).append("\n");
+    sb.append("    extId: ").append(toIndentedString(extId)).append("\n");
+    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -179,17 +179,17 @@ public class BookingAttachedDto {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `userId` to the URL query string
-    if (getUserId() != null) {
-      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `extId` to the URL query string
+    if (getExtId() != null) {
+      joiner.add(String.format("%sextId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExtId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `accounts` to the URL query string
-    if (getAccounts() != null) {
-      for (int i = 0; i < getAccounts().size(); i++) {
-        joiner.add(String.format("%saccounts%s%s=%s", prefix, suffix,
+    // add `accountIds` to the URL query string
+    if (getAccountIds() != null) {
+      for (int i = 0; i < getAccountIds().size(); i++) {
+        joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAccounts().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

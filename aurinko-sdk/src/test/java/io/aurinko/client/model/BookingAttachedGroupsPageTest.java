@@ -27,17 +27,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BookingAttachedUserPage
+ * Model tests for BookingAttachedGroupsPage
  */
-class BookingAttachedUserPageTest {
-    private final BookingAttachedUserPage model = new BookingAttachedUserPage();
+class BookingAttachedGroupsPageTest {
+    private final BookingAttachedGroupsPage model = new BookingAttachedGroupsPage();
 
     /**
-     * Model tests for BookingAttachedUserPage
+     * Model tests for BookingAttachedGroupsPage
      */
     @Test
-    void testBookingAttachedUserPage() {
-        // TODO: test BookingAttachedUserPage
+    void testBookingAttachedGroupsPage() {
+        // TODO: test BookingAttachedGroupsPage
     }
 
     /**

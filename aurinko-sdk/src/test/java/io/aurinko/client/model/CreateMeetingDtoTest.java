@@ -51,11 +51,19 @@ class CreateMeetingDtoTest {
     }
 
     /**
-     * Test the property 'userIds'
+     * Test the property 'groupXids'
      */
     @Test
-    void userIdsTest() {
-        // TODO: test userIds
+    void groupXidsTest() {
+        // TODO: test groupXids
+    }
+
+    /**
+     * Test the property 'accountIds'
+     */
+    @Test
+    void accountIdsTest() {
+        // TODO: test accountIds
     }
 
     /**

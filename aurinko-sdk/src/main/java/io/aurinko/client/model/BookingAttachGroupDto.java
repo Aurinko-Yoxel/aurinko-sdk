@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.BookingAttachGroupUserDto;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -33,53 +32,81 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import io.aurinko.client.ApiClient;
 /**
- * BookingAttachGroupUsersDto
+ * BookingAttachGroupDto
  */
 @JsonPropertyOrder({
-  BookingAttachGroupUsersDto.JSON_PROPERTY_USERS
+  BookingAttachGroupDto.JSON_PROPERTY_EXT_ID,
+  BookingAttachGroupDto.JSON_PROPERTY_ACCOUNT_IDS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class BookingAttachGroupUsersDto {
-  public static final String JSON_PROPERTY_USERS = "users";
-  private List<BookingAttachGroupUserDto> users = new ArrayList<>();
+public class BookingAttachGroupDto {
+  public static final String JSON_PROPERTY_EXT_ID = "extId";
+  private String extId;
 
-  public BookingAttachGroupUsersDto() { 
+  public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  private List<Long> accountIds = new ArrayList<>();
+
+  public BookingAttachGroupDto() { 
   }
 
-  public BookingAttachGroupUsersDto users(List<BookingAttachGroupUserDto> users) {
-    this.users = users;
-    return this;
-  }
-
-  public BookingAttachGroupUsersDto addUsersItem(BookingAttachGroupUserDto usersItem) {
-    if (this.users == null) {
-      this.users = new ArrayList<>();
-    }
-    this.users.add(usersItem);
+  public BookingAttachGroupDto extId(String extId) {
+    this.extId = extId;
     return this;
   }
 
   /**
-   * Get users
-   * @return users
+   * External identifier
+   * @return extId
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USERS)
+  @JsonProperty(JSON_PROPERTY_EXT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<BookingAttachGroupUserDto> getUsers() {
-    return users;
+  public String getExtId() {
+    return extId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USERS)
+  @JsonProperty(JSON_PROPERTY_EXT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUsers(List<BookingAttachGroupUserDto> users) {
-    this.users = users;
+  public void setExtId(String extId) {
+    this.extId = extId;
+  }
+
+
+  public BookingAttachGroupDto accountIds(List<Long> accountIds) {
+    this.accountIds = accountIds;
+    return this;
+  }
+
+  public BookingAttachGroupDto addAccountIdsItem(Long accountIdsItem) {
+    if (this.accountIds == null) {
+      this.accountIds = new ArrayList<>();
+    }
+    this.accountIds.add(accountIdsItem);
+    return this;
+  }
+
+  /**
+   * Get accountIds
+   * @return accountIds
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<Long> getAccountIds() {
+    return accountIds;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAccountIds(List<Long> accountIds) {
+    this.accountIds = accountIds;
   }
 
 
   /**
-   * Return true if this BookingAttachGroupUsersDto object is equal to o.
+   * Return true if this BookingAttachGroupDto object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -89,20 +116,22 @@ public class BookingAttachGroupUsersDto {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BookingAttachGroupUsersDto bookingAttachGroupUsersDto = (BookingAttachGroupUsersDto) o;
-    return Objects.equals(this.users, bookingAttachGroupUsersDto.users);
+    BookingAttachGroupDto bookingAttachGroupDto = (BookingAttachGroupDto) o;
+    return Objects.equals(this.extId, bookingAttachGroupDto.extId) &&
+        Objects.equals(this.accountIds, bookingAttachGroupDto.accountIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(users);
+    return Objects.hash(extId, accountIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BookingAttachGroupUsersDto {\n");
-    sb.append("    users: ").append(toIndentedString(users)).append("\n");
+    sb.append("class BookingAttachGroupDto {\n");
+    sb.append("    extId: ").append(toIndentedString(extId)).append("\n");
+    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -150,13 +179,17 @@ public class BookingAttachGroupUsersDto {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `users` to the URL query string
-    if (getUsers() != null) {
-      for (int i = 0; i < getUsers().size(); i++) {
-        if (getUsers().get(i) != null) {
-          joiner.add(getUsers().get(i).toUrlQueryString(String.format("%susers%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
-        }
+    // add `extId` to the URL query string
+    if (getExtId() != null) {
+      joiner.add(String.format("%sextId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExtId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `accountIds` to the URL query string
+    if (getAccountIds() != null) {
+      for (int i = 0; i < getAccountIds().size(); i++) {
+        joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

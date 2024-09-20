@@ -18,31 +18,67 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.BookingRequiredMode;
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for EmailDraftSendStatus
+ * Model tests for BookingAvailableProfilesInDto
  */
-class EmailDraftSendStatusTest {
-    private final EmailDraftSendStatus model = new EmailDraftSendStatus();
+class BookingAvailableProfilesInDtoTest {
+    private final BookingAvailableProfilesInDto model = new BookingAvailableProfilesInDto();
 
     /**
-     * Model tests for EmailDraftSendStatus
+     * Model tests for BookingAvailableProfilesInDto
      */
     @Test
-    void testEmailDraftSendStatus() {
-        // TODO: test EmailDraftSendStatus
+    void testBookingAvailableProfilesInDto() {
+        // TODO: test BookingAvailableProfilesInDto
     }
 
     /**
-     * Test the property 'status'
+     * Test the property 'timeMin'
      */
     @Test
-    void statusTest() {
-        // TODO: test status
+    void timeMinTest() {
+        // TODO: test timeMin
+    }
+
+    /**
+     * Test the property 'timeMax'
+     */
+    @Test
+    void timeMaxTest() {
+        // TODO: test timeMax
+    }
+
+    /**
+     * Test the property 'profileNames'
+     */
+    @Test
+    void profileNamesTest() {
+        // TODO: test profileNames
+    }
+
+    /**
+     * Test the property 'profileIds'
+     */
+    @Test
+    void profileIdsTest() {
+        // TODO: test profileIds
+    }
+
+    /**
+     * Test the property 'required'
+     */
+    @Test
+    void requiredTest() {
+        // TODO: test required
     }
 
 }

@@ -14,6 +14,9 @@
 package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
+import io.aurinko.client.model.BookingAvailableProfilesInDto;
+import io.aurinko.client.model.BookingAvailableProfilesOutDto;
+import io.aurinko.client.model.BookingRequiredMode;
 import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.CreateMeetingDto;
 import io.aurinko.client.model.CreateMeetingResponse;
@@ -49,9 +52,28 @@ public class AvailabilityApiTest {
     public void createMeetingTest() throws ApiException {
         String aurinkoClientId = null;
         String name = null;
+        BookingRequiredMode required = null;
         CreateMeetingDto createMeetingDto = null;
         CompletableFuture<CreateMeetingResponse> response = 
-        api.createMeeting(aurinkoClientId, name, createMeetingDto);
+        api.createMeeting(aurinkoClientId, name, required, createMeetingDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get available bookings for а time range
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAvailableBookingsTest() throws ApiException {
+        String aurinkoClientId = null;
+        BookingAvailableProfilesInDto bookingAvailableProfilesInDto = null;
+        CompletableFuture<BookingAvailableProfilesOutDto> response = 
+        api.getAvailableBookings(aurinkoClientId, bookingAvailableProfilesInDto);
         
         // TODO: test validations
     }
@@ -68,10 +90,11 @@ public class AvailabilityApiTest {
     public void getMeetingTimesTest() throws ApiException {
         String aurinkoClientId = null;
         String name = null;
+        BookingRequiredMode required = null;
         Integer limit = null;
         Integer offset = null;
         CompletableFuture<BookingTimesOutDto> response = 
-        api.getMeetingTimes(aurinkoClientId, name, limit, offset);
+        api.getMeetingTimes(aurinkoClientId, name, required, limit, offset);
         
         // TODO: test validations
     }

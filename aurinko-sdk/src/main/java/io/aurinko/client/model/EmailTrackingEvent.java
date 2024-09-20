@@ -64,6 +64,8 @@ public class EmailTrackingEvent {
     
     CLICK("click"),
     
+    INITIAL("initial"),
+    
     REPLY("reply"),
     
     REPLY_BOUNCE("replyBounce"),

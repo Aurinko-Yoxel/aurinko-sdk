@@ -26,57 +26,25 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for EmailTrackingData
+ * Model tests for BookingDetachGroupAccountsDto
  */
-class EmailTrackingDataTest {
-    private final EmailTrackingData model = new EmailTrackingData();
+class BookingDetachGroupAccountsDtoTest {
+    private final BookingDetachGroupAccountsDto model = new BookingDetachGroupAccountsDto();
 
     /**
-     * Model tests for EmailTrackingData
+     * Model tests for BookingDetachGroupAccountsDto
      */
     @Test
-    void testEmailTrackingData() {
-        // TODO: test EmailTrackingData
+    void testBookingDetachGroupAccountsDto() {
+        // TODO: test BookingDetachGroupAccountsDto
     }
 
     /**
-     * Test the property 'trackReplies'
+     * Test the property 'accountIds'
      */
     @Test
-    void trackRepliesTest() {
-        // TODO: test trackReplies
-    }
-
-    /**
-     * Test the property 'htmlBody'
-     */
-    @Test
-    void htmlBodyTest() {
-        // TODO: test htmlBody
-    }
-
-    /**
-     * Test the property 'trackingCode'
-     */
-    @Test
-    void trackingCodeTest() {
-        // TODO: test trackingCode
-    }
-
-    /**
-     * Test the property 'context'
-     */
-    @Test
-    void contextTest() {
-        // TODO: test context
-    }
-
-    /**
-     * Test the property 'linkCodes'
-     */
-    @Test
-    void linkCodesTest() {
-        // TODO: test linkCodes
+    void accountIdsTest() {
+        // TODO: test accountIds
     }
 
 }

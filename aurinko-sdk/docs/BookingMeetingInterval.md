@@ -1,6 +1,6 @@
 
 
-# BookingMeetingTime
+# BookingMeetingInterval
 
 
 ## Properties
@@ -9,7 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**start** | **OffsetDateTime** |  |  [optional] |
 |**end** | **OffsetDateTime** |  |  [optional] |
-|**userIds** | **List&lt;String&gt;** |  |  [optional] |
+|**groupXids** | **List&lt;String&gt;** |  |  [optional] |
+|**accountIds** | **List&lt;Long&gt;** |  |  [optional] |
 
 
 

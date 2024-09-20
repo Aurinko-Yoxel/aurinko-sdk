@@ -10,6 +10,7 @@
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**threadId** | **String** |  |  [optional] |
+|**trackingId** | **String** | A tracking identifier for the sent message |  [optional] |
 |**processingStatus** | [**ProcessingStatusEnum**](#ProcessingStatusEnum) |  |  [optional] |
 |**processingError** | [**EmailSendError**](EmailSendError.md) |  |  [optional] |
 

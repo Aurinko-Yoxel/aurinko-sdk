@@ -21,7 +21,7 @@ import io.aurinko.client.model.BodyType;
 import io.aurinko.client.model.DraftSendDetails;
 import io.aurinko.client.model.EmailDraft;
 import io.aurinko.client.model.EmailDraftResponse;
-import io.aurinko.client.model.EmailDraftSendStatus;
+import io.aurinko.client.model.EmailDraftSendResponse;
 import java.time.OffsetDateTime;
 import io.aurinko.client.model.OutgoingEmail;
 
@@ -325,10 +325,10 @@ public class DraftsApi {
    * @param draftId an identifier of a draft message (required)
    * @param sendTime  (optional)
    * @param draftSendDetails  (optional)
-   * @return CompletableFuture&lt;EmailDraftSendStatus&gt;
+   * @return CompletableFuture&lt;EmailDraftSendResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailDraftSendStatus> sendDraft(String draftId, OffsetDateTime sendTime, DraftSendDetails draftSendDetails) throws ApiException {
+  public CompletableFuture<EmailDraftSendResponse> sendDraft(String draftId, OffsetDateTime sendTime, DraftSendDetails draftSendDetails) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = sendDraftRequestBuilder(draftId, sendTime, draftSendDetails);
       return memberVarHttpClient.sendAsync(
@@ -340,7 +340,7 @@ public class DraftsApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailDraftSendStatus>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailDraftSendResponse>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -358,10 +358,10 @@ public class DraftsApi {
    * @param draftId an identifier of a draft message (required)
    * @param sendTime  (optional)
    * @param draftSendDetails  (optional)
-   * @return CompletableFuture&lt;ApiResponse&lt;EmailDraftSendStatus&gt;&gt;
+   * @return CompletableFuture&lt;ApiResponse&lt;EmailDraftSendResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailDraftSendStatus>> sendDraftWithHttpInfo(String draftId, OffsetDateTime sendTime, DraftSendDetails draftSendDetails) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailDraftSendResponse>> sendDraftWithHttpInfo(String draftId, OffsetDateTime sendTime, DraftSendDetails draftSendDetails) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = sendDraftRequestBuilder(draftId, sendTime, draftSendDetails);
       return memberVarHttpClient.sendAsync(
@@ -376,10 +376,10 @@ public class DraftsApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<EmailDraftSendStatus>(
+                  new ApiResponse<EmailDraftSendResponse>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailDraftSendStatus>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailDraftSendResponse>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));

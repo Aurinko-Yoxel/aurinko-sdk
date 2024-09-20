@@ -27,7 +27,7 @@
 |**showAs** | **ShowAs** |  |  [optional] |
 |**sensitivity** | **Sensitivity** |  |  [optional] |
 |**categories** | **List&lt;String&gt;** |  |  [optional] [readonly] |
-|**htmlLink** | **String** |  |  [optional] |
+|**htmlLink** | **String** |  |  [optional] [readonly] |
 |**hasAttachments** | **Boolean** |  |  [optional] [readonly] |
 |**attachments** | [**List&lt;EmailAttachment&gt;**](EmailAttachment.md) |  |  [optional] |
 |**omitted** | [**List&lt;OmittedEnum&gt;**](#List&lt;OmittedEnum&gt;) |  |  [optional] [readonly] |

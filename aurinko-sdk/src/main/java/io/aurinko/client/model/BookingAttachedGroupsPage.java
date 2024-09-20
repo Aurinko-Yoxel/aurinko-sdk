@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.BookingAttachedDto;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,165 +33,137 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import io.aurinko.client.ApiClient;
 /**
- * EmailTrackingData
+ * BookingAttachedGroupsPage
  */
 @JsonPropertyOrder({
-  EmailTrackingData.JSON_PROPERTY_TRACK_REPLIES,
-  EmailTrackingData.JSON_PROPERTY_HTML_BODY,
-  EmailTrackingData.JSON_PROPERTY_TRACKING_CODE,
-  EmailTrackingData.JSON_PROPERTY_CONTEXT,
-  EmailTrackingData.JSON_PROPERTY_LINK_CODES
+  BookingAttachedGroupsPage.JSON_PROPERTY_OFFSET,
+  BookingAttachedGroupsPage.JSON_PROPERTY_TOTAL_SIZE,
+  BookingAttachedGroupsPage.JSON_PROPERTY_DONE,
+  BookingAttachedGroupsPage.JSON_PROPERTY_RECORDS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class EmailTrackingData {
-  public static final String JSON_PROPERTY_TRACK_REPLIES = "trackReplies";
-  private Boolean trackReplies;
+public class BookingAttachedGroupsPage {
+  public static final String JSON_PROPERTY_OFFSET = "offset";
+  private Integer offset;
 
-  public static final String JSON_PROPERTY_HTML_BODY = "htmlBody";
-  private String htmlBody;
+  public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
+  private Long totalSize;
 
-  public static final String JSON_PROPERTY_TRACKING_CODE = "trackingCode";
-  private String trackingCode;
+  public static final String JSON_PROPERTY_DONE = "done";
+  private Boolean done;
 
-  public static final String JSON_PROPERTY_CONTEXT = "context";
-  private String context;
+  public static final String JSON_PROPERTY_RECORDS = "records";
+  private List<BookingAttachedDto> records = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_LINK_CODES = "linkCodes";
-  private List<Object> linkCodes = new ArrayList<>();
-
-  public EmailTrackingData() { 
+  public BookingAttachedGroupsPage() { 
   }
 
-  public EmailTrackingData trackReplies(Boolean trackReplies) {
-    this.trackReplies = trackReplies;
+  public BookingAttachedGroupsPage offset(Integer offset) {
+    this.offset = offset;
     return this;
   }
 
   /**
-   * Get trackReplies
-   * @return trackReplies
+   * Get offset
+   * @return offset
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TRACK_REPLIES)
+  @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Boolean getTrackReplies() {
-    return trackReplies;
+  public Integer getOffset() {
+    return offset;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TRACK_REPLIES)
+  @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackReplies(Boolean trackReplies) {
-    this.trackReplies = trackReplies;
+  public void setOffset(Integer offset) {
+    this.offset = offset;
   }
 
 
-  public EmailTrackingData htmlBody(String htmlBody) {
-    this.htmlBody = htmlBody;
+  public BookingAttachedGroupsPage totalSize(Long totalSize) {
+    this.totalSize = totalSize;
     return this;
   }
 
   /**
-   * Get htmlBody
-   * @return htmlBody
+   * Get totalSize
+   * @return totalSize
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_HTML_BODY)
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getHtmlBody() {
-    return htmlBody;
+  public Long getTotalSize() {
+    return totalSize;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_HTML_BODY)
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHtmlBody(String htmlBody) {
-    this.htmlBody = htmlBody;
+  public void setTotalSize(Long totalSize) {
+    this.totalSize = totalSize;
   }
 
 
-  public EmailTrackingData trackingCode(String trackingCode) {
-    this.trackingCode = trackingCode;
+  public BookingAttachedGroupsPage done(Boolean done) {
+    this.done = done;
     return this;
   }
 
   /**
-   * Get trackingCode
-   * @return trackingCode
+   * Get done
+   * @return done
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
+  @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getTrackingCode() {
-    return trackingCode;
+  public Boolean getDone() {
+    return done;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
+  @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCode(String trackingCode) {
-    this.trackingCode = trackingCode;
+  public void setDone(Boolean done) {
+    this.done = done;
   }
 
 
-  public EmailTrackingData context(String context) {
-    this.context = context;
+  public BookingAttachedGroupsPage records(List<BookingAttachedDto> records) {
+    this.records = records;
     return this;
   }
 
-  /**
-   * Get context
-   * @return context
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONTEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getContext() {
-    return context;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CONTEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(String context) {
-    this.context = context;
-  }
-
-
-  public EmailTrackingData linkCodes(List<Object> linkCodes) {
-    this.linkCodes = linkCodes;
-    return this;
-  }
-
-  public EmailTrackingData addLinkCodesItem(Object linkCodesItem) {
-    if (this.linkCodes == null) {
-      this.linkCodes = new ArrayList<>();
+  public BookingAttachedGroupsPage addRecordsItem(BookingAttachedDto recordsItem) {
+    if (this.records == null) {
+      this.records = new ArrayList<>();
     }
-    this.linkCodes.add(linkCodesItem);
+    this.records.add(recordsItem);
     return this;
   }
 
   /**
-   * Get linkCodes
-   * @return linkCodes
+   * Get records
+   * @return records
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LINK_CODES)
+  @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<Object> getLinkCodes() {
-    return linkCodes;
+  public List<BookingAttachedDto> getRecords() {
+    return records;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LINK_CODES)
+  @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLinkCodes(List<Object> linkCodes) {
-    this.linkCodes = linkCodes;
+  public void setRecords(List<BookingAttachedDto> records) {
+    this.records = records;
   }
 
 
   /**
-   * Return true if this EmailTrackingData object is equal to o.
+   * Return true if this BookingAttachedGroupsPage object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -200,28 +173,26 @@ public class EmailTrackingData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EmailTrackingData emailTrackingData = (EmailTrackingData) o;
-    return Objects.equals(this.trackReplies, emailTrackingData.trackReplies) &&
-        Objects.equals(this.htmlBody, emailTrackingData.htmlBody) &&
-        Objects.equals(this.trackingCode, emailTrackingData.trackingCode) &&
-        Objects.equals(this.context, emailTrackingData.context) &&
-        Objects.equals(this.linkCodes, emailTrackingData.linkCodes);
+    BookingAttachedGroupsPage bookingAttachedGroupsPage = (BookingAttachedGroupsPage) o;
+    return Objects.equals(this.offset, bookingAttachedGroupsPage.offset) &&
+        Objects.equals(this.totalSize, bookingAttachedGroupsPage.totalSize) &&
+        Objects.equals(this.done, bookingAttachedGroupsPage.done) &&
+        Objects.equals(this.records, bookingAttachedGroupsPage.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trackReplies, htmlBody, trackingCode, context, linkCodes);
+    return Objects.hash(offset, totalSize, done, records);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EmailTrackingData {\n");
-    sb.append("    trackReplies: ").append(toIndentedString(trackReplies)).append("\n");
-    sb.append("    htmlBody: ").append(toIndentedString(htmlBody)).append("\n");
-    sb.append("    trackingCode: ").append(toIndentedString(trackingCode)).append("\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
-    sb.append("    linkCodes: ").append(toIndentedString(linkCodes)).append("\n");
+    sb.append("class BookingAttachedGroupsPage {\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
+    sb.append("    done: ").append(toIndentedString(done)).append("\n");
+    sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,32 +240,28 @@ public class EmailTrackingData {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `trackReplies` to the URL query string
-    if (getTrackReplies() != null) {
-      joiner.add(String.format("%strackReplies%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `offset` to the URL query string
+    if (getOffset() != null) {
+      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `htmlBody` to the URL query string
-    if (getHtmlBody() != null) {
-      joiner.add(String.format("%shtmlBody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHtmlBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `totalSize` to the URL query string
+    if (getTotalSize() != null) {
+      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `trackingCode` to the URL query string
-    if (getTrackingCode() != null) {
-      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `done` to the URL query string
+    if (getDone() != null) {
+      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `context` to the URL query string
-    if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `linkCodes` to the URL query string
-    if (getLinkCodes() != null) {
-      for (int i = 0; i < getLinkCodes().size(); i++) {
-        joiner.add(String.format("%slinkCodes%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getLinkCodes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `records` to the URL query string
+    if (getRecords() != null) {
+      for (int i = 0; i < getRecords().size(); i++) {
+        if (getRecords().get(i) != null) {
+          joiner.add(getRecords().get(i).toUrlQueryString(String.format("%srecords%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
       }
     }
 

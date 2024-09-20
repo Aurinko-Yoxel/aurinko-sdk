@@ -168,6 +168,8 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**prepareAuthWithHttpInfo**](docs/AuthApi.md#prepareAuthWithHttpInfo) | **POST** /v1/auth/prepare | Validate an external identity token
 *AvailabilityApi* | [**createMeeting**](docs/AvailabilityApi.md#createMeeting) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
 *AvailabilityApi* | [**createMeetingWithHttpInfo**](docs/AvailabilityApi.md#createMeetingWithHttpInfo) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
+*AvailabilityApi* | [**getAvailableBookings**](docs/AvailabilityApi.md#getAvailableBookings) | **POST** /v1/book/{aurinkoClientId}/dynamic/availability | Get available bookings for а time range
+*AvailabilityApi* | [**getAvailableBookingsWithHttpInfo**](docs/AvailabilityApi.md#getAvailableBookingsWithHttpInfo) | **POST** /v1/book/{aurinkoClientId}/dynamic/availability | Get available bookings for а time range
 *AvailabilityApi* | [**getMeetingTimes**](docs/AvailabilityApi.md#getMeetingTimes) | **GET** /v1/book/{aurinkoClientId}/{name}/meeting | Get available meeting times
 *AvailabilityApi* | [**getMeetingTimesWithHttpInfo**](docs/AvailabilityApi.md#getMeetingTimesWithHttpInfo) | **GET** /v1/book/{aurinkoClientId}/{name}/meeting | Get available meeting times
 *BookingApi* | [**create**](docs/BookingApi.md#create) | **POST** /v1/book/account/profiles | Create a booking profile
@@ -216,6 +218,8 @@ Class | Method | HTTP request | Description
 *DraftsApi* | [**getDraftWithHttpInfo**](docs/DraftsApi.md#getDraftWithHttpInfo) | **GET** /v1/email/drafts/{draftId} | Get a draft message
 *DraftsApi* | [**sendDraft**](docs/DraftsApi.md#sendDraft) | **POST** /v1/email/drafts/{draftId}/send | Send a draft message
 *DraftsApi* | [**sendDraftWithHttpInfo**](docs/DraftsApi.md#sendDraftWithHttpInfo) | **POST** /v1/email/drafts/{draftId}/send | Send a draft message
+*EmailFoldersApi* | [**createFolder**](docs/EmailFoldersApi.md#createFolder) | **POST** /v1/email/folders | Create a new email folder
+*EmailFoldersApi* | [**createFolderWithHttpInfo**](docs/EmailFoldersApi.md#createFolderWithHttpInfo) | **POST** /v1/email/folders | Create a new email folder
 *EmailFoldersApi* | [**folder**](docs/EmailFoldersApi.md#folder) | **GET** /v1/email/folders/{folderId} | Get an email folder
 *EmailFoldersApi* | [**folderWithHttpInfo**](docs/EmailFoldersApi.md#folderWithHttpInfo) | **GET** /v1/email/folders/{folderId} | Get an email folder
 *EmailFoldersApi* | [**folderEmails**](docs/EmailFoldersApi.md#folderEmails) | **GET** /v1/email/folders/{folderId}/messages | List email messages in a specified folder
@@ -292,16 +296,22 @@ Class | Method | HTTP request | Description
 *FreeBusyScheduleApi* | [**freeBusyWithHttpInfo**](docs/FreeBusyScheduleApi.md#freeBusyWithHttpInfo) | **POST** /v1/calendars/freeBusy | Get the free/busy availability information for a collection of users, or resources
 *FreeBusyScheduleApi* | [**suggestMeetingTimes**](docs/FreeBusyScheduleApi.md#suggestMeetingTimes) | **POST** /v1/calendars/suggestMeetingTimes | Suggest meeting times for a collection of users, or resources
 *FreeBusyScheduleApi* | [**suggestMeetingTimesWithHttpInfo**](docs/FreeBusyScheduleApi.md#suggestMeetingTimesWithHttpInfo) | **POST** /v1/calendars/suggestMeetingTimes | Suggest meeting times for a collection of users, or resources
-*GroupBookingApi* | [**attachUsersGroupBooking**](docs/GroupBookingApi.md#attachUsersGroupBooking) | **POST** /v1/book/group/profiles/{id}/attachUsers | Assign users to group booking
-*GroupBookingApi* | [**attachUsersGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#attachUsersGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/attachUsers | Assign users to group booking
-*GroupBookingApi* | [**attachedUsersGroupBooking**](docs/GroupBookingApi.md#attachedUsersGroupBooking) | **GET** /v1/book/group/profiles/{id}/attachUsers | List users of a group booking profile
-*GroupBookingApi* | [**attachedUsersGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#attachedUsersGroupBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/attachUsers | List users of a group booking profile
+*GroupBookingApi* | [**attachAccountsGroupBooking**](docs/GroupBookingApi.md#attachAccountsGroupBooking) | **POST** /v1/book/group/profiles/{id}/attachAccounts | Assign accounts to group booking
+*GroupBookingApi* | [**attachAccountsGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#attachAccountsGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/attachAccounts | Assign accounts to group booking
+*GroupBookingApi* | [**attachGroupsBooking**](docs/GroupBookingApi.md#attachGroupsBooking) | **POST** /v1/book/group/profiles/{id}/attachGroups | Assign groups to group booking
+*GroupBookingApi* | [**attachGroupsBookingWithHttpInfo**](docs/GroupBookingApi.md#attachGroupsBookingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/attachGroups | Assign groups to group booking
+*GroupBookingApi* | [**attachedAccountsGroupBooking**](docs/GroupBookingApi.md#attachedAccountsGroupBooking) | **GET** /v1/book/group/profiles/{id}/attachAccounts | List accounts of a group booking profile
+*GroupBookingApi* | [**attachedAccountsGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#attachedAccountsGroupBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/attachAccounts | List accounts of a group booking profile
+*GroupBookingApi* | [**attachedGroupsBooking**](docs/GroupBookingApi.md#attachedGroupsBooking) | **GET** /v1/book/group/profiles/{id}/attachGroups | List groups of a group booking profile
+*GroupBookingApi* | [**attachedGroupsBookingWithHttpInfo**](docs/GroupBookingApi.md#attachedGroupsBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/attachGroups | List groups of a group booking profile
 *GroupBookingApi* | [**createGroupBooking**](docs/GroupBookingApi.md#createGroupBooking) | **POST** /v1/book/group/profiles | Create a group booking profile
 *GroupBookingApi* | [**createGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#createGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles | Create a group booking profile
 *GroupBookingApi* | [**deleteGroupBooking**](docs/GroupBookingApi.md#deleteGroupBooking) | **DELETE** /v1/book/group/profiles/{id} | Delete a group booking profile by id
 *GroupBookingApi* | [**deleteGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#deleteGroupBookingWithHttpInfo) | **DELETE** /v1/book/group/profiles/{id} | Delete a group booking profile by id
-*GroupBookingApi* | [**detachUsersGroupBooking**](docs/GroupBookingApi.md#detachUsersGroupBooking) | **POST** /v1/book/group/profiles/{id}/detachUsers | Remove users from group booking
-*GroupBookingApi* | [**detachUsersGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#detachUsersGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/detachUsers | Remove users from group booking
+*GroupBookingApi* | [**detachAccountsGroupBooking**](docs/GroupBookingApi.md#detachAccountsGroupBooking) | **POST** /v1/book/group/profiles/{id}/detachAccounts | Remove accounts from group booking
+*GroupBookingApi* | [**detachAccountsGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#detachAccountsGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/detachAccounts | Remove accounts from group booking
+*GroupBookingApi* | [**detachGroupsBooking**](docs/GroupBookingApi.md#detachGroupsBooking) | **POST** /v1/book/group/profiles/{id}/detachGroups | Remove groups from group booking
+*GroupBookingApi* | [**detachGroupsBookingWithHttpInfo**](docs/GroupBookingApi.md#detachGroupsBookingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/detachGroups | Remove groups from group booking
 *GroupBookingApi* | [**getGroupBooking**](docs/GroupBookingApi.md#getGroupBooking) | **GET** /v1/book/group/profiles/{id} | Get a group booking profile by id
 *GroupBookingApi* | [**getGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#getGroupBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id} | Get a group booking profile by id
 *GroupBookingApi* | [**getGroupBookings**](docs/GroupBookingApi.md#getGroupBookings) | **GET** /v1/book/group/profiles | Get group booking profiles
@@ -388,14 +398,23 @@ Class | Method | HTTP request | Description
  - [ApiAccountOutDto](docs/ApiAccountOutDto.md)
  - [Attendee](docs/Attendee.md)
  - [BodyType](docs/BodyType.md)
- - [BookingAttachGroupUserDto](docs/BookingAttachGroupUserDto.md)
- - [BookingAttachGroupUsersDto](docs/BookingAttachGroupUsersDto.md)
+ - [BookingAttachAccountsDto](docs/BookingAttachAccountsDto.md)
+ - [BookingAttachGroupDto](docs/BookingAttachGroupDto.md)
+ - [BookingAttachGroupsDto](docs/BookingAttachGroupsDto.md)
+ - [BookingAttachedAccountsDto](docs/BookingAttachedAccountsDto.md)
+ - [BookingAttachedAccountsPage](docs/BookingAttachedAccountsPage.md)
  - [BookingAttachedDto](docs/BookingAttachedDto.md)
- - [BookingAttachedUserPage](docs/BookingAttachedUserPage.md)
+ - [BookingAttachedGroupsPage](docs/BookingAttachedGroupsPage.md)
+ - [BookingAvailableProfilesInDto](docs/BookingAvailableProfilesInDto.md)
+ - [BookingAvailableProfilesOutDto](docs/BookingAvailableProfilesOutDto.md)
+ - [BookingDetachGroupAccountsDto](docs/BookingDetachGroupAccountsDto.md)
+ - [BookingDetachGroupDto](docs/BookingDetachGroupDto.md)
+ - [BookingDetachGroupsDto](docs/BookingDetachGroupsDto.md)
  - [BookingInDto](docs/BookingInDto.md)
- - [BookingMeetingTime](docs/BookingMeetingTime.md)
+ - [BookingMeetingInterval](docs/BookingMeetingInterval.md)
  - [BookingOutDto](docs/BookingOutDto.md)
  - [BookingPage](docs/BookingPage.md)
+ - [BookingRequiredMode](docs/BookingRequiredMode.md)
  - [BookingSuccessOutDto](docs/BookingSuccessOutDto.md)
  - [BookingTimesOutDto](docs/BookingTimesOutDto.md)
  - [BookingUpdateDto](docs/BookingUpdateDto.md)
@@ -431,8 +450,10 @@ Class | Method | HTTP request | Description
  - [EmailAttachmentContent](docs/EmailAttachmentContent.md)
  - [EmailDeletedPage](docs/EmailDeletedPage.md)
  - [EmailDraft](docs/EmailDraft.md)
+ - [EmailDraftCreateTrackingResponse](docs/EmailDraftCreateTrackingResponse.md)
  - [EmailDraftResponse](docs/EmailDraftResponse.md)
- - [EmailDraftSendStatus](docs/EmailDraftSendStatus.md)
+ - [EmailDraftSendResponse](docs/EmailDraftSendResponse.md)
+ - [EmailFolderCreate](docs/EmailFolderCreate.md)
  - [EmailFolderInfo](docs/EmailFolderInfo.md)
  - [EmailFolderInfoPage](docs/EmailFolderInfoPage.md)
  - [EmailHeader](docs/EmailHeader.md)
@@ -441,7 +462,6 @@ Class | Method | HTTP request | Description
  - [EmailMessagesPageNext](docs/EmailMessagesPageNext.md)
  - [EmailSendError](docs/EmailSendError.md)
  - [EmailSendResponse](docs/EmailSendResponse.md)
- - [EmailTrackingData](docs/EmailTrackingData.md)
  - [EmailTrackingEvent](docs/EmailTrackingEvent.md)
  - [EmailTrackingEventPageNext](docs/EmailTrackingEventPageNext.md)
  - [EmailTrackingPageNext](docs/EmailTrackingPageNext.md)

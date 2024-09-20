@@ -18,6 +18,7 @@ import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BodyType;
+import io.aurinko.client.model.EmailFolderCreate;
 import io.aurinko.client.model.EmailFolderInfo;
 import io.aurinko.client.model.EmailFolderInfoPage;
 import io.aurinko.client.model.EmailMessagesPageNext;
@@ -83,6 +84,101 @@ public class EmailFoldersApi {
       body = "[no body]";
     }
     return operationId + " call failed with: " + statusCode + " - " + body;
+  }
+
+  /**
+   * Create a new email folder
+   * 
+   * @param emailFolderCreate  (optional)
+   * @return CompletableFuture&lt;EmailFolderInfo&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<EmailFolderInfo> createFolder(EmailFolderCreate emailFolderCreate) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = createFolderRequestBuilder(emailFolderCreate);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("createFolder", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailFolderInfo>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Create a new email folder
+   * 
+   * @param emailFolderCreate  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;EmailFolderInfo&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<EmailFolderInfo>> createFolderWithHttpInfo(EmailFolderCreate emailFolderCreate) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = createFolderRequestBuilder(emailFolderCreate);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("createFolder", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<EmailFolderInfo>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailFolderInfo>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder createFolderRequestBuilder(EmailFolderCreate emailFolderCreate) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/email/folders";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(emailFolderCreate);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
   }
 
   /**

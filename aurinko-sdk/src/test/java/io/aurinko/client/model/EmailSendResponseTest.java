@@ -63,6 +63,14 @@ class EmailSendResponseTest {
     }
 
     /**
+     * Test the property 'trackingId'
+     */
+    @Test
+    void trackingIdTest() {
+        // TODO: test trackingId
+    }
+
+    /**
      * Test the property 'processingStatus'
      */
     @Test

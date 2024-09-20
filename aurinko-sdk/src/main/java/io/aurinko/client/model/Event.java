@@ -235,6 +235,7 @@ public class Event {
     @JsonProperty(JSON_PROPERTY_I_CAL_UID) String iCalUid, 
     @JsonProperty(JSON_PROPERTY_GLOBAL_ID) String globalId, 
     @JsonProperty(JSON_PROPERTY_CATEGORIES) List<String> categories, 
+    @JsonProperty(JSON_PROPERTY_HTML_LINK) String htmlLink, 
     @JsonProperty(JSON_PROPERTY_HAS_ATTACHMENTS) Boolean hasAttachments, 
     @JsonProperty(JSON_PROPERTY_OMITTED) List<OmittedEnum> omitted
   ) {
@@ -248,6 +249,7 @@ public class Event {
     this.iCalUid = iCalUid;
     this.globalId = globalId;
     this.categories = categories;
+    this.htmlLink = htmlLink;
     this.hasAttachments = hasAttachments;
     this.omitted = omitted;
   }
@@ -642,11 +644,6 @@ public class Event {
 
 
 
-  public Event htmlLink(String htmlLink) {
-    this.htmlLink = htmlLink;
-    return this;
-  }
-
   /**
    * Get htmlLink
    * @return htmlLink
@@ -659,11 +656,6 @@ public class Event {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_HTML_LINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHtmlLink(String htmlLink) {
-    this.htmlLink = htmlLink;
-  }
 
 
   /**

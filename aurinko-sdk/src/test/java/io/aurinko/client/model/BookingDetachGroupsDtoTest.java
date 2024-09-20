@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.BookingAttachGroupUserDto;
+import io.aurinko.client.model.BookingDetachGroupDto;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,25 +27,25 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BookingAttachGroupUsersDto
+ * Model tests for BookingDetachGroupsDto
  */
-class BookingAttachGroupUsersDtoTest {
-    private final BookingAttachGroupUsersDto model = new BookingAttachGroupUsersDto();
+class BookingDetachGroupsDtoTest {
+    private final BookingDetachGroupsDto model = new BookingDetachGroupsDto();
 
     /**
-     * Model tests for BookingAttachGroupUsersDto
+     * Model tests for BookingDetachGroupsDto
      */
     @Test
-    void testBookingAttachGroupUsersDto() {
-        // TODO: test BookingAttachGroupUsersDto
+    void testBookingDetachGroupsDto() {
+        // TODO: test BookingDetachGroupsDto
     }
 
     /**
-     * Test the property 'users'
+     * Test the property 'groups'
      */
     @Test
-    void usersTest() {
-        // TODO: test users
+    void groupsTest() {
+        // TODO: test groups
     }
 
 }

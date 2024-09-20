@@ -136,9 +136,9 @@ tags:
   name: Booking
   x-displayName: Booking (Accounts)
 - description: |
-    Group Booking profiles allow you to build calendar availability and meeting scheduling for a group of users. List, create, update, and delete booking profiles associated with a group (Aurinko users). Gather availability information from multiple user calendars and find time slots when at least one user is available. Schedule events for available users.
+    Group Booking profiles allow you to build calendar availability and meeting scheduling for a group of accounts. List, create, update, and delete booking profiles associated with a group. Gather availability information from multiple account calendars and find time slots when at least one user is available. Schedule events for available accounts.
   name: GroupBooking
-  x-displayName: Group Booking (Users)
+  x-displayName: Group Booking
 - description: |
     See meeting time availability according to the group booking profile configuration. Book a meeting for an account or one of users in a group.
   name: Availability
@@ -1691,6 +1691,34 @@ paths:
               -G https://api.aurinko.io/v1/email/folders
       x-accepts:
       - application/json
+    post:
+      operationId: createFolder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailFolderCreate'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailFolderInfo'
+          description: Success
+      summary: Create a new email folder
+      tags:
+      - EmailFolders
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -H 'Authorization: Bearer <access token>' \
+              -X POST https://api.aurinko.io/v1/email/folders \
+              -d '{
+                  "name": "Folder name"
+                 }'
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /v1/email/folders/{folderId}:
     get:
       operationId: folder
@@ -1911,7 +1939,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EmailDraftSendStatus'
+                $ref: '#/components/schemas/EmailDraftSendResponse'
           description: Success
       summary: Send a draft message
       tags:
@@ -1956,7 +1984,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EmailTrackingData'
+                $ref: '#/components/schemas/EmailDraftCreateTrackingResponse'
           description: Success
       summary: Create tracking for a draft message
       tags:
@@ -3285,9 +3313,9 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /v1/book/group/profiles/{id}/attachUsers:
+  /v1/book/group/profiles/{id}/attachGroups:
     get:
-      operationId: attachedUsersGroupBooking
+      operationId: attachedGroupsBooking
       parameters:
       - description: A booking id
         explode: false
@@ -3325,7 +3353,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BookingAttachedUserPage'
+                $ref: '#/components/schemas/BookingAttachedGroupsPage'
           description: Success
         "401":
           description: Authentication information is missing or invalid
@@ -3335,13 +3363,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: List users of a group booking profile
+      summary: List groups of a group booking profile
       tags:
       - GroupBooking
       x-accepts:
       - application/json
     post:
-      operationId: attachUsersGroupBooking
+      operationId: attachGroupsBooking
       parameters:
       - description: A booking id
         explode: false
@@ -3356,7 +3384,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BookingAttachGroupUsersDto'
+              $ref: '#/components/schemas/BookingAttachGroupsDto'
       responses:
         "200":
           content:
@@ -3372,15 +3400,15 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: Assign users to group booking
+      summary: Assign groups to group booking
       tags:
       - GroupBooking
       x-content-type: application/json
       x-accepts:
       - application/json
-  /v1/book/group/profiles/{id}/detachUsers:
+  /v1/book/group/profiles/{id}/detachGroups:
     post:
-      operationId: detachUsersGroupBooking
+      operationId: detachGroupsBooking
       parameters:
       - description: A booking id
         explode: false
@@ -3395,7 +3423,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BookingAttachGroupUsersDto'
+              $ref: '#/components/schemas/BookingDetachGroupsDto'
       responses:
         "200":
           content:
@@ -3411,9 +3439,172 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: Remove users from group booking
+      summary: Remove groups from group booking
       tags:
       - GroupBooking
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v1/book/group/profiles/{id}/attachAccounts:
+    get:
+      operationId: attachedAccountsGroupBooking
+      parameters:
+      - description: A booking id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - description: page size
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 50
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      - description: return records offset by the given number
+        explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingAttachedAccountsPage'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: List accounts of a group booking profile
+      tags:
+      - GroupBooking
+      x-accepts:
+      - application/json
+    post:
+      operationId: attachAccountsGroupBooking
+      parameters:
+      - description: A booking id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingAttachAccountsDto'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingSuccessOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Assign accounts to group booking
+      tags:
+      - GroupBooking
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v1/book/group/profiles/{id}/detachAccounts:
+    post:
+      operationId: detachAccountsGroupBooking
+      parameters:
+      - description: A booking id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingDetachGroupAccountsDto'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingSuccessOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Remove accounts from group booking
+      tags:
+      - GroupBooking
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v1/book/{aurinkoClientId}/dynamic/availability:
+    post:
+      operationId: getAvailableBookings
+      parameters:
+      - description: Application client Id
+        explode: false
+        in: path
+        name: aurinkoClientId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingAvailableProfilesInDto'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingAvailableProfilesOutDto'
+          description: Success
+      security: []
+      summary: Get available bookings for а time range
+      tags:
+      - Availability
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -3437,6 +3628,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: a way to select times
+        explode: true
+        in: query
+        name: required
+        required: false
+        schema:
+          $ref: '#/components/schemas/BookingRequiredMode'
+        style: form
       - description: page size
         explode: true
         in: query
@@ -3491,6 +3690,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: a way to select times
+        explode: true
+        in: query
+        name: required
+        required: false
+        schema:
+          $ref: '#/components/schemas/BookingRequiredMode'
+        style: form
       requestBody:
         content:
           application/json:
@@ -5707,6 +5914,36 @@ components:
         record:
           $ref: '#/components/schemas/Task'
       type: object
+    BookingAttachedAccountsDto:
+      example:
+        accountIds:
+        - 1
+        - 1
+      properties:
+        accountIds:
+          items:
+            description: User's account id
+            format: int64
+            type: integer
+          type: array
+      type: object
+    BookingDetachGroupsDto:
+      example:
+        groups:
+        - accountIds:
+          - 0
+          - 0
+          extId: extId
+        - accountIds:
+          - 0
+          - 0
+          extId: extId
+      properties:
+        groups:
+          items:
+            $ref: '#/components/schemas/BookingDetachGroupDto'
+          type: array
+      type: object
     EmailMessagesPageNext:
       example:
         records:
@@ -5928,25 +6165,6 @@ components:
       - Fishbowl
       - iCloud
       type: string
-    BookingMeetingTime:
-      example:
-        userIds:
-        - userIds
-        - userIds
-        start: 2000-01-23T04:56:07.000+00:00
-        end: 2000-01-23T04:56:07.000+00:00
-      properties:
-        start:
-          format: date-time
-          type: string
-        end:
-          format: date-time
-          type: string
-        userIds:
-          items:
-            type: string
-          type: array
-      type: object
     EmailDeletedPage:
       example:
         records:
@@ -6013,30 +6231,6 @@ components:
       properties:
         context:
           type: string
-      type: object
-    EmailTrackingData:
-      example:
-        htmlBody: htmlBody
-        context: context
-        trackReplies: true
-        trackingCode: trackingCode
-        linkCodes:
-        - "{}"
-        - "{}"
-      properties:
-        trackReplies:
-          type: boolean
-        htmlBody:
-          type: string
-        trackingCode:
-          type: string
-        context:
-          type: string
-        linkCodes:
-          items:
-            description: Pairs of strings
-            type: object
-          type: array
       type: object
     OutgoingEmailAttachment:
       example:
@@ -6265,6 +6459,33 @@ components:
             type: string
           type: array
       type: object
+    BookingAttachedGroupsPage:
+      example:
+        totalSize: 6
+        offset: 0
+        records:
+        - accountIds:
+          - 1
+          - 1
+          extId: extId
+        - accountIds:
+          - 1
+          - 1
+          extId: extId
+        done: true
+      properties:
+        offset:
+          type: integer
+        totalSize:
+          format: int64
+          type: integer
+        done:
+          type: boolean
+        records:
+          items:
+            $ref: '#/components/schemas/BookingAttachedDto'
+          type: array
+      type: object
     OnlineMeetingDetails:
       example:
         regionCode: regionCode
@@ -6275,6 +6496,7 @@ components:
         url: url
       properties:
         url:
+          readOnly: true
           type: string
         phone:
           readOnly: true
@@ -6291,6 +6513,24 @@ components:
         infoUrl:
           readOnly: true
           type: string
+      readOnly: true
+      type: object
+    BookingDetachGroupDto:
+      example:
+        accountIds:
+        - 0
+        - 0
+        extId: extId
+      properties:
+        extId:
+          description: External identifier
+          type: string
+        accountIds:
+          items:
+            description: Account id
+            format: int64
+            type: integer
+          type: array
       type: object
     FreeBusySchedulePage:
       example:
@@ -6473,6 +6713,11 @@ components:
           type: array
           writeOnly: true
       type: object
+    BookingRequiredMode:
+      enum:
+      - one
+      - all
+      type: string
     FollowupRuleAggregateOut:
       example:
         templateBody: templateBody
@@ -6622,17 +6867,17 @@ components:
       type: object
     BookingAttachedDto:
       example:
-        accounts:
+        accountIds:
         - 1
         - 1
-        userId: userId
+        extId: extId
       properties:
-        userId:
-          description: User id
+        extId:
+          description: External identifier
           type: string
-        accounts:
+        accountIds:
           items:
-            description: User's account id
+            description: Account id
             format: int64
             type: integer
           type: array
@@ -6697,6 +6942,17 @@ components:
           readOnly: true
           type: string
       type: object
+    EmailFolderCreate:
+      example:
+        name: name
+        parentId: parentId
+      properties:
+        name:
+          type: string
+        parentId:
+          description: parent folder identifier
+          type: string
+      type: object
     ScheduledDraft:
       example:
         jobId: 0
@@ -6748,6 +7004,7 @@ components:
           enum:
           - open
           - click
+          - initial
           - reply
           - replyBounce
           type: string
@@ -7034,23 +7291,6 @@ components:
       - invalid
       - dead
       type: string
-    BookingAttachGroupUserDto:
-      example:
-        id: id
-        accounts:
-        - 0
-        - 0
-      properties:
-        id:
-          description: User id
-          type: string
-        accounts:
-          items:
-            description: User's account id
-            format: int64
-            type: integer
-          type: array
-      type: object
     ContactCompany:
       example:
         officeLocation: officeLocation
@@ -7193,7 +7433,7 @@ components:
       type: object
     BookingTimesOutDto:
       example:
-        availabilityStep: 6
+        availabilityStep: 1
         additionalFields:
         - default: default
           name: name
@@ -7205,21 +7445,27 @@ components:
         subject: subject
         primaryColor: primaryColor
         done: true
-        durationMinutes: 0
-        totalSize: 5
+        durationMinutes: 6
+        totalSize: 2
         timeAvailableFor: P4W
-        limit: 1
+        limit: 5
         startTime: 2000-01-23T04:56:07.000+00:00
         endTime: 2000-01-23T04:56:07.000+00:00
         items:
-        - userIds:
-          - userIds
-          - userIds
+        - groupXids:
+          - groupXids
+          - groupXids
+          accountIds:
+          - 0
+          - 0
           start: 2000-01-23T04:56:07.000+00:00
           end: 2000-01-23T04:56:07.000+00:00
-        - userIds:
-          - userIds
-          - userIds
+        - groupXids:
+          - groupXids
+          - groupXids
+          accountIds:
+          - 0
+          - 0
           start: 2000-01-23T04:56:07.000+00:00
           end: 2000-01-23T04:56:07.000+00:00
         secondaryColor: secondaryColor
@@ -7227,7 +7473,7 @@ components:
         items:
           description: List of available meeting slots.
           items:
-            $ref: '#/components/schemas/BookingMeetingTime'
+            $ref: '#/components/schemas/BookingMeetingInterval'
           type: array
         startTime:
           description: Start time of available meeting slots.
@@ -7699,6 +7945,7 @@ components:
           - tracking
           - tracking
         status: Ok
+        trackingId: trackingId
       properties:
         status:
           enum:
@@ -7707,6 +7954,9 @@ components:
         id:
           type: string
         threadId:
+          type: string
+        trackingId:
+          description: A tracking identifier for the sent message
           type: string
         processingStatus:
           enum:
@@ -8160,6 +8410,7 @@ components:
           readOnly: true
           type: array
         htmlLink:
+          readOnly: true
           type: string
         hasAttachments:
           readOnly: true
@@ -8176,6 +8427,19 @@ components:
             - attachments
             type: string
           readOnly: true
+          type: array
+      type: object
+    BookingAvailableProfilesOutDto:
+      example:
+        profileIds:
+        - 0
+        - 0
+      properties:
+        profileIds:
+          description: List of available profile ids.
+          items:
+            format: int64
+            type: integer
           type: array
       type: object
     WeekWorkSchedule:
@@ -8340,6 +8604,20 @@ components:
         yomiGivenName:
           type: string
         yomiFamilyName:
+          type: string
+      type: object
+    EmailDraftSendResponse:
+      example:
+        status: Ok
+        trackingId: trackingId
+      properties:
+        status:
+          enum:
+          - Ok
+          - Scheduled
+          type: string
+        trackingId:
+          description: A tracking identifier for the sent message
           type: string
       type: object
     BookingUpdateDto:
@@ -8738,6 +9016,33 @@ components:
         clientOrgId:
           type: string
       type: object
+    BookingMeetingInterval:
+      example:
+        groupXids:
+        - groupXids
+        - groupXids
+        accountIds:
+        - 0
+        - 0
+        start: 2000-01-23T04:56:07.000+00:00
+        end: 2000-01-23T04:56:07.000+00:00
+      properties:
+        start:
+          format: date-time
+          type: string
+        end:
+          format: date-time
+          type: string
+        groupXids:
+          items:
+            type: string
+          type: array
+        accountIds:
+          items:
+            format: int64
+            type: integer
+          type: array
+      type: object
     EventDateTime:
       example:
         dateTime: 2000-01-23T04:56:07.000+00:00
@@ -8801,21 +9106,14 @@ components:
       - username
       - clientOrgId
       type: string
-    EmailDraftSendStatus:
-      example:
-        status: Ok
-      properties:
-        status:
-          enum:
-          - Ok
-          - Scheduled
-          type: string
-      type: object
     CreateMeetingDto:
       example:
-        userIds:
-        - userIds
-        - userIds
+        groupXids:
+        - groupXids
+        - groupXids
+        accountIds:
+        - 0
+        - 0
         name: name
         time:
           start: 2000-01-23T04:56:07.000+00:00
@@ -8826,10 +9124,16 @@ components:
       properties:
         time:
           $ref: '#/components/schemas/SelectedMeetingTime'
-        userIds:
+        groupXids:
           items:
-            description: User id from available meeting times request
+            description: Group external id from available meeting times request
             type: string
+          type: array
+        accountIds:
+          items:
+            description: Account id from available meeting times request
+            format: int64
+            type: integer
           type: array
         name:
           description: Username of the person requesting the meeting
@@ -8859,33 +9163,6 @@ components:
           type: string
         userSession:
           type: string
-      type: object
-    BookingAttachedUserPage:
-      example:
-        totalSize: 6
-        offset: 0
-        records:
-        - accounts:
-          - 1
-          - 1
-          userId: userId
-        - accounts:
-          - 1
-          - 1
-          userId: userId
-        done: true
-      properties:
-        offset:
-          type: integer
-        totalSize:
-          format: int64
-          type: integer
-        done:
-          type: boolean
-        records:
-          items:
-            $ref: '#/components/schemas/BookingAttachedDto'
-          type: array
       type: object
     EmailAttachmentContent:
       example:
@@ -9394,16 +9671,16 @@ components:
     CreateMeetingResponse:
       example:
         created: true
+        groupXid: groupXid
         id: id
-        userId: userId
       properties:
         created:
           type: boolean
         id:
           description: Created id of event in calendar
           type: string
-        userId:
-          description: User id for group booking
+        groupXid:
+          description: Group external id for group booking
           type: string
       type: object
     SuggestMeetingTimesRequest:
@@ -10236,6 +10513,19 @@ components:
         onlineMeetingDetails:
           $ref: '#/components/schemas/OnlineMeetingDetails'
       type: object
+    BookingDetachGroupAccountsDto:
+      example:
+        accountIds:
+        - 0
+        - 0
+      properties:
+        accountIds:
+          items:
+            description: Account id
+            format: int64
+            type: integer
+          type: array
+      type: object
     ShowAs:
       enum:
       - free
@@ -10244,6 +10534,31 @@ components:
       - outOfOffice
       - unknown
       type: string
+    BookingAttachedAccountsPage:
+      example:
+        totalSize: 6
+        offset: 0
+        records:
+        - accountIds:
+          - 1
+          - 1
+        - accountIds:
+          - 1
+          - 1
+        done: true
+      properties:
+        offset:
+          type: integer
+        totalSize:
+          format: int64
+          type: integer
+        done:
+          type: boolean
+        records:
+          items:
+            $ref: '#/components/schemas/BookingAttachedAccountsDto'
+          type: array
+      type: object
     BookingWorkHours:
       properties:
         workHours:
@@ -10331,6 +10646,34 @@ components:
           items:
             $ref: '#/components/schemas/FollowupRuleAction'
           type: array
+      type: object
+    EmailDraftCreateTrackingResponse:
+      example:
+        htmlBody: htmlBody
+        context: context
+        trackReplies: true
+        trackingCode: trackingCode
+        linkCodes:
+        - "{}"
+        - "{}"
+        trackingId: trackingId
+      properties:
+        trackReplies:
+          type: boolean
+        htmlBody:
+          type: string
+        trackingCode:
+          type: string
+        context:
+          type: string
+        linkCodes:
+          items:
+            description: Pairs of strings
+            type: object
+          type: array
+        trackingId:
+          description: A tracking identifier for the sent message
+          type: string
       type: object
     GroupBookingPage:
       example:
@@ -10481,6 +10824,23 @@ components:
         onlineMeetingDetails:
           $ref: '#/components/schemas/OnlineMeetingDetails'
       type: object
+    BookingAttachGroupsDto:
+      example:
+        groups:
+        - accountIds:
+          - 0
+          - 0
+          extId: extId
+        - accountIds:
+          - 0
+          - 0
+          extId: extId
+      properties:
+        groups:
+          items:
+            $ref: '#/components/schemas/BookingAttachGroupDto'
+          type: array
+      type: object
     AdditionalField:
       example:
         default: default
@@ -10566,23 +10926,6 @@ components:
         parentId:
           readOnly: true
           type: string
-      type: object
-    BookingAttachGroupUsersDto:
-      example:
-        users:
-        - id: id
-          accounts:
-          - 0
-          - 0
-        - id: id
-          accounts:
-          - 0
-          - 0
-      properties:
-        users:
-          items:
-            $ref: '#/components/schemas/BookingAttachGroupUserDto'
-          type: array
       type: object
     SelectedMeetingTime:
       example:
@@ -10692,6 +11035,19 @@ components:
       - saturday
       - sunday
       type: string
+    BookingAttachAccountsDto:
+      example:
+        accountIds:
+        - 0
+        - 0
+      properties:
+        accountIds:
+          items:
+            description: Account id
+            format: int64
+            type: integer
+          type: array
+      type: object
     TimeInterval:
       example:
         start: 2000-01-23T04:56:07.000+00:00
@@ -12071,6 +12427,53 @@ components:
       enum:
       - exchangeIdentity
       type: string
+    BookingAvailableProfilesInDto:
+      example:
+        profileNames:
+        - profileNames
+        - profileNames
+        timeMax: 2000-01-23T04:56:07.000+00:00
+        profileIds:
+        - 0
+        - 0
+        timeMin: 2000-01-23T04:56:07.000+00:00
+        required: one
+      properties:
+        timeMin:
+          format: date-time
+          type: string
+        timeMax:
+          format: date-time
+          type: string
+        profileNames:
+          items:
+            type: string
+          type: array
+        profileIds:
+          items:
+            format: int64
+            type: integer
+          type: array
+        required:
+          $ref: '#/components/schemas/BookingRequiredMode'
+      type: object
+    BookingAttachGroupDto:
+      example:
+        accountIds:
+        - 0
+        - 0
+        extId: extId
+      properties:
+        extId:
+          description: External identifier
+          type: string
+        accountIds:
+          items:
+            description: Account id
+            format: int64
+            type: integer
+          type: array
+      type: object
     Recurrence_ical:
       example:
         rules:

@@ -14,8 +14,12 @@
 package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
-import io.aurinko.client.model.BookingAttachGroupUsersDto;
-import io.aurinko.client.model.BookingAttachedUserPage;
+import io.aurinko.client.model.BookingAttachAccountsDto;
+import io.aurinko.client.model.BookingAttachGroupsDto;
+import io.aurinko.client.model.BookingAttachedAccountsPage;
+import io.aurinko.client.model.BookingAttachedGroupsPage;
+import io.aurinko.client.model.BookingDetachGroupAccountsDto;
+import io.aurinko.client.model.BookingDetachGroupsDto;
 import io.aurinko.client.model.BookingSuccessOutDto;
 import io.aurinko.client.model.GroupBookingInDto;
 import io.aurinko.client.model.GroupBookingOutDto;
@@ -42,7 +46,7 @@ public class GroupBookingApiTest {
 
     
     /**
-     * Assign users to group booking
+     * Assign accounts to group booking
      *
      * 
      *
@@ -50,17 +54,17 @@ public class GroupBookingApiTest {
      *          if the Api call fails
      */
     @Test
-    public void attachUsersGroupBookingTest() throws ApiException {
+    public void attachAccountsGroupBookingTest() throws ApiException {
         Long id = null;
-        BookingAttachGroupUsersDto bookingAttachGroupUsersDto = null;
+        BookingAttachAccountsDto bookingAttachAccountsDto = null;
         CompletableFuture<BookingSuccessOutDto> response = 
-        api.attachUsersGroupBooking(id, bookingAttachGroupUsersDto);
+        api.attachAccountsGroupBooking(id, bookingAttachAccountsDto);
         
         // TODO: test validations
     }
     
     /**
-     * List users of a group booking profile
+     * Assign groups to group booking
      *
      * 
      *
@@ -68,12 +72,49 @@ public class GroupBookingApiTest {
      *          if the Api call fails
      */
     @Test
-    public void attachedUsersGroupBookingTest() throws ApiException {
+    public void attachGroupsBookingTest() throws ApiException {
+        Long id = null;
+        BookingAttachGroupsDto bookingAttachGroupsDto = null;
+        CompletableFuture<BookingSuccessOutDto> response = 
+        api.attachGroupsBooking(id, bookingAttachGroupsDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * List accounts of a group booking profile
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void attachedAccountsGroupBookingTest() throws ApiException {
         Long id = null;
         Integer limit = null;
         Integer offset = null;
-        CompletableFuture<BookingAttachedUserPage> response = 
-        api.attachedUsersGroupBooking(id, limit, offset);
+        CompletableFuture<BookingAttachedAccountsPage> response = 
+        api.attachedAccountsGroupBooking(id, limit, offset);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * List groups of a group booking profile
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void attachedGroupsBookingTest() throws ApiException {
+        Long id = null;
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingAttachedGroupsPage> response = 
+        api.attachedGroupsBooking(id, limit, offset);
         
         // TODO: test validations
     }
@@ -113,7 +154,7 @@ public class GroupBookingApiTest {
     }
     
     /**
-     * Remove users from group booking
+     * Remove accounts from group booking
      *
      * 
      *
@@ -121,11 +162,29 @@ public class GroupBookingApiTest {
      *          if the Api call fails
      */
     @Test
-    public void detachUsersGroupBookingTest() throws ApiException {
+    public void detachAccountsGroupBookingTest() throws ApiException {
         Long id = null;
-        BookingAttachGroupUsersDto bookingAttachGroupUsersDto = null;
+        BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto = null;
         CompletableFuture<BookingSuccessOutDto> response = 
-        api.detachUsersGroupBooking(id, bookingAttachGroupUsersDto);
+        api.detachAccountsGroupBooking(id, bookingDetachGroupAccountsDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Remove groups from group booking
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void detachGroupsBookingTest() throws ApiException {
+        Long id = null;
+        BookingDetachGroupsDto bookingDetachGroupsDto = null;
+        CompletableFuture<BookingSuccessOutDto> response = 
+        api.detachGroupsBooking(id, bookingDetachGroupsDto);
         
         // TODO: test validations
     }

@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**created** | **Boolean** |  |  [optional] |
 |**id** | **String** | Created id of event in calendar |  [optional] |
-|**userId** | **String** | User id for group booking |  [optional] |
+|**groupXid** | **String** | Group external id for group booking |  [optional] |
 
 
 

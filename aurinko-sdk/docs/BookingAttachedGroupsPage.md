@@ -1,6 +1,6 @@
 
 
-# BookingAttachedUserPage
+# BookingAttachedGroupsPage
 
 
 ## Properties

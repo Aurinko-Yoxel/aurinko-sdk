@@ -24,88 +24,89 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import io.aurinko.client.ApiClient;
 /**
- * EmailDraftSendStatus
+ * BookingDetachGroupDto
  */
 @JsonPropertyOrder({
-  EmailDraftSendStatus.JSON_PROPERTY_STATUS
+  BookingDetachGroupDto.JSON_PROPERTY_EXT_ID,
+  BookingDetachGroupDto.JSON_PROPERTY_ACCOUNT_IDS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class EmailDraftSendStatus {
-  /**
-   * Gets or Sets status
-   */
-  public enum StatusEnum {
-    OK("Ok"),
-    
-    SCHEDULED("Scheduled"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+public class BookingDetachGroupDto {
+  public static final String JSON_PROPERTY_EXT_ID = "extId";
+  private String extId;
 
-    private String value;
+  public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  private List<Long> accountIds = new ArrayList<>();
 
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
+  public BookingDetachGroupDto() { 
   }
 
-  public static final String JSON_PROPERTY_STATUS = "status";
-  private StatusEnum status;
-
-  public EmailDraftSendStatus() { 
-  }
-
-  public EmailDraftSendStatus status(StatusEnum status) {
-    this.status = status;
+  public BookingDetachGroupDto extId(String extId) {
+    this.extId = extId;
     return this;
   }
 
   /**
-   * Get status
-   * @return status
+   * External identifier
+   * @return extId
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(JSON_PROPERTY_EXT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public StatusEnum getStatus() {
-    return status;
+  public String getExtId() {
+    return extId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(JSON_PROPERTY_EXT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
-    this.status = status;
+  public void setExtId(String extId) {
+    this.extId = extId;
+  }
+
+
+  public BookingDetachGroupDto accountIds(List<Long> accountIds) {
+    this.accountIds = accountIds;
+    return this;
+  }
+
+  public BookingDetachGroupDto addAccountIdsItem(Long accountIdsItem) {
+    if (this.accountIds == null) {
+      this.accountIds = new ArrayList<>();
+    }
+    this.accountIds.add(accountIdsItem);
+    return this;
+  }
+
+  /**
+   * Get accountIds
+   * @return accountIds
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<Long> getAccountIds() {
+    return accountIds;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAccountIds(List<Long> accountIds) {
+    this.accountIds = accountIds;
   }
 
 
   /**
-   * Return true if this EmailDraftSendStatus object is equal to o.
+   * Return true if this BookingDetachGroupDto object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -115,20 +116,22 @@ public class EmailDraftSendStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EmailDraftSendStatus emailDraftSendStatus = (EmailDraftSendStatus) o;
-    return Objects.equals(this.status, emailDraftSendStatus.status);
+    BookingDetachGroupDto bookingDetachGroupDto = (BookingDetachGroupDto) o;
+    return Objects.equals(this.extId, bookingDetachGroupDto.extId) &&
+        Objects.equals(this.accountIds, bookingDetachGroupDto.accountIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status);
+    return Objects.hash(extId, accountIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EmailDraftSendStatus {\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("class BookingDetachGroupDto {\n");
+    sb.append("    extId: ").append(toIndentedString(extId)).append("\n");
+    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -176,9 +179,18 @@ public class EmailDraftSendStatus {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `status` to the URL query string
-    if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `extId` to the URL query string
+    if (getExtId() != null) {
+      joiner.add(String.format("%sextId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExtId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `accountIds` to the URL query string
+    if (getAccountIds() != null) {
+      for (int i = 0; i < getAccountIds().size(); i++) {
+        joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
     }
 
     return joiner.toString();

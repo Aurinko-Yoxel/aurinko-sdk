@@ -17,6 +17,9 @@ import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Pair;
 
+import io.aurinko.client.model.BookingAvailableProfilesInDto;
+import io.aurinko.client.model.BookingAvailableProfilesOutDto;
+import io.aurinko.client.model.BookingRequiredMode;
 import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.CreateMeetingDto;
 import io.aurinko.client.model.CreateMeetingResponse;
@@ -89,13 +92,14 @@ public class AvailabilityApi {
    * 
    * @param aurinkoClientId Application client Id (required)
    * @param name Booking profile name (required)
+   * @param required a way to select times (optional)
    * @param createMeetingDto  (optional)
    * @return CompletableFuture&lt;CreateMeetingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<CreateMeetingResponse> createMeeting(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<CreateMeetingResponse> createMeeting(String aurinkoClientId, String name, BookingRequiredMode required, CreateMeetingDto createMeetingDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, createMeetingDto);
+      HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, required, createMeetingDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -122,13 +126,14 @@ public class AvailabilityApi {
    * 
    * @param aurinkoClientId Application client Id (required)
    * @param name Booking profile name (required)
+   * @param required a way to select times (optional)
    * @param createMeetingDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;CreateMeetingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<CreateMeetingResponse>> createMeetingWithHttpInfo(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<ApiResponse<CreateMeetingResponse>> createMeetingWithHttpInfo(String aurinkoClientId, String name, BookingRequiredMode required, CreateMeetingDto createMeetingDto) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, createMeetingDto);
+      HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, required, createMeetingDto);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -157,7 +162,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder createMeetingRequestBuilder(String aurinkoClientId, String name, CreateMeetingDto createMeetingDto) throws ApiException {
+  private HttpRequest.Builder createMeetingRequestBuilder(String aurinkoClientId, String name, BookingRequiredMode required, CreateMeetingDto createMeetingDto) throws ApiException {
     // verify the required parameter 'aurinkoClientId' is set
     if (aurinkoClientId == null) {
       throw new ApiException(400, "Missing the required parameter 'aurinkoClientId' when calling createMeeting");
@@ -173,7 +178,22 @@ public class AvailabilityApi {
         .replace("{aurinkoClientId}", ApiClient.urlEncode(aurinkoClientId.toString()))
         .replace("{name}", ApiClient.urlEncode(name.toString()));
 
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    List<Pair> localVarQueryParams = new ArrayList<>();
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "required";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("required", required));
+
+    if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
+      StringJoiner queryJoiner = new StringJoiner("&");
+      localVarQueryParams.forEach(p -> queryJoiner.add(p.getName() + '=' + p.getValue()));
+      if (localVarQueryStringJoiner.length() != 0) {
+        queryJoiner.add(localVarQueryStringJoiner.toString());
+      }
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath + '?' + queryJoiner.toString()));
+    } else {
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    }
 
     localVarRequestBuilder.header("Content-Type", "application/json");
     localVarRequestBuilder.header("Accept", "application/json");
@@ -194,18 +214,121 @@ public class AvailabilityApi {
   }
 
   /**
+   * Get available bookings for а time range
+   * 
+   * @param aurinkoClientId Application client Id (required)
+   * @param bookingAvailableProfilesInDto  (optional)
+   * @return CompletableFuture&lt;BookingAvailableProfilesOutDto&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<BookingAvailableProfilesOutDto> getAvailableBookings(String aurinkoClientId, BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = getAvailableBookingsRequestBuilder(aurinkoClientId, bookingAvailableProfilesInDto);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("getAvailableBookings", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingAvailableProfilesOutDto>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Get available bookings for а time range
+   * 
+   * @param aurinkoClientId Application client Id (required)
+   * @param bookingAvailableProfilesInDto  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;BookingAvailableProfilesOutDto&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<BookingAvailableProfilesOutDto>> getAvailableBookingsWithHttpInfo(String aurinkoClientId, BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = getAvailableBookingsRequestBuilder(aurinkoClientId, bookingAvailableProfilesInDto);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("getAvailableBookings", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<BookingAvailableProfilesOutDto>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<BookingAvailableProfilesOutDto>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder getAvailableBookingsRequestBuilder(String aurinkoClientId, BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+    // verify the required parameter 'aurinkoClientId' is set
+    if (aurinkoClientId == null) {
+      throw new ApiException(400, "Missing the required parameter 'aurinkoClientId' when calling getAvailableBookings");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/book/{aurinkoClientId}/dynamic/availability"
+        .replace("{aurinkoClientId}", ApiClient.urlEncode(aurinkoClientId.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(bookingAvailableProfilesInDto);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
    * Get available meeting times
    * 
    * @param aurinkoClientId Application client Id (required)
    * @param name Booking profile name (required)
+   * @param required a way to select times (optional)
    * @param limit page size (optional, default to 10)
    * @param offset return records offset by the given number (optional, default to 0)
    * @return CompletableFuture&lt;BookingTimesOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingTimesOutDto> getMeetingTimes(String aurinkoClientId, String name, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingTimesOutDto> getMeetingTimes(String aurinkoClientId, String name, BookingRequiredMode required, Integer limit, Integer offset) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getMeetingTimesRequestBuilder(aurinkoClientId, name, limit, offset);
+      HttpRequest.Builder localVarRequestBuilder = getMeetingTimesRequestBuilder(aurinkoClientId, name, required, limit, offset);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -232,14 +355,15 @@ public class AvailabilityApi {
    * 
    * @param aurinkoClientId Application client Id (required)
    * @param name Booking profile name (required)
+   * @param required a way to select times (optional)
    * @param limit page size (optional, default to 10)
    * @param offset return records offset by the given number (optional, default to 0)
    * @return CompletableFuture&lt;ApiResponse&lt;BookingTimesOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingTimesOutDto>> getMeetingTimesWithHttpInfo(String aurinkoClientId, String name, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingTimesOutDto>> getMeetingTimesWithHttpInfo(String aurinkoClientId, String name, BookingRequiredMode required, Integer limit, Integer offset) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getMeetingTimesRequestBuilder(aurinkoClientId, name, limit, offset);
+      HttpRequest.Builder localVarRequestBuilder = getMeetingTimesRequestBuilder(aurinkoClientId, name, required, limit, offset);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -268,7 +392,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder getMeetingTimesRequestBuilder(String aurinkoClientId, String name, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder getMeetingTimesRequestBuilder(String aurinkoClientId, String name, BookingRequiredMode required, Integer limit, Integer offset) throws ApiException {
     // verify the required parameter 'aurinkoClientId' is set
     if (aurinkoClientId == null) {
       throw new ApiException(400, "Missing the required parameter 'aurinkoClientId' when calling getMeetingTimes");
@@ -287,6 +411,8 @@ public class AvailabilityApi {
     List<Pair> localVarQueryParams = new ArrayList<>();
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
     String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "required";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("required", required));
     localVarQueryParameterBaseName = "limit";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("limit", limit));
     localVarQueryParameterBaseName = "offset";

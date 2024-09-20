@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.BookingAttachedAccountsDto;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,81 +33,137 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import io.aurinko.client.ApiClient;
 /**
- * BookingAttachGroupUserDto
+ * BookingAttachedAccountsPage
  */
 @JsonPropertyOrder({
-  BookingAttachGroupUserDto.JSON_PROPERTY_ID,
-  BookingAttachGroupUserDto.JSON_PROPERTY_ACCOUNTS
+  BookingAttachedAccountsPage.JSON_PROPERTY_OFFSET,
+  BookingAttachedAccountsPage.JSON_PROPERTY_TOTAL_SIZE,
+  BookingAttachedAccountsPage.JSON_PROPERTY_DONE,
+  BookingAttachedAccountsPage.JSON_PROPERTY_RECORDS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class BookingAttachGroupUserDto {
-  public static final String JSON_PROPERTY_ID = "id";
-  private String id;
+public class BookingAttachedAccountsPage {
+  public static final String JSON_PROPERTY_OFFSET = "offset";
+  private Integer offset;
 
-  public static final String JSON_PROPERTY_ACCOUNTS = "accounts";
-  private List<Long> accounts = new ArrayList<>();
+  public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
+  private Long totalSize;
 
-  public BookingAttachGroupUserDto() { 
+  public static final String JSON_PROPERTY_DONE = "done";
+  private Boolean done;
+
+  public static final String JSON_PROPERTY_RECORDS = "records";
+  private List<BookingAttachedAccountsDto> records = new ArrayList<>();
+
+  public BookingAttachedAccountsPage() { 
   }
 
-  public BookingAttachGroupUserDto id(String id) {
-    this.id = id;
+  public BookingAttachedAccountsPage offset(Integer offset) {
+    this.offset = offset;
     return this;
   }
 
   /**
-   * User id
-   * @return id
+   * Get offset
+   * @return offset
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getId() {
-    return id;
+  public Integer getOffset() {
+    return offset;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
-    this.id = id;
+  public void setOffset(Integer offset) {
+    this.offset = offset;
   }
 
 
-  public BookingAttachGroupUserDto accounts(List<Long> accounts) {
-    this.accounts = accounts;
+  public BookingAttachedAccountsPage totalSize(Long totalSize) {
+    this.totalSize = totalSize;
     return this;
   }
 
-  public BookingAttachGroupUserDto addAccountsItem(Long accountsItem) {
-    if (this.accounts == null) {
-      this.accounts = new ArrayList<>();
+  /**
+   * Get totalSize
+   * @return totalSize
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Long getTotalSize() {
+    return totalSize;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTotalSize(Long totalSize) {
+    this.totalSize = totalSize;
+  }
+
+
+  public BookingAttachedAccountsPage done(Boolean done) {
+    this.done = done;
+    return this;
+  }
+
+  /**
+   * Get done
+   * @return done
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Boolean getDone() {
+    return done;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDone(Boolean done) {
+    this.done = done;
+  }
+
+
+  public BookingAttachedAccountsPage records(List<BookingAttachedAccountsDto> records) {
+    this.records = records;
+    return this;
+  }
+
+  public BookingAttachedAccountsPage addRecordsItem(BookingAttachedAccountsDto recordsItem) {
+    if (this.records == null) {
+      this.records = new ArrayList<>();
     }
-    this.accounts.add(accountsItem);
+    this.records.add(recordsItem);
     return this;
   }
 
   /**
-   * Get accounts
-   * @return accounts
+   * Get records
+   * @return records
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACCOUNTS)
+  @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<Long> getAccounts() {
-    return accounts;
+  public List<BookingAttachedAccountsDto> getRecords() {
+    return records;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACCOUNTS)
+  @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccounts(List<Long> accounts) {
-    this.accounts = accounts;
+  public void setRecords(List<BookingAttachedAccountsDto> records) {
+    this.records = records;
   }
 
 
   /**
-   * Return true if this BookingAttachGroupUserDto object is equal to o.
+   * Return true if this BookingAttachedAccountsPage object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -116,22 +173,26 @@ public class BookingAttachGroupUserDto {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BookingAttachGroupUserDto bookingAttachGroupUserDto = (BookingAttachGroupUserDto) o;
-    return Objects.equals(this.id, bookingAttachGroupUserDto.id) &&
-        Objects.equals(this.accounts, bookingAttachGroupUserDto.accounts);
+    BookingAttachedAccountsPage bookingAttachedAccountsPage = (BookingAttachedAccountsPage) o;
+    return Objects.equals(this.offset, bookingAttachedAccountsPage.offset) &&
+        Objects.equals(this.totalSize, bookingAttachedAccountsPage.totalSize) &&
+        Objects.equals(this.done, bookingAttachedAccountsPage.done) &&
+        Objects.equals(this.records, bookingAttachedAccountsPage.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, accounts);
+    return Objects.hash(offset, totalSize, done, records);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BookingAttachGroupUserDto {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    accounts: ").append(toIndentedString(accounts)).append("\n");
+    sb.append("class BookingAttachedAccountsPage {\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
+    sb.append("    done: ").append(toIndentedString(done)).append("\n");
+    sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -179,17 +240,28 @@ public class BookingAttachGroupUserDto {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `id` to the URL query string
-    if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `offset` to the URL query string
+    if (getOffset() != null) {
+      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `accounts` to the URL query string
-    if (getAccounts() != null) {
-      for (int i = 0; i < getAccounts().size(); i++) {
-        joiner.add(String.format("%saccounts%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAccounts().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `totalSize` to the URL query string
+    if (getTotalSize() != null) {
+      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `done` to the URL query string
+    if (getDone() != null) {
+      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `records` to the URL query string
+    if (getRecords() != null) {
+      for (int i = 0; i < getRecords().size(); i++) {
+        if (getRecords().get(i) != null) {
+          joiner.add(getRecords().get(i).toUrlQueryString(String.format("%srecords%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
       }
     }
 

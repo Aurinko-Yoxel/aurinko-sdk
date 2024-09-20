@@ -15,6 +15,7 @@ package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.BodyType;
+import io.aurinko.client.model.EmailFolderCreate;
 import io.aurinko.client.model.EmailFolderInfo;
 import io.aurinko.client.model.EmailFolderInfoPage;
 import io.aurinko.client.model.EmailMessagesPageNext;
@@ -37,6 +38,23 @@ public class EmailFoldersApiTest {
 
     private final EmailFoldersApi api = new EmailFoldersApi();
 
+    
+    /**
+     * Create a new email folder
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createFolderTest() throws ApiException {
+        EmailFolderCreate emailFolderCreate = null;
+        CompletableFuture<EmailFolderInfo> response = 
+        api.createFolder(emailFolderCreate);
+        
+        // TODO: test validations
+    }
     
     /**
      * Get an email folder

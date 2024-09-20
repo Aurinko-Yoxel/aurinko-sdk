@@ -1,6 +1,6 @@
 
 
-# EmailDraftSendStatus
+# EmailDraftSendResponse
 
 
 ## Properties
@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
+|**trackingId** | **String** | A tracking identifier for the sent message |  [optional] |
 
 
 

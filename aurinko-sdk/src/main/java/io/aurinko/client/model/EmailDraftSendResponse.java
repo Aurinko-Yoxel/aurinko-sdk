@@ -24,118 +24,116 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import io.aurinko.client.ApiClient;
 /**
- * BookingMeetingTime
+ * EmailDraftSendResponse
  */
 @JsonPropertyOrder({
-  BookingMeetingTime.JSON_PROPERTY_START,
-  BookingMeetingTime.JSON_PROPERTY_END,
-  BookingMeetingTime.JSON_PROPERTY_USER_IDS
+  EmailDraftSendResponse.JSON_PROPERTY_STATUS,
+  EmailDraftSendResponse.JSON_PROPERTY_TRACKING_ID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class BookingMeetingTime {
-  public static final String JSON_PROPERTY_START = "start";
-  private OffsetDateTime start;
-
-  public static final String JSON_PROPERTY_END = "end";
-  private OffsetDateTime end;
-
-  public static final String JSON_PROPERTY_USER_IDS = "userIds";
-  private List<String> userIds = new ArrayList<>();
-
-  public BookingMeetingTime() { 
-  }
-
-  public BookingMeetingTime start(OffsetDateTime start) {
-    this.start = start;
-    return this;
-  }
-
+public class EmailDraftSendResponse {
   /**
-   * Get start
-   * @return start
+   * Gets or Sets status
    */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public OffsetDateTime getStart() {
-    return start;
-  }
+  public enum StatusEnum {
+    OK("Ok"),
+    
+    SCHEDULED("Scheduled"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
+    private String value;
 
-  @JsonProperty(JSON_PROPERTY_START)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
-    this.start = start;
-  }
-
-
-  public BookingMeetingTime end(OffsetDateTime end) {
-    this.end = end;
-    return this;
-  }
-
-  /**
-   * Get end
-   * @return end
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public OffsetDateTime getEnd() {
-    return end;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
-    this.end = end;
-  }
-
-
-  public BookingMeetingTime userIds(List<String> userIds) {
-    this.userIds = userIds;
-    return this;
-  }
-
-  public BookingMeetingTime addUserIdsItem(String userIdsItem) {
-    if (this.userIds == null) {
-      this.userIds = new ArrayList<>();
+    StatusEnum(String value) {
+      this.value = value;
     }
-    this.userIds.add(userIdsItem);
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+  }
+
+  public static final String JSON_PROPERTY_STATUS = "status";
+  private StatusEnum status;
+
+  public static final String JSON_PROPERTY_TRACKING_ID = "trackingId";
+  private String trackingId;
+
+  public EmailDraftSendResponse() { 
+  }
+
+  public EmailDraftSendResponse status(StatusEnum status) {
+    this.status = status;
     return this;
   }
 
   /**
-   * Get userIds
-   * @return userIds
+   * Get status
+   * @return status
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<String> getUserIds() {
-    return userIds;
+  public StatusEnum getStatus() {
+    return status;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserIds(List<String> userIds) {
-    this.userIds = userIds;
+  public void setStatus(StatusEnum status) {
+    this.status = status;
+  }
+
+
+  public EmailDraftSendResponse trackingId(String trackingId) {
+    this.trackingId = trackingId;
+    return this;
+  }
+
+  /**
+   * A tracking identifier for the sent message
+   * @return trackingId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TRACKING_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getTrackingId() {
+    return trackingId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TRACKING_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTrackingId(String trackingId) {
+    this.trackingId = trackingId;
   }
 
 
   /**
-   * Return true if this BookingMeetingTime object is equal to o.
+   * Return true if this EmailDraftSendResponse object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -145,24 +143,22 @@ public class BookingMeetingTime {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BookingMeetingTime bookingMeetingTime = (BookingMeetingTime) o;
-    return Objects.equals(this.start, bookingMeetingTime.start) &&
-        Objects.equals(this.end, bookingMeetingTime.end) &&
-        Objects.equals(this.userIds, bookingMeetingTime.userIds);
+    EmailDraftSendResponse emailDraftSendResponse = (EmailDraftSendResponse) o;
+    return Objects.equals(this.status, emailDraftSendResponse.status) &&
+        Objects.equals(this.trackingId, emailDraftSendResponse.trackingId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end, userIds);
+    return Objects.hash(status, trackingId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BookingMeetingTime {\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("class EmailDraftSendResponse {\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,23 +206,14 @@ public class BookingMeetingTime {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `start` to the URL query string
-    if (getStart() != null) {
-      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `status` to the URL query string
+    if (getStatus() != null) {
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `end` to the URL query string
-    if (getEnd() != null) {
-      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `userIds` to the URL query string
-    if (getUserIds() != null) {
-      for (int i = 0; i < getUserIds().size(); i++) {
-        joiner.add(String.format("%suserIds%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getUserIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
+    // add `trackingId` to the URL query string
+    if (getTrackingId() != null) {
+      joiner.add(String.format("%strackingId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

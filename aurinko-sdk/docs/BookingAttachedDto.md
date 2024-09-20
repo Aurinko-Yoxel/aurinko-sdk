@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**userId** | **String** | User id |  [optional] |
-|**accounts** | **List&lt;Long&gt;** |  |  [optional] |
+|**extId** | **String** | External identifier |  [optional] |
+|**accountIds** | **List&lt;Long&gt;** |  |  [optional] |
 
 
 

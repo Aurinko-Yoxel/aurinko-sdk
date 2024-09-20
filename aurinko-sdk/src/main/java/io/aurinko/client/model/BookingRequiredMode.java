@@ -13,55 +13,68 @@
 
 package io.aurinko.client.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
+import java.util.Objects;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BookingMeetingTime
+ * Gets or Sets BookingRequiredMode
  */
-class BookingMeetingTimeTest {
-    private final BookingMeetingTime model = new BookingMeetingTime();
+public enum BookingRequiredMode {
+  
+  ONE("one"),
+  
+  ALL("all"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
-    /**
-     * Model tests for BookingMeetingTime
-     */
-    @Test
-    void testBookingMeetingTime() {
-        // TODO: test BookingMeetingTime
+  private String value;
+
+  BookingRequiredMode(String value) {
+    this.value = value;
+  }
+
+  @JsonValue
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  @JsonCreator
+  public static BookingRequiredMode fromValue(String value) {
+    for (BookingRequiredMode b : BookingRequiredMode.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    return UNKNOWN_DEFAULT_OPEN_API;
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    if (prefix == null) {
+      prefix = "";
     }
 
-    /**
-     * Test the property 'start'
-     */
-    @Test
-    void startTest() {
-        // TODO: test start
-    }
-
-    /**
-     * Test the property 'end'
-     */
-    @Test
-    void endTest() {
-        // TODO: test end
-    }
-
-    /**
-     * Test the property 'userIds'
-     */
-    @Test
-    void userIdsTest() {
-        // TODO: test userIds
-    }
+    return String.format("%s=%s", prefix, this.toString());
+  }
 
 }
+

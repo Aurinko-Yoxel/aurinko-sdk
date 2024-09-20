@@ -35,7 +35,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   CreateMeetingResponse.JSON_PROPERTY_CREATED,
   CreateMeetingResponse.JSON_PROPERTY_ID,
-  CreateMeetingResponse.JSON_PROPERTY_USER_ID
+  CreateMeetingResponse.JSON_PROPERTY_GROUP_XID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class CreateMeetingResponse {
@@ -45,8 +45,8 @@ public class CreateMeetingResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
-  public static final String JSON_PROPERTY_USER_ID = "userId";
-  private String userId;
+  public static final String JSON_PROPERTY_GROUP_XID = "groupXid";
+  private String groupXid;
 
   public CreateMeetingResponse() { 
   }
@@ -99,27 +99,27 @@ public class CreateMeetingResponse {
   }
 
 
-  public CreateMeetingResponse userId(String userId) {
-    this.userId = userId;
+  public CreateMeetingResponse groupXid(String groupXid) {
+    this.groupXid = groupXid;
     return this;
   }
 
   /**
-   * User id for group booking
-   * @return userId
+   * Group external id for group booking
+   * @return groupXid
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonProperty(JSON_PROPERTY_GROUP_XID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getUserId() {
-    return userId;
+  public String getGroupXid() {
+    return groupXid;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonProperty(JSON_PROPERTY_GROUP_XID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserId(String userId) {
-    this.userId = userId;
+  public void setGroupXid(String groupXid) {
+    this.groupXid = groupXid;
   }
 
 
@@ -137,12 +137,12 @@ public class CreateMeetingResponse {
     CreateMeetingResponse createMeetingResponse = (CreateMeetingResponse) o;
     return Objects.equals(this.created, createMeetingResponse.created) &&
         Objects.equals(this.id, createMeetingResponse.id) &&
-        Objects.equals(this.userId, createMeetingResponse.userId);
+        Objects.equals(this.groupXid, createMeetingResponse.groupXid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, id, userId);
+    return Objects.hash(created, id, groupXid);
   }
 
   @Override
@@ -151,7 +151,7 @@ public class CreateMeetingResponse {
     sb.append("class CreateMeetingResponse {\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    groupXid: ").append(toIndentedString(groupXid)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -209,9 +209,9 @@ public class CreateMeetingResponse {
       joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `userId` to the URL query string
-    if (getUserId() != null) {
-      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `groupXid` to the URL query string
+    if (getGroupXid() != null) {
+      joiner.add(String.format("%sgroupXid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGroupXid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();
