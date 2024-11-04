@@ -54,6 +54,14 @@ class CreateMeetingResponseTest {
     }
 
     /**
+     * Test the property 'reservationId'
+     */
+    @Test
+    void reservationIdTest() {
+        // TODO: test reservationId
+    }
+
+    /**
      * Test the property 'groupXid'
      */
     @Test

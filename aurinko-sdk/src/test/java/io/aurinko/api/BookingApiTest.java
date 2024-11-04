@@ -17,8 +17,15 @@ import io.aurinko.client.ApiException;
 import io.aurinko.client.model.BookingInDto;
 import io.aurinko.client.model.BookingOutDto;
 import io.aurinko.client.model.BookingPage;
+import io.aurinko.client.model.BookingRequiredMode;
 import io.aurinko.client.model.BookingSuccessOutDto;
+import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.BookingUpdateDto;
+import io.aurinko.client.model.ConfirmReservationOutDto;
+import io.aurinko.client.model.ConfirmSlotDeleteOutDto;
+import io.aurinko.client.model.CreateMeetingDto;
+import io.aurinko.client.model.CreateMeetingResponse;
+import java.time.LocalDate;
 import io.aurinko.client.model.WeekWorkSchedule;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -39,6 +46,83 @@ public class BookingApiTest {
 
     private final BookingApi api = new BookingApi();
 
+    
+    /**
+     * Create a meeting
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingAccountCreateMeetingTest() throws ApiException {
+        Long id = null;
+        BookingRequiredMode required = null;
+        Long reserveForMinutes = null;
+        CreateMeetingDto createMeetingDto = null;
+        CompletableFuture<CreateMeetingResponse> response = 
+        api.bookingAccountCreateMeeting(id, required, reserveForMinutes, createMeetingDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get available meeting times
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingAccountMeetingTimesTest() throws ApiException {
+        Long id = null;
+        BookingRequiredMode required = null;
+        LocalDate fromDate = null;
+        String intervalLength = null;
+        String pageToken = null;
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingTimesOutDto> response = 
+        api.bookingAccountMeetingTimes(id, required, fromDate, intervalLength, pageToken, limit, offset);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Convert an unconfirmed booking reservation to a calendar event
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingAccountReservationConfirmTest() throws ApiException {
+        Long id = null;
+        CompletableFuture<ConfirmReservationOutDto> response = 
+        api.bookingAccountReservationConfirm(id);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Cancel an unconfirmed booking reservation
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingAccountReservationDeleteTest() throws ApiException {
+        Long id = null;
+        CompletableFuture<ConfirmSlotDeleteOutDto> response = 
+        api.bookingAccountReservationDelete(id);
+        
+        // TODO: test validations
+    }
     
     /**
      * Create a booking profile

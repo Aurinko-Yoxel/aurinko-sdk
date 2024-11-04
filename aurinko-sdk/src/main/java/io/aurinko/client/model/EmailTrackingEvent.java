@@ -45,6 +45,9 @@ import io.aurinko.client.ApiClient;
   EmailTrackingEvent.JSON_PROPERTY_MESSAGE_ID,
   EmailTrackingEvent.JSON_PROPERTY_INTERNET_MESSAGE_ID,
   EmailTrackingEvent.JSON_PROPERTY_TRACKING_ID,
+  EmailTrackingEvent.JSON_PROPERTY_TRACKING_THREAD_ID,
+  EmailTrackingEvent.JSON_PROPERTY_TRACKING_MESSAGE_ID,
+  EmailTrackingEvent.JSON_PROPERTY_TRACKING_INTERNET_MESSAGE_ID,
   EmailTrackingEvent.JSON_PROPERTY_CONTEXT,
   EmailTrackingEvent.JSON_PROPERTY_TRACKING_CODE
 })
@@ -125,6 +128,15 @@ public class EmailTrackingEvent {
 
   public static final String JSON_PROPERTY_TRACKING_ID = "trackingId";
   private Long trackingId;
+
+  public static final String JSON_PROPERTY_TRACKING_THREAD_ID = "trackingThreadId";
+  private String trackingThreadId;
+
+  public static final String JSON_PROPERTY_TRACKING_MESSAGE_ID = "trackingMessageId";
+  private String trackingMessageId;
+
+  public static final String JSON_PROPERTY_TRACKING_INTERNET_MESSAGE_ID = "trackingInternetMessageId";
+  private String trackingInternetMessageId;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private String context;
@@ -399,6 +411,78 @@ public class EmailTrackingEvent {
   }
 
 
+  public EmailTrackingEvent trackingThreadId(String trackingThreadId) {
+    this.trackingThreadId = trackingThreadId;
+    return this;
+  }
+
+  /**
+   * Thread id where tracking begins
+   * @return trackingThreadId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TRACKING_THREAD_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getTrackingThreadId() {
+    return trackingThreadId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TRACKING_THREAD_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTrackingThreadId(String trackingThreadId) {
+    this.trackingThreadId = trackingThreadId;
+  }
+
+
+  public EmailTrackingEvent trackingMessageId(String trackingMessageId) {
+    this.trackingMessageId = trackingMessageId;
+    return this;
+  }
+
+  /**
+   * Message id where tracking begins
+   * @return trackingMessageId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TRACKING_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getTrackingMessageId() {
+    return trackingMessageId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TRACKING_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTrackingMessageId(String trackingMessageId) {
+    this.trackingMessageId = trackingMessageId;
+  }
+
+
+  public EmailTrackingEvent trackingInternetMessageId(String trackingInternetMessageId) {
+    this.trackingInternetMessageId = trackingInternetMessageId;
+    return this;
+  }
+
+  /**
+   * Rfc822 message id where tracking begins
+   * @return trackingInternetMessageId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TRACKING_INTERNET_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getTrackingInternetMessageId() {
+    return trackingInternetMessageId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TRACKING_INTERNET_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTrackingInternetMessageId(String trackingInternetMessageId) {
+    this.trackingInternetMessageId = trackingInternetMessageId;
+  }
+
+
   public EmailTrackingEvent context(String context) {
     this.context = context;
     return this;
@@ -470,13 +554,16 @@ public class EmailTrackingEvent {
         Objects.equals(this.messageId, emailTrackingEvent.messageId) &&
         Objects.equals(this.internetMessageId, emailTrackingEvent.internetMessageId) &&
         Objects.equals(this.trackingId, emailTrackingEvent.trackingId) &&
+        Objects.equals(this.trackingThreadId, emailTrackingEvent.trackingThreadId) &&
+        Objects.equals(this.trackingMessageId, emailTrackingEvent.trackingMessageId) &&
+        Objects.equals(this.trackingInternetMessageId, emailTrackingEvent.trackingInternetMessageId) &&
         Objects.equals(this.context, emailTrackingEvent.context) &&
         Objects.equals(this.trackingCode, emailTrackingEvent.trackingCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, eventType, location, userAgent, referrer, remoteAddr, threadId, messageId, internetMessageId, trackingId, context, trackingCode);
+    return Objects.hash(id, createdAt, eventType, location, userAgent, referrer, remoteAddr, threadId, messageId, internetMessageId, trackingId, trackingThreadId, trackingMessageId, trackingInternetMessageId, context, trackingCode);
   }
 
   @Override
@@ -494,6 +581,9 @@ public class EmailTrackingEvent {
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    internetMessageId: ").append(toIndentedString(internetMessageId)).append("\n");
     sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
+    sb.append("    trackingThreadId: ").append(toIndentedString(trackingThreadId)).append("\n");
+    sb.append("    trackingMessageId: ").append(toIndentedString(trackingMessageId)).append("\n");
+    sb.append("    trackingInternetMessageId: ").append(toIndentedString(trackingInternetMessageId)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    trackingCode: ").append(toIndentedString(trackingCode)).append("\n");
     sb.append("}");
@@ -596,6 +686,21 @@ public class EmailTrackingEvent {
     // add `trackingId` to the URL query string
     if (getTrackingId() != null) {
       joiner.add(String.format("%strackingId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `trackingThreadId` to the URL query string
+    if (getTrackingThreadId() != null) {
+      joiner.add(String.format("%strackingThreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `trackingMessageId` to the URL query string
+    if (getTrackingMessageId() != null) {
+      joiner.add(String.format("%strackingMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `trackingInternetMessageId` to the URL query string
+    if (getTrackingInternetMessageId() != null) {
+      joiner.add(String.format("%strackingInternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `context` to the URL query string

@@ -12,6 +12,16 @@ All URIs are relative to *https://api.aurinko.io*
 | [**attachedAccountsGroupBookingWithHttpInfo**](GroupBookingApi.md#attachedAccountsGroupBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/attachAccounts | List accounts of a group booking profile |
 | [**attachedGroupsBooking**](GroupBookingApi.md#attachedGroupsBooking) | **GET** /v1/book/group/profiles/{id}/attachGroups | List groups of a group booking profile |
 | [**attachedGroupsBookingWithHttpInfo**](GroupBookingApi.md#attachedGroupsBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/attachGroups | List groups of a group booking profile |
+| [**bookingGroupAvailability**](GroupBookingApi.md#bookingGroupAvailability) | **POST** /v1/book/group/profiles/dynamic/availability | Get available bookings for а time range |
+| [**bookingGroupAvailabilityWithHttpInfo**](GroupBookingApi.md#bookingGroupAvailabilityWithHttpInfo) | **POST** /v1/book/group/profiles/dynamic/availability | Get available bookings for а time range |
+| [**bookingGroupCreateMeeting**](GroupBookingApi.md#bookingGroupCreateMeeting) | **POST** /v1/book/group/profiles/{id}/meeting | Create a meeting |
+| [**bookingGroupCreateMeetingWithHttpInfo**](GroupBookingApi.md#bookingGroupCreateMeetingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/meeting | Create a meeting |
+| [**bookingGroupMeetingTimes**](GroupBookingApi.md#bookingGroupMeetingTimes) | **GET** /v1/book/group/profiles/{id}/meeting | Get available meeting times |
+| [**bookingGroupMeetingTimesWithHttpInfo**](GroupBookingApi.md#bookingGroupMeetingTimesWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/meeting | Get available meeting times |
+| [**bookingGroupReservationConfirm**](GroupBookingApi.md#bookingGroupReservationConfirm) | **POST** /v1/book/group/reservations/{id}/confirm | Convert an unconfirmed booking reservation to a calendar event |
+| [**bookingGroupReservationConfirmWithHttpInfo**](GroupBookingApi.md#bookingGroupReservationConfirmWithHttpInfo) | **POST** /v1/book/group/reservations/{id}/confirm | Convert an unconfirmed booking reservation to a calendar event |
+| [**bookingGroupReservationDelete**](GroupBookingApi.md#bookingGroupReservationDelete) | **DELETE** /v1/book/group/reservations/{id} | Cancel an unconfirmed booking reservation |
+| [**bookingGroupReservationDeleteWithHttpInfo**](GroupBookingApi.md#bookingGroupReservationDeleteWithHttpInfo) | **DELETE** /v1/book/group/reservations/{id} | Cancel an unconfirmed booking reservation |
 | [**createGroupBooking**](GroupBookingApi.md#createGroupBooking) | **POST** /v1/book/group/profiles | Create a group booking profile |
 | [**createGroupBookingWithHttpInfo**](GroupBookingApi.md#createGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles | Create a group booking profile |
 | [**deleteGroupBooking**](GroupBookingApi.md#deleteGroupBooking) | **DELETE** /v1/book/group/profiles/{id} | Delete a group booking profile by id |
@@ -52,48 +62,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -127,7 +99,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -164,48 +136,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -248,7 +182,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -285,48 +219,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -360,7 +256,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -397,48 +293,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -481,7 +339,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -518,48 +376,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -595,7 +415,7 @@ CompletableFuture<[**BookingAttachedAccountsPage**](BookingAttachedAccountsPage.
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -632,48 +452,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -718,7 +500,7 @@ CompletableFuture<ApiResponse<[**BookingAttachedAccountsPage**](BookingAttachedA
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -755,48 +537,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -832,7 +576,7 @@ CompletableFuture<[**BookingAttachedGroupsPage**](BookingAttachedGroupsPage.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -869,48 +613,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -955,7 +661,808 @@ CompletableFuture<ApiResponse<[**BookingAttachedGroupsPage**](BookingAttachedGro
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+
+## bookingGroupAvailability
+
+> CompletableFuture<BookingAvailableProfilesOutDto> bookingGroupAvailability(bookingAvailableProfilesInDto)
+
+Get available bookings for а time range
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        BookingAvailableProfilesInDto bookingAvailableProfilesInDto = new BookingAvailableProfilesInDto(); // BookingAvailableProfilesInDto | 
+        try {
+            CompletableFuture<BookingAvailableProfilesOutDto> result = apiInstance.bookingGroupAvailability(bookingAvailableProfilesInDto);
+            System.out.println(result.get());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupAvailability");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bookingAvailableProfilesInDto** | [**BookingAvailableProfilesInDto**](BookingAvailableProfilesInDto.md)|  | [optional] |
+
+### Return type
+
+CompletableFuture<[**BookingAvailableProfilesOutDto**](BookingAvailableProfilesOutDto.md)>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+## bookingGroupAvailabilityWithHttpInfo
+
+> CompletableFuture<ApiResponse<BookingAvailableProfilesOutDto>> bookingGroupAvailability bookingGroupAvailabilityWithHttpInfo(bookingAvailableProfilesInDto)
+
+Get available bookings for а time range
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        BookingAvailableProfilesInDto bookingAvailableProfilesInDto = new BookingAvailableProfilesInDto(); // BookingAvailableProfilesInDto | 
+        try {
+            CompletableFuture<ApiResponse<BookingAvailableProfilesOutDto>> response = apiInstance.bookingGroupAvailabilityWithHttpInfo(bookingAvailableProfilesInDto);
+            System.out.println("Status code: " + response.get().getStatusCode());
+            System.out.println("Response headers: " + response.get().getHeaders());
+            System.out.println("Response body: " + response.get().getData());
+        } catch (InterruptedException | ExecutionException e) {
+            ApiException apiException = (ApiException)e.getCause();
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupAvailability");
+            System.err.println("Status code: " + apiException.getCode());
+            System.err.println("Response headers: " + apiException.getResponseHeaders());
+            System.err.println("Reason: " + apiException.getResponseBody());
+            e.printStackTrace();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupAvailability");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bookingAvailableProfilesInDto** | [**BookingAvailableProfilesInDto**](BookingAvailableProfilesInDto.md)|  | [optional] |
+
+### Return type
+
+CompletableFuture<ApiResponse<[**BookingAvailableProfilesOutDto**](BookingAvailableProfilesOutDto.md)>>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+
+## bookingGroupCreateMeeting
+
+> CompletableFuture<CreateMeetingResponse> bookingGroupCreateMeeting(id, required, reserveForMinutes, createMeetingDto)
+
+Create a meeting
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        Long id = 56L; // Long | A booking id
+        BookingRequiredMode required = BookingRequiredMode.fromValue("one"); // BookingRequiredMode | a way to select times
+        Long reserveForMinutes = 56L; // Long | Time in minutes, blocks the interval for a time (creates an unconfirmed reservation), the meeting is not created
+        CreateMeetingDto createMeetingDto = new CreateMeetingDto(); // CreateMeetingDto | 
+        try {
+            CompletableFuture<CreateMeetingResponse> result = apiInstance.bookingGroupCreateMeeting(id, required, reserveForMinutes, createMeetingDto);
+            System.out.println(result.get());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupCreateMeeting");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| A booking id | |
+| **required** | [**BookingRequiredMode**](.md)| a way to select times | [optional] [enum: one, all] |
+| **reserveForMinutes** | **Long**| Time in minutes, blocks the interval for a time (creates an unconfirmed reservation), the meeting is not created | [optional] |
+| **createMeetingDto** | [**CreateMeetingDto**](CreateMeetingDto.md)|  | [optional] |
+
+### Return type
+
+CompletableFuture<[**CreateMeetingResponse**](CreateMeetingResponse.md)>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+## bookingGroupCreateMeetingWithHttpInfo
+
+> CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingGroupCreateMeeting bookingGroupCreateMeetingWithHttpInfo(id, required, reserveForMinutes, createMeetingDto)
+
+Create a meeting
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        Long id = 56L; // Long | A booking id
+        BookingRequiredMode required = BookingRequiredMode.fromValue("one"); // BookingRequiredMode | a way to select times
+        Long reserveForMinutes = 56L; // Long | Time in minutes, blocks the interval for a time (creates an unconfirmed reservation), the meeting is not created
+        CreateMeetingDto createMeetingDto = new CreateMeetingDto(); // CreateMeetingDto | 
+        try {
+            CompletableFuture<ApiResponse<CreateMeetingResponse>> response = apiInstance.bookingGroupCreateMeetingWithHttpInfo(id, required, reserveForMinutes, createMeetingDto);
+            System.out.println("Status code: " + response.get().getStatusCode());
+            System.out.println("Response headers: " + response.get().getHeaders());
+            System.out.println("Response body: " + response.get().getData());
+        } catch (InterruptedException | ExecutionException e) {
+            ApiException apiException = (ApiException)e.getCause();
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupCreateMeeting");
+            System.err.println("Status code: " + apiException.getCode());
+            System.err.println("Response headers: " + apiException.getResponseHeaders());
+            System.err.println("Reason: " + apiException.getResponseBody());
+            e.printStackTrace();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupCreateMeeting");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| A booking id | |
+| **required** | [**BookingRequiredMode**](.md)| a way to select times | [optional] [enum: one, all] |
+| **reserveForMinutes** | **Long**| Time in minutes, blocks the interval for a time (creates an unconfirmed reservation), the meeting is not created | [optional] |
+| **createMeetingDto** | [**CreateMeetingDto**](CreateMeetingDto.md)|  | [optional] |
+
+### Return type
+
+CompletableFuture<ApiResponse<[**CreateMeetingResponse**](CreateMeetingResponse.md)>>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+
+## bookingGroupMeetingTimes
+
+> CompletableFuture<BookingTimesOutDto> bookingGroupMeetingTimes(id, required, fromDate, intervalLength, pageToken, limit, offset)
+
+Get available meeting times
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        Long id = 56L; // Long | A booking id
+        BookingRequiredMode required = BookingRequiredMode.fromValue("one"); // BookingRequiredMode | a way to select times
+        LocalDate fromDate = LocalDate.now(); // LocalDate | date to iterate a big time intervals
+        String intervalLength = "intervalLength_example"; // String | Time period (in ISO-8601 format) to iterate a big time intervals
+        String pageToken = "pageToken_example"; // String | token to request all pages, if booking has many accounts
+        Integer limit = 56; // Integer | 
+        Integer offset = 56; // Integer | 
+        try {
+            CompletableFuture<BookingTimesOutDto> result = apiInstance.bookingGroupMeetingTimes(id, required, fromDate, intervalLength, pageToken, limit, offset);
+            System.out.println(result.get());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupMeetingTimes");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| A booking id | |
+| **required** | [**BookingRequiredMode**](.md)| a way to select times | [optional] [enum: one, all] |
+| **fromDate** | **LocalDate**| date to iterate a big time intervals | [optional] |
+| **intervalLength** | **String**| Time period (in ISO-8601 format) to iterate a big time intervals | [optional] |
+| **pageToken** | **String**| token to request all pages, if booking has many accounts | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **offset** | **Integer**|  | [optional] |
+
+### Return type
+
+CompletableFuture<[**BookingTimesOutDto**](BookingTimesOutDto.md)>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+## bookingGroupMeetingTimesWithHttpInfo
+
+> CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingGroupMeetingTimes bookingGroupMeetingTimesWithHttpInfo(id, required, fromDate, intervalLength, pageToken, limit, offset)
+
+Get available meeting times
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        Long id = 56L; // Long | A booking id
+        BookingRequiredMode required = BookingRequiredMode.fromValue("one"); // BookingRequiredMode | a way to select times
+        LocalDate fromDate = LocalDate.now(); // LocalDate | date to iterate a big time intervals
+        String intervalLength = "intervalLength_example"; // String | Time period (in ISO-8601 format) to iterate a big time intervals
+        String pageToken = "pageToken_example"; // String | token to request all pages, if booking has many accounts
+        Integer limit = 56; // Integer | 
+        Integer offset = 56; // Integer | 
+        try {
+            CompletableFuture<ApiResponse<BookingTimesOutDto>> response = apiInstance.bookingGroupMeetingTimesWithHttpInfo(id, required, fromDate, intervalLength, pageToken, limit, offset);
+            System.out.println("Status code: " + response.get().getStatusCode());
+            System.out.println("Response headers: " + response.get().getHeaders());
+            System.out.println("Response body: " + response.get().getData());
+        } catch (InterruptedException | ExecutionException e) {
+            ApiException apiException = (ApiException)e.getCause();
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupMeetingTimes");
+            System.err.println("Status code: " + apiException.getCode());
+            System.err.println("Response headers: " + apiException.getResponseHeaders());
+            System.err.println("Reason: " + apiException.getResponseBody());
+            e.printStackTrace();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupMeetingTimes");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| A booking id | |
+| **required** | [**BookingRequiredMode**](.md)| a way to select times | [optional] [enum: one, all] |
+| **fromDate** | **LocalDate**| date to iterate a big time intervals | [optional] |
+| **intervalLength** | **String**| Time period (in ISO-8601 format) to iterate a big time intervals | [optional] |
+| **pageToken** | **String**| token to request all pages, if booking has many accounts | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **offset** | **Integer**|  | [optional] |
+
+### Return type
+
+CompletableFuture<ApiResponse<[**BookingTimesOutDto**](BookingTimesOutDto.md)>>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+
+## bookingGroupReservationConfirm
+
+> CompletableFuture<ConfirmReservationOutDto> bookingGroupReservationConfirm(id)
+
+Convert an unconfirmed booking reservation to a calendar event
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        Long id = 56L; // Long | An unconfirmed reservation id
+        try {
+            CompletableFuture<ConfirmReservationOutDto> result = apiInstance.bookingGroupReservationConfirm(id);
+            System.out.println(result.get());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupReservationConfirm");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| An unconfirmed reservation id | |
+
+### Return type
+
+CompletableFuture<[**ConfirmReservationOutDto**](ConfirmReservationOutDto.md)>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+## bookingGroupReservationConfirmWithHttpInfo
+
+> CompletableFuture<ApiResponse<ConfirmReservationOutDto>> bookingGroupReservationConfirm bookingGroupReservationConfirmWithHttpInfo(id)
+
+Convert an unconfirmed booking reservation to a calendar event
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        Long id = 56L; // Long | An unconfirmed reservation id
+        try {
+            CompletableFuture<ApiResponse<ConfirmReservationOutDto>> response = apiInstance.bookingGroupReservationConfirmWithHttpInfo(id);
+            System.out.println("Status code: " + response.get().getStatusCode());
+            System.out.println("Response headers: " + response.get().getHeaders());
+            System.out.println("Response body: " + response.get().getData());
+        } catch (InterruptedException | ExecutionException e) {
+            ApiException apiException = (ApiException)e.getCause();
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupReservationConfirm");
+            System.err.println("Status code: " + apiException.getCode());
+            System.err.println("Response headers: " + apiException.getResponseHeaders());
+            System.err.println("Reason: " + apiException.getResponseBody());
+            e.printStackTrace();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupReservationConfirm");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| An unconfirmed reservation id | |
+
+### Return type
+
+CompletableFuture<ApiResponse<[**ConfirmReservationOutDto**](ConfirmReservationOutDto.md)>>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+
+## bookingGroupReservationDelete
+
+> CompletableFuture<ConfirmSlotDeleteOutDto> bookingGroupReservationDelete(id)
+
+Cancel an unconfirmed booking reservation
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        Long id = 56L; // Long | An unconfirmed reservation id
+        try {
+            CompletableFuture<ConfirmSlotDeleteOutDto> result = apiInstance.bookingGroupReservationDelete(id);
+            System.out.println(result.get());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupReservationDelete");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| An unconfirmed reservation id | |
+
+### Return type
+
+CompletableFuture<[**ConfirmSlotDeleteOutDto**](ConfirmSlotDeleteOutDto.md)>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+
+## bookingGroupReservationDeleteWithHttpInfo
+
+> CompletableFuture<ApiResponse<ConfirmSlotDeleteOutDto>> bookingGroupReservationDelete bookingGroupReservationDeleteWithHttpInfo(id)
+
+Cancel an unconfirmed booking reservation
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.GroupBookingApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
+        Long id = 56L; // Long | An unconfirmed reservation id
+        try {
+            CompletableFuture<ApiResponse<ConfirmSlotDeleteOutDto>> response = apiInstance.bookingGroupReservationDeleteWithHttpInfo(id);
+            System.out.println("Status code: " + response.get().getStatusCode());
+            System.out.println("Response headers: " + response.get().getHeaders());
+            System.out.println("Response body: " + response.get().getData());
+        } catch (InterruptedException | ExecutionException e) {
+            ApiException apiException = (ApiException)e.getCause();
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupReservationDelete");
+            System.err.println("Status code: " + apiException.getCode());
+            System.err.println("Response headers: " + apiException.getResponseHeaders());
+            System.err.println("Reason: " + apiException.getResponseBody());
+            e.printStackTrace();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupBookingApi#bookingGroupReservationDelete");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Long**| An unconfirmed reservation id | |
+
+### Return type
+
+CompletableFuture<ApiResponse<[**ConfirmSlotDeleteOutDto**](ConfirmSlotDeleteOutDto.md)>>
+
+
+### Authorization
+
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -1145,48 +1652,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -1218,7 +1687,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -1255,48 +1724,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -1337,7 +1768,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -1374,48 +1805,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -1449,7 +1842,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -1486,48 +1879,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -1570,7 +1925,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -1607,48 +1962,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -1682,7 +1999,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -1719,48 +2036,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -1803,7 +2082,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -1840,48 +2119,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -1913,7 +2154,7 @@ CompletableFuture<[**GroupBookingOutDto**](GroupBookingOutDto.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -1950,48 +2191,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -2032,7 +2235,7 @@ CompletableFuture<ApiResponse<[**GroupBookingOutDto**](GroupBookingOutDto.md)>>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -2069,48 +2272,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Integer limit = 50; // Integer | page size
@@ -2144,7 +2309,7 @@ CompletableFuture<[**GroupBookingPage**](GroupBookingPage.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -2181,48 +2346,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Integer limit = 50; // Integer | page size
@@ -2265,7 +2392,7 @@ CompletableFuture<ApiResponse<[**GroupBookingPage**](GroupBookingPage.md)>>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -2302,48 +2429,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -2377,7 +2466,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 
@@ -2414,48 +2503,10 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.aurinko.io");
         
-        // Configure API key authorization: UserSessionHeader
-        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
-        UserSessionHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: AuthTypeHeader
-        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
-        AuthTypeHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AuthTypeHeader.setApiKeyPrefix("Token");
-
         // Configure HTTP basic authorization: AppAuth
         HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
         AppAuth.setUsername("YOUR USERNAME");
         AppAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: AccountToken
-        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
-        AccountToken.setBearerToken("BEARER TOKEN");
-
-        // Configure API key authorization: AccountIdHeader
-        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
-        AccountIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //AccountIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: ClientIdHeader
-        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
-        ClientIdHeader.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //ClientIdHeader.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: UserSessionCookie
-        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
-        UserSessionCookie.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //UserSessionCookie.setApiKeyPrefix("Token");
-
-        // Configure HTTP bearer authorization: ExchangeIdToken
-        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
-        ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         GroupBookingApi apiInstance = new GroupBookingApi(defaultClient);
         Long id = 56L; // Long | A booking id
@@ -2498,7 +2549,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 
 ### Authorization
 
-[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+[AppAuth](../README.md#AppAuth)
 
 ### HTTP request headers
 

@@ -20,6 +20,7 @@ import io.aurinko.client.model.BookingRequiredMode;
 import io.aurinko.client.model.BookingTimesOutDto;
 import io.aurinko.client.model.CreateMeetingDto;
 import io.aurinko.client.model.CreateMeetingResponse;
+import java.time.LocalDate;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -49,13 +50,36 @@ public class AvailabilityApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createMeetingTest() throws ApiException {
-        String aurinkoClientId = null;
-        String name = null;
+    public void bookingAccountCreateMeetingTest() throws ApiException {
+        Long id = null;
         BookingRequiredMode required = null;
+        Long reserveForMinutes = null;
         CreateMeetingDto createMeetingDto = null;
         CompletableFuture<CreateMeetingResponse> response = 
-        api.createMeeting(aurinkoClientId, name, required, createMeetingDto);
+        api.bookingAccountCreateMeeting(id, required, reserveForMinutes, createMeetingDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get available meeting times
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingAccountMeetingTimesTest() throws ApiException {
+        Long id = null;
+        BookingRequiredMode required = null;
+        LocalDate fromDate = null;
+        String intervalLength = null;
+        String pageToken = null;
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingTimesOutDto> response = 
+        api.bookingAccountMeetingTimes(id, required, fromDate, intervalLength, pageToken, limit, offset);
         
         // TODO: test validations
     }
@@ -69,11 +93,74 @@ public class AvailabilityApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getAvailableBookingsTest() throws ApiException {
-        String aurinkoClientId = null;
+    public void bookingGroupAvailabilityTest() throws ApiException {
         BookingAvailableProfilesInDto bookingAvailableProfilesInDto = null;
         CompletableFuture<BookingAvailableProfilesOutDto> response = 
-        api.getAvailableBookings(aurinkoClientId, bookingAvailableProfilesInDto);
+        api.bookingGroupAvailability(bookingAvailableProfilesInDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a meeting
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingGroupCreateMeetingTest() throws ApiException {
+        Long id = null;
+        BookingRequiredMode required = null;
+        Long reserveForMinutes = null;
+        CreateMeetingDto createMeetingDto = null;
+        CompletableFuture<CreateMeetingResponse> response = 
+        api.bookingGroupCreateMeeting(id, required, reserveForMinutes, createMeetingDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get available meeting times
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingGroupMeetingTimesTest() throws ApiException {
+        Long id = null;
+        BookingRequiredMode required = null;
+        LocalDate fromDate = null;
+        String intervalLength = null;
+        String pageToken = null;
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingTimesOutDto> response = 
+        api.bookingGroupMeetingTimes(id, required, fromDate, intervalLength, pageToken, limit, offset);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a meeting
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createMeetingTest() throws ApiException {
+        String aurinkoClientId = null;
+        String name = null;
+        BookingRequiredMode required = null;
+        Long reserveForMinutes = null;
+        CreateMeetingDto createMeetingDto = null;
+        CompletableFuture<CreateMeetingResponse> response = 
+        api.createMeeting(aurinkoClientId, name, required, reserveForMinutes, createMeetingDto);
         
         // TODO: test validations
     }
@@ -91,10 +178,13 @@ public class AvailabilityApiTest {
         String aurinkoClientId = null;
         String name = null;
         BookingRequiredMode required = null;
+        LocalDate fromDate = null;
+        String intervalLength = null;
+        String pageToken = null;
         Integer limit = null;
         Integer offset = null;
         CompletableFuture<BookingTimesOutDto> response = 
-        api.getMeetingTimes(aurinkoClientId, name, required, limit, offset);
+        api.getMeetingTimes(aurinkoClientId, name, required, fromDate, intervalLength, pageToken, limit, offset);
         
         // TODO: test validations
     }

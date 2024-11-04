@@ -1465,11 +1465,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailMessage'
           description: Success
-        "429":
-          description: Success
+        "408":
+          description: threadId may be yet unavailable for some IMAP providers
           headers:
             Retry-After:
-              description: threadId may be unavailable for some IMAP providers
               explode: false
               schema:
                 type: integer
@@ -2132,6 +2131,16 @@ paths:
         schema:
           nullable: true
           type: string
+        style: form
+      - description: return tracking which started message was sent
+        explode: true
+        in: query
+        name: showSentOnly
+        required: false
+        schema:
+          default: true
+          nullable: true
+          type: boolean
         style: form
       responses:
         "200":
@@ -3134,6 +3143,400 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /v1/book/account/profiles/{id}/meeting:
+    get:
+      operationId: bookingAccountMeetingTimes
+      parameters:
+      - description: A booking id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - description: a way to select times
+        explode: true
+        in: query
+        name: required
+        required: false
+        schema:
+          $ref: '#/components/schemas/BookingRequiredMode'
+        style: form
+      - description: date to iterate a big time intervals
+        explode: true
+        in: query
+        name: fromDate
+        required: false
+        schema:
+          format: date
+          nullable: true
+          type: string
+        style: form
+      - description: Time period (in ISO-8601 format) to iterate a big time intervals
+        explode: true
+        in: query
+        name: intervalLength
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: "token to request all pages, if booking has many accounts"
+        explode: true
+        in: query
+        name: pageToken
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingTimesOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Get available meeting times
+      tags:
+      - Booking
+      - Availability
+      x-accepts:
+      - application/json
+    post:
+      operationId: bookingAccountCreateMeeting
+      parameters:
+      - description: A booking id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - description: a way to select times
+        explode: true
+        in: query
+        name: required
+        required: false
+        schema:
+          $ref: '#/components/schemas/BookingRequiredMode'
+        style: form
+      - description: "Time in minutes, blocks the interval for a time (creates an\
+          \ unconfirmed reservation), the meeting is not created"
+        explode: true
+        in: query
+        name: reserveForMinutes
+        required: false
+        schema:
+          format: int64
+          nullable: true
+          type: integer
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMeetingDto'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateMeetingResponse'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Create a meeting
+      tags:
+      - Booking
+      - Availability
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v1/book/account/reservations/{id}/confirm:
+    post:
+      operationId: bookingAccountReservationConfirm
+      parameters:
+      - description: An unconfirmed reservation id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfirmReservationOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Convert an unconfirmed booking reservation to a calendar event
+      tags:
+      - Booking
+      x-accepts:
+      - application/json
+  /v1/book/account/reservations/{id}:
+    delete:
+      operationId: bookingAccountReservationDelete
+      parameters:
+      - description: An unconfirmed reservation id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfirmSlotDeleteOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Cancel an unconfirmed booking reservation
+      tags:
+      - Booking
+      x-accepts:
+      - application/json
+  /v1/book/group/profiles/dynamic/availability:
+    post:
+      operationId: bookingGroupAvailability
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingAvailableProfilesInDto'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingAvailableProfilesOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      security:
+      - AppAuth: []
+      summary: Get available bookings for а time range
+      tags:
+      - GroupBooking
+      - Availability
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v1/book/group/profiles/{id}/meeting:
+    get:
+      operationId: bookingGroupMeetingTimes
+      parameters:
+      - description: A booking id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - description: a way to select times
+        explode: true
+        in: query
+        name: required
+        required: false
+        schema:
+          $ref: '#/components/schemas/BookingRequiredMode'
+        style: form
+      - description: date to iterate a big time intervals
+        explode: true
+        in: query
+        name: fromDate
+        required: false
+        schema:
+          format: date
+          nullable: true
+          type: string
+        style: form
+      - description: Time period (in ISO-8601 format) to iterate a big time intervals
+        explode: true
+        in: query
+        name: intervalLength
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: "token to request all pages, if booking has many accounts"
+        explode: true
+        in: query
+        name: pageToken
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          format: int32
+          nullable: true
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingTimesOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      security:
+      - AppAuth: []
+      summary: Get available meeting times
+      tags:
+      - GroupBooking
+      - Availability
+      x-accepts:
+      - application/json
+    post:
+      operationId: bookingGroupCreateMeeting
+      parameters:
+      - description: A booking id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - description: a way to select times
+        explode: true
+        in: query
+        name: required
+        required: false
+        schema:
+          $ref: '#/components/schemas/BookingRequiredMode'
+        style: form
+      - description: "Time in minutes, blocks the interval for a time (creates an\
+          \ unconfirmed reservation), the meeting is not created"
+        explode: true
+        in: query
+        name: reserveForMinutes
+        required: false
+        schema:
+          format: int64
+          nullable: true
+          type: integer
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMeetingDto'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateMeetingResponse'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      security:
+      - AppAuth: []
+      summary: Create a meeting
+      tags:
+      - GroupBooking
+      - Availability
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /v1/book/group/profiles:
     get:
       operationId: getGroupBookings
@@ -3175,6 +3578,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: Get group booking profiles
       tags:
       - GroupBooking
@@ -3238,6 +3643,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: Delete a group booking profile by id
       tags:
       - GroupBooking
@@ -3270,6 +3677,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: Get a group booking profile by id
       tags:
       - GroupBooking
@@ -3307,6 +3716,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: Update a group booking profile
       tags:
       - GroupBooking
@@ -3363,6 +3774,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: List groups of a group booking profile
       tags:
       - GroupBooking
@@ -3400,6 +3813,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: Assign groups to group booking
       tags:
       - GroupBooking
@@ -3439,6 +3854,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: Remove groups from group booking
       tags:
       - GroupBooking
@@ -3495,6 +3912,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: List accounts of a group booking profile
       tags:
       - GroupBooking
@@ -3532,6 +3951,8 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: Assign accounts to group booking
       tags:
       - GroupBooking
@@ -3571,41 +3992,82 @@ paths:
               schema:
                 type: string
               style: simple
+      security:
+      - AppAuth: []
       summary: Remove accounts from group booking
       tags:
       - GroupBooking
       x-content-type: application/json
       x-accepts:
       - application/json
-  /v1/book/{aurinkoClientId}/dynamic/availability:
+  /v1/book/group/reservations/{id}/confirm:
     post:
-      operationId: getAvailableBookings
+      operationId: bookingGroupReservationConfirm
       parameters:
-      - description: Application client Id
+      - description: An unconfirmed reservation id
         explode: false
         in: path
-        name: aurinkoClientId
+        name: id
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
         style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BookingAvailableProfilesInDto'
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BookingAvailableProfilesOutDto'
+                $ref: '#/components/schemas/ConfirmReservationOutDto'
           description: Success
-      security: []
-      summary: Get available bookings for а time range
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      security:
+      - AppAuth: []
+      summary: Convert an unconfirmed booking reservation to a calendar event
       tags:
-      - Availability
-      x-content-type: application/json
+      - GroupBooking
+      x-accepts:
+      - application/json
+  /v1/book/group/reservations/{id}:
+    delete:
+      operationId: bookingGroupReservationDelete
+      parameters:
+      - description: An unconfirmed reservation id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfirmSlotDeleteOutDto'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      security:
+      - AppAuth: []
+      summary: Cancel an unconfirmed booking reservation
+      tags:
+      - GroupBooking
       x-accepts:
       - application/json
   /v1/book/{aurinkoClientId}/{name}/meeting:
@@ -3636,24 +4098,48 @@ paths:
         schema:
           $ref: '#/components/schemas/BookingRequiredMode'
         style: form
-      - description: page size
+      - description: date to iterate a big time intervals
         explode: true
+        in: query
+        name: fromDate
+        required: false
+        schema:
+          format: date
+          nullable: true
+          type: string
+        style: form
+      - description: Time period (in ISO-8601 format) to iterate a big time intervals
+        explode: true
+        in: query
+        name: intervalLength
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - description: "token to request all pages, if booking has many accounts"
+        explode: true
+        in: query
+        name: pageToken
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
         in: query
         name: limit
         required: false
         schema:
-          default: 10
           format: int32
           nullable: true
           type: integer
         style: form
-      - description: return records offset by the given number
-        explode: true
+      - explode: true
         in: query
         name: offset
         required: false
         schema:
-          default: 0
           format: int32
           nullable: true
           type: integer
@@ -3698,6 +4184,17 @@ paths:
         schema:
           $ref: '#/components/schemas/BookingRequiredMode'
         style: form
+      - description: "Time in minutes, blocks the interval for a time (creates an\
+          \ unconfirmed reservation), the meeting is not created"
+        explode: true
+        in: query
+        name: reserveForMinutes
+        required: false
+        schema:
+          format: int64
+          nullable: true
+          type: integer
+        style: form
       requestBody:
         content:
           application/json:
@@ -3710,14 +4207,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/CreateMeetingResponse'
           description: Success
-        "401":
-          description: Authentication information is missing or invalid
-          headers:
-            WWW_Authenticate:
-              explode: false
-              schema:
-                type: string
-              style: simple
       security: []
       summary: Create a meeting
       tags:
@@ -3973,6 +4462,18 @@ paths:
       - application/json
     get:
       operationId: getMyAccount
+      parameters:
+      - description: "If true, the provider will be pinged to check if the token is\
+          \ still valid. Currently supported only for Google, Office365, Salesforce\
+          \ and NetSuite."
+        explode: true
+        in: query
+        name: pingProvider
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -6252,6 +6753,14 @@ components:
           format: base64
           type: string
       type: object
+    ConfirmReservationOutDto:
+      example:
+        id: id
+      properties:
+        id:
+          description: "The created calendar event ID, if event was created."
+          type: string
+      type: object
     NativeProperty:
       type: string
     EmailAddress:
@@ -6468,10 +6977,12 @@ components:
           - 1
           - 1
           extId: extId
+          required: one
         - accountIds:
           - 1
           - 1
           extId: extId
+          required: one
         done: true
       properties:
         offset:
@@ -6871,6 +7382,7 @@ components:
         - 1
         - 1
         extId: extId
+        required: one
       properties:
         extId:
           description: External identifier
@@ -6881,6 +7393,8 @@ components:
             format: int64
             type: integer
           type: array
+        required:
+          $ref: '#/components/schemas/BookingRequiredMode'
       type: object
     WorkHoursRequest:
       example:
@@ -6984,6 +7498,9 @@ components:
         userAgent: userAgent
         trackingCode: trackingCode
         eventType: open
+        trackingThreadId: trackingThreadId
+        trackingMessageId: trackingMessageId
+        trackingInternetMessageId: trackingInternetMessageId
         threadId: threadId
         createdAt: 2000-01-23T04:56:07.000+00:00
         referrer: referrer
@@ -7025,6 +7542,15 @@ components:
         trackingId:
           format: int64
           type: integer
+        trackingThreadId:
+          description: Thread id where tracking begins
+          type: string
+        trackingMessageId:
+          description: Message id where tracking begins
+          type: string
+        trackingInternetMessageId:
+          description: Rfc822 message id where tracking begins
+          type: string
         context:
           type: string
         trackingCode:
@@ -7434,6 +7960,8 @@ components:
     BookingTimesOutDto:
       example:
         availabilityStep: 1
+        durationMinutes: 6
+        timeAvailableFor: P4W
         additionalFields:
         - default: default
           name: name
@@ -7441,15 +7969,11 @@ components:
         - default: default
           name: name
           type: type
-        offset: 5
         subject: subject
+        nextPageToken: nextPageToken
         primaryColor: primaryColor
-        done: true
-        durationMinutes: 6
-        totalSize: 2
-        timeAvailableFor: P4W
-        limit: 5
         startTime: 2000-01-23T04:56:07.000+00:00
+        nextFromDate: 2000-01-23
         endTime: 2000-01-23T04:56:07.000+00:00
         items:
         - groupXids:
@@ -7510,18 +8034,13 @@ components:
           items:
             $ref: '#/components/schemas/AdditionalField'
           type: array
-        limit:
-          description: Next request limit
-          type: integer
-        offset:
-          description: Next request offset
-          type: integer
-        totalSize:
-          description: Count of related provider's sources
-          type: integer
-        done:
-          description: Is all related provider's sources requested
-          type: boolean
+        nextPageToken:
+          description: Next page token
+          type: string
+        nextFromDate:
+          description: Next fromDate to iterate a big time intervals
+          format: date
+          type: string
       type: object
     PreparedAuthToken:
       example:
@@ -7713,6 +8232,9 @@ components:
           userAgent: userAgent
           trackingCode: trackingCode
           eventType: open
+          trackingThreadId: trackingThreadId
+          trackingMessageId: trackingMessageId
+          trackingInternetMessageId: trackingInternetMessageId
           threadId: threadId
           createdAt: 2000-01-23T04:56:07.000+00:00
           referrer: referrer
@@ -7726,6 +8248,9 @@ components:
           userAgent: userAgent
           trackingCode: trackingCode
           eventType: open
+          trackingThreadId: trackingThreadId
+          trackingMessageId: trackingMessageId
+          trackingInternetMessageId: trackingInternetMessageId
           threadId: threadId
           createdAt: 2000-01-23T04:56:07.000+00:00
           referrer: referrer
@@ -7843,6 +8368,15 @@ components:
           items:
             $ref: '#/components/schemas/EndUserAccountDto'
           type: array
+      type: object
+    ConfirmSlotDeleteOutDto:
+      example:
+        status: Ok
+      properties:
+        status:
+          enum:
+          - Ok
+          type: string
       type: object
     TaskStatus:
       enum:
@@ -9139,7 +9673,8 @@ components:
           description: Username of the person requesting the meeting
           type: string
         email:
-          description: Email of the person requesting the meeting
+          description: "Email of the person requesting the meeting, if not specified,\
+            \ an event will be created without an attendee"
           type: string
         substitutionData:
           additionalProperties:
@@ -9670,6 +10205,7 @@ components:
       type: object
     CreateMeetingResponse:
       example:
+        ReservationId: 0
         created: true
         groupXid: groupXid
         id: id
@@ -9677,8 +10213,12 @@ components:
         created:
           type: boolean
         id:
-          description: Created id of event in calendar
+          description: "The created calendar event ID, if event was created"
           type: string
+        ReservationId:
+          description: The unconfirmed reservation ID
+          format: int64
+          type: integer
         groupXid:
           description: Group external id for group booking
           type: string
@@ -10831,10 +11371,12 @@ components:
           - 0
           - 0
           extId: extId
+          required: one
         - accountIds:
           - 0
           - 0
           extId: extId
+          required: one
       properties:
         groups:
           items:
@@ -12354,7 +12896,6 @@ components:
           context: context
           opens: true
           threadReplies: true
-        threadId: threadId
         followUp:
           actionVars:
             key: actionVars
@@ -12387,8 +12928,6 @@ components:
         inReplyTo:
           type: string
         references:
-          type: string
-        threadId:
           type: string
         to:
           items:
@@ -12463,6 +13002,7 @@ components:
         - 0
         - 0
         extId: extId
+        required: one
       properties:
         extId:
           description: External identifier
@@ -12473,6 +13013,8 @@ components:
             format: int64
             type: integer
           type: array
+        required:
+          $ref: '#/components/schemas/BookingRequiredMode'
       type: object
     Recurrence_ical:
       example:

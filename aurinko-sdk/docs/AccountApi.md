@@ -453,7 +453,7 @@ CompletableFuture<ApiResponse<Void>>
 
 ## getMyAccount
 
-> CompletableFuture<ApiAccountOutDto> getMyAccount()
+> CompletableFuture<ApiAccountOutDto> getMyAccount(pingProvider)
 
 Get account status
 
@@ -518,8 +518,9 @@ public class Example {
         ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         AccountApi apiInstance = new AccountApi(defaultClient);
+        Boolean pingProvider = true; // Boolean | If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite.
         try {
-            CompletableFuture<ApiAccountOutDto> result = apiInstance.getMyAccount();
+            CompletableFuture<ApiAccountOutDto> result = apiInstance.getMyAccount(pingProvider);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountApi#getMyAccount");
@@ -534,7 +535,10 @@ public class Example {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pingProvider** | **Boolean**| If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. | [optional] |
 
 ### Return type
 
@@ -558,7 +562,7 @@ CompletableFuture<[**ApiAccountOutDto**](ApiAccountOutDto.md)>
 
 ## getMyAccountWithHttpInfo
 
-> CompletableFuture<ApiResponse<ApiAccountOutDto>> getMyAccount getMyAccountWithHttpInfo()
+> CompletableFuture<ApiResponse<ApiAccountOutDto>> getMyAccount getMyAccountWithHttpInfo(pingProvider)
 
 Get account status
 
@@ -624,8 +628,9 @@ public class Example {
         ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         AccountApi apiInstance = new AccountApi(defaultClient);
+        Boolean pingProvider = true; // Boolean | If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite.
         try {
-            CompletableFuture<ApiResponse<ApiAccountOutDto>> response = apiInstance.getMyAccountWithHttpInfo();
+            CompletableFuture<ApiResponse<ApiAccountOutDto>> response = apiInstance.getMyAccountWithHttpInfo(pingProvider);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -649,7 +654,10 @@ public class Example {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pingProvider** | **Boolean**| If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. | [optional] |
 
 ### Return type
 

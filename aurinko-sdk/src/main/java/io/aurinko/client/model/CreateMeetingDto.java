@@ -186,7 +186,7 @@ public class CreateMeetingDto {
   }
 
   /**
-   * Email of the person requesting the meeting
+   * Email of the person requesting the meeting, if not specified, an event will be created without an attendee
    * @return email
    */
   @javax.annotation.Nullable

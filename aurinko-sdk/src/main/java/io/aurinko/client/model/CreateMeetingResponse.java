@@ -35,6 +35,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   CreateMeetingResponse.JSON_PROPERTY_CREATED,
   CreateMeetingResponse.JSON_PROPERTY_ID,
+  CreateMeetingResponse.JSON_PROPERTY_RESERVATION_ID,
   CreateMeetingResponse.JSON_PROPERTY_GROUP_XID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
@@ -44,6 +45,9 @@ public class CreateMeetingResponse {
 
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
+
+  public static final String JSON_PROPERTY_RESERVATION_ID = "ReservationId";
+  private Long reservationId;
 
   public static final String JSON_PROPERTY_GROUP_XID = "groupXid";
   private String groupXid;
@@ -81,7 +85,7 @@ public class CreateMeetingResponse {
   }
 
   /**
-   * Created id of event in calendar
+   * The created calendar event ID, if event was created
    * @return id
    */
   @javax.annotation.Nullable
@@ -96,6 +100,30 @@ public class CreateMeetingResponse {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  public CreateMeetingResponse reservationId(Long reservationId) {
+    this.reservationId = reservationId;
+    return this;
+  }
+
+  /**
+   * The unconfirmed reservation ID
+   * @return reservationId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RESERVATION_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Long getReservationId() {
+    return reservationId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_RESERVATION_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReservationId(Long reservationId) {
+    this.reservationId = reservationId;
   }
 
 
@@ -137,12 +165,13 @@ public class CreateMeetingResponse {
     CreateMeetingResponse createMeetingResponse = (CreateMeetingResponse) o;
     return Objects.equals(this.created, createMeetingResponse.created) &&
         Objects.equals(this.id, createMeetingResponse.id) &&
+        Objects.equals(this.reservationId, createMeetingResponse.reservationId) &&
         Objects.equals(this.groupXid, createMeetingResponse.groupXid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, id, groupXid);
+    return Objects.hash(created, id, reservationId, groupXid);
   }
 
   @Override
@@ -151,6 +180,7 @@ public class CreateMeetingResponse {
     sb.append("class CreateMeetingResponse {\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
     sb.append("    groupXid: ").append(toIndentedString(groupXid)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -207,6 +237,11 @@ public class CreateMeetingResponse {
     // add `id` to the URL query string
     if (getId() != null) {
       joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `ReservationId` to the URL query string
+    if (getReservationId() != null) {
+      joiner.add(String.format("%sReservationId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReservationId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `groupXid` to the URL query string

@@ -46,6 +46,8 @@ docs/CalendarCreate.md
 docs/CalendarUpdate.md
 docs/CalendarsApi.md
 docs/CalendarsPage.md
+docs/ConfirmReservationOutDto.md
+docs/ConfirmSlotDeleteOutDto.md
 docs/ContSyncApi.md
 docs/Contact.md
 docs/ContactCompany.md
@@ -268,6 +270,8 @@ src/main/java/io/aurinko/client/model/Calendar.java
 src/main/java/io/aurinko/client/model/CalendarCreate.java
 src/main/java/io/aurinko/client/model/CalendarUpdate.java
 src/main/java/io/aurinko/client/model/CalendarsPage.java
+src/main/java/io/aurinko/client/model/ConfirmReservationOutDto.java
+src/main/java/io/aurinko/client/model/ConfirmSlotDeleteOutDto.java
 src/main/java/io/aurinko/client/model/Contact.java
 src/main/java/io/aurinko/client/model/ContactCompany.java
 src/main/java/io/aurinko/client/model/ContactEmailAddress.java
@@ -453,6 +457,8 @@ src/test/java/io/aurinko/client/model/CalendarCreateTest.java
 src/test/java/io/aurinko/client/model/CalendarTest.java
 src/test/java/io/aurinko/client/model/CalendarUpdateTest.java
 src/test/java/io/aurinko/client/model/CalendarsPageTest.java
+src/test/java/io/aurinko/client/model/ConfirmReservationOutDtoTest.java
+src/test/java/io/aurinko/client/model/ConfirmSlotDeleteOutDtoTest.java
 src/test/java/io/aurinko/client/model/ContactCompanyTest.java
 src/test/java/io/aurinko/client/model/ContactEmailAddressTest.java
 src/test/java/io/aurinko/client/model/ContactNameTest.java

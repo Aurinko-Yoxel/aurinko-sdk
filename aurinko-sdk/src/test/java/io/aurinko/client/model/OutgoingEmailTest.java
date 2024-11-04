@@ -85,14 +85,6 @@ class OutgoingEmailTest {
     }
 
     /**
-     * Test the property 'threadId'
-     */
-    @Test
-    void threadIdTest() {
-        // TODO: test threadId
-    }
-
-    /**
      * Test the property 'to'
      */
     @Test

@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.BookingRequiredMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +37,8 @@ import io.aurinko.client.ApiClient;
  */
 @JsonPropertyOrder({
   BookingAttachedDto.JSON_PROPERTY_EXT_ID,
-  BookingAttachedDto.JSON_PROPERTY_ACCOUNT_IDS
+  BookingAttachedDto.JSON_PROPERTY_ACCOUNT_IDS,
+  BookingAttachedDto.JSON_PROPERTY_REQUIRED
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingAttachedDto {
@@ -45,6 +47,9 @@ public class BookingAttachedDto {
 
   public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
   private List<Long> accountIds = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_REQUIRED = "required";
+  private BookingRequiredMode required;
 
   public BookingAttachedDto() { 
   }
@@ -105,6 +110,30 @@ public class BookingAttachedDto {
   }
 
 
+  public BookingAttachedDto required(BookingRequiredMode required) {
+    this.required = required;
+    return this;
+  }
+
+  /**
+   * Get required
+   * @return required
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REQUIRED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public BookingRequiredMode getRequired() {
+    return required;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_REQUIRED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRequired(BookingRequiredMode required) {
+    this.required = required;
+  }
+
+
   /**
    * Return true if this BookingAttachedDto object is equal to o.
    */
@@ -118,12 +147,13 @@ public class BookingAttachedDto {
     }
     BookingAttachedDto bookingAttachedDto = (BookingAttachedDto) o;
     return Objects.equals(this.extId, bookingAttachedDto.extId) &&
-        Objects.equals(this.accountIds, bookingAttachedDto.accountIds);
+        Objects.equals(this.accountIds, bookingAttachedDto.accountIds) &&
+        Objects.equals(this.required, bookingAttachedDto.required);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(extId, accountIds);
+    return Objects.hash(extId, accountIds, required);
   }
 
   @Override
@@ -132,6 +162,7 @@ public class BookingAttachedDto {
     sb.append("class BookingAttachedDto {\n");
     sb.append("    extId: ").append(toIndentedString(extId)).append("\n");
     sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
+    sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -191,6 +222,11 @@ public class BookingAttachedDto {
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
             URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
+    }
+
+    // add `required` to the URL query string
+    if (getRequired() != null) {
+      joiner.add(String.format("%srequired%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRequired()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

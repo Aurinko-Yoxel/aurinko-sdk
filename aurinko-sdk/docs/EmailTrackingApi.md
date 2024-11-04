@@ -495,7 +495,7 @@ CompletableFuture<ApiResponse<[**EmailDraftCreateTrackingResponse**](EmailDraftC
 
 ## getTracking
 
-> CompletableFuture<EmailTrackingPageNext> getTracking(withActivityOnly, limit, offset, contextContains, threadId)
+> CompletableFuture<EmailTrackingPageNext> getTracking(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly)
 
 List tracking data
 
@@ -565,8 +565,9 @@ public class Example {
         Integer offset = 0; // Integer | return records offset by the given number
         String contextContains = "contextContains_example"; // String | 
         String threadId = "threadId_example"; // String | identifier of thread
+        Boolean showSentOnly = true; // Boolean | return tracking which started message was sent
         try {
-            CompletableFuture<EmailTrackingPageNext> result = apiInstance.getTracking(withActivityOnly, limit, offset, contextContains, threadId);
+            CompletableFuture<EmailTrackingPageNext> result = apiInstance.getTracking(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling EmailTrackingApi#getTracking");
@@ -589,6 +590,7 @@ public class Example {
 | **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
 | **contextContains** | **String**|  | [optional] |
 | **threadId** | **String**| identifier of thread | [optional] |
+| **showSentOnly** | **Boolean**| return tracking which started message was sent | [optional] [default to true] |
 
 ### Return type
 
@@ -611,7 +613,7 @@ CompletableFuture<[**EmailTrackingPageNext**](EmailTrackingPageNext.md)>
 
 ## getTrackingWithHttpInfo
 
-> CompletableFuture<ApiResponse<EmailTrackingPageNext>> getTracking getTrackingWithHttpInfo(withActivityOnly, limit, offset, contextContains, threadId)
+> CompletableFuture<ApiResponse<EmailTrackingPageNext>> getTracking getTrackingWithHttpInfo(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly)
 
 List tracking data
 
@@ -682,8 +684,9 @@ public class Example {
         Integer offset = 0; // Integer | return records offset by the given number
         String contextContains = "contextContains_example"; // String | 
         String threadId = "threadId_example"; // String | identifier of thread
+        Boolean showSentOnly = true; // Boolean | return tracking which started message was sent
         try {
-            CompletableFuture<ApiResponse<EmailTrackingPageNext>> response = apiInstance.getTrackingWithHttpInfo(withActivityOnly, limit, offset, contextContains, threadId);
+            CompletableFuture<ApiResponse<EmailTrackingPageNext>> response = apiInstance.getTrackingWithHttpInfo(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -715,6 +718,7 @@ public class Example {
 | **offset** | **Integer**| return records offset by the given number | [optional] [default to 0] |
 | **contextContains** | **String**|  | [optional] |
 | **threadId** | **String**| identifier of thread | [optional] |
+| **showSentOnly** | **Boolean**| return tracking which started message was sent | [optional] [default to true] |
 
 ### Return type
 

@@ -320,12 +320,13 @@ public class EmailTrackingApi {
    * @param offset return records offset by the given number (optional, default to 0)
    * @param contextContains  (optional)
    * @param threadId identifier of thread (optional)
+   * @param showSentOnly return tracking which started message was sent (optional, default to true)
    * @return CompletableFuture&lt;EmailTrackingPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailTrackingPageNext> getTracking(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId) throws ApiException {
+  public CompletableFuture<EmailTrackingPageNext> getTracking(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId, Boolean showSentOnly) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getTrackingRequestBuilder(withActivityOnly, limit, offset, contextContains, threadId);
+      HttpRequest.Builder localVarRequestBuilder = getTrackingRequestBuilder(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -355,12 +356,13 @@ public class EmailTrackingApi {
    * @param offset return records offset by the given number (optional, default to 0)
    * @param contextContains  (optional)
    * @param threadId identifier of thread (optional)
+   * @param showSentOnly return tracking which started message was sent (optional, default to true)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailTrackingPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailTrackingPageNext>> getTrackingWithHttpInfo(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailTrackingPageNext>> getTrackingWithHttpInfo(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId, Boolean showSentOnly) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getTrackingRequestBuilder(withActivityOnly, limit, offset, contextContains, threadId);
+      HttpRequest.Builder localVarRequestBuilder = getTrackingRequestBuilder(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -389,7 +391,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder getTrackingRequestBuilder(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId) throws ApiException {
+  private HttpRequest.Builder getTrackingRequestBuilder(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId, Boolean showSentOnly) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -408,6 +410,8 @@ public class EmailTrackingApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("contextContains", contextContains));
     localVarQueryParameterBaseName = "threadId";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("threadId", threadId));
+    localVarQueryParameterBaseName = "showSentOnly";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("showSentOnly", showSentOnly));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

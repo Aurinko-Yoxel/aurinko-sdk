@@ -166,12 +166,28 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**getAccessTokenByCodeWithHttpInfo**](docs/AuthApi.md#getAccessTokenByCodeWithHttpInfo) | **GET** /v1/auth/token/{code} | Get access token, Deprecated use POST instead
 *AuthApi* | [**prepareAuth**](docs/AuthApi.md#prepareAuth) | **POST** /v1/auth/prepare | Validate an external identity token
 *AuthApi* | [**prepareAuthWithHttpInfo**](docs/AuthApi.md#prepareAuthWithHttpInfo) | **POST** /v1/auth/prepare | Validate an external identity token
+*AvailabilityApi* | [**bookingAccountCreateMeeting**](docs/AvailabilityApi.md#bookingAccountCreateMeeting) | **POST** /v1/book/account/profiles/{id}/meeting | Create a meeting
+*AvailabilityApi* | [**bookingAccountCreateMeetingWithHttpInfo**](docs/AvailabilityApi.md#bookingAccountCreateMeetingWithHttpInfo) | **POST** /v1/book/account/profiles/{id}/meeting | Create a meeting
+*AvailabilityApi* | [**bookingAccountMeetingTimes**](docs/AvailabilityApi.md#bookingAccountMeetingTimes) | **GET** /v1/book/account/profiles/{id}/meeting | Get available meeting times
+*AvailabilityApi* | [**bookingAccountMeetingTimesWithHttpInfo**](docs/AvailabilityApi.md#bookingAccountMeetingTimesWithHttpInfo) | **GET** /v1/book/account/profiles/{id}/meeting | Get available meeting times
+*AvailabilityApi* | [**bookingGroupAvailability**](docs/AvailabilityApi.md#bookingGroupAvailability) | **POST** /v1/book/group/profiles/dynamic/availability | Get available bookings for а time range
+*AvailabilityApi* | [**bookingGroupAvailabilityWithHttpInfo**](docs/AvailabilityApi.md#bookingGroupAvailabilityWithHttpInfo) | **POST** /v1/book/group/profiles/dynamic/availability | Get available bookings for а time range
+*AvailabilityApi* | [**bookingGroupCreateMeeting**](docs/AvailabilityApi.md#bookingGroupCreateMeeting) | **POST** /v1/book/group/profiles/{id}/meeting | Create a meeting
+*AvailabilityApi* | [**bookingGroupCreateMeetingWithHttpInfo**](docs/AvailabilityApi.md#bookingGroupCreateMeetingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/meeting | Create a meeting
+*AvailabilityApi* | [**bookingGroupMeetingTimes**](docs/AvailabilityApi.md#bookingGroupMeetingTimes) | **GET** /v1/book/group/profiles/{id}/meeting | Get available meeting times
+*AvailabilityApi* | [**bookingGroupMeetingTimesWithHttpInfo**](docs/AvailabilityApi.md#bookingGroupMeetingTimesWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/meeting | Get available meeting times
 *AvailabilityApi* | [**createMeeting**](docs/AvailabilityApi.md#createMeeting) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
 *AvailabilityApi* | [**createMeetingWithHttpInfo**](docs/AvailabilityApi.md#createMeetingWithHttpInfo) | **POST** /v1/book/{aurinkoClientId}/{name}/meeting | Create a meeting
-*AvailabilityApi* | [**getAvailableBookings**](docs/AvailabilityApi.md#getAvailableBookings) | **POST** /v1/book/{aurinkoClientId}/dynamic/availability | Get available bookings for а time range
-*AvailabilityApi* | [**getAvailableBookingsWithHttpInfo**](docs/AvailabilityApi.md#getAvailableBookingsWithHttpInfo) | **POST** /v1/book/{aurinkoClientId}/dynamic/availability | Get available bookings for а time range
 *AvailabilityApi* | [**getMeetingTimes**](docs/AvailabilityApi.md#getMeetingTimes) | **GET** /v1/book/{aurinkoClientId}/{name}/meeting | Get available meeting times
 *AvailabilityApi* | [**getMeetingTimesWithHttpInfo**](docs/AvailabilityApi.md#getMeetingTimesWithHttpInfo) | **GET** /v1/book/{aurinkoClientId}/{name}/meeting | Get available meeting times
+*BookingApi* | [**bookingAccountCreateMeeting**](docs/BookingApi.md#bookingAccountCreateMeeting) | **POST** /v1/book/account/profiles/{id}/meeting | Create a meeting
+*BookingApi* | [**bookingAccountCreateMeetingWithHttpInfo**](docs/BookingApi.md#bookingAccountCreateMeetingWithHttpInfo) | **POST** /v1/book/account/profiles/{id}/meeting | Create a meeting
+*BookingApi* | [**bookingAccountMeetingTimes**](docs/BookingApi.md#bookingAccountMeetingTimes) | **GET** /v1/book/account/profiles/{id}/meeting | Get available meeting times
+*BookingApi* | [**bookingAccountMeetingTimesWithHttpInfo**](docs/BookingApi.md#bookingAccountMeetingTimesWithHttpInfo) | **GET** /v1/book/account/profiles/{id}/meeting | Get available meeting times
+*BookingApi* | [**bookingAccountReservationConfirm**](docs/BookingApi.md#bookingAccountReservationConfirm) | **POST** /v1/book/account/reservations/{id}/confirm | Convert an unconfirmed booking reservation to a calendar event
+*BookingApi* | [**bookingAccountReservationConfirmWithHttpInfo**](docs/BookingApi.md#bookingAccountReservationConfirmWithHttpInfo) | **POST** /v1/book/account/reservations/{id}/confirm | Convert an unconfirmed booking reservation to a calendar event
+*BookingApi* | [**bookingAccountReservationDelete**](docs/BookingApi.md#bookingAccountReservationDelete) | **DELETE** /v1/book/account/reservations/{id} | Cancel an unconfirmed booking reservation
+*BookingApi* | [**bookingAccountReservationDeleteWithHttpInfo**](docs/BookingApi.md#bookingAccountReservationDeleteWithHttpInfo) | **DELETE** /v1/book/account/reservations/{id} | Cancel an unconfirmed booking reservation
 *BookingApi* | [**create**](docs/BookingApi.md#create) | **POST** /v1/book/account/profiles | Create a booking profile
 *BookingApi* | [**createWithHttpInfo**](docs/BookingApi.md#createWithHttpInfo) | **POST** /v1/book/account/profiles | Create a booking profile
 *BookingApi* | [**deleteBooking**](docs/BookingApi.md#deleteBooking) | **DELETE** /v1/book/account/profiles/{id} | Delete a booking profile by id
@@ -304,6 +320,16 @@ Class | Method | HTTP request | Description
 *GroupBookingApi* | [**attachedAccountsGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#attachedAccountsGroupBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/attachAccounts | List accounts of a group booking profile
 *GroupBookingApi* | [**attachedGroupsBooking**](docs/GroupBookingApi.md#attachedGroupsBooking) | **GET** /v1/book/group/profiles/{id}/attachGroups | List groups of a group booking profile
 *GroupBookingApi* | [**attachedGroupsBookingWithHttpInfo**](docs/GroupBookingApi.md#attachedGroupsBookingWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/attachGroups | List groups of a group booking profile
+*GroupBookingApi* | [**bookingGroupAvailability**](docs/GroupBookingApi.md#bookingGroupAvailability) | **POST** /v1/book/group/profiles/dynamic/availability | Get available bookings for а time range
+*GroupBookingApi* | [**bookingGroupAvailabilityWithHttpInfo**](docs/GroupBookingApi.md#bookingGroupAvailabilityWithHttpInfo) | **POST** /v1/book/group/profiles/dynamic/availability | Get available bookings for а time range
+*GroupBookingApi* | [**bookingGroupCreateMeeting**](docs/GroupBookingApi.md#bookingGroupCreateMeeting) | **POST** /v1/book/group/profiles/{id}/meeting | Create a meeting
+*GroupBookingApi* | [**bookingGroupCreateMeetingWithHttpInfo**](docs/GroupBookingApi.md#bookingGroupCreateMeetingWithHttpInfo) | **POST** /v1/book/group/profiles/{id}/meeting | Create a meeting
+*GroupBookingApi* | [**bookingGroupMeetingTimes**](docs/GroupBookingApi.md#bookingGroupMeetingTimes) | **GET** /v1/book/group/profiles/{id}/meeting | Get available meeting times
+*GroupBookingApi* | [**bookingGroupMeetingTimesWithHttpInfo**](docs/GroupBookingApi.md#bookingGroupMeetingTimesWithHttpInfo) | **GET** /v1/book/group/profiles/{id}/meeting | Get available meeting times
+*GroupBookingApi* | [**bookingGroupReservationConfirm**](docs/GroupBookingApi.md#bookingGroupReservationConfirm) | **POST** /v1/book/group/reservations/{id}/confirm | Convert an unconfirmed booking reservation to a calendar event
+*GroupBookingApi* | [**bookingGroupReservationConfirmWithHttpInfo**](docs/GroupBookingApi.md#bookingGroupReservationConfirmWithHttpInfo) | **POST** /v1/book/group/reservations/{id}/confirm | Convert an unconfirmed booking reservation to a calendar event
+*GroupBookingApi* | [**bookingGroupReservationDelete**](docs/GroupBookingApi.md#bookingGroupReservationDelete) | **DELETE** /v1/book/group/reservations/{id} | Cancel an unconfirmed booking reservation
+*GroupBookingApi* | [**bookingGroupReservationDeleteWithHttpInfo**](docs/GroupBookingApi.md#bookingGroupReservationDeleteWithHttpInfo) | **DELETE** /v1/book/group/reservations/{id} | Cancel an unconfirmed booking reservation
 *GroupBookingApi* | [**createGroupBooking**](docs/GroupBookingApi.md#createGroupBooking) | **POST** /v1/book/group/profiles | Create a group booking profile
 *GroupBookingApi* | [**createGroupBookingWithHttpInfo**](docs/GroupBookingApi.md#createGroupBookingWithHttpInfo) | **POST** /v1/book/group/profiles | Create a group booking profile
 *GroupBookingApi* | [**deleteGroupBooking**](docs/GroupBookingApi.md#deleteGroupBooking) | **DELETE** /v1/book/group/profiles/{id} | Delete a group booking profile by id
@@ -423,6 +449,8 @@ Class | Method | HTTP request | Description
  - [CalendarCreate](docs/CalendarCreate.md)
  - [CalendarUpdate](docs/CalendarUpdate.md)
  - [CalendarsPage](docs/CalendarsPage.md)
+ - [ConfirmReservationOutDto](docs/ConfirmReservationOutDto.md)
+ - [ConfirmSlotDeleteOutDto](docs/ConfirmSlotDeleteOutDto.md)
  - [Contact](docs/Contact.md)
  - [ContactCompany](docs/ContactCompany.md)
  - [ContactEmailAddress](docs/ContactEmailAddress.md)

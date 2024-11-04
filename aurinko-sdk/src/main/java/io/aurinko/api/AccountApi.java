@@ -229,12 +229,13 @@ public class AccountApi {
   /**
    * Get account status
    * 
+   * @param pingProvider If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. (optional)
    * @return CompletableFuture&lt;ApiAccountOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiAccountOutDto> getMyAccount() throws ApiException {
+  public CompletableFuture<ApiAccountOutDto> getMyAccount(Boolean pingProvider) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getMyAccountRequestBuilder();
+      HttpRequest.Builder localVarRequestBuilder = getMyAccountRequestBuilder(pingProvider);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -259,12 +260,13 @@ public class AccountApi {
   /**
    * Get account status
    * 
+   * @param pingProvider If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;ApiAccountOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ApiAccountOutDto>> getMyAccountWithHttpInfo() throws ApiException {
+  public CompletableFuture<ApiResponse<ApiAccountOutDto>> getMyAccountWithHttpInfo(Boolean pingProvider) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = getMyAccountRequestBuilder();
+      HttpRequest.Builder localVarRequestBuilder = getMyAccountRequestBuilder(pingProvider);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -293,13 +295,28 @@ public class AccountApi {
     }
   }
 
-  private HttpRequest.Builder getMyAccountRequestBuilder() throws ApiException {
+  private HttpRequest.Builder getMyAccountRequestBuilder(Boolean pingProvider) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
     String localVarPath = "/v1/account";
 
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    List<Pair> localVarQueryParams = new ArrayList<>();
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "pingProvider";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("pingProvider", pingProvider));
+
+    if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
+      StringJoiner queryJoiner = new StringJoiner("&");
+      localVarQueryParams.forEach(p -> queryJoiner.add(p.getName() + '=' + p.getValue()));
+      if (localVarQueryStringJoiner.length() != 0) {
+        queryJoiner.add(localVarQueryStringJoiner.toString());
+      }
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath + '?' + queryJoiner.toString()));
+    } else {
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    }
 
     localVarRequestBuilder.header("Accept", "application/json");
 

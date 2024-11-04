@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.BookingRequiredMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -53,6 +54,14 @@ class BookingAttachGroupDtoTest {
     @Test
     void accountIdsTest() {
         // TODO: test accountIds
+    }
+
+    /**
+     * Test the property 'required'
+     */
+    @Test
+    void requiredTest() {
+        // TODO: test required
     }
 
 }

@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**extId** | **String** | External identifier |  [optional] |
 |**accountIds** | **List&lt;Long&gt;** |  |  [optional] |
+|**required** | **BookingRequiredMode** |  |  [optional] |
 
 
 

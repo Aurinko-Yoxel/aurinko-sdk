@@ -12,7 +12,6 @@
 |**body** | **String** |  |  [optional] |
 |**inReplyTo** | **String** |  |  [optional] |
 |**references** | **String** |  |  [optional] |
-|**threadId** | **String** |  |  [optional] |
 |**to** | [**List&lt;EmailAddress&gt;**](EmailAddress.md) |  |  [optional] |
 |**cc** | [**List&lt;EmailAddress&gt;**](EmailAddress.md) |  |  [optional] |
 |**bcc** | [**List&lt;EmailAddress&gt;**](EmailAddress.md) |  |  [optional] |

@@ -24,118 +24,51 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.BookingRequiredMode;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import io.aurinko.client.ApiClient;
 /**
- * BookingAttachGroupDto
+ * ConfirmReservationOutDto
  */
 @JsonPropertyOrder({
-  BookingAttachGroupDto.JSON_PROPERTY_EXT_ID,
-  BookingAttachGroupDto.JSON_PROPERTY_ACCOUNT_IDS,
-  BookingAttachGroupDto.JSON_PROPERTY_REQUIRED
+  ConfirmReservationOutDto.JSON_PROPERTY_ID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class BookingAttachGroupDto {
-  public static final String JSON_PROPERTY_EXT_ID = "extId";
-  private String extId;
+public class ConfirmReservationOutDto {
+  public static final String JSON_PROPERTY_ID = "id";
+  private String id;
 
-  public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
-  private List<Long> accountIds = new ArrayList<>();
-
-  public static final String JSON_PROPERTY_REQUIRED = "required";
-  private BookingRequiredMode required;
-
-  public BookingAttachGroupDto() { 
+  public ConfirmReservationOutDto() { 
   }
 
-  public BookingAttachGroupDto extId(String extId) {
-    this.extId = extId;
+  public ConfirmReservationOutDto id(String id) {
+    this.id = id;
     return this;
   }
 
   /**
-   * External identifier
-   * @return extId
+   * The created calendar event ID, if event was created.
+   * @return id
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXT_ID)
+  @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getExtId() {
-    return extId;
+  public String getId() {
+    return id;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXT_ID)
+  @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExtId(String extId) {
-    this.extId = extId;
-  }
-
-
-  public BookingAttachGroupDto accountIds(List<Long> accountIds) {
-    this.accountIds = accountIds;
-    return this;
-  }
-
-  public BookingAttachGroupDto addAccountIdsItem(Long accountIdsItem) {
-    if (this.accountIds == null) {
-      this.accountIds = new ArrayList<>();
-    }
-    this.accountIds.add(accountIdsItem);
-    return this;
-  }
-
-  /**
-   * Get accountIds
-   * @return accountIds
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<Long> getAccountIds() {
-    return accountIds;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountIds(List<Long> accountIds) {
-    this.accountIds = accountIds;
-  }
-
-
-  public BookingAttachGroupDto required(BookingRequiredMode required) {
-    this.required = required;
-    return this;
-  }
-
-  /**
-   * Get required
-   * @return required
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REQUIRED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public BookingRequiredMode getRequired() {
-    return required;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_REQUIRED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRequired(BookingRequiredMode required) {
-    this.required = required;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
   /**
-   * Return true if this BookingAttachGroupDto object is equal to o.
+   * Return true if this ConfirmReservationOutDto object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -145,24 +78,20 @@ public class BookingAttachGroupDto {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BookingAttachGroupDto bookingAttachGroupDto = (BookingAttachGroupDto) o;
-    return Objects.equals(this.extId, bookingAttachGroupDto.extId) &&
-        Objects.equals(this.accountIds, bookingAttachGroupDto.accountIds) &&
-        Objects.equals(this.required, bookingAttachGroupDto.required);
+    ConfirmReservationOutDto confirmReservationOutDto = (ConfirmReservationOutDto) o;
+    return Objects.equals(this.id, confirmReservationOutDto.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(extId, accountIds, required);
+    return Objects.hash(id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BookingAttachGroupDto {\n");
-    sb.append("    extId: ").append(toIndentedString(extId)).append("\n");
-    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
-    sb.append("    required: ").append(toIndentedString(required)).append("\n");
+    sb.append("class ConfirmReservationOutDto {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,23 +139,9 @@ public class BookingAttachGroupDto {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `extId` to the URL query string
-    if (getExtId() != null) {
-      joiner.add(String.format("%sextId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExtId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `accountIds` to the URL query string
-    if (getAccountIds() != null) {
-      for (int i = 0; i < getAccountIds().size(); i++) {
-        joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
-    }
-
-    // add `required` to the URL query string
-    if (getRequired() != null) {
-      joiner.add(String.format("%srequired%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRequired()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

@@ -18,6 +18,9 @@
 |**messageId** | **String** |  |  [optional] |
 |**internetMessageId** | **String** |  |  [optional] |
 |**trackingId** | **Long** |  |  [optional] |
+|**trackingThreadId** | **String** | Thread id where tracking begins |  [optional] |
+|**trackingMessageId** | **String** | Message id where tracking begins |  [optional] |
+|**trackingInternetMessageId** | **String** | Rfc822 message id where tracking begins |  [optional] |
 |**context** | **String** |  |  [optional] |
 |**trackingCode** | **String** |  |  [optional] |
 

@@ -95,8 +95,9 @@ public class EmailTrackingApiTest {
         Integer offset = null;
         String contextContains = null;
         String threadId = null;
+        Boolean showSentOnly = null;
         CompletableFuture<EmailTrackingPageNext> response = 
-        api.getTracking(withActivityOnly, limit, offset, contextContains, threadId);
+        api.getTracking(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly);
         
         // TODO: test validations
     }

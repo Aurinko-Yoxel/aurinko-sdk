@@ -45,7 +45,6 @@ import io.aurinko.client.ApiClient;
   OutgoingEmail.JSON_PROPERTY_BODY,
   OutgoingEmail.JSON_PROPERTY_IN_REPLY_TO,
   OutgoingEmail.JSON_PROPERTY_REFERENCES,
-  OutgoingEmail.JSON_PROPERTY_THREAD_ID,
   OutgoingEmail.JSON_PROPERTY_TO,
   OutgoingEmail.JSON_PROPERTY_CC,
   OutgoingEmail.JSON_PROPERTY_BCC,
@@ -72,9 +71,6 @@ public class OutgoingEmail {
 
   public static final String JSON_PROPERTY_REFERENCES = "references";
   private String references;
-
-  public static final String JSON_PROPERTY_THREAD_ID = "threadId";
-  private String threadId;
 
   public static final String JSON_PROPERTY_TO = "to";
   private List<EmailAddress> to = new ArrayList<>();
@@ -223,30 +219,6 @@ public class OutgoingEmail {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReferences(String references) {
     this.references = references;
-  }
-
-
-  public OutgoingEmail threadId(String threadId) {
-    this.threadId = threadId;
-    return this;
-  }
-
-  /**
-   * Get threadId
-   * @return threadId
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_THREAD_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getThreadId() {
-    return threadId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_THREAD_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreadId(String threadId) {
-    this.threadId = threadId;
   }
 
 
@@ -539,7 +511,6 @@ public class OutgoingEmail {
         Objects.equals(this.body, outgoingEmail.body) &&
         Objects.equals(this.inReplyTo, outgoingEmail.inReplyTo) &&
         Objects.equals(this.references, outgoingEmail.references) &&
-        Objects.equals(this.threadId, outgoingEmail.threadId) &&
         Objects.equals(this.to, outgoingEmail.to) &&
         Objects.equals(this.cc, outgoingEmail.cc) &&
         Objects.equals(this.bcc, outgoingEmail.bcc) &&
@@ -553,7 +524,7 @@ public class OutgoingEmail {
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, subject, body, inReplyTo, references, threadId, to, cc, bcc, replyTo, xHeaders, attachments, tracking, followUp, keywords);
+    return Objects.hash(from, subject, body, inReplyTo, references, to, cc, bcc, replyTo, xHeaders, attachments, tracking, followUp, keywords);
   }
 
   @Override
@@ -565,7 +536,6 @@ public class OutgoingEmail {
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    inReplyTo: ").append(toIndentedString(inReplyTo)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
-    sb.append("    threadId: ").append(toIndentedString(threadId)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    cc: ").append(toIndentedString(cc)).append("\n");
     sb.append("    bcc: ").append(toIndentedString(bcc)).append("\n");
@@ -645,11 +615,6 @@ public class OutgoingEmail {
     // add `references` to the URL query string
     if (getReferences() != null) {
       joiner.add(String.format("%sreferences%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReferences()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `threadId` to the URL query string
-    if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `to` to the URL query string

@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.AdditionalField;
 import io.aurinko.client.model.BookingMeetingInterval;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,10 +49,8 @@ import io.aurinko.client.ApiClient;
   BookingTimesOutDto.JSON_PROPERTY_PRIMARY_COLOR,
   BookingTimesOutDto.JSON_PROPERTY_SECONDARY_COLOR,
   BookingTimesOutDto.JSON_PROPERTY_ADDITIONAL_FIELDS,
-  BookingTimesOutDto.JSON_PROPERTY_LIMIT,
-  BookingTimesOutDto.JSON_PROPERTY_OFFSET,
-  BookingTimesOutDto.JSON_PROPERTY_TOTAL_SIZE,
-  BookingTimesOutDto.JSON_PROPERTY_DONE
+  BookingTimesOutDto.JSON_PROPERTY_NEXT_PAGE_TOKEN,
+  BookingTimesOutDto.JSON_PROPERTY_NEXT_FROM_DATE
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class BookingTimesOutDto {
@@ -85,17 +84,11 @@ public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ADDITIONAL_FIELDS = "additionalFields";
   private List<AdditionalField> additionalFields = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_LIMIT = "limit";
-  private Integer limit;
+  public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
+  private String nextPageToken;
 
-  public static final String JSON_PROPERTY_OFFSET = "offset";
-  private Integer offset;
-
-  public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
-  private Integer totalSize;
-
-  public static final String JSON_PROPERTY_DONE = "done";
-  private Boolean done;
+  public static final String JSON_PROPERTY_NEXT_FROM_DATE = "nextFromDate";
+  private LocalDate nextFromDate;
 
   public BookingTimesOutDto() { 
   }
@@ -356,99 +349,51 @@ public class BookingTimesOutDto {
   }
 
 
-  public BookingTimesOutDto limit(Integer limit) {
-    this.limit = limit;
+  public BookingTimesOutDto nextPageToken(String nextPageToken) {
+    this.nextPageToken = nextPageToken;
     return this;
   }
 
   /**
-   * Next request limit
-   * @return limit
+   * Next page token
+   * @return nextPageToken
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LIMIT)
+  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Integer getLimit() {
-    return limit;
+  public String getNextPageToken() {
+    return nextPageToken;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIMIT)
+  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLimit(Integer limit) {
-    this.limit = limit;
+  public void setNextPageToken(String nextPageToken) {
+    this.nextPageToken = nextPageToken;
   }
 
 
-  public BookingTimesOutDto offset(Integer offset) {
-    this.offset = offset;
+  public BookingTimesOutDto nextFromDate(LocalDate nextFromDate) {
+    this.nextFromDate = nextFromDate;
     return this;
   }
 
   /**
-   * Next request offset
-   * @return offset
+   * Next fromDate to iterate a big time intervals
+   * @return nextFromDate
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OFFSET)
+  @JsonProperty(JSON_PROPERTY_NEXT_FROM_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Integer getOffset() {
-    return offset;
+  public LocalDate getNextFromDate() {
+    return nextFromDate;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OFFSET)
+  @JsonProperty(JSON_PROPERTY_NEXT_FROM_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOffset(Integer offset) {
-    this.offset = offset;
-  }
-
-
-  public BookingTimesOutDto totalSize(Integer totalSize) {
-    this.totalSize = totalSize;
-    return this;
-  }
-
-  /**
-   * Count of related provider&#39;s sources
-   * @return totalSize
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Integer getTotalSize() {
-    return totalSize;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotalSize(Integer totalSize) {
-    this.totalSize = totalSize;
-  }
-
-
-  public BookingTimesOutDto done(Boolean done) {
-    this.done = done;
-    return this;
-  }
-
-  /**
-   * Is all related provider&#39;s sources requested
-   * @return done
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Boolean getDone() {
-    return done;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDone(Boolean done) {
-    this.done = done;
+  public void setNextFromDate(LocalDate nextFromDate) {
+    this.nextFromDate = nextFromDate;
   }
 
 
@@ -474,15 +419,13 @@ public class BookingTimesOutDto {
         Objects.equals(this.primaryColor, bookingTimesOutDto.primaryColor) &&
         Objects.equals(this.secondaryColor, bookingTimesOutDto.secondaryColor) &&
         Objects.equals(this.additionalFields, bookingTimesOutDto.additionalFields) &&
-        Objects.equals(this.limit, bookingTimesOutDto.limit) &&
-        Objects.equals(this.offset, bookingTimesOutDto.offset) &&
-        Objects.equals(this.totalSize, bookingTimesOutDto.totalSize) &&
-        Objects.equals(this.done, bookingTimesOutDto.done);
+        Objects.equals(this.nextPageToken, bookingTimesOutDto.nextPageToken) &&
+        Objects.equals(this.nextFromDate, bookingTimesOutDto.nextFromDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(items, startTime, endTime, timeAvailableFor, durationMinutes, availabilityStep, subject, primaryColor, secondaryColor, additionalFields, limit, offset, totalSize, done);
+    return Objects.hash(items, startTime, endTime, timeAvailableFor, durationMinutes, availabilityStep, subject, primaryColor, secondaryColor, additionalFields, nextPageToken, nextFromDate);
   }
 
   @Override
@@ -499,10 +442,8 @@ public class BookingTimesOutDto {
     sb.append("    primaryColor: ").append(toIndentedString(primaryColor)).append("\n");
     sb.append("    secondaryColor: ").append(toIndentedString(secondaryColor)).append("\n");
     sb.append("    additionalFields: ").append(toIndentedString(additionalFields)).append("\n");
-    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
-    sb.append("    done: ").append(toIndentedString(done)).append("\n");
+    sb.append("    nextPageToken: ").append(toIndentedString(nextPageToken)).append("\n");
+    sb.append("    nextFromDate: ").append(toIndentedString(nextFromDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -610,24 +551,14 @@ public class BookingTimesOutDto {
       }
     }
 
-    // add `limit` to the URL query string
-    if (getLimit() != null) {
-      joiner.add(String.format("%slimit%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLimit()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `nextPageToken` to the URL query string
+    if (getNextPageToken() != null) {
+      joiner.add(String.format("%snextPageToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNextPageToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `offset` to the URL query string
-    if (getOffset() != null) {
-      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `totalSize` to the URL query string
-    if (getTotalSize() != null) {
-      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `done` to the URL query string
-    if (getDone() != null) {
-      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `nextFromDate` to the URL query string
+    if (getNextFromDate() != null) {
+      joiner.add(String.format("%snextFromDate%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNextFromDate()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

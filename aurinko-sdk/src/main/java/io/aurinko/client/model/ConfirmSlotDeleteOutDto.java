@@ -24,118 +24,86 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.BookingRequiredMode;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import io.aurinko.client.ApiClient;
 /**
- * BookingAttachGroupDto
+ * ConfirmSlotDeleteOutDto
  */
 @JsonPropertyOrder({
-  BookingAttachGroupDto.JSON_PROPERTY_EXT_ID,
-  BookingAttachGroupDto.JSON_PROPERTY_ACCOUNT_IDS,
-  BookingAttachGroupDto.JSON_PROPERTY_REQUIRED
+  ConfirmSlotDeleteOutDto.JSON_PROPERTY_STATUS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class BookingAttachGroupDto {
-  public static final String JSON_PROPERTY_EXT_ID = "extId";
-  private String extId;
-
-  public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
-  private List<Long> accountIds = new ArrayList<>();
-
-  public static final String JSON_PROPERTY_REQUIRED = "required";
-  private BookingRequiredMode required;
-
-  public BookingAttachGroupDto() { 
-  }
-
-  public BookingAttachGroupDto extId(String extId) {
-    this.extId = extId;
-    return this;
-  }
-
+public class ConfirmSlotDeleteOutDto {
   /**
-   * External identifier
-   * @return extId
+   * Gets or Sets status
    */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getExtId() {
-    return extId;
-  }
+  public enum StatusEnum {
+    OK("Ok"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
+    private String value;
 
-  @JsonProperty(JSON_PROPERTY_EXT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExtId(String extId) {
-    this.extId = extId;
-  }
-
-
-  public BookingAttachGroupDto accountIds(List<Long> accountIds) {
-    this.accountIds = accountIds;
-    return this;
-  }
-
-  public BookingAttachGroupDto addAccountIdsItem(Long accountIdsItem) {
-    if (this.accountIds == null) {
-      this.accountIds = new ArrayList<>();
+    StatusEnum(String value) {
+      this.value = value;
     }
-    this.accountIds.add(accountIdsItem);
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+  }
+
+  public static final String JSON_PROPERTY_STATUS = "status";
+  private StatusEnum status;
+
+  public ConfirmSlotDeleteOutDto() { 
+  }
+
+  public ConfirmSlotDeleteOutDto status(StatusEnum status) {
+    this.status = status;
     return this;
   }
 
   /**
-   * Get accountIds
-   * @return accountIds
+   * Get status
+   * @return status
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
+  @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<Long> getAccountIds() {
-    return accountIds;
+  public StatusEnum getStatus() {
+    return status;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
+  @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountIds(List<Long> accountIds) {
-    this.accountIds = accountIds;
-  }
-
-
-  public BookingAttachGroupDto required(BookingRequiredMode required) {
-    this.required = required;
-    return this;
-  }
-
-  /**
-   * Get required
-   * @return required
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REQUIRED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public BookingRequiredMode getRequired() {
-    return required;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_REQUIRED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRequired(BookingRequiredMode required) {
-    this.required = required;
+  public void setStatus(StatusEnum status) {
+    this.status = status;
   }
 
 
   /**
-   * Return true if this BookingAttachGroupDto object is equal to o.
+   * Return true if this ConfirmSlotDeleteOutDto object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -145,24 +113,20 @@ public class BookingAttachGroupDto {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BookingAttachGroupDto bookingAttachGroupDto = (BookingAttachGroupDto) o;
-    return Objects.equals(this.extId, bookingAttachGroupDto.extId) &&
-        Objects.equals(this.accountIds, bookingAttachGroupDto.accountIds) &&
-        Objects.equals(this.required, bookingAttachGroupDto.required);
+    ConfirmSlotDeleteOutDto confirmSlotDeleteOutDto = (ConfirmSlotDeleteOutDto) o;
+    return Objects.equals(this.status, confirmSlotDeleteOutDto.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(extId, accountIds, required);
+    return Objects.hash(status);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BookingAttachGroupDto {\n");
-    sb.append("    extId: ").append(toIndentedString(extId)).append("\n");
-    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
-    sb.append("    required: ").append(toIndentedString(required)).append("\n");
+    sb.append("class ConfirmSlotDeleteOutDto {\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,23 +174,9 @@ public class BookingAttachGroupDto {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `extId` to the URL query string
-    if (getExtId() != null) {
-      joiner.add(String.format("%sextId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExtId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `accountIds` to the URL query string
-    if (getAccountIds() != null) {
-      for (int i = 0; i < getAccountIds().size(); i++) {
-        joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-      }
-    }
-
-    // add `required` to the URL query string
-    if (getRequired() != null) {
-      joiner.add(String.format("%srequired%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRequired()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `status` to the URL query string
+    if (getStatus() != null) {
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

@@ -18,13 +18,22 @@ import io.aurinko.client.model.BookingAttachAccountsDto;
 import io.aurinko.client.model.BookingAttachGroupsDto;
 import io.aurinko.client.model.BookingAttachedAccountsPage;
 import io.aurinko.client.model.BookingAttachedGroupsPage;
+import io.aurinko.client.model.BookingAvailableProfilesInDto;
+import io.aurinko.client.model.BookingAvailableProfilesOutDto;
 import io.aurinko.client.model.BookingDetachGroupAccountsDto;
 import io.aurinko.client.model.BookingDetachGroupsDto;
+import io.aurinko.client.model.BookingRequiredMode;
 import io.aurinko.client.model.BookingSuccessOutDto;
+import io.aurinko.client.model.BookingTimesOutDto;
+import io.aurinko.client.model.ConfirmReservationOutDto;
+import io.aurinko.client.model.ConfirmSlotDeleteOutDto;
+import io.aurinko.client.model.CreateMeetingDto;
+import io.aurinko.client.model.CreateMeetingResponse;
 import io.aurinko.client.model.GroupBookingInDto;
 import io.aurinko.client.model.GroupBookingOutDto;
 import io.aurinko.client.model.GroupBookingPage;
 import io.aurinko.client.model.GroupBookingUpdateDto;
+import java.time.LocalDate;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -115,6 +124,100 @@ public class GroupBookingApiTest {
         Integer offset = null;
         CompletableFuture<BookingAttachedGroupsPage> response = 
         api.attachedGroupsBooking(id, limit, offset);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get available bookings for а time range
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingGroupAvailabilityTest() throws ApiException {
+        BookingAvailableProfilesInDto bookingAvailableProfilesInDto = null;
+        CompletableFuture<BookingAvailableProfilesOutDto> response = 
+        api.bookingGroupAvailability(bookingAvailableProfilesInDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a meeting
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingGroupCreateMeetingTest() throws ApiException {
+        Long id = null;
+        BookingRequiredMode required = null;
+        Long reserveForMinutes = null;
+        CreateMeetingDto createMeetingDto = null;
+        CompletableFuture<CreateMeetingResponse> response = 
+        api.bookingGroupCreateMeeting(id, required, reserveForMinutes, createMeetingDto);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Get available meeting times
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingGroupMeetingTimesTest() throws ApiException {
+        Long id = null;
+        BookingRequiredMode required = null;
+        LocalDate fromDate = null;
+        String intervalLength = null;
+        String pageToken = null;
+        Integer limit = null;
+        Integer offset = null;
+        CompletableFuture<BookingTimesOutDto> response = 
+        api.bookingGroupMeetingTimes(id, required, fromDate, intervalLength, pageToken, limit, offset);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Convert an unconfirmed booking reservation to a calendar event
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingGroupReservationConfirmTest() throws ApiException {
+        Long id = null;
+        CompletableFuture<ConfirmReservationOutDto> response = 
+        api.bookingGroupReservationConfirm(id);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Cancel an unconfirmed booking reservation
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void bookingGroupReservationDeleteTest() throws ApiException {
+        Long id = null;
+        CompletableFuture<ConfirmSlotDeleteOutDto> response = 
+        api.bookingGroupReservationDelete(id);
         
         // TODO: test validations
     }

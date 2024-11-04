@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.AdditionalField;
 import io.aurinko.client.model.BookingMeetingInterval;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -123,35 +124,19 @@ class BookingTimesOutDtoTest {
     }
 
     /**
-     * Test the property 'limit'
+     * Test the property 'nextPageToken'
      */
     @Test
-    void limitTest() {
-        // TODO: test limit
+    void nextPageTokenTest() {
+        // TODO: test nextPageToken
     }
 
     /**
-     * Test the property 'offset'
+     * Test the property 'nextFromDate'
      */
     @Test
-    void offsetTest() {
-        // TODO: test offset
-    }
-
-    /**
-     * Test the property 'totalSize'
-     */
-    @Test
-    void totalSizeTest() {
-        // TODO: test totalSize
-    }
-
-    /**
-     * Test the property 'done'
-     */
-    @Test
-    void doneTest() {
-        // TODO: test done
+    void nextFromDateTest() {
+        // TODO: test nextFromDate
     }
 
 }
