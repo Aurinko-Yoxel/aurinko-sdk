@@ -76,7 +76,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.aurinko</groupId>
   <artifactId>aurinko-api</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -86,7 +86,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.aurinko:aurinko-api:1.0.1"
+compile "io.aurinko:aurinko-api:1.0.2"
 ```
 
 ### Others
@@ -99,7 +99,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aurinko-api-1.0.1.jar`
+- `target/aurinko-api-1.0.2.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -423,6 +423,8 @@ Class | Method | HTTP request | Description
  - [ApiAccountInDto](docs/ApiAccountInDto.md)
  - [ApiAccountOutDto](docs/ApiAccountOutDto.md)
  - [Attendee](docs/Attendee.md)
+ - [AvailabilityInterval](docs/AvailabilityInterval.md)
+ - [AvailabilityIntervals](docs/AvailabilityIntervals.md)
  - [BodyType](docs/BodyType.md)
  - [BookingAttachAccountsDto](docs/BookingAttachAccountsDto.md)
  - [BookingAttachGroupDto](docs/BookingAttachGroupDto.md)

@@ -45,4 +45,12 @@ class EmailDraftResponseTest {
         // TODO: test id
     }
 
+    /**
+     * Test the property 'webLink'
+     */
+    @Test
+    void webLinkTest() {
+        // TODO: test webLink
+    }
+
 }

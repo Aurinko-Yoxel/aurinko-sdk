@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.AvailabilityIntervals;
 import io.aurinko.client.model.WeekWorkSchedule;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
@@ -46,6 +47,7 @@ import io.aurinko.client.ApiClient;
   GroupBookingOutDto.JSON_PROPERTY_DESCRIPTION,
   GroupBookingOutDto.JSON_PROPERTY_LOCATION,
   GroupBookingOutDto.JSON_PROPERTY_WORK_HOURS,
+  GroupBookingOutDto.JSON_PROPERTY_AVAILABILITY_INTERVALS,
   GroupBookingOutDto.JSON_PROPERTY_CONTEXT,
   GroupBookingOutDto.JSON_PROPERTY_START_CONFERENCE,
   GroupBookingOutDto.JSON_PROPERTY_OPEN_MEETING_URL,
@@ -85,6 +87,9 @@ public class GroupBookingOutDto {
 
   public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
   private WeekWorkSchedule workHours;
+
+  public static final String JSON_PROPERTY_AVAILABILITY_INTERVALS = "availabilityIntervals";
+  private AvailabilityIntervals availabilityIntervals;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private String context;
@@ -365,6 +370,30 @@ public class GroupBookingOutDto {
   }
 
 
+  public GroupBookingOutDto availabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+    this.availabilityIntervals = availabilityIntervals;
+    return this;
+  }
+
+  /**
+   * Get availabilityIntervals
+   * @return availabilityIntervals
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AVAILABILITY_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public AvailabilityIntervals getAvailabilityIntervals() {
+    return availabilityIntervals;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AVAILABILITY_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAvailabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+    this.availabilityIntervals = availabilityIntervals;
+  }
+
+
   public GroupBookingOutDto context(String context) {
     this.context = context;
     return this;
@@ -484,6 +513,7 @@ public class GroupBookingOutDto {
         Objects.equals(this.description, groupBookingOutDto.description) &&
         Objects.equals(this.location, groupBookingOutDto.location) &&
         Objects.equals(this.workHours, groupBookingOutDto.workHours) &&
+        Objects.equals(this.availabilityIntervals, groupBookingOutDto.availabilityIntervals) &&
         Objects.equals(this.context, groupBookingOutDto.context) &&
         Objects.equals(this.startConference, groupBookingOutDto.startConference) &&
         Objects.equals(this.openMeetingUrl, groupBookingOutDto.openMeetingUrl) &&
@@ -492,7 +522,7 @@ public class GroupBookingOutDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, durationMinutes, availabilityStep, startTime, endTime, timeAvailableFor, subject, description, location, workHours, context, startConference, openMeetingUrl, clientOrgId);
+    return Objects.hash(id, name, durationMinutes, availabilityStep, startTime, endTime, timeAvailableFor, subject, description, location, workHours, availabilityIntervals, context, startConference, openMeetingUrl, clientOrgId);
   }
 
   @Override
@@ -510,6 +540,7 @@ public class GroupBookingOutDto {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    workHours: ").append(toIndentedString(workHours)).append("\n");
+    sb.append("    availabilityIntervals: ").append(toIndentedString(availabilityIntervals)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    startConference: ").append(toIndentedString(startConference)).append("\n");
     sb.append("    openMeetingUrl: ").append(toIndentedString(openMeetingUrl)).append("\n");
@@ -614,6 +645,11 @@ public class GroupBookingOutDto {
     // add `workHours` to the URL query string
     if (getWorkHours() != null) {
       joiner.add(getWorkHours().toUrlQueryString(prefix + "workHours" + suffix));
+    }
+
+    // add `availabilityIntervals` to the URL query string
+    if (getAvailabilityIntervals() != null) {
+      joiner.add(getAvailabilityIntervals().toUrlQueryString(prefix + "availabilityIntervals" + suffix));
     }
 
     // add `context` to the URL query string

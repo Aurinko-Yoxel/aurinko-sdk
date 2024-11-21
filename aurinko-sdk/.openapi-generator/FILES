@@ -17,6 +17,8 @@ docs/ApiAccountOutDto.md
 docs/Attendee.md
 docs/AuthApi.md
 docs/AvailabilityApi.md
+docs/AvailabilityInterval.md
+docs/AvailabilityIntervals.md
 docs/BodyType.md
 docs/BookingApi.md
 docs/BookingAttachAccountsDto.md
@@ -244,6 +246,8 @@ src/main/java/io/aurinko/client/model/AdditionalField.java
 src/main/java/io/aurinko/client/model/ApiAccountInDto.java
 src/main/java/io/aurinko/client/model/ApiAccountOutDto.java
 src/main/java/io/aurinko/client/model/Attendee.java
+src/main/java/io/aurinko/client/model/AvailabilityInterval.java
+src/main/java/io/aurinko/client/model/AvailabilityIntervals.java
 src/main/java/io/aurinko/client/model/BodyType.java
 src/main/java/io/aurinko/client/model/BookingAttachAccountsDto.java
 src/main/java/io/aurinko/client/model/BookingAttachGroupDto.java
@@ -431,6 +435,8 @@ src/test/java/io/aurinko/client/model/AdditionalFieldTest.java
 src/test/java/io/aurinko/client/model/ApiAccountInDtoTest.java
 src/test/java/io/aurinko/client/model/ApiAccountOutDtoTest.java
 src/test/java/io/aurinko/client/model/AttendeeTest.java
+src/test/java/io/aurinko/client/model/AvailabilityIntervalTest.java
+src/test/java/io/aurinko/client/model/AvailabilityIntervalsTest.java
 src/test/java/io/aurinko/client/model/BodyTypeTest.java
 src/test/java/io/aurinko/client/model/BookingAttachAccountsDtoTest.java
 src/test/java/io/aurinko/client/model/BookingAttachGroupDtoTest.java

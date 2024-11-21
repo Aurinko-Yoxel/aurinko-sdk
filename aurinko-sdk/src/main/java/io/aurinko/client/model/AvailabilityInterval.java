@@ -24,69 +24,119 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.WorkingInterval;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import io.aurinko.client.ApiClient;
 /**
- * EmailDraftResponse
+ * AvailabilityInterval
  */
 @JsonPropertyOrder({
-  EmailDraftResponse.JSON_PROPERTY_ID,
-  EmailDraftResponse.JSON_PROPERTY_WEB_LINK
+  AvailabilityInterval.JSON_PROPERTY_DATE_START_INCLUSIVE,
+  AvailabilityInterval.JSON_PROPERTY_DATE_END_INCLUSIVE,
+  AvailabilityInterval.JSON_PROPERTY_HOURS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class EmailDraftResponse {
-  public static final String JSON_PROPERTY_ID = "id";
-  private String id;
+public class AvailabilityInterval {
+  public static final String JSON_PROPERTY_DATE_START_INCLUSIVE = "dateStartInclusive";
+  private LocalDate dateStartInclusive;
 
-  public static final String JSON_PROPERTY_WEB_LINK = "webLink";
-  private String webLink;
+  public static final String JSON_PROPERTY_DATE_END_INCLUSIVE = "dateEndInclusive";
+  private LocalDate dateEndInclusive;
 
-  public EmailDraftResponse() { 
+  public static final String JSON_PROPERTY_HOURS = "hours";
+  private List<WorkingInterval> hours = new ArrayList<>();
+
+  public AvailabilityInterval() { 
   }
 
-  @JsonCreator
-  public EmailDraftResponse(
-    @JsonProperty(JSON_PROPERTY_ID) String id, 
-    @JsonProperty(JSON_PROPERTY_WEB_LINK) String webLink
-  ) {
-  this();
-    this.id = id;
-    this.webLink = webLink;
+  public AvailabilityInterval dateStartInclusive(LocalDate dateStartInclusive) {
+    this.dateStartInclusive = dateStartInclusive;
+    return this;
   }
 
   /**
-   * Get id
-   * @return id
+   * Get dateStartInclusive
+   * @return dateStartInclusive
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(JSON_PROPERTY_DATE_START_INCLUSIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getId() {
-    return id;
+  public LocalDate getDateStartInclusive() {
+    return dateStartInclusive;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATE_START_INCLUSIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDateStartInclusive(LocalDate dateStartInclusive) {
+    this.dateStartInclusive = dateStartInclusive;
+  }
 
+
+  public AvailabilityInterval dateEndInclusive(LocalDate dateEndInclusive) {
+    this.dateEndInclusive = dateEndInclusive;
+    return this;
+  }
 
   /**
-   * Get webLink
-   * @return webLink
+   * Get dateEndInclusive
+   * @return dateEndInclusive
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WEB_LINK)
+  @JsonProperty(JSON_PROPERTY_DATE_END_INCLUSIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getWebLink() {
-    return webLink;
+  public LocalDate getDateEndInclusive() {
+    return dateEndInclusive;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATE_END_INCLUSIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDateEndInclusive(LocalDate dateEndInclusive) {
+    this.dateEndInclusive = dateEndInclusive;
+  }
+
+
+  public AvailabilityInterval hours(List<WorkingInterval> hours) {
+    this.hours = hours;
+    return this;
+  }
+
+  public AvailabilityInterval addHoursItem(WorkingInterval hoursItem) {
+    if (this.hours == null) {
+      this.hours = new ArrayList<>();
+    }
+    this.hours.add(hoursItem);
+    return this;
+  }
+
+  /**
+   * Get hours
+   * @return hours
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_HOURS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<WorkingInterval> getHours() {
+    return hours;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_HOURS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setHours(List<WorkingInterval> hours) {
+    this.hours = hours;
+  }
 
 
   /**
-   * Return true if this EmailDraftResponse object is equal to o.
+   * Return true if this AvailabilityInterval object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -96,22 +146,24 @@ public class EmailDraftResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EmailDraftResponse emailDraftResponse = (EmailDraftResponse) o;
-    return Objects.equals(this.id, emailDraftResponse.id) &&
-        Objects.equals(this.webLink, emailDraftResponse.webLink);
+    AvailabilityInterval availabilityInterval = (AvailabilityInterval) o;
+    return Objects.equals(this.dateStartInclusive, availabilityInterval.dateStartInclusive) &&
+        Objects.equals(this.dateEndInclusive, availabilityInterval.dateEndInclusive) &&
+        Objects.equals(this.hours, availabilityInterval.hours);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, webLink);
+    return Objects.hash(dateStartInclusive, dateEndInclusive, hours);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EmailDraftResponse {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    webLink: ").append(toIndentedString(webLink)).append("\n");
+    sb.append("class AvailabilityInterval {\n");
+    sb.append("    dateStartInclusive: ").append(toIndentedString(dateStartInclusive)).append("\n");
+    sb.append("    dateEndInclusive: ").append(toIndentedString(dateEndInclusive)).append("\n");
+    sb.append("    hours: ").append(toIndentedString(hours)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -159,14 +211,24 @@ public class EmailDraftResponse {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `id` to the URL query string
-    if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `dateStartInclusive` to the URL query string
+    if (getDateStartInclusive() != null) {
+      joiner.add(String.format("%sdateStartInclusive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateStartInclusive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
-    // add `webLink` to the URL query string
-    if (getWebLink() != null) {
-      joiner.add(String.format("%swebLink%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getWebLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `dateEndInclusive` to the URL query string
+    if (getDateEndInclusive() != null) {
+      joiner.add(String.format("%sdateEndInclusive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateEndInclusive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `hours` to the URL query string
+    if (getHours() != null) {
+      for (int i = 0; i < getHours().size(); i++) {
+        if (getHours().get(i) != null) {
+          joiner.add(getHours().get(i).toUrlQueryString(String.format("%shours%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

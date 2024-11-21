@@ -24,69 +24,62 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.AvailabilityInterval;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import io.aurinko.client.ApiClient;
 /**
- * EmailDraftResponse
+ * AvailabilityIntervals
  */
 @JsonPropertyOrder({
-  EmailDraftResponse.JSON_PROPERTY_ID,
-  EmailDraftResponse.JSON_PROPERTY_WEB_LINK
+  AvailabilityIntervals.JSON_PROPERTY_INTERVALS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class EmailDraftResponse {
-  public static final String JSON_PROPERTY_ID = "id";
-  private String id;
+public class AvailabilityIntervals {
+  public static final String JSON_PROPERTY_INTERVALS = "intervals";
+  private List<AvailabilityInterval> intervals = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_WEB_LINK = "webLink";
-  private String webLink;
-
-  public EmailDraftResponse() { 
+  public AvailabilityIntervals() { 
   }
 
-  @JsonCreator
-  public EmailDraftResponse(
-    @JsonProperty(JSON_PROPERTY_ID) String id, 
-    @JsonProperty(JSON_PROPERTY_WEB_LINK) String webLink
-  ) {
-  this();
-    this.id = id;
-    this.webLink = webLink;
+  public AvailabilityIntervals intervals(List<AvailabilityInterval> intervals) {
+    this.intervals = intervals;
+    return this;
+  }
+
+  public AvailabilityIntervals addIntervalsItem(AvailabilityInterval intervalsItem) {
+    if (this.intervals == null) {
+      this.intervals = new ArrayList<>();
+    }
+    this.intervals.add(intervalsItem);
+    return this;
   }
 
   /**
-   * Get id
-   * @return id
+   * Get intervals
+   * @return intervals
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(JSON_PROPERTY_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getId() {
-    return id;
+  public List<AvailabilityInterval> getIntervals() {
+    return intervals;
   }
 
 
-
-
-  /**
-   * Get webLink
-   * @return webLink
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WEB_LINK)
+  @JsonProperty(JSON_PROPERTY_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getWebLink() {
-    return webLink;
+  public void setIntervals(List<AvailabilityInterval> intervals) {
+    this.intervals = intervals;
   }
 
 
-
-
   /**
-   * Return true if this EmailDraftResponse object is equal to o.
+   * Return true if this AvailabilityIntervals object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -96,22 +89,20 @@ public class EmailDraftResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EmailDraftResponse emailDraftResponse = (EmailDraftResponse) o;
-    return Objects.equals(this.id, emailDraftResponse.id) &&
-        Objects.equals(this.webLink, emailDraftResponse.webLink);
+    AvailabilityIntervals availabilityIntervals = (AvailabilityIntervals) o;
+    return Objects.equals(this.intervals, availabilityIntervals.intervals);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, webLink);
+    return Objects.hash(intervals);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EmailDraftResponse {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    webLink: ").append(toIndentedString(webLink)).append("\n");
+    sb.append("class AvailabilityIntervals {\n");
+    sb.append("    intervals: ").append(toIndentedString(intervals)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -159,14 +150,14 @@ public class EmailDraftResponse {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `id` to the URL query string
-    if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `webLink` to the URL query string
-    if (getWebLink() != null) {
-      joiner.add(String.format("%swebLink%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getWebLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `intervals` to the URL query string
+    if (getIntervals() != null) {
+      for (int i = 0; i < getIntervals().size(); i++) {
+        if (getIntervals().get(i) != null) {
+          joiner.add(getIntervals().get(i).toUrlQueryString(String.format("%sintervals%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

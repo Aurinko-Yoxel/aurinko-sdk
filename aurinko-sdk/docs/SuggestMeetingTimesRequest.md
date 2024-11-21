@@ -14,6 +14,7 @@
 |**attendees** | [**List&lt;MeetingAttendee&gt;**](MeetingAttendee.md) | The attendees to consider when searching for available meeting times. |  [optional] |
 |**defaultTimezone** | **String** | Timezone (IANA) to use when no timezone information is available for the attendees. |  [optional] |
 |**defaultWorkHours** | [**WeekWorkSchedule**](WeekWorkSchedule.md) |  |  [optional] |
+|**availabilityIntervals** | [**AvailabilityIntervals**](AvailabilityIntervals.md) |  |  [optional] |
 |**freeStatuses** | **List&lt;ShowAs&gt;** | The statuses from /freeBusy request to consider as free time for the attendees. |  [optional] |
 
 

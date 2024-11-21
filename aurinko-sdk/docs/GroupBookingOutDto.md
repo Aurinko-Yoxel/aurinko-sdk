@@ -18,6 +18,7 @@
 |**description** | **String** | Description for events booked using this profile. |  [optional] |
 |**location** | **String** | Location for events booked using this profile. |  [optional] |
 |**workHours** | [**WeekWorkSchedule**](WeekWorkSchedule.md) |  |  [optional] |
+|**availabilityIntervals** | [**AvailabilityIntervals**](AvailabilityIntervals.md) |  |  [optional] |
 |**context** | **String** | Custom client data stored for the profile. |  [optional] |
 |**startConference** | **Boolean** | Whether to create an online conference (hangoutsMeet, teamsForBusiness, etc.) for the event. Note, not all providers support creating conferences. |  [optional] |
 |**openMeetingUrl** | **String** | The value of the {{}openMeetingUrl}} variable that can be used in the event description or subject. |  [optional] |

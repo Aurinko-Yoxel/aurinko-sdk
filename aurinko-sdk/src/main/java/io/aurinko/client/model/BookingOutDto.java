@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.AvailabilityIntervals;
 import io.aurinko.client.model.WeekWorkSchedule;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
@@ -46,6 +47,7 @@ import io.aurinko.client.ApiClient;
   BookingOutDto.JSON_PROPERTY_DESCRIPTION,
   BookingOutDto.JSON_PROPERTY_LOCATION,
   BookingOutDto.JSON_PROPERTY_WORK_HOURS,
+  BookingOutDto.JSON_PROPERTY_AVAILABILITY_INTERVALS,
   BookingOutDto.JSON_PROPERTY_CONTEXT,
   BookingOutDto.JSON_PROPERTY_START_CONFERENCE,
   BookingOutDto.JSON_PROPERTY_OPEN_MEETING_URL
@@ -84,6 +86,9 @@ public class BookingOutDto {
 
   public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
   private WeekWorkSchedule workHours;
+
+  public static final String JSON_PROPERTY_AVAILABILITY_INTERVALS = "availabilityIntervals";
+  private AvailabilityIntervals availabilityIntervals;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private String context;
@@ -361,6 +366,30 @@ public class BookingOutDto {
   }
 
 
+  public BookingOutDto availabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+    this.availabilityIntervals = availabilityIntervals;
+    return this;
+  }
+
+  /**
+   * Get availabilityIntervals
+   * @return availabilityIntervals
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AVAILABILITY_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public AvailabilityIntervals getAvailabilityIntervals() {
+    return availabilityIntervals;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AVAILABILITY_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAvailabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+    this.availabilityIntervals = availabilityIntervals;
+  }
+
+
   public BookingOutDto context(String context) {
     this.context = context;
     return this;
@@ -456,6 +485,7 @@ public class BookingOutDto {
         Objects.equals(this.description, bookingOutDto.description) &&
         Objects.equals(this.location, bookingOutDto.location) &&
         Objects.equals(this.workHours, bookingOutDto.workHours) &&
+        Objects.equals(this.availabilityIntervals, bookingOutDto.availabilityIntervals) &&
         Objects.equals(this.context, bookingOutDto.context) &&
         Objects.equals(this.startConference, bookingOutDto.startConference) &&
         Objects.equals(this.openMeetingUrl, bookingOutDto.openMeetingUrl);
@@ -463,7 +493,7 @@ public class BookingOutDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, durationMinutes, availabilityStep, startTime, endTime, timeAvailableFor, subject, description, location, workHours, context, startConference, openMeetingUrl);
+    return Objects.hash(id, name, durationMinutes, availabilityStep, startTime, endTime, timeAvailableFor, subject, description, location, workHours, availabilityIntervals, context, startConference, openMeetingUrl);
   }
 
   @Override
@@ -481,6 +511,7 @@ public class BookingOutDto {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    workHours: ").append(toIndentedString(workHours)).append("\n");
+    sb.append("    availabilityIntervals: ").append(toIndentedString(availabilityIntervals)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    startConference: ").append(toIndentedString(startConference)).append("\n");
     sb.append("    openMeetingUrl: ").append(toIndentedString(openMeetingUrl)).append("\n");
@@ -584,6 +615,11 @@ public class BookingOutDto {
     // add `workHours` to the URL query string
     if (getWorkHours() != null) {
       joiner.add(getWorkHours().toUrlQueryString(prefix + "workHours" + suffix));
+    }
+
+    // add `availabilityIntervals` to the URL query string
+    if (getAvailabilityIntervals() != null) {
+      joiner.add(getAvailabilityIntervals().toUrlQueryString(prefix + "availabilityIntervals" + suffix));
     }
 
     // add `context` to the URL query string

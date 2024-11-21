@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.AvailabilityIntervals;
 import io.aurinko.client.model.MeetingAttendee;
 import io.aurinko.client.model.ShowAs;
 import io.aurinko.client.model.WeekWorkSchedule;
@@ -97,6 +98,14 @@ class SuggestMeetingTimesRequestTest {
     @Test
     void defaultWorkHoursTest() {
         // TODO: test defaultWorkHours
+    }
+
+    /**
+     * Test the property 'availabilityIntervals'
+     */
+    @Test
+    void availabilityIntervalsTest() {
+        // TODO: test availabilityIntervals
     }
 
     /**

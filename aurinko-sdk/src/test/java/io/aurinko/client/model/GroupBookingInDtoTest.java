@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.AvailabilityIntervals;
 import io.aurinko.client.model.WeekWorkSchedule;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
@@ -117,6 +118,14 @@ class GroupBookingInDtoTest {
     @Test
     void workHoursTest() {
         // TODO: test workHours
+    }
+
+    /**
+     * Test the property 'availabilityIntervals'
+     */
+    @Test
+    void availabilityIntervalsTest() {
+        // TODO: test availabilityIntervals
     }
 
     /**

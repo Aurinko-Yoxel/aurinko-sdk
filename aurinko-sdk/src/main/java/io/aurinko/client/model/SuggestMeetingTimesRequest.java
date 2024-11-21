@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.AvailabilityIntervals;
 import io.aurinko.client.model.MeetingAttendee;
 import io.aurinko.client.model.ShowAs;
 import io.aurinko.client.model.WeekWorkSchedule;
@@ -46,6 +47,7 @@ import io.aurinko.client.ApiClient;
   SuggestMeetingTimesRequest.JSON_PROPERTY_ATTENDEES,
   SuggestMeetingTimesRequest.JSON_PROPERTY_DEFAULT_TIMEZONE,
   SuggestMeetingTimesRequest.JSON_PROPERTY_DEFAULT_WORK_HOURS,
+  SuggestMeetingTimesRequest.JSON_PROPERTY_AVAILABILITY_INTERVALS,
   SuggestMeetingTimesRequest.JSON_PROPERTY_FREE_STATUSES
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
@@ -70,6 +72,9 @@ public class SuggestMeetingTimesRequest {
 
   public static final String JSON_PROPERTY_DEFAULT_WORK_HOURS = "defaultWorkHours";
   private WeekWorkSchedule defaultWorkHours;
+
+  public static final String JSON_PROPERTY_AVAILABILITY_INTERVALS = "availabilityIntervals";
+  private AvailabilityIntervals availabilityIntervals;
 
   public static final String JSON_PROPERTY_FREE_STATUSES = "freeStatuses";
   private List<ShowAs> freeStatuses = new ArrayList<>(Arrays.asList(ShowAs.FREE));
@@ -253,6 +258,30 @@ public class SuggestMeetingTimesRequest {
   }
 
 
+  public SuggestMeetingTimesRequest availabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+    this.availabilityIntervals = availabilityIntervals;
+    return this;
+  }
+
+  /**
+   * Get availabilityIntervals
+   * @return availabilityIntervals
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AVAILABILITY_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public AvailabilityIntervals getAvailabilityIntervals() {
+    return availabilityIntervals;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AVAILABILITY_INTERVALS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAvailabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+    this.availabilityIntervals = availabilityIntervals;
+  }
+
+
   public SuggestMeetingTimesRequest freeStatuses(List<ShowAs> freeStatuses) {
     this.freeStatuses = freeStatuses;
     return this;
@@ -304,12 +333,13 @@ public class SuggestMeetingTimesRequest {
         Objects.equals(this.attendees, suggestMeetingTimesRequest.attendees) &&
         Objects.equals(this.defaultTimezone, suggestMeetingTimesRequest.defaultTimezone) &&
         Objects.equals(this.defaultWorkHours, suggestMeetingTimesRequest.defaultWorkHours) &&
+        Objects.equals(this.availabilityIntervals, suggestMeetingTimesRequest.availabilityIntervals) &&
         Objects.equals(this.freeStatuses, suggestMeetingTimesRequest.freeStatuses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(timeMin, timeMax, durationMinutes, availabilityStep, attendees, defaultTimezone, defaultWorkHours, freeStatuses);
+    return Objects.hash(timeMin, timeMax, durationMinutes, availabilityStep, attendees, defaultTimezone, defaultWorkHours, availabilityIntervals, freeStatuses);
   }
 
   @Override
@@ -323,6 +353,7 @@ public class SuggestMeetingTimesRequest {
     sb.append("    attendees: ").append(toIndentedString(attendees)).append("\n");
     sb.append("    defaultTimezone: ").append(toIndentedString(defaultTimezone)).append("\n");
     sb.append("    defaultWorkHours: ").append(toIndentedString(defaultWorkHours)).append("\n");
+    sb.append("    availabilityIntervals: ").append(toIndentedString(availabilityIntervals)).append("\n");
     sb.append("    freeStatuses: ").append(toIndentedString(freeStatuses)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -409,6 +440,11 @@ public class SuggestMeetingTimesRequest {
     // add `defaultWorkHours` to the URL query string
     if (getDefaultWorkHours() != null) {
       joiner.add(getDefaultWorkHours().toUrlQueryString(prefix + "defaultWorkHours" + suffix));
+    }
+
+    // add `availabilityIntervals` to the URL query string
+    if (getAvailabilityIntervals() != null) {
+      joiner.add(getAvailabilityIntervals().toUrlQueryString(prefix + "availabilityIntervals" + suffix));
     }
 
     // add `freeStatuses` to the URL query string

@@ -4474,6 +4474,14 @@ paths:
           nullable: true
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: includeProviderAuth
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -6308,9 +6316,13 @@ components:
       type: object
     EmailDraftResponse:
       example:
+        webLink: webLink
         id: id
       properties:
         id:
+          readOnly: true
+          type: string
+        webLink:
           readOnly: true
           type: string
       type: object
@@ -6478,6 +6490,7 @@ components:
           - keywords
           references: references
           subject: subject
+          webLink: webLink
           threadIndex: threadIndex
           internetHeaders:
           - name: name
@@ -6563,6 +6576,7 @@ components:
           - keywords
           references: references
           subject: subject
+          webLink: webLink
           threadIndex: threadIndex
           internetHeaders:
           - name: name
@@ -6836,6 +6850,22 @@ components:
           timezone: timezone
         description: description
         durationMinutes: 30
+        availabilityIntervals:
+          intervals:
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
         timeAvailableFor: P4W
         clientOrgId: clientOrgId
         name: aurDemo - https://calendar.aurinko.io/aurDemo
@@ -6886,6 +6916,8 @@ components:
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
+        availabilityIntervals:
+          $ref: '#/components/schemas/AvailabilityIntervals'
         context:
           description: Custom client data stored for the profile.
           type: string
@@ -8159,6 +8191,7 @@ components:
           - keywords
           references: references
           subject: subject
+          webLink: webLink
           threadIndex: threadIndex
           internetHeaders:
           - name: name
@@ -8407,6 +8440,22 @@ components:
           timezone: timezone
         description: description
         durationMinutes: 30
+        availabilityIntervals:
+          intervals:
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
         timeAvailableFor: P4W
         name: aurDemo - https://calendar.aurinko.io/aurDemo
         context: context
@@ -8456,6 +8505,8 @@ components:
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
+        availabilityIntervals:
+          $ref: '#/components/schemas/AvailabilityIntervals'
         context:
           description: Custom client data stored for the profile.
           type: string
@@ -8662,6 +8713,22 @@ components:
           timezone: timezone
         description: description
         durationMinutes: 30
+        availabilityIntervals:
+          intervals:
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
         timeAvailableFor: P4W
         clientOrgId: clientOrgId
         name: aurDemo - https://calendar.aurinko.io/aurDemo
@@ -8716,6 +8783,8 @@ components:
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
+        availabilityIntervals:
+          $ref: '#/components/schemas/AvailabilityIntervals'
         context:
           description: Custom client data stored for the profile.
           type: string
@@ -9140,6 +9209,27 @@ components:
         yomiFamilyName:
           type: string
       type: object
+    AvailabilityInterval:
+      example:
+        dateStartInclusive: 2000-01-23
+        hours:
+        - start: 09:00:00
+          end: 17:00:00
+        - start: 09:00:00
+          end: 17:00:00
+        dateEndInclusive: 2000-01-23
+      properties:
+        dateStartInclusive:
+          format: date
+          type: string
+        dateEndInclusive:
+          format: date
+          type: string
+        hours:
+          items:
+            $ref: '#/components/schemas/WorkingInterval'
+          type: array
+      type: object
     EmailDraftSendResponse:
       example:
         status: Ok
@@ -9175,6 +9265,22 @@ components:
           timezone: timezone
         description: description
         durationMinutes: 30
+        availabilityIntervals:
+          intervals:
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
         timeAvailableFor: P4W
         name: aurDemo - https://calendar.aurinko.io/aurDemo
         context: context
@@ -9224,6 +9330,8 @@ components:
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
+        availabilityIntervals:
+          $ref: '#/components/schemas/AvailabilityIntervals'
         context:
           description: Custom client data stored for the profile.
           type: string
@@ -9486,6 +9594,22 @@ components:
           timezone: timezone
         description: description
         durationMinutes: 30
+        availabilityIntervals:
+          intervals:
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
         timeAvailableFor: P4W
         clientOrgId: clientOrgId
         name: aurDemo - https://calendar.aurinko.io/aurDemo
@@ -9536,6 +9660,8 @@ components:
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
+        availabilityIntervals:
+          $ref: '#/components/schemas/AvailabilityIntervals'
         context:
           description: Custom client data stored for the profile.
           type: string
@@ -9773,6 +9899,7 @@ components:
         - keywords
         references: references
         subject: subject
+        webLink: webLink
         threadIndex: threadIndex
         internetHeaders:
         - name: name
@@ -9945,6 +10072,9 @@ components:
             type: string
           type: object
         folderId:
+          readOnly: true
+          type: string
+        webLink:
           readOnly: true
           type: string
         omitted:
@@ -10230,6 +10360,22 @@ components:
         - free
         - free
         durationMinutes: 0
+        availabilityIntervals:
+          intervals:
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
         defaultWorkHours:
           daySchedules:
           - dayOfWeek: monday
@@ -10336,6 +10482,8 @@ components:
           type: string
         defaultWorkHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
+        availabilityIntervals:
+          $ref: '#/components/schemas/AvailabilityIntervals'
         freeStatuses:
           default:
           - free
@@ -10699,6 +10847,29 @@ components:
           type: boolean
         templatesCount:
           type: integer
+      type: object
+    AvailabilityIntervals:
+      example:
+        intervals:
+        - dateStartInclusive: 2000-01-23
+          hours:
+          - start: 09:00:00
+            end: 17:00:00
+          - start: 09:00:00
+            end: 17:00:00
+          dateEndInclusive: 2000-01-23
+        - dateStartInclusive: 2000-01-23
+          hours:
+          - start: 09:00:00
+            end: 17:00:00
+          - start: 09:00:00
+            end: 17:00:00
+          dateEndInclusive: 2000-01-23
+      properties:
+        intervals:
+          items:
+            $ref: '#/components/schemas/AvailabilityInterval'
+          type: array
       type: object
     SeriesInfo:
       example:
@@ -11239,6 +11410,22 @@ components:
             timezone: timezone
           description: description
           durationMinutes: 30
+          availabilityIntervals:
+            intervals:
+            - dateStartInclusive: 2000-01-23
+              hours:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+              dateEndInclusive: 2000-01-23
+            - dateStartInclusive: 2000-01-23
+              hours:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+              dateEndInclusive: 2000-01-23
           timeAvailableFor: P4W
           clientOrgId: clientOrgId
           name: aurDemo - https://calendar.aurinko.io/aurDemo
@@ -11268,6 +11455,22 @@ components:
             timezone: timezone
           description: description
           durationMinutes: 30
+          availabilityIntervals:
+            intervals:
+            - dateStartInclusive: 2000-01-23
+              hours:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+              dateEndInclusive: 2000-01-23
+            - dateStartInclusive: 2000-01-23
+              hours:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+              dateEndInclusive: 2000-01-23
           timeAvailableFor: P4W
           clientOrgId: clientOrgId
           name: aurDemo - https://calendar.aurinko.io/aurDemo
@@ -11502,6 +11705,22 @@ components:
           timezone: timezone
         description: description
         durationMinutes: 30
+        availabilityIntervals:
+          intervals:
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
+          - dateStartInclusive: 2000-01-23
+            hours:
+            - start: 09:00:00
+              end: 17:00:00
+            - start: 09:00:00
+              end: 17:00:00
+            dateEndInclusive: 2000-01-23
         timeAvailableFor: P4W
         name: aurDemo - https://calendar.aurinko.io/aurDemo
         context: context
@@ -11555,6 +11774,8 @@ components:
           type: string
         workHours:
           $ref: '#/components/schemas/WeekWorkSchedule'
+        availabilityIntervals:
+          $ref: '#/components/schemas/AvailabilityIntervals'
         context:
           description: Custom client data stored for the profile.
           type: string
@@ -11626,6 +11847,22 @@ components:
             timezone: timezone
           description: description
           durationMinutes: 30
+          availabilityIntervals:
+            intervals:
+            - dateStartInclusive: 2000-01-23
+              hours:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+              dateEndInclusive: 2000-01-23
+            - dateStartInclusive: 2000-01-23
+              hours:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+              dateEndInclusive: 2000-01-23
           timeAvailableFor: P4W
           name: aurDemo - https://calendar.aurinko.io/aurDemo
           context: context
@@ -11654,6 +11891,22 @@ components:
             timezone: timezone
           description: description
           durationMinutes: 30
+          availabilityIntervals:
+            intervals:
+            - dateStartInclusive: 2000-01-23
+              hours:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+              dateEndInclusive: 2000-01-23
+            - dateStartInclusive: 2000-01-23
+              hours:
+              - start: 09:00:00
+                end: 17:00:00
+              - start: 09:00:00
+                end: 17:00:00
+              dateEndInclusive: 2000-01-23
           timeAvailableFor: P4W
           name: aurDemo - https://calendar.aurinko.io/aurDemo
           context: context
@@ -11724,6 +11977,7 @@ components:
           - keywords
           references: references
           subject: subject
+          webLink: webLink
           threadIndex: threadIndex
           internetHeaders:
           - name: name
@@ -11809,6 +12063,7 @@ components:
           - keywords
           references: references
           subject: subject
+          webLink: webLink
           threadIndex: threadIndex
           internetHeaders:
           - name: name

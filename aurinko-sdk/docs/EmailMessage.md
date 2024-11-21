@@ -35,6 +35,7 @@
 |**internetHeaders** | [**List&lt;EmailHeader&gt;**](EmailHeader.md) |  |  [optional] |
 |**nativeProperties** | **Map&lt;String, String&gt;** |  |  [optional] |
 |**folderId** | **String** |  |  [optional] [readonly] |
+|**webLink** | **String** |  |  [optional] [readonly] |
 |**omitted** | [**List&lt;OmittedEnum&gt;**](#List&lt;OmittedEnum&gt;) |  |  [optional] [readonly] |
 
 

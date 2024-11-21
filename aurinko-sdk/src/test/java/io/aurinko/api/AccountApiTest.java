@@ -78,8 +78,9 @@ public class AccountApiTest {
     @Test
     public void getMyAccountTest() throws ApiException {
         Boolean pingProvider = null;
+        Boolean includeProviderAuth = null;
         CompletableFuture<ApiAccountOutDto> response = 
-        api.getMyAccount(pingProvider);
+        api.getMyAccount(pingProvider, includeProviderAuth);
         
         // TODO: test validations
     }

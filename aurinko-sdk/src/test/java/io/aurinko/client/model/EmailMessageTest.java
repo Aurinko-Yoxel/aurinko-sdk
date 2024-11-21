@@ -271,6 +271,14 @@ class EmailMessageTest {
     }
 
     /**
+     * Test the property 'webLink'
+     */
+    @Test
+    void webLinkTest() {
+        // TODO: test webLink
+    }
+
+    /**
      * Test the property 'omitted'
      */
     @Test

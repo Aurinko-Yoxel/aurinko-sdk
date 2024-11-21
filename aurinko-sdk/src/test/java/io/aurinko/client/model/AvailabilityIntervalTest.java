@@ -18,138 +18,51 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.AvailabilityIntervals;
-import io.aurinko.client.model.WeekWorkSchedule;
-import java.time.OffsetDateTime;
+import io.aurinko.client.model.WorkingInterval;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BookingInDto
+ * Model tests for AvailabilityInterval
  */
-class BookingInDtoTest {
-    private final BookingInDto model = new BookingInDto();
+class AvailabilityIntervalTest {
+    private final AvailabilityInterval model = new AvailabilityInterval();
 
     /**
-     * Model tests for BookingInDto
+     * Model tests for AvailabilityInterval
      */
     @Test
-    void testBookingInDto() {
-        // TODO: test BookingInDto
+    void testAvailabilityInterval() {
+        // TODO: test AvailabilityInterval
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'dateStartInclusive'
      */
     @Test
-    void nameTest() {
-        // TODO: test name
+    void dateStartInclusiveTest() {
+        // TODO: test dateStartInclusive
     }
 
     /**
-     * Test the property 'durationMinutes'
+     * Test the property 'dateEndInclusive'
      */
     @Test
-    void durationMinutesTest() {
-        // TODO: test durationMinutes
+    void dateEndInclusiveTest() {
+        // TODO: test dateEndInclusive
     }
 
     /**
-     * Test the property 'availabilityStep'
+     * Test the property 'hours'
      */
     @Test
-    void availabilityStepTest() {
-        // TODO: test availabilityStep
-    }
-
-    /**
-     * Test the property 'startTime'
-     */
-    @Test
-    void startTimeTest() {
-        // TODO: test startTime
-    }
-
-    /**
-     * Test the property 'endTime'
-     */
-    @Test
-    void endTimeTest() {
-        // TODO: test endTime
-    }
-
-    /**
-     * Test the property 'timeAvailableFor'
-     */
-    @Test
-    void timeAvailableForTest() {
-        // TODO: test timeAvailableFor
-    }
-
-    /**
-     * Test the property 'subject'
-     */
-    @Test
-    void subjectTest() {
-        // TODO: test subject
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'location'
-     */
-    @Test
-    void locationTest() {
-        // TODO: test location
-    }
-
-    /**
-     * Test the property 'workHours'
-     */
-    @Test
-    void workHoursTest() {
-        // TODO: test workHours
-    }
-
-    /**
-     * Test the property 'availabilityIntervals'
-     */
-    @Test
-    void availabilityIntervalsTest() {
-        // TODO: test availabilityIntervals
-    }
-
-    /**
-     * Test the property 'context'
-     */
-    @Test
-    void contextTest() {
-        // TODO: test context
-    }
-
-    /**
-     * Test the property 'startConference'
-     */
-    @Test
-    void startConferenceTest() {
-        // TODO: test startConference
-    }
-
-    /**
-     * Test the property 'openMeetingUrl'
-     */
-    @Test
-    void openMeetingUrlTest() {
-        // TODO: test openMeetingUrl
+    void hoursTest() {
+        // TODO: test hours
     }
 
 }

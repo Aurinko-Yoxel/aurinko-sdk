@@ -70,6 +70,7 @@ import io.aurinko.client.ApiClient;
   EmailMessage.JSON_PROPERTY_INTERNET_HEADERS,
   EmailMessage.JSON_PROPERTY_NATIVE_PROPERTIES,
   EmailMessage.JSON_PROPERTY_FOLDER_ID,
+  EmailMessage.JSON_PROPERTY_WEB_LINK,
   EmailMessage.JSON_PROPERTY_OMITTED
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
@@ -293,6 +294,9 @@ public class EmailMessage {
   public static final String JSON_PROPERTY_FOLDER_ID = "folderId";
   private String folderId;
 
+  public static final String JSON_PROPERTY_WEB_LINK = "webLink";
+  private String webLink;
+
   /**
    * Gets or Sets omitted
    */
@@ -361,6 +365,7 @@ public class EmailMessage {
     @JsonProperty(JSON_PROPERTY_REFERENCES) String references, 
     @JsonProperty(JSON_PROPERTY_THREAD_INDEX) String threadIndex, 
     @JsonProperty(JSON_PROPERTY_FOLDER_ID) String folderId, 
+    @JsonProperty(JSON_PROPERTY_WEB_LINK) String webLink, 
     @JsonProperty(JSON_PROPERTY_OMITTED) List<OmittedEnum> omitted
   ) {
   this();
@@ -381,6 +386,7 @@ public class EmailMessage {
     this.references = references;
     this.threadIndex = threadIndex;
     this.folderId = folderId;
+    this.webLink = webLink;
     this.omitted = omitted;
   }
 
@@ -951,6 +957,20 @@ public class EmailMessage {
 
 
   /**
+   * Get webLink
+   * @return webLink
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_WEB_LINK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getWebLink() {
+    return webLink;
+  }
+
+
+
+
+  /**
    * Get omitted
    * @return omitted
    */
@@ -1004,12 +1024,13 @@ public class EmailMessage {
         Objects.equals(this.internetHeaders, emailMessage.internetHeaders) &&
         Objects.equals(this.nativeProperties, emailMessage.nativeProperties) &&
         Objects.equals(this.folderId, emailMessage.folderId) &&
+        Objects.equals(this.webLink, emailMessage.webLink) &&
         Objects.equals(this.omitted, emailMessage.omitted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, threadId, createdTime, lastModifiedTime, sentAt, receivedAt, internetMessageId, subject, sysLabels, keywords, sysClassifications, sensitivity, meetingMessageMethod, from, to, cc, bcc, replyTo, hasAttachments, body, bodySnippet, attachments, inReplyTo, references, threadIndex, internetHeaders, nativeProperties, folderId, omitted);
+    return Objects.hash(id, threadId, createdTime, lastModifiedTime, sentAt, receivedAt, internetMessageId, subject, sysLabels, keywords, sysClassifications, sensitivity, meetingMessageMethod, from, to, cc, bcc, replyTo, hasAttachments, body, bodySnippet, attachments, inReplyTo, references, threadIndex, internetHeaders, nativeProperties, folderId, webLink, omitted);
   }
 
   @Override
@@ -1044,6 +1065,7 @@ public class EmailMessage {
     sb.append("    internetHeaders: ").append(toIndentedString(internetHeaders)).append("\n");
     sb.append("    nativeProperties: ").append(toIndentedString(nativeProperties)).append("\n");
     sb.append("    folderId: ").append(toIndentedString(folderId)).append("\n");
+    sb.append("    webLink: ").append(toIndentedString(webLink)).append("\n");
     sb.append("    omitted: ").append(toIndentedString(omitted)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1276,6 +1298,11 @@ public class EmailMessage {
     // add `folderId` to the URL query string
     if (getFolderId() != null) {
       joiner.add(String.format("%sfolderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFolderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `webLink` to the URL query string
+    if (getWebLink() != null) {
+      joiner.add(String.format("%swebLink%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getWebLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `omitted` to the URL query string

@@ -453,7 +453,7 @@ CompletableFuture<ApiResponse<Void>>
 
 ## getMyAccount
 
-> CompletableFuture<ApiAccountOutDto> getMyAccount(pingProvider)
+> CompletableFuture<ApiAccountOutDto> getMyAccount(pingProvider, includeProviderAuth)
 
 Get account status
 
@@ -519,8 +519,9 @@ public class Example {
 
         AccountApi apiInstance = new AccountApi(defaultClient);
         Boolean pingProvider = true; // Boolean | If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite.
+        Boolean includeProviderAuth = true; // Boolean | 
         try {
-            CompletableFuture<ApiAccountOutDto> result = apiInstance.getMyAccount(pingProvider);
+            CompletableFuture<ApiAccountOutDto> result = apiInstance.getMyAccount(pingProvider, includeProviderAuth);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountApi#getMyAccount");
@@ -539,6 +540,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **pingProvider** | **Boolean**| If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. | [optional] |
+| **includeProviderAuth** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -562,7 +564,7 @@ CompletableFuture<[**ApiAccountOutDto**](ApiAccountOutDto.md)>
 
 ## getMyAccountWithHttpInfo
 
-> CompletableFuture<ApiResponse<ApiAccountOutDto>> getMyAccount getMyAccountWithHttpInfo(pingProvider)
+> CompletableFuture<ApiResponse<ApiAccountOutDto>> getMyAccount getMyAccountWithHttpInfo(pingProvider, includeProviderAuth)
 
 Get account status
 
@@ -629,8 +631,9 @@ public class Example {
 
         AccountApi apiInstance = new AccountApi(defaultClient);
         Boolean pingProvider = true; // Boolean | If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite.
+        Boolean includeProviderAuth = true; // Boolean | 
         try {
-            CompletableFuture<ApiResponse<ApiAccountOutDto>> response = apiInstance.getMyAccountWithHttpInfo(pingProvider);
+            CompletableFuture<ApiResponse<ApiAccountOutDto>> response = apiInstance.getMyAccountWithHttpInfo(pingProvider, includeProviderAuth);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -658,6 +661,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **pingProvider** | **Boolean**| If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. | [optional] |
+| **includeProviderAuth** | **Boolean**|  | [optional] |
 
 ### Return type
 
