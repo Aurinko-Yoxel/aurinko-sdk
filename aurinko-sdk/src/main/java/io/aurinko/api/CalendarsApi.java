@@ -19,6 +19,7 @@ import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.Calendar;
 import io.aurinko.client.model.CalendarCreate;
+import io.aurinko.client.model.CalendarMode;
 import io.aurinko.client.model.CalendarUpdate;
 import io.aurinko.client.model.CalendarsPage;
 
@@ -183,13 +184,14 @@ public class CalendarsApi {
    * Request list of calendars
    * 
    * @param pageToken A token received as nextPageToken from a previous page request (for the first page it must be empty) (optional)
-   * @param withShared  (optional)
+   * @param withShared Shows shared calendars if any available (optional, default to false)
+   * @param mode Calendar type to request (make sense only for Office365) (optional)
    * @return CompletableFuture&lt;CalendarsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<CalendarsPage> calendars(String pageToken, Boolean withShared) throws ApiException {
+  public CompletableFuture<CalendarsPage> calendars(String pageToken, Boolean withShared, CalendarMode mode) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = calendarsRequestBuilder(pageToken, withShared);
+      HttpRequest.Builder localVarRequestBuilder = calendarsRequestBuilder(pageToken, withShared, mode);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -215,13 +217,14 @@ public class CalendarsApi {
    * Request list of calendars
    * 
    * @param pageToken A token received as nextPageToken from a previous page request (for the first page it must be empty) (optional)
-   * @param withShared  (optional)
+   * @param withShared Shows shared calendars if any available (optional, default to false)
+   * @param mode Calendar type to request (make sense only for Office365) (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;CalendarsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<CalendarsPage>> calendarsWithHttpInfo(String pageToken, Boolean withShared) throws ApiException {
+  public CompletableFuture<ApiResponse<CalendarsPage>> calendarsWithHttpInfo(String pageToken, Boolean withShared, CalendarMode mode) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = calendarsRequestBuilder(pageToken, withShared);
+      HttpRequest.Builder localVarRequestBuilder = calendarsRequestBuilder(pageToken, withShared, mode);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -250,7 +253,7 @@ public class CalendarsApi {
     }
   }
 
-  private HttpRequest.Builder calendarsRequestBuilder(String pageToken, Boolean withShared) throws ApiException {
+  private HttpRequest.Builder calendarsRequestBuilder(String pageToken, Boolean withShared, CalendarMode mode) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -263,6 +266,8 @@ public class CalendarsApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("pageToken", pageToken));
     localVarQueryParameterBaseName = "withShared";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("withShared", withShared));
+    localVarQueryParameterBaseName = "mode";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("mode", mode));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

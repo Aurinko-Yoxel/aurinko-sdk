@@ -16,6 +16,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.Calendar;
 import io.aurinko.client.model.CalendarCreate;
+import io.aurinko.client.model.CalendarMode;
 import io.aurinko.client.model.CalendarUpdate;
 import io.aurinko.client.model.CalendarsPage;
 import org.junit.jupiter.api.Disabled;
@@ -67,8 +68,9 @@ public class CalendarsApiTest {
     public void calendarsTest() throws ApiException {
         String pageToken = null;
         Boolean withShared = null;
+        CalendarMode mode = null;
         CompletableFuture<CalendarsPage> response = 
-        api.calendars(pageToken, withShared);
+        api.calendars(pageToken, withShared, mode);
         
         // TODO: test validations
     }

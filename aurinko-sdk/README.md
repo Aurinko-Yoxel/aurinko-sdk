@@ -76,7 +76,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.aurinko</groupId>
   <artifactId>aurinko-api</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -86,7 +86,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.aurinko:aurinko-api:1.0.2"
+compile "io.aurinko:aurinko-api:1.0.3"
 ```
 
 ### Others
@@ -99,7 +99,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aurinko-api-1.0.2.jar`
+- `target/aurinko-api-1.0.3.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -352,6 +352,8 @@ Class | Method | HTTP request | Description
 *MessagesApi* | [**emailAttachmentWithHttpInfo**](docs/MessagesApi.md#emailAttachmentWithHttpInfo) | **GET** /v1/email/messages/{messageId}/attachments/{attachmentId} | Get a message attachment
 *MessagesApi* | [**message**](docs/MessagesApi.md#message) | **GET** /v1/email/messages/{messageId} | Get a message
 *MessagesApi* | [**messageWithHttpInfo**](docs/MessagesApi.md#messageWithHttpInfo) | **GET** /v1/email/messages/{messageId} | Get a message
+*MessagesApi* | [**messageRaw**](docs/MessagesApi.md#messageRaw) | **GET** /v1/email/messages/{messageId}/raw | Get a raw message
+*MessagesApi* | [**messageRawWithHttpInfo**](docs/MessagesApi.md#messageRawWithHttpInfo) | **GET** /v1/email/messages/{messageId}/raw | Get a raw message
 *MessagesApi* | [**messages**](docs/MessagesApi.md#messages) | **GET** /v1/email/messages | List email messages
 *MessagesApi* | [**messagesWithHttpInfo**](docs/MessagesApi.md#messagesWithHttpInfo) | **GET** /v1/email/messages | List email messages
 *MessagesApi* | [**reply**](docs/MessagesApi.md#reply) | **POST** /v1/email/messages/{messageId}/reply | Reply to a message
@@ -449,6 +451,7 @@ Class | Method | HTTP request | Description
  - [BookingWorkHours](docs/BookingWorkHours.md)
  - [Calendar](docs/Calendar.md)
  - [CalendarCreate](docs/CalendarCreate.md)
+ - [CalendarMode](docs/CalendarMode.md)
  - [CalendarUpdate](docs/CalendarUpdate.md)
  - [CalendarsPage](docs/CalendarsPage.md)
  - [ConfirmReservationOutDto](docs/ConfirmReservationOutDto.md)

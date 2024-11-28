@@ -11,31 +11,22 @@
  */
 
 
-package io.aurinko.client;
+package io.aurinko.client.model;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
-public class Configuration {
-    public static final String VERSION = "1.0.3";
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-    private static ApiClient defaultApiClient = new ApiClient();
-
+/**
+ * Model tests for CalendarMode
+ */
+class CalendarModeTest {
     /**
-     * Get the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @return Default API client
+     * Model tests for CalendarMode
      */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+    @Test
+    void testCalendarMode() {
+        // TODO: test CalendarMode
     }
 
-    /**
-     * Set the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @param apiClient API client
-     */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
-    }
 }

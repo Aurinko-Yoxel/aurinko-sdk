@@ -354,13 +354,23 @@ paths:
           nullable: true
           type: string
         style: form
-      - explode: true
+      - description: Shows shared calendars if any available
+        explode: true
         in: query
         name: withShared
         required: false
         schema:
+          default: false
           nullable: true
           type: boolean
+        style: form
+      - description: Calendar type to request (make sense only for Office365)
+        explode: true
+        in: query
+        name: mode
+        required: false
+        schema:
+          $ref: '#/components/schemas/CalendarMode'
         style: form
       responses:
         "200":
@@ -1483,6 +1493,35 @@ paths:
               https://api.aurinko.io/v1/email/messages/{id}
       x-accepts:
       - application/json
+  /v1/email/messages/{messageId}/raw:
+    get:
+      operationId: messageRaw
+      parameters:
+      - description: email message identifier
+        explode: false
+        in: path
+        name: messageId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Success
+      summary: Get a raw message
+      tags:
+      - Messages
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET -H 'Authorization: Bearer <access token>' \
+              https://api.aurinko.io/v1/email/messages/{id}/raw
+      x-accepts:
+      - text/plain
   /v1/email/messages/{messageId}/status:
     post:
       operationId: updateMessageStatus
@@ -9837,6 +9876,7 @@ components:
       example:
         notificationUrl: notificationUrl
         resource: resource
+        disabledByBilling: true
         active: true
         failDescription: failDescription
         id: 1
@@ -9856,6 +9896,8 @@ components:
           type: string
         failDescription:
           type: string
+        disabledByBilling:
+          type: boolean
       type: object
     CalendarUpdate:
       example:
@@ -11798,6 +11840,11 @@ components:
       - saturday
       - sunday
       type: string
+    CalendarMode:
+      enum:
+      - user
+      - group
+      type: string
     BookingAttachAccountsDto:
       example:
         accountIds:
@@ -13055,12 +13102,14 @@ components:
         records:
         - notificationUrl: notificationUrl
           resource: resource
+          disabledByBilling: true
           active: true
           failDescription: failDescription
           id: 1
           failSince: 2000-01-23T04:56:07.000+00:00
         - notificationUrl: notificationUrl
           resource: resource
+          disabledByBilling: true
           active: true
           failDescription: failDescription
           id: 1

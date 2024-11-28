@@ -39,7 +39,8 @@ import io.aurinko.client.ApiClient;
   SubscriptionResponse.JSON_PROPERTY_NOTIFICATION_URL,
   SubscriptionResponse.JSON_PROPERTY_ACTIVE,
   SubscriptionResponse.JSON_PROPERTY_FAIL_SINCE,
-  SubscriptionResponse.JSON_PROPERTY_FAIL_DESCRIPTION
+  SubscriptionResponse.JSON_PROPERTY_FAIL_DESCRIPTION,
+  SubscriptionResponse.JSON_PROPERTY_DISABLED_BY_BILLING
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class SubscriptionResponse {
@@ -60,6 +61,9 @@ public class SubscriptionResponse {
 
   public static final String JSON_PROPERTY_FAIL_DESCRIPTION = "failDescription";
   private String failDescription;
+
+  public static final String JSON_PROPERTY_DISABLED_BY_BILLING = "disabledByBilling";
+  private Boolean disabledByBilling;
 
   public SubscriptionResponse() { 
   }
@@ -208,6 +212,30 @@ public class SubscriptionResponse {
   }
 
 
+  public SubscriptionResponse disabledByBilling(Boolean disabledByBilling) {
+    this.disabledByBilling = disabledByBilling;
+    return this;
+  }
+
+  /**
+   * Get disabledByBilling
+   * @return disabledByBilling
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DISABLED_BY_BILLING)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Boolean getDisabledByBilling() {
+    return disabledByBilling;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DISABLED_BY_BILLING)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDisabledByBilling(Boolean disabledByBilling) {
+    this.disabledByBilling = disabledByBilling;
+  }
+
+
   /**
    * Return true if this SubscriptionResponse object is equal to o.
    */
@@ -225,12 +253,13 @@ public class SubscriptionResponse {
         Objects.equals(this.notificationUrl, subscriptionResponse.notificationUrl) &&
         Objects.equals(this.active, subscriptionResponse.active) &&
         Objects.equals(this.failSince, subscriptionResponse.failSince) &&
-        Objects.equals(this.failDescription, subscriptionResponse.failDescription);
+        Objects.equals(this.failDescription, subscriptionResponse.failDescription) &&
+        Objects.equals(this.disabledByBilling, subscriptionResponse.disabledByBilling);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, resource, notificationUrl, active, failSince, failDescription);
+    return Objects.hash(id, resource, notificationUrl, active, failSince, failDescription, disabledByBilling);
   }
 
   @Override
@@ -243,6 +272,7 @@ public class SubscriptionResponse {
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    failSince: ").append(toIndentedString(failSince)).append("\n");
     sb.append("    failDescription: ").append(toIndentedString(failDescription)).append("\n");
+    sb.append("    disabledByBilling: ").append(toIndentedString(disabledByBilling)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -318,6 +348,11 @@ public class SubscriptionResponse {
     // add `failDescription` to the URL query string
     if (getFailDescription() != null) {
       joiner.add(String.format("%sfailDescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFailDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `disabledByBilling` to the URL query string
+    if (getDisabledByBilling() != null) {
+      joiner.add(String.format("%sdisabledByBilling%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDisabledByBilling()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

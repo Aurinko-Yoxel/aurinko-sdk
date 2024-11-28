@@ -244,7 +244,7 @@ CompletableFuture<ApiResponse<[**Calendar**](Calendar.md)>>
 
 ## calendars
 
-> CompletableFuture<CalendarsPage> calendars(pageToken, withShared)
+> CompletableFuture<CalendarsPage> calendars(pageToken, withShared, mode)
 
 Request list of calendars
 
@@ -310,9 +310,10 @@ public class Example {
 
         CalendarsApi apiInstance = new CalendarsApi(defaultClient);
         String pageToken = "pageToken_example"; // String | A token received as nextPageToken from a previous page request (for the first page it must be empty)
-        Boolean withShared = true; // Boolean | 
+        Boolean withShared = false; // Boolean | Shows shared calendars if any available
+        CalendarMode mode = CalendarMode.fromValue("user"); // CalendarMode | Calendar type to request (make sense only for Office365)
         try {
-            CompletableFuture<CalendarsPage> result = apiInstance.calendars(pageToken, withShared);
+            CompletableFuture<CalendarsPage> result = apiInstance.calendars(pageToken, withShared, mode);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling CalendarsApi#calendars");
@@ -331,7 +332,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **pageToken** | **String**| A token received as nextPageToken from a previous page request (for the first page it must be empty) | [optional] |
-| **withShared** | **Boolean**|  | [optional] |
+| **withShared** | **Boolean**| Shows shared calendars if any available | [optional] [default to false] |
+| **mode** | [**CalendarMode**](.md)| Calendar type to request (make sense only for Office365) | [optional] [enum: user, group] |
 
 ### Return type
 
@@ -354,7 +356,7 @@ CompletableFuture<[**CalendarsPage**](CalendarsPage.md)>
 
 ## calendarsWithHttpInfo
 
-> CompletableFuture<ApiResponse<CalendarsPage>> calendars calendarsWithHttpInfo(pageToken, withShared)
+> CompletableFuture<ApiResponse<CalendarsPage>> calendars calendarsWithHttpInfo(pageToken, withShared, mode)
 
 Request list of calendars
 
@@ -421,9 +423,10 @@ public class Example {
 
         CalendarsApi apiInstance = new CalendarsApi(defaultClient);
         String pageToken = "pageToken_example"; // String | A token received as nextPageToken from a previous page request (for the first page it must be empty)
-        Boolean withShared = true; // Boolean | 
+        Boolean withShared = false; // Boolean | Shows shared calendars if any available
+        CalendarMode mode = CalendarMode.fromValue("user"); // CalendarMode | Calendar type to request (make sense only for Office365)
         try {
-            CompletableFuture<ApiResponse<CalendarsPage>> response = apiInstance.calendarsWithHttpInfo(pageToken, withShared);
+            CompletableFuture<ApiResponse<CalendarsPage>> response = apiInstance.calendarsWithHttpInfo(pageToken, withShared, mode);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -451,7 +454,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **pageToken** | **String**| A token received as nextPageToken from a previous page request (for the first page it must be empty) | [optional] |
-| **withShared** | **Boolean**|  | [optional] |
+| **withShared** | **Boolean**| Shows shared calendars if any available | [optional] [default to false] |
+| **mode** | [**CalendarMode**](.md)| Calendar type to request (make sense only for Office365) | [optional] [enum: user, group] |
 
 ### Return type
 

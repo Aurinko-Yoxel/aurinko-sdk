@@ -45,6 +45,7 @@ docs/BookingWorkHours.md
 docs/CalSyncApi.md
 docs/Calendar.md
 docs/CalendarCreate.md
+docs/CalendarMode.md
 docs/CalendarUpdate.md
 docs/CalendarsApi.md
 docs/CalendarsPage.md
@@ -272,6 +273,7 @@ src/main/java/io/aurinko/client/model/BookingUpdateDto.java
 src/main/java/io/aurinko/client/model/BookingWorkHours.java
 src/main/java/io/aurinko/client/model/Calendar.java
 src/main/java/io/aurinko/client/model/CalendarCreate.java
+src/main/java/io/aurinko/client/model/CalendarMode.java
 src/main/java/io/aurinko/client/model/CalendarUpdate.java
 src/main/java/io/aurinko/client/model/CalendarsPage.java
 src/main/java/io/aurinko/client/model/ConfirmReservationOutDto.java
@@ -460,6 +462,7 @@ src/test/java/io/aurinko/client/model/BookingTimesOutDtoTest.java
 src/test/java/io/aurinko/client/model/BookingUpdateDtoTest.java
 src/test/java/io/aurinko/client/model/BookingWorkHoursTest.java
 src/test/java/io/aurinko/client/model/CalendarCreateTest.java
+src/test/java/io/aurinko/client/model/CalendarModeTest.java
 src/test/java/io/aurinko/client/model/CalendarTest.java
 src/test/java/io/aurinko/client/model/CalendarUpdateTest.java
 src/test/java/io/aurinko/client/model/CalendarsPageTest.java

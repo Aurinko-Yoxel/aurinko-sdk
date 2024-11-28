@@ -13,6 +13,7 @@
 |**active** | **Boolean** |  |  [optional] |
 |**failSince** | **OffsetDateTime** |  |  [optional] |
 |**failDescription** | **String** |  |  [optional] |
+|**disabledByBilling** | **Boolean** |  |  [optional] |
 
 
 

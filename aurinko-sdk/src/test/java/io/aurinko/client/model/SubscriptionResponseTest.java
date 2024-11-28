@@ -86,4 +86,12 @@ class SubscriptionResponseTest {
         // TODO: test failDescription
     }
 
+    /**
+     * Test the property 'disabledByBilling'
+     */
+    @Test
+    void disabledByBillingTest() {
+        // TODO: test disabledByBilling
+    }
+
 }

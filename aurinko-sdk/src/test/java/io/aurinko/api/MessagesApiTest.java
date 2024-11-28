@@ -102,6 +102,23 @@ public class MessagesApiTest {
     }
     
     /**
+     * Get a raw message
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void messageRawTest() throws ApiException {
+        String messageId = null;
+        CompletableFuture<String> response = 
+        api.messageRaw(messageId);
+        
+        // TODO: test validations
+    }
+    
+    /**
      * List email messages
      *
      * 

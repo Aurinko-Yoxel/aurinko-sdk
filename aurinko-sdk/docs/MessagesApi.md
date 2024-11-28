@@ -10,6 +10,8 @@ All URIs are relative to *https://api.aurinko.io*
 | [**emailAttachmentWithHttpInfo**](MessagesApi.md#emailAttachmentWithHttpInfo) | **GET** /v1/email/messages/{messageId}/attachments/{attachmentId} | Get a message attachment |
 | [**message**](MessagesApi.md#message) | **GET** /v1/email/messages/{messageId} | Get a message |
 | [**messageWithHttpInfo**](MessagesApi.md#messageWithHttpInfo) | **GET** /v1/email/messages/{messageId} | Get a message |
+| [**messageRaw**](MessagesApi.md#messageRaw) | **GET** /v1/email/messages/{messageId}/raw | Get a raw message |
+| [**messageRawWithHttpInfo**](MessagesApi.md#messageRawWithHttpInfo) | **GET** /v1/email/messages/{messageId}/raw | Get a raw message |
 | [**messages**](MessagesApi.md#messages) | **GET** /v1/email/messages | List email messages |
 | [**messagesWithHttpInfo**](MessagesApi.md#messagesWithHttpInfo) | **GET** /v1/email/messages | List email messages |
 | [**reply**](MessagesApi.md#reply) | **POST** /v1/email/messages/{messageId}/reply | Reply to a message |
@@ -730,6 +732,233 @@ CompletableFuture<ApiResponse<[**EmailMessage**](EmailMessage.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **408** | threadId may be yet unavailable for some IMAP providers |  * Retry-After -  <br>  |
+
+
+## messageRaw
+
+> CompletableFuture<String> messageRaw(messageId)
+
+Get a raw message
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.MessagesApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure API key authorization: UserSessionHeader
+        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
+        UserSessionHeader.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //UserSessionHeader.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: AuthTypeHeader
+        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
+        AuthTypeHeader.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //AuthTypeHeader.setApiKeyPrefix("Token");
+
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: AccountToken
+        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
+        AccountToken.setBearerToken("BEARER TOKEN");
+
+        // Configure API key authorization: AccountIdHeader
+        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
+        AccountIdHeader.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //AccountIdHeader.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: ClientIdHeader
+        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
+        ClientIdHeader.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //ClientIdHeader.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: UserSessionCookie
+        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
+        UserSessionCookie.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //UserSessionCookie.setApiKeyPrefix("Token");
+
+        // Configure HTTP bearer authorization: ExchangeIdToken
+        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
+        ExchangeIdToken.setBearerToken("BEARER TOKEN");
+
+        MessagesApi apiInstance = new MessagesApi(defaultClient);
+        String messageId = "messageId_example"; // String | email message identifier
+        try {
+            CompletableFuture<String> result = apiInstance.messageRaw(messageId);
+            System.out.println(result.get());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MessagesApi#messageRaw");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **messageId** | **String**| email message identifier | |
+
+### Return type
+
+CompletableFuture<**String**>
+
+
+### Authorization
+
+[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+## messageRawWithHttpInfo
+
+> CompletableFuture<ApiResponse<String>> messageRaw messageRawWithHttpInfo(messageId)
+
+Get a raw message
+
+### Example
+
+```java
+// Import classes:
+import io.aurinko.client.ApiClient;
+import io.aurinko.client.ApiException;
+import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
+import io.aurinko.client.auth.*;
+import io.aurinko.client.models.*;
+import io.aurinko.api.MessagesApi;
+import java.util.concurrent.CompletableFuture;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.aurinko.io");
+        
+        // Configure API key authorization: UserSessionHeader
+        ApiKeyAuth UserSessionHeader = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionHeader");
+        UserSessionHeader.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //UserSessionHeader.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: AuthTypeHeader
+        ApiKeyAuth AuthTypeHeader = (ApiKeyAuth) defaultClient.getAuthentication("AuthTypeHeader");
+        AuthTypeHeader.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //AuthTypeHeader.setApiKeyPrefix("Token");
+
+        // Configure HTTP basic authorization: AppAuth
+        HttpBasicAuth AppAuth = (HttpBasicAuth) defaultClient.getAuthentication("AppAuth");
+        AppAuth.setUsername("YOUR USERNAME");
+        AppAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: AccountToken
+        HttpBearerAuth AccountToken = (HttpBearerAuth) defaultClient.getAuthentication("AccountToken");
+        AccountToken.setBearerToken("BEARER TOKEN");
+
+        // Configure API key authorization: AccountIdHeader
+        ApiKeyAuth AccountIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("AccountIdHeader");
+        AccountIdHeader.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //AccountIdHeader.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: ClientIdHeader
+        ApiKeyAuth ClientIdHeader = (ApiKeyAuth) defaultClient.getAuthentication("ClientIdHeader");
+        ClientIdHeader.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //ClientIdHeader.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: UserSessionCookie
+        ApiKeyAuth UserSessionCookie = (ApiKeyAuth) defaultClient.getAuthentication("UserSessionCookie");
+        UserSessionCookie.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //UserSessionCookie.setApiKeyPrefix("Token");
+
+        // Configure HTTP bearer authorization: ExchangeIdToken
+        HttpBearerAuth ExchangeIdToken = (HttpBearerAuth) defaultClient.getAuthentication("ExchangeIdToken");
+        ExchangeIdToken.setBearerToken("BEARER TOKEN");
+
+        MessagesApi apiInstance = new MessagesApi(defaultClient);
+        String messageId = "messageId_example"; // String | email message identifier
+        try {
+            CompletableFuture<ApiResponse<String>> response = apiInstance.messageRawWithHttpInfo(messageId);
+            System.out.println("Status code: " + response.get().getStatusCode());
+            System.out.println("Response headers: " + response.get().getHeaders());
+            System.out.println("Response body: " + response.get().getData());
+        } catch (InterruptedException | ExecutionException e) {
+            ApiException apiException = (ApiException)e.getCause();
+            System.err.println("Exception when calling MessagesApi#messageRaw");
+            System.err.println("Status code: " + apiException.getCode());
+            System.err.println("Response headers: " + apiException.getResponseHeaders());
+            System.err.println("Reason: " + apiException.getResponseBody());
+            e.printStackTrace();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MessagesApi#messageRaw");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **messageId** | **String**| email message identifier | |
+
+### Return type
+
+CompletableFuture<ApiResponse<**String**>>
+
+
+### Authorization
+
+[UserSessionHeader](../README.md#UserSessionHeader), [AuthTypeHeader](../README.md#AuthTypeHeader), [AppAuth](../README.md#AppAuth), [AccountToken](../README.md#AccountToken), [AccountIdHeader](../README.md#AccountIdHeader), [ClientIdHeader](../README.md#ClientIdHeader), [UserSessionCookie](../README.md#UserSessionCookie), [ExchangeIdToken](../README.md#ExchangeIdToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
 
 
 ## messages
