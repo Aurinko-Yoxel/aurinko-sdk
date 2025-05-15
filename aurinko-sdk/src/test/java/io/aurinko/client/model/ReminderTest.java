@@ -18,32 +18,42 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.WeekWorkSchedule;
+import io.aurinko.client.model.ReminderOverride;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BookingWorkHours
+ * Model tests for Reminder
  */
-class BookingWorkHoursTest {
-    private final BookingWorkHours model = new BookingWorkHours();
+class ReminderTest {
+    private final Reminder model = new Reminder();
 
     /**
-     * Model tests for BookingWorkHours
+     * Model tests for Reminder
      */
     @Test
-    void testBookingWorkHours() {
-        // TODO: test BookingWorkHours
+    void testReminder() {
+        // TODO: test Reminder
     }
 
     /**
-     * Test the property 'workHours'
+     * Test the property 'useDefault'
      */
     @Test
-    void workHoursTest() {
-        // TODO: test workHours
+    void useDefaultTest() {
+        // TODO: test useDefault
+    }
+
+    /**
+     * Test the property 'overrides'
+     */
+    @Test
+    void overridesTest() {
+        // TODO: test overrides
     }
 
 }

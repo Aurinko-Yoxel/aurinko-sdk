@@ -18,7 +18,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.ReminderOverride;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -83,6 +86,22 @@ class CalendarTest {
     @Test
     void primaryTest() {
         // TODO: test primary
+    }
+
+    /**
+     * Test the property 'multipleRemindersSupported'
+     */
+    @Test
+    void multipleRemindersSupportedTest() {
+        // TODO: test multipleRemindersSupported
+    }
+
+    /**
+     * Test the property 'defaultReminders'
+     */
+    @Test
+    void defaultRemindersTest() {
+        // TODO: test defaultReminders
     }
 
 }

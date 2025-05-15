@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.AccountType;
 import io.aurinko.client.model.Scope;
+import io.aurinko.client.model.ServiceProvider;
 import io.aurinko.client.model.ServiceType;
 import io.aurinko.client.model.TokenStatus;
 import java.time.OffsetDateTime;
@@ -43,6 +44,7 @@ import io.aurinko.client.ApiClient;
   ApiAccountOutDto.JSON_PROPERTY_ID,
   ApiAccountOutDto.JSON_PROPERTY_PARENT_ID,
   ApiAccountOutDto.JSON_PROPERTY_SERVICE_TYPE,
+  ApiAccountOutDto.JSON_PROPERTY_SERVICE_PROVIDER,
   ApiAccountOutDto.JSON_PROPERTY_ACTIVE,
   ApiAccountOutDto.JSON_PROPERTY_TOKEN_STATUS,
   ApiAccountOutDto.JSON_PROPERTY_TOKEN_ERROR,
@@ -50,6 +52,7 @@ import io.aurinko.client.ApiClient;
   ApiAccountOutDto.JSON_PROPERTY_DAEMON,
   ApiAccountOutDto.JSON_PROPERTY_LOGIN_STRING,
   ApiAccountOutDto.JSON_PROPERTY_EMAIL,
+  ApiAccountOutDto.JSON_PROPERTY_EMAIL2,
   ApiAccountOutDto.JSON_PROPERTY_MAILBOX_ADDRESS,
   ApiAccountOutDto.JSON_PROPERTY_NAME,
   ApiAccountOutDto.JSON_PROPERTY_NAME2,
@@ -64,7 +67,8 @@ import io.aurinko.client.ApiClient;
   ApiAccountOutDto.JSON_PROPERTY_AUTH_NATIVE_SCOPES,
   ApiAccountOutDto.JSON_PROPERTY_AUTH_OBTAINED_AT,
   ApiAccountOutDto.JSON_PROPERTY_AUTH_EXPIRES_AT,
-  ApiAccountOutDto.JSON_PROPERTY_USER_ID
+  ApiAccountOutDto.JSON_PROPERTY_USER_ID,
+  ApiAccountOutDto.JSON_PROPERTY_COPY_TO_SENT
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ApiAccountOutDto {
@@ -79,6 +83,10 @@ public class ApiAccountOutDto {
   public static final String JSON_PROPERTY_SERVICE_TYPE = "serviceType";
   @javax.annotation.Nullable
   private ServiceType serviceType;
+
+  public static final String JSON_PROPERTY_SERVICE_PROVIDER = "serviceProvider";
+  @javax.annotation.Nullable
+  private ServiceProvider serviceProvider;
 
   public static final String JSON_PROPERTY_ACTIVE = "active";
   @javax.annotation.Nullable
@@ -107,6 +115,10 @@ public class ApiAccountOutDto {
   public static final String JSON_PROPERTY_EMAIL = "email";
   @javax.annotation.Nullable
   private String email;
+
+  public static final String JSON_PROPERTY_EMAIL2 = "email2";
+  @javax.annotation.Nullable
+  private String email2;
 
   public static final String JSON_PROPERTY_MAILBOX_ADDRESS = "mailboxAddress";
   @javax.annotation.Nullable
@@ -167,6 +179,10 @@ public class ApiAccountOutDto {
   public static final String JSON_PROPERTY_USER_ID = "userId";
   @javax.annotation.Nullable
   private String userId;
+
+  public static final String JSON_PROPERTY_COPY_TO_SENT = "copyToSent";
+  @javax.annotation.Nullable
+  private Boolean copyToSent;
 
   public ApiAccountOutDto() { 
   }
@@ -240,6 +256,30 @@ public class ApiAccountOutDto {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setServiceType(@javax.annotation.Nullable ServiceType serviceType) {
     this.serviceType = serviceType;
+  }
+
+
+  public ApiAccountOutDto serviceProvider(@javax.annotation.Nullable ServiceProvider serviceProvider) {
+    this.serviceProvider = serviceProvider;
+    return this;
+  }
+
+  /**
+   * Get serviceProvider
+   * @return serviceProvider
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SERVICE_PROVIDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public ServiceProvider getServiceProvider() {
+    return serviceProvider;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SERVICE_PROVIDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setServiceProvider(@javax.annotation.Nullable ServiceProvider serviceProvider) {
+    this.serviceProvider = serviceProvider;
   }
 
 
@@ -408,6 +448,30 @@ public class ApiAccountOutDto {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
+  }
+
+
+  public ApiAccountOutDto email2(@javax.annotation.Nullable String email2) {
+    this.email2 = email2;
+    return this;
+  }
+
+  /**
+   * Get email2
+   * @return email2
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_EMAIL2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getEmail2() {
+    return email2;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EMAIL2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEmail2(@javax.annotation.Nullable String email2) {
+    this.email2 = email2;
   }
 
 
@@ -787,6 +851,30 @@ public class ApiAccountOutDto {
   }
 
 
+  public ApiAccountOutDto copyToSent(@javax.annotation.Nullable Boolean copyToSent) {
+    this.copyToSent = copyToSent;
+    return this;
+  }
+
+  /**
+   * Copy sent emails to “Sent Messages” folder
+   * @return copyToSent
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_COPY_TO_SENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Boolean getCopyToSent() {
+    return copyToSent;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_COPY_TO_SENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCopyToSent(@javax.annotation.Nullable Boolean copyToSent) {
+    this.copyToSent = copyToSent;
+  }
+
+
   /**
    * Return true if this ApiAccountOutDto object is equal to o.
    */
@@ -802,6 +890,7 @@ public class ApiAccountOutDto {
     return Objects.equals(this.id, apiAccountOutDto.id) &&
         Objects.equals(this.parentId, apiAccountOutDto.parentId) &&
         Objects.equals(this.serviceType, apiAccountOutDto.serviceType) &&
+        Objects.equals(this.serviceProvider, apiAccountOutDto.serviceProvider) &&
         Objects.equals(this.active, apiAccountOutDto.active) &&
         Objects.equals(this.tokenStatus, apiAccountOutDto.tokenStatus) &&
         Objects.equals(this.tokenError, apiAccountOutDto.tokenError) &&
@@ -809,6 +898,7 @@ public class ApiAccountOutDto {
         Objects.equals(this.daemon, apiAccountOutDto.daemon) &&
         Objects.equals(this.loginString, apiAccountOutDto.loginString) &&
         Objects.equals(this.email, apiAccountOutDto.email) &&
+        Objects.equals(this.email2, apiAccountOutDto.email2) &&
         Objects.equals(this.mailboxAddress, apiAccountOutDto.mailboxAddress) &&
         Objects.equals(this.name, apiAccountOutDto.name) &&
         Objects.equals(this.name2, apiAccountOutDto.name2) &&
@@ -823,12 +913,13 @@ public class ApiAccountOutDto {
         Objects.equals(this.authNativeScopes, apiAccountOutDto.authNativeScopes) &&
         Objects.equals(this.authObtainedAt, apiAccountOutDto.authObtainedAt) &&
         Objects.equals(this.authExpiresAt, apiAccountOutDto.authExpiresAt) &&
-        Objects.equals(this.userId, apiAccountOutDto.userId);
+        Objects.equals(this.userId, apiAccountOutDto.userId) &&
+        Objects.equals(this.copyToSent, apiAccountOutDto.copyToSent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parentId, serviceType, active, tokenStatus, tokenError, type, daemon, loginString, email, mailboxAddress, name, name2, serverUrl, serverUrl2, clientOrgId, authUserId, authOrgId, timezone, tokenIssuedAt, authScopes, authNativeScopes, authObtainedAt, authExpiresAt, userId);
+    return Objects.hash(id, parentId, serviceType, serviceProvider, active, tokenStatus, tokenError, type, daemon, loginString, email, email2, mailboxAddress, name, name2, serverUrl, serverUrl2, clientOrgId, authUserId, authOrgId, timezone, tokenIssuedAt, authScopes, authNativeScopes, authObtainedAt, authExpiresAt, userId, copyToSent);
   }
 
   @Override
@@ -838,6 +929,7 @@ public class ApiAccountOutDto {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+    sb.append("    serviceProvider: ").append(toIndentedString(serviceProvider)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    tokenStatus: ").append(toIndentedString(tokenStatus)).append("\n");
     sb.append("    tokenError: ").append(toIndentedString(tokenError)).append("\n");
@@ -845,6 +937,7 @@ public class ApiAccountOutDto {
     sb.append("    daemon: ").append(toIndentedString(daemon)).append("\n");
     sb.append("    loginString: ").append(toIndentedString(loginString)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    email2: ").append(toIndentedString(email2)).append("\n");
     sb.append("    mailboxAddress: ").append(toIndentedString(mailboxAddress)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    name2: ").append(toIndentedString(name2)).append("\n");
@@ -860,6 +953,7 @@ public class ApiAccountOutDto {
     sb.append("    authObtainedAt: ").append(toIndentedString(authObtainedAt)).append("\n");
     sb.append("    authExpiresAt: ").append(toIndentedString(authExpiresAt)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    copyToSent: ").append(toIndentedString(copyToSent)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -922,6 +1016,11 @@ public class ApiAccountOutDto {
       joiner.add(String.format("%sserviceType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
+    // add `serviceProvider` to the URL query string
+    if (getServiceProvider() != null) {
+      joiner.add(String.format("%sserviceProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
     // add `active` to the URL query string
     if (getActive() != null) {
       joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
@@ -955,6 +1054,11 @@ public class ApiAccountOutDto {
     // add `email` to the URL query string
     if (getEmail() != null) {
       joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `email2` to the URL query string
+    if (getEmail2() != null) {
+      joiner.add(String.format("%semail2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `mailboxAddress` to the URL query string
@@ -1040,6 +1144,11 @@ public class ApiAccountOutDto {
     // add `userId` to the URL query string
     if (getUserId() != null) {
       joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `copyToSent` to the URL query string
+    if (getCopyToSent() != null) {
+      joiner.add(String.format("%scopyToSent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCopyToSent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

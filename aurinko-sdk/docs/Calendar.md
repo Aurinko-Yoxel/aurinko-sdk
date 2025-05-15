@@ -13,6 +13,8 @@
 |**description** | **String** |  |  [optional] [readonly] |
 |**accessRole** | [**AccessRoleEnum**](#AccessRoleEnum) |  |  [optional] [readonly] |
 |**primary** | **Boolean** |  |  [optional] [readonly] |
+|**multipleRemindersSupported** | **Boolean** |  |  [optional] [readonly] |
+|**defaultReminders** | [**List&lt;ReminderOverride&gt;**](ReminderOverride.md) |  |  [optional] |
 
 
 

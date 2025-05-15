@@ -18,160 +18,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for EmailTrackingEvent
+ * Model tests for ReminderOverride
  */
-class EmailTrackingEventTest {
-    private final EmailTrackingEvent model = new EmailTrackingEvent();
+class ReminderOverrideTest {
+    private final ReminderOverride model = new ReminderOverride();
 
     /**
-     * Model tests for EmailTrackingEvent
+     * Model tests for ReminderOverride
      */
     @Test
-    void testEmailTrackingEvent() {
-        // TODO: test EmailTrackingEvent
+    void testReminderOverride() {
+        // TODO: test ReminderOverride
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'minutes'
      */
     @Test
-    void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'createdAt'
-     */
-    @Test
-    void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'eventType'
-     */
-    @Test
-    void eventTypeTest() {
-        // TODO: test eventType
-    }
-
-    /**
-     * Test the property 'location'
-     */
-    @Test
-    void locationTest() {
-        // TODO: test location
-    }
-
-    /**
-     * Test the property 'userAgent'
-     */
-    @Test
-    void userAgentTest() {
-        // TODO: test userAgent
-    }
-
-    /**
-     * Test the property 'referrer'
-     */
-    @Test
-    void referrerTest() {
-        // TODO: test referrer
-    }
-
-    /**
-     * Test the property 'remoteAddr'
-     */
-    @Test
-    void remoteAddrTest() {
-        // TODO: test remoteAddr
-    }
-
-    /**
-     * Test the property 'openNumber'
-     */
-    @Test
-    void openNumberTest() {
-        // TODO: test openNumber
-    }
-
-    /**
-     * Test the property 'threadId'
-     */
-    @Test
-    void threadIdTest() {
-        // TODO: test threadId
-    }
-
-    /**
-     * Test the property 'messageId'
-     */
-    @Test
-    void messageIdTest() {
-        // TODO: test messageId
-    }
-
-    /**
-     * Test the property 'internetMessageId'
-     */
-    @Test
-    void internetMessageIdTest() {
-        // TODO: test internetMessageId
-    }
-
-    /**
-     * Test the property 'trackingId'
-     */
-    @Test
-    void trackingIdTest() {
-        // TODO: test trackingId
-    }
-
-    /**
-     * Test the property 'trackingThreadId'
-     */
-    @Test
-    void trackingThreadIdTest() {
-        // TODO: test trackingThreadId
-    }
-
-    /**
-     * Test the property 'trackingMessageId'
-     */
-    @Test
-    void trackingMessageIdTest() {
-        // TODO: test trackingMessageId
-    }
-
-    /**
-     * Test the property 'trackingInternetMessageId'
-     */
-    @Test
-    void trackingInternetMessageIdTest() {
-        // TODO: test trackingInternetMessageId
-    }
-
-    /**
-     * Test the property 'context'
-     */
-    @Test
-    void contextTest() {
-        // TODO: test context
-    }
-
-    /**
-     * Test the property 'trackingCode'
-     */
-    @Test
-    void trackingCodeTest() {
-        // TODO: test trackingCode
+    void minutesTest() {
+        // TODO: test minutes
     }
 
 }

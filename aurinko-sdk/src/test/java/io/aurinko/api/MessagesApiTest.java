@@ -95,8 +95,9 @@ public class MessagesApiTest {
         List<String> nativeProperties = null;
         Boolean loadInlines = null;
         Boolean stripQuoted = null;
+        Boolean requireThreadId = null;
         CompletableFuture<EmailMessage> response = 
-        api.message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
+        api.message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId);
         
         // TODO: test validations
     }

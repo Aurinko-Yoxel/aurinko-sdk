@@ -491,7 +491,7 @@ CompletableFuture<ApiResponse<[**EmailAttachmentContent**](EmailAttachmentConten
 
 ## message
 
-> CompletableFuture<EmailMessage> message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted)
+> CompletableFuture<EmailMessage> message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId)
 
 Get a message
 
@@ -561,8 +561,9 @@ public class Example {
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean loadInlines = false; // Boolean | automatically pre-load relevant inline attachments
         Boolean stripQuoted = false; // Boolean | strip quoted elements from message body
+        Boolean requireThreadId = false; // Boolean | For IMAP accounts not supporting threads, wait for Aurinko to discover threads and provide its threadId
         try {
-            CompletableFuture<EmailMessage> result = apiInstance.message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
+            CompletableFuture<EmailMessage> result = apiInstance.message(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling MessagesApi#message");
@@ -585,6 +586,7 @@ public class Example {
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **loadInlines** | **Boolean**| automatically pre-load relevant inline attachments | [optional] [default to false] |
 | **stripQuoted** | **Boolean**| strip quoted elements from message body | [optional] [default to false] |
+| **requireThreadId** | **Boolean**| For IMAP accounts not supporting threads, wait for Aurinko to discover threads and provide its threadId | [optional] [default to false] |
 
 ### Return type
 
@@ -608,7 +610,7 @@ CompletableFuture<[**EmailMessage**](EmailMessage.md)>
 
 ## messageWithHttpInfo
 
-> CompletableFuture<ApiResponse<EmailMessage>> message messageWithHttpInfo(messageId, bodyType, nativeProperties, loadInlines, stripQuoted)
+> CompletableFuture<ApiResponse<EmailMessage>> message messageWithHttpInfo(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId)
 
 Get a message
 
@@ -679,8 +681,9 @@ public class Example {
         List<String> nativeProperties = Arrays.asList(); // List<String> | 
         Boolean loadInlines = false; // Boolean | automatically pre-load relevant inline attachments
         Boolean stripQuoted = false; // Boolean | strip quoted elements from message body
+        Boolean requireThreadId = false; // Boolean | For IMAP accounts not supporting threads, wait for Aurinko to discover threads and provide its threadId
         try {
-            CompletableFuture<ApiResponse<EmailMessage>> response = apiInstance.messageWithHttpInfo(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
+            CompletableFuture<ApiResponse<EmailMessage>> response = apiInstance.messageWithHttpInfo(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -712,6 +715,7 @@ public class Example {
 | **nativeProperties** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **loadInlines** | **Boolean**| automatically pre-load relevant inline attachments | [optional] [default to false] |
 | **stripQuoted** | **Boolean**| strip quoted elements from message body | [optional] [default to false] |
+| **requireThreadId** | **Boolean**| For IMAP accounts not supporting threads, wait for Aurinko to discover threads and provide its threadId | [optional] [default to false] |
 
 ### Return type
 

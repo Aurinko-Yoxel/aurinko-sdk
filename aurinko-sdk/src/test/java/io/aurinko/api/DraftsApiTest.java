@@ -20,6 +20,7 @@ import io.aurinko.client.model.EmailDraft;
 import io.aurinko.client.model.EmailDraftResponse;
 import io.aurinko.client.model.EmailDraftSendResponse;
 import java.time.OffsetDateTime;
+import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.OutgoingEmail;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -55,6 +56,23 @@ public class DraftsApiTest {
         OutgoingEmail outgoingEmail = null;
         CompletableFuture<EmailDraftResponse> response = 
         api.createDraft(bodyType, outgoingEmail);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete a draft message
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteDraftTest() throws ApiException {
+        String draftId = null;
+        CompletableFuture<OkResponse> response = 
+        api.deleteDraft(draftId);
         
         // TODO: test validations
     }

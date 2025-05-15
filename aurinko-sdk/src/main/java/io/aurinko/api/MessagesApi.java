@@ -314,12 +314,13 @@ public class MessagesApi {
    * @param nativeProperties  (optional)
    * @param loadInlines automatically pre-load relevant inline attachments (optional, default to false)
    * @param stripQuoted strip quoted elements from message body (optional, default to false)
+   * @param requireThreadId For IMAP accounts not supporting threads, wait for Aurinko to discover threads and provide its threadId (optional, default to false)
    * @return CompletableFuture&lt;EmailMessage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailMessage> message(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted) throws ApiException {
+  public CompletableFuture<EmailMessage> message(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted, Boolean requireThreadId) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
+      HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -349,12 +350,13 @@ public class MessagesApi {
    * @param nativeProperties  (optional)
    * @param loadInlines automatically pre-load relevant inline attachments (optional, default to false)
    * @param stripQuoted strip quoted elements from message body (optional, default to false)
+   * @param requireThreadId For IMAP accounts not supporting threads, wait for Aurinko to discover threads and provide its threadId (optional, default to false)
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailMessage>> messageWithHttpInfo(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailMessage>> messageWithHttpInfo(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted, Boolean requireThreadId) throws ApiException {
     try {
-      HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines, stripQuoted);
+      HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId);
       return memberVarHttpClient.sendAsync(
           localVarRequestBuilder.build(),
           HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
@@ -383,7 +385,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder messageRequestBuilder(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted) throws ApiException {
+  private HttpRequest.Builder messageRequestBuilder(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted, Boolean requireThreadId) throws ApiException {
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
       throw new ApiException(400, "Missing the required parameter 'messageId' when calling message");
@@ -405,6 +407,8 @@ public class MessagesApi {
     localVarQueryParams.addAll(ApiClient.parameterToPairs("loadInlines", loadInlines));
     localVarQueryParameterBaseName = "stripQuoted";
     localVarQueryParams.addAll(ApiClient.parameterToPairs("stripQuoted", stripQuoted));
+    localVarQueryParameterBaseName = "requireThreadId";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("requireThreadId", requireThreadId));
 
     if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
       StringJoiner queryJoiner = new StringJoiner("&");

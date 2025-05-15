@@ -21,6 +21,7 @@
 |**location** | **String** |  |  [optional] |
 |**userAgent** | **String** |  |  [optional] |
 |**remoteAddr** | **String** |  |  [optional] |
+|**openCount** | **Integer** |  |  [optional] |
 |**ignoreOpenClicks** | **Boolean** |  |  [optional] |
 |**hasBounced** | **Boolean** |  |  [optional] |
 

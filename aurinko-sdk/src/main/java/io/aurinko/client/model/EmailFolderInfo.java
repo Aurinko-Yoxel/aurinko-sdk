@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.SysLabel;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -38,7 +39,8 @@ import io.aurinko.client.ApiClient;
   EmailFolderInfo.JSON_PROPERTY_FULL_NAME,
   EmailFolderInfo.JSON_PROPERTY_IS_FOLDER,
   EmailFolderInfo.JSON_PROPERTY_IS_LABEL,
-  EmailFolderInfo.JSON_PROPERTY_PARENT_ID
+  EmailFolderInfo.JSON_PROPERTY_PARENT_ID,
+  EmailFolderInfo.JSON_PROPERTY_SYS_LABEL
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailFolderInfo {
@@ -65,6 +67,10 @@ public class EmailFolderInfo {
   public static final String JSON_PROPERTY_PARENT_ID = "parentId";
   @javax.annotation.Nullable
   private String parentId;
+
+  public static final String JSON_PROPERTY_SYS_LABEL = "sysLabel";
+  @javax.annotation.Nullable
+  private SysLabel sysLabel;
 
   public EmailFolderInfo() { 
   }
@@ -171,6 +177,30 @@ public class EmailFolderInfo {
 
 
 
+  public EmailFolderInfo sysLabel(@javax.annotation.Nullable SysLabel sysLabel) {
+    this.sysLabel = sysLabel;
+    return this;
+  }
+
+  /**
+   * Get sysLabel
+   * @return sysLabel
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SYS_LABEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public SysLabel getSysLabel() {
+    return sysLabel;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SYS_LABEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSysLabel(@javax.annotation.Nullable SysLabel sysLabel) {
+    this.sysLabel = sysLabel;
+  }
+
+
   /**
    * Return true if this EmailFolderInfo object is equal to o.
    */
@@ -188,12 +218,13 @@ public class EmailFolderInfo {
         Objects.equals(this.fullName, emailFolderInfo.fullName) &&
         Objects.equals(this.isFolder, emailFolderInfo.isFolder) &&
         Objects.equals(this.isLabel, emailFolderInfo.isLabel) &&
-        Objects.equals(this.parentId, emailFolderInfo.parentId);
+        Objects.equals(this.parentId, emailFolderInfo.parentId) &&
+        Objects.equals(this.sysLabel, emailFolderInfo.sysLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, fullName, isFolder, isLabel, parentId);
+    return Objects.hash(id, name, fullName, isFolder, isLabel, parentId, sysLabel);
   }
 
   @Override
@@ -206,6 +237,7 @@ public class EmailFolderInfo {
     sb.append("    isFolder: ").append(toIndentedString(isFolder)).append("\n");
     sb.append("    isLabel: ").append(toIndentedString(isLabel)).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    sysLabel: ").append(toIndentedString(sysLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -281,6 +313,11 @@ public class EmailFolderInfo {
     // add `parentId` to the URL query string
     if (getParentId() != null) {
       joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `sysLabel` to the URL query string
+    if (getSysLabel() != null) {
+      joiner.add(String.format("%ssysLabel%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSysLabel()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

@@ -13,6 +13,7 @@
 |**isFolder** | **Boolean** |  |  [optional] [readonly] |
 |**isLabel** | **Boolean** |  |  [optional] [readonly] |
 |**parentId** | **String** |  |  [optional] [readonly] |
+|**sysLabel** | **SysLabel** |  |  [optional] |
 
 
 

@@ -13,85 +13,80 @@
 
 package io.aurinko.client.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
+import java.util.Objects;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.EmailSendError;
-import java.util.Arrays;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for EmailSendResponse
+ * Gets or Sets SysLabel
  */
-class EmailSendResponseTest {
-    private final EmailSendResponse model = new EmailSendResponse();
+public enum SysLabel {
+  
+  JUNK("junk"),
+  
+  TRASH("trash"),
+  
+  SENT("sent"),
+  
+  INBOX("inbox"),
+  
+  UNREAD("unread"),
+  
+  FLAGGED("flagged"),
+  
+  IMPORTANT("important"),
+  
+  DRAFT("draft"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
-    /**
-     * Model tests for EmailSendResponse
-     */
-    @Test
-    void testEmailSendResponse() {
-        // TODO: test EmailSendResponse
+  private String value;
+
+  SysLabel(String value) {
+    this.value = value;
+  }
+
+  @JsonValue
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  @JsonCreator
+  public static SysLabel fromValue(String value) {
+    for (SysLabel b : SysLabel.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    return UNKNOWN_DEFAULT_OPEN_API;
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    if (prefix == null) {
+      prefix = "";
     }
 
-    /**
-     * Test the property 'status'
-     */
-    @Test
-    void statusTest() {
-        // TODO: test status
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'submittedMessageId'
-     */
-    @Test
-    void submittedMessageIdTest() {
-        // TODO: test submittedMessageId
-    }
-
-    /**
-     * Test the property 'threadId'
-     */
-    @Test
-    void threadIdTest() {
-        // TODO: test threadId
-    }
-
-    /**
-     * Test the property 'trackingId'
-     */
-    @Test
-    void trackingIdTest() {
-        // TODO: test trackingId
-    }
-
-    /**
-     * Test the property 'processingStatus'
-     */
-    @Test
-    void processingStatusTest() {
-        // TODO: test processingStatus
-    }
-
-    /**
-     * Test the property 'processingError'
-     */
-    @Test
-    void processingErrorTest() {
-        // TODO: test processingError
-    }
+    return String.format("%s=%s", prefix, this.toString());
+  }
 
 }
+

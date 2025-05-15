@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**serviceType** | **ServiceType** |  |  |
+|**serviceProvider** | **ServiceProvider** |  |  [optional] |
 |**authScopes** | **List&lt;Scope&gt;** |  |  [optional] |
 |**authOrgId** | **String** |  |  [optional] |
 |**authUserId** | **String** |  |  [optional] |
@@ -22,9 +23,11 @@
 |**authObtainedAt** | **OffsetDateTime** |  |  [optional] |
 |**authExpiresAt** | **OffsetDateTime** |  |  [optional] |
 |**email** | **String** | This or loginString field must be specified |  [optional] |
+|**email2** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**serverInfo** | **String** |  |  [optional] |
 |**timezone** | **String** |  |  [optional] |
+|**copyToSent** | **Boolean** | Copy sent emails to “Sent Messages” folder |  [optional] |
 
 
 

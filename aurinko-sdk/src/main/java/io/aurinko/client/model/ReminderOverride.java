@@ -30,75 +30,46 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import io.aurinko.client.ApiClient;
 /**
- * WellKnownFoldersIn
+ * ReminderOverride
  */
 @JsonPropertyOrder({
-  WellKnownFoldersIn.JSON_PROPERTY_ARCHIVE,
-  WellKnownFoldersIn.JSON_PROPERTY_SENT
+  ReminderOverride.JSON_PROPERTY_MINUTES
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
-public class WellKnownFoldersIn {
-  public static final String JSON_PROPERTY_ARCHIVE = "archive";
+public class ReminderOverride {
+  public static final String JSON_PROPERTY_MINUTES = "minutes";
   @javax.annotation.Nullable
-  private String archive;
+  private Integer minutes;
 
-  public static final String JSON_PROPERTY_SENT = "sent";
-  @javax.annotation.Nullable
-  private String sent;
-
-  public WellKnownFoldersIn() { 
+  public ReminderOverride() { 
   }
 
-  public WellKnownFoldersIn archive(@javax.annotation.Nullable String archive) {
-    this.archive = archive;
+  public ReminderOverride minutes(@javax.annotation.Nullable Integer minutes) {
+    this.minutes = minutes;
     return this;
   }
 
   /**
-   * an xid of folder - to mark it as Archive, set to null to clear Archive folder
-   * @return archive
+   * Get minutes
+   * @return minutes
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ARCHIVE)
+  @JsonProperty(JSON_PROPERTY_MINUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getArchive() {
-    return archive;
+  public Integer getMinutes() {
+    return minutes;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ARCHIVE)
+  @JsonProperty(JSON_PROPERTY_MINUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setArchive(@javax.annotation.Nullable String archive) {
-    this.archive = archive;
-  }
-
-
-  public WellKnownFoldersIn sent(@javax.annotation.Nullable String sent) {
-    this.sent = sent;
-    return this;
-  }
-
-  /**
-   * an xid of folder marked as an Sent, set to null to clear
-   * @return sent
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getSent() {
-    return sent;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSent(@javax.annotation.Nullable String sent) {
-    this.sent = sent;
+  public void setMinutes(@javax.annotation.Nullable Integer minutes) {
+    this.minutes = minutes;
   }
 
 
   /**
-   * Return true if this WellKnownFoldersIn object is equal to o.
+   * Return true if this ReminderOverride object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -108,22 +79,20 @@ public class WellKnownFoldersIn {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WellKnownFoldersIn wellKnownFoldersIn = (WellKnownFoldersIn) o;
-    return Objects.equals(this.archive, wellKnownFoldersIn.archive) &&
-        Objects.equals(this.sent, wellKnownFoldersIn.sent);
+    ReminderOverride reminderOverride = (ReminderOverride) o;
+    return Objects.equals(this.minutes, reminderOverride.minutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(archive, sent);
+    return Objects.hash(minutes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WellKnownFoldersIn {\n");
-    sb.append("    archive: ").append(toIndentedString(archive)).append("\n");
-    sb.append("    sent: ").append(toIndentedString(sent)).append("\n");
+    sb.append("class ReminderOverride {\n");
+    sb.append("    minutes: ").append(toIndentedString(minutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -171,14 +140,9 @@ public class WellKnownFoldersIn {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `archive` to the URL query string
-    if (getArchive() != null) {
-      joiner.add(String.format("%sarchive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getArchive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
-    }
-
-    // add `sent` to the URL query string
-    if (getSent() != null) {
-      joiner.add(String.format("%ssent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    // add `minutes` to the URL query string
+    if (getMinutes() != null) {
+      joiner.add(String.format("%sminutes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

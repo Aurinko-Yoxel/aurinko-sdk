@@ -24,6 +24,7 @@ import io.aurinko.client.model.MeetingInfo;
 import io.aurinko.client.model.OccurrenceInfo;
 import io.aurinko.client.model.Organizer;
 import io.aurinko.client.model.Recurrence;
+import io.aurinko.client.model.Reminder;
 import io.aurinko.client.model.Sensitivity;
 import io.aurinko.client.model.ShowAs;
 import java.time.OffsetDateTime;
@@ -158,6 +159,14 @@ class EventTest {
     @Test
     void recurrenceTest() {
         // TODO: test recurrence
+    }
+
+    /**
+     * Test the property 'reminder'
+     */
+    @Test
+    void reminderTest() {
+        // TODO: test reminder
     }
 
     /**

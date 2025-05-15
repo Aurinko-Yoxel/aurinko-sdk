@@ -48,6 +48,7 @@ import io.aurinko.client.ApiClient;
   TrackingData.JSON_PROPERTY_LOCATION,
   TrackingData.JSON_PROPERTY_USER_AGENT,
   TrackingData.JSON_PROPERTY_REMOTE_ADDR,
+  TrackingData.JSON_PROPERTY_OPEN_COUNT,
   TrackingData.JSON_PROPERTY_IGNORE_OPEN_CLICKS,
   TrackingData.JSON_PROPERTY_HAS_BOUNCED
 })
@@ -108,6 +109,10 @@ public class TrackingData {
   public static final String JSON_PROPERTY_REMOTE_ADDR = "remoteAddr";
   @javax.annotation.Nullable
   private String remoteAddr;
+
+  public static final String JSON_PROPERTY_OPEN_COUNT = "openCount";
+  @javax.annotation.Nullable
+  private Integer openCount;
 
   public static final String JSON_PROPERTY_IGNORE_OPEN_CLICKS = "ignoreOpenClicks";
   @javax.annotation.Nullable
@@ -456,6 +461,30 @@ public class TrackingData {
   }
 
 
+  public TrackingData openCount(@javax.annotation.Nullable Integer openCount) {
+    this.openCount = openCount;
+    return this;
+  }
+
+  /**
+   * Get openCount
+   * @return openCount
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Integer getOpenCount() {
+    return openCount;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOpenCount(@javax.annotation.Nullable Integer openCount) {
+    this.openCount = openCount;
+  }
+
+
   public TrackingData ignoreOpenClicks(@javax.annotation.Nullable Boolean ignoreOpenClicks) {
     this.ignoreOpenClicks = ignoreOpenClicks;
     return this;
@@ -530,13 +559,14 @@ public class TrackingData {
         Objects.equals(this.location, trackingData.location) &&
         Objects.equals(this.userAgent, trackingData.userAgent) &&
         Objects.equals(this.remoteAddr, trackingData.remoteAddr) &&
+        Objects.equals(this.openCount, trackingData.openCount) &&
         Objects.equals(this.ignoreOpenClicks, trackingData.ignoreOpenClicks) &&
         Objects.equals(this.hasBounced, trackingData.hasBounced);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, messageId, inetMessageId, threadId, sendDate, lastActivityTime, lastRespondedTime, trackReplies, trackOpens, trackingCode, context, location, userAgent, remoteAddr, ignoreOpenClicks, hasBounced);
+    return Objects.hash(id, messageId, inetMessageId, threadId, sendDate, lastActivityTime, lastRespondedTime, trackReplies, trackOpens, trackingCode, context, location, userAgent, remoteAddr, openCount, ignoreOpenClicks, hasBounced);
   }
 
   @Override
@@ -557,6 +587,7 @@ public class TrackingData {
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
     sb.append("    remoteAddr: ").append(toIndentedString(remoteAddr)).append("\n");
+    sb.append("    openCount: ").append(toIndentedString(openCount)).append("\n");
     sb.append("    ignoreOpenClicks: ").append(toIndentedString(ignoreOpenClicks)).append("\n");
     sb.append("    hasBounced: ").append(toIndentedString(hasBounced)).append("\n");
     sb.append("}");
@@ -674,6 +705,11 @@ public class TrackingData {
     // add `remoteAddr` to the URL query string
     if (getRemoteAddr() != null) {
       joiner.add(String.format("%sremoteAddr%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRemoteAddr()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `openCount` to the URL query string
+    if (getOpenCount() != null) {
+      joiner.add(String.format("%sopenCount%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOpenCount()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `ignoreOpenClicks` to the URL query string

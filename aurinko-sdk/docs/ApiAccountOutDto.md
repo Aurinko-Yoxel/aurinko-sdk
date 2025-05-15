@@ -10,6 +10,7 @@
 |**id** | **Long** |  |  [optional] |
 |**parentId** | **Long** |  |  [optional] |
 |**serviceType** | **ServiceType** |  |  [optional] |
+|**serviceProvider** | **ServiceProvider** |  |  [optional] |
 |**active** | **Boolean** | The account is always active in the current API version |  [optional] |
 |**tokenStatus** | **TokenStatus** |  |  [optional] |
 |**tokenError** | **String** |  |  [optional] |
@@ -17,6 +18,7 @@
 |**daemon** | **Boolean** |  |  [optional] |
 |**loginString** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
+|**email2** | **String** |  |  [optional] |
 |**mailboxAddress** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**name2** | **String** |  |  [optional] |
@@ -32,6 +34,7 @@
 |**authObtainedAt** | **OffsetDateTime** |  |  [optional] |
 |**authExpiresAt** | **OffsetDateTime** |  |  [optional] |
 |**userId** | **String** |  |  [optional] |
+|**copyToSent** | **Boolean** | Copy sent emails to “Sent Messages” folder |  [optional] |
 
 
 

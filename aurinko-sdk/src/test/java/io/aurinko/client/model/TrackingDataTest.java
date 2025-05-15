@@ -151,6 +151,14 @@ class TrackingDataTest {
     }
 
     /**
+     * Test the property 'openCount'
+     */
+    @Test
+    void openCountTest() {
+        // TODO: test openCount
+    }
+
+    /**
      * Test the property 'ignoreOpenClicks'
      */
     @Test

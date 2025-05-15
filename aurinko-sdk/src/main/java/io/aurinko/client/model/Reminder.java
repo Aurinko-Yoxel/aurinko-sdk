@@ -24,53 +24,92 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.WeekWorkSchedule;
+import io.aurinko.client.model.ReminderOverride;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import io.aurinko.client.ApiClient;
 /**
- * BookingWorkHours
+ * Reminder
  */
 @JsonPropertyOrder({
-  BookingWorkHours.JSON_PROPERTY_WORK_HOURS
+  Reminder.JSON_PROPERTY_USE_DEFAULT,
+  Reminder.JSON_PROPERTY_OVERRIDES
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
-public class BookingWorkHours {
-  public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
+public class Reminder {
+  public static final String JSON_PROPERTY_USE_DEFAULT = "useDefault";
   @javax.annotation.Nullable
-  private WeekWorkSchedule workHours;
+  private Boolean useDefault;
 
-  public BookingWorkHours() { 
+  public static final String JSON_PROPERTY_OVERRIDES = "overrides";
+  @javax.annotation.Nullable
+  private List<ReminderOverride> overrides = new ArrayList<>();
+
+  public Reminder() { 
   }
 
-  public BookingWorkHours workHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
-    this.workHours = workHours;
+  public Reminder useDefault(@javax.annotation.Nullable Boolean useDefault) {
+    this.useDefault = useDefault;
     return this;
   }
 
   /**
-   * Get workHours
-   * @return workHours
+   * Supported only for Google
+   * @return useDefault
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WORK_HOURS)
+  @JsonProperty(JSON_PROPERTY_USE_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public WeekWorkSchedule getWorkHours() {
-    return workHours;
+  public Boolean getUseDefault() {
+    return useDefault;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_WORK_HOURS)
+  @JsonProperty(JSON_PROPERTY_USE_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWorkHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
-    this.workHours = workHours;
+  public void setUseDefault(@javax.annotation.Nullable Boolean useDefault) {
+    this.useDefault = useDefault;
+  }
+
+
+  public Reminder overrides(@javax.annotation.Nullable List<ReminderOverride> overrides) {
+    this.overrides = overrides;
+    return this;
+  }
+
+  public Reminder addOverridesItem(ReminderOverride overridesItem) {
+    if (this.overrides == null) {
+      this.overrides = new ArrayList<>();
+    }
+    this.overrides.add(overridesItem);
+    return this;
+  }
+
+  /**
+   * Get overrides
+   * @return overrides
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OVERRIDES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<ReminderOverride> getOverrides() {
+    return overrides;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OVERRIDES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOverrides(@javax.annotation.Nullable List<ReminderOverride> overrides) {
+    this.overrides = overrides;
   }
 
 
   /**
-   * Return true if this BookingWorkHours object is equal to o.
+   * Return true if this Reminder object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -80,20 +119,22 @@ public class BookingWorkHours {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BookingWorkHours bookingWorkHours = (BookingWorkHours) o;
-    return Objects.equals(this.workHours, bookingWorkHours.workHours);
+    Reminder reminder = (Reminder) o;
+    return Objects.equals(this.useDefault, reminder.useDefault) &&
+        Objects.equals(this.overrides, reminder.overrides);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(workHours);
+    return Objects.hash(useDefault, overrides);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BookingWorkHours {\n");
-    sb.append("    workHours: ").append(toIndentedString(workHours)).append("\n");
+    sb.append("class Reminder {\n");
+    sb.append("    useDefault: ").append(toIndentedString(useDefault)).append("\n");
+    sb.append("    overrides: ").append(toIndentedString(overrides)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,9 +182,19 @@ public class BookingWorkHours {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `workHours` to the URL query string
-    if (getWorkHours() != null) {
-      joiner.add(getWorkHours().toUrlQueryString(prefix + "workHours" + suffix));
+    // add `useDefault` to the URL query string
+    if (getUseDefault() != null) {
+      joiner.add(String.format("%suseDefault%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUseDefault()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `overrides` to the URL query string
+    if (getOverrides() != null) {
+      for (int i = 0; i < getOverrides().size(); i++) {
+        if (getOverrides().get(i) != null) {
+          joiner.add(getOverrides().get(i).toUrlQueryString(String.format("%soverrides%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

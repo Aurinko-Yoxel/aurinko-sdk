@@ -21,6 +21,7 @@
 |**meetingInfo** | [**MeetingInfo**](MeetingInfo.md) |  |  [optional] |
 |**recurrenceType** | [**RecurrenceTypeEnum**](#RecurrenceTypeEnum) |  |  [optional] [readonly] |
 |**recurrence** | [**Recurrence**](Recurrence.md) |  |  [optional] |
+|**reminder** | [**Reminder**](Reminder.md) |  |  [optional] |
 |**occurrenceInfo** | [**OccurrenceInfo**](OccurrenceInfo.md) |  |  [optional] |
 |**iCalUid** | **String** |  |  [optional] [readonly] |
 |**globalId** | **String** |  |  [optional] [readonly] |

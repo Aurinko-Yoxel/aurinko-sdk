@@ -30,6 +30,7 @@ import io.aurinko.client.model.MeetingInfo;
 import io.aurinko.client.model.OccurrenceInfo;
 import io.aurinko.client.model.Organizer;
 import io.aurinko.client.model.Recurrence;
+import io.aurinko.client.model.Reminder;
 import io.aurinko.client.model.Sensitivity;
 import io.aurinko.client.model.ShowAs;
 import java.time.OffsetDateTime;
@@ -58,6 +59,7 @@ import io.aurinko.client.ApiClient;
   Event.JSON_PROPERTY_MEETING_INFO,
   Event.JSON_PROPERTY_RECURRENCE_TYPE,
   Event.JSON_PROPERTY_RECURRENCE,
+  Event.JSON_PROPERTY_REMINDER,
   Event.JSON_PROPERTY_OCCURRENCE_INFO,
   Event.JSON_PROPERTY_I_CAL_UID,
   Event.JSON_PROPERTY_GLOBAL_ID,
@@ -165,6 +167,10 @@ public class Event {
   public static final String JSON_PROPERTY_RECURRENCE = "recurrence";
   @javax.annotation.Nullable
   private Recurrence recurrence;
+
+  public static final String JSON_PROPERTY_REMINDER = "reminder";
+  @javax.annotation.Nullable
+  private Reminder reminder;
 
   public static final String JSON_PROPERTY_OCCURRENCE_INFO = "occurrenceInfo";
   @javax.annotation.Nullable
@@ -554,6 +560,30 @@ public class Event {
   }
 
 
+  public Event reminder(@javax.annotation.Nullable Reminder reminder) {
+    this.reminder = reminder;
+    return this;
+  }
+
+  /**
+   * Get reminder
+   * @return reminder
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REMINDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Reminder getReminder() {
+    return reminder;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_REMINDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReminder(@javax.annotation.Nullable Reminder reminder) {
+    this.reminder = reminder;
+  }
+
+
   public Event occurrenceInfo(@javax.annotation.Nullable OccurrenceInfo occurrenceInfo) {
     this.occurrenceInfo = occurrenceInfo;
     return this;
@@ -768,6 +798,7 @@ public class Event {
         Objects.equals(this.meetingInfo, event.meetingInfo) &&
         Objects.equals(this.recurrenceType, event.recurrenceType) &&
         Objects.equals(this.recurrence, event.recurrence) &&
+        Objects.equals(this.reminder, event.reminder) &&
         Objects.equals(this.occurrenceInfo, event.occurrenceInfo) &&
         Objects.equals(this.iCalUid, event.iCalUid) &&
         Objects.equals(this.globalId, event.globalId) &&
@@ -782,7 +813,7 @@ public class Event {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, etag, calendarId, createdTime, lastModifiedTime, subject, description, location, start, end, organizer, meetingInfo, recurrenceType, recurrence, occurrenceInfo, iCalUid, globalId, showAs, sensitivity, categories, htmlLink, hasAttachments, attachments, omitted);
+    return Objects.hash(id, etag, calendarId, createdTime, lastModifiedTime, subject, description, location, start, end, organizer, meetingInfo, recurrenceType, recurrence, reminder, occurrenceInfo, iCalUid, globalId, showAs, sensitivity, categories, htmlLink, hasAttachments, attachments, omitted);
   }
 
   @Override
@@ -803,6 +834,7 @@ public class Event {
     sb.append("    meetingInfo: ").append(toIndentedString(meetingInfo)).append("\n");
     sb.append("    recurrenceType: ").append(toIndentedString(recurrenceType)).append("\n");
     sb.append("    recurrence: ").append(toIndentedString(recurrence)).append("\n");
+    sb.append("    reminder: ").append(toIndentedString(reminder)).append("\n");
     sb.append("    occurrenceInfo: ").append(toIndentedString(occurrenceInfo)).append("\n");
     sb.append("    iCalUid: ").append(toIndentedString(iCalUid)).append("\n");
     sb.append("    globalId: ").append(toIndentedString(globalId)).append("\n");
@@ -928,6 +960,11 @@ public class Event {
     // add `recurrence` to the URL query string
     if (getRecurrence() != null) {
       joiner.add(getRecurrence().toUrlQueryString(prefix + "recurrence" + suffix));
+    }
+
+    // add `reminder` to the URL query string
+    if (getReminder() != null) {
+      joiner.add(getReminder().toUrlQueryString(prefix + "reminder" + suffix));
     }
 
     // add `occurrenceInfo` to the URL query string

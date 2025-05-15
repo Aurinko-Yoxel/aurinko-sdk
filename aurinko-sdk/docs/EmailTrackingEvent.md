@@ -14,6 +14,7 @@
 |**userAgent** | **String** |  |  [optional] |
 |**referrer** | **String** |  |  [optional] |
 |**remoteAddr** | **String** |  |  [optional] |
+|**openNumber** | **Integer** |  |  [optional] |
 |**threadId** | **String** |  |  [optional] |
 |**messageId** | **String** |  |  [optional] |
 |**internetMessageId** | **String** |  |  [optional] |

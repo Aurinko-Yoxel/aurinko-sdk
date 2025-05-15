@@ -28,6 +28,7 @@ import io.aurinko.client.model.EmailAddress;
 import io.aurinko.client.model.EmailAttachment;
 import io.aurinko.client.model.EmailHeader;
 import io.aurinko.client.model.Sensitivity;
+import io.aurinko.client.model.SysLabel;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -107,58 +108,9 @@ public class EmailMessage {
   @javax.annotation.Nullable
   private String subject;
 
-  /**
-   * Gets or Sets sysLabels
-   */
-  public enum SysLabelsEnum {
-    JUNK(String.valueOf("junk")),
-    
-    TRASH(String.valueOf("trash")),
-    
-    SENT(String.valueOf("sent")),
-    
-    INBOX(String.valueOf("inbox")),
-    
-    UNREAD(String.valueOf("unread")),
-    
-    FLAGGED(String.valueOf("flagged")),
-    
-    IMPORTANT(String.valueOf("important")),
-    
-    DRAFT(String.valueOf("draft")),
-    
-    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
-
-    private String value;
-
-    SysLabelsEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static SysLabelsEnum fromValue(String value) {
-      for (SysLabelsEnum b : SysLabelsEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-  }
-
   public static final String JSON_PROPERTY_SYS_LABELS = "sysLabels";
   @javax.annotation.Nullable
-  private List<SysLabelsEnum> sysLabels = new ArrayList<>();
+  private List<SysLabel> sysLabels = new ArrayList<>();
 
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
   @javax.annotation.Nullable
@@ -386,7 +338,7 @@ public class EmailMessage {
     @JsonProperty(JSON_PROPERTY_RECEIVED_AT) OffsetDateTime receivedAt, 
     @JsonProperty(JSON_PROPERTY_INTERNET_MESSAGE_ID) String internetMessageId, 
     @JsonProperty(JSON_PROPERTY_SUBJECT) String subject, 
-    @JsonProperty(JSON_PROPERTY_SYS_LABELS) List<SysLabelsEnum> sysLabels, 
+    @JsonProperty(JSON_PROPERTY_SYS_LABELS) List<SysLabel> sysLabels, 
     @JsonProperty(JSON_PROPERTY_SYS_CLASSIFICATIONS) List<SysClassificationsEnum> sysClassifications, 
     @JsonProperty(JSON_PROPERTY_HAS_ATTACHMENTS) Boolean hasAttachments, 
     @JsonProperty(JSON_PROPERTY_BODY) String body, 
@@ -539,7 +491,7 @@ public class EmailMessage {
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SYS_LABELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<SysLabelsEnum> getSysLabels() {
+  public List<SysLabel> getSysLabels() {
     return sysLabels;
   }
 
@@ -1187,9 +1139,11 @@ public class EmailMessage {
     // add `sysLabels` to the URL query string
     if (getSysLabels() != null) {
       for (int i = 0; i < getSysLabels().size(); i++) {
-        joiner.add(String.format("%ssysLabels%s%s=%s", prefix, suffix,
-            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getSysLabels().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+        if (getSysLabels().get(i) != null) {
+          joiner.add(String.format("%ssysLabels%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+              URLEncoder.encode(ApiClient.valueToString(getSysLabels().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+        }
       }
     }
 

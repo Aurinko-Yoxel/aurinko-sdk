@@ -41,6 +41,7 @@ import io.aurinko.client.ApiClient;
   EmailTrackingEvent.JSON_PROPERTY_USER_AGENT,
   EmailTrackingEvent.JSON_PROPERTY_REFERRER,
   EmailTrackingEvent.JSON_PROPERTY_REMOTE_ADDR,
+  EmailTrackingEvent.JSON_PROPERTY_OPEN_NUMBER,
   EmailTrackingEvent.JSON_PROPERTY_THREAD_ID,
   EmailTrackingEvent.JSON_PROPERTY_MESSAGE_ID,
   EmailTrackingEvent.JSON_PROPERTY_INTERNET_MESSAGE_ID,
@@ -123,6 +124,10 @@ public class EmailTrackingEvent {
   public static final String JSON_PROPERTY_REMOTE_ADDR = "remoteAddr";
   @javax.annotation.Nullable
   private String remoteAddr;
+
+  public static final String JSON_PROPERTY_OPEN_NUMBER = "openNumber";
+  @javax.annotation.Nullable
+  private Integer openNumber;
 
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
   @javax.annotation.Nullable
@@ -328,6 +333,30 @@ public class EmailTrackingEvent {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRemoteAddr(@javax.annotation.Nullable String remoteAddr) {
     this.remoteAddr = remoteAddr;
+  }
+
+
+  public EmailTrackingEvent openNumber(@javax.annotation.Nullable Integer openNumber) {
+    this.openNumber = openNumber;
+    return this;
+  }
+
+  /**
+   * Get openNumber
+   * @return openNumber
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OPEN_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Integer getOpenNumber() {
+    return openNumber;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OPEN_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOpenNumber(@javax.annotation.Nullable Integer openNumber) {
+    this.openNumber = openNumber;
   }
 
 
@@ -566,6 +595,7 @@ public class EmailTrackingEvent {
         Objects.equals(this.userAgent, emailTrackingEvent.userAgent) &&
         Objects.equals(this.referrer, emailTrackingEvent.referrer) &&
         Objects.equals(this.remoteAddr, emailTrackingEvent.remoteAddr) &&
+        Objects.equals(this.openNumber, emailTrackingEvent.openNumber) &&
         Objects.equals(this.threadId, emailTrackingEvent.threadId) &&
         Objects.equals(this.messageId, emailTrackingEvent.messageId) &&
         Objects.equals(this.internetMessageId, emailTrackingEvent.internetMessageId) &&
@@ -579,7 +609,7 @@ public class EmailTrackingEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, eventType, location, userAgent, referrer, remoteAddr, threadId, messageId, internetMessageId, trackingId, trackingThreadId, trackingMessageId, trackingInternetMessageId, context, trackingCode);
+    return Objects.hash(id, createdAt, eventType, location, userAgent, referrer, remoteAddr, openNumber, threadId, messageId, internetMessageId, trackingId, trackingThreadId, trackingMessageId, trackingInternetMessageId, context, trackingCode);
   }
 
   @Override
@@ -593,6 +623,7 @@ public class EmailTrackingEvent {
     sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
     sb.append("    referrer: ").append(toIndentedString(referrer)).append("\n");
     sb.append("    remoteAddr: ").append(toIndentedString(remoteAddr)).append("\n");
+    sb.append("    openNumber: ").append(toIndentedString(openNumber)).append("\n");
     sb.append("    threadId: ").append(toIndentedString(threadId)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    internetMessageId: ").append(toIndentedString(internetMessageId)).append("\n");
@@ -682,6 +713,11 @@ public class EmailTrackingEvent {
     // add `remoteAddr` to the URL query string
     if (getRemoteAddr() != null) {
       joiner.add(String.format("%sremoteAddr%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRemoteAddr()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `openNumber` to the URL query string
+    if (getOpenNumber() != null) {
+      joiner.add(String.format("%sopenNumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOpenNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `threadId` to the URL query string

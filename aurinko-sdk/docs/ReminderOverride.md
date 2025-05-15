@@ -1,13 +1,13 @@
 
 
-# BookingWorkHours
+# ReminderOverride
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**workHours** | [**WeekWorkSchedule**](WeekWorkSchedule.md) |  |  [optional] |
+|**minutes** | **Integer** |  |  [optional] |
 
 
 

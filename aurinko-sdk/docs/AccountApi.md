@@ -518,7 +518,7 @@ public class Example {
         ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         AccountApi apiInstance = new AccountApi(defaultClient);
-        Boolean pingProvider = true; // Boolean | If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite.
+        Boolean pingProvider = true; // Boolean | If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce, NetSuite, IMAP.
         Boolean includeProviderAuth = true; // Boolean | 
         try {
             CompletableFuture<ApiAccountOutDto> result = apiInstance.getMyAccount(pingProvider, includeProviderAuth);
@@ -539,7 +539,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **pingProvider** | **Boolean**| If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. | [optional] |
+| **pingProvider** | **Boolean**| If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce, NetSuite, IMAP. | [optional] |
 | **includeProviderAuth** | **Boolean**|  | [optional] |
 
 ### Return type
@@ -630,7 +630,7 @@ public class Example {
         ExchangeIdToken.setBearerToken("BEARER TOKEN");
 
         AccountApi apiInstance = new AccountApi(defaultClient);
-        Boolean pingProvider = true; // Boolean | If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite.
+        Boolean pingProvider = true; // Boolean | If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce, NetSuite, IMAP.
         Boolean includeProviderAuth = true; // Boolean | 
         try {
             CompletableFuture<ApiResponse<ApiAccountOutDto>> response = apiInstance.getMyAccountWithHttpInfo(pingProvider, includeProviderAuth);
@@ -660,7 +660,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **pingProvider** | **Boolean**| If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. | [optional] |
+| **pingProvider** | **Boolean**| If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce, NetSuite, IMAP. | [optional] |
 | **includeProviderAuth** | **Boolean**|  | [optional] |
 
 ### Return type

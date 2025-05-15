@@ -22,6 +22,7 @@ import io.aurinko.client.model.EmailAddress;
 import io.aurinko.client.model.EmailAttachment;
 import io.aurinko.client.model.EmailHeader;
 import io.aurinko.client.model.Sensitivity;
+import io.aurinko.client.model.SysLabel;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;

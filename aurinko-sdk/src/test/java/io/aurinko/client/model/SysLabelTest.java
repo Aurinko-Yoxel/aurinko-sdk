@@ -13,85 +13,20 @@
 
 package io.aurinko.client.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.aurinko.client.model.EmailSendError;
-import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for EmailSendResponse
+ * Model tests for SysLabel
  */
-class EmailSendResponseTest {
-    private final EmailSendResponse model = new EmailSendResponse();
-
+class SysLabelTest {
     /**
-     * Model tests for EmailSendResponse
+     * Model tests for SysLabel
      */
     @Test
-    void testEmailSendResponse() {
-        // TODO: test EmailSendResponse
-    }
-
-    /**
-     * Test the property 'status'
-     */
-    @Test
-    void statusTest() {
-        // TODO: test status
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'submittedMessageId'
-     */
-    @Test
-    void submittedMessageIdTest() {
-        // TODO: test submittedMessageId
-    }
-
-    /**
-     * Test the property 'threadId'
-     */
-    @Test
-    void threadIdTest() {
-        // TODO: test threadId
-    }
-
-    /**
-     * Test the property 'trackingId'
-     */
-    @Test
-    void trackingIdTest() {
-        // TODO: test trackingId
-    }
-
-    /**
-     * Test the property 'processingStatus'
-     */
-    @Test
-    void processingStatusTest() {
-        // TODO: test processingStatus
-    }
-
-    /**
-     * Test the property 'processingError'
-     */
-    @Test
-    void processingErrorTest() {
-        // TODO: test processingError
+    void testSysLabel() {
+        // TODO: test SysLabel
     }
 
 }

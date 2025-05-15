@@ -45,4 +45,12 @@ class WellKnownFoldersOutTest {
         // TODO: test archive
     }
 
+    /**
+     * Test the property 'sent'
+     */
+    @Test
+    void sentTest() {
+        // TODO: test sent
+    }
+
 }

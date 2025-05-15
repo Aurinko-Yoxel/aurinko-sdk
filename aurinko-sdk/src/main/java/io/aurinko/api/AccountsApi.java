@@ -387,7 +387,7 @@ public class AccountsApi {
    * @param userAccount  (optional)
    * @param userId ID of a user this account should be attached to. (optional)
    * @param recycleKeys  (optional)
-   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google, Office365, IMAP and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
@@ -422,7 +422,7 @@ public class AccountsApi {
    * @param userAccount  (optional)
    * @param userId ID of a user this account should be attached to. (optional)
    * @param recycleKeys  (optional)
-   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. (optional)
+   * @param ensureAccess When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google, Office365, IMAP and only for Email, Calendar, Contacts and Tasks APIs. (optional)
    * @param apiAccountInDto  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call

@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.Scope;
+import io.aurinko.client.model.ServiceProvider;
 import io.aurinko.client.model.ServiceType;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ import io.aurinko.client.ApiClient;
  */
 @JsonPropertyOrder({
   ApiAccountInDto.JSON_PROPERTY_SERVICE_TYPE,
+  ApiAccountInDto.JSON_PROPERTY_SERVICE_PROVIDER,
   ApiAccountInDto.JSON_PROPERTY_AUTH_SCOPES,
   ApiAccountInDto.JSON_PROPERTY_AUTH_ORG_ID,
   ApiAccountInDto.JSON_PROPERTY_AUTH_USER_ID,
@@ -53,15 +55,21 @@ import io.aurinko.client.ApiClient;
   ApiAccountInDto.JSON_PROPERTY_AUTH_OBTAINED_AT,
   ApiAccountInDto.JSON_PROPERTY_AUTH_EXPIRES_AT,
   ApiAccountInDto.JSON_PROPERTY_EMAIL,
+  ApiAccountInDto.JSON_PROPERTY_EMAIL2,
   ApiAccountInDto.JSON_PROPERTY_NAME,
   ApiAccountInDto.JSON_PROPERTY_SERVER_INFO,
-  ApiAccountInDto.JSON_PROPERTY_TIMEZONE
+  ApiAccountInDto.JSON_PROPERTY_TIMEZONE,
+  ApiAccountInDto.JSON_PROPERTY_COPY_TO_SENT
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ApiAccountInDto {
   public static final String JSON_PROPERTY_SERVICE_TYPE = "serviceType";
   @javax.annotation.Nonnull
   private ServiceType serviceType;
+
+  public static final String JSON_PROPERTY_SERVICE_PROVIDER = "serviceProvider";
+  @javax.annotation.Nullable
+  private ServiceProvider serviceProvider;
 
   public static final String JSON_PROPERTY_AUTH_SCOPES = "authScopes";
   @javax.annotation.Nullable
@@ -119,6 +127,10 @@ public class ApiAccountInDto {
   @javax.annotation.Nullable
   private String email;
 
+  public static final String JSON_PROPERTY_EMAIL2 = "email2";
+  @javax.annotation.Nullable
+  private String email2;
+
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
   private String name;
@@ -130,6 +142,10 @@ public class ApiAccountInDto {
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   @javax.annotation.Nullable
   private String timezone;
+
+  public static final String JSON_PROPERTY_COPY_TO_SENT = "copyToSent";
+  @javax.annotation.Nullable
+  private Boolean copyToSent;
 
   public ApiAccountInDto() { 
   }
@@ -155,6 +171,30 @@ public class ApiAccountInDto {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setServiceType(@javax.annotation.Nonnull ServiceType serviceType) {
     this.serviceType = serviceType;
+  }
+
+
+  public ApiAccountInDto serviceProvider(@javax.annotation.Nullable ServiceProvider serviceProvider) {
+    this.serviceProvider = serviceProvider;
+    return this;
+  }
+
+  /**
+   * Get serviceProvider
+   * @return serviceProvider
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SERVICE_PROVIDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public ServiceProvider getServiceProvider() {
+    return serviceProvider;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SERVICE_PROVIDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setServiceProvider(@javax.annotation.Nullable ServiceProvider serviceProvider) {
+    this.serviceProvider = serviceProvider;
   }
 
 
@@ -502,6 +542,30 @@ public class ApiAccountInDto {
   }
 
 
+  public ApiAccountInDto email2(@javax.annotation.Nullable String email2) {
+    this.email2 = email2;
+    return this;
+  }
+
+  /**
+   * Get email2
+   * @return email2
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_EMAIL2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getEmail2() {
+    return email2;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EMAIL2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEmail2(@javax.annotation.Nullable String email2) {
+    this.email2 = email2;
+  }
+
+
   public ApiAccountInDto name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -574,6 +638,30 @@ public class ApiAccountInDto {
   }
 
 
+  public ApiAccountInDto copyToSent(@javax.annotation.Nullable Boolean copyToSent) {
+    this.copyToSent = copyToSent;
+    return this;
+  }
+
+  /**
+   * Copy sent emails to “Sent Messages” folder
+   * @return copyToSent
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_COPY_TO_SENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Boolean getCopyToSent() {
+    return copyToSent;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_COPY_TO_SENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCopyToSent(@javax.annotation.Nullable Boolean copyToSent) {
+    this.copyToSent = copyToSent;
+  }
+
+
   /**
    * Return true if this ApiAccountInDto object is equal to o.
    */
@@ -587,6 +675,7 @@ public class ApiAccountInDto {
     }
     ApiAccountInDto apiAccountInDto = (ApiAccountInDto) o;
     return Objects.equals(this.serviceType, apiAccountInDto.serviceType) &&
+        Objects.equals(this.serviceProvider, apiAccountInDto.serviceProvider) &&
         Objects.equals(this.authScopes, apiAccountInDto.authScopes) &&
         Objects.equals(this.authOrgId, apiAccountInDto.authOrgId) &&
         Objects.equals(this.authUserId, apiAccountInDto.authUserId) &&
@@ -601,14 +690,16 @@ public class ApiAccountInDto {
         Objects.equals(this.authObtainedAt, apiAccountInDto.authObtainedAt) &&
         Objects.equals(this.authExpiresAt, apiAccountInDto.authExpiresAt) &&
         Objects.equals(this.email, apiAccountInDto.email) &&
+        Objects.equals(this.email2, apiAccountInDto.email2) &&
         Objects.equals(this.name, apiAccountInDto.name) &&
         Objects.equals(this.serverInfo, apiAccountInDto.serverInfo) &&
-        Objects.equals(this.timezone, apiAccountInDto.timezone);
+        Objects.equals(this.timezone, apiAccountInDto.timezone) &&
+        Objects.equals(this.copyToSent, apiAccountInDto.copyToSent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(serviceType, authScopes, authOrgId, authUserId, clientOrgId, serverUrl, loginString, oauthClientId, active, authString1, authString2, password, authObtainedAt, authExpiresAt, email, name, serverInfo, timezone);
+    return Objects.hash(serviceType, serviceProvider, authScopes, authOrgId, authUserId, clientOrgId, serverUrl, loginString, oauthClientId, active, authString1, authString2, password, authObtainedAt, authExpiresAt, email, email2, name, serverInfo, timezone, copyToSent);
   }
 
   @Override
@@ -616,6 +707,7 @@ public class ApiAccountInDto {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiAccountInDto {\n");
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+    sb.append("    serviceProvider: ").append(toIndentedString(serviceProvider)).append("\n");
     sb.append("    authScopes: ").append(toIndentedString(authScopes)).append("\n");
     sb.append("    authOrgId: ").append(toIndentedString(authOrgId)).append("\n");
     sb.append("    authUserId: ").append(toIndentedString(authUserId)).append("\n");
@@ -630,9 +722,11 @@ public class ApiAccountInDto {
     sb.append("    authObtainedAt: ").append(toIndentedString(authObtainedAt)).append("\n");
     sb.append("    authExpiresAt: ").append(toIndentedString(authExpiresAt)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    email2: ").append(toIndentedString(email2)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    serverInfo: ").append(toIndentedString(serverInfo)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    sb.append("    copyToSent: ").append(toIndentedString(copyToSent)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -683,6 +777,11 @@ public class ApiAccountInDto {
     // add `serviceType` to the URL query string
     if (getServiceType() != null) {
       joiner.add(String.format("%sserviceType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `serviceProvider` to the URL query string
+    if (getServiceProvider() != null) {
+      joiner.add(String.format("%sserviceProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `authScopes` to the URL query string
@@ -761,6 +860,11 @@ public class ApiAccountInDto {
       joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
+    // add `email2` to the URL query string
+    if (getEmail2() != null) {
+      joiner.add(String.format("%semail2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
     // add `name` to the URL query string
     if (getName() != null) {
       joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
@@ -774,6 +878,11 @@ public class ApiAccountInDto {
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
       joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `copyToSent` to the URL query string
+    if (getCopyToSent() != null) {
+      joiner.add(String.format("%scopyToSent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCopyToSent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

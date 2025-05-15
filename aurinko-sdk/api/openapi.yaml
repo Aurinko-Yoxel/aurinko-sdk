@@ -92,9 +92,11 @@ tags:
     \ server error.\n500 (Internal Server Error), 502 (Bad Gateway), 503 (Service\
     \ Unavailable), and 504 (Gateway Timeout)\nmay be retried with exponential backoff.\n\
     \n## 404 Not Found\nAPI requests may get 404 due to a deleted item or insufficient\
-    \ permissions, etc. Do not automatically\nretry these requests.\n\n## 412 Precondition\
-    \ Failed\nPATCH API requests may get 412 due to a mismatching ETag header (If-Match)\
-    \ which indicates\nthe contact has changed since its data was read.\n"
+    \ permissions, etc. Do not automatically\nretry these requests.\n\n## 408 Request\
+    \ timeout\nAPI requests may timeout for some reasons. Do automatically\nretry\
+    \ these requests.\n\n## 412 Precondition Failed\nPATCH API requests may get 412\
+    \ due to a mismatching ETag header (If-Match) which indicates\nthe contact has\
+    \ changed since its data was read.\n"
   name: Errors
   x-displayName: Handling errors
   x-traitTag: true
@@ -1468,6 +1470,17 @@ paths:
           nullable: true
           type: boolean
         style: form
+      - description: "For IMAP accounts not supporting threads, wait for Aurinko to\
+          \ discover threads and provide its threadId"
+        explode: true
+        in: query
+        name: requireThreadId
+        required: false
+        schema:
+          default: false
+          nullable: true
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -1939,6 +1952,34 @@ paths:
       x-accepts:
       - application/json
   /v1/email/drafts/{draftId}:
+    delete:
+      operationId: deleteDraft
+      parameters:
+      - description: an identifier of a draft message
+        explode: false
+        in: path
+        name: draftId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+          description: Success
+      summary: Delete a draft message
+      tags:
+      - Drafts
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -H 'Authorization: Bearer <access token>' \
+              -X DELETE https://api.aurinko.io/v1/email/drafts/{draftId} \
+      x-accepts:
+      - application/json
     get:
       operationId: getDraft
       parameters:
@@ -4551,8 +4592,8 @@ paths:
       operationId: getMyAccount
       parameters:
       - description: "If true, the provider will be pinged to check if the token is\
-          \ still valid. Currently supported only for Google, Office365, Salesforce\
-          \ and NetSuite."
+          \ still valid. Currently supported only for Google, Office365, Salesforce,\
+          \ NetSuite, IMAP."
         explode: true
         in: query
         name: pingProvider
@@ -4715,7 +4756,7 @@ paths:
           type: array
         style: form
       - description: "When set to true, Aurinko will check if a user has access to\
-          \ the requested resources. Supported only for Google and Office365, and\
+          \ the requested resources. Supported only for Google, Office365, IMAP and\
           \ only for Email, Calendar, Contacts and Tasks APIs."
         explode: true
         in: query
@@ -6862,6 +6903,17 @@ components:
           description: "The created calendar event ID, if event was created."
           type: string
       type: object
+    SysLabel:
+      enum:
+      - junk
+      - trash
+      - sent
+      - inbox
+      - unread
+      - flagged
+      - important
+      - draft
+      type: string
     NativeProperty:
       type: string
     EmailAddress:
@@ -7237,6 +7289,7 @@ components:
           context: context
           location: location
           id: 1
+          openCount: 5
           lastActivityTime: 2000-01-23T04:56:07.000+00:00
           inetMessageId: inetMessageId
           remoteAddr: remoteAddr
@@ -7253,6 +7306,7 @@ components:
           context: context
           location: location
           id: 1
+          openCount: 5
           lastActivityTime: 2000-01-23T04:56:07.000+00:00
           inetMessageId: inetMessageId
           remoteAddr: remoteAddr
@@ -7625,6 +7679,7 @@ components:
         referrer: referrer
         internetMessageId: internetMessageId
         context: context
+        openNumber: 5
         location: location
         id: 1
         remoteAddr: remoteAddr
@@ -7652,6 +7707,8 @@ components:
           type: string
         remoteAddr:
           type: string
+        openNumber:
+          type: integer
         threadId:
           type: string
         messageId:
@@ -7799,10 +7856,12 @@ components:
           loginString: loginString
           timezone: timezone
           tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
+          copyToSent: true
           type: daemon
           authNativeScopes:
           - null
           - null
+          email2: email2
           tokenError: tokenError
           authScopes:
           - Calendar.Read
@@ -7820,6 +7879,7 @@ components:
           daemon: true
           mailboxAddress: mailboxAddress
           authUserId: authUserId
+          serviceProvider: Office365
           name: name
           name2: name2
         - serviceType: Google
@@ -7828,10 +7888,12 @@ components:
           loginString: loginString
           timezone: timezone
           tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
+          copyToSent: true
           type: daemon
           authNativeScopes:
           - null
           - null
+          email2: email2
           tokenError: tokenError
           authScopes:
           - Calendar.Read
@@ -7849,6 +7911,7 @@ components:
           daemon: true
           mailboxAddress: mailboxAddress
           authUserId: authUserId
+          serviceProvider: Office365
           name: name
           name2: name2
         done: true
@@ -7879,6 +7942,7 @@ components:
         context: context
         location: location
         id: 1
+        openCount: 5
         lastActivityTime: 2000-01-23T04:56:07.000+00:00
         inetMessageId: inetMessageId
         remoteAddr: remoteAddr
@@ -7915,6 +7979,8 @@ components:
           type: string
         remoteAddr:
           type: string
+        openCount:
+          type: integer
         ignoreOpenClicks:
           type: boolean
         hasBounced:
@@ -8168,6 +8234,21 @@ components:
         token:
           type: string
       type: object
+    Reminder:
+      example:
+        useDefault: true
+        overrides:
+        - minutes: 6
+        - minutes: 6
+      properties:
+        useDefault:
+          description: Supported only for Google
+          type: boolean
+        overrides:
+          items:
+            $ref: '#/components/schemas/ReminderOverride'
+          type: array
+      type: object
     BookingSuccessOutDto:
       example:
         status: Ok
@@ -8192,8 +8273,12 @@ components:
     Calendar:
       example:
         color: color
+        defaultReminders:
+        - minutes: 6
+        - minutes: 6
         accessRole: owner
         name: name
+        multipleRemindersSupported: true
         description: description
         id: id
         primary: true
@@ -8219,6 +8304,13 @@ components:
         primary:
           readOnly: true
           type: boolean
+        multipleRemindersSupported:
+          readOnly: true
+          type: boolean
+        defaultReminders:
+          items:
+            $ref: '#/components/schemas/ReminderOverride'
+          type: array
       type: object
     ContactUrl:
       example:
@@ -8360,6 +8452,7 @@ components:
           referrer: referrer
           internetMessageId: internetMessageId
           context: context
+          openNumber: 5
           location: location
           id: 1
           remoteAddr: remoteAddr
@@ -8376,6 +8469,7 @@ components:
           referrer: referrer
           internetMessageId: internetMessageId
           context: context
+          openNumber: 5
           location: location
           id: 1
           remoteAddr: remoteAddr
@@ -8611,6 +8705,7 @@ components:
         threadId: threadId
         processingStatus: Ok
         id: id
+        submittedMessageId: submittedMessageId
         processingError:
           errorMessage: errorMessage
           failedSteps:
@@ -8624,6 +8719,10 @@ components:
           - Ok
           type: string
         id:
+          type: string
+        submittedMessageId:
+          description: Message-Id header generated by Aurinko when SMTP sending. Note
+            that some SMTP servers will override it.
           type: string
         threadId:
           type: string
@@ -8694,10 +8793,12 @@ components:
         loginString: loginString
         timezone: timezone
         tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
+        copyToSent: true
         type: daemon
         authNativeScopes:
         - null
         - null
+        email2: email2
         tokenError: tokenError
         authScopes:
         - Calendar.Read
@@ -8715,6 +8816,7 @@ components:
         daemon: true
         mailboxAddress: mailboxAddress
         authUserId: authUserId
+        serviceProvider: Office365
         name: name
         name2: name2
       properties:
@@ -8726,6 +8828,8 @@ components:
           type: integer
         serviceType:
           $ref: '#/components/schemas/ServiceType'
+        serviceProvider:
+          $ref: '#/components/schemas/ServiceProvider'
         active:
           description: The account is always active in the current API version
           type: boolean
@@ -8740,6 +8844,8 @@ components:
         loginString:
           type: string
         email:
+          type: string
+        email2:
           type: string
         mailboxAddress:
           type: string
@@ -8778,13 +8884,20 @@ components:
           type: string
         userId:
           type: string
+        copyToSent:
+          description: Copy sent emails to “Sent Messages” folder
+          type: boolean
       type: object
     WellKnownFoldersOut:
       example:
         archive: archive
+        sent: sent
       properties:
         archive:
           description: an xid of folder marked as an Archive
+          type: string
+        sent:
+          description: an xid of folder marked as an Sent
           type: string
       type: object
     GroupBookingOutDto:
@@ -8935,8 +9048,57 @@ components:
           mimeType: mimeType
           contentLocation: contentLocation
           content: content
-        showAs: free
         subject: subject
+        description: description
+        recurrenceType: single
+        createdTime: 2000-01-23T04:56:07.000+00:00
+        end:
+          dateTime: 2000-01-23T04:56:07.000+00:00
+          dateOnly: 2000-01-23
+          timezone: timezone
+        meetingInfo:
+          canceled: true
+          onlineMeeting: true
+          attendees:
+          - emailAddress:
+              address: address
+              name: name
+              raw: raw
+            response: accepted
+            comment: comment
+            id: id
+            type: required
+          - emailAddress:
+              address: address
+              name: name
+              raw: raw
+            response: accepted
+            comment: comment
+            id: id
+            type: required
+          response: noResponse
+          attendeePermissions:
+          - inviteOthers
+          - inviteOthers
+          onlineMeetingProvider: onlineMeetingProvider
+          onlineMeetingDetails:
+            regionCode: regionCode
+            pin: pin
+            phone: phone
+            infoUrl: infoUrl
+            sip: sip
+            url: url
+        id: id
+        categories:
+        - categories
+        - categories
+        hasAttachments: true
+        reminder:
+          useDefault: true
+          overrides:
+          - minutes: 6
+          - minutes: 6
+        showAs: free
         htmlLink: htmlLink
         iCalUid: iCalUid
         start:
@@ -8944,8 +9106,6 @@ components:
           dateOnly: 2000-01-23
           timezone: timezone
         globalId: globalId
-        description: description
-        recurrenceType: single
         recurrence:
           original: simple
           ical:
@@ -8992,51 +9152,9 @@ components:
         omitted:
         - description
         - description
-        createdTime: 2000-01-23T04:56:07.000+00:00
         etag: etag
         location: location
-        end:
-          dateTime: 2000-01-23T04:56:07.000+00:00
-          dateOnly: 2000-01-23
-          timezone: timezone
-        meetingInfo:
-          canceled: true
-          onlineMeeting: true
-          attendees:
-          - emailAddress:
-              address: address
-              name: name
-              raw: raw
-            response: accepted
-            comment: comment
-            id: id
-            type: required
-          - emailAddress:
-              address: address
-              name: name
-              raw: raw
-            response: accepted
-            comment: comment
-            id: id
-            type: required
-          response: noResponse
-          attendeePermissions:
-          - inviteOthers
-          - inviteOthers
-          onlineMeetingProvider: onlineMeetingProvider
-          onlineMeetingDetails:
-            regionCode: regionCode
-            pin: pin
-            phone: phone
-            infoUrl: infoUrl
-            sip: sip
-            url: url
-        id: id
         sensitivity: normal
-        categories:
-        - categories
-        - categories
-        hasAttachments: true
         occurrenceInfo:
           masterId: masterId
           originalStart:
@@ -9090,6 +9208,8 @@ components:
           type: string
         recurrence:
           $ref: '#/components/schemas/Recurrence'
+        reminder:
+          $ref: '#/components/schemas/Reminder'
         occurrenceInfo:
           $ref: '#/components/schemas/OccurrenceInfo'
         iCalUid:
@@ -9140,6 +9260,13 @@ components:
             type: integer
           type: array
       type: object
+    ReminderOverride:
+      example:
+        minutes: 6
+      properties:
+        minutes:
+          type: integer
+      type: object
     WeekWorkSchedule:
       example:
         daySchedules:
@@ -9173,6 +9300,8 @@ components:
         authOrgId: authOrgId
         timezone: timezone
         active: true
+        copyToSent: true
+        email2: email2
         password: password
         authScopes:
         - Calendar.Read
@@ -9182,6 +9311,7 @@ components:
         clientOrgId: clientOrgId
         serverUrl: serverUrl
         authExpiresAt: 2000-01-23T04:56:07.000+00:00
+        serviceProvider: Office365
         name: name
         authString1: authString1
         authString2: authString2
@@ -9189,6 +9319,8 @@ components:
       properties:
         serviceType:
           $ref: '#/components/schemas/ServiceType'
+        serviceProvider:
+          $ref: '#/components/schemas/ServiceProvider'
         authScopes:
           items:
             $ref: '#/components/schemas/Scope'
@@ -9225,12 +9357,17 @@ components:
         email:
           description: This or loginString field must be specified
           type: string
+        email2:
+          type: string
         name:
           type: string
         serverInfo:
           type: string
         timezone:
           type: string
+        copyToSent:
+          description: Copy sent emails to “Sent Messages” folder
+          type: boolean
       required:
       - active
       - serviceType
@@ -9931,10 +10068,14 @@ components:
     WellKnownFoldersIn:
       example:
         archive: archive
+        sent: sent
       properties:
         archive:
           description: "an xid of folder - to mark it as Archive, set to null to clear\
             \ Archive folder"
+          type: string
+        sent:
+          description: "an xid of folder marked as an Sent, set to null to clear"
           type: string
       type: object
     SubscriptionResponse:
@@ -10100,16 +10241,7 @@ components:
           type: string
         sysLabels:
           items:
-            enum:
-            - junk
-            - trash
-            - sent
-            - inbox
-            - unread
-            - flagged
-            - important
-            - draft
-            type: string
+            $ref: '#/components/schemas/SysLabel'
           readOnly: true
           type: array
         keywords:
@@ -10834,14 +10966,22 @@ components:
       example:
         records:
         - color: color
+          defaultReminders:
+          - minutes: 6
+          - minutes: 6
           accessRole: owner
           name: name
+          multipleRemindersSupported: true
           description: description
           id: id
           primary: true
         - color: color
+          defaultReminders:
+          - minutes: 6
+          - minutes: 6
           accessRole: owner
           name: name
+          multipleRemindersSupported: true
           description: description
           id: id
           primary: true
@@ -11194,8 +11334,57 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: free
           subject: subject
+          description: description
+          recurrenceType: single
+          createdTime: 2000-01-23T04:56:07.000+00:00
+          end:
+            dateTime: 2000-01-23T04:56:07.000+00:00
+            dateOnly: 2000-01-23
+            timezone: timezone
+          meetingInfo:
+            canceled: true
+            onlineMeeting: true
+            attendees:
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            response: noResponse
+            attendeePermissions:
+            - inviteOthers
+            - inviteOthers
+            onlineMeetingProvider: onlineMeetingProvider
+            onlineMeetingDetails:
+              regionCode: regionCode
+              pin: pin
+              phone: phone
+              infoUrl: infoUrl
+              sip: sip
+              url: url
+          id: id
+          categories:
+          - categories
+          - categories
+          hasAttachments: true
+          reminder:
+            useDefault: true
+            overrides:
+            - minutes: 6
+            - minutes: 6
+          showAs: free
           htmlLink: htmlLink
           iCalUid: iCalUid
           start:
@@ -11203,8 +11392,6 @@ components:
             dateOnly: 2000-01-23
             timezone: timezone
           globalId: globalId
-          description: description
-          recurrenceType: single
           recurrence:
             original: simple
             ical:
@@ -11251,51 +11438,9 @@ components:
           omitted:
           - description
           - description
-          createdTime: 2000-01-23T04:56:07.000+00:00
           etag: etag
           location: location
-          end:
-            dateTime: 2000-01-23T04:56:07.000+00:00
-            dateOnly: 2000-01-23
-            timezone: timezone
-          meetingInfo:
-            canceled: true
-            onlineMeeting: true
-            attendees:
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            response: noResponse
-            attendeePermissions:
-            - inviteOthers
-            - inviteOthers
-            onlineMeetingProvider: onlineMeetingProvider
-            onlineMeetingDetails:
-              regionCode: regionCode
-              pin: pin
-              phone: phone
-              infoUrl: infoUrl
-              sip: sip
-              url: url
-          id: id
           sensitivity: normal
-          categories:
-          - categories
-          - categories
-          hasAttachments: true
           occurrenceInfo:
             masterId: masterId
             originalStart:
@@ -11390,11 +11535,6 @@ components:
           items:
             $ref: '#/components/schemas/BookingAttachedAccountsDto'
           type: array
-      type: object
-    BookingWorkHours:
-      properties:
-        workHours:
-          $ref: '#/components/schemas/WeekWorkSchedule'
       type: object
     EmailHeader:
       example:
@@ -11776,6 +11916,7 @@ components:
       example:
         isFolder: true
         isLabel: true
+        sysLabel: junk
         name: name
         fullName: fullName
         id: id
@@ -11799,6 +11940,8 @@ components:
         parentId:
           readOnly: true
           type: string
+        sysLabel:
+          $ref: '#/components/schemas/SysLabel'
       type: object
     SelectedMeetingTime:
       example:
@@ -12291,8 +12434,57 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: free
           subject: subject
+          description: description
+          recurrenceType: single
+          createdTime: 2000-01-23T04:56:07.000+00:00
+          end:
+            dateTime: 2000-01-23T04:56:07.000+00:00
+            dateOnly: 2000-01-23
+            timezone: timezone
+          meetingInfo:
+            canceled: true
+            onlineMeeting: true
+            attendees:
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            response: noResponse
+            attendeePermissions:
+            - inviteOthers
+            - inviteOthers
+            onlineMeetingProvider: onlineMeetingProvider
+            onlineMeetingDetails:
+              regionCode: regionCode
+              pin: pin
+              phone: phone
+              infoUrl: infoUrl
+              sip: sip
+              url: url
+          id: id
+          categories:
+          - categories
+          - categories
+          hasAttachments: true
+          reminder:
+            useDefault: true
+            overrides:
+            - minutes: 6
+            - minutes: 6
+          showAs: free
           htmlLink: htmlLink
           iCalUid: iCalUid
           start:
@@ -12300,8 +12492,6 @@ components:
             dateOnly: 2000-01-23
             timezone: timezone
           globalId: globalId
-          description: description
-          recurrenceType: single
           recurrence:
             original: simple
             ical:
@@ -12348,51 +12538,9 @@ components:
           omitted:
           - description
           - description
-          createdTime: 2000-01-23T04:56:07.000+00:00
           etag: etag
           location: location
-          end:
-            dateTime: 2000-01-23T04:56:07.000+00:00
-            dateOnly: 2000-01-23
-            timezone: timezone
-          meetingInfo:
-            canceled: true
-            onlineMeeting: true
-            attendees:
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            response: noResponse
-            attendeePermissions:
-            - inviteOthers
-            - inviteOthers
-            onlineMeetingProvider: onlineMeetingProvider
-            onlineMeetingDetails:
-              regionCode: regionCode
-              pin: pin
-              phone: phone
-              infoUrl: infoUrl
-              sip: sip
-              url: url
-          id: id
           sensitivity: normal
-          categories:
-          - categories
-          - categories
-          hasAttachments: true
           occurrenceInfo:
             masterId: masterId
             originalStart:
@@ -12423,8 +12571,57 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: free
           subject: subject
+          description: description
+          recurrenceType: single
+          createdTime: 2000-01-23T04:56:07.000+00:00
+          end:
+            dateTime: 2000-01-23T04:56:07.000+00:00
+            dateOnly: 2000-01-23
+            timezone: timezone
+          meetingInfo:
+            canceled: true
+            onlineMeeting: true
+            attendees:
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            response: noResponse
+            attendeePermissions:
+            - inviteOthers
+            - inviteOthers
+            onlineMeetingProvider: onlineMeetingProvider
+            onlineMeetingDetails:
+              regionCode: regionCode
+              pin: pin
+              phone: phone
+              infoUrl: infoUrl
+              sip: sip
+              url: url
+          id: id
+          categories:
+          - categories
+          - categories
+          hasAttachments: true
+          reminder:
+            useDefault: true
+            overrides:
+            - minutes: 6
+            - minutes: 6
+          showAs: free
           htmlLink: htmlLink
           iCalUid: iCalUid
           start:
@@ -12432,8 +12629,6 @@ components:
             dateOnly: 2000-01-23
             timezone: timezone
           globalId: globalId
-          description: description
-          recurrenceType: single
           recurrence:
             original: simple
             ical:
@@ -12480,51 +12675,9 @@ components:
           omitted:
           - description
           - description
-          createdTime: 2000-01-23T04:56:07.000+00:00
           etag: etag
           location: location
-          end:
-            dateTime: 2000-01-23T04:56:07.000+00:00
-            dateOnly: 2000-01-23
-            timezone: timezone
-          meetingInfo:
-            canceled: true
-            onlineMeeting: true
-            attendees:
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            response: noResponse
-            attendeePermissions:
-            - inviteOthers
-            - inviteOthers
-            onlineMeetingProvider: onlineMeetingProvider
-            onlineMeetingDetails:
-              regionCode: regionCode
-              pin: pin
-              phone: phone
-              infoUrl: infoUrl
-              sip: sip
-              url: url
-          id: id
           sensitivity: normal
-          categories:
-          - categories
-          - categories
-          hasAttachments: true
           occurrenceInfo:
             masterId: masterId
             originalStart:
@@ -12626,12 +12779,14 @@ components:
         records:
         - isFolder: true
           isLabel: true
+          sysLabel: junk
           name: name
           fullName: fullName
           id: id
           parentId: parentId
         - isFolder: true
           isLabel: true
+          sysLabel: junk
           name: name
           fullName: fullName
           id: id
@@ -12917,8 +13072,57 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: free
           subject: subject
+          description: description
+          recurrenceType: single
+          createdTime: 2000-01-23T04:56:07.000+00:00
+          end:
+            dateTime: 2000-01-23T04:56:07.000+00:00
+            dateOnly: 2000-01-23
+            timezone: timezone
+          meetingInfo:
+            canceled: true
+            onlineMeeting: true
+            attendees:
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            response: noResponse
+            attendeePermissions:
+            - inviteOthers
+            - inviteOthers
+            onlineMeetingProvider: onlineMeetingProvider
+            onlineMeetingDetails:
+              regionCode: regionCode
+              pin: pin
+              phone: phone
+              infoUrl: infoUrl
+              sip: sip
+              url: url
+          id: id
+          categories:
+          - categories
+          - categories
+          hasAttachments: true
+          reminder:
+            useDefault: true
+            overrides:
+            - minutes: 6
+            - minutes: 6
+          showAs: free
           htmlLink: htmlLink
           iCalUid: iCalUid
           start:
@@ -12926,8 +13130,6 @@ components:
             dateOnly: 2000-01-23
             timezone: timezone
           globalId: globalId
-          description: description
-          recurrenceType: single
           recurrence:
             original: simple
             ical:
@@ -12974,51 +13176,9 @@ components:
           omitted:
           - description
           - description
-          createdTime: 2000-01-23T04:56:07.000+00:00
           etag: etag
           location: location
-          end:
-            dateTime: 2000-01-23T04:56:07.000+00:00
-            dateOnly: 2000-01-23
-            timezone: timezone
-          meetingInfo:
-            canceled: true
-            onlineMeeting: true
-            attendees:
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            response: noResponse
-            attendeePermissions:
-            - inviteOthers
-            - inviteOthers
-            onlineMeetingProvider: onlineMeetingProvider
-            onlineMeetingDetails:
-              regionCode: regionCode
-              pin: pin
-              phone: phone
-              infoUrl: infoUrl
-              sip: sip
-              url: url
-          id: id
           sensitivity: normal
-          categories:
-          - categories
-          - categories
-          hasAttachments: true
           occurrenceInfo:
             masterId: masterId
             originalStart:
@@ -13049,8 +13209,57 @@ components:
             mimeType: mimeType
             contentLocation: contentLocation
             content: content
-          showAs: free
           subject: subject
+          description: description
+          recurrenceType: single
+          createdTime: 2000-01-23T04:56:07.000+00:00
+          end:
+            dateTime: 2000-01-23T04:56:07.000+00:00
+            dateOnly: 2000-01-23
+            timezone: timezone
+          meetingInfo:
+            canceled: true
+            onlineMeeting: true
+            attendees:
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            - emailAddress:
+                address: address
+                name: name
+                raw: raw
+              response: accepted
+              comment: comment
+              id: id
+              type: required
+            response: noResponse
+            attendeePermissions:
+            - inviteOthers
+            - inviteOthers
+            onlineMeetingProvider: onlineMeetingProvider
+            onlineMeetingDetails:
+              regionCode: regionCode
+              pin: pin
+              phone: phone
+              infoUrl: infoUrl
+              sip: sip
+              url: url
+          id: id
+          categories:
+          - categories
+          - categories
+          hasAttachments: true
+          reminder:
+            useDefault: true
+            overrides:
+            - minutes: 6
+            - minutes: 6
+          showAs: free
           htmlLink: htmlLink
           iCalUid: iCalUid
           start:
@@ -13058,8 +13267,6 @@ components:
             dateOnly: 2000-01-23
             timezone: timezone
           globalId: globalId
-          description: description
-          recurrenceType: single
           recurrence:
             original: simple
             ical:
@@ -13106,51 +13313,9 @@ components:
           omitted:
           - description
           - description
-          createdTime: 2000-01-23T04:56:07.000+00:00
           etag: etag
           location: location
-          end:
-            dateTime: 2000-01-23T04:56:07.000+00:00
-            dateOnly: 2000-01-23
-            timezone: timezone
-          meetingInfo:
-            canceled: true
-            onlineMeeting: true
-            attendees:
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            - emailAddress:
-                address: address
-                name: name
-                raw: raw
-              response: accepted
-              comment: comment
-              id: id
-              type: required
-            response: noResponse
-            attendeePermissions:
-            - inviteOthers
-            - inviteOthers
-            onlineMeetingProvider: onlineMeetingProvider
-            onlineMeetingDetails:
-              regionCode: regionCode
-              pin: pin
-              phone: phone
-              infoUrl: infoUrl
-              sip: sip
-              url: url
-          id: id
           sensitivity: normal
-          categories:
-          - categories
-          - categories
-          hasAttachments: true
           occurrenceInfo:
             masterId: masterId
             originalStart:

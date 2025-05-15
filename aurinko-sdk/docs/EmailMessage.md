@@ -15,7 +15,7 @@
 |**receivedAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**internetMessageId** | **String** |  |  [optional] [readonly] |
 |**subject** | **String** |  |  [optional] [readonly] |
-|**sysLabels** | [**List&lt;SysLabelsEnum&gt;**](#List&lt;SysLabelsEnum&gt;) |  |  [optional] [readonly] |
+|**sysLabels** | **List&lt;SysLabel&gt;** |  |  [optional] [readonly] |
 |**keywords** | **List&lt;String&gt;** |  |  [optional] |
 |**sysClassifications** | [**List&lt;SysClassificationsEnum&gt;**](#List&lt;SysClassificationsEnum&gt;) |  |  [optional] [readonly] |
 |**sensitivity** | **Sensitivity** |  |  [optional] |
@@ -37,22 +37,6 @@
 |**folderId** | **String** |  |  [optional] [readonly] |
 |**webLink** | **String** |  |  [optional] [readonly] |
 |**omitted** | [**List&lt;OmittedEnum&gt;**](#List&lt;OmittedEnum&gt;) |  |  [optional] [readonly] |
-
-
-
-## Enum: List&lt;SysLabelsEnum&gt;
-
-| Name | Value |
-|---- | -----|
-| JUNK | &quot;junk&quot; |
-| TRASH | &quot;trash&quot; |
-| SENT | &quot;sent&quot; |
-| INBOX | &quot;inbox&quot; |
-| UNREAD | &quot;unread&quot; |
-| FLAGGED | &quot;flagged&quot; |
-| IMPORTANT | &quot;important&quot; |
-| DRAFT | &quot;draft&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

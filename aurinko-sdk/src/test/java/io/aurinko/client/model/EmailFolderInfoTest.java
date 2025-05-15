@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.SysLabel;
 import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -83,6 +84,14 @@ class EmailFolderInfoTest {
     @Test
     void parentIdTest() {
         // TODO: test parentId
+    }
+
+    /**
+     * Test the property 'sysLabel'
+     */
+    @Test
+    void sysLabelTest() {
+        // TODO: test sysLabel
     }
 
 }

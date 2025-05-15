@@ -520,7 +520,7 @@ public class Example {
         UserAccountType userAccount = UserAccountType.fromValue("primary"); // UserAccountType | 
         String userId = "userId_example"; // String | ID of a user this account should be attached to.
         List<ServiceKey> recycleKeys = Arrays.asList(); // List<ServiceKey> | 
-        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
+        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google, Office365, IMAP and only for Email, Calendar, Contacts and Tasks APIs.
         ApiAccountInDto apiAccountInDto = new ApiAccountInDto(); // ApiAccountInDto | 
         try {
             CompletableFuture<AccountSaveResult> result = apiInstance.upsertPersonal(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
@@ -544,7 +544,7 @@ public class Example {
 | **userAccount** | [**UserAccountType**](.md)|  | [optional] [enum: primary, secondary] |
 | **userId** | **String**| ID of a user this account should be attached to. | [optional] |
 | **recycleKeys** | [**List&lt;ServiceKey&gt;**](ServiceKey.md)|  | [optional] |
-| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
+| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google, Office365, IMAP and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **apiAccountInDto** | [**ApiAccountInDto**](ApiAccountInDto.md)|  | [optional] |
 
 ### Return type
@@ -600,7 +600,7 @@ public class Example {
         UserAccountType userAccount = UserAccountType.fromValue("primary"); // UserAccountType | 
         String userId = "userId_example"; // String | ID of a user this account should be attached to.
         List<ServiceKey> recycleKeys = Arrays.asList(); // List<ServiceKey> | 
-        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs.
+        Boolean ensureAccess = true; // Boolean | When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google, Office365, IMAP and only for Email, Calendar, Contacts and Tasks APIs.
         ApiAccountInDto apiAccountInDto = new ApiAccountInDto(); // ApiAccountInDto | 
         try {
             CompletableFuture<ApiResponse<AccountSaveResult>> response = apiInstance.upsertPersonalWithHttpInfo(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
@@ -633,7 +633,7 @@ public class Example {
 | **userAccount** | [**UserAccountType**](.md)|  | [optional] [enum: primary, secondary] |
 | **userId** | **String**| ID of a user this account should be attached to. | [optional] |
 | **recycleKeys** | [**List&lt;ServiceKey&gt;**](ServiceKey.md)|  | [optional] |
-| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google and Office365, and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
+| **ensureAccess** | **Boolean**| When set to true, Aurinko will check if a user has access to the requested resources. Supported only for Google, Office365, IMAP and only for Email, Calendar, Contacts and Tasks APIs. | [optional] |
 | **apiAccountInDto** | [**ApiAccountInDto**](ApiAccountInDto.md)|  | [optional] |
 
 ### Return type

@@ -23,6 +23,7 @@ import io.aurinko.client.model.EmailDraft;
 import io.aurinko.client.model.EmailDraftResponse;
 import io.aurinko.client.model.EmailDraftSendResponse;
 import java.time.OffsetDateTime;
+import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.OutgoingEmail;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -191,6 +192,100 @@ public class DraftsApi {
     } catch (IOException e) {
       throw new ApiException(e);
     }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Delete a draft message
+   * 
+   * @param draftId an identifier of a draft message (required)
+   * @return CompletableFuture&lt;OkResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<OkResponse> deleteDraft(String draftId) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = deleteDraftRequestBuilder(draftId);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("deleteDraft", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<OkResponse>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Delete a draft message
+   * 
+   * @param draftId an identifier of a draft message (required)
+   * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<OkResponse>> deleteDraftWithHttpInfo(String draftId) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = deleteDraftRequestBuilder(draftId);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("deleteDraft", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<OkResponse>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<OkResponse>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder deleteDraftRequestBuilder(String draftId) throws ApiException {
+    // verify the required parameter 'draftId' is set
+    if (draftId == null) {
+      throw new ApiException(400, "Missing the required parameter 'draftId' when calling deleteDraft");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/email/drafts/{draftId}"
+        .replace("{draftId}", ApiClient.urlEncode(draftId.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("DELETE", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }

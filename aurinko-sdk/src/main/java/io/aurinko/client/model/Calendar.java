@@ -24,7 +24,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.ReminderOverride;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -38,7 +41,9 @@ import io.aurinko.client.ApiClient;
   Calendar.JSON_PROPERTY_COLOR,
   Calendar.JSON_PROPERTY_DESCRIPTION,
   Calendar.JSON_PROPERTY_ACCESS_ROLE,
-  Calendar.JSON_PROPERTY_PRIMARY
+  Calendar.JSON_PROPERTY_PRIMARY,
+  Calendar.JSON_PROPERTY_MULTIPLE_REMINDERS_SUPPORTED,
+  Calendar.JSON_PROPERTY_DEFAULT_REMINDERS
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Calendar {
@@ -105,6 +110,14 @@ public class Calendar {
   @javax.annotation.Nullable
   private Boolean primary;
 
+  public static final String JSON_PROPERTY_MULTIPLE_REMINDERS_SUPPORTED = "multipleRemindersSupported";
+  @javax.annotation.Nullable
+  private Boolean multipleRemindersSupported;
+
+  public static final String JSON_PROPERTY_DEFAULT_REMINDERS = "defaultReminders";
+  @javax.annotation.Nullable
+  private List<ReminderOverride> defaultReminders = new ArrayList<>();
+
   public Calendar() { 
   }
 
@@ -114,7 +127,8 @@ public class Calendar {
     @JsonProperty(JSON_PROPERTY_COLOR) String color, 
     @JsonProperty(JSON_PROPERTY_DESCRIPTION) String description, 
     @JsonProperty(JSON_PROPERTY_ACCESS_ROLE) AccessRoleEnum accessRole, 
-    @JsonProperty(JSON_PROPERTY_PRIMARY) Boolean primary
+    @JsonProperty(JSON_PROPERTY_PRIMARY) Boolean primary, 
+    @JsonProperty(JSON_PROPERTY_MULTIPLE_REMINDERS_SUPPORTED) Boolean multipleRemindersSupported
   ) {
   this();
     this.id = id;
@@ -122,6 +136,7 @@ public class Calendar {
     this.description = description;
     this.accessRole = accessRole;
     this.primary = primary;
+    this.multipleRemindersSupported = multipleRemindersSupported;
   }
 
   /**
@@ -219,6 +234,52 @@ public class Calendar {
 
 
   /**
+   * Get multipleRemindersSupported
+   * @return multipleRemindersSupported
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MULTIPLE_REMINDERS_SUPPORTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Boolean getMultipleRemindersSupported() {
+    return multipleRemindersSupported;
+  }
+
+
+
+
+  public Calendar defaultReminders(@javax.annotation.Nullable List<ReminderOverride> defaultReminders) {
+    this.defaultReminders = defaultReminders;
+    return this;
+  }
+
+  public Calendar addDefaultRemindersItem(ReminderOverride defaultRemindersItem) {
+    if (this.defaultReminders == null) {
+      this.defaultReminders = new ArrayList<>();
+    }
+    this.defaultReminders.add(defaultRemindersItem);
+    return this;
+  }
+
+  /**
+   * Get defaultReminders
+   * @return defaultReminders
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DEFAULT_REMINDERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<ReminderOverride> getDefaultReminders() {
+    return defaultReminders;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DEFAULT_REMINDERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDefaultReminders(@javax.annotation.Nullable List<ReminderOverride> defaultReminders) {
+    this.defaultReminders = defaultReminders;
+  }
+
+
+  /**
    * Return true if this Calendar object is equal to o.
    */
   @Override
@@ -235,12 +296,14 @@ public class Calendar {
         Objects.equals(this.color, calendar.color) &&
         Objects.equals(this.description, calendar.description) &&
         Objects.equals(this.accessRole, calendar.accessRole) &&
-        Objects.equals(this.primary, calendar.primary);
+        Objects.equals(this.primary, calendar.primary) &&
+        Objects.equals(this.multipleRemindersSupported, calendar.multipleRemindersSupported) &&
+        Objects.equals(this.defaultReminders, calendar.defaultReminders);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, color, description, accessRole, primary);
+    return Objects.hash(id, name, color, description, accessRole, primary, multipleRemindersSupported, defaultReminders);
   }
 
   @Override
@@ -253,6 +316,8 @@ public class Calendar {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    accessRole: ").append(toIndentedString(accessRole)).append("\n");
     sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
+    sb.append("    multipleRemindersSupported: ").append(toIndentedString(multipleRemindersSupported)).append("\n");
+    sb.append("    defaultReminders: ").append(toIndentedString(defaultReminders)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -328,6 +393,21 @@ public class Calendar {
     // add `primary` to the URL query string
     if (getPrimary() != null) {
       joiner.add(String.format("%sprimary%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPrimary()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `multipleRemindersSupported` to the URL query string
+    if (getMultipleRemindersSupported() != null) {
+      joiner.add(String.format("%smultipleRemindersSupported%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMultipleRemindersSupported()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `defaultReminders` to the URL query string
+    if (getDefaultReminders() != null) {
+      for (int i = 0; i < getDefaultReminders().size(); i++) {
+        if (getDefaultReminders().get(i) != null) {
+          joiner.add(getDefaultReminders().get(i).toUrlQueryString(String.format("%sdefaultReminders%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

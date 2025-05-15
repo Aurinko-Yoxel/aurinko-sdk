@@ -229,7 +229,7 @@ public class AccountApi {
   /**
    * Get account status
    * 
-   * @param pingProvider If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. (optional)
+   * @param pingProvider If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce, NetSuite, IMAP. (optional)
    * @param includeProviderAuth  (optional)
    * @return CompletableFuture&lt;ApiAccountOutDto&gt;
    * @throws ApiException if fails to make API call
@@ -261,7 +261,7 @@ public class AccountApi {
   /**
    * Get account status
    * 
-   * @param pingProvider If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce and NetSuite. (optional)
+   * @param pingProvider If true, the provider will be pinged to check if the token is still valid. Currently supported only for Google, Office365, Salesforce, NetSuite, IMAP. (optional)
    * @param includeProviderAuth  (optional)
    * @return CompletableFuture&lt;ApiResponse&lt;ApiAccountOutDto&gt;&gt;
    * @throws ApiException if fails to make API call

@@ -41,7 +41,6 @@ docs/BookingRequiredMode.md
 docs/BookingSuccessOutDto.md
 docs/BookingTimesOutDto.md
 docs/BookingUpdateDto.md
-docs/BookingWorkHours.md
 docs/CalSyncApi.md
 docs/Calendar.md
 docs/CalendarCreate.md
@@ -148,6 +147,8 @@ docs/RecurrenceIcal.md
 docs/RecurrenceSimple.md
 docs/RecurrenceSimplePattern.md
 docs/RecurrenceSimpleRange.md
+docs/Reminder.md
+docs/ReminderOverride.md
 docs/RewriteHtml.md
 docs/ScheduledDraft.md
 docs/Scope.md
@@ -168,6 +169,7 @@ docs/SuggestMeetingTimesRequest.md
 docs/SuggestMeetingTimesResponse.md
 docs/SyncStatus.md
 docs/SyncTasksPage.md
+docs/SysLabel.md
 docs/Task.md
 docs/TaskCreate.md
 docs/TaskCreateResponse.md
@@ -273,7 +275,6 @@ src/main/java/io/aurinko/client/model/BookingRequiredMode.java
 src/main/java/io/aurinko/client/model/BookingSuccessOutDto.java
 src/main/java/io/aurinko/client/model/BookingTimesOutDto.java
 src/main/java/io/aurinko/client/model/BookingUpdateDto.java
-src/main/java/io/aurinko/client/model/BookingWorkHours.java
 src/main/java/io/aurinko/client/model/Calendar.java
 src/main/java/io/aurinko/client/model/CalendarCreate.java
 src/main/java/io/aurinko/client/model/CalendarMode.java
@@ -366,6 +367,8 @@ src/main/java/io/aurinko/client/model/RecurrenceIcal.java
 src/main/java/io/aurinko/client/model/RecurrenceSimple.java
 src/main/java/io/aurinko/client/model/RecurrenceSimplePattern.java
 src/main/java/io/aurinko/client/model/RecurrenceSimpleRange.java
+src/main/java/io/aurinko/client/model/Reminder.java
+src/main/java/io/aurinko/client/model/ReminderOverride.java
 src/main/java/io/aurinko/client/model/RewriteHtml.java
 src/main/java/io/aurinko/client/model/ScheduledDraft.java
 src/main/java/io/aurinko/client/model/Scope.java
@@ -385,6 +388,7 @@ src/main/java/io/aurinko/client/model/SuggestMeetingTimesRequest.java
 src/main/java/io/aurinko/client/model/SuggestMeetingTimesResponse.java
 src/main/java/io/aurinko/client/model/SyncStatus.java
 src/main/java/io/aurinko/client/model/SyncTasksPage.java
+src/main/java/io/aurinko/client/model/SysLabel.java
 src/main/java/io/aurinko/client/model/Task.java
 src/main/java/io/aurinko/client/model/TaskCreate.java
 src/main/java/io/aurinko/client/model/TaskCreateResponse.java
@@ -466,7 +470,6 @@ src/test/java/io/aurinko/client/model/BookingRequiredModeTest.java
 src/test/java/io/aurinko/client/model/BookingSuccessOutDtoTest.java
 src/test/java/io/aurinko/client/model/BookingTimesOutDtoTest.java
 src/test/java/io/aurinko/client/model/BookingUpdateDtoTest.java
-src/test/java/io/aurinko/client/model/BookingWorkHoursTest.java
 src/test/java/io/aurinko/client/model/CalendarCreateTest.java
 src/test/java/io/aurinko/client/model/CalendarModeTest.java
 src/test/java/io/aurinko/client/model/CalendarTest.java
@@ -559,6 +562,8 @@ src/test/java/io/aurinko/client/model/RecurrenceSimplePatternTest.java
 src/test/java/io/aurinko/client/model/RecurrenceSimpleRangeTest.java
 src/test/java/io/aurinko/client/model/RecurrenceSimpleTest.java
 src/test/java/io/aurinko/client/model/RecurrenceTest.java
+src/test/java/io/aurinko/client/model/ReminderOverrideTest.java
+src/test/java/io/aurinko/client/model/ReminderTest.java
 src/test/java/io/aurinko/client/model/RewriteHtmlTest.java
 src/test/java/io/aurinko/client/model/ScheduledDraftTest.java
 src/test/java/io/aurinko/client/model/ScopeTest.java
@@ -578,6 +583,7 @@ src/test/java/io/aurinko/client/model/SuggestMeetingTimesRequestTest.java
 src/test/java/io/aurinko/client/model/SuggestMeetingTimesResponseTest.java
 src/test/java/io/aurinko/client/model/SyncStatusTest.java
 src/test/java/io/aurinko/client/model/SyncTasksPageTest.java
+src/test/java/io/aurinko/client/model/SysLabelTest.java
 src/test/java/io/aurinko/client/model/TaskCreateResponseTest.java
 src/test/java/io/aurinko/client/model/TaskCreateTest.java
 src/test/java/io/aurinko/client/model/TaskImportanceTest.java

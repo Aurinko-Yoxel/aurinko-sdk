@@ -33,13 +33,18 @@ import io.aurinko.client.ApiClient;
  * WellKnownFoldersOut
  */
 @JsonPropertyOrder({
-  WellKnownFoldersOut.JSON_PROPERTY_ARCHIVE
+  WellKnownFoldersOut.JSON_PROPERTY_ARCHIVE,
+  WellKnownFoldersOut.JSON_PROPERTY_SENT
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class WellKnownFoldersOut {
   public static final String JSON_PROPERTY_ARCHIVE = "archive";
   @javax.annotation.Nullable
   private String archive;
+
+  public static final String JSON_PROPERTY_SENT = "sent";
+  @javax.annotation.Nullable
+  private String sent;
 
   public WellKnownFoldersOut() { 
   }
@@ -68,6 +73,30 @@ public class WellKnownFoldersOut {
   }
 
 
+  public WellKnownFoldersOut sent(@javax.annotation.Nullable String sent) {
+    this.sent = sent;
+    return this;
+  }
+
+  /**
+   * an xid of folder marked as an Sent
+   * @return sent
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getSent() {
+    return sent;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSent(@javax.annotation.Nullable String sent) {
+    this.sent = sent;
+  }
+
+
   /**
    * Return true if this WellKnownFoldersOut object is equal to o.
    */
@@ -80,12 +109,13 @@ public class WellKnownFoldersOut {
       return false;
     }
     WellKnownFoldersOut wellKnownFoldersOut = (WellKnownFoldersOut) o;
-    return Objects.equals(this.archive, wellKnownFoldersOut.archive);
+    return Objects.equals(this.archive, wellKnownFoldersOut.archive) &&
+        Objects.equals(this.sent, wellKnownFoldersOut.sent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(archive);
+    return Objects.hash(archive, sent);
   }
 
   @Override
@@ -93,6 +123,7 @@ public class WellKnownFoldersOut {
     StringBuilder sb = new StringBuilder();
     sb.append("class WellKnownFoldersOut {\n");
     sb.append("    archive: ").append(toIndentedString(archive)).append("\n");
+    sb.append("    sent: ").append(toIndentedString(sent)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -143,6 +174,11 @@ public class WellKnownFoldersOut {
     // add `archive` to the URL query string
     if (getArchive() != null) {
       joiner.add(String.format("%sarchive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getArchive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `sent` to the URL query string
+    if (getSent() != null) {
+      joiner.add(String.format("%ssent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

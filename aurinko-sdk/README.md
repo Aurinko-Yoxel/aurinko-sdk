@@ -76,7 +76,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.aurinko</groupId>
   <artifactId>aurinko-api</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -86,7 +86,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.aurinko:aurinko-api:1.0.4"
+compile "io.aurinko:aurinko-api:1.0.5"
 ```
 
 ### Others
@@ -99,7 +99,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aurinko-api-1.0.4.jar`
+- `target/aurinko-api-1.0.5.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -230,6 +230,8 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**updateContactWithHttpInfo**](docs/ContactsApi.md#updateContactWithHttpInfo) | **PATCH** /v1/contacts/{contId} | Update a contact
 *DraftsApi* | [**createDraft**](docs/DraftsApi.md#createDraft) | **POST** /v1/email/drafts | Create a new draft message
 *DraftsApi* | [**createDraftWithHttpInfo**](docs/DraftsApi.md#createDraftWithHttpInfo) | **POST** /v1/email/drafts | Create a new draft message
+*DraftsApi* | [**deleteDraft**](docs/DraftsApi.md#deleteDraft) | **DELETE** /v1/email/drafts/{draftId} | Delete a draft message
+*DraftsApi* | [**deleteDraftWithHttpInfo**](docs/DraftsApi.md#deleteDraftWithHttpInfo) | **DELETE** /v1/email/drafts/{draftId} | Delete a draft message
 *DraftsApi* | [**getDraft**](docs/DraftsApi.md#getDraft) | **GET** /v1/email/drafts/{draftId} | Get a draft message
 *DraftsApi* | [**getDraftWithHttpInfo**](docs/DraftsApi.md#getDraftWithHttpInfo) | **GET** /v1/email/drafts/{draftId} | Get a draft message
 *DraftsApi* | [**sendDraft**](docs/DraftsApi.md#sendDraft) | **POST** /v1/email/drafts/{draftId}/send | Send a draft message
@@ -452,7 +454,6 @@ Class | Method | HTTP request | Description
  - [BookingSuccessOutDto](docs/BookingSuccessOutDto.md)
  - [BookingTimesOutDto](docs/BookingTimesOutDto.md)
  - [BookingUpdateDto](docs/BookingUpdateDto.md)
- - [BookingWorkHours](docs/BookingWorkHours.md)
  - [Calendar](docs/Calendar.md)
  - [CalendarCreate](docs/CalendarCreate.md)
  - [CalendarMode](docs/CalendarMode.md)
@@ -545,6 +546,8 @@ Class | Method | HTTP request | Description
  - [RecurrenceSimple](docs/RecurrenceSimple.md)
  - [RecurrenceSimplePattern](docs/RecurrenceSimplePattern.md)
  - [RecurrenceSimpleRange](docs/RecurrenceSimpleRange.md)
+ - [Reminder](docs/Reminder.md)
+ - [ReminderOverride](docs/ReminderOverride.md)
  - [RewriteHtml](docs/RewriteHtml.md)
  - [ScheduledDraft](docs/ScheduledDraft.md)
  - [Scope](docs/Scope.md)
@@ -564,6 +567,7 @@ Class | Method | HTTP request | Description
  - [SuggestMeetingTimesResponse](docs/SuggestMeetingTimesResponse.md)
  - [SyncStatus](docs/SyncStatus.md)
  - [SyncTasksPage](docs/SyncTasksPage.md)
+ - [SysLabel](docs/SysLabel.md)
  - [Task](docs/Task.md)
  - [TaskCreate](docs/TaskCreate.md)
  - [TaskCreateResponse](docs/TaskCreateResponse.md)

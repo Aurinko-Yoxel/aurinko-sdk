@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.aurinko.client.model.Scope;
+import io.aurinko.client.model.ServiceProvider;
 import io.aurinko.client.model.ServiceType;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -48,6 +49,14 @@ class ApiAccountInDtoTest {
     @Test
     void serviceTypeTest() {
         // TODO: test serviceType
+    }
+
+    /**
+     * Test the property 'serviceProvider'
+     */
+    @Test
+    void serviceProviderTest() {
+        // TODO: test serviceProvider
     }
 
     /**
@@ -163,6 +172,14 @@ class ApiAccountInDtoTest {
     }
 
     /**
+     * Test the property 'email2'
+     */
+    @Test
+    void email2Test() {
+        // TODO: test email2
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
@@ -184,6 +201,14 @@ class ApiAccountInDtoTest {
     @Test
     void timezoneTest() {
         // TODO: test timezone
+    }
+
+    /**
+     * Test the property 'copyToSent'
+     */
+    @Test
+    void copyToSentTest() {
+        // TODO: test copyToSent
     }
 
 }
