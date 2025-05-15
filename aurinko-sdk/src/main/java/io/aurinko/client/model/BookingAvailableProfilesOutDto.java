@@ -37,15 +37,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   BookingAvailableProfilesOutDto.JSON_PROPERTY_PROFILE_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class BookingAvailableProfilesOutDto {
   public static final String JSON_PROPERTY_PROFILE_IDS = "profileIds";
+  @javax.annotation.Nullable
   private List<Long> profileIds = new ArrayList<>();
 
   public BookingAvailableProfilesOutDto() { 
   }
 
-  public BookingAvailableProfilesOutDto profileIds(List<Long> profileIds) {
+  public BookingAvailableProfilesOutDto profileIds(@javax.annotation.Nullable List<Long> profileIds) {
     this.profileIds = profileIds;
     return this;
   }
@@ -72,7 +73,7 @@ public class BookingAvailableProfilesOutDto {
 
   @JsonProperty(JSON_PROPERTY_PROFILE_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProfileIds(List<Long> profileIds) {
+  public void setProfileIds(@javax.annotation.Nullable List<Long> profileIds) {
     this.profileIds = profileIds;
   }
 

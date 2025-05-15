@@ -48,6 +48,14 @@ class UpdateMessageStatusDataTest {
     }
 
     /**
+     * Test the property 'archived'
+     */
+    @Test
+    void archivedTest() {
+        // TODO: test archived
+    }
+
+    /**
      * Test the property 'keywords'
      */
     @Test

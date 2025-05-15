@@ -39,17 +39,17 @@ import io.aurinko.client.ApiClient;
   Recurrence.JSON_PROPERTY_ICAL,
   Recurrence.JSON_PROPERTY_SIMPLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Recurrence {
   /**
    * Gets or Sets original
    */
   public enum OriginalEnum {
-    SIMPLE("simple"),
+    SIMPLE(String.valueOf("simple")),
     
-    ICAL("ical"),
+    ICAL(String.valueOf("ical")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -79,12 +79,15 @@ public class Recurrence {
   }
 
   public static final String JSON_PROPERTY_ORIGINAL = "original";
+  @javax.annotation.Nullable
   private OriginalEnum original;
 
   public static final String JSON_PROPERTY_ICAL = "ical";
+  @javax.annotation.Nullable
   private RecurrenceIcal ical;
 
   public static final String JSON_PROPERTY_SIMPLE = "simple";
+  @javax.annotation.Nullable
   private RecurrenceSimple simple;
 
   public Recurrence() { 
@@ -112,7 +115,7 @@ public class Recurrence {
 
 
 
-  public Recurrence ical(RecurrenceIcal ical) {
+  public Recurrence ical(@javax.annotation.Nullable RecurrenceIcal ical) {
     this.ical = ical;
     return this;
   }
@@ -131,12 +134,12 @@ public class Recurrence {
 
   @JsonProperty(JSON_PROPERTY_ICAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIcal(RecurrenceIcal ical) {
+  public void setIcal(@javax.annotation.Nullable RecurrenceIcal ical) {
     this.ical = ical;
   }
 
 
-  public Recurrence simple(RecurrenceSimple simple) {
+  public Recurrence simple(@javax.annotation.Nullable RecurrenceSimple simple) {
     this.simple = simple;
     return this;
   }
@@ -155,7 +158,7 @@ public class Recurrence {
 
   @JsonProperty(JSON_PROPERTY_SIMPLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSimple(RecurrenceSimple simple) {
+  public void setSimple(@javax.annotation.Nullable RecurrenceSimple simple) {
     this.simple = simple;
   }
 

@@ -41,24 +41,28 @@ import io.aurinko.client.ApiClient;
   SubscriptionsPage.JSON_PROPERTY_DONE,
   SubscriptionsPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SubscriptionsPage {
   public static final String JSON_PROPERTY_OFFSET = "offset";
+  @javax.annotation.Nullable
   private Integer offset;
 
   public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
+  @javax.annotation.Nullable
   private Long totalSize;
 
   public static final String JSON_PROPERTY_DONE = "done";
+  @javax.annotation.Nullable
   private Boolean done;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
+  @javax.annotation.Nullable
   private List<SubscriptionResponse> records = new ArrayList<>();
 
   public SubscriptionsPage() { 
   }
 
-  public SubscriptionsPage offset(Integer offset) {
+  public SubscriptionsPage offset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -77,12 +81,12 @@ public class SubscriptionsPage {
 
   @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOffset(Integer offset) {
+  public void setOffset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
   }
 
 
-  public SubscriptionsPage totalSize(Long totalSize) {
+  public SubscriptionsPage totalSize(@javax.annotation.Nullable Long totalSize) {
     this.totalSize = totalSize;
     return this;
   }
@@ -101,12 +105,12 @@ public class SubscriptionsPage {
 
   @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotalSize(Long totalSize) {
+  public void setTotalSize(@javax.annotation.Nullable Long totalSize) {
     this.totalSize = totalSize;
   }
 
 
-  public SubscriptionsPage done(Boolean done) {
+  public SubscriptionsPage done(@javax.annotation.Nullable Boolean done) {
     this.done = done;
     return this;
   }
@@ -125,12 +129,12 @@ public class SubscriptionsPage {
 
   @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDone(Boolean done) {
+  public void setDone(@javax.annotation.Nullable Boolean done) {
     this.done = done;
   }
 
 
-  public SubscriptionsPage records(List<SubscriptionResponse> records) {
+  public SubscriptionsPage records(@javax.annotation.Nullable List<SubscriptionResponse> records) {
     this.records = records;
     return this;
   }
@@ -157,7 +161,7 @@ public class SubscriptionsPage {
 
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<SubscriptionResponse> records) {
+  public void setRecords(@javax.annotation.Nullable List<SubscriptionResponse> records) {
     this.records = records;
   }
 

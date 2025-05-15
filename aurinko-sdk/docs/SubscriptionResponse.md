@@ -14,6 +14,7 @@
 |**failSince** | **OffsetDateTime** |  |  [optional] |
 |**failDescription** | **String** |  |  [optional] |
 |**disabledByBilling** | **Boolean** |  |  [optional] |
+|**filters** | **List&lt;DataConsumerFilter&gt;** |  |  [optional] |
 
 
 

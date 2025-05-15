@@ -1757,6 +1757,54 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /v1/email/folders/wellKnown:
+    get:
+      operationId: wellKnownFolders
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WellKnownFoldersOut'
+          description: Success
+      summary: List wellKnown email folders
+      tags:
+      - EmailFolders
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X GET -H 'Authorization: Bearer <access token>' \
+              -G https://api.aurinko.io/v1/email/folders/wellKnown
+      x-accepts:
+      - application/json
+    patch:
+      operationId: updateWellKnownFolders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WellKnownFoldersIn'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WellKnownFoldersOut'
+          description: Success
+      summary: Update wellKnown email folders
+      tags:
+      - EmailFolders
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -X PATCH -H 'Authorization: Bearer <access token>' \
+              -G https://api.aurinko.io/v1/email/folders/wellKnown \
+              -d '{
+                  "archive": "folderXid"
+                 }'
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /v1/email/folders/{folderId}:
     get:
       operationId: folder
@@ -8731,6 +8779,14 @@ components:
         userId:
           type: string
       type: object
+    WellKnownFoldersOut:
+      example:
+        archive: archive
+      properties:
+        archive:
+          description: an xid of folder marked as an Archive
+          type: string
+      type: object
     GroupBookingOutDto:
       example:
         availabilityStep: 5
@@ -9872,6 +9928,15 @@ components:
           format: base64
           type: string
       type: object
+    WellKnownFoldersIn:
+      example:
+        archive: archive
+      properties:
+        archive:
+          description: "an xid of folder - to mark it as Archive, set to null to clear\
+            \ Archive folder"
+          type: string
+      type: object
     SubscriptionResponse:
       example:
         notificationUrl: notificationUrl
@@ -9880,6 +9945,9 @@ components:
         active: true
         failDescription: failDescription
         id: 1
+        filters:
+        - withoutDrafts
+        - withoutDrafts
         failSince: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
@@ -9898,6 +9966,10 @@ components:
           type: string
         disabledByBilling:
           type: boolean
+        filters:
+          items:
+            $ref: '#/components/schemas/DataConsumerFilter'
+          type: array
       type: object
     CalendarUpdate:
       example:
@@ -10640,12 +10712,15 @@ components:
       type: object
     UpdateMessageStatusData:
       example:
+        archived: true
         keywords:
         - keywords
         - keywords
         unread: true
       properties:
         unread:
+          type: boolean
+        archived:
           type: boolean
         keywords:
           items:
@@ -11279,6 +11354,10 @@ components:
             type: integer
           type: array
       type: object
+    DataConsumerFilter:
+      enum:
+      - withoutDrafts
+      type: string
     ShowAs:
       enum:
       - free
@@ -11541,11 +11620,18 @@ components:
       example:
         notificationUrl: notificationUrl
         resource: resource
+        filters:
+        - withoutDrafts
+        - withoutDrafts
       properties:
         resource:
           type: string
         notificationUrl:
           type: string
+        filters:
+          items:
+            $ref: '#/components/schemas/DataConsumerFilter'
+          type: array
       type: object
     MeetingInfo:
       example:
@@ -13106,6 +13192,9 @@ components:
           active: true
           failDescription: failDescription
           id: 1
+          filters:
+          - withoutDrafts
+          - withoutDrafts
           failSince: 2000-01-23T04:56:07.000+00:00
         - notificationUrl: notificationUrl
           resource: resource
@@ -13113,6 +13202,9 @@ components:
           active: true
           failDescription: failDescription
           id: 1
+          filters:
+          - withoutDrafts
+          - withoutDrafts
           failSince: 2000-01-23T04:56:07.000+00:00
         done: true
       properties:

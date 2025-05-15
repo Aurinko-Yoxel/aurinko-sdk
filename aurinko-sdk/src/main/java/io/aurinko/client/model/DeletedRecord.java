@@ -37,12 +37,14 @@ import io.aurinko.client.ApiClient;
   DeletedRecord.JSON_PROPERTY_ID,
   DeletedRecord.JSON_PROPERTY_TIMESTAMP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class DeletedRecord {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_TIMESTAMP = "timestamp";
+  @javax.annotation.Nullable
   private OffsetDateTime timestamp;
 
   public DeletedRecord() { 
@@ -70,7 +72,7 @@ public class DeletedRecord {
 
 
 
-  public DeletedRecord timestamp(OffsetDateTime timestamp) {
+  public DeletedRecord timestamp(@javax.annotation.Nullable OffsetDateTime timestamp) {
     this.timestamp = timestamp;
     return this;
   }
@@ -89,7 +91,7 @@ public class DeletedRecord {
 
   @JsonProperty(JSON_PROPERTY_TIMESTAMP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimestamp(OffsetDateTime timestamp) {
+  public void setTimestamp(@javax.annotation.Nullable OffsetDateTime timestamp) {
     this.timestamp = timestamp;
   }
 

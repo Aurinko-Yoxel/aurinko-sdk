@@ -38,24 +38,28 @@ import io.aurinko.client.ApiClient;
   ContactPhoto.JSON_PROPERTY_MIME_TYPE,
   ContactPhoto.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ContactPhoto {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_MIME_TYPE = "mimeType";
+  @javax.annotation.Nullable
   private String mimeType;
 
   public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nullable
   private String content;
 
   public ContactPhoto() { 
   }
 
-  public ContactPhoto id(String id) {
+  public ContactPhoto id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -74,12 +78,12 @@ public class ContactPhoto {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ContactPhoto name(String name) {
+  public ContactPhoto name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -98,12 +102,12 @@ public class ContactPhoto {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ContactPhoto mimeType(String mimeType) {
+  public ContactPhoto mimeType(@javax.annotation.Nullable String mimeType) {
     this.mimeType = mimeType;
     return this;
   }
@@ -122,12 +126,12 @@ public class ContactPhoto {
 
   @JsonProperty(JSON_PROPERTY_MIME_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMimeType(String mimeType) {
+  public void setMimeType(@javax.annotation.Nullable String mimeType) {
     this.mimeType = mimeType;
   }
 
 
-  public ContactPhoto content(String content) {
+  public ContactPhoto content(@javax.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -146,7 +150,7 @@ public class ContactPhoto {
 
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContent(String content) {
+  public void setContent(@javax.annotation.Nullable String content) {
     this.content = content;
   }
 

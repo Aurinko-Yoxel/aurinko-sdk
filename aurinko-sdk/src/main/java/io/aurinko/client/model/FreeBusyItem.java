@@ -39,21 +39,24 @@ import io.aurinko.client.ApiClient;
   FreeBusyItem.JSON_PROPERTY_END,
   FreeBusyItem.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class FreeBusyItem {
   public static final String JSON_PROPERTY_START = "start";
+  @javax.annotation.Nullable
   private OffsetDateTime start;
 
   public static final String JSON_PROPERTY_END = "end";
+  @javax.annotation.Nullable
   private OffsetDateTime end;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private ShowAs status;
 
   public FreeBusyItem() { 
   }
 
-  public FreeBusyItem start(OffsetDateTime start) {
+  public FreeBusyItem start(@javax.annotation.Nullable OffsetDateTime start) {
     this.start = start;
     return this;
   }
@@ -72,12 +75,12 @@ public class FreeBusyItem {
 
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
+  public void setStart(@javax.annotation.Nullable OffsetDateTime start) {
     this.start = start;
   }
 
 
-  public FreeBusyItem end(OffsetDateTime end) {
+  public FreeBusyItem end(@javax.annotation.Nullable OffsetDateTime end) {
     this.end = end;
     return this;
   }
@@ -96,12 +99,12 @@ public class FreeBusyItem {
 
   @JsonProperty(JSON_PROPERTY_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
+  public void setEnd(@javax.annotation.Nullable OffsetDateTime end) {
     this.end = end;
   }
 
 
-  public FreeBusyItem status(ShowAs status) {
+  public FreeBusyItem status(@javax.annotation.Nullable ShowAs status) {
     this.status = status;
     return this;
   }
@@ -120,7 +123,7 @@ public class FreeBusyItem {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(ShowAs status) {
+  public void setStatus(@javax.annotation.Nullable ShowAs status) {
     this.status = status;
   }
 

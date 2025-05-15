@@ -44,17 +44,17 @@ import io.aurinko.client.ApiClient;
   DripRequestDTO.JSON_PROPERTY_TARGETS,
   DripRequestDTO.JSON_PROPERTY_ACTION_VARS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class DripRequestDTO {
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    DISABLED("disabled"),
+    DISABLED(String.valueOf("disabled")),
     
-    ACTIVE("active"),
+    ACTIVE(String.valueOf("active")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -84,24 +84,29 @@ public class DripRequestDTO {
   }
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String JSON_PROPERTY_RULE_ID = "ruleId";
+  @javax.annotation.Nullable
   private Long ruleId;
 
   public static final String JSON_PROPERTY_DRIP_AFTER = "dripAfter";
+  @javax.annotation.Nullable
   private OffsetDateTime dripAfter;
 
   public static final String JSON_PROPERTY_TARGETS = "targets";
+  @javax.annotation.Nullable
   private List<String> targets = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ACTION_VARS = "actionVars";
+  @javax.annotation.Nullable
   private Map<String, String> actionVars = new HashMap<>();
 
   public DripRequestDTO() { 
   }
 
-  public DripRequestDTO status(StatusEnum status) {
+  public DripRequestDTO status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -120,12 +125,12 @@ public class DripRequestDTO {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public DripRequestDTO ruleId(Long ruleId) {
+  public DripRequestDTO ruleId(@javax.annotation.Nullable Long ruleId) {
     this.ruleId = ruleId;
     return this;
   }
@@ -144,12 +149,12 @@ public class DripRequestDTO {
 
   @JsonProperty(JSON_PROPERTY_RULE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRuleId(Long ruleId) {
+  public void setRuleId(@javax.annotation.Nullable Long ruleId) {
     this.ruleId = ruleId;
   }
 
 
-  public DripRequestDTO dripAfter(OffsetDateTime dripAfter) {
+  public DripRequestDTO dripAfter(@javax.annotation.Nullable OffsetDateTime dripAfter) {
     this.dripAfter = dripAfter;
     return this;
   }
@@ -168,12 +173,12 @@ public class DripRequestDTO {
 
   @JsonProperty(JSON_PROPERTY_DRIP_AFTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDripAfter(OffsetDateTime dripAfter) {
+  public void setDripAfter(@javax.annotation.Nullable OffsetDateTime dripAfter) {
     this.dripAfter = dripAfter;
   }
 
 
-  public DripRequestDTO targets(List<String> targets) {
+  public DripRequestDTO targets(@javax.annotation.Nullable List<String> targets) {
     this.targets = targets;
     return this;
   }
@@ -200,12 +205,12 @@ public class DripRequestDTO {
 
   @JsonProperty(JSON_PROPERTY_TARGETS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargets(List<String> targets) {
+  public void setTargets(@javax.annotation.Nullable List<String> targets) {
     this.targets = targets;
   }
 
 
-  public DripRequestDTO actionVars(Map<String, String> actionVars) {
+  public DripRequestDTO actionVars(@javax.annotation.Nullable Map<String, String> actionVars) {
     this.actionVars = actionVars;
     return this;
   }
@@ -232,7 +237,7 @@ public class DripRequestDTO {
 
   @JsonProperty(JSON_PROPERTY_ACTION_VARS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActionVars(Map<String, String> actionVars) {
+  public void setActionVars(@javax.annotation.Nullable Map<String, String> actionVars) {
     this.actionVars = actionVars;
   }
 

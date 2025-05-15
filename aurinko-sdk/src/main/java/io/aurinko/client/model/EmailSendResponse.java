@@ -41,15 +41,15 @@ import io.aurinko.client.ApiClient;
   EmailSendResponse.JSON_PROPERTY_PROCESSING_STATUS,
   EmailSendResponse.JSON_PROPERTY_PROCESSING_ERROR
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailSendResponse {
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("Ok"),
+    OK(String.valueOf("Ok")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -79,26 +79,30 @@ public class EmailSendResponse {
   }
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
+  @javax.annotation.Nullable
   private String threadId;
 
   public static final String JSON_PROPERTY_TRACKING_ID = "trackingId";
+  @javax.annotation.Nullable
   private String trackingId;
 
   /**
    * Gets or Sets processingStatus
    */
   public enum ProcessingStatusEnum {
-    OK("Ok"),
+    OK(String.valueOf("Ok")),
     
-    INCOMPLETE("Incomplete"),
+    INCOMPLETE(String.valueOf("Incomplete")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -128,15 +132,17 @@ public class EmailSendResponse {
   }
 
   public static final String JSON_PROPERTY_PROCESSING_STATUS = "processingStatus";
+  @javax.annotation.Nullable
   private ProcessingStatusEnum processingStatus;
 
   public static final String JSON_PROPERTY_PROCESSING_ERROR = "processingError";
+  @javax.annotation.Nullable
   private EmailSendError processingError;
 
   public EmailSendResponse() { 
   }
 
-  public EmailSendResponse status(StatusEnum status) {
+  public EmailSendResponse status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -155,12 +161,12 @@ public class EmailSendResponse {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public EmailSendResponse id(String id) {
+  public EmailSendResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -179,12 +185,12 @@ public class EmailSendResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public EmailSendResponse threadId(String threadId) {
+  public EmailSendResponse threadId(@javax.annotation.Nullable String threadId) {
     this.threadId = threadId;
     return this;
   }
@@ -203,12 +209,12 @@ public class EmailSendResponse {
 
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreadId(String threadId) {
+  public void setThreadId(@javax.annotation.Nullable String threadId) {
     this.threadId = threadId;
   }
 
 
-  public EmailSendResponse trackingId(String trackingId) {
+  public EmailSendResponse trackingId(@javax.annotation.Nullable String trackingId) {
     this.trackingId = trackingId;
     return this;
   }
@@ -227,12 +233,12 @@ public class EmailSendResponse {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingId(String trackingId) {
+  public void setTrackingId(@javax.annotation.Nullable String trackingId) {
     this.trackingId = trackingId;
   }
 
 
-  public EmailSendResponse processingStatus(ProcessingStatusEnum processingStatus) {
+  public EmailSendResponse processingStatus(@javax.annotation.Nullable ProcessingStatusEnum processingStatus) {
     this.processingStatus = processingStatus;
     return this;
   }
@@ -251,12 +257,12 @@ public class EmailSendResponse {
 
   @JsonProperty(JSON_PROPERTY_PROCESSING_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProcessingStatus(ProcessingStatusEnum processingStatus) {
+  public void setProcessingStatus(@javax.annotation.Nullable ProcessingStatusEnum processingStatus) {
     this.processingStatus = processingStatus;
   }
 
 
-  public EmailSendResponse processingError(EmailSendError processingError) {
+  public EmailSendResponse processingError(@javax.annotation.Nullable EmailSendError processingError) {
     this.processingError = processingError;
     return this;
   }
@@ -275,7 +281,7 @@ public class EmailSendResponse {
 
   @JsonProperty(JSON_PROPERTY_PROCESSING_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProcessingError(EmailSendError processingError) {
+  public void setProcessingError(@javax.annotation.Nullable EmailSendError processingError) {
     this.processingError = processingError;
   }
 

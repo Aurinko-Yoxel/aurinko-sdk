@@ -56,60 +56,75 @@ import io.aurinko.client.ApiClient;
   Task.JSON_PROPERTY_OWNER,
   Task.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Task {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_ETAG = "etag";
+  @javax.annotation.Nullable
   private String etag;
 
   public static final String JSON_PROPERTY_TITLE = "title";
+  @javax.annotation.Nullable
   private String title;
 
   public static final String JSON_PROPERTY_LAST_MODIFIED_TIME = "lastModifiedTime";
+  @javax.annotation.Nullable
   private OffsetDateTime lastModifiedTime;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parentId";
+  @javax.annotation.Nullable
   private String parentId;
 
   public static final String JSON_PROPERTY_POSITION = "position";
+  @javax.annotation.Nullable
   private String position;
 
   public static final String JSON_PROPERTY_NOTES = "notes";
+  @javax.annotation.Nullable
   private String notes;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private TaskStatus status;
 
   public static final String JSON_PROPERTY_IMPORTANCE = "importance";
+  @javax.annotation.Nullable
   private TaskImportance importance;
 
   public static final String JSON_PROPERTY_DUE = "due";
+  @javax.annotation.Nullable
   private OffsetDateTime due;
 
   public static final String JSON_PROPERTY_COMPLETED = "completed";
+  @javax.annotation.Nullable
   private OffsetDateTime completed;
 
   public static final String JSON_PROPERTY_LINKS = "links";
+  @javax.annotation.Nullable
   private List<TaskLink> links = new ArrayList<>();
 
   public static final String JSON_PROPERTY_START_DATE_TIME = "startDateTime";
+  @javax.annotation.Nullable
   private OffsetDateTime startDateTime;
 
   public static final String JSON_PROPERTY_CATEGORIES = "categories";
+  @javax.annotation.Nullable
   private List<String> categories = new ArrayList<>();
 
   public static final String JSON_PROPERTY_OWNER = "owner";
+  @javax.annotation.Nullable
   private String owner;
 
   /**
    * Gets or Sets omitted
    */
   public enum OmittedEnum {
-    NOTES("notes"),
+    NOTES(String.valueOf("notes")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -139,6 +154,7 @@ public class Task {
   }
 
   public static final String JSON_PROPERTY_OMITTED = "omitted";
+  @javax.annotation.Nullable
   private List<OmittedEnum> omitted = new ArrayList<>();
 
   public Task() { 
@@ -152,7 +168,7 @@ public class Task {
     this.omitted = omitted;
   }
 
-  public Task id(String id) {
+  public Task id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -171,12 +187,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public Task etag(String etag) {
+  public Task etag(@javax.annotation.Nullable String etag) {
     this.etag = etag;
     return this;
   }
@@ -195,12 +211,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_ETAG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEtag(String etag) {
+  public void setEtag(@javax.annotation.Nullable String etag) {
     this.etag = etag;
   }
 
 
-  public Task title(String title) {
+  public Task title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -219,12 +235,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public Task lastModifiedTime(OffsetDateTime lastModifiedTime) {
+  public Task lastModifiedTime(@javax.annotation.Nullable OffsetDateTime lastModifiedTime) {
     this.lastModifiedTime = lastModifiedTime;
     return this;
   }
@@ -243,12 +259,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastModifiedTime(OffsetDateTime lastModifiedTime) {
+  public void setLastModifiedTime(@javax.annotation.Nullable OffsetDateTime lastModifiedTime) {
     this.lastModifiedTime = lastModifiedTime;
   }
 
 
-  public Task parentId(String parentId) {
+  public Task parentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
@@ -267,12 +283,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentId(String parentId) {
+  public void setParentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 
 
-  public Task position(String position) {
+  public Task position(@javax.annotation.Nullable String position) {
     this.position = position;
     return this;
   }
@@ -291,12 +307,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPosition(String position) {
+  public void setPosition(@javax.annotation.Nullable String position) {
     this.position = position;
   }
 
 
-  public Task notes(String notes) {
+  public Task notes(@javax.annotation.Nullable String notes) {
     this.notes = notes;
     return this;
   }
@@ -315,12 +331,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNotes(String notes) {
+  public void setNotes(@javax.annotation.Nullable String notes) {
     this.notes = notes;
   }
 
 
-  public Task status(TaskStatus status) {
+  public Task status(@javax.annotation.Nullable TaskStatus status) {
     this.status = status;
     return this;
   }
@@ -339,12 +355,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(TaskStatus status) {
+  public void setStatus(@javax.annotation.Nullable TaskStatus status) {
     this.status = status;
   }
 
 
-  public Task importance(TaskImportance importance) {
+  public Task importance(@javax.annotation.Nullable TaskImportance importance) {
     this.importance = importance;
     return this;
   }
@@ -363,12 +379,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_IMPORTANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setImportance(TaskImportance importance) {
+  public void setImportance(@javax.annotation.Nullable TaskImportance importance) {
     this.importance = importance;
   }
 
 
-  public Task due(OffsetDateTime due) {
+  public Task due(@javax.annotation.Nullable OffsetDateTime due) {
     this.due = due;
     return this;
   }
@@ -387,12 +403,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_DUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDue(OffsetDateTime due) {
+  public void setDue(@javax.annotation.Nullable OffsetDateTime due) {
     this.due = due;
   }
 
 
-  public Task completed(OffsetDateTime completed) {
+  public Task completed(@javax.annotation.Nullable OffsetDateTime completed) {
     this.completed = completed;
     return this;
   }
@@ -411,12 +427,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_COMPLETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCompleted(OffsetDateTime completed) {
+  public void setCompleted(@javax.annotation.Nullable OffsetDateTime completed) {
     this.completed = completed;
   }
 
 
-  public Task links(List<TaskLink> links) {
+  public Task links(@javax.annotation.Nullable List<TaskLink> links) {
     this.links = links;
     return this;
   }
@@ -443,12 +459,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_LINKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLinks(List<TaskLink> links) {
+  public void setLinks(@javax.annotation.Nullable List<TaskLink> links) {
     this.links = links;
   }
 
 
-  public Task startDateTime(OffsetDateTime startDateTime) {
+  public Task startDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
     return this;
   }
@@ -467,12 +483,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartDateTime(OffsetDateTime startDateTime) {
+  public void setStartDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
 
 
-  public Task categories(List<String> categories) {
+  public Task categories(@javax.annotation.Nullable List<String> categories) {
     this.categories = categories;
     return this;
   }
@@ -499,12 +515,12 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCategories(List<String> categories) {
+  public void setCategories(@javax.annotation.Nullable List<String> categories) {
     this.categories = categories;
   }
 
 
-  public Task owner(String owner) {
+  public Task owner(@javax.annotation.Nullable String owner) {
     this.owner = owner;
     return this;
   }
@@ -523,7 +539,7 @@ public class Task {
 
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOwner(String owner) {
+  public void setOwner(@javax.annotation.Nullable String owner) {
     this.owner = owner;
   }
 

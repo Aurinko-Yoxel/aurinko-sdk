@@ -44,24 +44,30 @@ import io.aurinko.client.ApiClient;
   MeetingAttendee.JSON_PROPERTY_BUSY_INTERVALS,
   MeetingAttendee.JSON_PROPERTY_FREE_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class MeetingAttendee {
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
+  @javax.annotation.Nullable
   private String timezone;
 
   public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
+  @javax.annotation.Nullable
   private WeekWorkSchedule workHours;
 
   public static final String JSON_PROPERTY_ERROR = "error";
+  @javax.annotation.Nullable
   private String error;
 
   public static final String JSON_PROPERTY_BUSY_INTERVALS = "busyIntervals";
+  @javax.annotation.Nullable
   private List<TimeInterval> busyIntervals = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FREE_INTERVALS = "freeIntervals";
+  @javax.annotation.Nullable
   private List<TimeInterval> freeIntervals = new ArrayList<>();
 
   public MeetingAttendee() { 
@@ -75,7 +81,7 @@ public class MeetingAttendee {
     this.error = error;
   }
 
-  public MeetingAttendee email(String email) {
+  public MeetingAttendee email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -94,12 +100,12 @@ public class MeetingAttendee {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public MeetingAttendee timezone(String timezone) {
+  public MeetingAttendee timezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -118,12 +124,12 @@ public class MeetingAttendee {
 
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimezone(String timezone) {
+  public void setTimezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
   }
 
 
-  public MeetingAttendee workHours(WeekWorkSchedule workHours) {
+  public MeetingAttendee workHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
     return this;
   }
@@ -142,7 +148,7 @@ public class MeetingAttendee {
 
   @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWorkHours(WeekWorkSchedule workHours) {
+  public void setWorkHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
   }
 
@@ -161,7 +167,7 @@ public class MeetingAttendee {
 
 
 
-  public MeetingAttendee busyIntervals(List<TimeInterval> busyIntervals) {
+  public MeetingAttendee busyIntervals(@javax.annotation.Nullable List<TimeInterval> busyIntervals) {
     this.busyIntervals = busyIntervals;
     return this;
   }
@@ -188,12 +194,12 @@ public class MeetingAttendee {
 
   @JsonProperty(JSON_PROPERTY_BUSY_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBusyIntervals(List<TimeInterval> busyIntervals) {
+  public void setBusyIntervals(@javax.annotation.Nullable List<TimeInterval> busyIntervals) {
     this.busyIntervals = busyIntervals;
   }
 
 
-  public MeetingAttendee freeIntervals(List<TimeInterval> freeIntervals) {
+  public MeetingAttendee freeIntervals(@javax.annotation.Nullable List<TimeInterval> freeIntervals) {
     this.freeIntervals = freeIntervals;
     return this;
   }
@@ -220,7 +226,7 @@ public class MeetingAttendee {
 
   @JsonProperty(JSON_PROPERTY_FREE_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFreeIntervals(List<TimeInterval> freeIntervals) {
+  public void setFreeIntervals(@javax.annotation.Nullable List<TimeInterval> freeIntervals) {
     this.freeIntervals = freeIntervals;
   }
 

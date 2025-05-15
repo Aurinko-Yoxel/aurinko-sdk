@@ -42,40 +42,47 @@ import io.aurinko.client.ApiClient;
   ContactPostalAddress.JSON_PROPERTY_COUNTRY,
   ContactPostalAddress.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ContactPostalAddress {
   public static final String JSON_PROPERTY_STREET = "street";
+  @javax.annotation.Nullable
   private String street;
 
   public static final String JSON_PROPERTY_STREET_LINE2 = "streetLine2";
+  @javax.annotation.Nullable
   private String streetLine2;
 
   public static final String JSON_PROPERTY_PO_BOX = "poBox";
+  @javax.annotation.Nullable
   private String poBox;
 
   public static final String JSON_PROPERTY_CITY = "city";
+  @javax.annotation.Nullable
   private String city;
 
   public static final String JSON_PROPERTY_STATE = "state";
+  @javax.annotation.Nullable
   private String state;
 
   public static final String JSON_PROPERTY_POSTAL_CODE = "postalCode";
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
+  @javax.annotation.Nullable
   private String country;
 
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    WORK("work"),
+    WORK(String.valueOf("work")),
     
-    HOME("home"),
+    HOME(String.valueOf("home")),
     
-    OTHER("other"),
+    OTHER(String.valueOf("other")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -105,12 +112,13 @@ public class ContactPostalAddress {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public ContactPostalAddress() { 
   }
 
-  public ContactPostalAddress street(String street) {
+  public ContactPostalAddress street(@javax.annotation.Nullable String street) {
     this.street = street;
     return this;
   }
@@ -129,12 +137,12 @@ public class ContactPostalAddress {
 
   @JsonProperty(JSON_PROPERTY_STREET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreet(String street) {
+  public void setStreet(@javax.annotation.Nullable String street) {
     this.street = street;
   }
 
 
-  public ContactPostalAddress streetLine2(String streetLine2) {
+  public ContactPostalAddress streetLine2(@javax.annotation.Nullable String streetLine2) {
     this.streetLine2 = streetLine2;
     return this;
   }
@@ -153,12 +161,12 @@ public class ContactPostalAddress {
 
   @JsonProperty(JSON_PROPERTY_STREET_LINE2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreetLine2(String streetLine2) {
+  public void setStreetLine2(@javax.annotation.Nullable String streetLine2) {
     this.streetLine2 = streetLine2;
   }
 
 
-  public ContactPostalAddress poBox(String poBox) {
+  public ContactPostalAddress poBox(@javax.annotation.Nullable String poBox) {
     this.poBox = poBox;
     return this;
   }
@@ -177,12 +185,12 @@ public class ContactPostalAddress {
 
   @JsonProperty(JSON_PROPERTY_PO_BOX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPoBox(String poBox) {
+  public void setPoBox(@javax.annotation.Nullable String poBox) {
     this.poBox = poBox;
   }
 
 
-  public ContactPostalAddress city(String city) {
+  public ContactPostalAddress city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
@@ -201,12 +209,12 @@ public class ContactPostalAddress {
 
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public ContactPostalAddress state(String state) {
+  public ContactPostalAddress state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
@@ -225,12 +233,12 @@ public class ContactPostalAddress {
 
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setState(String state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
 
-  public ContactPostalAddress postalCode(String postalCode) {
+  public ContactPostalAddress postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -249,12 +257,12 @@ public class ContactPostalAddress {
 
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public ContactPostalAddress country(String country) {
+  public ContactPostalAddress country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
@@ -273,12 +281,12 @@ public class ContactPostalAddress {
 
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public ContactPostalAddress type(TypeEnum type) {
+  public ContactPostalAddress type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -297,7 +305,7 @@ public class ContactPostalAddress {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 

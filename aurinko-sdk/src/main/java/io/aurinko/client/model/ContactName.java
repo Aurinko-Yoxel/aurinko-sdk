@@ -42,36 +42,44 @@ import io.aurinko.client.ApiClient;
   ContactName.JSON_PROPERTY_YOMI_GIVEN_NAME,
   ContactName.JSON_PROPERTY_YOMI_FAMILY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ContactName {
   public static final String JSON_PROPERTY_DISPLAY_NAME = "displayName";
+  @javax.annotation.Nullable
   private String displayName;
 
   public static final String JSON_PROPERTY_PREFIX = "prefix";
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String JSON_PROPERTY_GIVEN_NAME = "givenName";
+  @javax.annotation.Nullable
   private String givenName;
 
   public static final String JSON_PROPERTY_MIDDLE_NAME = "middleName";
+  @javax.annotation.Nullable
   private String middleName;
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "familyName";
+  @javax.annotation.Nullable
   private String familyName;
 
   public static final String JSON_PROPERTY_SUFFIX = "suffix";
+  @javax.annotation.Nullable
   private String suffix;
 
   public static final String JSON_PROPERTY_YOMI_GIVEN_NAME = "yomiGivenName";
+  @javax.annotation.Nullable
   private String yomiGivenName;
 
   public static final String JSON_PROPERTY_YOMI_FAMILY_NAME = "yomiFamilyName";
+  @javax.annotation.Nullable
   private String yomiFamilyName;
 
   public ContactName() { 
   }
 
-  public ContactName displayName(String displayName) {
+  public ContactName displayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
     return this;
   }
@@ -90,12 +98,12 @@ public class ContactName {
 
   @JsonProperty(JSON_PROPERTY_DISPLAY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDisplayName(String displayName) {
+  public void setDisplayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
   }
 
 
-  public ContactName prefix(String prefix) {
+  public ContactName prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
@@ -114,12 +122,12 @@ public class ContactName {
 
   @JsonProperty(JSON_PROPERTY_PREFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public ContactName givenName(String givenName) {
+  public ContactName givenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
     return this;
   }
@@ -138,12 +146,12 @@ public class ContactName {
 
   @JsonProperty(JSON_PROPERTY_GIVEN_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGivenName(String givenName) {
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
   }
 
 
-  public ContactName middleName(String middleName) {
+  public ContactName middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -162,12 +170,12 @@ public class ContactName {
 
   @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMiddleName(String middleName) {
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
   }
 
 
-  public ContactName familyName(String familyName) {
+  public ContactName familyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
     return this;
   }
@@ -186,12 +194,12 @@ public class ContactName {
 
   @JsonProperty(JSON_PROPERTY_FAMILY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFamilyName(String familyName) {
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
   }
 
 
-  public ContactName suffix(String suffix) {
+  public ContactName suffix(@javax.annotation.Nullable String suffix) {
     this.suffix = suffix;
     return this;
   }
@@ -210,12 +218,12 @@ public class ContactName {
 
   @JsonProperty(JSON_PROPERTY_SUFFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSuffix(String suffix) {
+  public void setSuffix(@javax.annotation.Nullable String suffix) {
     this.suffix = suffix;
   }
 
 
-  public ContactName yomiGivenName(String yomiGivenName) {
+  public ContactName yomiGivenName(@javax.annotation.Nullable String yomiGivenName) {
     this.yomiGivenName = yomiGivenName;
     return this;
   }
@@ -234,12 +242,12 @@ public class ContactName {
 
   @JsonProperty(JSON_PROPERTY_YOMI_GIVEN_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setYomiGivenName(String yomiGivenName) {
+  public void setYomiGivenName(@javax.annotation.Nullable String yomiGivenName) {
     this.yomiGivenName = yomiGivenName;
   }
 
 
-  public ContactName yomiFamilyName(String yomiFamilyName) {
+  public ContactName yomiFamilyName(@javax.annotation.Nullable String yomiFamilyName) {
     this.yomiFamilyName = yomiFamilyName;
     return this;
   }
@@ -258,7 +266,7 @@ public class ContactName {
 
   @JsonProperty(JSON_PROPERTY_YOMI_FAMILY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setYomiFamilyName(String yomiFamilyName) {
+  public void setYomiFamilyName(@javax.annotation.Nullable String yomiFamilyName) {
     this.yomiFamilyName = yomiFamilyName;
   }
 

@@ -51,60 +51,76 @@ import io.aurinko.client.ApiClient;
   TrackingData.JSON_PROPERTY_IGNORE_OPEN_CLICKS,
   TrackingData.JSON_PROPERTY_HAS_BOUNCED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class TrackingData {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private Long id;
 
   public static final String JSON_PROPERTY_MESSAGE_ID = "messageId";
+  @javax.annotation.Nullable
   private String messageId;
 
   public static final String JSON_PROPERTY_INET_MESSAGE_ID = "inetMessageId";
+  @javax.annotation.Nullable
   private String inetMessageId;
 
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
+  @javax.annotation.Nullable
   private String threadId;
 
   public static final String JSON_PROPERTY_SEND_DATE = "sendDate";
+  @javax.annotation.Nullable
   private OffsetDateTime sendDate;
 
   public static final String JSON_PROPERTY_LAST_ACTIVITY_TIME = "lastActivityTime";
+  @javax.annotation.Nullable
   private OffsetDateTime lastActivityTime;
 
   public static final String JSON_PROPERTY_LAST_RESPONDED_TIME = "lastRespondedTime";
+  @javax.annotation.Nullable
   private OffsetDateTime lastRespondedTime;
 
   public static final String JSON_PROPERTY_TRACK_REPLIES = "trackReplies";
+  @javax.annotation.Nullable
   private Boolean trackReplies;
 
   public static final String JSON_PROPERTY_TRACK_OPENS = "trackOpens";
+  @javax.annotation.Nullable
   private Boolean trackOpens;
 
   public static final String JSON_PROPERTY_TRACKING_CODE = "trackingCode";
+  @javax.annotation.Nullable
   private String trackingCode;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
+  @javax.annotation.Nullable
   private String context;
 
   public static final String JSON_PROPERTY_LOCATION = "location";
+  @javax.annotation.Nullable
   private String location;
 
   public static final String JSON_PROPERTY_USER_AGENT = "userAgent";
+  @javax.annotation.Nullable
   private String userAgent;
 
   public static final String JSON_PROPERTY_REMOTE_ADDR = "remoteAddr";
+  @javax.annotation.Nullable
   private String remoteAddr;
 
   public static final String JSON_PROPERTY_IGNORE_OPEN_CLICKS = "ignoreOpenClicks";
+  @javax.annotation.Nullable
   private Boolean ignoreOpenClicks;
 
   public static final String JSON_PROPERTY_HAS_BOUNCED = "hasBounced";
+  @javax.annotation.Nullable
   private Boolean hasBounced;
 
   public TrackingData() { 
   }
 
-  public TrackingData id(Long id) {
+  public TrackingData id(@javax.annotation.Nullable Long id) {
     this.id = id;
     return this;
   }
@@ -123,12 +139,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(Long id) {
+  public void setId(@javax.annotation.Nullable Long id) {
     this.id = id;
   }
 
 
-  public TrackingData messageId(String messageId) {
+  public TrackingData messageId(@javax.annotation.Nullable String messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -147,12 +163,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageId(String messageId) {
+  public void setMessageId(@javax.annotation.Nullable String messageId) {
     this.messageId = messageId;
   }
 
 
-  public TrackingData inetMessageId(String inetMessageId) {
+  public TrackingData inetMessageId(@javax.annotation.Nullable String inetMessageId) {
     this.inetMessageId = inetMessageId;
     return this;
   }
@@ -171,12 +187,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_INET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInetMessageId(String inetMessageId) {
+  public void setInetMessageId(@javax.annotation.Nullable String inetMessageId) {
     this.inetMessageId = inetMessageId;
   }
 
 
-  public TrackingData threadId(String threadId) {
+  public TrackingData threadId(@javax.annotation.Nullable String threadId) {
     this.threadId = threadId;
     return this;
   }
@@ -195,12 +211,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreadId(String threadId) {
+  public void setThreadId(@javax.annotation.Nullable String threadId) {
     this.threadId = threadId;
   }
 
 
-  public TrackingData sendDate(OffsetDateTime sendDate) {
+  public TrackingData sendDate(@javax.annotation.Nullable OffsetDateTime sendDate) {
     this.sendDate = sendDate;
     return this;
   }
@@ -219,12 +235,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_SEND_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSendDate(OffsetDateTime sendDate) {
+  public void setSendDate(@javax.annotation.Nullable OffsetDateTime sendDate) {
     this.sendDate = sendDate;
   }
 
 
-  public TrackingData lastActivityTime(OffsetDateTime lastActivityTime) {
+  public TrackingData lastActivityTime(@javax.annotation.Nullable OffsetDateTime lastActivityTime) {
     this.lastActivityTime = lastActivityTime;
     return this;
   }
@@ -243,12 +259,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_LAST_ACTIVITY_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastActivityTime(OffsetDateTime lastActivityTime) {
+  public void setLastActivityTime(@javax.annotation.Nullable OffsetDateTime lastActivityTime) {
     this.lastActivityTime = lastActivityTime;
   }
 
 
-  public TrackingData lastRespondedTime(OffsetDateTime lastRespondedTime) {
+  public TrackingData lastRespondedTime(@javax.annotation.Nullable OffsetDateTime lastRespondedTime) {
     this.lastRespondedTime = lastRespondedTime;
     return this;
   }
@@ -267,12 +283,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_LAST_RESPONDED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastRespondedTime(OffsetDateTime lastRespondedTime) {
+  public void setLastRespondedTime(@javax.annotation.Nullable OffsetDateTime lastRespondedTime) {
     this.lastRespondedTime = lastRespondedTime;
   }
 
 
-  public TrackingData trackReplies(Boolean trackReplies) {
+  public TrackingData trackReplies(@javax.annotation.Nullable Boolean trackReplies) {
     this.trackReplies = trackReplies;
     return this;
   }
@@ -291,12 +307,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_TRACK_REPLIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackReplies(Boolean trackReplies) {
+  public void setTrackReplies(@javax.annotation.Nullable Boolean trackReplies) {
     this.trackReplies = trackReplies;
   }
 
 
-  public TrackingData trackOpens(Boolean trackOpens) {
+  public TrackingData trackOpens(@javax.annotation.Nullable Boolean trackOpens) {
     this.trackOpens = trackOpens;
     return this;
   }
@@ -315,12 +331,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_TRACK_OPENS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackOpens(Boolean trackOpens) {
+  public void setTrackOpens(@javax.annotation.Nullable Boolean trackOpens) {
     this.trackOpens = trackOpens;
   }
 
 
-  public TrackingData trackingCode(String trackingCode) {
+  public TrackingData trackingCode(@javax.annotation.Nullable String trackingCode) {
     this.trackingCode = trackingCode;
     return this;
   }
@@ -339,12 +355,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCode(String trackingCode) {
+  public void setTrackingCode(@javax.annotation.Nullable String trackingCode) {
     this.trackingCode = trackingCode;
   }
 
 
-  public TrackingData context(String context) {
+  public TrackingData context(@javax.annotation.Nullable String context) {
     this.context = context;
     return this;
   }
@@ -363,12 +379,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(String context) {
+  public void setContext(@javax.annotation.Nullable String context) {
     this.context = context;
   }
 
 
-  public TrackingData location(String location) {
+  public TrackingData location(@javax.annotation.Nullable String location) {
     this.location = location;
     return this;
   }
@@ -387,12 +403,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLocation(String location) {
+  public void setLocation(@javax.annotation.Nullable String location) {
     this.location = location;
   }
 
 
-  public TrackingData userAgent(String userAgent) {
+  public TrackingData userAgent(@javax.annotation.Nullable String userAgent) {
     this.userAgent = userAgent;
     return this;
   }
@@ -411,12 +427,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_USER_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserAgent(String userAgent) {
+  public void setUserAgent(@javax.annotation.Nullable String userAgent) {
     this.userAgent = userAgent;
   }
 
 
-  public TrackingData remoteAddr(String remoteAddr) {
+  public TrackingData remoteAddr(@javax.annotation.Nullable String remoteAddr) {
     this.remoteAddr = remoteAddr;
     return this;
   }
@@ -435,12 +451,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_REMOTE_ADDR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRemoteAddr(String remoteAddr) {
+  public void setRemoteAddr(@javax.annotation.Nullable String remoteAddr) {
     this.remoteAddr = remoteAddr;
   }
 
 
-  public TrackingData ignoreOpenClicks(Boolean ignoreOpenClicks) {
+  public TrackingData ignoreOpenClicks(@javax.annotation.Nullable Boolean ignoreOpenClicks) {
     this.ignoreOpenClicks = ignoreOpenClicks;
     return this;
   }
@@ -459,12 +475,12 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_IGNORE_OPEN_CLICKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIgnoreOpenClicks(Boolean ignoreOpenClicks) {
+  public void setIgnoreOpenClicks(@javax.annotation.Nullable Boolean ignoreOpenClicks) {
     this.ignoreOpenClicks = ignoreOpenClicks;
   }
 
 
-  public TrackingData hasBounced(Boolean hasBounced) {
+  public TrackingData hasBounced(@javax.annotation.Nullable Boolean hasBounced) {
     this.hasBounced = hasBounced;
     return this;
   }
@@ -483,7 +499,7 @@ public class TrackingData {
 
   @JsonProperty(JSON_PROPERTY_HAS_BOUNCED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHasBounced(Boolean hasBounced) {
+  public void setHasBounced(@javax.annotation.Nullable Boolean hasBounced) {
     this.hasBounced = hasBounced;
   }
 

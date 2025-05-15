@@ -43,27 +43,34 @@ import io.aurinko.client.ApiClient;
   EventOrId.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   EventOrId.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EventOrId {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_ETAG = "etag";
+  @javax.annotation.Nullable
   private String etag;
 
   public static final String JSON_PROPERTY_I_CAL_U_ID = "iCalUId";
+  @javax.annotation.Nullable
   private String iCalUId;
 
   public static final String JSON_PROPERTY_GLOBAL_ID = "globalId";
+  @javax.annotation.Nullable
   private String globalId;
 
   public static final String JSON_PROPERTY_RECORD = "record";
+  @javax.annotation.Nullable
   private Event record;
 
   public static final String JSON_PROPERTY_ONLINE_MEETING_PROVIDER = "onlineMeetingProvider";
+  @javax.annotation.Nullable
   private String onlineMeetingProvider;
 
   public static final String JSON_PROPERTY_ONLINE_MEETING_DETAILS = "onlineMeetingDetails";
+  @javax.annotation.Nullable
   private OnlineMeetingDetails onlineMeetingDetails;
 
   public EventOrId() { 
@@ -139,7 +146,7 @@ public class EventOrId {
 
 
 
-  public EventOrId record(Event record) {
+  public EventOrId record(@javax.annotation.Nullable Event record) {
     this.record = record;
     return this;
   }
@@ -158,12 +165,12 @@ public class EventOrId {
 
   @JsonProperty(JSON_PROPERTY_RECORD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecord(Event record) {
+  public void setRecord(@javax.annotation.Nullable Event record) {
     this.record = record;
   }
 
 
-  public EventOrId onlineMeetingProvider(String onlineMeetingProvider) {
+  public EventOrId onlineMeetingProvider(@javax.annotation.Nullable String onlineMeetingProvider) {
     this.onlineMeetingProvider = onlineMeetingProvider;
     return this;
   }
@@ -182,12 +189,12 @@ public class EventOrId {
 
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnlineMeetingProvider(String onlineMeetingProvider) {
+  public void setOnlineMeetingProvider(@javax.annotation.Nullable String onlineMeetingProvider) {
     this.onlineMeetingProvider = onlineMeetingProvider;
   }
 
 
-  public EventOrId onlineMeetingDetails(OnlineMeetingDetails onlineMeetingDetails) {
+  public EventOrId onlineMeetingDetails(@javax.annotation.Nullable OnlineMeetingDetails onlineMeetingDetails) {
     this.onlineMeetingDetails = onlineMeetingDetails;
     return this;
   }
@@ -206,7 +213,7 @@ public class EventOrId {
 
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_DETAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnlineMeetingDetails(OnlineMeetingDetails onlineMeetingDetails) {
+  public void setOnlineMeetingDetails(@javax.annotation.Nullable OnlineMeetingDetails onlineMeetingDetails) {
     this.onlineMeetingDetails = onlineMeetingDetails;
   }
 

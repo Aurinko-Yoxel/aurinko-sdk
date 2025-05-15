@@ -42,24 +42,28 @@ import io.aurinko.client.ApiClient;
   FreeBusySchedule.JSON_PROPERTY_ERROR,
   FreeBusySchedule.JSON_PROPERTY_WORK_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class FreeBusySchedule {
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_ITEMS = "items";
+  @javax.annotation.Nullable
   private List<FreeBusyItem> items = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ERROR = "error";
+  @javax.annotation.Nullable
   private String error;
 
   public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
+  @javax.annotation.Nullable
   private WeekWorkSchedule workHours;
 
   public FreeBusySchedule() { 
   }
 
-  public FreeBusySchedule email(String email) {
+  public FreeBusySchedule email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -78,12 +82,12 @@ public class FreeBusySchedule {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public FreeBusySchedule items(List<FreeBusyItem> items) {
+  public FreeBusySchedule items(@javax.annotation.Nullable List<FreeBusyItem> items) {
     this.items = items;
     return this;
   }
@@ -110,12 +114,12 @@ public class FreeBusySchedule {
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(List<FreeBusyItem> items) {
+  public void setItems(@javax.annotation.Nullable List<FreeBusyItem> items) {
     this.items = items;
   }
 
 
-  public FreeBusySchedule error(String error) {
+  public FreeBusySchedule error(@javax.annotation.Nullable String error) {
     this.error = error;
     return this;
   }
@@ -134,12 +138,12 @@ public class FreeBusySchedule {
 
   @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setError(String error) {
+  public void setError(@javax.annotation.Nullable String error) {
     this.error = error;
   }
 
 
-  public FreeBusySchedule workHours(WeekWorkSchedule workHours) {
+  public FreeBusySchedule workHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
     return this;
   }
@@ -158,7 +162,7 @@ public class FreeBusySchedule {
 
   @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWorkHours(WeekWorkSchedule workHours) {
+  public void setWorkHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
   }
 

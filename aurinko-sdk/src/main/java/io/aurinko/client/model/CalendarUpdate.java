@@ -36,18 +36,20 @@ import io.aurinko.client.ApiClient;
   CalendarUpdate.JSON_PROPERTY_NAME,
   CalendarUpdate.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class CalendarUpdate {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public CalendarUpdate() { 
   }
 
-  public CalendarUpdate name(String name) {
+  public CalendarUpdate name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -66,12 +68,12 @@ public class CalendarUpdate {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CalendarUpdate description(String description) {
+  public CalendarUpdate description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -90,7 +92,7 @@ public class CalendarUpdate {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 

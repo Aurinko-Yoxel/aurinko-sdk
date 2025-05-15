@@ -44,25 +44,25 @@ import io.aurinko.client.ApiClient;
   RecurrenceSimplePattern.JSON_PROPERTY_MONTH_OF_YEAR,
   RecurrenceSimplePattern.JSON_PROPERTY_INSTANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class RecurrenceSimplePattern {
   /**
    * Gets or Sets frequency
    */
   public enum FrequencyEnum {
-    DAILY("daily"),
+    DAILY(String.valueOf("daily")),
     
-    WEEKLY("weekly"),
+    WEEKLY(String.valueOf("weekly")),
     
-    MONTHLY("monthly"),
+    MONTHLY(String.valueOf("monthly")),
     
-    MONTHLY_RELATIVE("monthlyRelative"),
+    MONTHLY_RELATIVE(String.valueOf("monthlyRelative")),
     
-    YEARLY("yearly"),
+    YEARLY(String.valueOf("yearly")),
     
-    YEARLY_RELATIVE("yearlyRelative"),
+    YEARLY_RELATIVE(String.valueOf("yearlyRelative")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -92,23 +92,26 @@ public class RecurrenceSimplePattern {
   }
 
   public static final String JSON_PROPERTY_FREQUENCY = "frequency";
+  @javax.annotation.Nullable
   private FrequencyEnum frequency;
 
   public static final String JSON_PROPERTY_INTERVAL = "interval";
+  @javax.annotation.Nullable
   private Integer interval = 1;
 
   public static final String JSON_PROPERTY_DAYS_OF_WEEK = "daysOfWeek";
+  @javax.annotation.Nullable
   private List<DayOfWeek> daysOfWeek = new ArrayList<>();
 
   /**
    * Gets or Sets weekStart
    */
   public enum WeekStartEnum {
-    MONDAY("monday"),
+    MONDAY(String.valueOf("monday")),
     
-    SUNDAY("sunday"),
+    SUNDAY(String.valueOf("sunday")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -138,29 +141,32 @@ public class RecurrenceSimplePattern {
   }
 
   public static final String JSON_PROPERTY_WEEK_START = "weekStart";
+  @javax.annotation.Nullable
   private WeekStartEnum weekStart;
 
   public static final String JSON_PROPERTY_DAY_OF_MONTH = "dayOfMonth";
+  @javax.annotation.Nullable
   private Integer dayOfMonth;
 
   public static final String JSON_PROPERTY_MONTH_OF_YEAR = "monthOfYear";
+  @javax.annotation.Nullable
   private Integer monthOfYear;
 
   /**
    * Gets or Sets instance
    */
   public enum InstanceEnum {
-    FIRST("first"),
+    FIRST(String.valueOf("first")),
     
-    SECOND("second"),
+    SECOND(String.valueOf("second")),
     
-    THIRD("third"),
+    THIRD(String.valueOf("third")),
     
-    FOURTH("fourth"),
+    FOURTH(String.valueOf("fourth")),
     
-    LAST("last"),
+    LAST(String.valueOf("last")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -190,12 +196,13 @@ public class RecurrenceSimplePattern {
   }
 
   public static final String JSON_PROPERTY_INSTANCE = "instance";
+  @javax.annotation.Nullable
   private InstanceEnum instance;
 
   public RecurrenceSimplePattern() { 
   }
 
-  public RecurrenceSimplePattern frequency(FrequencyEnum frequency) {
+  public RecurrenceSimplePattern frequency(@javax.annotation.Nullable FrequencyEnum frequency) {
     this.frequency = frequency;
     return this;
   }
@@ -214,12 +221,12 @@ public class RecurrenceSimplePattern {
 
   @JsonProperty(JSON_PROPERTY_FREQUENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFrequency(FrequencyEnum frequency) {
+  public void setFrequency(@javax.annotation.Nullable FrequencyEnum frequency) {
     this.frequency = frequency;
   }
 
 
-  public RecurrenceSimplePattern interval(Integer interval) {
+  public RecurrenceSimplePattern interval(@javax.annotation.Nullable Integer interval) {
     this.interval = interval;
     return this;
   }
@@ -238,12 +245,12 @@ public class RecurrenceSimplePattern {
 
   @JsonProperty(JSON_PROPERTY_INTERVAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInterval(Integer interval) {
+  public void setInterval(@javax.annotation.Nullable Integer interval) {
     this.interval = interval;
   }
 
 
-  public RecurrenceSimplePattern daysOfWeek(List<DayOfWeek> daysOfWeek) {
+  public RecurrenceSimplePattern daysOfWeek(@javax.annotation.Nullable List<DayOfWeek> daysOfWeek) {
     this.daysOfWeek = daysOfWeek;
     return this;
   }
@@ -270,12 +277,12 @@ public class RecurrenceSimplePattern {
 
   @JsonProperty(JSON_PROPERTY_DAYS_OF_WEEK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDaysOfWeek(List<DayOfWeek> daysOfWeek) {
+  public void setDaysOfWeek(@javax.annotation.Nullable List<DayOfWeek> daysOfWeek) {
     this.daysOfWeek = daysOfWeek;
   }
 
 
-  public RecurrenceSimplePattern weekStart(WeekStartEnum weekStart) {
+  public RecurrenceSimplePattern weekStart(@javax.annotation.Nullable WeekStartEnum weekStart) {
     this.weekStart = weekStart;
     return this;
   }
@@ -294,12 +301,12 @@ public class RecurrenceSimplePattern {
 
   @JsonProperty(JSON_PROPERTY_WEEK_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWeekStart(WeekStartEnum weekStart) {
+  public void setWeekStart(@javax.annotation.Nullable WeekStartEnum weekStart) {
     this.weekStart = weekStart;
   }
 
 
-  public RecurrenceSimplePattern dayOfMonth(Integer dayOfMonth) {
+  public RecurrenceSimplePattern dayOfMonth(@javax.annotation.Nullable Integer dayOfMonth) {
     this.dayOfMonth = dayOfMonth;
     return this;
   }
@@ -320,12 +327,12 @@ public class RecurrenceSimplePattern {
 
   @JsonProperty(JSON_PROPERTY_DAY_OF_MONTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDayOfMonth(Integer dayOfMonth) {
+  public void setDayOfMonth(@javax.annotation.Nullable Integer dayOfMonth) {
     this.dayOfMonth = dayOfMonth;
   }
 
 
-  public RecurrenceSimplePattern monthOfYear(Integer monthOfYear) {
+  public RecurrenceSimplePattern monthOfYear(@javax.annotation.Nullable Integer monthOfYear) {
     this.monthOfYear = monthOfYear;
     return this;
   }
@@ -346,12 +353,12 @@ public class RecurrenceSimplePattern {
 
   @JsonProperty(JSON_PROPERTY_MONTH_OF_YEAR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthOfYear(Integer monthOfYear) {
+  public void setMonthOfYear(@javax.annotation.Nullable Integer monthOfYear) {
     this.monthOfYear = monthOfYear;
   }
 
 
-  public RecurrenceSimplePattern instance(InstanceEnum instance) {
+  public RecurrenceSimplePattern instance(@javax.annotation.Nullable InstanceEnum instance) {
     this.instance = instance;
     return this;
   }
@@ -370,7 +377,7 @@ public class RecurrenceSimplePattern {
 
   @JsonProperty(JSON_PROPERTY_INSTANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInstance(InstanceEnum instance) {
+  public void setInstance(@javax.annotation.Nullable InstanceEnum instance) {
     this.instance = instance;
   }
 

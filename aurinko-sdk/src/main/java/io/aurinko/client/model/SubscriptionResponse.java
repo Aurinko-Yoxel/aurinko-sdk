@@ -24,8 +24,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.DataConsumerFilter;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -40,35 +43,47 @@ import io.aurinko.client.ApiClient;
   SubscriptionResponse.JSON_PROPERTY_ACTIVE,
   SubscriptionResponse.JSON_PROPERTY_FAIL_SINCE,
   SubscriptionResponse.JSON_PROPERTY_FAIL_DESCRIPTION,
-  SubscriptionResponse.JSON_PROPERTY_DISABLED_BY_BILLING
+  SubscriptionResponse.JSON_PROPERTY_DISABLED_BY_BILLING,
+  SubscriptionResponse.JSON_PROPERTY_FILTERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SubscriptionResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private Long id;
 
   public static final String JSON_PROPERTY_RESOURCE = "resource";
+  @javax.annotation.Nullable
   private String resource;
 
   public static final String JSON_PROPERTY_NOTIFICATION_URL = "notificationUrl";
+  @javax.annotation.Nullable
   private String notificationUrl;
 
   public static final String JSON_PROPERTY_ACTIVE = "active";
+  @javax.annotation.Nullable
   private Boolean active;
 
   public static final String JSON_PROPERTY_FAIL_SINCE = "failSince";
+  @javax.annotation.Nullable
   private OffsetDateTime failSince;
 
   public static final String JSON_PROPERTY_FAIL_DESCRIPTION = "failDescription";
+  @javax.annotation.Nullable
   private String failDescription;
 
   public static final String JSON_PROPERTY_DISABLED_BY_BILLING = "disabledByBilling";
+  @javax.annotation.Nullable
   private Boolean disabledByBilling;
+
+  public static final String JSON_PROPERTY_FILTERS = "filters";
+  @javax.annotation.Nullable
+  private List<DataConsumerFilter> filters = new ArrayList<>();
 
   public SubscriptionResponse() { 
   }
 
-  public SubscriptionResponse id(Long id) {
+  public SubscriptionResponse id(@javax.annotation.Nullable Long id) {
     this.id = id;
     return this;
   }
@@ -87,12 +102,12 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(Long id) {
+  public void setId(@javax.annotation.Nullable Long id) {
     this.id = id;
   }
 
 
-  public SubscriptionResponse resource(String resource) {
+  public SubscriptionResponse resource(@javax.annotation.Nullable String resource) {
     this.resource = resource;
     return this;
   }
@@ -111,12 +126,12 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_RESOURCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResource(String resource) {
+  public void setResource(@javax.annotation.Nullable String resource) {
     this.resource = resource;
   }
 
 
-  public SubscriptionResponse notificationUrl(String notificationUrl) {
+  public SubscriptionResponse notificationUrl(@javax.annotation.Nullable String notificationUrl) {
     this.notificationUrl = notificationUrl;
     return this;
   }
@@ -135,12 +150,12 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_NOTIFICATION_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNotificationUrl(String notificationUrl) {
+  public void setNotificationUrl(@javax.annotation.Nullable String notificationUrl) {
     this.notificationUrl = notificationUrl;
   }
 
 
-  public SubscriptionResponse active(Boolean active) {
+  public SubscriptionResponse active(@javax.annotation.Nullable Boolean active) {
     this.active = active;
     return this;
   }
@@ -159,12 +174,12 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nullable Boolean active) {
     this.active = active;
   }
 
 
-  public SubscriptionResponse failSince(OffsetDateTime failSince) {
+  public SubscriptionResponse failSince(@javax.annotation.Nullable OffsetDateTime failSince) {
     this.failSince = failSince;
     return this;
   }
@@ -183,12 +198,12 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_FAIL_SINCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailSince(OffsetDateTime failSince) {
+  public void setFailSince(@javax.annotation.Nullable OffsetDateTime failSince) {
     this.failSince = failSince;
   }
 
 
-  public SubscriptionResponse failDescription(String failDescription) {
+  public SubscriptionResponse failDescription(@javax.annotation.Nullable String failDescription) {
     this.failDescription = failDescription;
     return this;
   }
@@ -207,12 +222,12 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_FAIL_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailDescription(String failDescription) {
+  public void setFailDescription(@javax.annotation.Nullable String failDescription) {
     this.failDescription = failDescription;
   }
 
 
-  public SubscriptionResponse disabledByBilling(Boolean disabledByBilling) {
+  public SubscriptionResponse disabledByBilling(@javax.annotation.Nullable Boolean disabledByBilling) {
     this.disabledByBilling = disabledByBilling;
     return this;
   }
@@ -231,8 +246,40 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_DISABLED_BY_BILLING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDisabledByBilling(Boolean disabledByBilling) {
+  public void setDisabledByBilling(@javax.annotation.Nullable Boolean disabledByBilling) {
     this.disabledByBilling = disabledByBilling;
+  }
+
+
+  public SubscriptionResponse filters(@javax.annotation.Nullable List<DataConsumerFilter> filters) {
+    this.filters = filters;
+    return this;
+  }
+
+  public SubscriptionResponse addFiltersItem(DataConsumerFilter filtersItem) {
+    if (this.filters == null) {
+      this.filters = new ArrayList<>();
+    }
+    this.filters.add(filtersItem);
+    return this;
+  }
+
+  /**
+   * Get filters
+   * @return filters
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FILTERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<DataConsumerFilter> getFilters() {
+    return filters;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FILTERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFilters(@javax.annotation.Nullable List<DataConsumerFilter> filters) {
+    this.filters = filters;
   }
 
 
@@ -254,12 +301,13 @@ public class SubscriptionResponse {
         Objects.equals(this.active, subscriptionResponse.active) &&
         Objects.equals(this.failSince, subscriptionResponse.failSince) &&
         Objects.equals(this.failDescription, subscriptionResponse.failDescription) &&
-        Objects.equals(this.disabledByBilling, subscriptionResponse.disabledByBilling);
+        Objects.equals(this.disabledByBilling, subscriptionResponse.disabledByBilling) &&
+        Objects.equals(this.filters, subscriptionResponse.filters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, resource, notificationUrl, active, failSince, failDescription, disabledByBilling);
+    return Objects.hash(id, resource, notificationUrl, active, failSince, failDescription, disabledByBilling, filters);
   }
 
   @Override
@@ -273,6 +321,7 @@ public class SubscriptionResponse {
     sb.append("    failSince: ").append(toIndentedString(failSince)).append("\n");
     sb.append("    failDescription: ").append(toIndentedString(failDescription)).append("\n");
     sb.append("    disabledByBilling: ").append(toIndentedString(disabledByBilling)).append("\n");
+    sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -353,6 +402,17 @@ public class SubscriptionResponse {
     // add `disabledByBilling` to the URL query string
     if (getDisabledByBilling() != null) {
       joiner.add(String.format("%sdisabledByBilling%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDisabledByBilling()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `filters` to the URL query string
+    if (getFilters() != null) {
+      for (int i = 0; i < getFilters().size(); i++) {
+        if (getFilters().get(i) != null) {
+          joiner.add(String.format("%sfilters%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+              URLEncoder.encode(ApiClient.valueToString(getFilters().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+        }
+      }
     }
 
     return joiner.toString();

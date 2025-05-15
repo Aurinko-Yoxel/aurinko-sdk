@@ -42,30 +42,36 @@ import io.aurinko.client.ApiClient;
   OrganizationDto.JSON_PROPERTY_NAME,
   OrganizationDto.JSON_PROPERTY_CREATED_AT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class OrganizationDto {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private Long id;
 
   public static final String JSON_PROPERTY_SERVICE_PROVIDER = "serviceProvider";
+  @javax.annotation.Nullable
   private ServiceProvider serviceProvider;
 
   public static final String JSON_PROPERTY_XID = "xid";
+  @javax.annotation.Nullable
   private String xid;
 
   public static final String JSON_PROPERTY_DOMAIN = "domain";
+  @javax.annotation.Nullable
   private String domain;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public OrganizationDto() { 
   }
 
-  public OrganizationDto id(Long id) {
+  public OrganizationDto id(@javax.annotation.Nullable Long id) {
     this.id = id;
     return this;
   }
@@ -84,12 +90,12 @@ public class OrganizationDto {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(Long id) {
+  public void setId(@javax.annotation.Nullable Long id) {
     this.id = id;
   }
 
 
-  public OrganizationDto serviceProvider(ServiceProvider serviceProvider) {
+  public OrganizationDto serviceProvider(@javax.annotation.Nullable ServiceProvider serviceProvider) {
     this.serviceProvider = serviceProvider;
     return this;
   }
@@ -108,12 +114,12 @@ public class OrganizationDto {
 
   @JsonProperty(JSON_PROPERTY_SERVICE_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setServiceProvider(ServiceProvider serviceProvider) {
+  public void setServiceProvider(@javax.annotation.Nullable ServiceProvider serviceProvider) {
     this.serviceProvider = serviceProvider;
   }
 
 
-  public OrganizationDto xid(String xid) {
+  public OrganizationDto xid(@javax.annotation.Nullable String xid) {
     this.xid = xid;
     return this;
   }
@@ -132,12 +138,12 @@ public class OrganizationDto {
 
   @JsonProperty(JSON_PROPERTY_XID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setXid(String xid) {
+  public void setXid(@javax.annotation.Nullable String xid) {
     this.xid = xid;
   }
 
 
-  public OrganizationDto domain(String domain) {
+  public OrganizationDto domain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
@@ -156,12 +162,12 @@ public class OrganizationDto {
 
   @JsonProperty(JSON_PROPERTY_DOMAIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDomain(String domain) {
+  public void setDomain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
   }
 
 
-  public OrganizationDto name(String name) {
+  public OrganizationDto name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -180,12 +186,12 @@ public class OrganizationDto {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public OrganizationDto createdAt(OffsetDateTime createdAt) {
+  public OrganizationDto createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -204,7 +210,7 @@ public class OrganizationDto {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 

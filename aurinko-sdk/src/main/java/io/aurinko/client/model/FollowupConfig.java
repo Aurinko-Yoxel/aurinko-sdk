@@ -38,18 +38,20 @@ import io.aurinko.client.ApiClient;
   FollowupConfig.JSON_PROPERTY_TIMEZONE,
   FollowupConfig.JSON_PROPERTY_EMAIL_ALIASES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class FollowupConfig {
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
+  @javax.annotation.Nullable
   private String timezone;
 
   public static final String JSON_PROPERTY_EMAIL_ALIASES = "emailAliases";
+  @javax.annotation.Nullable
   private List<String> emailAliases = new ArrayList<>();
 
   public FollowupConfig() { 
   }
 
-  public FollowupConfig timezone(String timezone) {
+  public FollowupConfig timezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -68,12 +70,12 @@ public class FollowupConfig {
 
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimezone(String timezone) {
+  public void setTimezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
   }
 
 
-  public FollowupConfig emailAliases(List<String> emailAliases) {
+  public FollowupConfig emailAliases(@javax.annotation.Nullable List<String> emailAliases) {
     this.emailAliases = emailAliases;
     return this;
   }
@@ -100,7 +102,7 @@ public class FollowupConfig {
 
   @JsonProperty(JSON_PROPERTY_EMAIL_ALIASES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmailAliases(List<String> emailAliases) {
+  public void setEmailAliases(@javax.annotation.Nullable List<String> emailAliases) {
     this.emailAliases = emailAliases;
   }
 

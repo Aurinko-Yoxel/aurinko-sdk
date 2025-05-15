@@ -38,18 +38,20 @@ import io.aurinko.client.ApiClient;
   RecurrenceSimple.JSON_PROPERTY_PATTERN,
   RecurrenceSimple.JSON_PROPERTY_RANGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class RecurrenceSimple {
   public static final String JSON_PROPERTY_PATTERN = "pattern";
+  @javax.annotation.Nullable
   private RecurrenceSimplePattern pattern;
 
   public static final String JSON_PROPERTY_RANGE = "range";
+  @javax.annotation.Nullable
   private RecurrenceSimpleRange range;
 
   public RecurrenceSimple() { 
   }
 
-  public RecurrenceSimple pattern(RecurrenceSimplePattern pattern) {
+  public RecurrenceSimple pattern(@javax.annotation.Nullable RecurrenceSimplePattern pattern) {
     this.pattern = pattern;
     return this;
   }
@@ -68,12 +70,12 @@ public class RecurrenceSimple {
 
   @JsonProperty(JSON_PROPERTY_PATTERN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPattern(RecurrenceSimplePattern pattern) {
+  public void setPattern(@javax.annotation.Nullable RecurrenceSimplePattern pattern) {
     this.pattern = pattern;
   }
 
 
-  public RecurrenceSimple range(RecurrenceSimpleRange range) {
+  public RecurrenceSimple range(@javax.annotation.Nullable RecurrenceSimpleRange range) {
     this.range = range;
     return this;
   }
@@ -92,7 +94,7 @@ public class RecurrenceSimple {
 
   @JsonProperty(JSON_PROPERTY_RANGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRange(RecurrenceSimpleRange range) {
+  public void setRange(@javax.annotation.Nullable RecurrenceSimpleRange range) {
     this.range = range;
   }
 

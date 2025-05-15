@@ -39,18 +39,20 @@ import io.aurinko.client.ApiClient;
   WeekWorkSchedule.JSON_PROPERTY_DAY_SCHEDULES,
   WeekWorkSchedule.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class WeekWorkSchedule {
   public static final String JSON_PROPERTY_DAY_SCHEDULES = "daySchedules";
+  @javax.annotation.Nullable
   private List<DayWorkSchedule> daySchedules = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
+  @javax.annotation.Nullable
   private String timezone;
 
   public WeekWorkSchedule() { 
   }
 
-  public WeekWorkSchedule daySchedules(List<DayWorkSchedule> daySchedules) {
+  public WeekWorkSchedule daySchedules(@javax.annotation.Nullable List<DayWorkSchedule> daySchedules) {
     this.daySchedules = daySchedules;
     return this;
   }
@@ -77,12 +79,12 @@ public class WeekWorkSchedule {
 
   @JsonProperty(JSON_PROPERTY_DAY_SCHEDULES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDaySchedules(List<DayWorkSchedule> daySchedules) {
+  public void setDaySchedules(@javax.annotation.Nullable List<DayWorkSchedule> daySchedules) {
     this.daySchedules = daySchedules;
   }
 
 
-  public WeekWorkSchedule timezone(String timezone) {
+  public WeekWorkSchedule timezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -101,7 +103,7 @@ public class WeekWorkSchedule {
 
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimezone(String timezone) {
+  public void setTimezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
   }
 

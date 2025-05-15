@@ -35,15 +35,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   TaskListUpdate.JSON_PROPERTY_TITLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class TaskListUpdate {
   public static final String JSON_PROPERTY_TITLE = "title";
+  @javax.annotation.Nullable
   private String title;
 
   public TaskListUpdate() { 
   }
 
-  public TaskListUpdate title(String title) {
+  public TaskListUpdate title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -62,7 +63,7 @@ public class TaskListUpdate {
 
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 

@@ -45,30 +45,36 @@ import io.aurinko.client.ApiClient;
   CreateMeetingDto.JSON_PROPERTY_EMAIL,
   CreateMeetingDto.JSON_PROPERTY_SUBSTITUTION_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class CreateMeetingDto {
   public static final String JSON_PROPERTY_TIME = "time";
+  @javax.annotation.Nullable
   private SelectedMeetingTime time;
 
   public static final String JSON_PROPERTY_GROUP_XIDS = "groupXids";
+  @javax.annotation.Nullable
   private List<String> groupXids = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  @javax.annotation.Nullable
   private List<Long> accountIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_SUBSTITUTION_DATA = "substitutionData";
+  @javax.annotation.Nullable
   private Map<String, String> substitutionData = new HashMap<>();
 
   public CreateMeetingDto() { 
   }
 
-  public CreateMeetingDto time(SelectedMeetingTime time) {
+  public CreateMeetingDto time(@javax.annotation.Nullable SelectedMeetingTime time) {
     this.time = time;
     return this;
   }
@@ -87,12 +93,12 @@ public class CreateMeetingDto {
 
   @JsonProperty(JSON_PROPERTY_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTime(SelectedMeetingTime time) {
+  public void setTime(@javax.annotation.Nullable SelectedMeetingTime time) {
     this.time = time;
   }
 
 
-  public CreateMeetingDto groupXids(List<String> groupXids) {
+  public CreateMeetingDto groupXids(@javax.annotation.Nullable List<String> groupXids) {
     this.groupXids = groupXids;
     return this;
   }
@@ -119,12 +125,12 @@ public class CreateMeetingDto {
 
   @JsonProperty(JSON_PROPERTY_GROUP_XIDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupXids(List<String> groupXids) {
+  public void setGroupXids(@javax.annotation.Nullable List<String> groupXids) {
     this.groupXids = groupXids;
   }
 
 
-  public CreateMeetingDto accountIds(List<Long> accountIds) {
+  public CreateMeetingDto accountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
     return this;
   }
@@ -151,12 +157,12 @@ public class CreateMeetingDto {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountIds(List<Long> accountIds) {
+  public void setAccountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
   }
 
 
-  public CreateMeetingDto name(String name) {
+  public CreateMeetingDto name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -175,12 +181,12 @@ public class CreateMeetingDto {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CreateMeetingDto email(String email) {
+  public CreateMeetingDto email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -199,12 +205,12 @@ public class CreateMeetingDto {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public CreateMeetingDto substitutionData(Map<String, String> substitutionData) {
+  public CreateMeetingDto substitutionData(@javax.annotation.Nullable Map<String, String> substitutionData) {
     this.substitutionData = substitutionData;
     return this;
   }
@@ -231,7 +237,7 @@ public class CreateMeetingDto {
 
   @JsonProperty(JSON_PROPERTY_SUBSTITUTION_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubstitutionData(Map<String, String> substitutionData) {
+  public void setSubstitutionData(@javax.annotation.Nullable Map<String, String> substitutionData) {
     this.substitutionData = substitutionData;
   }
 

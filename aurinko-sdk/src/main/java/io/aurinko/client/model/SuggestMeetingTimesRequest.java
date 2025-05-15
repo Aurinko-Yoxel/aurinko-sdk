@@ -50,39 +50,48 @@ import io.aurinko.client.ApiClient;
   SuggestMeetingTimesRequest.JSON_PROPERTY_AVAILABILITY_INTERVALS,
   SuggestMeetingTimesRequest.JSON_PROPERTY_FREE_STATUSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SuggestMeetingTimesRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
+  @javax.annotation.Nullable
   private OffsetDateTime timeMin;
 
   public static final String JSON_PROPERTY_TIME_MAX = "timeMax";
+  @javax.annotation.Nullable
   private OffsetDateTime timeMax;
 
   public static final String JSON_PROPERTY_DURATION_MINUTES = "durationMinutes";
+  @javax.annotation.Nullable
   private Integer durationMinutes;
 
   public static final String JSON_PROPERTY_AVAILABILITY_STEP = "availabilityStep";
+  @javax.annotation.Nullable
   private Integer availabilityStep = 30;
 
   public static final String JSON_PROPERTY_ATTENDEES = "attendees";
+  @javax.annotation.Nullable
   private List<MeetingAttendee> attendees = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DEFAULT_TIMEZONE = "defaultTimezone";
+  @javax.annotation.Nullable
   private String defaultTimezone;
 
   public static final String JSON_PROPERTY_DEFAULT_WORK_HOURS = "defaultWorkHours";
+  @javax.annotation.Nullable
   private WeekWorkSchedule defaultWorkHours;
 
   public static final String JSON_PROPERTY_AVAILABILITY_INTERVALS = "availabilityIntervals";
+  @javax.annotation.Nullable
   private AvailabilityIntervals availabilityIntervals;
 
   public static final String JSON_PROPERTY_FREE_STATUSES = "freeStatuses";
+  @javax.annotation.Nullable
   private List<ShowAs> freeStatuses = new ArrayList<>(Arrays.asList(ShowAs.FREE));
 
   public SuggestMeetingTimesRequest() { 
   }
 
-  public SuggestMeetingTimesRequest timeMin(OffsetDateTime timeMin) {
+  public SuggestMeetingTimesRequest timeMin(@javax.annotation.Nullable OffsetDateTime timeMin) {
     this.timeMin = timeMin;
     return this;
   }
@@ -101,12 +110,12 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_TIME_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeMin(OffsetDateTime timeMin) {
+  public void setTimeMin(@javax.annotation.Nullable OffsetDateTime timeMin) {
     this.timeMin = timeMin;
   }
 
 
-  public SuggestMeetingTimesRequest timeMax(OffsetDateTime timeMax) {
+  public SuggestMeetingTimesRequest timeMax(@javax.annotation.Nullable OffsetDateTime timeMax) {
     this.timeMax = timeMax;
     return this;
   }
@@ -125,12 +134,12 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_TIME_MAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeMax(OffsetDateTime timeMax) {
+  public void setTimeMax(@javax.annotation.Nullable OffsetDateTime timeMax) {
     this.timeMax = timeMax;
   }
 
 
-  public SuggestMeetingTimesRequest durationMinutes(Integer durationMinutes) {
+  public SuggestMeetingTimesRequest durationMinutes(@javax.annotation.Nullable Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
     return this;
   }
@@ -149,12 +158,12 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_DURATION_MINUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDurationMinutes(Integer durationMinutes) {
+  public void setDurationMinutes(@javax.annotation.Nullable Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
   }
 
 
-  public SuggestMeetingTimesRequest availabilityStep(Integer availabilityStep) {
+  public SuggestMeetingTimesRequest availabilityStep(@javax.annotation.Nullable Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
     return this;
   }
@@ -173,12 +182,12 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAvailabilityStep(Integer availabilityStep) {
+  public void setAvailabilityStep(@javax.annotation.Nullable Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
   }
 
 
-  public SuggestMeetingTimesRequest attendees(List<MeetingAttendee> attendees) {
+  public SuggestMeetingTimesRequest attendees(@javax.annotation.Nullable List<MeetingAttendee> attendees) {
     this.attendees = attendees;
     return this;
   }
@@ -205,12 +214,12 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_ATTENDEES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttendees(List<MeetingAttendee> attendees) {
+  public void setAttendees(@javax.annotation.Nullable List<MeetingAttendee> attendees) {
     this.attendees = attendees;
   }
 
 
-  public SuggestMeetingTimesRequest defaultTimezone(String defaultTimezone) {
+  public SuggestMeetingTimesRequest defaultTimezone(@javax.annotation.Nullable String defaultTimezone) {
     this.defaultTimezone = defaultTimezone;
     return this;
   }
@@ -229,12 +238,12 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultTimezone(String defaultTimezone) {
+  public void setDefaultTimezone(@javax.annotation.Nullable String defaultTimezone) {
     this.defaultTimezone = defaultTimezone;
   }
 
 
-  public SuggestMeetingTimesRequest defaultWorkHours(WeekWorkSchedule defaultWorkHours) {
+  public SuggestMeetingTimesRequest defaultWorkHours(@javax.annotation.Nullable WeekWorkSchedule defaultWorkHours) {
     this.defaultWorkHours = defaultWorkHours;
     return this;
   }
@@ -253,12 +262,12 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultWorkHours(WeekWorkSchedule defaultWorkHours) {
+  public void setDefaultWorkHours(@javax.annotation.Nullable WeekWorkSchedule defaultWorkHours) {
     this.defaultWorkHours = defaultWorkHours;
   }
 
 
-  public SuggestMeetingTimesRequest availabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+  public SuggestMeetingTimesRequest availabilityIntervals(@javax.annotation.Nullable AvailabilityIntervals availabilityIntervals) {
     this.availabilityIntervals = availabilityIntervals;
     return this;
   }
@@ -277,12 +286,12 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_AVAILABILITY_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAvailabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+  public void setAvailabilityIntervals(@javax.annotation.Nullable AvailabilityIntervals availabilityIntervals) {
     this.availabilityIntervals = availabilityIntervals;
   }
 
 
-  public SuggestMeetingTimesRequest freeStatuses(List<ShowAs> freeStatuses) {
+  public SuggestMeetingTimesRequest freeStatuses(@javax.annotation.Nullable List<ShowAs> freeStatuses) {
     this.freeStatuses = freeStatuses;
     return this;
   }
@@ -309,7 +318,7 @@ public class SuggestMeetingTimesRequest {
 
   @JsonProperty(JSON_PROPERTY_FREE_STATUSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFreeStatuses(List<ShowAs> freeStatuses) {
+  public void setFreeStatuses(@javax.annotation.Nullable List<ShowAs> freeStatuses) {
     this.freeStatuses = freeStatuses;
   }
 

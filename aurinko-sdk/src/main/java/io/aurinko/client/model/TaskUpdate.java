@@ -48,39 +48,48 @@ import io.aurinko.client.ApiClient;
   TaskUpdate.JSON_PROPERTY_START_DATE_TIME,
   TaskUpdate.JSON_PROPERTY_CATEGORIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class TaskUpdate {
   public static final String JSON_PROPERTY_TITLE = "title";
+  @javax.annotation.Nullable
   private String title;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parentId";
+  @javax.annotation.Nullable
   private String parentId;
 
   public static final String JSON_PROPERTY_PREVIOUS_ID = "previousId";
+  @javax.annotation.Nullable
   private String previousId;
 
   public static final String JSON_PROPERTY_NOTES = "notes";
+  @javax.annotation.Nullable
   private String notes;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private TaskStatus status;
 
   public static final String JSON_PROPERTY_IMPORTANCE = "importance";
+  @javax.annotation.Nullable
   private TaskImportance importance;
 
   public static final String JSON_PROPERTY_DUE = "due";
+  @javax.annotation.Nullable
   private OffsetDateTime due;
 
   public static final String JSON_PROPERTY_START_DATE_TIME = "startDateTime";
+  @javax.annotation.Nullable
   private OffsetDateTime startDateTime;
 
   public static final String JSON_PROPERTY_CATEGORIES = "categories";
+  @javax.annotation.Nullable
   private List<String> categories = new ArrayList<>();
 
   public TaskUpdate() { 
   }
 
-  public TaskUpdate title(String title) {
+  public TaskUpdate title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -99,12 +108,12 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public TaskUpdate parentId(String parentId) {
+  public TaskUpdate parentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
@@ -123,12 +132,12 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentId(String parentId) {
+  public void setParentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 
 
-  public TaskUpdate previousId(String previousId) {
+  public TaskUpdate previousId(@javax.annotation.Nullable String previousId) {
     this.previousId = previousId;
     return this;
   }
@@ -147,12 +156,12 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_PREVIOUS_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreviousId(String previousId) {
+  public void setPreviousId(@javax.annotation.Nullable String previousId) {
     this.previousId = previousId;
   }
 
 
-  public TaskUpdate notes(String notes) {
+  public TaskUpdate notes(@javax.annotation.Nullable String notes) {
     this.notes = notes;
     return this;
   }
@@ -171,12 +180,12 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNotes(String notes) {
+  public void setNotes(@javax.annotation.Nullable String notes) {
     this.notes = notes;
   }
 
 
-  public TaskUpdate status(TaskStatus status) {
+  public TaskUpdate status(@javax.annotation.Nullable TaskStatus status) {
     this.status = status;
     return this;
   }
@@ -195,12 +204,12 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(TaskStatus status) {
+  public void setStatus(@javax.annotation.Nullable TaskStatus status) {
     this.status = status;
   }
 
 
-  public TaskUpdate importance(TaskImportance importance) {
+  public TaskUpdate importance(@javax.annotation.Nullable TaskImportance importance) {
     this.importance = importance;
     return this;
   }
@@ -219,12 +228,12 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_IMPORTANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setImportance(TaskImportance importance) {
+  public void setImportance(@javax.annotation.Nullable TaskImportance importance) {
     this.importance = importance;
   }
 
 
-  public TaskUpdate due(OffsetDateTime due) {
+  public TaskUpdate due(@javax.annotation.Nullable OffsetDateTime due) {
     this.due = due;
     return this;
   }
@@ -243,12 +252,12 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_DUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDue(OffsetDateTime due) {
+  public void setDue(@javax.annotation.Nullable OffsetDateTime due) {
     this.due = due;
   }
 
 
-  public TaskUpdate startDateTime(OffsetDateTime startDateTime) {
+  public TaskUpdate startDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
     return this;
   }
@@ -267,12 +276,12 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartDateTime(OffsetDateTime startDateTime) {
+  public void setStartDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
 
 
-  public TaskUpdate categories(List<String> categories) {
+  public TaskUpdate categories(@javax.annotation.Nullable List<String> categories) {
     this.categories = categories;
     return this;
   }
@@ -299,7 +308,7 @@ public class TaskUpdate {
 
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCategories(List<String> categories) {
+  public void setCategories(@javax.annotation.Nullable List<String> categories) {
     this.categories = categories;
   }
 

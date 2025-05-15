@@ -43,27 +43,32 @@ import io.aurinko.client.ApiClient;
   BookingAvailableProfilesInDto.JSON_PROPERTY_PROFILE_IDS,
   BookingAvailableProfilesInDto.JSON_PROPERTY_REQUIRED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class BookingAvailableProfilesInDto {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
+  @javax.annotation.Nullable
   private OffsetDateTime timeMin;
 
   public static final String JSON_PROPERTY_TIME_MAX = "timeMax";
+  @javax.annotation.Nullable
   private OffsetDateTime timeMax;
 
   public static final String JSON_PROPERTY_PROFILE_NAMES = "profileNames";
+  @javax.annotation.Nullable
   private List<String> profileNames = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PROFILE_IDS = "profileIds";
+  @javax.annotation.Nullable
   private List<Long> profileIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REQUIRED = "required";
+  @javax.annotation.Nullable
   private BookingRequiredMode required;
 
   public BookingAvailableProfilesInDto() { 
   }
 
-  public BookingAvailableProfilesInDto timeMin(OffsetDateTime timeMin) {
+  public BookingAvailableProfilesInDto timeMin(@javax.annotation.Nullable OffsetDateTime timeMin) {
     this.timeMin = timeMin;
     return this;
   }
@@ -82,12 +87,12 @@ public class BookingAvailableProfilesInDto {
 
   @JsonProperty(JSON_PROPERTY_TIME_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeMin(OffsetDateTime timeMin) {
+  public void setTimeMin(@javax.annotation.Nullable OffsetDateTime timeMin) {
     this.timeMin = timeMin;
   }
 
 
-  public BookingAvailableProfilesInDto timeMax(OffsetDateTime timeMax) {
+  public BookingAvailableProfilesInDto timeMax(@javax.annotation.Nullable OffsetDateTime timeMax) {
     this.timeMax = timeMax;
     return this;
   }
@@ -106,12 +111,12 @@ public class BookingAvailableProfilesInDto {
 
   @JsonProperty(JSON_PROPERTY_TIME_MAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeMax(OffsetDateTime timeMax) {
+  public void setTimeMax(@javax.annotation.Nullable OffsetDateTime timeMax) {
     this.timeMax = timeMax;
   }
 
 
-  public BookingAvailableProfilesInDto profileNames(List<String> profileNames) {
+  public BookingAvailableProfilesInDto profileNames(@javax.annotation.Nullable List<String> profileNames) {
     this.profileNames = profileNames;
     return this;
   }
@@ -138,12 +143,12 @@ public class BookingAvailableProfilesInDto {
 
   @JsonProperty(JSON_PROPERTY_PROFILE_NAMES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProfileNames(List<String> profileNames) {
+  public void setProfileNames(@javax.annotation.Nullable List<String> profileNames) {
     this.profileNames = profileNames;
   }
 
 
-  public BookingAvailableProfilesInDto profileIds(List<Long> profileIds) {
+  public BookingAvailableProfilesInDto profileIds(@javax.annotation.Nullable List<Long> profileIds) {
     this.profileIds = profileIds;
     return this;
   }
@@ -170,12 +175,12 @@ public class BookingAvailableProfilesInDto {
 
   @JsonProperty(JSON_PROPERTY_PROFILE_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProfileIds(List<Long> profileIds) {
+  public void setProfileIds(@javax.annotation.Nullable List<Long> profileIds) {
     this.profileIds = profileIds;
   }
 
 
-  public BookingAvailableProfilesInDto required(BookingRequiredMode required) {
+  public BookingAvailableProfilesInDto required(@javax.annotation.Nullable BookingRequiredMode required) {
     this.required = required;
     return this;
   }
@@ -194,7 +199,7 @@ public class BookingAvailableProfilesInDto {
 
   @JsonProperty(JSON_PROPERTY_REQUIRED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRequired(BookingRequiredMode required) {
+  public void setRequired(@javax.annotation.Nullable BookingRequiredMode required) {
     this.required = required;
   }
 

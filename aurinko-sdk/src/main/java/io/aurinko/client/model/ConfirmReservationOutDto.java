@@ -35,15 +35,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   ConfirmReservationOutDto.JSON_PROPERTY_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ConfirmReservationOutDto {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public ConfirmReservationOutDto() { 
   }
 
-  public ConfirmReservationOutDto id(String id) {
+  public ConfirmReservationOutDto id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -62,7 +63,7 @@ public class ConfirmReservationOutDto {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 

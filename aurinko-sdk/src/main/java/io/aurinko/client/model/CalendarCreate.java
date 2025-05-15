@@ -37,21 +37,24 @@ import io.aurinko.client.ApiClient;
   CalendarCreate.JSON_PROPERTY_COLOR,
   CalendarCreate.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class CalendarCreate {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_COLOR = "color";
+  @javax.annotation.Nullable
   private String color;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public CalendarCreate() { 
   }
 
-  public CalendarCreate name(String name) {
+  public CalendarCreate name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -70,12 +73,12 @@ public class CalendarCreate {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CalendarCreate color(String color) {
+  public CalendarCreate color(@javax.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -94,12 +97,12 @@ public class CalendarCreate {
 
   @JsonProperty(JSON_PROPERTY_COLOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setColor(String color) {
+  public void setColor(@javax.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public CalendarCreate description(String description) {
+  public CalendarCreate description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -118,7 +121,7 @@ public class CalendarCreate {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 

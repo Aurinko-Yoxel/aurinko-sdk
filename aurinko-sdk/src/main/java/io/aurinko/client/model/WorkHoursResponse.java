@@ -38,15 +38,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   WorkHoursResponse.JSON_PROPERTY_ITEMS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class WorkHoursResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
+  @javax.annotation.Nullable
   private List<WorkHoursResponseItem> items = new ArrayList<>();
 
   public WorkHoursResponse() { 
   }
 
-  public WorkHoursResponse items(List<WorkHoursResponseItem> items) {
+  public WorkHoursResponse items(@javax.annotation.Nullable List<WorkHoursResponseItem> items) {
     this.items = items;
     return this;
   }
@@ -73,7 +74,7 @@ public class WorkHoursResponse {
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(List<WorkHoursResponseItem> items) {
+  public void setItems(@javax.annotation.Nullable List<WorkHoursResponseItem> items) {
     this.items = items;
   }
 

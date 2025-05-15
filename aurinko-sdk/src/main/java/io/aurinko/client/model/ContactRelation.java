@@ -36,22 +36,23 @@ import io.aurinko.client.ApiClient;
   ContactRelation.JSON_PROPERTY_NAME,
   ContactRelation.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ContactRelation {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    MANAGER("manager"),
+    MANAGER(String.valueOf("manager")),
     
-    ASSISTANT("assistant"),
+    ASSISTANT(String.valueOf("assistant")),
     
-    SPOUSE("spouse"),
+    SPOUSE(String.valueOf("spouse")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -81,12 +82,13 @@ public class ContactRelation {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public ContactRelation() { 
   }
 
-  public ContactRelation name(String name) {
+  public ContactRelation name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -105,12 +107,12 @@ public class ContactRelation {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ContactRelation type(TypeEnum type) {
+  public ContactRelation type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -129,7 +131,7 @@ public class ContactRelation {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 

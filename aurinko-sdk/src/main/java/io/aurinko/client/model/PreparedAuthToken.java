@@ -35,15 +35,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   PreparedAuthToken.JSON_PROPERTY_TOKEN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class PreparedAuthToken {
   public static final String JSON_PROPERTY_TOKEN = "token";
+  @javax.annotation.Nullable
   private String token;
 
   public PreparedAuthToken() { 
   }
 
-  public PreparedAuthToken token(String token) {
+  public PreparedAuthToken token(@javax.annotation.Nullable String token) {
     this.token = token;
     return this;
   }
@@ -62,7 +63,7 @@ public class PreparedAuthToken {
 
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setToken(String token) {
+  public void setToken(@javax.annotation.Nullable String token) {
     this.token = token;
   }
 

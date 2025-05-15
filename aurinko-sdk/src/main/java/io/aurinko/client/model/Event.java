@@ -69,55 +69,67 @@ import io.aurinko.client.ApiClient;
   Event.JSON_PROPERTY_ATTACHMENTS,
   Event.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Event {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_ETAG = "etag";
+  @javax.annotation.Nullable
   private String etag;
 
   public static final String JSON_PROPERTY_CALENDAR_ID = "calendarId";
+  @javax.annotation.Nullable
   private String calendarId;
 
   public static final String JSON_PROPERTY_CREATED_TIME = "createdTime";
+  @javax.annotation.Nullable
   private OffsetDateTime createdTime;
 
   public static final String JSON_PROPERTY_LAST_MODIFIED_TIME = "lastModifiedTime";
+  @javax.annotation.Nullable
   private OffsetDateTime lastModifiedTime;
 
   public static final String JSON_PROPERTY_SUBJECT = "subject";
+  @javax.annotation.Nullable
   private String subject;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_LOCATION = "location";
+  @javax.annotation.Nullable
   private String location;
 
   public static final String JSON_PROPERTY_START = "start";
+  @javax.annotation.Nullable
   private EventDateTime start;
 
   public static final String JSON_PROPERTY_END = "end";
+  @javax.annotation.Nullable
   private EventDateTime end;
 
   public static final String JSON_PROPERTY_ORGANIZER = "organizer";
+  @javax.annotation.Nullable
   private Organizer organizer;
 
   public static final String JSON_PROPERTY_MEETING_INFO = "meetingInfo";
+  @javax.annotation.Nullable
   private MeetingInfo meetingInfo;
 
   /**
    * Gets or Sets recurrenceType
    */
   public enum RecurrenceTypeEnum {
-    SINGLE("single"),
+    SINGLE(String.valueOf("single")),
     
-    MASTER("master"),
+    MASTER(String.valueOf("master")),
     
-    OCCURRENCE("occurrence"),
+    OCCURRENCE(String.valueOf("occurrence")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -147,49 +159,60 @@ public class Event {
   }
 
   public static final String JSON_PROPERTY_RECURRENCE_TYPE = "recurrenceType";
+  @javax.annotation.Nullable
   private RecurrenceTypeEnum recurrenceType;
 
   public static final String JSON_PROPERTY_RECURRENCE = "recurrence";
+  @javax.annotation.Nullable
   private Recurrence recurrence;
 
   public static final String JSON_PROPERTY_OCCURRENCE_INFO = "occurrenceInfo";
+  @javax.annotation.Nullable
   private OccurrenceInfo occurrenceInfo;
 
   public static final String JSON_PROPERTY_I_CAL_UID = "iCalUid";
+  @javax.annotation.Nullable
   private String iCalUid;
 
   public static final String JSON_PROPERTY_GLOBAL_ID = "globalId";
+  @javax.annotation.Nullable
   private String globalId;
 
   public static final String JSON_PROPERTY_SHOW_AS = "showAs";
+  @javax.annotation.Nullable
   private ShowAs showAs;
 
   public static final String JSON_PROPERTY_SENSITIVITY = "sensitivity";
+  @javax.annotation.Nullable
   private Sensitivity sensitivity;
 
   public static final String JSON_PROPERTY_CATEGORIES = "categories";
+  @javax.annotation.Nullable
   private List<String> categories = new ArrayList<>();
 
   public static final String JSON_PROPERTY_HTML_LINK = "htmlLink";
+  @javax.annotation.Nullable
   private String htmlLink;
 
   public static final String JSON_PROPERTY_HAS_ATTACHMENTS = "hasAttachments";
+  @javax.annotation.Nullable
   private Boolean hasAttachments;
 
   public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
+  @javax.annotation.Nullable
   private List<EmailAttachment> attachments = new ArrayList<>();
 
   /**
    * Gets or Sets omitted
    */
   public enum OmittedEnum {
-    DESCRIPTION("description"),
+    DESCRIPTION(String.valueOf("description")),
     
-    ATTENDEES("attendees"),
+    ATTENDEES(String.valueOf("attendees")),
     
-    ATTACHMENTS("attachments"),
+    ATTACHMENTS(String.valueOf("attachments")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -219,6 +242,7 @@ public class Event {
   }
 
   public static final String JSON_PROPERTY_OMITTED = "omitted";
+  @javax.annotation.Nullable
   private List<OmittedEnum> omitted = new ArrayList<>();
 
   public Event() { 
@@ -324,7 +348,7 @@ public class Event {
 
 
 
-  public Event subject(String subject) {
+  public Event subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
@@ -343,12 +367,12 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public Event description(String description) {
+  public Event description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -367,12 +391,12 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Event location(String location) {
+  public Event location(@javax.annotation.Nullable String location) {
     this.location = location;
     return this;
   }
@@ -391,12 +415,12 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLocation(String location) {
+  public void setLocation(@javax.annotation.Nullable String location) {
     this.location = location;
   }
 
 
-  public Event start(EventDateTime start) {
+  public Event start(@javax.annotation.Nullable EventDateTime start) {
     this.start = start;
     return this;
   }
@@ -415,12 +439,12 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(EventDateTime start) {
+  public void setStart(@javax.annotation.Nullable EventDateTime start) {
     this.start = start;
   }
 
 
-  public Event end(EventDateTime end) {
+  public Event end(@javax.annotation.Nullable EventDateTime end) {
     this.end = end;
     return this;
   }
@@ -439,12 +463,12 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(EventDateTime end) {
+  public void setEnd(@javax.annotation.Nullable EventDateTime end) {
     this.end = end;
   }
 
 
-  public Event organizer(Organizer organizer) {
+  public Event organizer(@javax.annotation.Nullable Organizer organizer) {
     this.organizer = organizer;
     return this;
   }
@@ -463,12 +487,12 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_ORGANIZER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOrganizer(Organizer organizer) {
+  public void setOrganizer(@javax.annotation.Nullable Organizer organizer) {
     this.organizer = organizer;
   }
 
 
-  public Event meetingInfo(MeetingInfo meetingInfo) {
+  public Event meetingInfo(@javax.annotation.Nullable MeetingInfo meetingInfo) {
     this.meetingInfo = meetingInfo;
     return this;
   }
@@ -487,7 +511,7 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_MEETING_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMeetingInfo(MeetingInfo meetingInfo) {
+  public void setMeetingInfo(@javax.annotation.Nullable MeetingInfo meetingInfo) {
     this.meetingInfo = meetingInfo;
   }
 
@@ -506,7 +530,7 @@ public class Event {
 
 
 
-  public Event recurrence(Recurrence recurrence) {
+  public Event recurrence(@javax.annotation.Nullable Recurrence recurrence) {
     this.recurrence = recurrence;
     return this;
   }
@@ -525,12 +549,12 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_RECURRENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecurrence(Recurrence recurrence) {
+  public void setRecurrence(@javax.annotation.Nullable Recurrence recurrence) {
     this.recurrence = recurrence;
   }
 
 
-  public Event occurrenceInfo(OccurrenceInfo occurrenceInfo) {
+  public Event occurrenceInfo(@javax.annotation.Nullable OccurrenceInfo occurrenceInfo) {
     this.occurrenceInfo = occurrenceInfo;
     return this;
   }
@@ -549,7 +573,7 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_OCCURRENCE_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOccurrenceInfo(OccurrenceInfo occurrenceInfo) {
+  public void setOccurrenceInfo(@javax.annotation.Nullable OccurrenceInfo occurrenceInfo) {
     this.occurrenceInfo = occurrenceInfo;
   }
 
@@ -582,7 +606,7 @@ public class Event {
 
 
 
-  public Event showAs(ShowAs showAs) {
+  public Event showAs(@javax.annotation.Nullable ShowAs showAs) {
     this.showAs = showAs;
     return this;
   }
@@ -601,12 +625,12 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_SHOW_AS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShowAs(ShowAs showAs) {
+  public void setShowAs(@javax.annotation.Nullable ShowAs showAs) {
     this.showAs = showAs;
   }
 
 
-  public Event sensitivity(Sensitivity sensitivity) {
+  public Event sensitivity(@javax.annotation.Nullable Sensitivity sensitivity) {
     this.sensitivity = sensitivity;
     return this;
   }
@@ -625,7 +649,7 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_SENSITIVITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSensitivity(Sensitivity sensitivity) {
+  public void setSensitivity(@javax.annotation.Nullable Sensitivity sensitivity) {
     this.sensitivity = sensitivity;
   }
 
@@ -672,7 +696,7 @@ public class Event {
 
 
 
-  public Event attachments(List<EmailAttachment> attachments) {
+  public Event attachments(@javax.annotation.Nullable List<EmailAttachment> attachments) {
     this.attachments = attachments;
     return this;
   }
@@ -699,7 +723,7 @@ public class Event {
 
   @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttachments(List<EmailAttachment> attachments) {
+  public void setAttachments(@javax.annotation.Nullable List<EmailAttachment> attachments) {
     this.attachments = attachments;
   }
 

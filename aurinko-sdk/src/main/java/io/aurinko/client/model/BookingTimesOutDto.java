@@ -52,48 +52,60 @@ import io.aurinko.client.ApiClient;
   BookingTimesOutDto.JSON_PROPERTY_NEXT_PAGE_TOKEN,
   BookingTimesOutDto.JSON_PROPERTY_NEXT_FROM_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ITEMS = "items";
+  @javax.annotation.Nullable
   private List<BookingMeetingInterval> items = new ArrayList<>();
 
   public static final String JSON_PROPERTY_START_TIME = "startTime";
+  @javax.annotation.Nullable
   private OffsetDateTime startTime;
 
   public static final String JSON_PROPERTY_END_TIME = "endTime";
+  @javax.annotation.Nullable
   private OffsetDateTime endTime;
 
   public static final String JSON_PROPERTY_TIME_AVAILABLE_FOR = "timeAvailableFor";
+  @javax.annotation.Nullable
   private String timeAvailableFor;
 
   public static final String JSON_PROPERTY_DURATION_MINUTES = "durationMinutes";
+  @javax.annotation.Nullable
   private Integer durationMinutes;
 
   public static final String JSON_PROPERTY_AVAILABILITY_STEP = "availabilityStep";
+  @javax.annotation.Nullable
   private Integer availabilityStep;
 
   public static final String JSON_PROPERTY_SUBJECT = "subject";
+  @javax.annotation.Nullable
   private String subject;
 
   public static final String JSON_PROPERTY_PRIMARY_COLOR = "primaryColor";
+  @javax.annotation.Nullable
   private String primaryColor;
 
   public static final String JSON_PROPERTY_SECONDARY_COLOR = "secondaryColor";
+  @javax.annotation.Nullable
   private String secondaryColor;
 
   public static final String JSON_PROPERTY_ADDITIONAL_FIELDS = "additionalFields";
+  @javax.annotation.Nullable
   private List<AdditionalField> additionalFields = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
+  @javax.annotation.Nullable
   private String nextPageToken;
 
   public static final String JSON_PROPERTY_NEXT_FROM_DATE = "nextFromDate";
+  @javax.annotation.Nullable
   private LocalDate nextFromDate;
 
   public BookingTimesOutDto() { 
   }
 
-  public BookingTimesOutDto items(List<BookingMeetingInterval> items) {
+  public BookingTimesOutDto items(@javax.annotation.Nullable List<BookingMeetingInterval> items) {
     this.items = items;
     return this;
   }
@@ -120,12 +132,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(List<BookingMeetingInterval> items) {
+  public void setItems(@javax.annotation.Nullable List<BookingMeetingInterval> items) {
     this.items = items;
   }
 
 
-  public BookingTimesOutDto startTime(OffsetDateTime startTime) {
+  public BookingTimesOutDto startTime(@javax.annotation.Nullable OffsetDateTime startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -144,12 +156,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_START_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartTime(OffsetDateTime startTime) {
+  public void setStartTime(@javax.annotation.Nullable OffsetDateTime startTime) {
     this.startTime = startTime;
   }
 
 
-  public BookingTimesOutDto endTime(OffsetDateTime endTime) {
+  public BookingTimesOutDto endTime(@javax.annotation.Nullable OffsetDateTime endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -168,12 +180,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_END_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndTime(OffsetDateTime endTime) {
+  public void setEndTime(@javax.annotation.Nullable OffsetDateTime endTime) {
     this.endTime = endTime;
   }
 
 
-  public BookingTimesOutDto timeAvailableFor(String timeAvailableFor) {
+  public BookingTimesOutDto timeAvailableFor(@javax.annotation.Nullable String timeAvailableFor) {
     this.timeAvailableFor = timeAvailableFor;
     return this;
   }
@@ -192,12 +204,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_TIME_AVAILABLE_FOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeAvailableFor(String timeAvailableFor) {
+  public void setTimeAvailableFor(@javax.annotation.Nullable String timeAvailableFor) {
     this.timeAvailableFor = timeAvailableFor;
   }
 
 
-  public BookingTimesOutDto durationMinutes(Integer durationMinutes) {
+  public BookingTimesOutDto durationMinutes(@javax.annotation.Nullable Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
     return this;
   }
@@ -216,12 +228,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_DURATION_MINUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDurationMinutes(Integer durationMinutes) {
+  public void setDurationMinutes(@javax.annotation.Nullable Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
   }
 
 
-  public BookingTimesOutDto availabilityStep(Integer availabilityStep) {
+  public BookingTimesOutDto availabilityStep(@javax.annotation.Nullable Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
     return this;
   }
@@ -240,12 +252,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAvailabilityStep(Integer availabilityStep) {
+  public void setAvailabilityStep(@javax.annotation.Nullable Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
   }
 
 
-  public BookingTimesOutDto subject(String subject) {
+  public BookingTimesOutDto subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
@@ -264,12 +276,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public BookingTimesOutDto primaryColor(String primaryColor) {
+  public BookingTimesOutDto primaryColor(@javax.annotation.Nullable String primaryColor) {
     this.primaryColor = primaryColor;
     return this;
   }
@@ -288,12 +300,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_PRIMARY_COLOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPrimaryColor(String primaryColor) {
+  public void setPrimaryColor(@javax.annotation.Nullable String primaryColor) {
     this.primaryColor = primaryColor;
   }
 
 
-  public BookingTimesOutDto secondaryColor(String secondaryColor) {
+  public BookingTimesOutDto secondaryColor(@javax.annotation.Nullable String secondaryColor) {
     this.secondaryColor = secondaryColor;
     return this;
   }
@@ -312,12 +324,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_SECONDARY_COLOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSecondaryColor(String secondaryColor) {
+  public void setSecondaryColor(@javax.annotation.Nullable String secondaryColor) {
     this.secondaryColor = secondaryColor;
   }
 
 
-  public BookingTimesOutDto additionalFields(List<AdditionalField> additionalFields) {
+  public BookingTimesOutDto additionalFields(@javax.annotation.Nullable List<AdditionalField> additionalFields) {
     this.additionalFields = additionalFields;
     return this;
   }
@@ -344,12 +356,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_ADDITIONAL_FIELDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAdditionalFields(List<AdditionalField> additionalFields) {
+  public void setAdditionalFields(@javax.annotation.Nullable List<AdditionalField> additionalFields) {
     this.additionalFields = additionalFields;
   }
 
 
-  public BookingTimesOutDto nextPageToken(String nextPageToken) {
+  public BookingTimesOutDto nextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
     return this;
   }
@@ -368,12 +380,12 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageToken(String nextPageToken) {
+  public void setNextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
   }
 
 
-  public BookingTimesOutDto nextFromDate(LocalDate nextFromDate) {
+  public BookingTimesOutDto nextFromDate(@javax.annotation.Nullable LocalDate nextFromDate) {
     this.nextFromDate = nextFromDate;
     return this;
   }
@@ -392,7 +404,7 @@ public class BookingTimesOutDto {
 
   @JsonProperty(JSON_PROPERTY_NEXT_FROM_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextFromDate(LocalDate nextFromDate) {
+  public void setNextFromDate(@javax.annotation.Nullable LocalDate nextFromDate) {
     this.nextFromDate = nextFromDate;
   }
 

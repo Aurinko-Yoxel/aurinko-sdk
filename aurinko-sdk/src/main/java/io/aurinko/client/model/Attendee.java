@@ -40,25 +40,27 @@ import io.aurinko.client.ApiClient;
   Attendee.JSON_PROPERTY_RESPONSE,
   Attendee.JSON_PROPERTY_COMMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Attendee {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_EMAIL_ADDRESS = "emailAddress";
+  @javax.annotation.Nullable
   private EmailAddress emailAddress;
 
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    REQUIRED("required"),
+    REQUIRED(String.valueOf("required")),
     
-    OPTIONAL("optional"),
+    OPTIONAL(String.valueOf("optional")),
     
-    RESOURCE("resource"),
+    RESOURCE(String.valueOf("resource")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -88,19 +90,20 @@ public class Attendee {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   /**
    * Gets or Sets response
    */
   public enum ResponseEnum {
-    ACCEPTED("accepted"),
+    ACCEPTED(String.valueOf("accepted")),
     
-    TENTITIVE("tentitive"),
+    TENTITIVE(String.valueOf("tentitive")),
     
-    DECLINED("declined"),
+    DECLINED(String.valueOf("declined")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -130,9 +133,11 @@ public class Attendee {
   }
 
   public static final String JSON_PROPERTY_RESPONSE = "response";
+  @javax.annotation.Nullable
   private ResponseEnum response;
 
   public static final String JSON_PROPERTY_COMMENT = "comment";
+  @javax.annotation.Nullable
   private String comment;
 
   public Attendee() { 
@@ -164,7 +169,7 @@ public class Attendee {
 
 
 
-  public Attendee emailAddress(EmailAddress emailAddress) {
+  public Attendee emailAddress(@javax.annotation.Nullable EmailAddress emailAddress) {
     this.emailAddress = emailAddress;
     return this;
   }
@@ -183,12 +188,12 @@ public class Attendee {
 
   @JsonProperty(JSON_PROPERTY_EMAIL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmailAddress(EmailAddress emailAddress) {
+  public void setEmailAddress(@javax.annotation.Nullable EmailAddress emailAddress) {
     this.emailAddress = emailAddress;
   }
 
 
-  public Attendee type(TypeEnum type) {
+  public Attendee type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -207,7 +212,7 @@ public class Attendee {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 

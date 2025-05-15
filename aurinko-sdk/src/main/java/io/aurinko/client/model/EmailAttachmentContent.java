@@ -35,15 +35,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   EmailAttachmentContent.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailAttachmentContent {
   public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nullable
   private String content;
 
   public EmailAttachmentContent() { 
   }
 
-  public EmailAttachmentContent content(String content) {
+  public EmailAttachmentContent content(@javax.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -62,7 +63,7 @@ public class EmailAttachmentContent {
 
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContent(String content) {
+  public void setContent(@javax.annotation.Nullable String content) {
     this.content = content;
   }
 

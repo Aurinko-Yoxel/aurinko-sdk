@@ -37,21 +37,24 @@ import io.aurinko.client.ApiClient;
   TaskLink.JSON_PROPERTY_DESCRIPTION,
   TaskLink.JSON_PROPERTY_LINK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class TaskLink {
   public static final String JSON_PROPERTY_SOURCE = "source";
+  @javax.annotation.Nullable
   private String source;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_LINK = "link";
+  @javax.annotation.Nullable
   private String link;
 
   public TaskLink() { 
   }
 
-  public TaskLink source(String source) {
+  public TaskLink source(@javax.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
@@ -70,12 +73,12 @@ public class TaskLink {
 
   @JsonProperty(JSON_PROPERTY_SOURCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSource(String source) {
+  public void setSource(@javax.annotation.Nullable String source) {
     this.source = source;
   }
 
 
-  public TaskLink description(String description) {
+  public TaskLink description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -94,12 +97,12 @@ public class TaskLink {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public TaskLink link(String link) {
+  public TaskLink link(@javax.annotation.Nullable String link) {
     this.link = link;
     return this;
   }
@@ -118,7 +121,7 @@ public class TaskLink {
 
   @JsonProperty(JSON_PROPERTY_LINK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLink(String link) {
+  public void setLink(@javax.annotation.Nullable String link) {
     this.link = link;
   }
 

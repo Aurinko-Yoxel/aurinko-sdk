@@ -41,24 +41,28 @@ import io.aurinko.client.ApiClient;
   BookingMeetingInterval.JSON_PROPERTY_GROUP_XIDS,
   BookingMeetingInterval.JSON_PROPERTY_ACCOUNT_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class BookingMeetingInterval {
   public static final String JSON_PROPERTY_START = "start";
+  @javax.annotation.Nullable
   private OffsetDateTime start;
 
   public static final String JSON_PROPERTY_END = "end";
+  @javax.annotation.Nullable
   private OffsetDateTime end;
 
   public static final String JSON_PROPERTY_GROUP_XIDS = "groupXids";
+  @javax.annotation.Nullable
   private List<String> groupXids = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  @javax.annotation.Nullable
   private List<Long> accountIds = new ArrayList<>();
 
   public BookingMeetingInterval() { 
   }
 
-  public BookingMeetingInterval start(OffsetDateTime start) {
+  public BookingMeetingInterval start(@javax.annotation.Nullable OffsetDateTime start) {
     this.start = start;
     return this;
   }
@@ -77,12 +81,12 @@ public class BookingMeetingInterval {
 
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
+  public void setStart(@javax.annotation.Nullable OffsetDateTime start) {
     this.start = start;
   }
 
 
-  public BookingMeetingInterval end(OffsetDateTime end) {
+  public BookingMeetingInterval end(@javax.annotation.Nullable OffsetDateTime end) {
     this.end = end;
     return this;
   }
@@ -101,12 +105,12 @@ public class BookingMeetingInterval {
 
   @JsonProperty(JSON_PROPERTY_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
+  public void setEnd(@javax.annotation.Nullable OffsetDateTime end) {
     this.end = end;
   }
 
 
-  public BookingMeetingInterval groupXids(List<String> groupXids) {
+  public BookingMeetingInterval groupXids(@javax.annotation.Nullable List<String> groupXids) {
     this.groupXids = groupXids;
     return this;
   }
@@ -133,12 +137,12 @@ public class BookingMeetingInterval {
 
   @JsonProperty(JSON_PROPERTY_GROUP_XIDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupXids(List<String> groupXids) {
+  public void setGroupXids(@javax.annotation.Nullable List<String> groupXids) {
     this.groupXids = groupXids;
   }
 
 
-  public BookingMeetingInterval accountIds(List<Long> accountIds) {
+  public BookingMeetingInterval accountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
     return this;
   }
@@ -165,7 +169,7 @@ public class BookingMeetingInterval {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountIds(List<Long> accountIds) {
+  public void setAccountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
   }
 

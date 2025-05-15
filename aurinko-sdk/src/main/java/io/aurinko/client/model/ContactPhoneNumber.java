@@ -37,50 +37,51 @@ import io.aurinko.client.ApiClient;
   ContactPhoneNumber.JSON_PROPERTY_TYPE,
   ContactPhoneNumber.JSON_PROPERTY_CANONICAL_FORM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ContactPhoneNumber {
   public static final String JSON_PROPERTY_NUMBER = "number";
+  @javax.annotation.Nullable
   private String number;
 
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    WORK("work"),
+    WORK(String.valueOf("work")),
     
-    HOME("home"),
+    HOME(String.valueOf("home")),
     
-    OTHER("other"),
+    OTHER(String.valueOf("other")),
     
-    MOBILE("mobile"),
+    MOBILE(String.valueOf("mobile")),
     
-    WORK_MOBILE("workMobile"),
+    WORK_MOBILE(String.valueOf("workMobile")),
     
-    MAIN("main"),
+    MAIN(String.valueOf("main")),
     
-    COMPANY_MAIN("companyMain"),
+    COMPANY_MAIN(String.valueOf("companyMain")),
     
-    ASSISTANT("assistant"),
+    ASSISTANT(String.valueOf("assistant")),
     
-    WORK_FAX("workFax"),
+    WORK_FAX(String.valueOf("workFax")),
     
-    HOME_FAX("homeFax"),
+    HOME_FAX(String.valueOf("homeFax")),
     
-    OTHER_FAX("otherFax"),
+    OTHER_FAX(String.valueOf("otherFax")),
     
-    CALLBACK("callback"),
+    CALLBACK(String.valueOf("callback")),
     
-    PAGER("pager"),
+    PAGER(String.valueOf("pager")),
     
-    WORK_PAGER("workPager"),
+    WORK_PAGER(String.valueOf("workPager")),
     
-    RADIO("radio"),
+    RADIO(String.valueOf("radio")),
     
-    TELEX("telex"),
+    TELEX(String.valueOf("telex")),
     
-    TTY("tty"),
+    TTY(String.valueOf("tty")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -110,9 +111,11 @@ public class ContactPhoneNumber {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String JSON_PROPERTY_CANONICAL_FORM = "canonicalForm";
+  @javax.annotation.Nullable
   private String canonicalForm;
 
   public ContactPhoneNumber() { 
@@ -126,7 +129,7 @@ public class ContactPhoneNumber {
     this.canonicalForm = canonicalForm;
   }
 
-  public ContactPhoneNumber number(String number) {
+  public ContactPhoneNumber number(@javax.annotation.Nullable String number) {
     this.number = number;
     return this;
   }
@@ -145,12 +148,12 @@ public class ContactPhoneNumber {
 
   @JsonProperty(JSON_PROPERTY_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNumber(String number) {
+  public void setNumber(@javax.annotation.Nullable String number) {
     this.number = number;
   }
 
 
-  public ContactPhoneNumber type(TypeEnum type) {
+  public ContactPhoneNumber type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -169,7 +172,7 @@ public class ContactPhoneNumber {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 

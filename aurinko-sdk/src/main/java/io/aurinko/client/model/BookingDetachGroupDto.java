@@ -38,18 +38,20 @@ import io.aurinko.client.ApiClient;
   BookingDetachGroupDto.JSON_PROPERTY_EXT_ID,
   BookingDetachGroupDto.JSON_PROPERTY_ACCOUNT_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class BookingDetachGroupDto {
   public static final String JSON_PROPERTY_EXT_ID = "extId";
+  @javax.annotation.Nullable
   private String extId;
 
   public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  @javax.annotation.Nullable
   private List<Long> accountIds = new ArrayList<>();
 
   public BookingDetachGroupDto() { 
   }
 
-  public BookingDetachGroupDto extId(String extId) {
+  public BookingDetachGroupDto extId(@javax.annotation.Nullable String extId) {
     this.extId = extId;
     return this;
   }
@@ -68,12 +70,12 @@ public class BookingDetachGroupDto {
 
   @JsonProperty(JSON_PROPERTY_EXT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExtId(String extId) {
+  public void setExtId(@javax.annotation.Nullable String extId) {
     this.extId = extId;
   }
 
 
-  public BookingDetachGroupDto accountIds(List<Long> accountIds) {
+  public BookingDetachGroupDto accountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
     return this;
   }
@@ -100,7 +102,7 @@ public class BookingDetachGroupDto {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountIds(List<Long> accountIds) {
+  public void setAccountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
   }
 

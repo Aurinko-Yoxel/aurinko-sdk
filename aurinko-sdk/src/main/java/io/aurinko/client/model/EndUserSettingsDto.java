@@ -36,15 +36,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   EndUserSettingsDto.JSON_PROPERTY_WORK_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EndUserSettingsDto {
   public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
+  @javax.annotation.Nullable
   private WeekWorkSchedule workHours;
 
   public EndUserSettingsDto() { 
   }
 
-  public EndUserSettingsDto workHours(WeekWorkSchedule workHours) {
+  public EndUserSettingsDto workHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
     return this;
   }
@@ -63,7 +64,7 @@ public class EndUserSettingsDto {
 
   @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWorkHours(WeekWorkSchedule workHours) {
+  public void setWorkHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
   }
 

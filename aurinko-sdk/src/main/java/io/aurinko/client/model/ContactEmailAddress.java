@@ -37,21 +37,24 @@ import io.aurinko.client.ApiClient;
   ContactEmailAddress.JSON_PROPERTY_NAME,
   ContactEmailAddress.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ContactEmailAddress {
   public static final String JSON_PROPERTY_ADDRESS = "address";
+  @javax.annotation.Nullable
   private String address;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public ContactEmailAddress() { 
   }
 
-  public ContactEmailAddress address(String address) {
+  public ContactEmailAddress address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -70,12 +73,12 @@ public class ContactEmailAddress {
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAddress(String address) {
+  public void setAddress(@javax.annotation.Nullable String address) {
     this.address = address;
   }
 
 
-  public ContactEmailAddress name(String name) {
+  public ContactEmailAddress name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -94,12 +97,12 @@ public class ContactEmailAddress {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ContactEmailAddress type(String type) {
+  public ContactEmailAddress type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -118,7 +121,7 @@ public class ContactEmailAddress {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 

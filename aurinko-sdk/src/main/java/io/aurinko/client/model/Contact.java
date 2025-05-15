@@ -66,63 +66,82 @@ import io.aurinko.client.ApiClient;
   Contact.JSON_PROPERTY_HAS_PHOTO,
   Contact.JSON_PROPERTY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Contact {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_ETAG = "etag";
+  @javax.annotation.Nullable
   private String etag;
 
   public static final String JSON_PROPERTY_CREATED_TIME = "createdTime";
+  @javax.annotation.Nullable
   private OffsetDateTime createdTime;
 
   public static final String JSON_PROPERTY_LAST_MODIFIED_TIME = "lastModifiedTime";
+  @javax.annotation.Nullable
   private OffsetDateTime lastModifiedTime;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private ContactName name;
 
   public static final String JSON_PROPERTY_NICK_NAME = "nickName";
+  @javax.annotation.Nullable
   private String nickName;
 
   public static final String JSON_PROPERTY_FILE_AS = "fileAs";
+  @javax.annotation.Nullable
   private String fileAs;
 
   public static final String JSON_PROPERTY_COMPANY = "company";
+  @javax.annotation.Nullable
   private ContactCompany company;
 
   public static final String JSON_PROPERTY_RELATIONS = "relations";
+  @javax.annotation.Nullable
   private List<ContactRelation> relations = new ArrayList<>();
 
   public static final String JSON_PROPERTY_BIRTHDAY = "birthday";
+  @javax.annotation.Nullable
   private String birthday;
 
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
+  @javax.annotation.Nullable
   private List<String> keywords = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NOTES = "notes";
+  @javax.annotation.Nullable
   private String notes;
 
   public static final String JSON_PROPERTY_EMAIL_ADDRESSES = "emailAddresses";
+  @javax.annotation.Nullable
   private List<ContactEmailAddress> emailAddresses = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PHONE_NUMBERS = "phoneNumbers";
+  @javax.annotation.Nullable
   private List<ContactPhoneNumber> phoneNumbers = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ADDRESSES = "addresses";
+  @javax.annotation.Nullable
   private List<ContactPostalAddress> addresses = new ArrayList<>();
 
   public static final String JSON_PROPERTY_URLS = "urls";
+  @javax.annotation.Nullable
   private List<ContactUrl> urls = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NATIVE_PROPERTIES = "nativeProperties";
+  @javax.annotation.Nullable
   private Map<String, String> nativeProperties = new HashMap<>();
 
   public static final String JSON_PROPERTY_HAS_PHOTO = "hasPhoto";
+  @javax.annotation.Nullable
   private Boolean hasPhoto;
 
   public static final String JSON_PROPERTY_PHOTO = "photo";
+  @javax.annotation.Nullable
   private ContactPhoto photo;
 
   public Contact() { 
@@ -200,7 +219,7 @@ public class Contact {
 
 
 
-  public Contact name(ContactName name) {
+  public Contact name(@javax.annotation.Nullable ContactName name) {
     this.name = name;
     return this;
   }
@@ -219,12 +238,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(ContactName name) {
+  public void setName(@javax.annotation.Nullable ContactName name) {
     this.name = name;
   }
 
 
-  public Contact nickName(String nickName) {
+  public Contact nickName(@javax.annotation.Nullable String nickName) {
     this.nickName = nickName;
     return this;
   }
@@ -243,12 +262,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_NICK_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNickName(String nickName) {
+  public void setNickName(@javax.annotation.Nullable String nickName) {
     this.nickName = nickName;
   }
 
 
-  public Contact fileAs(String fileAs) {
+  public Contact fileAs(@javax.annotation.Nullable String fileAs) {
     this.fileAs = fileAs;
     return this;
   }
@@ -267,12 +286,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_FILE_AS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFileAs(String fileAs) {
+  public void setFileAs(@javax.annotation.Nullable String fileAs) {
     this.fileAs = fileAs;
   }
 
 
-  public Contact company(ContactCompany company) {
+  public Contact company(@javax.annotation.Nullable ContactCompany company) {
     this.company = company;
     return this;
   }
@@ -291,12 +310,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_COMPANY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCompany(ContactCompany company) {
+  public void setCompany(@javax.annotation.Nullable ContactCompany company) {
     this.company = company;
   }
 
 
-  public Contact relations(List<ContactRelation> relations) {
+  public Contact relations(@javax.annotation.Nullable List<ContactRelation> relations) {
     this.relations = relations;
     return this;
   }
@@ -323,12 +342,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_RELATIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRelations(List<ContactRelation> relations) {
+  public void setRelations(@javax.annotation.Nullable List<ContactRelation> relations) {
     this.relations = relations;
   }
 
 
-  public Contact birthday(String birthday) {
+  public Contact birthday(@javax.annotation.Nullable String birthday) {
     this.birthday = birthday;
     return this;
   }
@@ -347,12 +366,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_BIRTHDAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBirthday(String birthday) {
+  public void setBirthday(@javax.annotation.Nullable String birthday) {
     this.birthday = birthday;
   }
 
 
-  public Contact keywords(List<String> keywords) {
+  public Contact keywords(@javax.annotation.Nullable List<String> keywords) {
     this.keywords = keywords;
     return this;
   }
@@ -379,12 +398,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setKeywords(List<String> keywords) {
+  public void setKeywords(@javax.annotation.Nullable List<String> keywords) {
     this.keywords = keywords;
   }
 
 
-  public Contact notes(String notes) {
+  public Contact notes(@javax.annotation.Nullable String notes) {
     this.notes = notes;
     return this;
   }
@@ -403,12 +422,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNotes(String notes) {
+  public void setNotes(@javax.annotation.Nullable String notes) {
     this.notes = notes;
   }
 
 
-  public Contact emailAddresses(List<ContactEmailAddress> emailAddresses) {
+  public Contact emailAddresses(@javax.annotation.Nullable List<ContactEmailAddress> emailAddresses) {
     this.emailAddresses = emailAddresses;
     return this;
   }
@@ -435,12 +454,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_EMAIL_ADDRESSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmailAddresses(List<ContactEmailAddress> emailAddresses) {
+  public void setEmailAddresses(@javax.annotation.Nullable List<ContactEmailAddress> emailAddresses) {
     this.emailAddresses = emailAddresses;
   }
 
 
-  public Contact phoneNumbers(List<ContactPhoneNumber> phoneNumbers) {
+  public Contact phoneNumbers(@javax.annotation.Nullable List<ContactPhoneNumber> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
     return this;
   }
@@ -467,12 +486,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_PHONE_NUMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhoneNumbers(List<ContactPhoneNumber> phoneNumbers) {
+  public void setPhoneNumbers(@javax.annotation.Nullable List<ContactPhoneNumber> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
   }
 
 
-  public Contact addresses(List<ContactPostalAddress> addresses) {
+  public Contact addresses(@javax.annotation.Nullable List<ContactPostalAddress> addresses) {
     this.addresses = addresses;
     return this;
   }
@@ -499,12 +518,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_ADDRESSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAddresses(List<ContactPostalAddress> addresses) {
+  public void setAddresses(@javax.annotation.Nullable List<ContactPostalAddress> addresses) {
     this.addresses = addresses;
   }
 
 
-  public Contact urls(List<ContactUrl> urls) {
+  public Contact urls(@javax.annotation.Nullable List<ContactUrl> urls) {
     this.urls = urls;
     return this;
   }
@@ -531,12 +550,12 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_URLS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrls(List<ContactUrl> urls) {
+  public void setUrls(@javax.annotation.Nullable List<ContactUrl> urls) {
     this.urls = urls;
   }
 
 
-  public Contact nativeProperties(Map<String, String> nativeProperties) {
+  public Contact nativeProperties(@javax.annotation.Nullable Map<String, String> nativeProperties) {
     this.nativeProperties = nativeProperties;
     return this;
   }
@@ -563,7 +582,7 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_NATIVE_PROPERTIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNativeProperties(Map<String, String> nativeProperties) {
+  public void setNativeProperties(@javax.annotation.Nullable Map<String, String> nativeProperties) {
     this.nativeProperties = nativeProperties;
   }
 
@@ -582,7 +601,7 @@ public class Contact {
 
 
 
-  public Contact photo(ContactPhoto photo) {
+  public Contact photo(@javax.annotation.Nullable ContactPhoto photo) {
     this.photo = photo;
     return this;
   }
@@ -601,7 +620,7 @@ public class Contact {
 
   @JsonProperty(JSON_PROPERTY_PHOTO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhoto(ContactPhoto photo) {
+  public void setPhoto(@javax.annotation.Nullable ContactPhoto photo) {
     this.photo = photo;
   }
 

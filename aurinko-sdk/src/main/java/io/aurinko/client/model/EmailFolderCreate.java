@@ -36,18 +36,20 @@ import io.aurinko.client.ApiClient;
   EmailFolderCreate.JSON_PROPERTY_NAME,
   EmailFolderCreate.JSON_PROPERTY_PARENT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailFolderCreate {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parentId";
+  @javax.annotation.Nullable
   private String parentId;
 
   public EmailFolderCreate() { 
   }
 
-  public EmailFolderCreate name(String name) {
+  public EmailFolderCreate name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -66,12 +68,12 @@ public class EmailFolderCreate {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public EmailFolderCreate parentId(String parentId) {
+  public EmailFolderCreate parentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
@@ -90,7 +92,7 @@ public class EmailFolderCreate {
 
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentId(String parentId) {
+  public void setParentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 

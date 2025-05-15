@@ -39,21 +39,24 @@ import io.aurinko.client.ApiClient;
   EventDateTime.JSON_PROPERTY_DATE_TIME,
   EventDateTime.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EventDateTime {
   public static final String JSON_PROPERTY_DATE_ONLY = "dateOnly";
+  @javax.annotation.Nullable
   private LocalDate dateOnly;
 
   public static final String JSON_PROPERTY_DATE_TIME = "dateTime";
+  @javax.annotation.Nullable
   private OffsetDateTime dateTime;
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
+  @javax.annotation.Nullable
   private String timezone;
 
   public EventDateTime() { 
   }
 
-  public EventDateTime dateOnly(LocalDate dateOnly) {
+  public EventDateTime dateOnly(@javax.annotation.Nullable LocalDate dateOnly) {
     this.dateOnly = dateOnly;
     return this;
   }
@@ -72,12 +75,12 @@ public class EventDateTime {
 
   @JsonProperty(JSON_PROPERTY_DATE_ONLY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDateOnly(LocalDate dateOnly) {
+  public void setDateOnly(@javax.annotation.Nullable LocalDate dateOnly) {
     this.dateOnly = dateOnly;
   }
 
 
-  public EventDateTime dateTime(OffsetDateTime dateTime) {
+  public EventDateTime dateTime(@javax.annotation.Nullable OffsetDateTime dateTime) {
     this.dateTime = dateTime;
     return this;
   }
@@ -96,12 +99,12 @@ public class EventDateTime {
 
   @JsonProperty(JSON_PROPERTY_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDateTime(OffsetDateTime dateTime) {
+  public void setDateTime(@javax.annotation.Nullable OffsetDateTime dateTime) {
     this.dateTime = dateTime;
   }
 
 
-  public EventDateTime timezone(String timezone) {
+  public EventDateTime timezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -120,7 +123,7 @@ public class EventDateTime {
 
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimezone(String timezone) {
+  public void setTimezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
   }
 

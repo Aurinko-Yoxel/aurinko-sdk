@@ -37,18 +37,20 @@ import io.aurinko.client.ApiClient;
   RewriteHtml.JSON_PROPERTY_HTML_TEXT,
   RewriteHtml.JSON_PROPERTY_TRACKING
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class RewriteHtml {
   public static final String JSON_PROPERTY_HTML_TEXT = "htmlText";
+  @javax.annotation.Nullable
   private String htmlText;
 
   public static final String JSON_PROPERTY_TRACKING = "tracking";
+  @javax.annotation.Nullable
   private OutEmailTrack tracking;
 
   public RewriteHtml() { 
   }
 
-  public RewriteHtml htmlText(String htmlText) {
+  public RewriteHtml htmlText(@javax.annotation.Nullable String htmlText) {
     this.htmlText = htmlText;
     return this;
   }
@@ -67,12 +69,12 @@ public class RewriteHtml {
 
   @JsonProperty(JSON_PROPERTY_HTML_TEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHtmlText(String htmlText) {
+  public void setHtmlText(@javax.annotation.Nullable String htmlText) {
     this.htmlText = htmlText;
   }
 
 
-  public RewriteHtml tracking(OutEmailTrack tracking) {
+  public RewriteHtml tracking(@javax.annotation.Nullable OutEmailTrack tracking) {
     this.tracking = tracking;
     return this;
   }
@@ -91,7 +93,7 @@ public class RewriteHtml {
 
   @JsonProperty(JSON_PROPERTY_TRACKING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTracking(OutEmailTrack tracking) {
+  public void setTracking(@javax.annotation.Nullable OutEmailTrack tracking) {
     this.tracking = tracking;
   }
 

@@ -39,27 +39,32 @@ import io.aurinko.client.ApiClient;
   ContactCompany.JSON_PROPERTY_JOB_TITLE,
   ContactCompany.JSON_PROPERTY_YOMI_COMPANY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ContactCompany {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_OFFICE_LOCATION = "officeLocation";
+  @javax.annotation.Nullable
   private String officeLocation;
 
   public static final String JSON_PROPERTY_DEPARTMENT = "department";
+  @javax.annotation.Nullable
   private String department;
 
   public static final String JSON_PROPERTY_JOB_TITLE = "jobTitle";
+  @javax.annotation.Nullable
   private String jobTitle;
 
   public static final String JSON_PROPERTY_YOMI_COMPANY_NAME = "yomiCompanyName";
+  @javax.annotation.Nullable
   private String yomiCompanyName;
 
   public ContactCompany() { 
   }
 
-  public ContactCompany name(String name) {
+  public ContactCompany name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -78,12 +83,12 @@ public class ContactCompany {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ContactCompany officeLocation(String officeLocation) {
+  public ContactCompany officeLocation(@javax.annotation.Nullable String officeLocation) {
     this.officeLocation = officeLocation;
     return this;
   }
@@ -102,12 +107,12 @@ public class ContactCompany {
 
   @JsonProperty(JSON_PROPERTY_OFFICE_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOfficeLocation(String officeLocation) {
+  public void setOfficeLocation(@javax.annotation.Nullable String officeLocation) {
     this.officeLocation = officeLocation;
   }
 
 
-  public ContactCompany department(String department) {
+  public ContactCompany department(@javax.annotation.Nullable String department) {
     this.department = department;
     return this;
   }
@@ -126,12 +131,12 @@ public class ContactCompany {
 
   @JsonProperty(JSON_PROPERTY_DEPARTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDepartment(String department) {
+  public void setDepartment(@javax.annotation.Nullable String department) {
     this.department = department;
   }
 
 
-  public ContactCompany jobTitle(String jobTitle) {
+  public ContactCompany jobTitle(@javax.annotation.Nullable String jobTitle) {
     this.jobTitle = jobTitle;
     return this;
   }
@@ -150,12 +155,12 @@ public class ContactCompany {
 
   @JsonProperty(JSON_PROPERTY_JOB_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setJobTitle(String jobTitle) {
+  public void setJobTitle(@javax.annotation.Nullable String jobTitle) {
     this.jobTitle = jobTitle;
   }
 
 
-  public ContactCompany yomiCompanyName(String yomiCompanyName) {
+  public ContactCompany yomiCompanyName(@javax.annotation.Nullable String yomiCompanyName) {
     this.yomiCompanyName = yomiCompanyName;
     return this;
   }
@@ -174,7 +179,7 @@ public class ContactCompany {
 
   @JsonProperty(JSON_PROPERTY_YOMI_COMPANY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setYomiCompanyName(String yomiCompanyName) {
+  public void setYomiCompanyName(@javax.annotation.Nullable String yomiCompanyName) {
     this.yomiCompanyName = yomiCompanyName;
   }
 

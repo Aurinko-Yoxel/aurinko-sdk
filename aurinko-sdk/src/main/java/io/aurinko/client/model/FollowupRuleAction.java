@@ -36,18 +36,20 @@ import io.aurinko.client.ApiClient;
   FollowupRuleAction.JSON_PROPERTY_INTERVAL_DAYS,
   FollowupRuleAction.JSON_PROPERTY_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class FollowupRuleAction {
   public static final String JSON_PROPERTY_INTERVAL_DAYS = "intervalDays";
+  @javax.annotation.Nullable
   private Integer intervalDays;
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
+  @javax.annotation.Nullable
   private String message;
 
   public FollowupRuleAction() { 
   }
 
-  public FollowupRuleAction intervalDays(Integer intervalDays) {
+  public FollowupRuleAction intervalDays(@javax.annotation.Nullable Integer intervalDays) {
     this.intervalDays = intervalDays;
     return this;
   }
@@ -66,12 +68,12 @@ public class FollowupRuleAction {
 
   @JsonProperty(JSON_PROPERTY_INTERVAL_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIntervalDays(Integer intervalDays) {
+  public void setIntervalDays(@javax.annotation.Nullable Integer intervalDays) {
     this.intervalDays = intervalDays;
   }
 
 
-  public FollowupRuleAction message(String message) {
+  public FollowupRuleAction message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -90,7 +92,7 @@ public class FollowupRuleAction {
 
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 

@@ -41,24 +41,28 @@ import io.aurinko.client.ApiClient;
   EventsPage.JSON_PROPERTY_LENGTH,
   EventsPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EventsPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
+  @javax.annotation.Nullable
   private String nextPageToken;
 
   public static final String JSON_PROPERTY_NEXT_DELTA_TOKEN = "nextDeltaToken";
+  @javax.annotation.Nullable
   private String nextDeltaToken;
 
   public static final String JSON_PROPERTY_LENGTH = "length";
+  @javax.annotation.Nullable
   private Integer length;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
+  @javax.annotation.Nullable
   private List<Event> records = new ArrayList<>();
 
   public EventsPage() { 
   }
 
-  public EventsPage nextPageToken(String nextPageToken) {
+  public EventsPage nextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
     return this;
   }
@@ -77,12 +81,12 @@ public class EventsPage {
 
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageToken(String nextPageToken) {
+  public void setNextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
   }
 
 
-  public EventsPage nextDeltaToken(String nextDeltaToken) {
+  public EventsPage nextDeltaToken(@javax.annotation.Nullable String nextDeltaToken) {
     this.nextDeltaToken = nextDeltaToken;
     return this;
   }
@@ -101,12 +105,12 @@ public class EventsPage {
 
   @JsonProperty(JSON_PROPERTY_NEXT_DELTA_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextDeltaToken(String nextDeltaToken) {
+  public void setNextDeltaToken(@javax.annotation.Nullable String nextDeltaToken) {
     this.nextDeltaToken = nextDeltaToken;
   }
 
 
-  public EventsPage length(Integer length) {
+  public EventsPage length(@javax.annotation.Nullable Integer length) {
     this.length = length;
     return this;
   }
@@ -125,12 +129,12 @@ public class EventsPage {
 
   @JsonProperty(JSON_PROPERTY_LENGTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLength(Integer length) {
+  public void setLength(@javax.annotation.Nullable Integer length) {
     this.length = length;
   }
 
 
-  public EventsPage records(List<Event> records) {
+  public EventsPage records(@javax.annotation.Nullable List<Event> records) {
     this.records = records;
     return this;
   }
@@ -157,7 +161,7 @@ public class EventsPage {
 
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<Event> records) {
+  public void setRecords(@javax.annotation.Nullable List<Event> records) {
     this.records = records;
   }
 

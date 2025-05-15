@@ -40,21 +40,24 @@ import io.aurinko.client.ApiClient;
   BookingAttachedDto.JSON_PROPERTY_ACCOUNT_IDS,
   BookingAttachedDto.JSON_PROPERTY_REQUIRED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class BookingAttachedDto {
   public static final String JSON_PROPERTY_EXT_ID = "extId";
+  @javax.annotation.Nullable
   private String extId;
 
   public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  @javax.annotation.Nullable
   private List<Long> accountIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REQUIRED = "required";
+  @javax.annotation.Nullable
   private BookingRequiredMode required;
 
   public BookingAttachedDto() { 
   }
 
-  public BookingAttachedDto extId(String extId) {
+  public BookingAttachedDto extId(@javax.annotation.Nullable String extId) {
     this.extId = extId;
     return this;
   }
@@ -73,12 +76,12 @@ public class BookingAttachedDto {
 
   @JsonProperty(JSON_PROPERTY_EXT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExtId(String extId) {
+  public void setExtId(@javax.annotation.Nullable String extId) {
     this.extId = extId;
   }
 
 
-  public BookingAttachedDto accountIds(List<Long> accountIds) {
+  public BookingAttachedDto accountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
     return this;
   }
@@ -105,12 +108,12 @@ public class BookingAttachedDto {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountIds(List<Long> accountIds) {
+  public void setAccountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
   }
 
 
-  public BookingAttachedDto required(BookingRequiredMode required) {
+  public BookingAttachedDto required(@javax.annotation.Nullable BookingRequiredMode required) {
     this.required = required;
     return this;
   }
@@ -129,7 +132,7 @@ public class BookingAttachedDto {
 
   @JsonProperty(JSON_PROPERTY_REQUIRED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRequired(BookingRequiredMode required) {
+  public void setRequired(@javax.annotation.Nullable BookingRequiredMode required) {
     this.required = required;
   }
 

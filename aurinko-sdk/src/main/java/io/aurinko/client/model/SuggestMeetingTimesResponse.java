@@ -40,18 +40,20 @@ import io.aurinko.client.ApiClient;
   SuggestMeetingTimesResponse.JSON_PROPERTY_ITEMS,
   SuggestMeetingTimesResponse.JSON_PROPERTY_ATTENDEES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SuggestMeetingTimesResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
+  @javax.annotation.Nullable
   private List<TimeInterval> items = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ATTENDEES = "attendees";
+  @javax.annotation.Nullable
   private List<MeetingAttendee> attendees = new ArrayList<>();
 
   public SuggestMeetingTimesResponse() { 
   }
 
-  public SuggestMeetingTimesResponse items(List<TimeInterval> items) {
+  public SuggestMeetingTimesResponse items(@javax.annotation.Nullable List<TimeInterval> items) {
     this.items = items;
     return this;
   }
@@ -78,12 +80,12 @@ public class SuggestMeetingTimesResponse {
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(List<TimeInterval> items) {
+  public void setItems(@javax.annotation.Nullable List<TimeInterval> items) {
     this.items = items;
   }
 
 
-  public SuggestMeetingTimesResponse attendees(List<MeetingAttendee> attendees) {
+  public SuggestMeetingTimesResponse attendees(@javax.annotation.Nullable List<MeetingAttendee> attendees) {
     this.attendees = attendees;
     return this;
   }
@@ -110,7 +112,7 @@ public class SuggestMeetingTimesResponse {
 
   @JsonProperty(JSON_PROPERTY_ATTENDEES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttendees(List<MeetingAttendee> attendees) {
+  public void setAttendees(@javax.annotation.Nullable List<MeetingAttendee> attendees) {
     this.attendees = attendees;
   }
 

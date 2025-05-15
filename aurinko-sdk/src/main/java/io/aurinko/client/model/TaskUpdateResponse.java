@@ -38,15 +38,18 @@ import io.aurinko.client.ApiClient;
   TaskUpdateResponse.JSON_PROPERTY_ETAG,
   TaskUpdateResponse.JSON_PROPERTY_RECORD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class TaskUpdateResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_ETAG = "etag";
+  @javax.annotation.Nullable
   private String etag;
 
   public static final String JSON_PROPERTY_RECORD = "record";
+  @javax.annotation.Nullable
   private Task record;
 
   public TaskUpdateResponse() { 
@@ -90,7 +93,7 @@ public class TaskUpdateResponse {
 
 
 
-  public TaskUpdateResponse record(Task record) {
+  public TaskUpdateResponse record(@javax.annotation.Nullable Task record) {
     this.record = record;
     return this;
   }
@@ -109,7 +112,7 @@ public class TaskUpdateResponse {
 
   @JsonProperty(JSON_PROPERTY_RECORD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecord(Task record) {
+  public void setRecord(@javax.annotation.Nullable Task record) {
     this.record = record;
   }
 

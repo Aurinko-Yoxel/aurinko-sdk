@@ -49,42 +49,52 @@ import io.aurinko.client.ApiClient;
   EndUserDto.JSON_PROPERTY_EXTERNAL_ID_TYPE,
   EndUserDto.JSON_PROPERTY_ACCOUNTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EndUserDto {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_APP_ID = "appId";
+  @javax.annotation.Nullable
   private Long appId;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_AUTH_ORG_ID = "authOrgId";
+  @javax.annotation.Nullable
   private String authOrgId;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String JSON_PROPERTY_LAST_ACTIVITY = "lastActivity";
+  @javax.annotation.Nullable
   private OffsetDateTime lastActivity;
 
   public static final String JSON_PROPERTY_TRUSTED_IDENTITY = "trustedIdentity";
+  @javax.annotation.Nullable
   private Boolean trustedIdentity;
 
   public static final String JSON_PROPERTY_EXTERNAL_ID_TYPE = "externalIdType";
+  @javax.annotation.Nullable
   private EndUserExtIdType externalIdType;
 
   public static final String JSON_PROPERTY_ACCOUNTS = "accounts";
+  @javax.annotation.Nullable
   private List<EndUserAccountDto> accounts = new ArrayList<>();
 
   public EndUserDto() { 
   }
 
-  public EndUserDto id(String id) {
+  public EndUserDto id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -103,12 +113,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public EndUserDto appId(Long appId) {
+  public EndUserDto appId(@javax.annotation.Nullable Long appId) {
     this.appId = appId;
     return this;
   }
@@ -127,12 +137,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_APP_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAppId(Long appId) {
+  public void setAppId(@javax.annotation.Nullable Long appId) {
     this.appId = appId;
   }
 
 
-  public EndUserDto email(String email) {
+  public EndUserDto email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -151,12 +161,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public EndUserDto name(String name) {
+  public EndUserDto name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -175,12 +185,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public EndUserDto authOrgId(String authOrgId) {
+  public EndUserDto authOrgId(@javax.annotation.Nullable String authOrgId) {
     this.authOrgId = authOrgId;
     return this;
   }
@@ -199,12 +209,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthOrgId(String authOrgId) {
+  public void setAuthOrgId(@javax.annotation.Nullable String authOrgId) {
     this.authOrgId = authOrgId;
   }
 
 
-  public EndUserDto createdAt(OffsetDateTime createdAt) {
+  public EndUserDto createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -223,12 +233,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public EndUserDto lastActivity(OffsetDateTime lastActivity) {
+  public EndUserDto lastActivity(@javax.annotation.Nullable OffsetDateTime lastActivity) {
     this.lastActivity = lastActivity;
     return this;
   }
@@ -247,12 +257,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_LAST_ACTIVITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastActivity(OffsetDateTime lastActivity) {
+  public void setLastActivity(@javax.annotation.Nullable OffsetDateTime lastActivity) {
     this.lastActivity = lastActivity;
   }
 
 
-  public EndUserDto trustedIdentity(Boolean trustedIdentity) {
+  public EndUserDto trustedIdentity(@javax.annotation.Nullable Boolean trustedIdentity) {
     this.trustedIdentity = trustedIdentity;
     return this;
   }
@@ -271,12 +281,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_TRUSTED_IDENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrustedIdentity(Boolean trustedIdentity) {
+  public void setTrustedIdentity(@javax.annotation.Nullable Boolean trustedIdentity) {
     this.trustedIdentity = trustedIdentity;
   }
 
 
-  public EndUserDto externalIdType(EndUserExtIdType externalIdType) {
+  public EndUserDto externalIdType(@javax.annotation.Nullable EndUserExtIdType externalIdType) {
     this.externalIdType = externalIdType;
     return this;
   }
@@ -295,12 +305,12 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_EXTERNAL_ID_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExternalIdType(EndUserExtIdType externalIdType) {
+  public void setExternalIdType(@javax.annotation.Nullable EndUserExtIdType externalIdType) {
     this.externalIdType = externalIdType;
   }
 
 
-  public EndUserDto accounts(List<EndUserAccountDto> accounts) {
+  public EndUserDto accounts(@javax.annotation.Nullable List<EndUserAccountDto> accounts) {
     this.accounts = accounts;
     return this;
   }
@@ -327,7 +337,7 @@ public class EndUserDto {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccounts(List<EndUserAccountDto> accounts) {
+  public void setAccounts(@javax.annotation.Nullable List<EndUserAccountDto> accounts) {
     this.accounts = accounts;
   }
 

@@ -38,15 +38,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   BookingAttachGroupsDto.JSON_PROPERTY_GROUPS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class BookingAttachGroupsDto {
   public static final String JSON_PROPERTY_GROUPS = "groups";
+  @javax.annotation.Nullable
   private List<BookingAttachGroupDto> groups = new ArrayList<>();
 
   public BookingAttachGroupsDto() { 
   }
 
-  public BookingAttachGroupsDto groups(List<BookingAttachGroupDto> groups) {
+  public BookingAttachGroupsDto groups(@javax.annotation.Nullable List<BookingAttachGroupDto> groups) {
     this.groups = groups;
     return this;
   }
@@ -73,7 +74,7 @@ public class BookingAttachGroupsDto {
 
   @JsonProperty(JSON_PROPERTY_GROUPS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroups(List<BookingAttachGroupDto> groups) {
+  public void setGroups(@javax.annotation.Nullable List<BookingAttachGroupDto> groups) {
     this.groups = groups;
   }
 

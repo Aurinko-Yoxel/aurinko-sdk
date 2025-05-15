@@ -37,18 +37,20 @@ import io.aurinko.client.ApiClient;
   WorkHoursResponseItem.JSON_PROPERTY_EMAIL,
   WorkHoursResponseItem.JSON_PROPERTY_WORK_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class WorkHoursResponseItem {
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
+  @javax.annotation.Nullable
   private WeekWorkSchedule workHours;
 
   public WorkHoursResponseItem() { 
   }
 
-  public WorkHoursResponseItem email(String email) {
+  public WorkHoursResponseItem email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -67,12 +69,12 @@ public class WorkHoursResponseItem {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public WorkHoursResponseItem workHours(WeekWorkSchedule workHours) {
+  public WorkHoursResponseItem workHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
     return this;
   }
@@ -91,7 +93,7 @@ public class WorkHoursResponseItem {
 
   @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWorkHours(WeekWorkSchedule workHours) {
+  public void setWorkHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
   }
 

@@ -43,19 +43,19 @@ import io.aurinko.client.ApiClient;
   RecurrenceSimpleRange.JSON_PROPERTY_COUNT,
   RecurrenceSimpleRange.JSON_PROPERTY_PATTERN_EXCLUSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class RecurrenceSimpleRange {
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    BY_DATE("byDate"),
+    BY_DATE(String.valueOf("byDate")),
     
-    BY_COUNT("byCount"),
+    BY_COUNT(String.valueOf("byCount")),
     
-    UNBOUNDED("unbounded"),
+    UNBOUNDED(String.valueOf("unbounded")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -85,18 +85,23 @@ public class RecurrenceSimpleRange {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String JSON_PROPERTY_RECURRENCE_START = "recurrenceStart";
+  @javax.annotation.Nullable
   private EventDateTime recurrenceStart;
 
   public static final String JSON_PROPERTY_RECURRENCE_END = "recurrenceEnd";
+  @javax.annotation.Nullable
   private LocalDate recurrenceEnd;
 
   public static final String JSON_PROPERTY_COUNT = "count";
+  @javax.annotation.Nullable
   private Integer count;
 
   public static final String JSON_PROPERTY_PATTERN_EXCLUSIONS = "patternExclusions";
+  @javax.annotation.Nullable
   private List<EventDateTime> patternExclusions = new ArrayList<>();
 
   public RecurrenceSimpleRange() { 
@@ -110,7 +115,7 @@ public class RecurrenceSimpleRange {
     this.patternExclusions = patternExclusions;
   }
 
-  public RecurrenceSimpleRange type(TypeEnum type) {
+  public RecurrenceSimpleRange type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -129,12 +134,12 @@ public class RecurrenceSimpleRange {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public RecurrenceSimpleRange recurrenceStart(EventDateTime recurrenceStart) {
+  public RecurrenceSimpleRange recurrenceStart(@javax.annotation.Nullable EventDateTime recurrenceStart) {
     this.recurrenceStart = recurrenceStart;
     return this;
   }
@@ -153,12 +158,12 @@ public class RecurrenceSimpleRange {
 
   @JsonProperty(JSON_PROPERTY_RECURRENCE_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecurrenceStart(EventDateTime recurrenceStart) {
+  public void setRecurrenceStart(@javax.annotation.Nullable EventDateTime recurrenceStart) {
     this.recurrenceStart = recurrenceStart;
   }
 
 
-  public RecurrenceSimpleRange recurrenceEnd(LocalDate recurrenceEnd) {
+  public RecurrenceSimpleRange recurrenceEnd(@javax.annotation.Nullable LocalDate recurrenceEnd) {
     this.recurrenceEnd = recurrenceEnd;
     return this;
   }
@@ -177,12 +182,12 @@ public class RecurrenceSimpleRange {
 
   @JsonProperty(JSON_PROPERTY_RECURRENCE_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecurrenceEnd(LocalDate recurrenceEnd) {
+  public void setRecurrenceEnd(@javax.annotation.Nullable LocalDate recurrenceEnd) {
     this.recurrenceEnd = recurrenceEnd;
   }
 
 
-  public RecurrenceSimpleRange count(Integer count) {
+  public RecurrenceSimpleRange count(@javax.annotation.Nullable Integer count) {
     this.count = count;
     return this;
   }
@@ -202,7 +207,7 @@ public class RecurrenceSimpleRange {
 
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCount(Integer count) {
+  public void setCount(@javax.annotation.Nullable Integer count) {
     this.count = count;
   }
 

@@ -37,21 +37,24 @@ import io.aurinko.client.ApiClient;
   AdditionalField.JSON_PROPERTY_TYPE,
   AdditionalField.JSON_PROPERTY_DEFAULT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class AdditionalField {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_DEFAULT = "default";
+  @javax.annotation.Nullable
   private String _default;
 
   public AdditionalField() { 
   }
 
-  public AdditionalField name(String name) {
+  public AdditionalField name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -70,12 +73,12 @@ public class AdditionalField {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public AdditionalField type(String type) {
+  public AdditionalField type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -94,12 +97,12 @@ public class AdditionalField {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public AdditionalField _default(String _default) {
+  public AdditionalField _default(@javax.annotation.Nullable String _default) {
     this._default = _default;
     return this;
   }
@@ -118,7 +121,7 @@ public class AdditionalField {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefault(String _default) {
+  public void setDefault(@javax.annotation.Nullable String _default) {
     this._default = _default;
   }
 

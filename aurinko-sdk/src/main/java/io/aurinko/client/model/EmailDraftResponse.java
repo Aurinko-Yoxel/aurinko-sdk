@@ -36,12 +36,14 @@ import io.aurinko.client.ApiClient;
   EmailDraftResponse.JSON_PROPERTY_ID,
   EmailDraftResponse.JSON_PROPERTY_WEB_LINK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailDraftResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_WEB_LINK = "webLink";
+  @javax.annotation.Nullable
   private String webLink;
 
   public EmailDraftResponse() { 

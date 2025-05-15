@@ -38,24 +38,28 @@ import io.aurinko.client.ApiClient;
   AccountSaveResult.JSON_PROPERTY_USER_ID,
   AccountSaveResult.JSON_PROPERTY_USER_SESSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class AccountSaveResult {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
+  @javax.annotation.Nullable
   private Long accountId;
 
   public static final String JSON_PROPERTY_ACCESS_TOKEN = "accessToken";
+  @javax.annotation.Nullable
   private String accessToken;
 
   public static final String JSON_PROPERTY_USER_ID = "userId";
+  @javax.annotation.Nullable
   private String userId;
 
   public static final String JSON_PROPERTY_USER_SESSION = "userSession";
+  @javax.annotation.Nullable
   private String userSession;
 
   public AccountSaveResult() { 
   }
 
-  public AccountSaveResult accountId(Long accountId) {
+  public AccountSaveResult accountId(@javax.annotation.Nullable Long accountId) {
     this.accountId = accountId;
     return this;
   }
@@ -74,12 +78,12 @@ public class AccountSaveResult {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountId(Long accountId) {
+  public void setAccountId(@javax.annotation.Nullable Long accountId) {
     this.accountId = accountId;
   }
 
 
-  public AccountSaveResult accessToken(String accessToken) {
+  public AccountSaveResult accessToken(@javax.annotation.Nullable String accessToken) {
     this.accessToken = accessToken;
     return this;
   }
@@ -98,12 +102,12 @@ public class AccountSaveResult {
 
   @JsonProperty(JSON_PROPERTY_ACCESS_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccessToken(String accessToken) {
+  public void setAccessToken(@javax.annotation.Nullable String accessToken) {
     this.accessToken = accessToken;
   }
 
 
-  public AccountSaveResult userId(String userId) {
+  public AccountSaveResult userId(@javax.annotation.Nullable String userId) {
     this.userId = userId;
     return this;
   }
@@ -122,12 +126,12 @@ public class AccountSaveResult {
 
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserId(String userId) {
+  public void setUserId(@javax.annotation.Nullable String userId) {
     this.userId = userId;
   }
 
 
-  public AccountSaveResult userSession(String userSession) {
+  public AccountSaveResult userSession(@javax.annotation.Nullable String userSession) {
     this.userSession = userSession;
     return this;
   }
@@ -146,7 +150,7 @@ public class AccountSaveResult {
 
   @JsonProperty(JSON_PROPERTY_USER_SESSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserSession(String userSession) {
+  public void setUserSession(@javax.annotation.Nullable String userSession) {
     this.userSession = userSession;
   }
 

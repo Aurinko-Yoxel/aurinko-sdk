@@ -40,21 +40,24 @@ import io.aurinko.client.ApiClient;
   EndUserAccountsPage.JSON_PROPERTY_LENGTH,
   EndUserAccountsPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EndUserAccountsPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
+  @javax.annotation.Nullable
   private String nextPageToken;
 
   public static final String JSON_PROPERTY_LENGTH = "length";
+  @javax.annotation.Nullable
   private Integer length;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
+  @javax.annotation.Nullable
   private List<EndUserAccountDto> records = new ArrayList<>();
 
   public EndUserAccountsPage() { 
   }
 
-  public EndUserAccountsPage nextPageToken(String nextPageToken) {
+  public EndUserAccountsPage nextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
     return this;
   }
@@ -73,12 +76,12 @@ public class EndUserAccountsPage {
 
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageToken(String nextPageToken) {
+  public void setNextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
   }
 
 
-  public EndUserAccountsPage length(Integer length) {
+  public EndUserAccountsPage length(@javax.annotation.Nullable Integer length) {
     this.length = length;
     return this;
   }
@@ -97,12 +100,12 @@ public class EndUserAccountsPage {
 
   @JsonProperty(JSON_PROPERTY_LENGTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLength(Integer length) {
+  public void setLength(@javax.annotation.Nullable Integer length) {
     this.length = length;
   }
 
 
-  public EndUserAccountsPage records(List<EndUserAccountDto> records) {
+  public EndUserAccountsPage records(@javax.annotation.Nullable List<EndUserAccountDto> records) {
     this.records = records;
     return this;
   }
@@ -129,7 +132,7 @@ public class EndUserAccountsPage {
 
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<EndUserAccountDto> records) {
+  public void setRecords(@javax.annotation.Nullable List<EndUserAccountDto> records) {
     this.records = records;
   }
 

@@ -40,24 +40,30 @@ import io.aurinko.client.ApiClient;
   EmailFolderInfo.JSON_PROPERTY_IS_LABEL,
   EmailFolderInfo.JSON_PROPERTY_PARENT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailFolderInfo {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
+  @javax.annotation.Nullable
   private String fullName;
 
   public static final String JSON_PROPERTY_IS_FOLDER = "isFolder";
+  @javax.annotation.Nullable
   private Boolean isFolder;
 
   public static final String JSON_PROPERTY_IS_LABEL = "isLabel";
+  @javax.annotation.Nullable
   private Boolean isLabel;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parentId";
+  @javax.annotation.Nullable
   private String parentId;
 
   public EmailFolderInfo() { 

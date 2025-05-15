@@ -43,36 +43,44 @@ import io.aurinko.client.ApiClient;
   TaskList.JSON_PROPERTY_EMAILS_LIST,
   TaskList.JSON_PROPERTY_LAST_MODIFIED_TIME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class TaskList {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_ETAG = "etag";
+  @javax.annotation.Nullable
   private String etag;
 
   public static final String JSON_PROPERTY_TITLE = "title";
+  @javax.annotation.Nullable
   private String title;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
+  @javax.annotation.Nullable
   private Boolean owner;
 
   public static final String JSON_PROPERTY_SHARED = "shared";
+  @javax.annotation.Nullable
   private Boolean shared;
 
   public static final String JSON_PROPERTY_DEFAULT_LIST = "defaultList";
+  @javax.annotation.Nullable
   private Boolean defaultList;
 
   public static final String JSON_PROPERTY_EMAILS_LIST = "emailsList";
+  @javax.annotation.Nullable
   private Boolean emailsList;
 
   public static final String JSON_PROPERTY_LAST_MODIFIED_TIME = "lastModifiedTime";
+  @javax.annotation.Nullable
   private OffsetDateTime lastModifiedTime;
 
   public TaskList() { 
   }
 
-  public TaskList id(String id) {
+  public TaskList id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -91,12 +99,12 @@ public class TaskList {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public TaskList etag(String etag) {
+  public TaskList etag(@javax.annotation.Nullable String etag) {
     this.etag = etag;
     return this;
   }
@@ -115,12 +123,12 @@ public class TaskList {
 
   @JsonProperty(JSON_PROPERTY_ETAG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEtag(String etag) {
+  public void setEtag(@javax.annotation.Nullable String etag) {
     this.etag = etag;
   }
 
 
-  public TaskList title(String title) {
+  public TaskList title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -139,12 +147,12 @@ public class TaskList {
 
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public TaskList owner(Boolean owner) {
+  public TaskList owner(@javax.annotation.Nullable Boolean owner) {
     this.owner = owner;
     return this;
   }
@@ -163,12 +171,12 @@ public class TaskList {
 
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOwner(Boolean owner) {
+  public void setOwner(@javax.annotation.Nullable Boolean owner) {
     this.owner = owner;
   }
 
 
-  public TaskList shared(Boolean shared) {
+  public TaskList shared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
     return this;
   }
@@ -187,12 +195,12 @@ public class TaskList {
 
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShared(Boolean shared) {
+  public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
 
 
-  public TaskList defaultList(Boolean defaultList) {
+  public TaskList defaultList(@javax.annotation.Nullable Boolean defaultList) {
     this.defaultList = defaultList;
     return this;
   }
@@ -211,12 +219,12 @@ public class TaskList {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultList(Boolean defaultList) {
+  public void setDefaultList(@javax.annotation.Nullable Boolean defaultList) {
     this.defaultList = defaultList;
   }
 
 
-  public TaskList emailsList(Boolean emailsList) {
+  public TaskList emailsList(@javax.annotation.Nullable Boolean emailsList) {
     this.emailsList = emailsList;
     return this;
   }
@@ -235,12 +243,12 @@ public class TaskList {
 
   @JsonProperty(JSON_PROPERTY_EMAILS_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmailsList(Boolean emailsList) {
+  public void setEmailsList(@javax.annotation.Nullable Boolean emailsList) {
     this.emailsList = emailsList;
   }
 
 
-  public TaskList lastModifiedTime(OffsetDateTime lastModifiedTime) {
+  public TaskList lastModifiedTime(@javax.annotation.Nullable OffsetDateTime lastModifiedTime) {
     this.lastModifiedTime = lastModifiedTime;
     return this;
   }
@@ -259,7 +267,7 @@ public class TaskList {
 
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastModifiedTime(OffsetDateTime lastModifiedTime) {
+  public void setLastModifiedTime(@javax.annotation.Nullable OffsetDateTime lastModifiedTime) {
     this.lastModifiedTime = lastModifiedTime;
   }
 

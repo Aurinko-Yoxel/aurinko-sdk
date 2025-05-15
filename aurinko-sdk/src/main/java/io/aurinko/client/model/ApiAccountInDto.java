@@ -57,66 +57,84 @@ import io.aurinko.client.ApiClient;
   ApiAccountInDto.JSON_PROPERTY_SERVER_INFO,
   ApiAccountInDto.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ApiAccountInDto {
   public static final String JSON_PROPERTY_SERVICE_TYPE = "serviceType";
+  @javax.annotation.Nonnull
   private ServiceType serviceType;
 
   public static final String JSON_PROPERTY_AUTH_SCOPES = "authScopes";
+  @javax.annotation.Nullable
   private List<Scope> authScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AUTH_ORG_ID = "authOrgId";
+  @javax.annotation.Nullable
   private String authOrgId;
 
   public static final String JSON_PROPERTY_AUTH_USER_ID = "authUserId";
+  @javax.annotation.Nullable
   private String authUserId;
 
   public static final String JSON_PROPERTY_CLIENT_ORG_ID = "clientOrgId";
+  @javax.annotation.Nullable
   private String clientOrgId;
 
   public static final String JSON_PROPERTY_SERVER_URL = "serverUrl";
+  @javax.annotation.Nullable
   private String serverUrl;
 
   public static final String JSON_PROPERTY_LOGIN_STRING = "loginString";
+  @javax.annotation.Nullable
   private String loginString;
 
   public static final String JSON_PROPERTY_OAUTH_CLIENT_ID = "oauthClientId";
+  @javax.annotation.Nullable
   private String oauthClientId;
 
   public static final String JSON_PROPERTY_ACTIVE = "active";
+  @javax.annotation.Nonnull
   private Boolean active;
 
   public static final String JSON_PROPERTY_AUTH_STRING1 = "authString1";
+  @javax.annotation.Nullable
   private String authString1;
 
   public static final String JSON_PROPERTY_AUTH_STRING2 = "authString2";
+  @javax.annotation.Nullable
   private String authString2;
 
   public static final String JSON_PROPERTY_PASSWORD = "password";
+  @javax.annotation.Nullable
   private String password;
 
   public static final String JSON_PROPERTY_AUTH_OBTAINED_AT = "authObtainedAt";
+  @javax.annotation.Nullable
   private OffsetDateTime authObtainedAt;
 
   public static final String JSON_PROPERTY_AUTH_EXPIRES_AT = "authExpiresAt";
+  @javax.annotation.Nullable
   private OffsetDateTime authExpiresAt;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_SERVER_INFO = "serverInfo";
+  @javax.annotation.Nullable
   private String serverInfo;
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
+  @javax.annotation.Nullable
   private String timezone;
 
   public ApiAccountInDto() { 
   }
 
-  public ApiAccountInDto serviceType(ServiceType serviceType) {
+  public ApiAccountInDto serviceType(@javax.annotation.Nonnull ServiceType serviceType) {
     this.serviceType = serviceType;
     return this;
   }
@@ -135,12 +153,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_SERVICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setServiceType(ServiceType serviceType) {
+  public void setServiceType(@javax.annotation.Nonnull ServiceType serviceType) {
     this.serviceType = serviceType;
   }
 
 
-  public ApiAccountInDto authScopes(List<Scope> authScopes) {
+  public ApiAccountInDto authScopes(@javax.annotation.Nullable List<Scope> authScopes) {
     this.authScopes = authScopes;
     return this;
   }
@@ -167,12 +185,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_SCOPES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthScopes(List<Scope> authScopes) {
+  public void setAuthScopes(@javax.annotation.Nullable List<Scope> authScopes) {
     this.authScopes = authScopes;
   }
 
 
-  public ApiAccountInDto authOrgId(String authOrgId) {
+  public ApiAccountInDto authOrgId(@javax.annotation.Nullable String authOrgId) {
     this.authOrgId = authOrgId;
     return this;
   }
@@ -191,12 +209,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthOrgId(String authOrgId) {
+  public void setAuthOrgId(@javax.annotation.Nullable String authOrgId) {
     this.authOrgId = authOrgId;
   }
 
 
-  public ApiAccountInDto authUserId(String authUserId) {
+  public ApiAccountInDto authUserId(@javax.annotation.Nullable String authUserId) {
     this.authUserId = authUserId;
     return this;
   }
@@ -215,12 +233,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthUserId(String authUserId) {
+  public void setAuthUserId(@javax.annotation.Nullable String authUserId) {
     this.authUserId = authUserId;
   }
 
 
-  public ApiAccountInDto clientOrgId(String clientOrgId) {
+  public ApiAccountInDto clientOrgId(@javax.annotation.Nullable String clientOrgId) {
     this.clientOrgId = clientOrgId;
     return this;
   }
@@ -239,12 +257,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_CLIENT_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setClientOrgId(String clientOrgId) {
+  public void setClientOrgId(@javax.annotation.Nullable String clientOrgId) {
     this.clientOrgId = clientOrgId;
   }
 
 
-  public ApiAccountInDto serverUrl(String serverUrl) {
+  public ApiAccountInDto serverUrl(@javax.annotation.Nullable String serverUrl) {
     this.serverUrl = serverUrl;
     return this;
   }
@@ -263,12 +281,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_SERVER_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setServerUrl(String serverUrl) {
+  public void setServerUrl(@javax.annotation.Nullable String serverUrl) {
     this.serverUrl = serverUrl;
   }
 
 
-  public ApiAccountInDto loginString(String loginString) {
+  public ApiAccountInDto loginString(@javax.annotation.Nullable String loginString) {
     this.loginString = loginString;
     return this;
   }
@@ -287,12 +305,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_LOGIN_STRING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLoginString(String loginString) {
+  public void setLoginString(@javax.annotation.Nullable String loginString) {
     this.loginString = loginString;
   }
 
 
-  public ApiAccountInDto oauthClientId(String oauthClientId) {
+  public ApiAccountInDto oauthClientId(@javax.annotation.Nullable String oauthClientId) {
     this.oauthClientId = oauthClientId;
     return this;
   }
@@ -311,12 +329,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_OAUTH_CLIENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOauthClientId(String oauthClientId) {
+  public void setOauthClientId(@javax.annotation.Nullable String oauthClientId) {
     this.oauthClientId = oauthClientId;
   }
 
 
-  public ApiAccountInDto active(Boolean active) {
+  public ApiAccountInDto active(@javax.annotation.Nonnull Boolean active) {
     this.active = active;
     return this;
   }
@@ -335,12 +353,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nonnull Boolean active) {
     this.active = active;
   }
 
 
-  public ApiAccountInDto authString1(String authString1) {
+  public ApiAccountInDto authString1(@javax.annotation.Nullable String authString1) {
     this.authString1 = authString1;
     return this;
   }
@@ -359,12 +377,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_STRING1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthString1(String authString1) {
+  public void setAuthString1(@javax.annotation.Nullable String authString1) {
     this.authString1 = authString1;
   }
 
 
-  public ApiAccountInDto authString2(String authString2) {
+  public ApiAccountInDto authString2(@javax.annotation.Nullable String authString2) {
     this.authString2 = authString2;
     return this;
   }
@@ -383,12 +401,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_STRING2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthString2(String authString2) {
+  public void setAuthString2(@javax.annotation.Nullable String authString2) {
     this.authString2 = authString2;
   }
 
 
-  public ApiAccountInDto password(String password) {
+  public ApiAccountInDto password(@javax.annotation.Nullable String password) {
     this.password = password;
     return this;
   }
@@ -407,12 +425,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_PASSWORD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPassword(String password) {
+  public void setPassword(@javax.annotation.Nullable String password) {
     this.password = password;
   }
 
 
-  public ApiAccountInDto authObtainedAt(OffsetDateTime authObtainedAt) {
+  public ApiAccountInDto authObtainedAt(@javax.annotation.Nullable OffsetDateTime authObtainedAt) {
     this.authObtainedAt = authObtainedAt;
     return this;
   }
@@ -431,12 +449,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_OBTAINED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthObtainedAt(OffsetDateTime authObtainedAt) {
+  public void setAuthObtainedAt(@javax.annotation.Nullable OffsetDateTime authObtainedAt) {
     this.authObtainedAt = authObtainedAt;
   }
 
 
-  public ApiAccountInDto authExpiresAt(OffsetDateTime authExpiresAt) {
+  public ApiAccountInDto authExpiresAt(@javax.annotation.Nullable OffsetDateTime authExpiresAt) {
     this.authExpiresAt = authExpiresAt;
     return this;
   }
@@ -455,12 +473,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthExpiresAt(OffsetDateTime authExpiresAt) {
+  public void setAuthExpiresAt(@javax.annotation.Nullable OffsetDateTime authExpiresAt) {
     this.authExpiresAt = authExpiresAt;
   }
 
 
-  public ApiAccountInDto email(String email) {
+  public ApiAccountInDto email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -479,12 +497,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public ApiAccountInDto name(String name) {
+  public ApiAccountInDto name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -503,12 +521,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ApiAccountInDto serverInfo(String serverInfo) {
+  public ApiAccountInDto serverInfo(@javax.annotation.Nullable String serverInfo) {
     this.serverInfo = serverInfo;
     return this;
   }
@@ -527,12 +545,12 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_SERVER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setServerInfo(String serverInfo) {
+  public void setServerInfo(@javax.annotation.Nullable String serverInfo) {
     this.serverInfo = serverInfo;
   }
 
 
-  public ApiAccountInDto timezone(String timezone) {
+  public ApiAccountInDto timezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -551,7 +569,7 @@ public class ApiAccountInDto {
 
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimezone(String timezone) {
+  public void setTimezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
   }
 

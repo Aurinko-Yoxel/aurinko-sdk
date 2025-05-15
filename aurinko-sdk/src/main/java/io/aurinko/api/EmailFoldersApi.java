@@ -22,6 +22,8 @@ import io.aurinko.client.model.EmailFolderCreate;
 import io.aurinko.client.model.EmailFolderInfo;
 import io.aurinko.client.model.EmailFolderInfoPage;
 import io.aurinko.client.model.EmailMessagesPageNext;
+import io.aurinko.client.model.WellKnownFoldersIn;
+import io.aurinko.client.model.WellKnownFoldersOut;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,7 +52,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailFoldersApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -489,6 +491,188 @@ public class EmailFoldersApi {
     } else {
       localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
     }
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Update wellKnown email folders
+   * 
+   * @param wellKnownFoldersIn  (optional)
+   * @return CompletableFuture&lt;WellKnownFoldersOut&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<WellKnownFoldersOut> updateWellKnownFolders(WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = updateWellKnownFoldersRequestBuilder(wellKnownFoldersIn);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("updateWellKnownFolders", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<WellKnownFoldersOut>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Update wellKnown email folders
+   * 
+   * @param wellKnownFoldersIn  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;WellKnownFoldersOut&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<WellKnownFoldersOut>> updateWellKnownFoldersWithHttpInfo(WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = updateWellKnownFoldersRequestBuilder(wellKnownFoldersIn);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("updateWellKnownFolders", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<WellKnownFoldersOut>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<WellKnownFoldersOut>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder updateWellKnownFoldersRequestBuilder(WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/email/folders/wellKnown";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(wellKnownFoldersIn);
+      localVarRequestBuilder.method("PATCH", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * List wellKnown email folders
+   * 
+   * @return CompletableFuture&lt;WellKnownFoldersOut&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<WellKnownFoldersOut> wellKnownFolders() throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = wellKnownFoldersRequestBuilder();
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("wellKnownFolders", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<WellKnownFoldersOut>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * List wellKnown email folders
+   * 
+   * @return CompletableFuture&lt;ApiResponse&lt;WellKnownFoldersOut&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<WellKnownFoldersOut>> wellKnownFoldersWithHttpInfo() throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = wellKnownFoldersRequestBuilder();
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("wellKnownFolders", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<WellKnownFoldersOut>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<WellKnownFoldersOut>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder wellKnownFoldersRequestBuilder() throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/email/folders/wellKnown";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
     localVarRequestBuilder.header("Accept", "application/json");
 

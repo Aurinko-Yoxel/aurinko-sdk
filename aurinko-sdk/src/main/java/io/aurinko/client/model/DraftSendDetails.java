@@ -36,15 +36,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   DraftSendDetails.JSON_PROPERTY_TRACKING
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class DraftSendDetails {
   public static final String JSON_PROPERTY_TRACKING = "tracking";
+  @javax.annotation.Nullable
   private OutEmailTrack tracking;
 
   public DraftSendDetails() { 
   }
 
-  public DraftSendDetails tracking(OutEmailTrack tracking) {
+  public DraftSendDetails tracking(@javax.annotation.Nullable OutEmailTrack tracking) {
     this.tracking = tracking;
     return this;
   }
@@ -63,7 +64,7 @@ public class DraftSendDetails {
 
   @JsonProperty(JSON_PROPERTY_TRACKING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTracking(OutEmailTrack tracking) {
+  public void setTracking(@javax.annotation.Nullable OutEmailTrack tracking) {
     this.tracking = tracking;
   }
 

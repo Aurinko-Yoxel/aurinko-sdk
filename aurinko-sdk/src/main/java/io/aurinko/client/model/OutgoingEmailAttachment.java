@@ -39,27 +39,32 @@ import io.aurinko.client.ApiClient;
   OutgoingEmailAttachment.JSON_PROPERTY_CONTENT_ID,
   OutgoingEmailAttachment.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class OutgoingEmailAttachment {
   public static final String JSON_PROPERTY_INLINE = "inline";
+  @javax.annotation.Nullable
   private Boolean inline;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_MIME_TYPE = "mimeType";
+  @javax.annotation.Nullable
   private String mimeType;
 
   public static final String JSON_PROPERTY_CONTENT_ID = "contentId";
+  @javax.annotation.Nullable
   private String contentId;
 
   public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nullable
   private String content;
 
   public OutgoingEmailAttachment() { 
   }
 
-  public OutgoingEmailAttachment inline(Boolean inline) {
+  public OutgoingEmailAttachment inline(@javax.annotation.Nullable Boolean inline) {
     this.inline = inline;
     return this;
   }
@@ -78,12 +83,12 @@ public class OutgoingEmailAttachment {
 
   @JsonProperty(JSON_PROPERTY_INLINE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInline(Boolean inline) {
+  public void setInline(@javax.annotation.Nullable Boolean inline) {
     this.inline = inline;
   }
 
 
-  public OutgoingEmailAttachment name(String name) {
+  public OutgoingEmailAttachment name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -102,12 +107,12 @@ public class OutgoingEmailAttachment {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public OutgoingEmailAttachment mimeType(String mimeType) {
+  public OutgoingEmailAttachment mimeType(@javax.annotation.Nullable String mimeType) {
     this.mimeType = mimeType;
     return this;
   }
@@ -126,12 +131,12 @@ public class OutgoingEmailAttachment {
 
   @JsonProperty(JSON_PROPERTY_MIME_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMimeType(String mimeType) {
+  public void setMimeType(@javax.annotation.Nullable String mimeType) {
     this.mimeType = mimeType;
   }
 
 
-  public OutgoingEmailAttachment contentId(String contentId) {
+  public OutgoingEmailAttachment contentId(@javax.annotation.Nullable String contentId) {
     this.contentId = contentId;
     return this;
   }
@@ -150,12 +155,12 @@ public class OutgoingEmailAttachment {
 
   @JsonProperty(JSON_PROPERTY_CONTENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContentId(String contentId) {
+  public void setContentId(@javax.annotation.Nullable String contentId) {
     this.contentId = contentId;
   }
 
 
-  public OutgoingEmailAttachment content(String content) {
+  public OutgoingEmailAttachment content(@javax.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -174,7 +179,7 @@ public class OutgoingEmailAttachment {
 
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContent(String content) {
+  public void setContent(@javax.annotation.Nullable String content) {
     this.content = content;
   }
 

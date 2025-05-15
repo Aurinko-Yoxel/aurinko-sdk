@@ -4,7 +4,7 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Generator version: 7.7.0
+- Generator version: 7.10.0
 
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with
@@ -76,7 +76,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.aurinko</groupId>
   <artifactId>aurinko-api</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -86,7 +86,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.aurinko:aurinko-api:1.0.3"
+compile "io.aurinko:aurinko-api:1.0.4"
 ```
 
 ### Others
@@ -99,7 +99,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aurinko-api-1.0.3.jar`
+- `target/aurinko-api-1.0.4.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -242,6 +242,10 @@ Class | Method | HTTP request | Description
 *EmailFoldersApi* | [**folderEmailsWithHttpInfo**](docs/EmailFoldersApi.md#folderEmailsWithHttpInfo) | **GET** /v1/email/folders/{folderId}/messages | List email messages in a specified folder
 *EmailFoldersApi* | [**folders**](docs/EmailFoldersApi.md#folders) | **GET** /v1/email/folders | List email folders
 *EmailFoldersApi* | [**foldersWithHttpInfo**](docs/EmailFoldersApi.md#foldersWithHttpInfo) | **GET** /v1/email/folders | List email folders
+*EmailFoldersApi* | [**updateWellKnownFolders**](docs/EmailFoldersApi.md#updateWellKnownFolders) | **PATCH** /v1/email/folders/wellKnown | Update wellKnown email folders
+*EmailFoldersApi* | [**updateWellKnownFoldersWithHttpInfo**](docs/EmailFoldersApi.md#updateWellKnownFoldersWithHttpInfo) | **PATCH** /v1/email/folders/wellKnown | Update wellKnown email folders
+*EmailFoldersApi* | [**wellKnownFolders**](docs/EmailFoldersApi.md#wellKnownFolders) | **GET** /v1/email/folders/wellKnown | List wellKnown email folders
+*EmailFoldersApi* | [**wellKnownFoldersWithHttpInfo**](docs/EmailFoldersApi.md#wellKnownFoldersWithHttpInfo) | **GET** /v1/email/folders/wellKnown | List wellKnown email folders
 *EmailSyncApi* | [**emailSyncDeleted**](docs/EmailSyncApi.md#emailSyncDeleted) | **GET** /v1/email/sync/deleted | Request deleted emails (deltas)
 *EmailSyncApi* | [**emailSyncDeletedWithHttpInfo**](docs/EmailSyncApi.md#emailSyncDeletedWithHttpInfo) | **GET** /v1/email/sync/deleted | Request deleted emails (deltas)
 *EmailSyncApi* | [**emailSyncStart**](docs/EmailSyncApi.md#emailSyncStart) | **POST** /v1/email/sync | Start a new email sync
@@ -471,6 +475,7 @@ Class | Method | HTTP request | Description
  - [ConvertDraft](docs/ConvertDraft.md)
  - [CreateMeetingDto](docs/CreateMeetingDto.md)
  - [CreateMeetingResponse](docs/CreateMeetingResponse.md)
+ - [DataConsumerFilter](docs/DataConsumerFilter.md)
  - [DayOfWeek](docs/DayOfWeek.md)
  - [DayWorkSchedule](docs/DayWorkSchedule.md)
  - [DeletedEmailMessage](docs/DeletedEmailMessage.md)
@@ -579,6 +584,8 @@ Class | Method | HTTP request | Description
  - [UpdateMessageStatusData](docs/UpdateMessageStatusData.md)
  - [UserAccountType](docs/UserAccountType.md)
  - [WeekWorkSchedule](docs/WeekWorkSchedule.md)
+ - [WellKnownFoldersIn](docs/WellKnownFoldersIn.md)
+ - [WellKnownFoldersOut](docs/WellKnownFoldersOut.md)
  - [WorkHoursRequest](docs/WorkHoursRequest.md)
  - [WorkHoursResponse](docs/WorkHoursResponse.md)
  - [WorkHoursResponseItem](docs/WorkHoursResponseItem.md)

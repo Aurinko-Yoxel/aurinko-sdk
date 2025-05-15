@@ -42,30 +42,36 @@ import io.aurinko.client.ApiClient;
   EmailDraftCreateTrackingResponse.JSON_PROPERTY_LINK_CODES,
   EmailDraftCreateTrackingResponse.JSON_PROPERTY_TRACKING_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailDraftCreateTrackingResponse {
   public static final String JSON_PROPERTY_TRACK_REPLIES = "trackReplies";
+  @javax.annotation.Nullable
   private Boolean trackReplies;
 
   public static final String JSON_PROPERTY_HTML_BODY = "htmlBody";
+  @javax.annotation.Nullable
   private String htmlBody;
 
   public static final String JSON_PROPERTY_TRACKING_CODE = "trackingCode";
+  @javax.annotation.Nullable
   private String trackingCode;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
+  @javax.annotation.Nullable
   private String context;
 
   public static final String JSON_PROPERTY_LINK_CODES = "linkCodes";
+  @javax.annotation.Nullable
   private List<Object> linkCodes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TRACKING_ID = "trackingId";
+  @javax.annotation.Nullable
   private String trackingId;
 
   public EmailDraftCreateTrackingResponse() { 
   }
 
-  public EmailDraftCreateTrackingResponse trackReplies(Boolean trackReplies) {
+  public EmailDraftCreateTrackingResponse trackReplies(@javax.annotation.Nullable Boolean trackReplies) {
     this.trackReplies = trackReplies;
     return this;
   }
@@ -84,12 +90,12 @@ public class EmailDraftCreateTrackingResponse {
 
   @JsonProperty(JSON_PROPERTY_TRACK_REPLIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackReplies(Boolean trackReplies) {
+  public void setTrackReplies(@javax.annotation.Nullable Boolean trackReplies) {
     this.trackReplies = trackReplies;
   }
 
 
-  public EmailDraftCreateTrackingResponse htmlBody(String htmlBody) {
+  public EmailDraftCreateTrackingResponse htmlBody(@javax.annotation.Nullable String htmlBody) {
     this.htmlBody = htmlBody;
     return this;
   }
@@ -108,12 +114,12 @@ public class EmailDraftCreateTrackingResponse {
 
   @JsonProperty(JSON_PROPERTY_HTML_BODY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHtmlBody(String htmlBody) {
+  public void setHtmlBody(@javax.annotation.Nullable String htmlBody) {
     this.htmlBody = htmlBody;
   }
 
 
-  public EmailDraftCreateTrackingResponse trackingCode(String trackingCode) {
+  public EmailDraftCreateTrackingResponse trackingCode(@javax.annotation.Nullable String trackingCode) {
     this.trackingCode = trackingCode;
     return this;
   }
@@ -132,12 +138,12 @@ public class EmailDraftCreateTrackingResponse {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCode(String trackingCode) {
+  public void setTrackingCode(@javax.annotation.Nullable String trackingCode) {
     this.trackingCode = trackingCode;
   }
 
 
-  public EmailDraftCreateTrackingResponse context(String context) {
+  public EmailDraftCreateTrackingResponse context(@javax.annotation.Nullable String context) {
     this.context = context;
     return this;
   }
@@ -156,12 +162,12 @@ public class EmailDraftCreateTrackingResponse {
 
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(String context) {
+  public void setContext(@javax.annotation.Nullable String context) {
     this.context = context;
   }
 
 
-  public EmailDraftCreateTrackingResponse linkCodes(List<Object> linkCodes) {
+  public EmailDraftCreateTrackingResponse linkCodes(@javax.annotation.Nullable List<Object> linkCodes) {
     this.linkCodes = linkCodes;
     return this;
   }
@@ -188,12 +194,12 @@ public class EmailDraftCreateTrackingResponse {
 
   @JsonProperty(JSON_PROPERTY_LINK_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLinkCodes(List<Object> linkCodes) {
+  public void setLinkCodes(@javax.annotation.Nullable List<Object> linkCodes) {
     this.linkCodes = linkCodes;
   }
 
 
-  public EmailDraftCreateTrackingResponse trackingId(String trackingId) {
+  public EmailDraftCreateTrackingResponse trackingId(@javax.annotation.Nullable String trackingId) {
     this.trackingId = trackingId;
     return this;
   }
@@ -212,7 +218,7 @@ public class EmailDraftCreateTrackingResponse {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingId(String trackingId) {
+  public void setTrackingId(@javax.annotation.Nullable String trackingId) {
     this.trackingId = trackingId;
   }
 

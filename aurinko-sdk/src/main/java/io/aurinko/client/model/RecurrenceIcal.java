@@ -39,18 +39,20 @@ import io.aurinko.client.ApiClient;
   RecurrenceIcal.JSON_PROPERTY_RULES,
   RecurrenceIcal.JSON_PROPERTY_RECURRENCE_START
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class RecurrenceIcal {
   public static final String JSON_PROPERTY_RULES = "rules";
+  @javax.annotation.Nullable
   private List<String> rules = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RECURRENCE_START = "recurrenceStart";
+  @javax.annotation.Nullable
   private EventDateTime recurrenceStart;
 
   public RecurrenceIcal() { 
   }
 
-  public RecurrenceIcal rules(List<String> rules) {
+  public RecurrenceIcal rules(@javax.annotation.Nullable List<String> rules) {
     this.rules = rules;
     return this;
   }
@@ -77,12 +79,12 @@ public class RecurrenceIcal {
 
   @JsonProperty(JSON_PROPERTY_RULES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRules(List<String> rules) {
+  public void setRules(@javax.annotation.Nullable List<String> rules) {
     this.rules = rules;
   }
 
 
-  public RecurrenceIcal recurrenceStart(EventDateTime recurrenceStart) {
+  public RecurrenceIcal recurrenceStart(@javax.annotation.Nullable EventDateTime recurrenceStart) {
     this.recurrenceStart = recurrenceStart;
     return this;
   }
@@ -101,7 +103,7 @@ public class RecurrenceIcal {
 
   @JsonProperty(JSON_PROPERTY_RECURRENCE_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecurrenceStart(EventDateTime recurrenceStart) {
+  public void setRecurrenceStart(@javax.annotation.Nullable EventDateTime recurrenceStart) {
     this.recurrenceStart = recurrenceStart;
   }
 

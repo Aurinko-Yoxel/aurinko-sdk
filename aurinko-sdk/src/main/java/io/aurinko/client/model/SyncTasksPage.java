@@ -41,24 +41,28 @@ import io.aurinko.client.ApiClient;
   SyncTasksPage.JSON_PROPERTY_LENGTH,
   SyncTasksPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SyncTasksPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
+  @javax.annotation.Nullable
   private String nextPageToken;
 
   public static final String JSON_PROPERTY_NEXT_DELTA_TOKEN = "nextDeltaToken";
+  @javax.annotation.Nullable
   private String nextDeltaToken;
 
   public static final String JSON_PROPERTY_LENGTH = "length";
+  @javax.annotation.Nullable
   private Integer length;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
+  @javax.annotation.Nullable
   private List<Task> records = new ArrayList<>();
 
   public SyncTasksPage() { 
   }
 
-  public SyncTasksPage nextPageToken(String nextPageToken) {
+  public SyncTasksPage nextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
     return this;
   }
@@ -77,12 +81,12 @@ public class SyncTasksPage {
 
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageToken(String nextPageToken) {
+  public void setNextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
   }
 
 
-  public SyncTasksPage nextDeltaToken(String nextDeltaToken) {
+  public SyncTasksPage nextDeltaToken(@javax.annotation.Nullable String nextDeltaToken) {
     this.nextDeltaToken = nextDeltaToken;
     return this;
   }
@@ -101,12 +105,12 @@ public class SyncTasksPage {
 
   @JsonProperty(JSON_PROPERTY_NEXT_DELTA_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextDeltaToken(String nextDeltaToken) {
+  public void setNextDeltaToken(@javax.annotation.Nullable String nextDeltaToken) {
     this.nextDeltaToken = nextDeltaToken;
   }
 
 
-  public SyncTasksPage length(Integer length) {
+  public SyncTasksPage length(@javax.annotation.Nullable Integer length) {
     this.length = length;
     return this;
   }
@@ -125,12 +129,12 @@ public class SyncTasksPage {
 
   @JsonProperty(JSON_PROPERTY_LENGTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLength(Integer length) {
+  public void setLength(@javax.annotation.Nullable Integer length) {
     this.length = length;
   }
 
 
-  public SyncTasksPage records(List<Task> records) {
+  public SyncTasksPage records(@javax.annotation.Nullable List<Task> records) {
     this.records = records;
     return this;
   }
@@ -157,7 +161,7 @@ public class SyncTasksPage {
 
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<Task> records) {
+  public void setRecords(@javax.annotation.Nullable List<Task> records) {
     this.records = records;
   }
 

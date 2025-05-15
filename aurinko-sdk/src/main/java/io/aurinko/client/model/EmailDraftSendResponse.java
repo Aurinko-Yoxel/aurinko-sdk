@@ -36,17 +36,17 @@ import io.aurinko.client.ApiClient;
   EmailDraftSendResponse.JSON_PROPERTY_STATUS,
   EmailDraftSendResponse.JSON_PROPERTY_TRACKING_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailDraftSendResponse {
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("Ok"),
+    OK(String.valueOf("Ok")),
     
-    SCHEDULED("Scheduled"),
+    SCHEDULED(String.valueOf("Scheduled")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -76,15 +76,17 @@ public class EmailDraftSendResponse {
   }
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String JSON_PROPERTY_TRACKING_ID = "trackingId";
+  @javax.annotation.Nullable
   private String trackingId;
 
   public EmailDraftSendResponse() { 
   }
 
-  public EmailDraftSendResponse status(StatusEnum status) {
+  public EmailDraftSendResponse status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -103,12 +105,12 @@ public class EmailDraftSendResponse {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public EmailDraftSendResponse trackingId(String trackingId) {
+  public EmailDraftSendResponse trackingId(@javax.annotation.Nullable String trackingId) {
     this.trackingId = trackingId;
     return this;
   }
@@ -127,7 +129,7 @@ public class EmailDraftSendResponse {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingId(String trackingId) {
+  public void setTrackingId(@javax.annotation.Nullable String trackingId) {
     this.trackingId = trackingId;
   }
 

@@ -37,21 +37,24 @@ import io.aurinko.client.ApiClient;
   ConvertDraft.JSON_PROPERTY_MESSAGE_ID,
   ConvertDraft.JSON_PROPERTY_INTERNET_MESSAGE_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ConvertDraft {
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
+  @javax.annotation.Nullable
   private String threadId;
 
   public static final String JSON_PROPERTY_MESSAGE_ID = "messageId";
+  @javax.annotation.Nullable
   private String messageId;
 
   public static final String JSON_PROPERTY_INTERNET_MESSAGE_ID = "internetMessageId";
+  @javax.annotation.Nullable
   private String internetMessageId;
 
   public ConvertDraft() { 
   }
 
-  public ConvertDraft threadId(String threadId) {
+  public ConvertDraft threadId(@javax.annotation.Nullable String threadId) {
     this.threadId = threadId;
     return this;
   }
@@ -70,12 +73,12 @@ public class ConvertDraft {
 
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreadId(String threadId) {
+  public void setThreadId(@javax.annotation.Nullable String threadId) {
     this.threadId = threadId;
   }
 
 
-  public ConvertDraft messageId(String messageId) {
+  public ConvertDraft messageId(@javax.annotation.Nullable String messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -94,12 +97,12 @@ public class ConvertDraft {
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageId(String messageId) {
+  public void setMessageId(@javax.annotation.Nullable String messageId) {
     this.messageId = messageId;
   }
 
 
-  public ConvertDraft internetMessageId(String internetMessageId) {
+  public ConvertDraft internetMessageId(@javax.annotation.Nullable String internetMessageId) {
     this.internetMessageId = internetMessageId;
     return this;
   }
@@ -118,7 +121,7 @@ public class ConvertDraft {
 
   @JsonProperty(JSON_PROPERTY_INTERNET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInternetMessageId(String internetMessageId) {
+  public void setInternetMessageId(@javax.annotation.Nullable String internetMessageId) {
     this.internetMessageId = internetMessageId;
   }
 

@@ -35,15 +35,15 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   ConfirmSlotDeleteOutDto.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ConfirmSlotDeleteOutDto {
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("Ok"),
+    OK(String.valueOf("Ok")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -73,12 +73,13 @@ public class ConfirmSlotDeleteOutDto {
   }
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public ConfirmSlotDeleteOutDto() { 
   }
 
-  public ConfirmSlotDeleteOutDto status(StatusEnum status) {
+  public ConfirmSlotDeleteOutDto status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -97,7 +98,7 @@ public class ConfirmSlotDeleteOutDto {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 

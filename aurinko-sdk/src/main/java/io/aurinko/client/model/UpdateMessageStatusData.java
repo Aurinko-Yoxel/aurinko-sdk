@@ -36,20 +36,27 @@ import io.aurinko.client.ApiClient;
  */
 @JsonPropertyOrder({
   UpdateMessageStatusData.JSON_PROPERTY_UNREAD,
+  UpdateMessageStatusData.JSON_PROPERTY_ARCHIVED,
   UpdateMessageStatusData.JSON_PROPERTY_KEYWORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class UpdateMessageStatusData {
   public static final String JSON_PROPERTY_UNREAD = "unread";
+  @javax.annotation.Nullable
   private Boolean unread;
 
+  public static final String JSON_PROPERTY_ARCHIVED = "archived";
+  @javax.annotation.Nullable
+  private Boolean archived;
+
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
+  @javax.annotation.Nullable
   private List<String> keywords = new ArrayList<>();
 
   public UpdateMessageStatusData() { 
   }
 
-  public UpdateMessageStatusData unread(Boolean unread) {
+  public UpdateMessageStatusData unread(@javax.annotation.Nullable Boolean unread) {
     this.unread = unread;
     return this;
   }
@@ -68,12 +75,36 @@ public class UpdateMessageStatusData {
 
   @JsonProperty(JSON_PROPERTY_UNREAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUnread(Boolean unread) {
+  public void setUnread(@javax.annotation.Nullable Boolean unread) {
     this.unread = unread;
   }
 
 
-  public UpdateMessageStatusData keywords(List<String> keywords) {
+  public UpdateMessageStatusData archived(@javax.annotation.Nullable Boolean archived) {
+    this.archived = archived;
+    return this;
+  }
+
+  /**
+   * Get archived
+   * @return archived
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ARCHIVED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Boolean getArchived() {
+    return archived;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ARCHIVED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setArchived(@javax.annotation.Nullable Boolean archived) {
+    this.archived = archived;
+  }
+
+
+  public UpdateMessageStatusData keywords(@javax.annotation.Nullable List<String> keywords) {
     this.keywords = keywords;
     return this;
   }
@@ -100,7 +131,7 @@ public class UpdateMessageStatusData {
 
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setKeywords(List<String> keywords) {
+  public void setKeywords(@javax.annotation.Nullable List<String> keywords) {
     this.keywords = keywords;
   }
 
@@ -118,12 +149,13 @@ public class UpdateMessageStatusData {
     }
     UpdateMessageStatusData updateMessageStatusData = (UpdateMessageStatusData) o;
     return Objects.equals(this.unread, updateMessageStatusData.unread) &&
+        Objects.equals(this.archived, updateMessageStatusData.archived) &&
         Objects.equals(this.keywords, updateMessageStatusData.keywords);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(unread, keywords);
+    return Objects.hash(unread, archived, keywords);
   }
 
   @Override
@@ -131,6 +163,7 @@ public class UpdateMessageStatusData {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateMessageStatusData {\n");
     sb.append("    unread: ").append(toIndentedString(unread)).append("\n");
+    sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -182,6 +215,11 @@ public class UpdateMessageStatusData {
     // add `unread` to the URL query string
     if (getUnread() != null) {
       joiner.add(String.format("%sunread%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUnread()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `archived` to the URL query string
+    if (getArchived() != null) {
+      joiner.add(String.format("%sarchived%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getArchived()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `keywords` to the URL query string

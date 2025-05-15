@@ -38,18 +38,20 @@ import io.aurinko.client.ApiClient;
   FollowUpOutgoing.JSON_PROPERTY_RULE_ID,
   FollowUpOutgoing.JSON_PROPERTY_ACTION_VARS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class FollowUpOutgoing {
   public static final String JSON_PROPERTY_RULE_ID = "ruleId";
+  @javax.annotation.Nullable
   private Integer ruleId;
 
   public static final String JSON_PROPERTY_ACTION_VARS = "actionVars";
+  @javax.annotation.Nullable
   private Map<String, String> actionVars = new HashMap<>();
 
   public FollowUpOutgoing() { 
   }
 
-  public FollowUpOutgoing ruleId(Integer ruleId) {
+  public FollowUpOutgoing ruleId(@javax.annotation.Nullable Integer ruleId) {
     this.ruleId = ruleId;
     return this;
   }
@@ -68,12 +70,12 @@ public class FollowUpOutgoing {
 
   @JsonProperty(JSON_PROPERTY_RULE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRuleId(Integer ruleId) {
+  public void setRuleId(@javax.annotation.Nullable Integer ruleId) {
     this.ruleId = ruleId;
   }
 
 
-  public FollowUpOutgoing actionVars(Map<String, String> actionVars) {
+  public FollowUpOutgoing actionVars(@javax.annotation.Nullable Map<String, String> actionVars) {
     this.actionVars = actionVars;
     return this;
   }
@@ -100,7 +102,7 @@ public class FollowUpOutgoing {
 
   @JsonProperty(JSON_PROPERTY_ACTION_VARS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActionVars(Map<String, String> actionVars) {
+  public void setActionVars(@javax.annotation.Nullable Map<String, String> actionVars) {
     this.actionVars = actionVars;
   }
 

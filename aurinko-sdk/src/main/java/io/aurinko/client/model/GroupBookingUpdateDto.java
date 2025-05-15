@@ -52,57 +52,72 @@ import io.aurinko.client.ApiClient;
   GroupBookingUpdateDto.JSON_PROPERTY_OPEN_MEETING_URL,
   GroupBookingUpdateDto.JSON_PROPERTY_CLIENT_ORG_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class GroupBookingUpdateDto {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_DURATION_MINUTES = "durationMinutes";
+  @javax.annotation.Nullable
   private Integer durationMinutes;
 
   public static final String JSON_PROPERTY_AVAILABILITY_STEP = "availabilityStep";
+  @javax.annotation.Nullable
   private Integer availabilityStep;
 
   public static final String JSON_PROPERTY_START_TIME = "startTime";
+  @javax.annotation.Nullable
   private OffsetDateTime startTime;
 
   public static final String JSON_PROPERTY_END_TIME = "endTime";
+  @javax.annotation.Nullable
   private OffsetDateTime endTime;
 
   public static final String JSON_PROPERTY_TIME_AVAILABLE_FOR = "timeAvailableFor";
+  @javax.annotation.Nullable
   private String timeAvailableFor;
 
   public static final String JSON_PROPERTY_SUBJECT = "subject";
+  @javax.annotation.Nullable
   private String subject;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_LOCATION = "location";
+  @javax.annotation.Nullable
   private String location;
 
   public static final String JSON_PROPERTY_WORK_HOURS = "workHours";
+  @javax.annotation.Nullable
   private WeekWorkSchedule workHours;
 
   public static final String JSON_PROPERTY_AVAILABILITY_INTERVALS = "availabilityIntervals";
+  @javax.annotation.Nullable
   private AvailabilityIntervals availabilityIntervals;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
+  @javax.annotation.Nullable
   private String context;
 
   public static final String JSON_PROPERTY_START_CONFERENCE = "startConference";
+  @javax.annotation.Nullable
   private Boolean startConference;
 
   public static final String JSON_PROPERTY_OPEN_MEETING_URL = "openMeetingUrl";
+  @javax.annotation.Nullable
   private String openMeetingUrl;
 
   public static final String JSON_PROPERTY_CLIENT_ORG_ID = "clientOrgId";
+  @javax.annotation.Nullable
   private String clientOrgId;
 
   public GroupBookingUpdateDto() { 
   }
 
-  public GroupBookingUpdateDto name(String name) {
+  public GroupBookingUpdateDto name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -121,12 +136,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public GroupBookingUpdateDto durationMinutes(Integer durationMinutes) {
+  public GroupBookingUpdateDto durationMinutes(@javax.annotation.Nullable Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
     return this;
   }
@@ -145,12 +160,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_DURATION_MINUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDurationMinutes(Integer durationMinutes) {
+  public void setDurationMinutes(@javax.annotation.Nullable Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
   }
 
 
-  public GroupBookingUpdateDto availabilityStep(Integer availabilityStep) {
+  public GroupBookingUpdateDto availabilityStep(@javax.annotation.Nullable Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
     return this;
   }
@@ -169,12 +184,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_AVAILABILITY_STEP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAvailabilityStep(Integer availabilityStep) {
+  public void setAvailabilityStep(@javax.annotation.Nullable Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
   }
 
 
-  public GroupBookingUpdateDto startTime(OffsetDateTime startTime) {
+  public GroupBookingUpdateDto startTime(@javax.annotation.Nullable OffsetDateTime startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -193,12 +208,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_START_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartTime(OffsetDateTime startTime) {
+  public void setStartTime(@javax.annotation.Nullable OffsetDateTime startTime) {
     this.startTime = startTime;
   }
 
 
-  public GroupBookingUpdateDto endTime(OffsetDateTime endTime) {
+  public GroupBookingUpdateDto endTime(@javax.annotation.Nullable OffsetDateTime endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -217,12 +232,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_END_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndTime(OffsetDateTime endTime) {
+  public void setEndTime(@javax.annotation.Nullable OffsetDateTime endTime) {
     this.endTime = endTime;
   }
 
 
-  public GroupBookingUpdateDto timeAvailableFor(String timeAvailableFor) {
+  public GroupBookingUpdateDto timeAvailableFor(@javax.annotation.Nullable String timeAvailableFor) {
     this.timeAvailableFor = timeAvailableFor;
     return this;
   }
@@ -241,12 +256,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_TIME_AVAILABLE_FOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeAvailableFor(String timeAvailableFor) {
+  public void setTimeAvailableFor(@javax.annotation.Nullable String timeAvailableFor) {
     this.timeAvailableFor = timeAvailableFor;
   }
 
 
-  public GroupBookingUpdateDto subject(String subject) {
+  public GroupBookingUpdateDto subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
@@ -265,12 +280,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public GroupBookingUpdateDto description(String description) {
+  public GroupBookingUpdateDto description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -289,12 +304,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public GroupBookingUpdateDto location(String location) {
+  public GroupBookingUpdateDto location(@javax.annotation.Nullable String location) {
     this.location = location;
     return this;
   }
@@ -313,12 +328,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLocation(String location) {
+  public void setLocation(@javax.annotation.Nullable String location) {
     this.location = location;
   }
 
 
-  public GroupBookingUpdateDto workHours(WeekWorkSchedule workHours) {
+  public GroupBookingUpdateDto workHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
     return this;
   }
@@ -337,12 +352,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_WORK_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWorkHours(WeekWorkSchedule workHours) {
+  public void setWorkHours(@javax.annotation.Nullable WeekWorkSchedule workHours) {
     this.workHours = workHours;
   }
 
 
-  public GroupBookingUpdateDto availabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+  public GroupBookingUpdateDto availabilityIntervals(@javax.annotation.Nullable AvailabilityIntervals availabilityIntervals) {
     this.availabilityIntervals = availabilityIntervals;
     return this;
   }
@@ -361,12 +376,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_AVAILABILITY_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAvailabilityIntervals(AvailabilityIntervals availabilityIntervals) {
+  public void setAvailabilityIntervals(@javax.annotation.Nullable AvailabilityIntervals availabilityIntervals) {
     this.availabilityIntervals = availabilityIntervals;
   }
 
 
-  public GroupBookingUpdateDto context(String context) {
+  public GroupBookingUpdateDto context(@javax.annotation.Nullable String context) {
     this.context = context;
     return this;
   }
@@ -385,12 +400,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(String context) {
+  public void setContext(@javax.annotation.Nullable String context) {
     this.context = context;
   }
 
 
-  public GroupBookingUpdateDto startConference(Boolean startConference) {
+  public GroupBookingUpdateDto startConference(@javax.annotation.Nullable Boolean startConference) {
     this.startConference = startConference;
     return this;
   }
@@ -409,12 +424,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_START_CONFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartConference(Boolean startConference) {
+  public void setStartConference(@javax.annotation.Nullable Boolean startConference) {
     this.startConference = startConference;
   }
 
 
-  public GroupBookingUpdateDto openMeetingUrl(String openMeetingUrl) {
+  public GroupBookingUpdateDto openMeetingUrl(@javax.annotation.Nullable String openMeetingUrl) {
     this.openMeetingUrl = openMeetingUrl;
     return this;
   }
@@ -433,12 +448,12 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_OPEN_MEETING_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOpenMeetingUrl(String openMeetingUrl) {
+  public void setOpenMeetingUrl(@javax.annotation.Nullable String openMeetingUrl) {
     this.openMeetingUrl = openMeetingUrl;
   }
 
 
-  public GroupBookingUpdateDto clientOrgId(String clientOrgId) {
+  public GroupBookingUpdateDto clientOrgId(@javax.annotation.Nullable String clientOrgId) {
     this.clientOrgId = clientOrgId;
     return this;
   }
@@ -457,7 +472,7 @@ public class GroupBookingUpdateDto {
 
   @JsonProperty(JSON_PROPERTY_CLIENT_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setClientOrgId(String clientOrgId) {
+  public void setClientOrgId(@javax.annotation.Nullable String clientOrgId) {
     this.clientOrgId = clientOrgId;
   }
 

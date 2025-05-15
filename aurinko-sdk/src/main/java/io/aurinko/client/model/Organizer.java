@@ -37,12 +37,14 @@ import io.aurinko.client.ApiClient;
   Organizer.JSON_PROPERTY_ID,
   Organizer.JSON_PROPERTY_EMAIL_ADDRESS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Organizer {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_EMAIL_ADDRESS = "emailAddress";
+  @javax.annotation.Nullable
   private EmailAddress emailAddress;
 
   public Organizer() { 
@@ -70,7 +72,7 @@ public class Organizer {
 
 
 
-  public Organizer emailAddress(EmailAddress emailAddress) {
+  public Organizer emailAddress(@javax.annotation.Nullable EmailAddress emailAddress) {
     this.emailAddress = emailAddress;
     return this;
   }
@@ -89,7 +91,7 @@ public class Organizer {
 
   @JsonProperty(JSON_PROPERTY_EMAIL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmailAddress(EmailAddress emailAddress) {
+  public void setEmailAddress(@javax.annotation.Nullable EmailAddress emailAddress) {
     this.emailAddress = emailAddress;
   }
 

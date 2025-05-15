@@ -36,18 +36,20 @@ import io.aurinko.client.ApiClient;
   WorkingInterval.JSON_PROPERTY_START,
   WorkingInterval.JSON_PROPERTY_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class WorkingInterval {
   public static final String JSON_PROPERTY_START = "start";
+  @javax.annotation.Nullable
   private String start;
 
   public static final String JSON_PROPERTY_END = "end";
+  @javax.annotation.Nullable
   private String end;
 
   public WorkingInterval() { 
   }
 
-  public WorkingInterval start(String start) {
+  public WorkingInterval start(@javax.annotation.Nullable String start) {
     this.start = start;
     return this;
   }
@@ -66,12 +68,12 @@ public class WorkingInterval {
 
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(String start) {
+  public void setStart(@javax.annotation.Nullable String start) {
     this.start = start;
   }
 
 
-  public WorkingInterval end(String end) {
+  public WorkingInterval end(@javax.annotation.Nullable String end) {
     this.end = end;
     return this;
   }
@@ -90,7 +92,7 @@ public class WorkingInterval {
 
   @JsonProperty(JSON_PROPERTY_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(String end) {
+  public void setEnd(@javax.annotation.Nullable String end) {
     this.end = end;
   }
 

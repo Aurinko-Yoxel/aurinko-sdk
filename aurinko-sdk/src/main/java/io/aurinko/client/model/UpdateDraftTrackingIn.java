@@ -35,15 +35,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   UpdateDraftTrackingIn.JSON_PROPERTY_CONTEXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class UpdateDraftTrackingIn {
   public static final String JSON_PROPERTY_CONTEXT = "context";
+  @javax.annotation.Nullable
   private String context;
 
   public UpdateDraftTrackingIn() { 
   }
 
-  public UpdateDraftTrackingIn context(String context) {
+  public UpdateDraftTrackingIn context(@javax.annotation.Nullable String context) {
     this.context = context;
     return this;
   }
@@ -62,7 +63,7 @@ public class UpdateDraftTrackingIn {
 
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(String context) {
+  public void setContext(@javax.annotation.Nullable String context) {
     this.context = context;
   }
 

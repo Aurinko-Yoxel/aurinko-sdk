@@ -43,30 +43,36 @@ import io.aurinko.client.ApiClient;
   FollowupRuleAggregateOut.JSON_PROPERTY_TEMPLATE_SUBJECT,
   FollowupRuleAggregateOut.JSON_PROPERTY_ACTIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class FollowupRuleAggregateOut {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private Integer id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_EXPECT_THREAD_RESPONSE = "expectThreadResponse";
+  @javax.annotation.Nullable
   private Boolean expectThreadResponse;
 
   public static final String JSON_PROPERTY_TEMPLATE_BODY = "templateBody";
+  @javax.annotation.Nullable
   private String templateBody;
 
   public static final String JSON_PROPERTY_TEMPLATE_SUBJECT = "templateSubject";
+  @javax.annotation.Nullable
   private String templateSubject;
 
   public static final String JSON_PROPERTY_ACTIONS = "actions";
+  @javax.annotation.Nullable
   private List<FollowupRuleAction> actions = new ArrayList<>();
 
   public FollowupRuleAggregateOut() { 
   }
 
-  public FollowupRuleAggregateOut id(Integer id) {
+  public FollowupRuleAggregateOut id(@javax.annotation.Nullable Integer id) {
     this.id = id;
     return this;
   }
@@ -85,12 +91,12 @@ public class FollowupRuleAggregateOut {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(Integer id) {
+  public void setId(@javax.annotation.Nullable Integer id) {
     this.id = id;
   }
 
 
-  public FollowupRuleAggregateOut name(String name) {
+  public FollowupRuleAggregateOut name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -109,12 +115,12 @@ public class FollowupRuleAggregateOut {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public FollowupRuleAggregateOut expectThreadResponse(Boolean expectThreadResponse) {
+  public FollowupRuleAggregateOut expectThreadResponse(@javax.annotation.Nullable Boolean expectThreadResponse) {
     this.expectThreadResponse = expectThreadResponse;
     return this;
   }
@@ -133,12 +139,12 @@ public class FollowupRuleAggregateOut {
 
   @JsonProperty(JSON_PROPERTY_EXPECT_THREAD_RESPONSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpectThreadResponse(Boolean expectThreadResponse) {
+  public void setExpectThreadResponse(@javax.annotation.Nullable Boolean expectThreadResponse) {
     this.expectThreadResponse = expectThreadResponse;
   }
 
 
-  public FollowupRuleAggregateOut templateBody(String templateBody) {
+  public FollowupRuleAggregateOut templateBody(@javax.annotation.Nullable String templateBody) {
     this.templateBody = templateBody;
     return this;
   }
@@ -157,12 +163,12 @@ public class FollowupRuleAggregateOut {
 
   @JsonProperty(JSON_PROPERTY_TEMPLATE_BODY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTemplateBody(String templateBody) {
+  public void setTemplateBody(@javax.annotation.Nullable String templateBody) {
     this.templateBody = templateBody;
   }
 
 
-  public FollowupRuleAggregateOut templateSubject(String templateSubject) {
+  public FollowupRuleAggregateOut templateSubject(@javax.annotation.Nullable String templateSubject) {
     this.templateSubject = templateSubject;
     return this;
   }
@@ -181,12 +187,12 @@ public class FollowupRuleAggregateOut {
 
   @JsonProperty(JSON_PROPERTY_TEMPLATE_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTemplateSubject(String templateSubject) {
+  public void setTemplateSubject(@javax.annotation.Nullable String templateSubject) {
     this.templateSubject = templateSubject;
   }
 
 
-  public FollowupRuleAggregateOut actions(List<FollowupRuleAction> actions) {
+  public FollowupRuleAggregateOut actions(@javax.annotation.Nullable List<FollowupRuleAction> actions) {
     this.actions = actions;
     return this;
   }
@@ -213,7 +219,7 @@ public class FollowupRuleAggregateOut {
 
   @JsonProperty(JSON_PROPERTY_ACTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActions(List<FollowupRuleAction> actions) {
+  public void setActions(@javax.annotation.Nullable List<FollowupRuleAction> actions) {
     this.actions = actions;
   }
 

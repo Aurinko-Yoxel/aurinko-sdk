@@ -55,54 +55,68 @@ import io.aurinko.client.ApiClient;
   OutgoingEmail.JSON_PROPERTY_FOLLOW_UP,
   OutgoingEmail.JSON_PROPERTY_KEYWORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class OutgoingEmail {
   public static final String JSON_PROPERTY_FROM = "from";
+  @javax.annotation.Nullable
   private EmailAddress from;
 
   public static final String JSON_PROPERTY_SUBJECT = "subject";
+  @javax.annotation.Nullable
   private String subject;
 
   public static final String JSON_PROPERTY_BODY = "body";
+  @javax.annotation.Nullable
   private String body;
 
   public static final String JSON_PROPERTY_IN_REPLY_TO = "inReplyTo";
+  @javax.annotation.Nullable
   private String inReplyTo;
 
   public static final String JSON_PROPERTY_REFERENCES = "references";
+  @javax.annotation.Nullable
   private String references;
 
   public static final String JSON_PROPERTY_TO = "to";
+  @javax.annotation.Nullable
   private List<EmailAddress> to = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CC = "cc";
+  @javax.annotation.Nullable
   private List<EmailAddress> cc = new ArrayList<>();
 
   public static final String JSON_PROPERTY_BCC = "bcc";
+  @javax.annotation.Nullable
   private List<EmailAddress> bcc = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REPLY_TO = "replyTo";
+  @javax.annotation.Nullable
   private List<EmailAddress> replyTo = new ArrayList<>();
 
   public static final String JSON_PROPERTY_X_HEADERS = "xHeaders";
+  @javax.annotation.Nullable
   private List<EmailHeader> xHeaders = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
+  @javax.annotation.Nullable
   private List<OutgoingEmailAttachment> attachments = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TRACKING = "tracking";
+  @javax.annotation.Nullable
   private OutEmailTrack tracking;
 
   public static final String JSON_PROPERTY_FOLLOW_UP = "followUp";
+  @javax.annotation.Nullable
   private FollowUpOutgoing followUp;
 
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
+  @javax.annotation.Nullable
   private List<String> keywords = new ArrayList<>();
 
   public OutgoingEmail() { 
   }
 
-  public OutgoingEmail from(EmailAddress from) {
+  public OutgoingEmail from(@javax.annotation.Nullable EmailAddress from) {
     this.from = from;
     return this;
   }
@@ -121,12 +135,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_FROM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFrom(EmailAddress from) {
+  public void setFrom(@javax.annotation.Nullable EmailAddress from) {
     this.from = from;
   }
 
 
-  public OutgoingEmail subject(String subject) {
+  public OutgoingEmail subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
@@ -145,12 +159,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public OutgoingEmail body(String body) {
+  public OutgoingEmail body(@javax.annotation.Nullable String body) {
     this.body = body;
     return this;
   }
@@ -169,12 +183,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_BODY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBody(String body) {
+  public void setBody(@javax.annotation.Nullable String body) {
     this.body = body;
   }
 
 
-  public OutgoingEmail inReplyTo(String inReplyTo) {
+  public OutgoingEmail inReplyTo(@javax.annotation.Nullable String inReplyTo) {
     this.inReplyTo = inReplyTo;
     return this;
   }
@@ -193,12 +207,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_IN_REPLY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInReplyTo(String inReplyTo) {
+  public void setInReplyTo(@javax.annotation.Nullable String inReplyTo) {
     this.inReplyTo = inReplyTo;
   }
 
 
-  public OutgoingEmail references(String references) {
+  public OutgoingEmail references(@javax.annotation.Nullable String references) {
     this.references = references;
     return this;
   }
@@ -217,12 +231,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_REFERENCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReferences(String references) {
+  public void setReferences(@javax.annotation.Nullable String references) {
     this.references = references;
   }
 
 
-  public OutgoingEmail to(List<EmailAddress> to) {
+  public OutgoingEmail to(@javax.annotation.Nullable List<EmailAddress> to) {
     this.to = to;
     return this;
   }
@@ -249,12 +263,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTo(List<EmailAddress> to) {
+  public void setTo(@javax.annotation.Nullable List<EmailAddress> to) {
     this.to = to;
   }
 
 
-  public OutgoingEmail cc(List<EmailAddress> cc) {
+  public OutgoingEmail cc(@javax.annotation.Nullable List<EmailAddress> cc) {
     this.cc = cc;
     return this;
   }
@@ -281,12 +295,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_CC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCc(List<EmailAddress> cc) {
+  public void setCc(@javax.annotation.Nullable List<EmailAddress> cc) {
     this.cc = cc;
   }
 
 
-  public OutgoingEmail bcc(List<EmailAddress> bcc) {
+  public OutgoingEmail bcc(@javax.annotation.Nullable List<EmailAddress> bcc) {
     this.bcc = bcc;
     return this;
   }
@@ -313,12 +327,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_BCC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBcc(List<EmailAddress> bcc) {
+  public void setBcc(@javax.annotation.Nullable List<EmailAddress> bcc) {
     this.bcc = bcc;
   }
 
 
-  public OutgoingEmail replyTo(List<EmailAddress> replyTo) {
+  public OutgoingEmail replyTo(@javax.annotation.Nullable List<EmailAddress> replyTo) {
     this.replyTo = replyTo;
     return this;
   }
@@ -345,12 +359,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_REPLY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReplyTo(List<EmailAddress> replyTo) {
+  public void setReplyTo(@javax.annotation.Nullable List<EmailAddress> replyTo) {
     this.replyTo = replyTo;
   }
 
 
-  public OutgoingEmail xHeaders(List<EmailHeader> xHeaders) {
+  public OutgoingEmail xHeaders(@javax.annotation.Nullable List<EmailHeader> xHeaders) {
     this.xHeaders = xHeaders;
     return this;
   }
@@ -377,12 +391,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_X_HEADERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setxHeaders(List<EmailHeader> xHeaders) {
+  public void setxHeaders(@javax.annotation.Nullable List<EmailHeader> xHeaders) {
     this.xHeaders = xHeaders;
   }
 
 
-  public OutgoingEmail attachments(List<OutgoingEmailAttachment> attachments) {
+  public OutgoingEmail attachments(@javax.annotation.Nullable List<OutgoingEmailAttachment> attachments) {
     this.attachments = attachments;
     return this;
   }
@@ -409,12 +423,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttachments(List<OutgoingEmailAttachment> attachments) {
+  public void setAttachments(@javax.annotation.Nullable List<OutgoingEmailAttachment> attachments) {
     this.attachments = attachments;
   }
 
 
-  public OutgoingEmail tracking(OutEmailTrack tracking) {
+  public OutgoingEmail tracking(@javax.annotation.Nullable OutEmailTrack tracking) {
     this.tracking = tracking;
     return this;
   }
@@ -433,12 +447,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_TRACKING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTracking(OutEmailTrack tracking) {
+  public void setTracking(@javax.annotation.Nullable OutEmailTrack tracking) {
     this.tracking = tracking;
   }
 
 
-  public OutgoingEmail followUp(FollowUpOutgoing followUp) {
+  public OutgoingEmail followUp(@javax.annotation.Nullable FollowUpOutgoing followUp) {
     this.followUp = followUp;
     return this;
   }
@@ -457,12 +471,12 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_FOLLOW_UP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFollowUp(FollowUpOutgoing followUp) {
+  public void setFollowUp(@javax.annotation.Nullable FollowUpOutgoing followUp) {
     this.followUp = followUp;
   }
 
 
-  public OutgoingEmail keywords(List<String> keywords) {
+  public OutgoingEmail keywords(@javax.annotation.Nullable List<String> keywords) {
     this.keywords = keywords;
     return this;
   }
@@ -489,7 +503,7 @@ public class OutgoingEmail {
 
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setKeywords(List<String> keywords) {
+  public void setKeywords(@javax.annotation.Nullable List<String> keywords) {
     this.keywords = keywords;
   }
 

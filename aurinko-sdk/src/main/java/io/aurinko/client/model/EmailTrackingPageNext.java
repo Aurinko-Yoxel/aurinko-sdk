@@ -41,24 +41,28 @@ import io.aurinko.client.ApiClient;
   EmailTrackingPageNext.JSON_PROPERTY_DONE,
   EmailTrackingPageNext.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailTrackingPageNext {
   public static final String JSON_PROPERTY_OFFSET = "offset";
+  @javax.annotation.Nullable
   private Integer offset;
 
   public static final String JSON_PROPERTY_TOTAL_SIZE = "totalSize";
+  @javax.annotation.Nullable
   private Long totalSize;
 
   public static final String JSON_PROPERTY_DONE = "done";
+  @javax.annotation.Nullable
   private Boolean done;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
+  @javax.annotation.Nullable
   private List<TrackingData> records = new ArrayList<>();
 
   public EmailTrackingPageNext() { 
   }
 
-  public EmailTrackingPageNext offset(Integer offset) {
+  public EmailTrackingPageNext offset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -77,12 +81,12 @@ public class EmailTrackingPageNext {
 
   @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOffset(Integer offset) {
+  public void setOffset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
   }
 
 
-  public EmailTrackingPageNext totalSize(Long totalSize) {
+  public EmailTrackingPageNext totalSize(@javax.annotation.Nullable Long totalSize) {
     this.totalSize = totalSize;
     return this;
   }
@@ -101,12 +105,12 @@ public class EmailTrackingPageNext {
 
   @JsonProperty(JSON_PROPERTY_TOTAL_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotalSize(Long totalSize) {
+  public void setTotalSize(@javax.annotation.Nullable Long totalSize) {
     this.totalSize = totalSize;
   }
 
 
-  public EmailTrackingPageNext done(Boolean done) {
+  public EmailTrackingPageNext done(@javax.annotation.Nullable Boolean done) {
     this.done = done;
     return this;
   }
@@ -125,12 +129,12 @@ public class EmailTrackingPageNext {
 
   @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDone(Boolean done) {
+  public void setDone(@javax.annotation.Nullable Boolean done) {
     this.done = done;
   }
 
 
-  public EmailTrackingPageNext records(List<TrackingData> records) {
+  public EmailTrackingPageNext records(@javax.annotation.Nullable List<TrackingData> records) {
     this.records = records;
     return this;
   }
@@ -157,7 +161,7 @@ public class EmailTrackingPageNext {
 
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<TrackingData> records) {
+  public void setRecords(@javax.annotation.Nullable List<TrackingData> records) {
     this.records = records;
   }
 

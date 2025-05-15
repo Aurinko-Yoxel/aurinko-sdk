@@ -38,24 +38,28 @@ import io.aurinko.client.ApiClient;
   CreateMeetingResponse.JSON_PROPERTY_RESERVATION_ID,
   CreateMeetingResponse.JSON_PROPERTY_GROUP_XID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class CreateMeetingResponse {
   public static final String JSON_PROPERTY_CREATED = "created";
+  @javax.annotation.Nullable
   private Boolean created;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_RESERVATION_ID = "ReservationId";
+  @javax.annotation.Nullable
   private Long reservationId;
 
   public static final String JSON_PROPERTY_GROUP_XID = "groupXid";
+  @javax.annotation.Nullable
   private String groupXid;
 
   public CreateMeetingResponse() { 
   }
 
-  public CreateMeetingResponse created(Boolean created) {
+  public CreateMeetingResponse created(@javax.annotation.Nullable Boolean created) {
     this.created = created;
     return this;
   }
@@ -74,12 +78,12 @@ public class CreateMeetingResponse {
 
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreated(Boolean created) {
+  public void setCreated(@javax.annotation.Nullable Boolean created) {
     this.created = created;
   }
 
 
-  public CreateMeetingResponse id(String id) {
+  public CreateMeetingResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -98,12 +102,12 @@ public class CreateMeetingResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public CreateMeetingResponse reservationId(Long reservationId) {
+  public CreateMeetingResponse reservationId(@javax.annotation.Nullable Long reservationId) {
     this.reservationId = reservationId;
     return this;
   }
@@ -122,12 +126,12 @@ public class CreateMeetingResponse {
 
   @JsonProperty(JSON_PROPERTY_RESERVATION_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReservationId(Long reservationId) {
+  public void setReservationId(@javax.annotation.Nullable Long reservationId) {
     this.reservationId = reservationId;
   }
 
 
-  public CreateMeetingResponse groupXid(String groupXid) {
+  public CreateMeetingResponse groupXid(@javax.annotation.Nullable String groupXid) {
     this.groupXid = groupXid;
     return this;
   }
@@ -146,7 +150,7 @@ public class CreateMeetingResponse {
 
   @JsonProperty(JSON_PROPERTY_GROUP_XID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupXid(String groupXid) {
+  public void setGroupXid(@javax.annotation.Nullable String groupXid) {
     this.groupXid = groupXid;
   }
 

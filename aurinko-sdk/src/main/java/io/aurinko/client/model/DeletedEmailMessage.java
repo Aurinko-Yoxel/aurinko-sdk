@@ -39,18 +39,22 @@ import io.aurinko.client.ApiClient;
   DeletedEmailMessage.JSON_PROPERTY_INTERNET_MESSAGE_ID,
   DeletedEmailMessage.JSON_PROPERTY_TIMESTAMP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class DeletedEmailMessage {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_FOLDER_ID = "folderId";
+  @javax.annotation.Nullable
   private String folderId;
 
   public static final String JSON_PROPERTY_INTERNET_MESSAGE_ID = "internetMessageId";
+  @javax.annotation.Nullable
   private String internetMessageId;
 
   public static final String JSON_PROPERTY_TIMESTAMP = "timestamp";
+  @javax.annotation.Nullable
   private OffsetDateTime timestamp;
 
   public DeletedEmailMessage() { 
@@ -110,7 +114,7 @@ public class DeletedEmailMessage {
 
 
 
-  public DeletedEmailMessage timestamp(OffsetDateTime timestamp) {
+  public DeletedEmailMessage timestamp(@javax.annotation.Nullable OffsetDateTime timestamp) {
     this.timestamp = timestamp;
     return this;
   }
@@ -129,7 +133,7 @@ public class DeletedEmailMessage {
 
   @JsonProperty(JSON_PROPERTY_TIMESTAMP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimestamp(OffsetDateTime timestamp) {
+  public void setTimestamp(@javax.annotation.Nullable OffsetDateTime timestamp) {
     this.timestamp = timestamp;
   }
 

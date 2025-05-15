@@ -36,32 +36,33 @@ import io.aurinko.client.ApiClient;
   ContactUrl.JSON_PROPERTY_HREF,
   ContactUrl.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ContactUrl {
   public static final String JSON_PROPERTY_HREF = "href";
+  @javax.annotation.Nullable
   private String href;
 
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    WORK("work"),
+    WORK(String.valueOf("work")),
     
-    HOME("home"),
+    HOME(String.valueOf("home")),
     
-    OTHER("other"),
+    OTHER(String.valueOf("other")),
     
-    BLOG("blog"),
+    BLOG(String.valueOf("blog")),
     
-    PROFILE("profile"),
+    PROFILE(String.valueOf("profile")),
     
-    HOME_PAGE("homePage"),
+    HOME_PAGE(String.valueOf("homePage")),
     
-    FTP("ftp"),
+    FTP(String.valueOf("ftp")),
     
-    RESERVATIONS("reservations"),
+    RESERVATIONS(String.valueOf("reservations")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -91,12 +92,13 @@ public class ContactUrl {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public ContactUrl() { 
   }
 
-  public ContactUrl href(String href) {
+  public ContactUrl href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -115,12 +117,12 @@ public class ContactUrl {
 
   @JsonProperty(JSON_PROPERTY_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public ContactUrl type(TypeEnum type) {
+  public ContactUrl type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -139,7 +141,7 @@ public class ContactUrl {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 

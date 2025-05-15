@@ -18,8 +18,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.DataConsumerFilter;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -92,6 +95,14 @@ class SubscriptionResponseTest {
     @Test
     void disabledByBillingTest() {
         // TODO: test disabledByBilling
+    }
+
+    /**
+     * Test the property 'filters'
+     */
+    @Test
+    void filtersTest() {
+        // TODO: test filters
     }
 
 }

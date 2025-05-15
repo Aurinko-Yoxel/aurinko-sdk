@@ -39,25 +39,27 @@ import io.aurinko.client.ApiClient;
   ScheduledDraft.JSON_PROPERTY_STATUS,
   ScheduledDraft.JSON_PROPERTY_ERROR_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ScheduledDraft {
   public static final String JSON_PROPERTY_JOB_ID = "jobId";
+  @javax.annotation.Nullable
   private Long jobId;
 
   public static final String JSON_PROPERTY_SEND_TIME = "sendTime";
+  @javax.annotation.Nullable
   private OffsetDateTime sendTime;
 
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    SCHEDULED("scheduled"),
+    SCHEDULED(String.valueOf("scheduled")),
     
-    SENT("sent"),
+    SENT(String.valueOf("sent")),
     
-    FAILED("failed"),
+    FAILED(String.valueOf("failed")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -87,9 +89,11 @@ public class ScheduledDraft {
   }
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String JSON_PROPERTY_ERROR_MESSAGE = "errorMessage";
+  @javax.annotation.Nullable
   private String errorMessage;
 
   public ScheduledDraft() { 
@@ -135,7 +139,7 @@ public class ScheduledDraft {
 
 
 
-  public ScheduledDraft status(StatusEnum status) {
+  public ScheduledDraft status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -154,7 +158,7 @@ public class ScheduledDraft {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 

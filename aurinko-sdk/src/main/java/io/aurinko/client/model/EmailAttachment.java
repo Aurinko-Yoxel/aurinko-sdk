@@ -42,30 +42,38 @@ import io.aurinko.client.ApiClient;
   EmailAttachment.JSON_PROPERTY_CONTENT,
   EmailAttachment.JSON_PROPERTY_CONTENT_LOCATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailAttachment {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_MIME_TYPE = "mimeType";
+  @javax.annotation.Nullable
   private String mimeType;
 
   public static final String JSON_PROPERTY_SIZE = "size";
+  @javax.annotation.Nullable
   private Integer size;
 
   public static final String JSON_PROPERTY_INLINE = "inline";
+  @javax.annotation.Nullable
   private Boolean inline;
 
   public static final String JSON_PROPERTY_CONTENT_ID = "contentId";
+  @javax.annotation.Nullable
   private String contentId;
 
   public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nullable
   private String content;
 
   public static final String JSON_PROPERTY_CONTENT_LOCATION = "contentLocation";
+  @javax.annotation.Nullable
   private String contentLocation;
 
   public EmailAttachment() { 

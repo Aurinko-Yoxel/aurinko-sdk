@@ -73,53 +73,61 @@ import io.aurinko.client.ApiClient;
   EmailMessage.JSON_PROPERTY_WEB_LINK,
   EmailMessage.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailMessage {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
+  @javax.annotation.Nullable
   private String threadId;
 
   public static final String JSON_PROPERTY_CREATED_TIME = "createdTime";
+  @javax.annotation.Nullable
   private OffsetDateTime createdTime;
 
   public static final String JSON_PROPERTY_LAST_MODIFIED_TIME = "lastModifiedTime";
+  @javax.annotation.Nullable
   private OffsetDateTime lastModifiedTime;
 
   public static final String JSON_PROPERTY_SENT_AT = "sentAt";
+  @javax.annotation.Nullable
   private OffsetDateTime sentAt;
 
   public static final String JSON_PROPERTY_RECEIVED_AT = "receivedAt";
+  @javax.annotation.Nullable
   private OffsetDateTime receivedAt;
 
   public static final String JSON_PROPERTY_INTERNET_MESSAGE_ID = "internetMessageId";
+  @javax.annotation.Nullable
   private String internetMessageId;
 
   public static final String JSON_PROPERTY_SUBJECT = "subject";
+  @javax.annotation.Nullable
   private String subject;
 
   /**
    * Gets or Sets sysLabels
    */
   public enum SysLabelsEnum {
-    JUNK("junk"),
+    JUNK(String.valueOf("junk")),
     
-    TRASH("trash"),
+    TRASH(String.valueOf("trash")),
     
-    SENT("sent"),
+    SENT(String.valueOf("sent")),
     
-    INBOX("inbox"),
+    INBOX(String.valueOf("inbox")),
     
-    UNREAD("unread"),
+    UNREAD(String.valueOf("unread")),
     
-    FLAGGED("flagged"),
+    FLAGGED(String.valueOf("flagged")),
     
-    IMPORTANT("important"),
+    IMPORTANT(String.valueOf("important")),
     
-    DRAFT("draft"),
+    DRAFT(String.valueOf("draft")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -149,26 +157,28 @@ public class EmailMessage {
   }
 
   public static final String JSON_PROPERTY_SYS_LABELS = "sysLabels";
+  @javax.annotation.Nullable
   private List<SysLabelsEnum> sysLabels = new ArrayList<>();
 
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
+  @javax.annotation.Nullable
   private List<String> keywords = new ArrayList<>();
 
   /**
    * Gets or Sets sysClassifications
    */
   public enum SysClassificationsEnum {
-    PERSONAL("personal"),
+    PERSONAL(String.valueOf("personal")),
     
-    SOCIAL("social"),
+    SOCIAL(String.valueOf("social")),
     
-    PROMOTIONS("promotions"),
+    PROMOTIONS(String.valueOf("promotions")),
     
-    UPDATES("updates"),
+    UPDATES(String.valueOf("updates")),
     
-    FORUMS("forums"),
+    FORUMS(String.valueOf("forums")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -198,26 +208,28 @@ public class EmailMessage {
   }
 
   public static final String JSON_PROPERTY_SYS_CLASSIFICATIONS = "sysClassifications";
+  @javax.annotation.Nullable
   private List<SysClassificationsEnum> sysClassifications = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SENSITIVITY = "sensitivity";
+  @javax.annotation.Nullable
   private Sensitivity sensitivity;
 
   /**
    * Gets or Sets meetingMessageMethod
    */
   public enum MeetingMessageMethodEnum {
-    REQUEST("request"),
+    REQUEST(String.valueOf("request")),
     
-    REPLY("reply"),
+    REPLY(String.valueOf("reply")),
     
-    CANCEL("cancel"),
+    CANCEL(String.valueOf("cancel")),
     
-    COUNTER("counter"),
+    COUNTER(String.valueOf("counter")),
     
-    OTHER("other"),
+    OTHER(String.valueOf("other")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -247,71 +259,88 @@ public class EmailMessage {
   }
 
   public static final String JSON_PROPERTY_MEETING_MESSAGE_METHOD = "meetingMessageMethod";
+  @javax.annotation.Nullable
   private MeetingMessageMethodEnum meetingMessageMethod;
 
   public static final String JSON_PROPERTY_FROM = "from";
+  @javax.annotation.Nullable
   private EmailAddress from;
 
   public static final String JSON_PROPERTY_TO = "to";
+  @javax.annotation.Nullable
   private List<EmailAddress> to = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CC = "cc";
+  @javax.annotation.Nullable
   private List<EmailAddress> cc = new ArrayList<>();
 
   public static final String JSON_PROPERTY_BCC = "bcc";
+  @javax.annotation.Nullable
   private List<EmailAddress> bcc = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REPLY_TO = "replyTo";
+  @javax.annotation.Nullable
   private List<EmailAddress> replyTo = new ArrayList<>();
 
   public static final String JSON_PROPERTY_HAS_ATTACHMENTS = "hasAttachments";
+  @javax.annotation.Nullable
   private Boolean hasAttachments;
 
   public static final String JSON_PROPERTY_BODY = "body";
+  @javax.annotation.Nullable
   private String body;
 
   public static final String JSON_PROPERTY_BODY_SNIPPET = "bodySnippet";
+  @javax.annotation.Nullable
   private String bodySnippet;
 
   public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
+  @javax.annotation.Nullable
   private List<EmailAttachment> attachments = new ArrayList<>();
 
   public static final String JSON_PROPERTY_IN_REPLY_TO = "inReplyTo";
+  @javax.annotation.Nullable
   private String inReplyTo;
 
   public static final String JSON_PROPERTY_REFERENCES = "references";
+  @javax.annotation.Nullable
   private String references;
 
   public static final String JSON_PROPERTY_THREAD_INDEX = "threadIndex";
+  @javax.annotation.Nullable
   private String threadIndex;
 
   public static final String JSON_PROPERTY_INTERNET_HEADERS = "internetHeaders";
+  @javax.annotation.Nullable
   private List<EmailHeader> internetHeaders = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NATIVE_PROPERTIES = "nativeProperties";
+  @javax.annotation.Nullable
   private Map<String, String> nativeProperties = new HashMap<>();
 
   public static final String JSON_PROPERTY_FOLDER_ID = "folderId";
+  @javax.annotation.Nullable
   private String folderId;
 
   public static final String JSON_PROPERTY_WEB_LINK = "webLink";
+  @javax.annotation.Nullable
   private String webLink;
 
   /**
    * Gets or Sets omitted
    */
   public enum OmittedEnum {
-    THREAD_ID("threadId"),
+    THREAD_ID(String.valueOf("threadId")),
     
-    BODY("body"),
+    BODY(String.valueOf("body")),
     
-    ATTACHMENTS("attachments"),
+    ATTACHMENTS(String.valueOf("attachments")),
     
-    RECIPIENTS("recipients"),
+    RECIPIENTS(String.valueOf("recipients")),
     
-    INTERNET_HEADERS("internetHeaders"),
+    INTERNET_HEADERS(String.valueOf("internetHeaders")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -341,6 +370,7 @@ public class EmailMessage {
   }
 
   public static final String JSON_PROPERTY_OMITTED = "omitted";
+  @javax.annotation.Nullable
   private List<OmittedEnum> omitted = new ArrayList<>();
 
   public EmailMessage() { 
@@ -516,7 +546,7 @@ public class EmailMessage {
 
 
 
-  public EmailMessage keywords(List<String> keywords) {
+  public EmailMessage keywords(@javax.annotation.Nullable List<String> keywords) {
     this.keywords = keywords;
     return this;
   }
@@ -543,7 +573,7 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setKeywords(List<String> keywords) {
+  public void setKeywords(@javax.annotation.Nullable List<String> keywords) {
     this.keywords = keywords;
   }
 
@@ -562,7 +592,7 @@ public class EmailMessage {
 
 
 
-  public EmailMessage sensitivity(Sensitivity sensitivity) {
+  public EmailMessage sensitivity(@javax.annotation.Nullable Sensitivity sensitivity) {
     this.sensitivity = sensitivity;
     return this;
   }
@@ -581,12 +611,12 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_SENSITIVITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSensitivity(Sensitivity sensitivity) {
+  public void setSensitivity(@javax.annotation.Nullable Sensitivity sensitivity) {
     this.sensitivity = sensitivity;
   }
 
 
-  public EmailMessage meetingMessageMethod(MeetingMessageMethodEnum meetingMessageMethod) {
+  public EmailMessage meetingMessageMethod(@javax.annotation.Nullable MeetingMessageMethodEnum meetingMessageMethod) {
     this.meetingMessageMethod = meetingMessageMethod;
     return this;
   }
@@ -605,12 +635,12 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_MEETING_MESSAGE_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMeetingMessageMethod(MeetingMessageMethodEnum meetingMessageMethod) {
+  public void setMeetingMessageMethod(@javax.annotation.Nullable MeetingMessageMethodEnum meetingMessageMethod) {
     this.meetingMessageMethod = meetingMessageMethod;
   }
 
 
-  public EmailMessage from(EmailAddress from) {
+  public EmailMessage from(@javax.annotation.Nullable EmailAddress from) {
     this.from = from;
     return this;
   }
@@ -629,12 +659,12 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_FROM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFrom(EmailAddress from) {
+  public void setFrom(@javax.annotation.Nullable EmailAddress from) {
     this.from = from;
   }
 
 
-  public EmailMessage to(List<EmailAddress> to) {
+  public EmailMessage to(@javax.annotation.Nullable List<EmailAddress> to) {
     this.to = to;
     return this;
   }
@@ -661,12 +691,12 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTo(List<EmailAddress> to) {
+  public void setTo(@javax.annotation.Nullable List<EmailAddress> to) {
     this.to = to;
   }
 
 
-  public EmailMessage cc(List<EmailAddress> cc) {
+  public EmailMessage cc(@javax.annotation.Nullable List<EmailAddress> cc) {
     this.cc = cc;
     return this;
   }
@@ -693,12 +723,12 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_CC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCc(List<EmailAddress> cc) {
+  public void setCc(@javax.annotation.Nullable List<EmailAddress> cc) {
     this.cc = cc;
   }
 
 
-  public EmailMessage bcc(List<EmailAddress> bcc) {
+  public EmailMessage bcc(@javax.annotation.Nullable List<EmailAddress> bcc) {
     this.bcc = bcc;
     return this;
   }
@@ -725,12 +755,12 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_BCC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBcc(List<EmailAddress> bcc) {
+  public void setBcc(@javax.annotation.Nullable List<EmailAddress> bcc) {
     this.bcc = bcc;
   }
 
 
-  public EmailMessage replyTo(List<EmailAddress> replyTo) {
+  public EmailMessage replyTo(@javax.annotation.Nullable List<EmailAddress> replyTo) {
     this.replyTo = replyTo;
     return this;
   }
@@ -757,7 +787,7 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_REPLY_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReplyTo(List<EmailAddress> replyTo) {
+  public void setReplyTo(@javax.annotation.Nullable List<EmailAddress> replyTo) {
     this.replyTo = replyTo;
   }
 
@@ -804,7 +834,7 @@ public class EmailMessage {
 
 
 
-  public EmailMessage attachments(List<EmailAttachment> attachments) {
+  public EmailMessage attachments(@javax.annotation.Nullable List<EmailAttachment> attachments) {
     this.attachments = attachments;
     return this;
   }
@@ -831,7 +861,7 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_ATTACHMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttachments(List<EmailAttachment> attachments) {
+  public void setAttachments(@javax.annotation.Nullable List<EmailAttachment> attachments) {
     this.attachments = attachments;
   }
 
@@ -878,7 +908,7 @@ public class EmailMessage {
 
 
 
-  public EmailMessage internetHeaders(List<EmailHeader> internetHeaders) {
+  public EmailMessage internetHeaders(@javax.annotation.Nullable List<EmailHeader> internetHeaders) {
     this.internetHeaders = internetHeaders;
     return this;
   }
@@ -905,12 +935,12 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_INTERNET_HEADERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInternetHeaders(List<EmailHeader> internetHeaders) {
+  public void setInternetHeaders(@javax.annotation.Nullable List<EmailHeader> internetHeaders) {
     this.internetHeaders = internetHeaders;
   }
 
 
-  public EmailMessage nativeProperties(Map<String, String> nativeProperties) {
+  public EmailMessage nativeProperties(@javax.annotation.Nullable Map<String, String> nativeProperties) {
     this.nativeProperties = nativeProperties;
     return this;
   }
@@ -937,7 +967,7 @@ public class EmailMessage {
 
   @JsonProperty(JSON_PROPERTY_NATIVE_PROPERTIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNativeProperties(Map<String, String> nativeProperties) {
+  public void setNativeProperties(@javax.annotation.Nullable Map<String, String> nativeProperties) {
     this.nativeProperties = nativeProperties;
   }
 

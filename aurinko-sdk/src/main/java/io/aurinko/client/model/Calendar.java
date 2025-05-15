@@ -40,31 +40,35 @@ import io.aurinko.client.ApiClient;
   Calendar.JSON_PROPERTY_ACCESS_ROLE,
   Calendar.JSON_PROPERTY_PRIMARY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Calendar {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_COLOR = "color";
+  @javax.annotation.Nullable
   private String color;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   /**
    * Gets or Sets accessRole
    */
   public enum AccessRoleEnum {
-    OWNER("owner"),
+    OWNER(String.valueOf("owner")),
     
-    WRITER("writer"),
+    WRITER(String.valueOf("writer")),
     
-    READER("reader"),
+    READER(String.valueOf("reader")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -94,9 +98,11 @@ public class Calendar {
   }
 
   public static final String JSON_PROPERTY_ACCESS_ROLE = "accessRole";
+  @javax.annotation.Nullable
   private AccessRoleEnum accessRole;
 
   public static final String JSON_PROPERTY_PRIMARY = "primary";
+  @javax.annotation.Nullable
   private Boolean primary;
 
   public Calendar() { 
@@ -132,7 +138,7 @@ public class Calendar {
 
 
 
-  public Calendar name(String name) {
+  public Calendar name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -151,7 +157,7 @@ public class Calendar {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 

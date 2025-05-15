@@ -19,6 +19,8 @@ import io.aurinko.client.model.EmailFolderCreate;
 import io.aurinko.client.model.EmailFolderInfo;
 import io.aurinko.client.model.EmailFolderInfoPage;
 import io.aurinko.client.model.EmailMessagesPageNext;
+import io.aurinko.client.model.WellKnownFoldersIn;
+import io.aurinko.client.model.WellKnownFoldersOut;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -107,6 +109,39 @@ public class EmailFoldersApiTest {
         String pageToken = null;
         CompletableFuture<EmailFolderInfoPage> response = 
         api.folders(pageToken);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Update wellKnown email folders
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateWellKnownFoldersTest() throws ApiException {
+        WellKnownFoldersIn wellKnownFoldersIn = null;
+        CompletableFuture<WellKnownFoldersOut> response = 
+        api.updateWellKnownFolders(wellKnownFoldersIn);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * List wellKnown email folders
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void wellKnownFoldersTest() throws ApiException {
+        CompletableFuture<WellKnownFoldersOut> response = 
+        api.wellKnownFolders();
         
         // TODO: test validations
     }

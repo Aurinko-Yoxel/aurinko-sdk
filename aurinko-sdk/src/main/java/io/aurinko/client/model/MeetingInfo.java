@@ -46,28 +46,31 @@ import io.aurinko.client.ApiClient;
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class MeetingInfo {
   public static final String JSON_PROPERTY_CANCELED = "canceled";
+  @javax.annotation.Nullable
   private Boolean canceled;
 
   public static final String JSON_PROPERTY_ATTENDEES = "attendees";
+  @javax.annotation.Nullable
   private List<Attendee> attendees = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RESPONSE = "response";
+  @javax.annotation.Nullable
   private MeetingResponseType response;
 
   /**
    * Gets or Sets attendeePermissions
    */
   public enum AttendeePermissionsEnum {
-    INVITE_OTHERS("inviteOthers"),
+    INVITE_OTHERS(String.valueOf("inviteOthers")),
     
-    MODIFY("modify"),
+    MODIFY(String.valueOf("modify")),
     
-    SEE_OTHERS("seeOthers"),
+    SEE_OTHERS(String.valueOf("seeOthers")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -97,15 +100,19 @@ public class MeetingInfo {
   }
 
   public static final String JSON_PROPERTY_ATTENDEE_PERMISSIONS = "attendeePermissions";
+  @javax.annotation.Nullable
   private List<AttendeePermissionsEnum> attendeePermissions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ONLINE_MEETING = "onlineMeeting";
+  @javax.annotation.Nullable
   private Boolean onlineMeeting;
 
   public static final String JSON_PROPERTY_ONLINE_MEETING_PROVIDER = "onlineMeetingProvider";
+  @javax.annotation.Nullable
   private String onlineMeetingProvider;
 
   public static final String JSON_PROPERTY_ONLINE_MEETING_DETAILS = "onlineMeetingDetails";
+  @javax.annotation.Nullable
   private OnlineMeetingDetails onlineMeetingDetails;
 
   public MeetingInfo() { 
@@ -133,7 +140,7 @@ public class MeetingInfo {
 
 
 
-  public MeetingInfo attendees(List<Attendee> attendees) {
+  public MeetingInfo attendees(@javax.annotation.Nullable List<Attendee> attendees) {
     this.attendees = attendees;
     return this;
   }
@@ -160,12 +167,12 @@ public class MeetingInfo {
 
   @JsonProperty(JSON_PROPERTY_ATTENDEES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttendees(List<Attendee> attendees) {
+  public void setAttendees(@javax.annotation.Nullable List<Attendee> attendees) {
     this.attendees = attendees;
   }
 
 
-  public MeetingInfo response(MeetingResponseType response) {
+  public MeetingInfo response(@javax.annotation.Nullable MeetingResponseType response) {
     this.response = response;
     return this;
   }
@@ -184,12 +191,12 @@ public class MeetingInfo {
 
   @JsonProperty(JSON_PROPERTY_RESPONSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResponse(MeetingResponseType response) {
+  public void setResponse(@javax.annotation.Nullable MeetingResponseType response) {
     this.response = response;
   }
 
 
-  public MeetingInfo attendeePermissions(List<AttendeePermissionsEnum> attendeePermissions) {
+  public MeetingInfo attendeePermissions(@javax.annotation.Nullable List<AttendeePermissionsEnum> attendeePermissions) {
     this.attendeePermissions = attendeePermissions;
     return this;
   }
@@ -216,12 +223,12 @@ public class MeetingInfo {
 
   @JsonProperty(JSON_PROPERTY_ATTENDEE_PERMISSIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttendeePermissions(List<AttendeePermissionsEnum> attendeePermissions) {
+  public void setAttendeePermissions(@javax.annotation.Nullable List<AttendeePermissionsEnum> attendeePermissions) {
     this.attendeePermissions = attendeePermissions;
   }
 
 
-  public MeetingInfo onlineMeeting(Boolean onlineMeeting) {
+  public MeetingInfo onlineMeeting(@javax.annotation.Nullable Boolean onlineMeeting) {
     this.onlineMeeting = onlineMeeting;
     return this;
   }
@@ -240,12 +247,12 @@ public class MeetingInfo {
 
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnlineMeeting(Boolean onlineMeeting) {
+  public void setOnlineMeeting(@javax.annotation.Nullable Boolean onlineMeeting) {
     this.onlineMeeting = onlineMeeting;
   }
 
 
-  public MeetingInfo onlineMeetingProvider(String onlineMeetingProvider) {
+  public MeetingInfo onlineMeetingProvider(@javax.annotation.Nullable String onlineMeetingProvider) {
     this.onlineMeetingProvider = onlineMeetingProvider;
     return this;
   }
@@ -264,12 +271,12 @@ public class MeetingInfo {
 
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnlineMeetingProvider(String onlineMeetingProvider) {
+  public void setOnlineMeetingProvider(@javax.annotation.Nullable String onlineMeetingProvider) {
     this.onlineMeetingProvider = onlineMeetingProvider;
   }
 
 
-  public MeetingInfo onlineMeetingDetails(OnlineMeetingDetails onlineMeetingDetails) {
+  public MeetingInfo onlineMeetingDetails(@javax.annotation.Nullable OnlineMeetingDetails onlineMeetingDetails) {
     this.onlineMeetingDetails = onlineMeetingDetails;
     return this;
   }
@@ -288,7 +295,7 @@ public class MeetingInfo {
 
   @JsonProperty(JSON_PROPERTY_ONLINE_MEETING_DETAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnlineMeetingDetails(OnlineMeetingDetails onlineMeetingDetails) {
+  public void setOnlineMeetingDetails(@javax.annotation.Nullable OnlineMeetingDetails onlineMeetingDetails) {
     this.onlineMeetingDetails = onlineMeetingDetails;
   }
 

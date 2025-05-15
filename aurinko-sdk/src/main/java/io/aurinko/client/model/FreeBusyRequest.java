@@ -40,21 +40,24 @@ import io.aurinko.client.ApiClient;
   FreeBusyRequest.JSON_PROPERTY_TIME_MAX,
   FreeBusyRequest.JSON_PROPERTY_EMAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class FreeBusyRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
+  @javax.annotation.Nullable
   private OffsetDateTime timeMin;
 
   public static final String JSON_PROPERTY_TIME_MAX = "timeMax";
+  @javax.annotation.Nullable
   private OffsetDateTime timeMax;
 
   public static final String JSON_PROPERTY_EMAILS = "emails";
+  @javax.annotation.Nullable
   private List<String> emails = new ArrayList<>();
 
   public FreeBusyRequest() { 
   }
 
-  public FreeBusyRequest timeMin(OffsetDateTime timeMin) {
+  public FreeBusyRequest timeMin(@javax.annotation.Nullable OffsetDateTime timeMin) {
     this.timeMin = timeMin;
     return this;
   }
@@ -73,12 +76,12 @@ public class FreeBusyRequest {
 
   @JsonProperty(JSON_PROPERTY_TIME_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeMin(OffsetDateTime timeMin) {
+  public void setTimeMin(@javax.annotation.Nullable OffsetDateTime timeMin) {
     this.timeMin = timeMin;
   }
 
 
-  public FreeBusyRequest timeMax(OffsetDateTime timeMax) {
+  public FreeBusyRequest timeMax(@javax.annotation.Nullable OffsetDateTime timeMax) {
     this.timeMax = timeMax;
     return this;
   }
@@ -97,12 +100,12 @@ public class FreeBusyRequest {
 
   @JsonProperty(JSON_PROPERTY_TIME_MAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeMax(OffsetDateTime timeMax) {
+  public void setTimeMax(@javax.annotation.Nullable OffsetDateTime timeMax) {
     this.timeMax = timeMax;
   }
 
 
-  public FreeBusyRequest emails(List<String> emails) {
+  public FreeBusyRequest emails(@javax.annotation.Nullable List<String> emails) {
     this.emails = emails;
     return this;
   }
@@ -129,7 +132,7 @@ public class FreeBusyRequest {
 
   @JsonProperty(JSON_PROPERTY_EMAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmails(List<String> emails) {
+  public void setEmails(@javax.annotation.Nullable List<String> emails) {
     this.emails = emails;
   }
 

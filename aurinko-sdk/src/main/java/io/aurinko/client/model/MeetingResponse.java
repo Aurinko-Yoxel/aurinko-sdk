@@ -37,18 +37,20 @@ import io.aurinko.client.ApiClient;
   MeetingResponse.JSON_PROPERTY_RESPONSE,
   MeetingResponse.JSON_PROPERTY_COMMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class MeetingResponse {
   public static final String JSON_PROPERTY_RESPONSE = "response";
+  @javax.annotation.Nonnull
   private MeetingResponseType response;
 
   public static final String JSON_PROPERTY_COMMENT = "comment";
+  @javax.annotation.Nullable
   private String comment;
 
   public MeetingResponse() { 
   }
 
-  public MeetingResponse response(MeetingResponseType response) {
+  public MeetingResponse response(@javax.annotation.Nonnull MeetingResponseType response) {
     this.response = response;
     return this;
   }
@@ -67,12 +69,12 @@ public class MeetingResponse {
 
   @JsonProperty(JSON_PROPERTY_RESPONSE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setResponse(MeetingResponseType response) {
+  public void setResponse(@javax.annotation.Nonnull MeetingResponseType response) {
     this.response = response;
   }
 
 
-  public MeetingResponse comment(String comment) {
+  public MeetingResponse comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
@@ -91,7 +93,7 @@ public class MeetingResponse {
 
   @JsonProperty(JSON_PROPERTY_COMMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setComment(String comment) {
+  public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
 

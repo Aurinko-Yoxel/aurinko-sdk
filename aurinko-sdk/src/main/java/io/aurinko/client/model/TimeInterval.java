@@ -37,18 +37,20 @@ import io.aurinko.client.ApiClient;
   TimeInterval.JSON_PROPERTY_START,
   TimeInterval.JSON_PROPERTY_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class TimeInterval {
   public static final String JSON_PROPERTY_START = "start";
+  @javax.annotation.Nullable
   private OffsetDateTime start;
 
   public static final String JSON_PROPERTY_END = "end";
+  @javax.annotation.Nullable
   private OffsetDateTime end;
 
   public TimeInterval() { 
   }
 
-  public TimeInterval start(OffsetDateTime start) {
+  public TimeInterval start(@javax.annotation.Nullable OffsetDateTime start) {
     this.start = start;
     return this;
   }
@@ -67,12 +69,12 @@ public class TimeInterval {
 
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(OffsetDateTime start) {
+  public void setStart(@javax.annotation.Nullable OffsetDateTime start) {
     this.start = start;
   }
 
 
-  public TimeInterval end(OffsetDateTime end) {
+  public TimeInterval end(@javax.annotation.Nullable OffsetDateTime end) {
     this.end = end;
     return this;
   }
@@ -91,7 +93,7 @@ public class TimeInterval {
 
   @JsonProperty(JSON_PROPERTY_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnd(OffsetDateTime end) {
+  public void setEnd(@javax.annotation.Nullable OffsetDateTime end) {
     this.end = end;
   }
 

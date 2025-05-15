@@ -43,21 +43,26 @@ import io.aurinko.client.ApiClient;
   SeriesInfo.JSON_PROPERTY_MODIFIED_OCCURRENCES,
   SeriesInfo.JSON_PROPERTY_DELETED_OCCURRENCES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SeriesInfo {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_GLOBAL_ID = "globalId";
+  @javax.annotation.Nullable
   private String globalId;
 
   public static final String JSON_PROPERTY_RECURRENCE = "recurrence";
+  @javax.annotation.Nullable
   private Recurrence recurrence;
 
   public static final String JSON_PROPERTY_MODIFIED_OCCURRENCES = "modifiedOccurrences";
+  @javax.annotation.Nullable
   private List<OccurrenceInfo> modifiedOccurrences = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DELETED_OCCURRENCES = "deletedOccurrences";
+  @javax.annotation.Nullable
   private List<OccurrenceInfo> deletedOccurrences = new ArrayList<>();
 
   public SeriesInfo() { 
@@ -105,7 +110,7 @@ public class SeriesInfo {
 
 
 
-  public SeriesInfo recurrence(Recurrence recurrence) {
+  public SeriesInfo recurrence(@javax.annotation.Nullable Recurrence recurrence) {
     this.recurrence = recurrence;
     return this;
   }
@@ -124,7 +129,7 @@ public class SeriesInfo {
 
   @JsonProperty(JSON_PROPERTY_RECURRENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecurrence(Recurrence recurrence) {
+  public void setRecurrence(@javax.annotation.Nullable Recurrence recurrence) {
     this.recurrence = recurrence;
   }
 

@@ -40,22 +40,23 @@ import io.aurinko.client.ApiClient;
   OccurrenceInfo.JSON_PROPERTY_START,
   OccurrenceInfo.JSON_PROPERTY_MASTER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class OccurrenceInfo {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    REGULAR("regular"),
+    REGULAR(String.valueOf("regular")),
     
-    MODIFIED("modified"),
+    MODIFIED(String.valueOf("modified")),
     
-    DELETED("deleted"),
+    DELETED(String.valueOf("deleted")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -85,21 +86,25 @@ public class OccurrenceInfo {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String JSON_PROPERTY_ORIGINAL_START = "originalStart";
+  @javax.annotation.Nullable
   private EventDateTime originalStart;
 
   public static final String JSON_PROPERTY_START = "start";
+  @javax.annotation.Nullable
   private EventDateTime start;
 
   public static final String JSON_PROPERTY_MASTER_ID = "masterId";
+  @javax.annotation.Nullable
   private String masterId;
 
   public OccurrenceInfo() { 
   }
 
-  public OccurrenceInfo id(String id) {
+  public OccurrenceInfo id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -118,12 +123,12 @@ public class OccurrenceInfo {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public OccurrenceInfo type(TypeEnum type) {
+  public OccurrenceInfo type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -142,12 +147,12 @@ public class OccurrenceInfo {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public OccurrenceInfo originalStart(EventDateTime originalStart) {
+  public OccurrenceInfo originalStart(@javax.annotation.Nullable EventDateTime originalStart) {
     this.originalStart = originalStart;
     return this;
   }
@@ -166,12 +171,12 @@ public class OccurrenceInfo {
 
   @JsonProperty(JSON_PROPERTY_ORIGINAL_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOriginalStart(EventDateTime originalStart) {
+  public void setOriginalStart(@javax.annotation.Nullable EventDateTime originalStart) {
     this.originalStart = originalStart;
   }
 
 
-  public OccurrenceInfo start(EventDateTime start) {
+  public OccurrenceInfo start(@javax.annotation.Nullable EventDateTime start) {
     this.start = start;
     return this;
   }
@@ -190,12 +195,12 @@ public class OccurrenceInfo {
 
   @JsonProperty(JSON_PROPERTY_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStart(EventDateTime start) {
+  public void setStart(@javax.annotation.Nullable EventDateTime start) {
     this.start = start;
   }
 
 
-  public OccurrenceInfo masterId(String masterId) {
+  public OccurrenceInfo masterId(@javax.annotation.Nullable String masterId) {
     this.masterId = masterId;
     return this;
   }
@@ -214,7 +219,7 @@ public class OccurrenceInfo {
 
   @JsonProperty(JSON_PROPERTY_MASTER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMasterId(String masterId) {
+  public void setMasterId(@javax.annotation.Nullable String masterId) {
     this.masterId = masterId;
   }
 

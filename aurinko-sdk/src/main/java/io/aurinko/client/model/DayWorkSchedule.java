@@ -40,18 +40,20 @@ import io.aurinko.client.ApiClient;
   DayWorkSchedule.JSON_PROPERTY_DAY_OF_WEEK,
   DayWorkSchedule.JSON_PROPERTY_WORKING_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class DayWorkSchedule {
   public static final String JSON_PROPERTY_DAY_OF_WEEK = "dayOfWeek";
+  @javax.annotation.Nullable
   private DayOfWeek dayOfWeek;
 
   public static final String JSON_PROPERTY_WORKING_INTERVALS = "workingIntervals";
+  @javax.annotation.Nullable
   private List<WorkingInterval> workingIntervals = new ArrayList<>();
 
   public DayWorkSchedule() { 
   }
 
-  public DayWorkSchedule dayOfWeek(DayOfWeek dayOfWeek) {
+  public DayWorkSchedule dayOfWeek(@javax.annotation.Nullable DayOfWeek dayOfWeek) {
     this.dayOfWeek = dayOfWeek;
     return this;
   }
@@ -70,12 +72,12 @@ public class DayWorkSchedule {
 
   @JsonProperty(JSON_PROPERTY_DAY_OF_WEEK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDayOfWeek(DayOfWeek dayOfWeek) {
+  public void setDayOfWeek(@javax.annotation.Nullable DayOfWeek dayOfWeek) {
     this.dayOfWeek = dayOfWeek;
   }
 
 
-  public DayWorkSchedule workingIntervals(List<WorkingInterval> workingIntervals) {
+  public DayWorkSchedule workingIntervals(@javax.annotation.Nullable List<WorkingInterval> workingIntervals) {
     this.workingIntervals = workingIntervals;
     return this;
   }
@@ -102,7 +104,7 @@ public class DayWorkSchedule {
 
   @JsonProperty(JSON_PROPERTY_WORKING_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWorkingIntervals(List<WorkingInterval> workingIntervals) {
+  public void setWorkingIntervals(@javax.annotation.Nullable List<WorkingInterval> workingIntervals) {
     this.workingIntervals = workingIntervals;
   }
 

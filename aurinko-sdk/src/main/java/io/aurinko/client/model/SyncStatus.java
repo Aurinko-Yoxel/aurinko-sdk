@@ -37,21 +37,24 @@ import io.aurinko.client.ApiClient;
   SyncStatus.JSON_PROPERTY_SYNC_DELETED_TOKEN,
   SyncStatus.JSON_PROPERTY_READY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SyncStatus {
   public static final String JSON_PROPERTY_SYNC_UPDATED_TOKEN = "syncUpdatedToken";
+  @javax.annotation.Nullable
   private String syncUpdatedToken;
 
   public static final String JSON_PROPERTY_SYNC_DELETED_TOKEN = "syncDeletedToken";
+  @javax.annotation.Nullable
   private String syncDeletedToken;
 
   public static final String JSON_PROPERTY_READY = "ready";
+  @javax.annotation.Nullable
   private Boolean ready;
 
   public SyncStatus() { 
   }
 
-  public SyncStatus syncUpdatedToken(String syncUpdatedToken) {
+  public SyncStatus syncUpdatedToken(@javax.annotation.Nullable String syncUpdatedToken) {
     this.syncUpdatedToken = syncUpdatedToken;
     return this;
   }
@@ -70,12 +73,12 @@ public class SyncStatus {
 
   @JsonProperty(JSON_PROPERTY_SYNC_UPDATED_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSyncUpdatedToken(String syncUpdatedToken) {
+  public void setSyncUpdatedToken(@javax.annotation.Nullable String syncUpdatedToken) {
     this.syncUpdatedToken = syncUpdatedToken;
   }
 
 
-  public SyncStatus syncDeletedToken(String syncDeletedToken) {
+  public SyncStatus syncDeletedToken(@javax.annotation.Nullable String syncDeletedToken) {
     this.syncDeletedToken = syncDeletedToken;
     return this;
   }
@@ -94,12 +97,12 @@ public class SyncStatus {
 
   @JsonProperty(JSON_PROPERTY_SYNC_DELETED_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSyncDeletedToken(String syncDeletedToken) {
+  public void setSyncDeletedToken(@javax.annotation.Nullable String syncDeletedToken) {
     this.syncDeletedToken = syncDeletedToken;
   }
 
 
-  public SyncStatus ready(Boolean ready) {
+  public SyncStatus ready(@javax.annotation.Nullable Boolean ready) {
     this.ready = ready;
     return this;
   }
@@ -118,7 +121,7 @@ public class SyncStatus {
 
   @JsonProperty(JSON_PROPERTY_READY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReady(Boolean ready) {
+  public void setReady(@javax.annotation.Nullable Boolean ready) {
     this.ready = ready;
   }
 

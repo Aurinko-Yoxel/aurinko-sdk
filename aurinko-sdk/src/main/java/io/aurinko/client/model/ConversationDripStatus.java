@@ -51,29 +51,31 @@ import io.aurinko.client.ApiClient;
   ConversationDripStatus.JSON_PROPERTY_TARGETS,
   ConversationDripStatus.JSON_PROPERTY_DRIP_RESPONDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ConversationDripStatus {
   public static final String JSON_PROPERTY_CONVO_ID = "convoId";
+  @javax.annotation.Nullable
   private String convoId;
 
   public static final String JSON_PROPERTY_SUBJECT = "subject";
+  @javax.annotation.Nullable
   private String subject;
 
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    DISABLED("disabled"),
+    DISABLED(String.valueOf("disabled")),
     
-    ACTIVE("active"),
+    ACTIVE(String.valueOf("active")),
     
-    FAILED("failed"),
+    FAILED(String.valueOf("failed")),
     
-    FINISHED("finished"),
+    FINISHED(String.valueOf("finished")),
     
-    RULE_INCOMPLETE("ruleIncomplete"),
+    RULE_INCOMPLETE(String.valueOf("ruleIncomplete")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -103,36 +105,45 @@ public class ConversationDripStatus {
   }
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String JSON_PROPERTY_RULE = "rule";
+  @javax.annotation.Nullable
   private List<FollowupRuleAggregateOut> rule = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DRIP_STARTED_AT = "dripStartedAt";
+  @javax.annotation.Nullable
   private OffsetDateTime dripStartedAt;
 
   public static final String JSON_PROPERTY_DRIP_LAST_NUM = "dripLastNum";
+  @javax.annotation.Nullable
   private Integer dripLastNum;
 
   public static final String JSON_PROPERTY_DRIP_ERROR = "dripError";
+  @javax.annotation.Nullable
   private String dripError;
 
   public static final String JSON_PROPERTY_DRIP_ENDED_AT = "dripEndedAt";
+  @javax.annotation.Nullable
   private OffsetDateTime dripEndedAt;
 
   public static final String JSON_PROPERTY_ACTION_VARS = "actionVars";
+  @javax.annotation.Nullable
   private Map<String, String> actionVars = new HashMap<>();
 
   public static final String JSON_PROPERTY_TARGETS = "targets";
+  @javax.annotation.Nullable
   private List<String> targets = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DRIP_RESPONDER = "dripResponder";
+  @javax.annotation.Nullable
   private String dripResponder;
 
   public ConversationDripStatus() { 
   }
 
-  public ConversationDripStatus convoId(String convoId) {
+  public ConversationDripStatus convoId(@javax.annotation.Nullable String convoId) {
     this.convoId = convoId;
     return this;
   }
@@ -151,12 +162,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_CONVO_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setConvoId(String convoId) {
+  public void setConvoId(@javax.annotation.Nullable String convoId) {
     this.convoId = convoId;
   }
 
 
-  public ConversationDripStatus subject(String subject) {
+  public ConversationDripStatus subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
@@ -175,12 +186,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_SUBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public ConversationDripStatus status(StatusEnum status) {
+  public ConversationDripStatus status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -199,12 +210,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public ConversationDripStatus rule(List<FollowupRuleAggregateOut> rule) {
+  public ConversationDripStatus rule(@javax.annotation.Nullable List<FollowupRuleAggregateOut> rule) {
     this.rule = rule;
     return this;
   }
@@ -231,12 +242,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_RULE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRule(List<FollowupRuleAggregateOut> rule) {
+  public void setRule(@javax.annotation.Nullable List<FollowupRuleAggregateOut> rule) {
     this.rule = rule;
   }
 
 
-  public ConversationDripStatus dripStartedAt(OffsetDateTime dripStartedAt) {
+  public ConversationDripStatus dripStartedAt(@javax.annotation.Nullable OffsetDateTime dripStartedAt) {
     this.dripStartedAt = dripStartedAt;
     return this;
   }
@@ -255,12 +266,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_DRIP_STARTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDripStartedAt(OffsetDateTime dripStartedAt) {
+  public void setDripStartedAt(@javax.annotation.Nullable OffsetDateTime dripStartedAt) {
     this.dripStartedAt = dripStartedAt;
   }
 
 
-  public ConversationDripStatus dripLastNum(Integer dripLastNum) {
+  public ConversationDripStatus dripLastNum(@javax.annotation.Nullable Integer dripLastNum) {
     this.dripLastNum = dripLastNum;
     return this;
   }
@@ -279,12 +290,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_DRIP_LAST_NUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDripLastNum(Integer dripLastNum) {
+  public void setDripLastNum(@javax.annotation.Nullable Integer dripLastNum) {
     this.dripLastNum = dripLastNum;
   }
 
 
-  public ConversationDripStatus dripError(String dripError) {
+  public ConversationDripStatus dripError(@javax.annotation.Nullable String dripError) {
     this.dripError = dripError;
     return this;
   }
@@ -303,12 +314,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_DRIP_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDripError(String dripError) {
+  public void setDripError(@javax.annotation.Nullable String dripError) {
     this.dripError = dripError;
   }
 
 
-  public ConversationDripStatus dripEndedAt(OffsetDateTime dripEndedAt) {
+  public ConversationDripStatus dripEndedAt(@javax.annotation.Nullable OffsetDateTime dripEndedAt) {
     this.dripEndedAt = dripEndedAt;
     return this;
   }
@@ -327,12 +338,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_DRIP_ENDED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDripEndedAt(OffsetDateTime dripEndedAt) {
+  public void setDripEndedAt(@javax.annotation.Nullable OffsetDateTime dripEndedAt) {
     this.dripEndedAt = dripEndedAt;
   }
 
 
-  public ConversationDripStatus actionVars(Map<String, String> actionVars) {
+  public ConversationDripStatus actionVars(@javax.annotation.Nullable Map<String, String> actionVars) {
     this.actionVars = actionVars;
     return this;
   }
@@ -359,12 +370,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_ACTION_VARS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActionVars(Map<String, String> actionVars) {
+  public void setActionVars(@javax.annotation.Nullable Map<String, String> actionVars) {
     this.actionVars = actionVars;
   }
 
 
-  public ConversationDripStatus targets(List<String> targets) {
+  public ConversationDripStatus targets(@javax.annotation.Nullable List<String> targets) {
     this.targets = targets;
     return this;
   }
@@ -391,12 +402,12 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_TARGETS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargets(List<String> targets) {
+  public void setTargets(@javax.annotation.Nullable List<String> targets) {
     this.targets = targets;
   }
 
 
-  public ConversationDripStatus dripResponder(String dripResponder) {
+  public ConversationDripStatus dripResponder(@javax.annotation.Nullable String dripResponder) {
     this.dripResponder = dripResponder;
     return this;
   }
@@ -415,7 +426,7 @@ public class ConversationDripStatus {
 
   @JsonProperty(JSON_PROPERTY_DRIP_RESPONDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDripResponder(String dripResponder) {
+  public void setDripResponder(@javax.annotation.Nullable String dripResponder) {
     this.dripResponder = dripResponder;
   }
 

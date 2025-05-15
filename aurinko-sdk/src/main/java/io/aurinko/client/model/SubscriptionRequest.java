@@ -24,7 +24,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.DataConsumerFilter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -34,20 +37,27 @@ import io.aurinko.client.ApiClient;
  */
 @JsonPropertyOrder({
   SubscriptionRequest.JSON_PROPERTY_RESOURCE,
-  SubscriptionRequest.JSON_PROPERTY_NOTIFICATION_URL
+  SubscriptionRequest.JSON_PROPERTY_NOTIFICATION_URL,
+  SubscriptionRequest.JSON_PROPERTY_FILTERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SubscriptionRequest {
   public static final String JSON_PROPERTY_RESOURCE = "resource";
+  @javax.annotation.Nullable
   private String resource;
 
   public static final String JSON_PROPERTY_NOTIFICATION_URL = "notificationUrl";
+  @javax.annotation.Nullable
   private String notificationUrl;
+
+  public static final String JSON_PROPERTY_FILTERS = "filters";
+  @javax.annotation.Nullable
+  private List<DataConsumerFilter> filters = new ArrayList<>();
 
   public SubscriptionRequest() { 
   }
 
-  public SubscriptionRequest resource(String resource) {
+  public SubscriptionRequest resource(@javax.annotation.Nullable String resource) {
     this.resource = resource;
     return this;
   }
@@ -66,12 +76,12 @@ public class SubscriptionRequest {
 
   @JsonProperty(JSON_PROPERTY_RESOURCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResource(String resource) {
+  public void setResource(@javax.annotation.Nullable String resource) {
     this.resource = resource;
   }
 
 
-  public SubscriptionRequest notificationUrl(String notificationUrl) {
+  public SubscriptionRequest notificationUrl(@javax.annotation.Nullable String notificationUrl) {
     this.notificationUrl = notificationUrl;
     return this;
   }
@@ -90,8 +100,40 @@ public class SubscriptionRequest {
 
   @JsonProperty(JSON_PROPERTY_NOTIFICATION_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNotificationUrl(String notificationUrl) {
+  public void setNotificationUrl(@javax.annotation.Nullable String notificationUrl) {
     this.notificationUrl = notificationUrl;
+  }
+
+
+  public SubscriptionRequest filters(@javax.annotation.Nullable List<DataConsumerFilter> filters) {
+    this.filters = filters;
+    return this;
+  }
+
+  public SubscriptionRequest addFiltersItem(DataConsumerFilter filtersItem) {
+    if (this.filters == null) {
+      this.filters = new ArrayList<>();
+    }
+    this.filters.add(filtersItem);
+    return this;
+  }
+
+  /**
+   * Get filters
+   * @return filters
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FILTERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<DataConsumerFilter> getFilters() {
+    return filters;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FILTERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFilters(@javax.annotation.Nullable List<DataConsumerFilter> filters) {
+    this.filters = filters;
   }
 
 
@@ -108,12 +150,13 @@ public class SubscriptionRequest {
     }
     SubscriptionRequest subscriptionRequest = (SubscriptionRequest) o;
     return Objects.equals(this.resource, subscriptionRequest.resource) &&
-        Objects.equals(this.notificationUrl, subscriptionRequest.notificationUrl);
+        Objects.equals(this.notificationUrl, subscriptionRequest.notificationUrl) &&
+        Objects.equals(this.filters, subscriptionRequest.filters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(resource, notificationUrl);
+    return Objects.hash(resource, notificationUrl, filters);
   }
 
   @Override
@@ -122,6 +165,7 @@ public class SubscriptionRequest {
     sb.append("class SubscriptionRequest {\n");
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    notificationUrl: ").append(toIndentedString(notificationUrl)).append("\n");
+    sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,6 +221,17 @@ public class SubscriptionRequest {
     // add `notificationUrl` to the URL query string
     if (getNotificationUrl() != null) {
       joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotificationUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `filters` to the URL query string
+    if (getFilters() != null) {
+      for (int i = 0; i < getFilters().size(); i++) {
+        if (getFilters().get(i) != null) {
+          joiner.add(String.format("%sfilters%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+              URLEncoder.encode(ApiClient.valueToString(getFilters().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+        }
+      }
     }
 
     return joiner.toString();

@@ -40,24 +40,30 @@ import io.aurinko.client.ApiClient;
   OnlineMeetingDetails.JSON_PROPERTY_SIP,
   OnlineMeetingDetails.JSON_PROPERTY_INFO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class OnlineMeetingDetails {
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nullable
   private String url;
 
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String JSON_PROPERTY_PIN = "pin";
+  @javax.annotation.Nullable
   private String pin;
 
   public static final String JSON_PROPERTY_REGION_CODE = "regionCode";
+  @javax.annotation.Nullable
   private String regionCode;
 
   public static final String JSON_PROPERTY_SIP = "sip";
+  @javax.annotation.Nullable
   private String sip;
 
   public static final String JSON_PROPERTY_INFO_URL = "infoUrl";
+  @javax.annotation.Nullable
   private String infoUrl;
 
   public OnlineMeetingDetails() { 

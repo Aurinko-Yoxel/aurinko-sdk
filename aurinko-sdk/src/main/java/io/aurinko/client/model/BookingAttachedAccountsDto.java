@@ -37,15 +37,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   BookingAttachedAccountsDto.JSON_PROPERTY_ACCOUNT_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class BookingAttachedAccountsDto {
   public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
+  @javax.annotation.Nullable
   private List<Long> accountIds = new ArrayList<>();
 
   public BookingAttachedAccountsDto() { 
   }
 
-  public BookingAttachedAccountsDto accountIds(List<Long> accountIds) {
+  public BookingAttachedAccountsDto accountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
     return this;
   }
@@ -72,7 +73,7 @@ public class BookingAttachedAccountsDto {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountIds(List<Long> accountIds) {
+  public void setAccountIds(@javax.annotation.Nullable List<Long> accountIds) {
     this.accountIds = accountIds;
   }
 

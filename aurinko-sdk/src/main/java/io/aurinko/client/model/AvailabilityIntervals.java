@@ -38,15 +38,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   AvailabilityIntervals.JSON_PROPERTY_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class AvailabilityIntervals {
   public static final String JSON_PROPERTY_INTERVALS = "intervals";
+  @javax.annotation.Nullable
   private List<AvailabilityInterval> intervals = new ArrayList<>();
 
   public AvailabilityIntervals() { 
   }
 
-  public AvailabilityIntervals intervals(List<AvailabilityInterval> intervals) {
+  public AvailabilityIntervals intervals(@javax.annotation.Nullable List<AvailabilityInterval> intervals) {
     this.intervals = intervals;
     return this;
   }
@@ -73,7 +74,7 @@ public class AvailabilityIntervals {
 
   @JsonProperty(JSON_PROPERTY_INTERVALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIntervals(List<AvailabilityInterval> intervals) {
+  public void setIntervals(@javax.annotation.Nullable List<AvailabilityInterval> intervals) {
     this.intervals = intervals;
   }
 

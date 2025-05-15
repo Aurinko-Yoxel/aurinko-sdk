@@ -18,7 +18,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.DataConsumerFilter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -51,6 +54,14 @@ class SubscriptionRequestTest {
     @Test
     void notificationUrlTest() {
         // TODO: test notificationUrl
+    }
+
+    /**
+     * Test the property 'filters'
+     */
+    @Test
+    void filtersTest() {
+        // TODO: test filters
     }
 
 }

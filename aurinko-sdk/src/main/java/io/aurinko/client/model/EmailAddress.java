@@ -37,15 +37,18 @@ import io.aurinko.client.ApiClient;
   EmailAddress.JSON_PROPERTY_ADDRESS,
   EmailAddress.JSON_PROPERTY_RAW
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailAddress {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
+  @javax.annotation.Nullable
   private String address;
 
   public static final String JSON_PROPERTY_RAW = "raw";
+  @javax.annotation.Nullable
   private String raw;
 
   public EmailAddress() { 
@@ -59,7 +62,7 @@ public class EmailAddress {
     this.raw = raw;
   }
 
-  public EmailAddress name(String name) {
+  public EmailAddress name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -78,12 +81,12 @@ public class EmailAddress {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public EmailAddress address(String address) {
+  public EmailAddress address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -102,7 +105,7 @@ public class EmailAddress {
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAddress(String address) {
+  public void setAddress(@javax.annotation.Nullable String address) {
     this.address = address;
   }
 

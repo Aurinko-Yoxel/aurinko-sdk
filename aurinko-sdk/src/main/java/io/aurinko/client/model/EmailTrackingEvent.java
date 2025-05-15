@@ -51,29 +51,31 @@ import io.aurinko.client.ApiClient;
   EmailTrackingEvent.JSON_PROPERTY_CONTEXT,
   EmailTrackingEvent.JSON_PROPERTY_TRACKING_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailTrackingEvent {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private Long id;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   /**
    * Gets or Sets eventType
    */
   public enum EventTypeEnum {
-    OPEN("open"),
+    OPEN(String.valueOf("open")),
     
-    CLICK("click"),
+    CLICK(String.valueOf("click")),
     
-    INITIAL("initial"),
+    INITIAL(String.valueOf("initial")),
     
-    REPLY("reply"),
+    REPLY(String.valueOf("reply")),
     
-    REPLY_BOUNCE("replyBounce"),
+    REPLY_BOUNCE(String.valueOf("replyBounce")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -103,51 +105,65 @@ public class EmailTrackingEvent {
   }
 
   public static final String JSON_PROPERTY_EVENT_TYPE = "eventType";
+  @javax.annotation.Nullable
   private EventTypeEnum eventType;
 
   public static final String JSON_PROPERTY_LOCATION = "location";
+  @javax.annotation.Nullable
   private String location;
 
   public static final String JSON_PROPERTY_USER_AGENT = "userAgent";
+  @javax.annotation.Nullable
   private String userAgent;
 
   public static final String JSON_PROPERTY_REFERRER = "referrer";
+  @javax.annotation.Nullable
   private String referrer;
 
   public static final String JSON_PROPERTY_REMOTE_ADDR = "remoteAddr";
+  @javax.annotation.Nullable
   private String remoteAddr;
 
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
+  @javax.annotation.Nullable
   private String threadId;
 
   public static final String JSON_PROPERTY_MESSAGE_ID = "messageId";
+  @javax.annotation.Nullable
   private String messageId;
 
   public static final String JSON_PROPERTY_INTERNET_MESSAGE_ID = "internetMessageId";
+  @javax.annotation.Nullable
   private String internetMessageId;
 
   public static final String JSON_PROPERTY_TRACKING_ID = "trackingId";
+  @javax.annotation.Nullable
   private Long trackingId;
 
   public static final String JSON_PROPERTY_TRACKING_THREAD_ID = "trackingThreadId";
+  @javax.annotation.Nullable
   private String trackingThreadId;
 
   public static final String JSON_PROPERTY_TRACKING_MESSAGE_ID = "trackingMessageId";
+  @javax.annotation.Nullable
   private String trackingMessageId;
 
   public static final String JSON_PROPERTY_TRACKING_INTERNET_MESSAGE_ID = "trackingInternetMessageId";
+  @javax.annotation.Nullable
   private String trackingInternetMessageId;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
+  @javax.annotation.Nullable
   private String context;
 
   public static final String JSON_PROPERTY_TRACKING_CODE = "trackingCode";
+  @javax.annotation.Nullable
   private String trackingCode;
 
   public EmailTrackingEvent() { 
   }
 
-  public EmailTrackingEvent id(Long id) {
+  public EmailTrackingEvent id(@javax.annotation.Nullable Long id) {
     this.id = id;
     return this;
   }
@@ -166,12 +182,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(Long id) {
+  public void setId(@javax.annotation.Nullable Long id) {
     this.id = id;
   }
 
 
-  public EmailTrackingEvent createdAt(OffsetDateTime createdAt) {
+  public EmailTrackingEvent createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -190,12 +206,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public EmailTrackingEvent eventType(EventTypeEnum eventType) {
+  public EmailTrackingEvent eventType(@javax.annotation.Nullable EventTypeEnum eventType) {
     this.eventType = eventType;
     return this;
   }
@@ -214,12 +230,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_EVENT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEventType(EventTypeEnum eventType) {
+  public void setEventType(@javax.annotation.Nullable EventTypeEnum eventType) {
     this.eventType = eventType;
   }
 
 
-  public EmailTrackingEvent location(String location) {
+  public EmailTrackingEvent location(@javax.annotation.Nullable String location) {
     this.location = location;
     return this;
   }
@@ -238,12 +254,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLocation(String location) {
+  public void setLocation(@javax.annotation.Nullable String location) {
     this.location = location;
   }
 
 
-  public EmailTrackingEvent userAgent(String userAgent) {
+  public EmailTrackingEvent userAgent(@javax.annotation.Nullable String userAgent) {
     this.userAgent = userAgent;
     return this;
   }
@@ -262,12 +278,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_USER_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserAgent(String userAgent) {
+  public void setUserAgent(@javax.annotation.Nullable String userAgent) {
     this.userAgent = userAgent;
   }
 
 
-  public EmailTrackingEvent referrer(String referrer) {
+  public EmailTrackingEvent referrer(@javax.annotation.Nullable String referrer) {
     this.referrer = referrer;
     return this;
   }
@@ -286,12 +302,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_REFERRER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReferrer(String referrer) {
+  public void setReferrer(@javax.annotation.Nullable String referrer) {
     this.referrer = referrer;
   }
 
 
-  public EmailTrackingEvent remoteAddr(String remoteAddr) {
+  public EmailTrackingEvent remoteAddr(@javax.annotation.Nullable String remoteAddr) {
     this.remoteAddr = remoteAddr;
     return this;
   }
@@ -310,12 +326,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_REMOTE_ADDR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRemoteAddr(String remoteAddr) {
+  public void setRemoteAddr(@javax.annotation.Nullable String remoteAddr) {
     this.remoteAddr = remoteAddr;
   }
 
 
-  public EmailTrackingEvent threadId(String threadId) {
+  public EmailTrackingEvent threadId(@javax.annotation.Nullable String threadId) {
     this.threadId = threadId;
     return this;
   }
@@ -334,12 +350,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreadId(String threadId) {
+  public void setThreadId(@javax.annotation.Nullable String threadId) {
     this.threadId = threadId;
   }
 
 
-  public EmailTrackingEvent messageId(String messageId) {
+  public EmailTrackingEvent messageId(@javax.annotation.Nullable String messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -358,12 +374,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageId(String messageId) {
+  public void setMessageId(@javax.annotation.Nullable String messageId) {
     this.messageId = messageId;
   }
 
 
-  public EmailTrackingEvent internetMessageId(String internetMessageId) {
+  public EmailTrackingEvent internetMessageId(@javax.annotation.Nullable String internetMessageId) {
     this.internetMessageId = internetMessageId;
     return this;
   }
@@ -382,12 +398,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_INTERNET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInternetMessageId(String internetMessageId) {
+  public void setInternetMessageId(@javax.annotation.Nullable String internetMessageId) {
     this.internetMessageId = internetMessageId;
   }
 
 
-  public EmailTrackingEvent trackingId(Long trackingId) {
+  public EmailTrackingEvent trackingId(@javax.annotation.Nullable Long trackingId) {
     this.trackingId = trackingId;
     return this;
   }
@@ -406,12 +422,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingId(Long trackingId) {
+  public void setTrackingId(@javax.annotation.Nullable Long trackingId) {
     this.trackingId = trackingId;
   }
 
 
-  public EmailTrackingEvent trackingThreadId(String trackingThreadId) {
+  public EmailTrackingEvent trackingThreadId(@javax.annotation.Nullable String trackingThreadId) {
     this.trackingThreadId = trackingThreadId;
     return this;
   }
@@ -430,12 +446,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_THREAD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingThreadId(String trackingThreadId) {
+  public void setTrackingThreadId(@javax.annotation.Nullable String trackingThreadId) {
     this.trackingThreadId = trackingThreadId;
   }
 
 
-  public EmailTrackingEvent trackingMessageId(String trackingMessageId) {
+  public EmailTrackingEvent trackingMessageId(@javax.annotation.Nullable String trackingMessageId) {
     this.trackingMessageId = trackingMessageId;
     return this;
   }
@@ -454,12 +470,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingMessageId(String trackingMessageId) {
+  public void setTrackingMessageId(@javax.annotation.Nullable String trackingMessageId) {
     this.trackingMessageId = trackingMessageId;
   }
 
 
-  public EmailTrackingEvent trackingInternetMessageId(String trackingInternetMessageId) {
+  public EmailTrackingEvent trackingInternetMessageId(@javax.annotation.Nullable String trackingInternetMessageId) {
     this.trackingInternetMessageId = trackingInternetMessageId;
     return this;
   }
@@ -478,12 +494,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_INTERNET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingInternetMessageId(String trackingInternetMessageId) {
+  public void setTrackingInternetMessageId(@javax.annotation.Nullable String trackingInternetMessageId) {
     this.trackingInternetMessageId = trackingInternetMessageId;
   }
 
 
-  public EmailTrackingEvent context(String context) {
+  public EmailTrackingEvent context(@javax.annotation.Nullable String context) {
     this.context = context;
     return this;
   }
@@ -502,12 +518,12 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(String context) {
+  public void setContext(@javax.annotation.Nullable String context) {
     this.context = context;
   }
 
 
-  public EmailTrackingEvent trackingCode(String trackingCode) {
+  public EmailTrackingEvent trackingCode(@javax.annotation.Nullable String trackingCode) {
     this.trackingCode = trackingCode;
     return this;
   }
@@ -526,7 +542,7 @@ public class EmailTrackingEvent {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCode(String trackingCode) {
+  public void setTrackingCode(@javax.annotation.Nullable String trackingCode) {
     this.trackingCode = trackingCode;
   }
 

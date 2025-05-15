@@ -68,6 +68,7 @@ docs/ConversationDripStatus.md
 docs/ConvertDraft.md
 docs/CreateMeetingDto.md
 docs/CreateMeetingResponse.md
+docs/DataConsumerFilter.md
 docs/DayOfWeek.md
 docs/DayWorkSchedule.md
 docs/DeletedEmailMessage.md
@@ -192,6 +193,8 @@ docs/UserAccountType.md
 docs/UserApi.md
 docs/WebhooksApi.md
 docs/WeekWorkSchedule.md
+docs/WellKnownFoldersIn.md
+docs/WellKnownFoldersOut.md
 docs/WorkHoursRequest.md
 docs/WorkHoursResponse.md
 docs/WorkHoursResponseItem.md
@@ -293,6 +296,7 @@ src/main/java/io/aurinko/client/model/ConversationDripStatus.java
 src/main/java/io/aurinko/client/model/ConvertDraft.java
 src/main/java/io/aurinko/client/model/CreateMeetingDto.java
 src/main/java/io/aurinko/client/model/CreateMeetingResponse.java
+src/main/java/io/aurinko/client/model/DataConsumerFilter.java
 src/main/java/io/aurinko/client/model/DayOfWeek.java
 src/main/java/io/aurinko/client/model/DayWorkSchedule.java
 src/main/java/io/aurinko/client/model/DeletedEmailMessage.java
@@ -401,6 +405,8 @@ src/main/java/io/aurinko/client/model/UpdateDraftTrackingIn.java
 src/main/java/io/aurinko/client/model/UpdateMessageStatusData.java
 src/main/java/io/aurinko/client/model/UserAccountType.java
 src/main/java/io/aurinko/client/model/WeekWorkSchedule.java
+src/main/java/io/aurinko/client/model/WellKnownFoldersIn.java
+src/main/java/io/aurinko/client/model/WellKnownFoldersOut.java
 src/main/java/io/aurinko/client/model/WorkHoursRequest.java
 src/main/java/io/aurinko/client/model/WorkHoursResponse.java
 src/main/java/io/aurinko/client/model/WorkHoursResponseItem.java
@@ -483,6 +489,7 @@ src/test/java/io/aurinko/client/model/ConversationDripStatusTest.java
 src/test/java/io/aurinko/client/model/ConvertDraftTest.java
 src/test/java/io/aurinko/client/model/CreateMeetingDtoTest.java
 src/test/java/io/aurinko/client/model/CreateMeetingResponseTest.java
+src/test/java/io/aurinko/client/model/DataConsumerFilterTest.java
 src/test/java/io/aurinko/client/model/DayOfWeekTest.java
 src/test/java/io/aurinko/client/model/DayWorkScheduleTest.java
 src/test/java/io/aurinko/client/model/DeletedEmailMessageTest.java
@@ -591,6 +598,8 @@ src/test/java/io/aurinko/client/model/UpdateDraftTrackingInTest.java
 src/test/java/io/aurinko/client/model/UpdateMessageStatusDataTest.java
 src/test/java/io/aurinko/client/model/UserAccountTypeTest.java
 src/test/java/io/aurinko/client/model/WeekWorkScheduleTest.java
+src/test/java/io/aurinko/client/model/WellKnownFoldersInTest.java
+src/test/java/io/aurinko/client/model/WellKnownFoldersOutTest.java
 src/test/java/io/aurinko/client/model/WorkHoursRequestTest.java
 src/test/java/io/aurinko/client/model/WorkHoursResponseItemTest.java
 src/test/java/io/aurinko/client/model/WorkHoursResponseTest.java

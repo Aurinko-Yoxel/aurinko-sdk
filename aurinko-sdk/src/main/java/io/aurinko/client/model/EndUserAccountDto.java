@@ -69,90 +69,116 @@ import io.aurinko.client.ApiClient;
   EndUserAccountDto.JSON_PROPERTY_TRACKING_ACTIVE,
   EndUserAccountDto.JSON_PROPERTY_TEMPLATES_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EndUserAccountDto {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private Long id;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parentId";
+  @javax.annotation.Nullable
   private Long parentId;
 
   public static final String JSON_PROPERTY_SERVICE_TYPE = "serviceType";
+  @javax.annotation.Nullable
   private ServiceType serviceType;
 
   public static final String JSON_PROPERTY_USER_ACCOUNT_TYPE = "userAccountType";
+  @javax.annotation.Nullable
   private UserAccountType userAccountType;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private AccountType type;
 
   public static final String JSON_PROPERTY_ACTIVE = "active";
+  @javax.annotation.Nullable
   private Boolean active;
 
   public static final String JSON_PROPERTY_LOGIN_STRING = "loginString";
+  @javax.annotation.Nullable
   private String loginString;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_SERVER_URL = "serverUrl";
+  @javax.annotation.Nullable
   private String serverUrl;
 
   public static final String JSON_PROPERTY_SERVER_URL2 = "serverUrl2";
+  @javax.annotation.Nullable
   private String serverUrl2;
 
   public static final String JSON_PROPERTY_CLIENT_ORG_ID = "clientOrgId";
+  @javax.annotation.Nullable
   private String clientOrgId;
 
   public static final String JSON_PROPERTY_AUTH_USER_ID = "authUserId";
+  @javax.annotation.Nullable
   private String authUserId;
 
   public static final String JSON_PROPERTY_AUTH_ORG_ID = "authOrgId";
+  @javax.annotation.Nullable
   private String authOrgId;
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
+  @javax.annotation.Nullable
   private String timezone;
 
   public static final String JSON_PROPERTY_AUTH_OBTAINED_AT = "authObtainedAt";
+  @javax.annotation.Nullable
   private OffsetDateTime authObtainedAt;
 
   public static final String JSON_PROPERTY_ORGANIZATION = "organization";
+  @javax.annotation.Nullable
   private OrganizationDto organization;
 
   public static final String JSON_PROPERTY_TOKEN_STATUS = "tokenStatus";
+  @javax.annotation.Nullable
   private TokenStatus tokenStatus;
 
   public static final String JSON_PROPERTY_SCOPES = "scopes";
+  @javax.annotation.Nullable
   private List<Scope> scopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AUTH_SCOPES = "authScopes";
+  @javax.annotation.Nullable
   private List<Scope> authScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NATIVE_SCOPES = "nativeScopes";
+  @javax.annotation.Nullable
   private List<String> nativeScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AUTH_NATIVE_SCOPES = "authNativeScopes";
+  @javax.annotation.Nullable
   private List<String> authNativeScopes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_HAS_API_ERRORS = "hasApiErrors";
+  @javax.annotation.Nullable
   private Boolean hasApiErrors;
 
   public static final String JSON_PROPERTY_BOOKING_COUNT = "bookingCount";
+  @javax.annotation.Nullable
   private Integer bookingCount;
 
   public static final String JSON_PROPERTY_TRACKING_ACTIVE = "trackingActive";
+  @javax.annotation.Nullable
   private Boolean trackingActive;
 
   public static final String JSON_PROPERTY_TEMPLATES_COUNT = "templatesCount";
+  @javax.annotation.Nullable
   private Integer templatesCount;
 
   public EndUserAccountDto() { 
   }
 
-  public EndUserAccountDto id(Long id) {
+  public EndUserAccountDto id(@javax.annotation.Nullable Long id) {
     this.id = id;
     return this;
   }
@@ -171,12 +197,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(Long id) {
+  public void setId(@javax.annotation.Nullable Long id) {
     this.id = id;
   }
 
 
-  public EndUserAccountDto parentId(Long parentId) {
+  public EndUserAccountDto parentId(@javax.annotation.Nullable Long parentId) {
     this.parentId = parentId;
     return this;
   }
@@ -195,12 +221,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentId(Long parentId) {
+  public void setParentId(@javax.annotation.Nullable Long parentId) {
     this.parentId = parentId;
   }
 
 
-  public EndUserAccountDto serviceType(ServiceType serviceType) {
+  public EndUserAccountDto serviceType(@javax.annotation.Nullable ServiceType serviceType) {
     this.serviceType = serviceType;
     return this;
   }
@@ -219,12 +245,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_SERVICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setServiceType(ServiceType serviceType) {
+  public void setServiceType(@javax.annotation.Nullable ServiceType serviceType) {
     this.serviceType = serviceType;
   }
 
 
-  public EndUserAccountDto userAccountType(UserAccountType userAccountType) {
+  public EndUserAccountDto userAccountType(@javax.annotation.Nullable UserAccountType userAccountType) {
     this.userAccountType = userAccountType;
     return this;
   }
@@ -243,12 +269,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_USER_ACCOUNT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserAccountType(UserAccountType userAccountType) {
+  public void setUserAccountType(@javax.annotation.Nullable UserAccountType userAccountType) {
     this.userAccountType = userAccountType;
   }
 
 
-  public EndUserAccountDto type(AccountType type) {
+  public EndUserAccountDto type(@javax.annotation.Nullable AccountType type) {
     this.type = type;
     return this;
   }
@@ -267,12 +293,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(AccountType type) {
+  public void setType(@javax.annotation.Nullable AccountType type) {
     this.type = type;
   }
 
 
-  public EndUserAccountDto active(Boolean active) {
+  public EndUserAccountDto active(@javax.annotation.Nullable Boolean active) {
     this.active = active;
     return this;
   }
@@ -291,12 +317,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nullable Boolean active) {
     this.active = active;
   }
 
 
-  public EndUserAccountDto loginString(String loginString) {
+  public EndUserAccountDto loginString(@javax.annotation.Nullable String loginString) {
     this.loginString = loginString;
     return this;
   }
@@ -315,12 +341,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_LOGIN_STRING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLoginString(String loginString) {
+  public void setLoginString(@javax.annotation.Nullable String loginString) {
     this.loginString = loginString;
   }
 
 
-  public EndUserAccountDto email(String email) {
+  public EndUserAccountDto email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -339,12 +365,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public EndUserAccountDto name(String name) {
+  public EndUserAccountDto name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -363,12 +389,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public EndUserAccountDto serverUrl(String serverUrl) {
+  public EndUserAccountDto serverUrl(@javax.annotation.Nullable String serverUrl) {
     this.serverUrl = serverUrl;
     return this;
   }
@@ -387,12 +413,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_SERVER_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setServerUrl(String serverUrl) {
+  public void setServerUrl(@javax.annotation.Nullable String serverUrl) {
     this.serverUrl = serverUrl;
   }
 
 
-  public EndUserAccountDto serverUrl2(String serverUrl2) {
+  public EndUserAccountDto serverUrl2(@javax.annotation.Nullable String serverUrl2) {
     this.serverUrl2 = serverUrl2;
     return this;
   }
@@ -411,12 +437,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_SERVER_URL2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setServerUrl2(String serverUrl2) {
+  public void setServerUrl2(@javax.annotation.Nullable String serverUrl2) {
     this.serverUrl2 = serverUrl2;
   }
 
 
-  public EndUserAccountDto clientOrgId(String clientOrgId) {
+  public EndUserAccountDto clientOrgId(@javax.annotation.Nullable String clientOrgId) {
     this.clientOrgId = clientOrgId;
     return this;
   }
@@ -435,12 +461,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_CLIENT_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setClientOrgId(String clientOrgId) {
+  public void setClientOrgId(@javax.annotation.Nullable String clientOrgId) {
     this.clientOrgId = clientOrgId;
   }
 
 
-  public EndUserAccountDto authUserId(String authUserId) {
+  public EndUserAccountDto authUserId(@javax.annotation.Nullable String authUserId) {
     this.authUserId = authUserId;
     return this;
   }
@@ -459,12 +485,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthUserId(String authUserId) {
+  public void setAuthUserId(@javax.annotation.Nullable String authUserId) {
     this.authUserId = authUserId;
   }
 
 
-  public EndUserAccountDto authOrgId(String authOrgId) {
+  public EndUserAccountDto authOrgId(@javax.annotation.Nullable String authOrgId) {
     this.authOrgId = authOrgId;
     return this;
   }
@@ -483,12 +509,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_ORG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthOrgId(String authOrgId) {
+  public void setAuthOrgId(@javax.annotation.Nullable String authOrgId) {
     this.authOrgId = authOrgId;
   }
 
 
-  public EndUserAccountDto timezone(String timezone) {
+  public EndUserAccountDto timezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -507,12 +533,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimezone(String timezone) {
+  public void setTimezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
   }
 
 
-  public EndUserAccountDto authObtainedAt(OffsetDateTime authObtainedAt) {
+  public EndUserAccountDto authObtainedAt(@javax.annotation.Nullable OffsetDateTime authObtainedAt) {
     this.authObtainedAt = authObtainedAt;
     return this;
   }
@@ -531,12 +557,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_OBTAINED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthObtainedAt(OffsetDateTime authObtainedAt) {
+  public void setAuthObtainedAt(@javax.annotation.Nullable OffsetDateTime authObtainedAt) {
     this.authObtainedAt = authObtainedAt;
   }
 
 
-  public EndUserAccountDto organization(OrganizationDto organization) {
+  public EndUserAccountDto organization(@javax.annotation.Nullable OrganizationDto organization) {
     this.organization = organization;
     return this;
   }
@@ -555,12 +581,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOrganization(OrganizationDto organization) {
+  public void setOrganization(@javax.annotation.Nullable OrganizationDto organization) {
     this.organization = organization;
   }
 
 
-  public EndUserAccountDto tokenStatus(TokenStatus tokenStatus) {
+  public EndUserAccountDto tokenStatus(@javax.annotation.Nullable TokenStatus tokenStatus) {
     this.tokenStatus = tokenStatus;
     return this;
   }
@@ -579,12 +605,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_TOKEN_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTokenStatus(TokenStatus tokenStatus) {
+  public void setTokenStatus(@javax.annotation.Nullable TokenStatus tokenStatus) {
     this.tokenStatus = tokenStatus;
   }
 
 
-  public EndUserAccountDto scopes(List<Scope> scopes) {
+  public EndUserAccountDto scopes(@javax.annotation.Nullable List<Scope> scopes) {
     this.scopes = scopes;
     return this;
   }
@@ -611,12 +637,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_SCOPES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setScopes(List<Scope> scopes) {
+  public void setScopes(@javax.annotation.Nullable List<Scope> scopes) {
     this.scopes = scopes;
   }
 
 
-  public EndUserAccountDto authScopes(List<Scope> authScopes) {
+  public EndUserAccountDto authScopes(@javax.annotation.Nullable List<Scope> authScopes) {
     this.authScopes = authScopes;
     return this;
   }
@@ -643,12 +669,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_SCOPES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthScopes(List<Scope> authScopes) {
+  public void setAuthScopes(@javax.annotation.Nullable List<Scope> authScopes) {
     this.authScopes = authScopes;
   }
 
 
-  public EndUserAccountDto nativeScopes(List<String> nativeScopes) {
+  public EndUserAccountDto nativeScopes(@javax.annotation.Nullable List<String> nativeScopes) {
     this.nativeScopes = nativeScopes;
     return this;
   }
@@ -675,12 +701,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_NATIVE_SCOPES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNativeScopes(List<String> nativeScopes) {
+  public void setNativeScopes(@javax.annotation.Nullable List<String> nativeScopes) {
     this.nativeScopes = nativeScopes;
   }
 
 
-  public EndUserAccountDto authNativeScopes(List<String> authNativeScopes) {
+  public EndUserAccountDto authNativeScopes(@javax.annotation.Nullable List<String> authNativeScopes) {
     this.authNativeScopes = authNativeScopes;
     return this;
   }
@@ -707,12 +733,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_AUTH_NATIVE_SCOPES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthNativeScopes(List<String> authNativeScopes) {
+  public void setAuthNativeScopes(@javax.annotation.Nullable List<String> authNativeScopes) {
     this.authNativeScopes = authNativeScopes;
   }
 
 
-  public EndUserAccountDto hasApiErrors(Boolean hasApiErrors) {
+  public EndUserAccountDto hasApiErrors(@javax.annotation.Nullable Boolean hasApiErrors) {
     this.hasApiErrors = hasApiErrors;
     return this;
   }
@@ -731,12 +757,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_HAS_API_ERRORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHasApiErrors(Boolean hasApiErrors) {
+  public void setHasApiErrors(@javax.annotation.Nullable Boolean hasApiErrors) {
     this.hasApiErrors = hasApiErrors;
   }
 
 
-  public EndUserAccountDto bookingCount(Integer bookingCount) {
+  public EndUserAccountDto bookingCount(@javax.annotation.Nullable Integer bookingCount) {
     this.bookingCount = bookingCount;
     return this;
   }
@@ -755,12 +781,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_BOOKING_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBookingCount(Integer bookingCount) {
+  public void setBookingCount(@javax.annotation.Nullable Integer bookingCount) {
     this.bookingCount = bookingCount;
   }
 
 
-  public EndUserAccountDto trackingActive(Boolean trackingActive) {
+  public EndUserAccountDto trackingActive(@javax.annotation.Nullable Boolean trackingActive) {
     this.trackingActive = trackingActive;
     return this;
   }
@@ -779,12 +805,12 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingActive(Boolean trackingActive) {
+  public void setTrackingActive(@javax.annotation.Nullable Boolean trackingActive) {
     this.trackingActive = trackingActive;
   }
 
 
-  public EndUserAccountDto templatesCount(Integer templatesCount) {
+  public EndUserAccountDto templatesCount(@javax.annotation.Nullable Integer templatesCount) {
     this.templatesCount = templatesCount;
     return this;
   }
@@ -803,7 +829,7 @@ public class EndUserAccountDto {
 
   @JsonProperty(JSON_PROPERTY_TEMPLATES_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTemplatesCount(Integer templatesCount) {
+  public void setTemplatesCount(@javax.annotation.Nullable Integer templatesCount) {
     this.templatesCount = templatesCount;
   }
 

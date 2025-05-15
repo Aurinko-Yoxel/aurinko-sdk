@@ -41,21 +41,24 @@ import io.aurinko.client.ApiClient;
   AvailabilityInterval.JSON_PROPERTY_DATE_END_INCLUSIVE,
   AvailabilityInterval.JSON_PROPERTY_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class AvailabilityInterval {
   public static final String JSON_PROPERTY_DATE_START_INCLUSIVE = "dateStartInclusive";
+  @javax.annotation.Nullable
   private LocalDate dateStartInclusive;
 
   public static final String JSON_PROPERTY_DATE_END_INCLUSIVE = "dateEndInclusive";
+  @javax.annotation.Nullable
   private LocalDate dateEndInclusive;
 
   public static final String JSON_PROPERTY_HOURS = "hours";
+  @javax.annotation.Nullable
   private List<WorkingInterval> hours = new ArrayList<>();
 
   public AvailabilityInterval() { 
   }
 
-  public AvailabilityInterval dateStartInclusive(LocalDate dateStartInclusive) {
+  public AvailabilityInterval dateStartInclusive(@javax.annotation.Nullable LocalDate dateStartInclusive) {
     this.dateStartInclusive = dateStartInclusive;
     return this;
   }
@@ -74,12 +77,12 @@ public class AvailabilityInterval {
 
   @JsonProperty(JSON_PROPERTY_DATE_START_INCLUSIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDateStartInclusive(LocalDate dateStartInclusive) {
+  public void setDateStartInclusive(@javax.annotation.Nullable LocalDate dateStartInclusive) {
     this.dateStartInclusive = dateStartInclusive;
   }
 
 
-  public AvailabilityInterval dateEndInclusive(LocalDate dateEndInclusive) {
+  public AvailabilityInterval dateEndInclusive(@javax.annotation.Nullable LocalDate dateEndInclusive) {
     this.dateEndInclusive = dateEndInclusive;
     return this;
   }
@@ -98,12 +101,12 @@ public class AvailabilityInterval {
 
   @JsonProperty(JSON_PROPERTY_DATE_END_INCLUSIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDateEndInclusive(LocalDate dateEndInclusive) {
+  public void setDateEndInclusive(@javax.annotation.Nullable LocalDate dateEndInclusive) {
     this.dateEndInclusive = dateEndInclusive;
   }
 
 
-  public AvailabilityInterval hours(List<WorkingInterval> hours) {
+  public AvailabilityInterval hours(@javax.annotation.Nullable List<WorkingInterval> hours) {
     this.hours = hours;
     return this;
   }
@@ -130,7 +133,7 @@ public class AvailabilityInterval {
 
   @JsonProperty(JSON_PROPERTY_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHours(List<WorkingInterval> hours) {
+  public void setHours(@javax.annotation.Nullable List<WorkingInterval> hours) {
     this.hours = hours;
   }
 

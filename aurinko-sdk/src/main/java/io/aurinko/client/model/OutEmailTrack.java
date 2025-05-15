@@ -38,24 +38,28 @@ import io.aurinko.client.ApiClient;
   OutEmailTrack.JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY,
   OutEmailTrack.JSON_PROPERTY_CONTEXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class OutEmailTrack {
   public static final String JSON_PROPERTY_THREAD_REPLIES = "threadReplies";
+  @javax.annotation.Nullable
   private Boolean threadReplies;
 
   public static final String JSON_PROPERTY_OPENS = "opens";
+  @javax.annotation.Nullable
   private Boolean opens;
 
   public static final String JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY = "trackOpensAfterSendDelay";
+  @javax.annotation.Nullable
   private Integer trackOpensAfterSendDelay = 5;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
+  @javax.annotation.Nullable
   private String context;
 
   public OutEmailTrack() { 
   }
 
-  public OutEmailTrack threadReplies(Boolean threadReplies) {
+  public OutEmailTrack threadReplies(@javax.annotation.Nullable Boolean threadReplies) {
     this.threadReplies = threadReplies;
     return this;
   }
@@ -74,12 +78,12 @@ public class OutEmailTrack {
 
   @JsonProperty(JSON_PROPERTY_THREAD_REPLIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreadReplies(Boolean threadReplies) {
+  public void setThreadReplies(@javax.annotation.Nullable Boolean threadReplies) {
     this.threadReplies = threadReplies;
   }
 
 
-  public OutEmailTrack opens(Boolean opens) {
+  public OutEmailTrack opens(@javax.annotation.Nullable Boolean opens) {
     this.opens = opens;
     return this;
   }
@@ -98,12 +102,12 @@ public class OutEmailTrack {
 
   @JsonProperty(JSON_PROPERTY_OPENS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOpens(Boolean opens) {
+  public void setOpens(@javax.annotation.Nullable Boolean opens) {
     this.opens = opens;
   }
 
 
-  public OutEmailTrack trackOpensAfterSendDelay(Integer trackOpensAfterSendDelay) {
+  public OutEmailTrack trackOpensAfterSendDelay(@javax.annotation.Nullable Integer trackOpensAfterSendDelay) {
     this.trackOpensAfterSendDelay = trackOpensAfterSendDelay;
     return this;
   }
@@ -122,12 +126,12 @@ public class OutEmailTrack {
 
   @JsonProperty(JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackOpensAfterSendDelay(Integer trackOpensAfterSendDelay) {
+  public void setTrackOpensAfterSendDelay(@javax.annotation.Nullable Integer trackOpensAfterSendDelay) {
     this.trackOpensAfterSendDelay = trackOpensAfterSendDelay;
   }
 
 
-  public OutEmailTrack context(String context) {
+  public OutEmailTrack context(@javax.annotation.Nullable String context) {
     this.context = context;
     return this;
   }
@@ -146,7 +150,7 @@ public class OutEmailTrack {
 
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(String context) {
+  public void setContext(@javax.annotation.Nullable String context) {
     this.context = context;
   }
 

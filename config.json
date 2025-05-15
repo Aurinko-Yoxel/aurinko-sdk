@@ -5,7 +5,7 @@
   "artifactDescription": "Aurinko API SDK",
   "artifactUrl": "https://aurinko.io",
   "artifactId": "aurinko-api",
-  "artifactVersion": "1.0.3",
+  "artifactVersion": "1.0.4",
   "developerEmail": "support@aurinko.io",
   "developerName": "Aurinko team",
   "developerOrganization": "Yoxel Inc",
@@ -17,6 +17,7 @@
   "asyncNative": true,
   "serializationLibrary": "jackson",
   "enumUnknownDefaultCase": true,
-  "hideGenerationTimestamp": true
+  "hideGenerationTimestamp": true,
+  "vendorExtensions" : { "x-java-text-plain-string": true }
 }
 

@@ -36,18 +36,20 @@ import io.aurinko.client.ApiClient;
   EmailHeader.JSON_PROPERTY_NAME,
   EmailHeader.JSON_PROPERTY_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailHeader {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_VALUE = "value";
+  @javax.annotation.Nullable
   private String value;
 
   public EmailHeader() { 
   }
 
-  public EmailHeader name(String name) {
+  public EmailHeader name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -66,12 +68,12 @@ public class EmailHeader {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public EmailHeader value(String value) {
+  public EmailHeader value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -90,7 +92,7 @@ public class EmailHeader {
 
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 

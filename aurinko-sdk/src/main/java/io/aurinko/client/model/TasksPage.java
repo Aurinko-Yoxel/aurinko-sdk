@@ -40,21 +40,24 @@ import io.aurinko.client.ApiClient;
   TasksPage.JSON_PROPERTY_LENGTH,
   TasksPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class TasksPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
+  @javax.annotation.Nullable
   private String nextPageToken;
 
   public static final String JSON_PROPERTY_LENGTH = "length";
+  @javax.annotation.Nullable
   private Integer length;
 
   public static final String JSON_PROPERTY_RECORDS = "records";
+  @javax.annotation.Nullable
   private List<Task> records = new ArrayList<>();
 
   public TasksPage() { 
   }
 
-  public TasksPage nextPageToken(String nextPageToken) {
+  public TasksPage nextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
     return this;
   }
@@ -73,12 +76,12 @@ public class TasksPage {
 
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageToken(String nextPageToken) {
+  public void setNextPageToken(@javax.annotation.Nullable String nextPageToken) {
     this.nextPageToken = nextPageToken;
   }
 
 
-  public TasksPage length(Integer length) {
+  public TasksPage length(@javax.annotation.Nullable Integer length) {
     this.length = length;
     return this;
   }
@@ -97,12 +100,12 @@ public class TasksPage {
 
   @JsonProperty(JSON_PROPERTY_LENGTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLength(Integer length) {
+  public void setLength(@javax.annotation.Nullable Integer length) {
     this.length = length;
   }
 
 
-  public TasksPage records(List<Task> records) {
+  public TasksPage records(@javax.annotation.Nullable List<Task> records) {
     this.records = records;
     return this;
   }
@@ -129,7 +132,7 @@ public class TasksPage {
 
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<Task> records) {
+  public void setRecords(@javax.annotation.Nullable List<Task> records) {
     this.records = records;
   }
 

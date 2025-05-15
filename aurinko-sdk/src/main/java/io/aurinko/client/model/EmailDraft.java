@@ -39,15 +39,18 @@ import io.aurinko.client.ApiClient;
   EmailDraft.JSON_PROPERTY_MESSAGE,
   EmailDraft.JSON_PROPERTY_SCHEDULED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailDraft {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
+  @javax.annotation.Nullable
   private EmailMessage message;
 
   public static final String JSON_PROPERTY_SCHEDULED = "scheduled";
+  @javax.annotation.Nullable
   private ScheduledDraft scheduled;
 
   public EmailDraft() { 
@@ -75,7 +78,7 @@ public class EmailDraft {
 
 
 
-  public EmailDraft message(EmailMessage message) {
+  public EmailDraft message(@javax.annotation.Nullable EmailMessage message) {
     this.message = message;
     return this;
   }
@@ -94,12 +97,12 @@ public class EmailDraft {
 
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessage(EmailMessage message) {
+  public void setMessage(@javax.annotation.Nullable EmailMessage message) {
     this.message = message;
   }
 
 
-  public EmailDraft scheduled(ScheduledDraft scheduled) {
+  public EmailDraft scheduled(@javax.annotation.Nullable ScheduledDraft scheduled) {
     this.scheduled = scheduled;
     return this;
   }
@@ -118,7 +121,7 @@ public class EmailDraft {
 
   @JsonProperty(JSON_PROPERTY_SCHEDULED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setScheduled(ScheduledDraft scheduled) {
+  public void setScheduled(@javax.annotation.Nullable ScheduledDraft scheduled) {
     this.scheduled = scheduled;
   }
 

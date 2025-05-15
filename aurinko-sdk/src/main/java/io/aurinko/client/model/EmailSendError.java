@@ -38,21 +38,21 @@ import io.aurinko.client.ApiClient;
   EmailSendError.JSON_PROPERTY_FAILED_STEPS,
   EmailSendError.JSON_PROPERTY_ERROR_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmailSendError {
   /**
    * Action that should have been performed, but were not performed due to an error
    */
   public enum FailedStepsEnum {
-    TRACKING("tracking"),
+    TRACKING(String.valueOf("tracking")),
     
-    FOLLOW_UP("followUp"),
+    FOLLOW_UP(String.valueOf("followUp")),
     
-    KEYWORDS("keywords"),
+    KEYWORDS(String.valueOf("keywords")),
     
-    RETURN_IDS("returnIds"),
+    RETURN_IDS(String.valueOf("returnIds")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -82,15 +82,17 @@ public class EmailSendError {
   }
 
   public static final String JSON_PROPERTY_FAILED_STEPS = "failedSteps";
+  @javax.annotation.Nullable
   private List<FailedStepsEnum> failedSteps = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ERROR_MESSAGE = "errorMessage";
+  @javax.annotation.Nullable
   private String errorMessage;
 
   public EmailSendError() { 
   }
 
-  public EmailSendError failedSteps(List<FailedStepsEnum> failedSteps) {
+  public EmailSendError failedSteps(@javax.annotation.Nullable List<FailedStepsEnum> failedSteps) {
     this.failedSteps = failedSteps;
     return this;
   }
@@ -117,12 +119,12 @@ public class EmailSendError {
 
   @JsonProperty(JSON_PROPERTY_FAILED_STEPS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailedSteps(List<FailedStepsEnum> failedSteps) {
+  public void setFailedSteps(@javax.annotation.Nullable List<FailedStepsEnum> failedSteps) {
     this.failedSteps = failedSteps;
   }
 
 
-  public EmailSendError errorMessage(String errorMessage) {
+  public EmailSendError errorMessage(@javax.annotation.Nullable String errorMessage) {
     this.errorMessage = errorMessage;
     return this;
   }
@@ -141,7 +143,7 @@ public class EmailSendError {
 
   @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setErrorMessage(String errorMessage) {
+  public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
     this.errorMessage = errorMessage;
   }
 

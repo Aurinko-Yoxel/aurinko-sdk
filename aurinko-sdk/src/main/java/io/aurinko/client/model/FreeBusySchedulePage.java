@@ -38,15 +38,16 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   FreeBusySchedulePage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class FreeBusySchedulePage {
   public static final String JSON_PROPERTY_RECORDS = "records";
+  @javax.annotation.Nullable
   private List<FreeBusySchedule> records = new ArrayList<>();
 
   public FreeBusySchedulePage() { 
   }
 
-  public FreeBusySchedulePage records(List<FreeBusySchedule> records) {
+  public FreeBusySchedulePage records(@javax.annotation.Nullable List<FreeBusySchedule> records) {
     this.records = records;
     return this;
   }
@@ -73,7 +74,7 @@ public class FreeBusySchedulePage {
 
   @JsonProperty(JSON_PROPERTY_RECORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecords(List<FreeBusySchedule> records) {
+  public void setRecords(@javax.annotation.Nullable List<FreeBusySchedule> records) {
     this.records = records;
   }
 
