@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BodyType;
@@ -49,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailSyncApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -60,7 +61,7 @@ public class EmailSyncApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public EmailSyncApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public EmailSyncApi(ApiClient apiClient) {
@@ -93,7 +94,7 @@ public class EmailSyncApi {
    * @return CompletableFuture&lt;EmailDeletedPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailDeletedPage> emailSyncDeleted(String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<EmailDeletedPage> emailSyncDeleted(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = emailSyncDeletedRequestBuilder(deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -125,7 +126,7 @@ public class EmailSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailDeletedPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailDeletedPage>> emailSyncDeletedWithHttpInfo(String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailDeletedPage>> emailSyncDeletedWithHttpInfo(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = emailSyncDeletedRequestBuilder(deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -156,7 +157,7 @@ public class EmailSyncApi {
     }
   }
 
-  private HttpRequest.Builder emailSyncDeletedRequestBuilder(String deltaToken, String pageToken) throws ApiException {
+  private HttpRequest.Builder emailSyncDeletedRequestBuilder(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -201,7 +202,7 @@ public class EmailSyncApi {
    * @return CompletableFuture&lt;SyncStatus&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SyncStatus> emailSyncStart(Integer daysWithin, BodyType bodyType) throws ApiException {
+  public CompletableFuture<SyncStatus> emailSyncStart(@javax.annotation.Nullable Integer daysWithin, @javax.annotation.Nullable BodyType bodyType) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = emailSyncStartRequestBuilder(daysWithin, bodyType);
       return memberVarHttpClient.sendAsync(
@@ -233,7 +234,7 @@ public class EmailSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SyncStatus&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SyncStatus>> emailSyncStartWithHttpInfo(Integer daysWithin, BodyType bodyType) throws ApiException {
+  public CompletableFuture<ApiResponse<SyncStatus>> emailSyncStartWithHttpInfo(@javax.annotation.Nullable Integer daysWithin, @javax.annotation.Nullable BodyType bodyType) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = emailSyncStartRequestBuilder(daysWithin, bodyType);
       return memberVarHttpClient.sendAsync(
@@ -264,7 +265,7 @@ public class EmailSyncApi {
     }
   }
 
-  private HttpRequest.Builder emailSyncStartRequestBuilder(Integer daysWithin, BodyType bodyType) throws ApiException {
+  private HttpRequest.Builder emailSyncStartRequestBuilder(@javax.annotation.Nullable Integer daysWithin, @javax.annotation.Nullable BodyType bodyType) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -309,7 +310,7 @@ public class EmailSyncApi {
    * @return CompletableFuture&lt;EmailMessagesPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailMessagesPage> emailSyncUpdated(String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<EmailMessagesPage> emailSyncUpdated(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = emailSyncUpdatedRequestBuilder(deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -341,7 +342,7 @@ public class EmailSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessagesPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailMessagesPage>> emailSyncUpdatedWithHttpInfo(String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailMessagesPage>> emailSyncUpdatedWithHttpInfo(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = emailSyncUpdatedRequestBuilder(deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -372,7 +373,7 @@ public class EmailSyncApi {
     }
   }
 
-  private HttpRequest.Builder emailSyncUpdatedRequestBuilder(String deltaToken, String pageToken) throws ApiException {
+  private HttpRequest.Builder emailSyncUpdatedRequestBuilder(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

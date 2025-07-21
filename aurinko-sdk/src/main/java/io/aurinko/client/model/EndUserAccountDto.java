@@ -69,7 +69,7 @@ import io.aurinko.client.ApiClient;
   EndUserAccountDto.JSON_PROPERTY_TRACKING_ACTIVE,
   EndUserAccountDto.JSON_PROPERTY_TEMPLATES_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EndUserAccountDto {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -958,82 +958,82 @@ public class EndUserAccountDto {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `parentId` to the URL query string
     if (getParentId() != null) {
-      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getParentId()))));
     }
 
     // add `serviceType` to the URL query string
     if (getServiceType() != null) {
-      joiner.add(String.format("%sserviceType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserviceType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getServiceType()))));
     }
 
     // add `userAccountType` to the URL query string
     if (getUserAccountType() != null) {
-      joiner.add(String.format("%suserAccountType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserAccountType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserAccountType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserAccountType()))));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `active` to the URL query string
     if (getActive() != null) {
-      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getActive()))));
     }
 
     // add `loginString` to the URL query string
     if (getLoginString() != null) {
-      joiner.add(String.format("%sloginString%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLoginString()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sloginString%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLoginString()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `serverUrl` to the URL query string
     if (getServerUrl() != null) {
-      joiner.add(String.format("%sserverUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServerUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserverUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getServerUrl()))));
     }
 
     // add `serverUrl2` to the URL query string
     if (getServerUrl2() != null) {
-      joiner.add(String.format("%sserverUrl2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServerUrl2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserverUrl2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getServerUrl2()))));
     }
 
     // add `clientOrgId` to the URL query string
     if (getClientOrgId() != null) {
-      joiner.add(String.format("%sclientOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getClientOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sclientOrgId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getClientOrgId()))));
     }
 
     // add `authUserId` to the URL query string
     if (getAuthUserId() != null) {
-      joiner.add(String.format("%sauthUserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthUserId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthUserId()))));
     }
 
     // add `authOrgId` to the URL query string
     if (getAuthOrgId() != null) {
-      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthOrgId()))));
     }
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimezone()))));
     }
 
     // add `authObtainedAt` to the URL query string
     if (getAuthObtainedAt() != null) {
-      joiner.add(String.format("%sauthObtainedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthObtainedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthObtainedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthObtainedAt()))));
     }
 
     // add `organization` to the URL query string
@@ -1043,7 +1043,7 @@ public class EndUserAccountDto {
 
     // add `tokenStatus` to the URL query string
     if (getTokenStatus() != null) {
-      joiner.add(String.format("%stokenStatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTokenStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stokenStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTokenStatus()))));
     }
 
     // add `scopes` to the URL query string
@@ -1052,7 +1052,7 @@ public class EndUserAccountDto {
         if (getScopes().get(i) != null) {
           joiner.add(String.format("%sscopes%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(ApiClient.valueToString(getScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              ApiClient.urlEncode(ApiClient.valueToString(getScopes().get(i)))));
         }
       }
     }
@@ -1063,7 +1063,7 @@ public class EndUserAccountDto {
         if (getAuthScopes().get(i) != null) {
           joiner.add(String.format("%sauthScopes%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(ApiClient.valueToString(getAuthScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              ApiClient.urlEncode(ApiClient.valueToString(getAuthScopes().get(i)))));
         }
       }
     }
@@ -1073,7 +1073,7 @@ public class EndUserAccountDto {
       for (int i = 0; i < getNativeScopes().size(); i++) {
         joiner.add(String.format("%snativeScopes%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getNativeScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getNativeScopes().get(i)))));
       }
     }
 
@@ -1082,28 +1082,28 @@ public class EndUserAccountDto {
       for (int i = 0; i < getAuthNativeScopes().size(); i++) {
         joiner.add(String.format("%sauthNativeScopes%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAuthNativeScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getAuthNativeScopes().get(i)))));
       }
     }
 
     // add `hasApiErrors` to the URL query string
     if (getHasApiErrors() != null) {
-      joiner.add(String.format("%shasApiErrors%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHasApiErrors()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shasApiErrors%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasApiErrors()))));
     }
 
     // add `bookingCount` to the URL query string
     if (getBookingCount() != null) {
-      joiner.add(String.format("%sbookingCount%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBookingCount()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbookingCount%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBookingCount()))));
     }
 
     // add `trackingActive` to the URL query string
     if (getTrackingActive() != null) {
-      joiner.add(String.format("%strackingActive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackingActive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackingActive()))));
     }
 
     // add `templatesCount` to the URL query string
     if (getTemplatesCount() != null) {
-      joiner.add(String.format("%stemplatesCount%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTemplatesCount()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stemplatesCount%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTemplatesCount()))));
     }
 
     return joiner.toString();

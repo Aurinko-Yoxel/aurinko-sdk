@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.AccountSaveResult;
@@ -50,7 +51,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class AuthApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -61,7 +62,7 @@ public class AuthApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public AuthApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public AuthApi(ApiClient apiClient) {
@@ -93,7 +94,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountSaveResult> authCodeExchange(String code) throws ApiException {
+  public CompletableFuture<AccountSaveResult> authCodeExchange(@javax.annotation.Nonnull String code) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = authCodeExchangeRequestBuilder(code);
       return memberVarHttpClient.sendAsync(
@@ -124,7 +125,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountSaveResult>> authCodeExchangeWithHttpInfo(String code) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountSaveResult>> authCodeExchangeWithHttpInfo(@javax.annotation.Nonnull String code) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = authCodeExchangeRequestBuilder(code);
       return memberVarHttpClient.sendAsync(
@@ -155,7 +156,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authCodeExchangeRequestBuilder(String code) throws ApiException {
+  private HttpRequest.Builder authCodeExchangeRequestBuilder(@javax.annotation.Nonnull String code) throws ApiException {
     // verify the required parameter 'code' is set
     if (code == null) {
       throw new ApiException(400, "Missing the required parameter 'code' when calling authCodeExchange");
@@ -201,7 +202,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorize(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, Boolean recycle, String authEmail) throws ApiException {
+  public CompletableFuture<Void> authorize(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String loginHint, @javax.annotation.Nullable String state, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable String serverUrl, @javax.annotation.Nullable Boolean ensureScopes, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable Boolean recycle, @javax.annotation.Nullable String authEmail) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle, authEmail);
       return memberVarHttpClient.sendAsync(
@@ -239,7 +240,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, Boolean recycle, String authEmail) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeWithHttpInfo(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String loginHint, @javax.annotation.Nullable String state, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable String serverUrl, @javax.annotation.Nullable Boolean ensureScopes, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable Boolean recycle, @javax.annotation.Nullable String authEmail) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = authorizeRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, loginHint, state, clientOrgId, serverUrl, ensureScopes, ensureAccess, recycle, authEmail);
       return memberVarHttpClient.sendAsync(
@@ -262,7 +263,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String clientOrgId, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, Boolean recycle, String authEmail) throws ApiException {
+  private HttpRequest.Builder authorizeRequestBuilder(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String loginHint, @javax.annotation.Nullable String state, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable String serverUrl, @javax.annotation.Nullable Boolean ensureScopes, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable Boolean recycle, @javax.annotation.Nullable String authEmail) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
       throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorize");
@@ -353,7 +354,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorizeDaemon(String clientId, ServiceTypeDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, String clientOrgId, Boolean ensureScopes) throws ApiException {
+  public CompletableFuture<Void> authorizeDaemon(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String state, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable Boolean ensureScopes) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, state, clientOrgId, ensureScopes);
       return memberVarHttpClient.sendAsync(
@@ -386,7 +387,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeDaemonWithHttpInfo(String clientId, ServiceTypeDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, String clientOrgId, Boolean ensureScopes) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeDaemonWithHttpInfo(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String state, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable Boolean ensureScopes) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = authorizeDaemonRequestBuilder(clientId, serviceType, returnUrl, scopes, nativeScopes, responseType, accountId, state, clientOrgId, ensureScopes);
       return memberVarHttpClient.sendAsync(
@@ -409,7 +410,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeDaemonRequestBuilder(String clientId, ServiceTypeDaemon serviceType, String returnUrl, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String state, String clientOrgId, Boolean ensureScopes) throws ApiException {
+  private HttpRequest.Builder authorizeDaemonRequestBuilder(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String state, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable Boolean ensureScopes) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
       throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorizeDaemon");
@@ -498,7 +499,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> authorizeUser(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, String token) throws ApiException {
+  public CompletableFuture<Void> authorizeUser(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nonnull String accountRole, @javax.annotation.Nullable String mailboxInfo, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String loginHint, @javax.annotation.Nullable String state, @javax.annotation.Nullable String userId, @javax.annotation.Nullable Long timestamp, @javax.annotation.Nullable String userSignature, @javax.annotation.Nullable String serverUrl, @javax.annotation.Nullable Boolean ensureScopes, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable String token) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = authorizeUserRequestBuilder(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token);
       return memberVarHttpClient.sendAsync(
@@ -539,7 +540,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> authorizeUserWithHttpInfo(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, String token) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> authorizeUserWithHttpInfo(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nonnull String accountRole, @javax.annotation.Nullable String mailboxInfo, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String loginHint, @javax.annotation.Nullable String state, @javax.annotation.Nullable String userId, @javax.annotation.Nullable Long timestamp, @javax.annotation.Nullable String userSignature, @javax.annotation.Nullable String serverUrl, @javax.annotation.Nullable Boolean ensureScopes, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable String token) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = authorizeUserRequestBuilder(clientId, serviceType, returnUrl, accountRole, mailboxInfo, scopes, nativeScopes, responseType, accountId, loginHint, state, userId, timestamp, userSignature, serverUrl, ensureScopes, ensureAccess, token);
       return memberVarHttpClient.sendAsync(
@@ -562,7 +563,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder authorizeUserRequestBuilder(String clientId, ServiceTypeNonDaemon serviceType, String returnUrl, String accountRole, String mailboxInfo, List<Scope> scopes, List<String> nativeScopes, String responseType, Long accountId, String loginHint, String state, String userId, Long timestamp, String userSignature, String serverUrl, Boolean ensureScopes, Boolean ensureAccess, String token) throws ApiException {
+  private HttpRequest.Builder authorizeUserRequestBuilder(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable String returnUrl, @javax.annotation.Nonnull String accountRole, @javax.annotation.Nullable String mailboxInfo, @javax.annotation.Nullable List<Scope> scopes, @javax.annotation.Nullable List<String> nativeScopes, @javax.annotation.Nullable String responseType, @javax.annotation.Nullable Long accountId, @javax.annotation.Nullable String loginHint, @javax.annotation.Nullable String state, @javax.annotation.Nullable String userId, @javax.annotation.Nullable Long timestamp, @javax.annotation.Nullable String userSignature, @javax.annotation.Nullable String serverUrl, @javax.annotation.Nullable Boolean ensureScopes, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable String token) throws ApiException {
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
       throw new ApiException(400, "Missing the required parameter 'clientId' when calling authorizeUser");
@@ -654,7 +655,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountSaveResult> getAccessTokenByCode(String code) throws ApiException {
+  public CompletableFuture<AccountSaveResult> getAccessTokenByCode(@javax.annotation.Nonnull String code) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getAccessTokenByCodeRequestBuilder(code);
       return memberVarHttpClient.sendAsync(
@@ -685,7 +686,7 @@ public class AuthApi {
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountSaveResult>> getAccessTokenByCodeWithHttpInfo(String code) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountSaveResult>> getAccessTokenByCodeWithHttpInfo(@javax.annotation.Nonnull String code) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getAccessTokenByCodeRequestBuilder(code);
       return memberVarHttpClient.sendAsync(
@@ -716,7 +717,7 @@ public class AuthApi {
     }
   }
 
-  private HttpRequest.Builder getAccessTokenByCodeRequestBuilder(String code) throws ApiException {
+  private HttpRequest.Builder getAccessTokenByCodeRequestBuilder(@javax.annotation.Nonnull String code) throws ApiException {
     // verify the required parameter 'code' is set
     if (code == null) {
       throw new ApiException(400, "Missing the required parameter 'code' when calling getAccessTokenByCode");

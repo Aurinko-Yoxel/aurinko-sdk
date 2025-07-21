@@ -52,7 +52,7 @@ import io.aurinko.client.ApiClient;
   BookingTimesOutDto.JSON_PROPERTY_NEXT_PAGE_TOKEN,
   BookingTimesOutDto.JSON_PROPERTY_NEXT_FROM_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class BookingTimesOutDto {
   public static final String JSON_PROPERTY_ITEMS = "items";
   @javax.annotation.Nullable
@@ -515,42 +515,42 @@ public class BookingTimesOutDto {
 
     // add `startTime` to the URL query string
     if (getStartTime() != null) {
-      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStartTime()))));
     }
 
     // add `endTime` to the URL query string
     if (getEndTime() != null) {
-      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEndTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEndTime()))));
     }
 
     // add `timeAvailableFor` to the URL query string
     if (getTimeAvailableFor() != null) {
-      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeAvailableFor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeAvailableFor()))));
     }
 
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
-      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDurationMinutes()))));
     }
 
     // add `availabilityStep` to the URL query string
     if (getAvailabilityStep() != null) {
-      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAvailabilityStep()))));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubject()))));
     }
 
     // add `primaryColor` to the URL query string
     if (getPrimaryColor() != null) {
-      joiner.add(String.format("%sprimaryColor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPrimaryColor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprimaryColor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPrimaryColor()))));
     }
 
     // add `secondaryColor` to the URL query string
     if (getSecondaryColor() != null) {
-      joiner.add(String.format("%ssecondaryColor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSecondaryColor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssecondaryColor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSecondaryColor()))));
     }
 
     // add `additionalFields` to the URL query string
@@ -565,12 +565,12 @@ public class BookingTimesOutDto {
 
     // add `nextPageToken` to the URL query string
     if (getNextPageToken() != null) {
-      joiner.add(String.format("%snextPageToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNextPageToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snextPageToken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNextPageToken()))));
     }
 
     // add `nextFromDate` to the URL query string
     if (getNextFromDate() != null) {
-      joiner.add(String.format("%snextFromDate%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNextFromDate()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snextFromDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNextFromDate()))));
     }
 
     return joiner.toString();

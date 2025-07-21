@@ -40,7 +40,7 @@ import io.aurinko.client.ApiClient;
   EventsPageNext.JSON_PROPERTY_LENGTH,
   EventsPageNext.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EventsPageNext {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   @javax.annotation.Nullable
@@ -215,12 +215,12 @@ public class EventsPageNext {
 
     // add `nextPageToken` to the URL query string
     if (getNextPageToken() != null) {
-      joiner.add(String.format("%snextPageToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNextPageToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snextPageToken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNextPageToken()))));
     }
 
     // add `length` to the URL query string
     if (getLength() != null) {
-      joiner.add(String.format("%slength%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLength()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slength%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLength()))));
     }
 
     // add `records` to the URL query string

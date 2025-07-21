@@ -35,6 +35,7 @@
 |**authExpiresAt** | **OffsetDateTime** |  |  [optional] |
 |**userId** | **String** |  |  [optional] |
 |**copyToSent** | **Boolean** | Copy sent emails to “Sent Messages” folder |  [optional] |
+|**trustServer** | **Boolean** |  |  [optional] |
 
 
 

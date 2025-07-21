@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   OutgoingEmailAttachment.JSON_PROPERTY_CONTENT_ID,
   OutgoingEmailAttachment.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class OutgoingEmailAttachment {
   public static final String JSON_PROPERTY_INLINE = "inline";
   @javax.annotation.Nullable
@@ -266,27 +266,27 @@ public class OutgoingEmailAttachment {
 
     // add `inline` to the URL query string
     if (getInline() != null) {
-      joiner.add(String.format("%sinline%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInline()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinline%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInline()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `mimeType` to the URL query string
     if (getMimeType() != null) {
-      joiner.add(String.format("%smimeType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMimeType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smimeType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMimeType()))));
     }
 
     // add `contentId` to the URL query string
     if (getContentId() != null) {
-      joiner.add(String.format("%scontentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontentId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContentId()))));
     }
 
     // add `content` to the URL query string
     if (getContent() != null) {
-      joiner.add(String.format("%scontent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContent()))));
     }
 
     return joiner.toString();

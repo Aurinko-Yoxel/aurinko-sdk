@@ -36,7 +36,7 @@ import io.aurinko.client.ApiClient;
   FollowupRuleAction.JSON_PROPERTY_INTERVAL_DAYS,
   FollowupRuleAction.JSON_PROPERTY_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FollowupRuleAction {
   public static final String JSON_PROPERTY_INTERVAL_DAYS = "intervalDays";
   @javax.annotation.Nullable
@@ -173,12 +173,12 @@ public class FollowupRuleAction {
 
     // add `intervalDays` to the URL query string
     if (getIntervalDays() != null) {
-      joiner.add(String.format("%sintervalDays%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIntervalDays()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sintervalDays%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIntervalDays()))));
     }
 
     // add `message` to the URL query string
     if (getMessage() != null) {
-      joiner.add(String.format("%smessage%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMessage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smessage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMessage()))));
     }
 
     return joiner.toString();

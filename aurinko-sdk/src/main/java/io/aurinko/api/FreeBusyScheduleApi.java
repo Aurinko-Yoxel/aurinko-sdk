@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.FreeBusyRequest;
@@ -51,7 +52,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FreeBusyScheduleApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -62,7 +63,7 @@ public class FreeBusyScheduleApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public FreeBusyScheduleApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public FreeBusyScheduleApi(ApiClient apiClient) {
@@ -94,7 +95,7 @@ public class FreeBusyScheduleApi {
    * @return CompletableFuture&lt;WorkHoursResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<WorkHoursResponse> calendarWorkhours(WorkHoursRequest workHoursRequest) throws ApiException {
+  public CompletableFuture<WorkHoursResponse> calendarWorkhours(@javax.annotation.Nullable WorkHoursRequest workHoursRequest) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = calendarWorkhoursRequestBuilder(workHoursRequest);
       return memberVarHttpClient.sendAsync(
@@ -125,7 +126,7 @@ public class FreeBusyScheduleApi {
    * @return CompletableFuture&lt;ApiResponse&lt;WorkHoursResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<WorkHoursResponse>> calendarWorkhoursWithHttpInfo(WorkHoursRequest workHoursRequest) throws ApiException {
+  public CompletableFuture<ApiResponse<WorkHoursResponse>> calendarWorkhoursWithHttpInfo(@javax.annotation.Nullable WorkHoursRequest workHoursRequest) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = calendarWorkhoursRequestBuilder(workHoursRequest);
       return memberVarHttpClient.sendAsync(
@@ -156,7 +157,7 @@ public class FreeBusyScheduleApi {
     }
   }
 
-  private HttpRequest.Builder calendarWorkhoursRequestBuilder(WorkHoursRequest workHoursRequest) throws ApiException {
+  private HttpRequest.Builder calendarWorkhoursRequestBuilder(@javax.annotation.Nullable WorkHoursRequest workHoursRequest) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -189,7 +190,7 @@ public class FreeBusyScheduleApi {
    * @return CompletableFuture&lt;FreeBusySchedulePage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<FreeBusySchedulePage> freeBusy(FreeBusyRequest freeBusyRequest) throws ApiException {
+  public CompletableFuture<FreeBusySchedulePage> freeBusy(@javax.annotation.Nullable FreeBusyRequest freeBusyRequest) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = freeBusyRequestBuilder(freeBusyRequest);
       return memberVarHttpClient.sendAsync(
@@ -220,7 +221,7 @@ public class FreeBusyScheduleApi {
    * @return CompletableFuture&lt;ApiResponse&lt;FreeBusySchedulePage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<FreeBusySchedulePage>> freeBusyWithHttpInfo(FreeBusyRequest freeBusyRequest) throws ApiException {
+  public CompletableFuture<ApiResponse<FreeBusySchedulePage>> freeBusyWithHttpInfo(@javax.annotation.Nullable FreeBusyRequest freeBusyRequest) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = freeBusyRequestBuilder(freeBusyRequest);
       return memberVarHttpClient.sendAsync(
@@ -251,7 +252,7 @@ public class FreeBusyScheduleApi {
     }
   }
 
-  private HttpRequest.Builder freeBusyRequestBuilder(FreeBusyRequest freeBusyRequest) throws ApiException {
+  private HttpRequest.Builder freeBusyRequestBuilder(@javax.annotation.Nullable FreeBusyRequest freeBusyRequest) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -284,7 +285,7 @@ public class FreeBusyScheduleApi {
    * @return CompletableFuture&lt;SuggestMeetingTimesResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SuggestMeetingTimesResponse> suggestMeetingTimes(SuggestMeetingTimesRequest suggestMeetingTimesRequest) throws ApiException {
+  public CompletableFuture<SuggestMeetingTimesResponse> suggestMeetingTimes(@javax.annotation.Nullable SuggestMeetingTimesRequest suggestMeetingTimesRequest) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = suggestMeetingTimesRequestBuilder(suggestMeetingTimesRequest);
       return memberVarHttpClient.sendAsync(
@@ -315,7 +316,7 @@ public class FreeBusyScheduleApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SuggestMeetingTimesResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SuggestMeetingTimesResponse>> suggestMeetingTimesWithHttpInfo(SuggestMeetingTimesRequest suggestMeetingTimesRequest) throws ApiException {
+  public CompletableFuture<ApiResponse<SuggestMeetingTimesResponse>> suggestMeetingTimesWithHttpInfo(@javax.annotation.Nullable SuggestMeetingTimesRequest suggestMeetingTimesRequest) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = suggestMeetingTimesRequestBuilder(suggestMeetingTimesRequest);
       return memberVarHttpClient.sendAsync(
@@ -346,7 +347,7 @@ public class FreeBusyScheduleApi {
     }
   }
 
-  private HttpRequest.Builder suggestMeetingTimesRequestBuilder(SuggestMeetingTimesRequest suggestMeetingTimesRequest) throws ApiException {
+  private HttpRequest.Builder suggestMeetingTimesRequestBuilder(@javax.annotation.Nullable SuggestMeetingTimesRequest suggestMeetingTimesRequest) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

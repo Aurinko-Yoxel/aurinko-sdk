@@ -70,8 +70,6 @@ public enum ServiceProvider {
   
   CLIENTIFY("Clientify"),
   
-  TEAMWORK("Teamwork"),
-  
   ECLIPSE_ERP("EclipseERP"),
   
   NET_SUITE("NetSuite"),

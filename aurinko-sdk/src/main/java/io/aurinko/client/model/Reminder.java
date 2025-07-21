@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   Reminder.JSON_PROPERTY_USE_DEFAULT,
   Reminder.JSON_PROPERTY_OVERRIDES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Reminder {
   public static final String JSON_PROPERTY_USE_DEFAULT = "useDefault";
   @javax.annotation.Nullable
@@ -184,7 +184,7 @@ public class Reminder {
 
     // add `useDefault` to the URL query string
     if (getUseDefault() != null) {
-      joiner.add(String.format("%suseDefault%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUseDefault()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suseDefault%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUseDefault()))));
     }
 
     // add `overrides` to the URL query string

@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BodyType;
@@ -54,7 +55,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EventsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -65,7 +66,7 @@ public class EventsApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public EventsApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public EventsApi(ApiClient apiClient) {
@@ -99,7 +100,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;EmailAttachmentContent&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailAttachmentContent> attachment(String calendarId, String eventId, String attachmentId) throws ApiException {
+  public CompletableFuture<EmailAttachmentContent> attachment(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nonnull String attachmentId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachmentRequestBuilder(calendarId, eventId, attachmentId);
       return memberVarHttpClient.sendAsync(
@@ -132,7 +133,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailAttachmentContent&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailAttachmentContent>> attachmentWithHttpInfo(String calendarId, String eventId, String attachmentId) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailAttachmentContent>> attachmentWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nonnull String attachmentId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachmentRequestBuilder(calendarId, eventId, attachmentId);
       return memberVarHttpClient.sendAsync(
@@ -163,7 +164,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder attachmentRequestBuilder(String calendarId, String eventId, String attachmentId) throws ApiException {
+  private HttpRequest.Builder attachmentRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nonnull String attachmentId) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling attachment");
@@ -209,7 +210,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;EventOrId&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EventOrId> createEvent(String calendarId, Boolean notifyAttendees, BodyType bodyType, Boolean returnRecord, Event event) throws ApiException {
+  public CompletableFuture<EventOrId> createEvent(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnRecord, @javax.annotation.Nullable Event event) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createEventRequestBuilder(calendarId, notifyAttendees, bodyType, returnRecord, event);
       return memberVarHttpClient.sendAsync(
@@ -244,7 +245,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EventOrId&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EventOrId>> createEventWithHttpInfo(String calendarId, Boolean notifyAttendees, BodyType bodyType, Boolean returnRecord, Event event) throws ApiException {
+  public CompletableFuture<ApiResponse<EventOrId>> createEventWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnRecord, @javax.annotation.Nullable Event event) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createEventRequestBuilder(calendarId, notifyAttendees, bodyType, returnRecord, event);
       return memberVarHttpClient.sendAsync(
@@ -275,7 +276,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder createEventRequestBuilder(String calendarId, Boolean notifyAttendees, BodyType bodyType, Boolean returnRecord, Event event) throws ApiException {
+  private HttpRequest.Builder createEventRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnRecord, @javax.annotation.Nullable Event event) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling createEvent");
@@ -334,7 +335,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> deleteEvent(String calendarId, String eventId, Boolean notifyAttendees) throws ApiException {
+  public CompletableFuture<Void> deleteEvent(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable Boolean notifyAttendees) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteEventRequestBuilder(calendarId, eventId, notifyAttendees);
       return memberVarHttpClient.sendAsync(
@@ -360,7 +361,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> deleteEventWithHttpInfo(String calendarId, String eventId, Boolean notifyAttendees) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> deleteEventWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable Boolean notifyAttendees) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteEventRequestBuilder(calendarId, eventId, notifyAttendees);
       return memberVarHttpClient.sendAsync(
@@ -383,7 +384,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder deleteEventRequestBuilder(String calendarId, String eventId, Boolean notifyAttendees) throws ApiException {
+  private HttpRequest.Builder deleteEventRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable Boolean notifyAttendees) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling deleteEvent");
@@ -437,7 +438,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;Event&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Event> event(String calendarId, String eventId, List<String> nativeProperties) throws ApiException {
+  public CompletableFuture<Event> event(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = eventRequestBuilder(calendarId, eventId, nativeProperties);
       return memberVarHttpClient.sendAsync(
@@ -470,7 +471,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Event&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Event>> eventWithHttpInfo(String calendarId, String eventId, List<String> nativeProperties) throws ApiException {
+  public CompletableFuture<ApiResponse<Event>> eventWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = eventRequestBuilder(calendarId, eventId, nativeProperties);
       return memberVarHttpClient.sendAsync(
@@ -501,7 +502,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder eventRequestBuilder(String calendarId, String eventId, List<String> nativeProperties) throws ApiException {
+  private HttpRequest.Builder eventRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling event");
@@ -555,7 +556,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;EventsPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EventsPageNext> eventsByICalUIds(String calendarId, List<String> iCalUId, String pageToken) throws ApiException {
+  public CompletableFuture<EventsPageNext> eventsByICalUIds(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull List<String> iCalUId, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = eventsByICalUIdsRequestBuilder(calendarId, iCalUId, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -588,7 +589,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EventsPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EventsPageNext>> eventsByICalUIdsWithHttpInfo(String calendarId, List<String> iCalUId, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<EventsPageNext>> eventsByICalUIdsWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull List<String> iCalUId, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = eventsByICalUIdsRequestBuilder(calendarId, iCalUId, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -619,7 +620,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder eventsByICalUIdsRequestBuilder(String calendarId, List<String> iCalUId, String pageToken) throws ApiException {
+  private HttpRequest.Builder eventsByICalUIdsRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull List<String> iCalUId, @javax.annotation.Nullable String pageToken) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling eventsByICalUIds");
@@ -674,7 +675,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;Event&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Event> occurrenceByOrigStart(String calendarId, String masterId, String ost) throws ApiException {
+  public CompletableFuture<Event> occurrenceByOrigStart(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String masterId, @javax.annotation.Nonnull String ost) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = occurrenceByOrigStartRequestBuilder(calendarId, masterId, ost);
       return memberVarHttpClient.sendAsync(
@@ -707,7 +708,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Event&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Event>> occurrenceByOrigStartWithHttpInfo(String calendarId, String masterId, String ost) throws ApiException {
+  public CompletableFuture<ApiResponse<Event>> occurrenceByOrigStartWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String masterId, @javax.annotation.Nonnull String ost) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = occurrenceByOrigStartRequestBuilder(calendarId, masterId, ost);
       return memberVarHttpClient.sendAsync(
@@ -738,7 +739,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder occurrenceByOrigStartRequestBuilder(String calendarId, String masterId, String ost) throws ApiException {
+  private HttpRequest.Builder occurrenceByOrigStartRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String masterId, @javax.annotation.Nonnull String ost) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling occurrenceByOrigStart");
@@ -783,7 +784,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;EventsPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EventsPageNext> range(String calendarId, OffsetDateTime timeMin, OffsetDateTime timeMax, String pageToken) throws ApiException {
+  public CompletableFuture<EventsPageNext> range(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull OffsetDateTime timeMin, @javax.annotation.Nonnull OffsetDateTime timeMax, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = rangeRequestBuilder(calendarId, timeMin, timeMax, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -817,7 +818,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EventsPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EventsPageNext>> rangeWithHttpInfo(String calendarId, OffsetDateTime timeMin, OffsetDateTime timeMax, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<EventsPageNext>> rangeWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull OffsetDateTime timeMin, @javax.annotation.Nonnull OffsetDateTime timeMax, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = rangeRequestBuilder(calendarId, timeMin, timeMax, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -848,7 +849,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder rangeRequestBuilder(String calendarId, OffsetDateTime timeMin, OffsetDateTime timeMax, String pageToken) throws ApiException {
+  private HttpRequest.Builder rangeRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull OffsetDateTime timeMin, @javax.annotation.Nonnull OffsetDateTime timeMax, @javax.annotation.Nullable String pageToken) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling range");
@@ -908,7 +909,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;SeriesInfo&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SeriesInfo> seriesInfo(String calendarId, String masterId) throws ApiException {
+  public CompletableFuture<SeriesInfo> seriesInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String masterId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = seriesInfoRequestBuilder(calendarId, masterId);
       return memberVarHttpClient.sendAsync(
@@ -940,7 +941,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SeriesInfo&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SeriesInfo>> seriesInfoWithHttpInfo(String calendarId, String masterId) throws ApiException {
+  public CompletableFuture<ApiResponse<SeriesInfo>> seriesInfoWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String masterId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = seriesInfoRequestBuilder(calendarId, masterId);
       return memberVarHttpClient.sendAsync(
@@ -971,7 +972,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder seriesInfoRequestBuilder(String calendarId, String masterId) throws ApiException {
+  private HttpRequest.Builder seriesInfoRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String masterId) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling seriesInfo");
@@ -1013,7 +1014,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;EventOrId&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EventOrId> updateEvent(String calendarId, String eventId, String ifMatch, Boolean notifyAttendees, Boolean returnRecord, Event event) throws ApiException {
+  public CompletableFuture<EventOrId> updateEvent(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable Boolean returnRecord, @javax.annotation.Nullable Event event) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateEventRequestBuilder(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event);
       return memberVarHttpClient.sendAsync(
@@ -1049,7 +1050,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EventOrId&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EventOrId>> updateEventWithHttpInfo(String calendarId, String eventId, String ifMatch, Boolean notifyAttendees, Boolean returnRecord, Event event) throws ApiException {
+  public CompletableFuture<ApiResponse<EventOrId>> updateEventWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable Boolean returnRecord, @javax.annotation.Nullable Event event) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateEventRequestBuilder(calendarId, eventId, ifMatch, notifyAttendees, returnRecord, event);
       return memberVarHttpClient.sendAsync(
@@ -1080,7 +1081,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder updateEventRequestBuilder(String calendarId, String eventId, String ifMatch, Boolean notifyAttendees, Boolean returnRecord, Event event) throws ApiException {
+  private HttpRequest.Builder updateEventRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable Boolean returnRecord, @javax.annotation.Nullable Event event) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling updateEvent");
@@ -1150,7 +1151,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> updateMeetingResponse(String calendarId, String eventId, Boolean notifyAttendees, MeetingResponse meetingResponse) throws ApiException {
+  public CompletableFuture<OkResponse> updateMeetingResponse(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable MeetingResponse meetingResponse) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateMeetingResponseRequestBuilder(calendarId, eventId, notifyAttendees, meetingResponse);
       return memberVarHttpClient.sendAsync(
@@ -1184,7 +1185,7 @@ public class EventsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> updateMeetingResponseWithHttpInfo(String calendarId, String eventId, Boolean notifyAttendees, MeetingResponse meetingResponse) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> updateMeetingResponseWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable MeetingResponse meetingResponse) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateMeetingResponseRequestBuilder(calendarId, eventId, notifyAttendees, meetingResponse);
       return memberVarHttpClient.sendAsync(
@@ -1215,7 +1216,7 @@ public class EventsApi {
     }
   }
 
-  private HttpRequest.Builder updateMeetingResponseRequestBuilder(String calendarId, String eventId, Boolean notifyAttendees, MeetingResponse meetingResponse) throws ApiException {
+  private HttpRequest.Builder updateMeetingResponseRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull String eventId, @javax.annotation.Nullable Boolean notifyAttendees, @javax.annotation.Nullable MeetingResponse meetingResponse) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling updateMeetingResponse");

@@ -39,8 +39,6 @@
 
 * `AUTO_QUOTES` (value: `"AutoQuotes"`)
 
-* `TEAMWORK` (value: `"Teamwork"`)
-
 * `NET_SUITE` (value: `"NetSuite"`)
 
 * `SPEC_PATH` (value: `"SpecPath"`)

@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   OrganizationDto.JSON_PROPERTY_NAME,
   OrganizationDto.JSON_PROPERTY_CREATED_AT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class OrganizationDto {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -299,32 +299,32 @@ public class OrganizationDto {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `serviceProvider` to the URL query string
     if (getServiceProvider() != null) {
-      joiner.add(String.format("%sserviceProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserviceProvider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getServiceProvider()))));
     }
 
     // add `xid` to the URL query string
     if (getXid() != null) {
-      joiner.add(String.format("%sxid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getXid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sxid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getXid()))));
     }
 
     // add `domain` to the URL query string
     if (getDomain() != null) {
-      joiner.add(String.format("%sdomain%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDomain()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdomain%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomain()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `createdAt` to the URL query string
     if (getCreatedAt() != null) {
-      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreatedAt()))));
     }
 
     return joiner.toString();

@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.OkResponse;
@@ -52,7 +53,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class TasksApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -63,7 +64,7 @@ public class TasksApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public TasksApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public TasksApi(ApiClient apiClient) {
@@ -96,7 +97,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;TaskCreateResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<TaskCreateResponse> createTask(String taskListId, TaskCreate taskCreate) throws ApiException {
+  public CompletableFuture<TaskCreateResponse> createTask(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable TaskCreate taskCreate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createTaskRequestBuilder(taskListId, taskCreate);
       return memberVarHttpClient.sendAsync(
@@ -128,7 +129,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;TaskCreateResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<TaskCreateResponse>> createTaskWithHttpInfo(String taskListId, TaskCreate taskCreate) throws ApiException {
+  public CompletableFuture<ApiResponse<TaskCreateResponse>> createTaskWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable TaskCreate taskCreate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createTaskRequestBuilder(taskListId, taskCreate);
       return memberVarHttpClient.sendAsync(
@@ -159,7 +160,7 @@ public class TasksApi {
     }
   }
 
-  private HttpRequest.Builder createTaskRequestBuilder(String taskListId, TaskCreate taskCreate) throws ApiException {
+  private HttpRequest.Builder createTaskRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable TaskCreate taskCreate) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling createTask");
@@ -198,7 +199,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> deleteTask(String taskListId, String id) throws ApiException {
+  public CompletableFuture<OkResponse> deleteTask(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteTaskRequestBuilder(taskListId, id);
       return memberVarHttpClient.sendAsync(
@@ -230,7 +231,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> deleteTaskWithHttpInfo(String taskListId, String id) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> deleteTaskWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteTaskRequestBuilder(taskListId, id);
       return memberVarHttpClient.sendAsync(
@@ -261,7 +262,7 @@ public class TasksApi {
     }
   }
 
-  private HttpRequest.Builder deleteTaskRequestBuilder(String taskListId, String id) throws ApiException {
+  private HttpRequest.Builder deleteTaskRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling deleteTask");
@@ -299,7 +300,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;Task&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Task> task(String taskListId, String id) throws ApiException {
+  public CompletableFuture<Task> task(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskRequestBuilder(taskListId, id);
       return memberVarHttpClient.sendAsync(
@@ -331,7 +332,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Task&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Task>> taskWithHttpInfo(String taskListId, String id) throws ApiException {
+  public CompletableFuture<ApiResponse<Task>> taskWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskRequestBuilder(taskListId, id);
       return memberVarHttpClient.sendAsync(
@@ -362,7 +363,7 @@ public class TasksApi {
     }
   }
 
-  private HttpRequest.Builder taskRequestBuilder(String taskListId, String id) throws ApiException {
+  private HttpRequest.Builder taskRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling task");
@@ -400,7 +401,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;TasksPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<TasksPage> tasksList(String taskListId, String pageToken) throws ApiException {
+  public CompletableFuture<TasksPage> tasksList(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = tasksListRequestBuilder(taskListId, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -432,7 +433,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;TasksPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<TasksPage>> tasksListWithHttpInfo(String taskListId, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<TasksPage>> tasksListWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = tasksListRequestBuilder(taskListId, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -463,7 +464,7 @@ public class TasksApi {
     }
   }
 
-  private HttpRequest.Builder tasksListRequestBuilder(String taskListId, String pageToken) throws ApiException {
+  private HttpRequest.Builder tasksListRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String pageToken) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling tasksList");
@@ -513,7 +514,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;TaskUpdateResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<TaskUpdateResponse> updateTask(String taskListId, String id, String ifMatch, TaskUpdate taskUpdate) throws ApiException {
+  public CompletableFuture<TaskUpdateResponse> updateTask(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String ifMatch, @javax.annotation.Nullable TaskUpdate taskUpdate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateTaskRequestBuilder(taskListId, id, ifMatch, taskUpdate);
       return memberVarHttpClient.sendAsync(
@@ -547,7 +548,7 @@ public class TasksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;TaskUpdateResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<TaskUpdateResponse>> updateTaskWithHttpInfo(String taskListId, String id, String ifMatch, TaskUpdate taskUpdate) throws ApiException {
+  public CompletableFuture<ApiResponse<TaskUpdateResponse>> updateTaskWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String ifMatch, @javax.annotation.Nullable TaskUpdate taskUpdate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateTaskRequestBuilder(taskListId, id, ifMatch, taskUpdate);
       return memberVarHttpClient.sendAsync(
@@ -578,7 +579,7 @@ public class TasksApi {
     }
   }
 
-  private HttpRequest.Builder updateTaskRequestBuilder(String taskListId, String id, String ifMatch, TaskUpdate taskUpdate) throws ApiException {
+  private HttpRequest.Builder updateTaskRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String ifMatch, @javax.annotation.Nullable TaskUpdate taskUpdate) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling updateTask");

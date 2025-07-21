@@ -45,7 +45,7 @@ import io.aurinko.client.ApiClient;
   Calendar.JSON_PROPERTY_MULTIPLE_REMINDERS_SUPPORTED,
   Calendar.JSON_PROPERTY_DEFAULT_REMINDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Calendar {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -367,37 +367,37 @@ public class Calendar {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `color` to the URL query string
     if (getColor() != null) {
-      joiner.add(String.format("%scolor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getColor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scolor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getColor()))));
     }
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
     }
 
     // add `accessRole` to the URL query string
     if (getAccessRole() != null) {
-      joiner.add(String.format("%saccessRole%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAccessRole()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%saccessRole%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAccessRole()))));
     }
 
     // add `primary` to the URL query string
     if (getPrimary() != null) {
-      joiner.add(String.format("%sprimary%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPrimary()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprimary%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPrimary()))));
     }
 
     // add `multipleRemindersSupported` to the URL query string
     if (getMultipleRemindersSupported() != null) {
-      joiner.add(String.format("%smultipleRemindersSupported%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMultipleRemindersSupported()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smultipleRemindersSupported%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMultipleRemindersSupported()))));
     }
 
     // add `defaultReminders` to the URL query string

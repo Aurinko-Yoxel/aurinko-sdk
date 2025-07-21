@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BookingAttachAccountsDto;
@@ -65,7 +66,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class GroupBookingApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -76,7 +77,7 @@ public class GroupBookingApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public GroupBookingApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public GroupBookingApi(ApiClient apiClient) {
@@ -109,7 +110,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> attachAccountsGroupBooking(Long id, BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> attachAccountsGroupBooking(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachAccountsGroupBookingRequestBuilder(id, bookingAttachAccountsDto);
       return memberVarHttpClient.sendAsync(
@@ -141,7 +142,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> attachAccountsGroupBookingWithHttpInfo(Long id, BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> attachAccountsGroupBookingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachAccountsGroupBookingRequestBuilder(id, bookingAttachAccountsDto);
       return memberVarHttpClient.sendAsync(
@@ -172,7 +173,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder attachAccountsGroupBookingRequestBuilder(Long id, BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
+  private HttpRequest.Builder attachAccountsGroupBookingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingAttachAccountsDto bookingAttachAccountsDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling attachAccountsGroupBooking");
@@ -211,7 +212,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> attachGroupsBooking(Long id, BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> attachGroupsBooking(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachGroupsBookingRequestBuilder(id, bookingAttachGroupsDto);
       return memberVarHttpClient.sendAsync(
@@ -243,7 +244,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> attachGroupsBookingWithHttpInfo(Long id, BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> attachGroupsBookingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachGroupsBookingRequestBuilder(id, bookingAttachGroupsDto);
       return memberVarHttpClient.sendAsync(
@@ -274,7 +275,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder attachGroupsBookingRequestBuilder(Long id, BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
+  private HttpRequest.Builder attachGroupsBookingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingAttachGroupsDto bookingAttachGroupsDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling attachGroupsBooking");
@@ -314,7 +315,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingAttachedAccountsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingAttachedAccountsPage> attachedAccountsGroupBooking(Long id, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingAttachedAccountsPage> attachedAccountsGroupBooking(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachedAccountsGroupBookingRequestBuilder(id, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -347,7 +348,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingAttachedAccountsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingAttachedAccountsPage>> attachedAccountsGroupBookingWithHttpInfo(Long id, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingAttachedAccountsPage>> attachedAccountsGroupBookingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachedAccountsGroupBookingRequestBuilder(id, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -378,7 +379,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder attachedAccountsGroupBookingRequestBuilder(Long id, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder attachedAccountsGroupBookingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling attachedAccountsGroupBooking");
@@ -429,7 +430,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingAttachedGroupsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingAttachedGroupsPage> attachedGroupsBooking(Long id, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingAttachedGroupsPage> attachedGroupsBooking(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachedGroupsBookingRequestBuilder(id, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -462,7 +463,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingAttachedGroupsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingAttachedGroupsPage>> attachedGroupsBookingWithHttpInfo(Long id, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingAttachedGroupsPage>> attachedGroupsBookingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = attachedGroupsBookingRequestBuilder(id, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -493,7 +494,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder attachedGroupsBookingRequestBuilder(Long id, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder attachedGroupsBookingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling attachedGroupsBooking");
@@ -542,7 +543,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingAvailableProfilesOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingAvailableProfilesOutDto> bookingGroupAvailability(BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+  public CompletableFuture<BookingAvailableProfilesOutDto> bookingGroupAvailability(@javax.annotation.Nullable BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupAvailabilityRequestBuilder(bookingAvailableProfilesInDto);
       return memberVarHttpClient.sendAsync(
@@ -573,7 +574,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingAvailableProfilesOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingAvailableProfilesOutDto>> bookingGroupAvailabilityWithHttpInfo(BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingAvailableProfilesOutDto>> bookingGroupAvailabilityWithHttpInfo(@javax.annotation.Nullable BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupAvailabilityRequestBuilder(bookingAvailableProfilesInDto);
       return memberVarHttpClient.sendAsync(
@@ -604,7 +605,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingGroupAvailabilityRequestBuilder(BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+  private HttpRequest.Builder bookingGroupAvailabilityRequestBuilder(@javax.annotation.Nullable BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -640,7 +641,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;CreateMeetingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<CreateMeetingResponse> bookingGroupCreateMeeting(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<CreateMeetingResponse> bookingGroupCreateMeeting(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupCreateMeetingRequestBuilder(id, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -674,7 +675,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;CreateMeetingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingGroupCreateMeetingWithHttpInfo(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingGroupCreateMeetingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupCreateMeetingRequestBuilder(id, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -705,7 +706,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingGroupCreateMeetingRequestBuilder(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  private HttpRequest.Builder bookingGroupCreateMeetingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingGroupCreateMeeting");
@@ -766,7 +767,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingTimesOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingTimesOutDto> bookingGroupMeetingTimes(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingTimesOutDto> bookingGroupMeetingTimes(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupMeetingTimesRequestBuilder(id, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -803,7 +804,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingTimesOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingGroupMeetingTimesWithHttpInfo(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingGroupMeetingTimesWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupMeetingTimesRequestBuilder(id, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -834,7 +835,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingGroupMeetingTimesRequestBuilder(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder bookingGroupMeetingTimesRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingGroupMeetingTimes");
@@ -891,7 +892,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ConfirmReservationOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ConfirmReservationOutDto> bookingGroupReservationConfirm(Long id) throws ApiException {
+  public CompletableFuture<ConfirmReservationOutDto> bookingGroupReservationConfirm(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupReservationConfirmRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -922,7 +923,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ConfirmReservationOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ConfirmReservationOutDto>> bookingGroupReservationConfirmWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<ConfirmReservationOutDto>> bookingGroupReservationConfirmWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupReservationConfirmRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -953,7 +954,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingGroupReservationConfirmRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder bookingGroupReservationConfirmRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingGroupReservationConfirm");
@@ -985,7 +986,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ConfirmSlotDeleteOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ConfirmSlotDeleteOutDto> bookingGroupReservationDelete(Long id) throws ApiException {
+  public CompletableFuture<ConfirmSlotDeleteOutDto> bookingGroupReservationDelete(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupReservationDeleteRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -1016,7 +1017,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ConfirmSlotDeleteOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ConfirmSlotDeleteOutDto>> bookingGroupReservationDeleteWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<ConfirmSlotDeleteOutDto>> bookingGroupReservationDeleteWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupReservationDeleteRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -1047,7 +1048,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingGroupReservationDeleteRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder bookingGroupReservationDeleteRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingGroupReservationDelete");
@@ -1079,7 +1080,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;GroupBookingOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<GroupBookingOutDto> createGroupBooking(GroupBookingInDto groupBookingInDto) throws ApiException {
+  public CompletableFuture<GroupBookingOutDto> createGroupBooking(@javax.annotation.Nullable GroupBookingInDto groupBookingInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createGroupBookingRequestBuilder(groupBookingInDto);
       return memberVarHttpClient.sendAsync(
@@ -1110,7 +1111,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;GroupBookingOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<GroupBookingOutDto>> createGroupBookingWithHttpInfo(GroupBookingInDto groupBookingInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<GroupBookingOutDto>> createGroupBookingWithHttpInfo(@javax.annotation.Nullable GroupBookingInDto groupBookingInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createGroupBookingRequestBuilder(groupBookingInDto);
       return memberVarHttpClient.sendAsync(
@@ -1141,7 +1142,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder createGroupBookingRequestBuilder(GroupBookingInDto groupBookingInDto) throws ApiException {
+  private HttpRequest.Builder createGroupBookingRequestBuilder(@javax.annotation.Nullable GroupBookingInDto groupBookingInDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1174,7 +1175,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> deleteGroupBooking(Long id) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> deleteGroupBooking(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteGroupBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -1205,7 +1206,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> deleteGroupBookingWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> deleteGroupBookingWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteGroupBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -1236,7 +1237,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder deleteGroupBookingRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder deleteGroupBookingRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteGroupBooking");
@@ -1269,7 +1270,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> detachAccountsGroupBooking(Long id, BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> detachAccountsGroupBooking(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = detachAccountsGroupBookingRequestBuilder(id, bookingDetachGroupAccountsDto);
       return memberVarHttpClient.sendAsync(
@@ -1301,7 +1302,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> detachAccountsGroupBookingWithHttpInfo(Long id, BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> detachAccountsGroupBookingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = detachAccountsGroupBookingRequestBuilder(id, bookingDetachGroupAccountsDto);
       return memberVarHttpClient.sendAsync(
@@ -1332,7 +1333,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder detachAccountsGroupBookingRequestBuilder(Long id, BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
+  private HttpRequest.Builder detachAccountsGroupBookingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingDetachGroupAccountsDto bookingDetachGroupAccountsDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling detachAccountsGroupBooking");
@@ -1371,7 +1372,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> detachGroupsBooking(Long id, BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> detachGroupsBooking(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = detachGroupsBookingRequestBuilder(id, bookingDetachGroupsDto);
       return memberVarHttpClient.sendAsync(
@@ -1403,7 +1404,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> detachGroupsBookingWithHttpInfo(Long id, BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> detachGroupsBookingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = detachGroupsBookingRequestBuilder(id, bookingDetachGroupsDto);
       return memberVarHttpClient.sendAsync(
@@ -1434,7 +1435,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder detachGroupsBookingRequestBuilder(Long id, BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
+  private HttpRequest.Builder detachGroupsBookingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingDetachGroupsDto bookingDetachGroupsDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling detachGroupsBooking");
@@ -1472,7 +1473,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;GroupBookingOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<GroupBookingOutDto> getGroupBooking(Long id) throws ApiException {
+  public CompletableFuture<GroupBookingOutDto> getGroupBooking(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getGroupBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -1503,7 +1504,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;GroupBookingOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<GroupBookingOutDto>> getGroupBookingWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<GroupBookingOutDto>> getGroupBookingWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getGroupBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -1534,7 +1535,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder getGroupBookingRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder getGroupBookingRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getGroupBooking");
@@ -1567,7 +1568,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;GroupBookingPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<GroupBookingPage> getGroupBookings(Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<GroupBookingPage> getGroupBookings(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getGroupBookingsRequestBuilder(limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -1599,7 +1600,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;GroupBookingPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<GroupBookingPage>> getGroupBookingsWithHttpInfo(Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<GroupBookingPage>> getGroupBookingsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getGroupBookingsRequestBuilder(limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -1630,7 +1631,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder getGroupBookingsRequestBuilder(Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder getGroupBookingsRequestBuilder(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1675,7 +1676,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> updateGroupBooking(Long id, GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> updateGroupBooking(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateGroupBookingRequestBuilder(id, groupBookingUpdateDto);
       return memberVarHttpClient.sendAsync(
@@ -1707,7 +1708,7 @@ public class GroupBookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> updateGroupBookingWithHttpInfo(Long id, GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> updateGroupBookingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateGroupBookingRequestBuilder(id, groupBookingUpdateDto);
       return memberVarHttpClient.sendAsync(
@@ -1738,7 +1739,7 @@ public class GroupBookingApi {
     }
   }
 
-  private HttpRequest.Builder updateGroupBookingRequestBuilder(Long id, GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
+  private HttpRequest.Builder updateGroupBookingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable GroupBookingUpdateDto groupBookingUpdateDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateGroupBooking");

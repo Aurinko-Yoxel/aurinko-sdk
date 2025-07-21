@@ -46,7 +46,7 @@ import io.aurinko.client.ApiClient;
   SubscriptionResponse.JSON_PROPERTY_DISABLED_BY_BILLING,
   SubscriptionResponse.JSON_PROPERTY_FILTERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class SubscriptionResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -371,37 +371,37 @@ public class SubscriptionResponse {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `resource` to the URL query string
     if (getResource() != null) {
-      joiner.add(String.format("%sresource%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResource()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresource%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResource()))));
     }
 
     // add `notificationUrl` to the URL query string
     if (getNotificationUrl() != null) {
-      joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotificationUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotificationUrl()))));
     }
 
     // add `active` to the URL query string
     if (getActive() != null) {
-      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getActive()))));
     }
 
     // add `failSince` to the URL query string
     if (getFailSince() != null) {
-      joiner.add(String.format("%sfailSince%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFailSince()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfailSince%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFailSince()))));
     }
 
     // add `failDescription` to the URL query string
     if (getFailDescription() != null) {
-      joiner.add(String.format("%sfailDescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFailDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfailDescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFailDescription()))));
     }
 
     // add `disabledByBilling` to the URL query string
     if (getDisabledByBilling() != null) {
-      joiner.add(String.format("%sdisabledByBilling%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDisabledByBilling()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdisabledByBilling%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDisabledByBilling()))));
     }
 
     // add `filters` to the URL query string
@@ -410,7 +410,7 @@ public class SubscriptionResponse {
         if (getFilters().get(i) != null) {
           joiner.add(String.format("%sfilters%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(ApiClient.valueToString(getFilters().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              ApiClient.urlEncode(ApiClient.valueToString(getFilters().get(i)))));
         }
       }
     }

@@ -50,7 +50,7 @@ import io.aurinko.client.ApiClient;
   SuggestMeetingTimesRequest.JSON_PROPERTY_AVAILABILITY_INTERVALS,
   SuggestMeetingTimesRequest.JSON_PROPERTY_FREE_STATUSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class SuggestMeetingTimesRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   @javax.annotation.Nullable
@@ -413,22 +413,22 @@ public class SuggestMeetingTimesRequest {
 
     // add `timeMin` to the URL query string
     if (getTimeMin() != null) {
-      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeMin()))));
     }
 
     // add `timeMax` to the URL query string
     if (getTimeMax() != null) {
-      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMax()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeMax()))));
     }
 
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
-      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDurationMinutes()))));
     }
 
     // add `availabilityStep` to the URL query string
     if (getAvailabilityStep() != null) {
-      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAvailabilityStep()))));
     }
 
     // add `attendees` to the URL query string
@@ -443,7 +443,7 @@ public class SuggestMeetingTimesRequest {
 
     // add `defaultTimezone` to the URL query string
     if (getDefaultTimezone() != null) {
-      joiner.add(String.format("%sdefaultTimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDefaultTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdefaultTimezone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDefaultTimezone()))));
     }
 
     // add `defaultWorkHours` to the URL query string
@@ -462,7 +462,7 @@ public class SuggestMeetingTimesRequest {
         if (getFreeStatuses().get(i) != null) {
           joiner.add(String.format("%sfreeStatuses%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(ApiClient.valueToString(getFreeStatuses().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              ApiClient.urlEncode(ApiClient.valueToString(getFreeStatuses().get(i)))));
         }
       }
     }

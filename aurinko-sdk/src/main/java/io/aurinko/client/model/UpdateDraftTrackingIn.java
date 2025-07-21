@@ -35,7 +35,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   UpdateDraftTrackingIn.JSON_PROPERTY_CONTEXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class UpdateDraftTrackingIn {
   public static final String JSON_PROPERTY_CONTEXT = "context";
   @javax.annotation.Nullable
@@ -142,7 +142,7 @@ public class UpdateDraftTrackingIn {
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContext()))));
     }
 
     return joiner.toString();

@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   WeekWorkSchedule.JSON_PROPERTY_DAY_SCHEDULES,
   WeekWorkSchedule.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class WeekWorkSchedule {
   public static final String JSON_PROPERTY_DAY_SCHEDULES = "daySchedules";
   @javax.annotation.Nullable
@@ -194,7 +194,7 @@ public class WeekWorkSchedule {
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimezone()))));
     }
 
     return joiner.toString();

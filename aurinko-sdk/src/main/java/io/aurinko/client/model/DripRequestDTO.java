@@ -44,7 +44,7 @@ import io.aurinko.client.ApiClient;
   DripRequestDTO.JSON_PROPERTY_TARGETS,
   DripRequestDTO.JSON_PROPERTY_ACTION_VARS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class DripRequestDTO {
   /**
    * Gets or Sets status
@@ -324,17 +324,17 @@ public class DripRequestDTO {
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `ruleId` to the URL query string
     if (getRuleId() != null) {
-      joiner.add(String.format("%sruleId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRuleId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sruleId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRuleId()))));
     }
 
     // add `dripAfter` to the URL query string
     if (getDripAfter() != null) {
-      joiner.add(String.format("%sdripAfter%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripAfter()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripAfter%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDripAfter()))));
     }
 
     // add `targets` to the URL query string
@@ -342,7 +342,7 @@ public class DripRequestDTO {
       for (int i = 0; i < getTargets().size(); i++) {
         joiner.add(String.format("%stargets%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getTargets().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getTargets().get(i)))));
       }
     }
 
@@ -351,7 +351,7 @@ public class DripRequestDTO {
       for (String _key : getActionVars().keySet()) {
         joiner.add(String.format("%sactionVars%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getActionVars().get(_key), URLEncoder.encode(ApiClient.valueToString(getActionVars().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getActionVars().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getActionVars().get(_key)))));
       }
     }
 

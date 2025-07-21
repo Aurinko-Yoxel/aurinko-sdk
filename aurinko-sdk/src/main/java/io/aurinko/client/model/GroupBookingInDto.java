@@ -52,7 +52,7 @@ import io.aurinko.client.ApiClient;
   GroupBookingInDto.JSON_PROPERTY_OPEN_MEETING_URL,
   GroupBookingInDto.JSON_PROPERTY_CLIENT_ORG_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class GroupBookingInDto {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -579,47 +579,47 @@ public class GroupBookingInDto {
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
-      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDurationMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDurationMinutes()))));
     }
 
     // add `availabilityStep` to the URL query string
     if (getAvailabilityStep() != null) {
-      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAvailabilityStep()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAvailabilityStep()))));
     }
 
     // add `startTime` to the URL query string
     if (getStartTime() != null) {
-      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStartTime()))));
     }
 
     // add `endTime` to the URL query string
     if (getEndTime() != null) {
-      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEndTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sendTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEndTime()))));
     }
 
     // add `timeAvailableFor` to the URL query string
     if (getTimeAvailableFor() != null) {
-      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeAvailableFor()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeAvailableFor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeAvailableFor()))));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubject()))));
     }
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
     }
 
     // add `location` to the URL query string
     if (getLocation() != null) {
-      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slocation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocation()))));
     }
 
     // add `workHours` to the URL query string
@@ -634,22 +634,22 @@ public class GroupBookingInDto {
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContext()))));
     }
 
     // add `startConference` to the URL query string
     if (getStartConference() != null) {
-      joiner.add(String.format("%sstartConference%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartConference()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartConference%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStartConference()))));
     }
 
     // add `openMeetingUrl` to the URL query string
     if (getOpenMeetingUrl() != null) {
-      joiner.add(String.format("%sopenMeetingUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOpenMeetingUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sopenMeetingUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOpenMeetingUrl()))));
     }
 
     // add `clientOrgId` to the URL query string
     if (getClientOrgId() != null) {
-      joiner.add(String.format("%sclientOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getClientOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sclientOrgId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getClientOrgId()))));
     }
 
     return joiner.toString();

@@ -36,7 +36,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   DraftSendDetails.JSON_PROPERTY_TRACKING
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class DraftSendDetails {
   public static final String JSON_PROPERTY_TRACKING = "tracking";
   @javax.annotation.Nullable

@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   FollowupRuleAggregateIn.JSON_PROPERTY_TEMPLATE_SUBJECT,
   FollowupRuleAggregateIn.JSON_PROPERTY_ACTIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FollowupRuleAggregateIn {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -277,22 +277,22 @@ public class FollowupRuleAggregateIn {
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `expectThreadResponse` to the URL query string
     if (getExpectThreadResponse() != null) {
-      joiner.add(String.format("%sexpectThreadResponse%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExpectThreadResponse()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sexpectThreadResponse%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExpectThreadResponse()))));
     }
 
     // add `templateBody` to the URL query string
     if (getTemplateBody() != null) {
-      joiner.add(String.format("%stemplateBody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTemplateBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stemplateBody%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTemplateBody()))));
     }
 
     // add `templateSubject` to the URL query string
     if (getTemplateSubject() != null) {
-      joiner.add(String.format("%stemplateSubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTemplateSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stemplateSubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTemplateSubject()))));
     }
 
     // add `actions` to the URL query string

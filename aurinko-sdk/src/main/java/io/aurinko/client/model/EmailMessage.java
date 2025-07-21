@@ -74,7 +74,7 @@ import io.aurinko.client.ApiClient;
   EmailMessage.JSON_PROPERTY_WEB_LINK,
   EmailMessage.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailMessage {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -1098,42 +1098,42 @@ public class EmailMessage {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getThreadId()))));
     }
 
     // add `createdTime` to the URL query string
     if (getCreatedTime() != null) {
-      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreatedTime()))));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastModifiedTime()))));
     }
 
     // add `sentAt` to the URL query string
     if (getSentAt() != null) {
-      joiner.add(String.format("%ssentAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSentAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssentAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSentAt()))));
     }
 
     // add `receivedAt` to the URL query string
     if (getReceivedAt() != null) {
-      joiner.add(String.format("%sreceivedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReceivedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sreceivedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReceivedAt()))));
     }
 
     // add `internetMessageId` to the URL query string
     if (getInternetMessageId() != null) {
-      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInternetMessageId()))));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubject()))));
     }
 
     // add `sysLabels` to the URL query string
@@ -1142,7 +1142,7 @@ public class EmailMessage {
         if (getSysLabels().get(i) != null) {
           joiner.add(String.format("%ssysLabels%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(ApiClient.valueToString(getSysLabels().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              ApiClient.urlEncode(ApiClient.valueToString(getSysLabels().get(i)))));
         }
       }
     }
@@ -1152,7 +1152,7 @@ public class EmailMessage {
       for (int i = 0; i < getKeywords().size(); i++) {
         joiner.add(String.format("%skeywords%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getKeywords().get(i)))));
       }
     }
 
@@ -1161,18 +1161,18 @@ public class EmailMessage {
       for (int i = 0; i < getSysClassifications().size(); i++) {
         joiner.add(String.format("%ssysClassifications%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getSysClassifications().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getSysClassifications().get(i)))));
       }
     }
 
     // add `sensitivity` to the URL query string
     if (getSensitivity() != null) {
-      joiner.add(String.format("%ssensitivity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSensitivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssensitivity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSensitivity()))));
     }
 
     // add `meetingMessageMethod` to the URL query string
     if (getMeetingMessageMethod() != null) {
-      joiner.add(String.format("%smeetingMessageMethod%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMeetingMessageMethod()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smeetingMessageMethod%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMeetingMessageMethod()))));
     }
 
     // add `from` to the URL query string
@@ -1222,17 +1222,17 @@ public class EmailMessage {
 
     // add `hasAttachments` to the URL query string
     if (getHasAttachments() != null) {
-      joiner.add(String.format("%shasAttachments%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHasAttachments()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shasAttachments%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasAttachments()))));
     }
 
     // add `body` to the URL query string
     if (getBody() != null) {
-      joiner.add(String.format("%sbody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbody%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBody()))));
     }
 
     // add `bodySnippet` to the URL query string
     if (getBodySnippet() != null) {
-      joiner.add(String.format("%sbodySnippet%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBodySnippet()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbodySnippet%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBodySnippet()))));
     }
 
     // add `attachments` to the URL query string
@@ -1247,17 +1247,17 @@ public class EmailMessage {
 
     // add `inReplyTo` to the URL query string
     if (getInReplyTo() != null) {
-      joiner.add(String.format("%sinReplyTo%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInReplyTo()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinReplyTo%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInReplyTo()))));
     }
 
     // add `references` to the URL query string
     if (getReferences() != null) {
-      joiner.add(String.format("%sreferences%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReferences()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sreferences%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReferences()))));
     }
 
     // add `threadIndex` to the URL query string
     if (getThreadIndex() != null) {
-      joiner.add(String.format("%sthreadIndex%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadIndex()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadIndex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getThreadIndex()))));
     }
 
     // add `internetHeaders` to the URL query string
@@ -1275,18 +1275,18 @@ public class EmailMessage {
       for (String _key : getNativeProperties().keySet()) {
         joiner.add(String.format("%snativeProperties%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getNativeProperties().get(_key), URLEncoder.encode(ApiClient.valueToString(getNativeProperties().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getNativeProperties().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getNativeProperties().get(_key)))));
       }
     }
 
     // add `folderId` to the URL query string
     if (getFolderId() != null) {
-      joiner.add(String.format("%sfolderId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFolderId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfolderId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFolderId()))));
     }
 
     // add `webLink` to the URL query string
     if (getWebLink() != null) {
-      joiner.add(String.format("%swebLink%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getWebLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%swebLink%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getWebLink()))));
     }
 
     // add `omitted` to the URL query string
@@ -1294,7 +1294,7 @@ public class EmailMessage {
       for (int i = 0; i < getOmitted().size(); i++) {
         joiner.add(String.format("%somitted%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getOmitted().get(i)))));
       }
     }
 

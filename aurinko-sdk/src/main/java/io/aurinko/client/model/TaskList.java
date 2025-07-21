@@ -43,7 +43,7 @@ import io.aurinko.client.ApiClient;
   TaskList.JSON_PROPERTY_EMAILS_LIST,
   TaskList.JSON_PROPERTY_LAST_MODIFIED_TIME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class TaskList {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -360,42 +360,42 @@ public class TaskList {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEtag()))));
     }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
-      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stitle%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTitle()))));
     }
 
     // add `owner` to the URL query string
     if (getOwner() != null) {
-      joiner.add(String.format("%sowner%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOwner()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sowner%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOwner()))));
     }
 
     // add `shared` to the URL query string
     if (getShared() != null) {
-      joiner.add(String.format("%sshared%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getShared()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sshared%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getShared()))));
     }
 
     // add `defaultList` to the URL query string
     if (getDefaultList() != null) {
-      joiner.add(String.format("%sdefaultList%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDefaultList()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdefaultList%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDefaultList()))));
     }
 
     // add `emailsList` to the URL query string
     if (getEmailsList() != null) {
-      joiner.add(String.format("%semailsList%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmailsList()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semailsList%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmailsList()))));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastModifiedTime()))));
     }
 
     return joiner.toString();

@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.SubscriptionRequest;
@@ -48,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class WebhooksApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -59,7 +60,7 @@ public class WebhooksApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public WebhooksApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public WebhooksApi(ApiClient apiClient) {
@@ -91,7 +92,7 @@ public class WebhooksApi {
    * @return CompletableFuture&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SubscriptionResponse> getSubscription(Long id) throws ApiException {
+  public CompletableFuture<SubscriptionResponse> getSubscription(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getSubscriptionRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -122,7 +123,7 @@ public class WebhooksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SubscriptionResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SubscriptionResponse>> getSubscriptionWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<SubscriptionResponse>> getSubscriptionWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getSubscriptionRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -153,7 +154,7 @@ public class WebhooksApi {
     }
   }
 
-  private HttpRequest.Builder getSubscriptionRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder getSubscriptionRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getSubscription");
@@ -187,7 +188,7 @@ public class WebhooksApi {
    * @return CompletableFuture&lt;SubscriptionsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SubscriptionsPage> getSubscriptions(Integer limit, Integer offset, Boolean includeInactive) throws ApiException {
+  public CompletableFuture<SubscriptionsPage> getSubscriptions(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean includeInactive) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getSubscriptionsRequestBuilder(limit, offset, includeInactive);
       return memberVarHttpClient.sendAsync(
@@ -220,7 +221,7 @@ public class WebhooksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SubscriptionsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SubscriptionsPage>> getSubscriptionsWithHttpInfo(Integer limit, Integer offset, Boolean includeInactive) throws ApiException {
+  public CompletableFuture<ApiResponse<SubscriptionsPage>> getSubscriptionsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean includeInactive) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getSubscriptionsRequestBuilder(limit, offset, includeInactive);
       return memberVarHttpClient.sendAsync(
@@ -251,7 +252,7 @@ public class WebhooksApi {
     }
   }
 
-  private HttpRequest.Builder getSubscriptionsRequestBuilder(Integer limit, Integer offset, Boolean includeInactive) throws ApiException {
+  private HttpRequest.Builder getSubscriptionsRequestBuilder(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean includeInactive) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -297,7 +298,7 @@ public class WebhooksApi {
    * @return CompletableFuture&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SubscriptionResponse> subscribe(SubscriptionRequest subscriptionRequest) throws ApiException {
+  public CompletableFuture<SubscriptionResponse> subscribe(@javax.annotation.Nullable SubscriptionRequest subscriptionRequest) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = subscribeRequestBuilder(subscriptionRequest);
       return memberVarHttpClient.sendAsync(
@@ -328,7 +329,7 @@ public class WebhooksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SubscriptionResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SubscriptionResponse>> subscribeWithHttpInfo(SubscriptionRequest subscriptionRequest) throws ApiException {
+  public CompletableFuture<ApiResponse<SubscriptionResponse>> subscribeWithHttpInfo(@javax.annotation.Nullable SubscriptionRequest subscriptionRequest) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = subscribeRequestBuilder(subscriptionRequest);
       return memberVarHttpClient.sendAsync(
@@ -359,7 +360,7 @@ public class WebhooksApi {
     }
   }
 
-  private HttpRequest.Builder subscribeRequestBuilder(SubscriptionRequest subscriptionRequest) throws ApiException {
+  private HttpRequest.Builder subscribeRequestBuilder(@javax.annotation.Nullable SubscriptionRequest subscriptionRequest) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -392,7 +393,7 @@ public class WebhooksApi {
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> unsubscribe(Long id) throws ApiException {
+  public CompletableFuture<Void> unsubscribe(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = unsubscribeRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -416,7 +417,7 @@ public class WebhooksApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> unsubscribeWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> unsubscribeWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = unsubscribeRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -439,7 +440,7 @@ public class WebhooksApi {
     }
   }
 
-  private HttpRequest.Builder unsubscribeRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder unsubscribeRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling unsubscribe");

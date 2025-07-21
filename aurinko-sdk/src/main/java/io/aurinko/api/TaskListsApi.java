@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.OkResponse;
@@ -50,7 +51,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class TaskListsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -61,7 +62,7 @@ public class TaskListsApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public TaskListsApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public TaskListsApi(ApiClient apiClient) {
@@ -93,7 +94,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;TaskList&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<TaskList> createTaskList(TaskListCreate taskListCreate) throws ApiException {
+  public CompletableFuture<TaskList> createTaskList(@javax.annotation.Nullable TaskListCreate taskListCreate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createTaskListRequestBuilder(taskListCreate);
       return memberVarHttpClient.sendAsync(
@@ -124,7 +125,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;TaskList&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<TaskList>> createTaskListWithHttpInfo(TaskListCreate taskListCreate) throws ApiException {
+  public CompletableFuture<ApiResponse<TaskList>> createTaskListWithHttpInfo(@javax.annotation.Nullable TaskListCreate taskListCreate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createTaskListRequestBuilder(taskListCreate);
       return memberVarHttpClient.sendAsync(
@@ -155,7 +156,7 @@ public class TaskListsApi {
     }
   }
 
-  private HttpRequest.Builder createTaskListRequestBuilder(TaskListCreate taskListCreate) throws ApiException {
+  private HttpRequest.Builder createTaskListRequestBuilder(@javax.annotation.Nullable TaskListCreate taskListCreate) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -188,7 +189,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> deleteTaskList(String taskListId) throws ApiException {
+  public CompletableFuture<OkResponse> deleteTaskList(@javax.annotation.Nonnull String taskListId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteTaskListRequestBuilder(taskListId);
       return memberVarHttpClient.sendAsync(
@@ -219,7 +220,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> deleteTaskListWithHttpInfo(String taskListId) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> deleteTaskListWithHttpInfo(@javax.annotation.Nonnull String taskListId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteTaskListRequestBuilder(taskListId);
       return memberVarHttpClient.sendAsync(
@@ -250,7 +251,7 @@ public class TaskListsApi {
     }
   }
 
-  private HttpRequest.Builder deleteTaskListRequestBuilder(String taskListId) throws ApiException {
+  private HttpRequest.Builder deleteTaskListRequestBuilder(@javax.annotation.Nonnull String taskListId) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling deleteTaskList");
@@ -282,7 +283,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;TaskList&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<TaskList> taskList(String taskListId) throws ApiException {
+  public CompletableFuture<TaskList> taskList(@javax.annotation.Nonnull String taskListId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskListRequestBuilder(taskListId);
       return memberVarHttpClient.sendAsync(
@@ -313,7 +314,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;TaskList&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<TaskList>> taskListWithHttpInfo(String taskListId) throws ApiException {
+  public CompletableFuture<ApiResponse<TaskList>> taskListWithHttpInfo(@javax.annotation.Nonnull String taskListId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskListRequestBuilder(taskListId);
       return memberVarHttpClient.sendAsync(
@@ -344,7 +345,7 @@ public class TaskListsApi {
     }
   }
 
-  private HttpRequest.Builder taskListRequestBuilder(String taskListId) throws ApiException {
+  private HttpRequest.Builder taskListRequestBuilder(@javax.annotation.Nonnull String taskListId) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling taskList");
@@ -376,7 +377,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;TaskListPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<TaskListPage> taskListsList(String pageToken) throws ApiException {
+  public CompletableFuture<TaskListPage> taskListsList(@javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskListsListRequestBuilder(pageToken);
       return memberVarHttpClient.sendAsync(
@@ -407,7 +408,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;TaskListPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<TaskListPage>> taskListsListWithHttpInfo(String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<TaskListPage>> taskListsListWithHttpInfo(@javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskListsListRequestBuilder(pageToken);
       return memberVarHttpClient.sendAsync(
@@ -438,7 +439,7 @@ public class TaskListsApi {
     }
   }
 
-  private HttpRequest.Builder taskListsListRequestBuilder(String pageToken) throws ApiException {
+  private HttpRequest.Builder taskListsListRequestBuilder(@javax.annotation.Nullable String pageToken) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -482,7 +483,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;TaskList&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<TaskList> updateTaskList(String taskListId, String ifMatch, TaskListUpdate taskListUpdate) throws ApiException {
+  public CompletableFuture<TaskList> updateTaskList(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable TaskListUpdate taskListUpdate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateTaskListRequestBuilder(taskListId, ifMatch, taskListUpdate);
       return memberVarHttpClient.sendAsync(
@@ -515,7 +516,7 @@ public class TaskListsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;TaskList&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<TaskList>> updateTaskListWithHttpInfo(String taskListId, String ifMatch, TaskListUpdate taskListUpdate) throws ApiException {
+  public CompletableFuture<ApiResponse<TaskList>> updateTaskListWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable TaskListUpdate taskListUpdate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateTaskListRequestBuilder(taskListId, ifMatch, taskListUpdate);
       return memberVarHttpClient.sendAsync(
@@ -546,7 +547,7 @@ public class TaskListsApi {
     }
   }
 
-  private HttpRequest.Builder updateTaskListRequestBuilder(String taskListId, String ifMatch, TaskListUpdate taskListUpdate) throws ApiException {
+  private HttpRequest.Builder updateTaskListRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable TaskListUpdate taskListUpdate) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling updateTaskList");

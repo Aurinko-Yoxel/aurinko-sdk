@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.AccountSaveResult;
@@ -50,7 +51,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ServicesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -61,7 +62,7 @@ public class ServicesApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public ServicesApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public ServicesApi(ApiClient apiClient) {
@@ -98,7 +99,7 @@ public class ServicesApi {
    * @return CompletableFuture&lt;AccountsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountsPage> getSvcAccounts(Integer limit, Integer offset, String clientOrgId, String authOrgId, ServiceTypeDaemon serviceType, Long subscriptionId) throws ApiException {
+  public CompletableFuture<AccountsPage> getSvcAccounts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable String authOrgId, @javax.annotation.Nullable ServiceTypeDaemon serviceType, @javax.annotation.Nullable Long subscriptionId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getSvcAccountsRequestBuilder(limit, offset, clientOrgId, authOrgId, serviceType, subscriptionId);
       return memberVarHttpClient.sendAsync(
@@ -134,7 +135,7 @@ public class ServicesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;AccountsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountsPage>> getSvcAccountsWithHttpInfo(Integer limit, Integer offset, String clientOrgId, String authOrgId, ServiceTypeDaemon serviceType, Long subscriptionId) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountsPage>> getSvcAccountsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable String authOrgId, @javax.annotation.Nullable ServiceTypeDaemon serviceType, @javax.annotation.Nullable Long subscriptionId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getSvcAccountsRequestBuilder(limit, offset, clientOrgId, authOrgId, serviceType, subscriptionId);
       return memberVarHttpClient.sendAsync(
@@ -165,7 +166,7 @@ public class ServicesApi {
     }
   }
 
-  private HttpRequest.Builder getSvcAccountsRequestBuilder(Integer limit, Integer offset, String clientOrgId, String authOrgId, ServiceTypeDaemon serviceType, Long subscriptionId) throws ApiException {
+  private HttpRequest.Builder getSvcAccountsRequestBuilder(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String clientOrgId, @javax.annotation.Nullable String authOrgId, @javax.annotation.Nullable ServiceTypeDaemon serviceType, @javax.annotation.Nullable Long subscriptionId) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -218,7 +219,7 @@ public class ServicesApi {
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountSaveResult> upsertServiceAccount(List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<AccountSaveResult> upsertServiceAccount(@javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = upsertServiceAccountRequestBuilder(recycleKeys, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
@@ -250,7 +251,7 @@ public class ServicesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertServiceAccountWithHttpInfo(List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertServiceAccountWithHttpInfo(@javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = upsertServiceAccountRequestBuilder(recycleKeys, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
@@ -281,7 +282,7 @@ public class ServicesApi {
     }
   }
 
-  private HttpRequest.Builder upsertServiceAccountRequestBuilder(List<ServiceKey> recycleKeys, ApiAccountInDto apiAccountInDto) throws ApiException {
+  private HttpRequest.Builder upsertServiceAccountRequestBuilder(@javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

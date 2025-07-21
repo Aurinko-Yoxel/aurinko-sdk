@@ -64,8 +64,6 @@ public enum ServiceTypeNonDaemon {
   
   AUTO_QUOTES("AutoQuotes"),
   
-  TEAMWORK("Teamwork"),
-  
   NET_SUITE("NetSuite"),
   
   SPEC_PATH("SpecPath"),

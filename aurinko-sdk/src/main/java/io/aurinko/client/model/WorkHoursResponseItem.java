@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   WorkHoursResponseItem.JSON_PROPERTY_EMAIL,
   WorkHoursResponseItem.JSON_PROPERTY_WORK_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class WorkHoursResponseItem {
   public static final String JSON_PROPERTY_EMAIL = "email";
   @javax.annotation.Nullable
@@ -174,7 +174,7 @@ public class WorkHoursResponseItem {
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `workHours` to the URL query string

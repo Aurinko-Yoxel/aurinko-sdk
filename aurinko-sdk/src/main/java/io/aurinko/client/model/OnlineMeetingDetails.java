@@ -40,7 +40,7 @@ import io.aurinko.client.ApiClient;
   OnlineMeetingDetails.JSON_PROPERTY_SIP,
   OnlineMeetingDetails.JSON_PROPERTY_INFO_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class OnlineMeetingDetails {
   public static final String JSON_PROPERTY_URL = "url";
   @javax.annotation.Nullable
@@ -255,32 +255,32 @@ public class OnlineMeetingDetails {
 
     // add `url` to the URL query string
     if (getUrl() != null) {
-      joiner.add(String.format("%surl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%surl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUrl()))));
     }
 
     // add `phone` to the URL query string
     if (getPhone() != null) {
-      joiner.add(String.format("%sphone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPhone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sphone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhone()))));
     }
 
     // add `pin` to the URL query string
     if (getPin() != null) {
-      joiner.add(String.format("%spin%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%spin%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPin()))));
     }
 
     // add `regionCode` to the URL query string
     if (getRegionCode() != null) {
-      joiner.add(String.format("%sregionCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRegionCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sregionCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegionCode()))));
     }
 
     // add `sip` to the URL query string
     if (getSip() != null) {
-      joiner.add(String.format("%ssip%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSip()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssip%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSip()))));
     }
 
     // add `infoUrl` to the URL query string
     if (getInfoUrl() != null) {
-      joiner.add(String.format("%sinfoUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInfoUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinfoUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInfoUrl()))));
     }
 
     return joiner.toString();

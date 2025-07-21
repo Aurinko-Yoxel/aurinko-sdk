@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   WorkHoursResponse.JSON_PROPERTY_ITEMS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class WorkHoursResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
   @javax.annotation.Nullable

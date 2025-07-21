@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   EventDateTime.JSON_PROPERTY_DATE_TIME,
   EventDateTime.JSON_PROPERTY_TIMEZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EventDateTime {
   public static final String JSON_PROPERTY_DATE_ONLY = "dateOnly";
   @javax.annotation.Nullable
@@ -206,17 +206,17 @@ public class EventDateTime {
 
     // add `dateOnly` to the URL query string
     if (getDateOnly() != null) {
-      joiner.add(String.format("%sdateOnly%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateOnly()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateOnly%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateOnly()))));
     }
 
     // add `dateTime` to the URL query string
     if (getDateTime() != null) {
-      joiner.add(String.format("%sdateTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateTime()))));
     }
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimezone()))));
     }
 
     return joiner.toString();

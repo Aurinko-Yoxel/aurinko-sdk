@@ -40,7 +40,7 @@ import io.aurinko.client.ApiClient;
   OccurrenceInfo.JSON_PROPERTY_START,
   OccurrenceInfo.JSON_PROPERTY_MASTER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class OccurrenceInfo {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -306,12 +306,12 @@ public class OccurrenceInfo {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `originalStart` to the URL query string
@@ -326,7 +326,7 @@ public class OccurrenceInfo {
 
     // add `masterId` to the URL query string
     if (getMasterId() != null) {
-      joiner.add(String.format("%smasterId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMasterId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smasterId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMasterId()))));
     }
 
     return joiner.toString();

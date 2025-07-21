@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.SchedulerInfo;
 import io.aurinko.client.model.SelectedMeetingTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -88,6 +89,14 @@ class CreateMeetingDtoTest {
     @Test
     void substitutionDataTest() {
         // TODO: test substitutionData
+    }
+
+    /**
+     * Test the property 'schedulerInfo'
+     */
+    @Test
+    void schedulerInfoTest() {
+        // TODO: test schedulerInfo
     }
 
 }

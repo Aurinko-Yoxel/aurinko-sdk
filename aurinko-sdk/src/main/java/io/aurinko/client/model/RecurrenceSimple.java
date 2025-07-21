@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
   RecurrenceSimple.JSON_PROPERTY_PATTERN,
   RecurrenceSimple.JSON_PROPERTY_RANGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class RecurrenceSimple {
   public static final String JSON_PROPERTY_PATTERN = "pattern";
   @javax.annotation.Nullable

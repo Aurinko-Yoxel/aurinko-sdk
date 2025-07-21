@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.aurinko.client.model.SchedulerInfo;
 import io.aurinko.client.model.SelectedMeetingTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,9 +44,10 @@ import io.aurinko.client.ApiClient;
   CreateMeetingDto.JSON_PROPERTY_ACCOUNT_IDS,
   CreateMeetingDto.JSON_PROPERTY_NAME,
   CreateMeetingDto.JSON_PROPERTY_EMAIL,
-  CreateMeetingDto.JSON_PROPERTY_SUBSTITUTION_DATA
+  CreateMeetingDto.JSON_PROPERTY_SUBSTITUTION_DATA,
+  CreateMeetingDto.JSON_PROPERTY_SCHEDULER_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class CreateMeetingDto {
   public static final String JSON_PROPERTY_TIME = "time";
   @javax.annotation.Nullable
@@ -70,6 +72,10 @@ public class CreateMeetingDto {
   public static final String JSON_PROPERTY_SUBSTITUTION_DATA = "substitutionData";
   @javax.annotation.Nullable
   private Map<String, String> substitutionData = new HashMap<>();
+
+  public static final String JSON_PROPERTY_SCHEDULER_INFO = "schedulerInfo";
+  @javax.annotation.Nullable
+  private SchedulerInfo schedulerInfo;
 
   public CreateMeetingDto() { 
   }
@@ -168,9 +174,11 @@ public class CreateMeetingDto {
   }
 
   /**
-   * Username of the person requesting the meeting
+   * Username of the person requesting the meeting (please, use schedulerInfo.name instead)
    * @return name
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -192,9 +200,11 @@ public class CreateMeetingDto {
   }
 
   /**
-   * Email of the person requesting the meeting, if not specified, an event will be created without an attendee
+   * Email of the person requesting the meeting (please, use schedulerInfo.email instead)
    * @return email
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -242,6 +252,30 @@ public class CreateMeetingDto {
   }
 
 
+  public CreateMeetingDto schedulerInfo(@javax.annotation.Nullable SchedulerInfo schedulerInfo) {
+    this.schedulerInfo = schedulerInfo;
+    return this;
+  }
+
+  /**
+   * Get schedulerInfo
+   * @return schedulerInfo
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SCHEDULER_INFO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public SchedulerInfo getSchedulerInfo() {
+    return schedulerInfo;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SCHEDULER_INFO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSchedulerInfo(@javax.annotation.Nullable SchedulerInfo schedulerInfo) {
+    this.schedulerInfo = schedulerInfo;
+  }
+
+
   /**
    * Return true if this CreateMeetingDto object is equal to o.
    */
@@ -259,12 +293,13 @@ public class CreateMeetingDto {
         Objects.equals(this.accountIds, createMeetingDto.accountIds) &&
         Objects.equals(this.name, createMeetingDto.name) &&
         Objects.equals(this.email, createMeetingDto.email) &&
-        Objects.equals(this.substitutionData, createMeetingDto.substitutionData);
+        Objects.equals(this.substitutionData, createMeetingDto.substitutionData) &&
+        Objects.equals(this.schedulerInfo, createMeetingDto.schedulerInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(time, groupXids, accountIds, name, email, substitutionData);
+    return Objects.hash(time, groupXids, accountIds, name, email, substitutionData, schedulerInfo);
   }
 
   @Override
@@ -277,6 +312,7 @@ public class CreateMeetingDto {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    substitutionData: ").append(toIndentedString(substitutionData)).append("\n");
+    sb.append("    schedulerInfo: ").append(toIndentedString(schedulerInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -334,7 +370,7 @@ public class CreateMeetingDto {
       for (int i = 0; i < getGroupXids().size(); i++) {
         joiner.add(String.format("%sgroupXids%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getGroupXids().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getGroupXids().get(i)))));
       }
     }
 
@@ -343,18 +379,18 @@ public class CreateMeetingDto {
       for (int i = 0; i < getAccountIds().size(); i++) {
         joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getAccountIds().get(i)))));
       }
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `substitutionData` to the URL query string
@@ -362,8 +398,13 @@ public class CreateMeetingDto {
       for (String _key : getSubstitutionData().keySet()) {
         joiner.add(String.format("%ssubstitutionData%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getSubstitutionData().get(_key), URLEncoder.encode(ApiClient.valueToString(getSubstitutionData().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getSubstitutionData().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getSubstitutionData().get(_key)))));
       }
+    }
+
+    // add `schedulerInfo` to the URL query string
+    if (getSchedulerInfo() != null) {
+      joiner.add(getSchedulerInfo().toUrlQueryString(prefix + "schedulerInfo" + suffix));
     }
 
     return joiner.toString();

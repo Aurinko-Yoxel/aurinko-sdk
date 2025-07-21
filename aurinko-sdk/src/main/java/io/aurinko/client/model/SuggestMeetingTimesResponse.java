@@ -40,7 +40,7 @@ import io.aurinko.client.ApiClient;
   SuggestMeetingTimesResponse.JSON_PROPERTY_ITEMS,
   SuggestMeetingTimesResponse.JSON_PROPERTY_ATTENDEES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class SuggestMeetingTimesResponse {
   public static final String JSON_PROPERTY_ITEMS = "items";
   @javax.annotation.Nullable

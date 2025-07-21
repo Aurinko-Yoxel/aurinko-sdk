@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   EmailAttachment.JSON_PROPERTY_CONTENT,
   EmailAttachment.JSON_PROPERTY_CONTENT_LOCATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailAttachment {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -301,42 +301,42 @@ public class EmailAttachment {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `mimeType` to the URL query string
     if (getMimeType() != null) {
-      joiner.add(String.format("%smimeType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMimeType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smimeType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMimeType()))));
     }
 
     // add `size` to the URL query string
     if (getSize() != null) {
-      joiner.add(String.format("%ssize%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssize%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSize()))));
     }
 
     // add `inline` to the URL query string
     if (getInline() != null) {
-      joiner.add(String.format("%sinline%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInline()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinline%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInline()))));
     }
 
     // add `contentId` to the URL query string
     if (getContentId() != null) {
-      joiner.add(String.format("%scontentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontentId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContentId()))));
     }
 
     // add `content` to the URL query string
     if (getContent() != null) {
-      joiner.add(String.format("%scontent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContent()))));
     }
 
     // add `contentLocation` to the URL query string
     if (getContentLocation() != null) {
-      joiner.add(String.format("%scontentLocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContentLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontentLocation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContentLocation()))));
     }
 
     return joiner.toString();

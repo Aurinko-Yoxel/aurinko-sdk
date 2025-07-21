@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   EmailFolderInfoPage.JSON_PROPERTY_LENGTH,
   EmailFolderInfoPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailFolderInfoPage {
   public static final String JSON_PROPERTY_LENGTH = "length";
   @javax.annotation.Nullable
@@ -184,7 +184,7 @@ public class EmailFolderInfoPage {
 
     // add `length` to the URL query string
     if (getLength() != null) {
-      joiner.add(String.format("%slength%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLength()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slength%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLength()))));
     }
 
     // add `records` to the URL query string

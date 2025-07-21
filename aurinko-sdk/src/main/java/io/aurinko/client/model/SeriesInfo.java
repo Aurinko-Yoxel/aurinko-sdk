@@ -43,7 +43,7 @@ import io.aurinko.client.ApiClient;
   SeriesInfo.JSON_PROPERTY_MODIFIED_OCCURRENCES,
   SeriesInfo.JSON_PROPERTY_DELETED_OCCURRENCES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class SeriesInfo {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -244,12 +244,12 @@ public class SeriesInfo {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `globalId` to the URL query string
     if (getGlobalId() != null) {
-      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGlobalId()))));
     }
 
     // add `recurrence` to the URL query string

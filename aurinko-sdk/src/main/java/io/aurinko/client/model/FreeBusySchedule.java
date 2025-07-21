@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   FreeBusySchedule.JSON_PROPERTY_ERROR,
   FreeBusySchedule.JSON_PROPERTY_WORK_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FreeBusySchedule {
   public static final String JSON_PROPERTY_EMAIL = "email";
   @javax.annotation.Nullable
@@ -247,7 +247,7 @@ public class FreeBusySchedule {
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `items` to the URL query string
@@ -262,7 +262,7 @@ public class FreeBusySchedule {
 
     // add `error` to the URL query string
     if (getError() != null) {
-      joiner.add(String.format("%serror%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%serror%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getError()))));
     }
 
     // add `workHours` to the URL query string

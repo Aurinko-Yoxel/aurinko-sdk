@@ -5,7 +5,7 @@
     <artifactId>aurinko-api</artifactId>
     <packaging>jar</packaging>
     <name>aurinko-api</name>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <url>https://aurinko.io</url>
     <description>Aurinko API SDK</description>
     <scm>

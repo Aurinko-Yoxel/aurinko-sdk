@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   ContactCompany.JSON_PROPERTY_JOB_TITLE,
   ContactCompany.JSON_PROPERTY_YOMI_COMPANY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ContactCompany {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -266,27 +266,27 @@ public class ContactCompany {
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `officeLocation` to the URL query string
     if (getOfficeLocation() != null) {
-      joiner.add(String.format("%sofficeLocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOfficeLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sofficeLocation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOfficeLocation()))));
     }
 
     // add `department` to the URL query string
     if (getDepartment() != null) {
-      joiner.add(String.format("%sdepartment%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDepartment()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdepartment%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDepartment()))));
     }
 
     // add `jobTitle` to the URL query string
     if (getJobTitle() != null) {
-      joiner.add(String.format("%sjobTitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getJobTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sjobTitle%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getJobTitle()))));
     }
 
     // add `yomiCompanyName` to the URL query string
     if (getYomiCompanyName() != null) {
-      joiner.add(String.format("%syomiCompanyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getYomiCompanyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%syomiCompanyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getYomiCompanyName()))));
     }
 
     return joiner.toString();

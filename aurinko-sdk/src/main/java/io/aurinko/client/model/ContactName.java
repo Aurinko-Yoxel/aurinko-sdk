@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   ContactName.JSON_PROPERTY_YOMI_GIVEN_NAME,
   ContactName.JSON_PROPERTY_YOMI_FAMILY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ContactName {
   public static final String JSON_PROPERTY_DISPLAY_NAME = "displayName";
   @javax.annotation.Nullable
@@ -359,42 +359,42 @@ public class ContactName {
 
     // add `displayName` to the URL query string
     if (getDisplayName() != null) {
-      joiner.add(String.format("%sdisplayName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDisplayName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdisplayName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDisplayName()))));
     }
 
     // add `prefix` to the URL query string
     if (getPrefix() != null) {
-      joiner.add(String.format("%sprefix%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPrefix()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprefix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPrefix()))));
     }
 
     // add `givenName` to the URL query string
     if (getGivenName() != null) {
-      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sgivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
     }
 
     // add `middleName` to the URL query string
     if (getMiddleName() != null) {
-      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMiddleName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smiddleName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMiddleName()))));
     }
 
     // add `familyName` to the URL query string
     if (getFamilyName() != null) {
-      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
     // add `suffix` to the URL query string
     if (getSuffix() != null) {
-      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSuffix()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssuffix%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuffix()))));
     }
 
     // add `yomiGivenName` to the URL query string
     if (getYomiGivenName() != null) {
-      joiner.add(String.format("%syomiGivenName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getYomiGivenName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%syomiGivenName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getYomiGivenName()))));
     }
 
     // add `yomiFamilyName` to the URL query string
     if (getYomiFamilyName() != null) {
-      joiner.add(String.format("%syomiFamilyName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getYomiFamilyName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%syomiFamilyName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getYomiFamilyName()))));
     }
 
     return joiner.toString();

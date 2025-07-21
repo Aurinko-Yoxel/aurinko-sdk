@@ -43,7 +43,7 @@ import io.aurinko.client.ApiClient;
   EventOrId.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   EventOrId.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EventOrId {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -304,22 +304,22 @@ public class EventOrId {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEtag()))));
     }
 
     // add `iCalUId` to the URL query string
     if (getiCalUId() != null) {
-      joiner.add(String.format("%siCalUId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getiCalUId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%siCalUId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getiCalUId()))));
     }
 
     // add `globalId` to the URL query string
     if (getGlobalId() != null) {
-      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGlobalId()))));
     }
 
     // add `record` to the URL query string
@@ -329,7 +329,7 @@ public class EventOrId {
 
     // add `onlineMeetingProvider` to the URL query string
     if (getOnlineMeetingProvider() != null) {
-      joiner.add(String.format("%sonlineMeetingProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOnlineMeetingProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sonlineMeetingProvider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOnlineMeetingProvider()))));
     }
 
     // add `onlineMeetingDetails` to the URL query string

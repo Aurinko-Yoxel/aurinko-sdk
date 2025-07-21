@@ -56,7 +56,7 @@ import io.aurinko.client.ApiClient;
   Task.JSON_PROPERTY_OWNER,
   Task.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Task {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -662,57 +662,57 @@ public class Task {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEtag()))));
     }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
-      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stitle%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTitle()))));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastModifiedTime()))));
     }
 
     // add `parentId` to the URL query string
     if (getParentId() != null) {
-      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getParentId()))));
     }
 
     // add `position` to the URL query string
     if (getPosition() != null) {
-      joiner.add(String.format("%sposition%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPosition()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sposition%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPosition()))));
     }
 
     // add `notes` to the URL query string
     if (getNotes() != null) {
-      joiner.add(String.format("%snotes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotes()))));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `importance` to the URL query string
     if (getImportance() != null) {
-      joiner.add(String.format("%simportance%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getImportance()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%simportance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getImportance()))));
     }
 
     // add `due` to the URL query string
     if (getDue() != null) {
-      joiner.add(String.format("%sdue%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDue()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDue()))));
     }
 
     // add `completed` to the URL query string
     if (getCompleted() != null) {
-      joiner.add(String.format("%scompleted%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCompleted()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scompleted%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCompleted()))));
     }
 
     // add `links` to the URL query string
@@ -727,7 +727,7 @@ public class Task {
 
     // add `startDateTime` to the URL query string
     if (getStartDateTime() != null) {
-      joiner.add(String.format("%sstartDateTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartDateTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartDateTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStartDateTime()))));
     }
 
     // add `categories` to the URL query string
@@ -735,13 +735,13 @@ public class Task {
       for (int i = 0; i < getCategories().size(); i++) {
         joiner.add(String.format("%scategories%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getCategories().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getCategories().get(i)))));
       }
     }
 
     // add `owner` to the URL query string
     if (getOwner() != null) {
-      joiner.add(String.format("%sowner%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOwner()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sowner%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOwner()))));
     }
 
     // add `omitted` to the URL query string
@@ -749,7 +749,7 @@ public class Task {
       for (int i = 0; i < getOmitted().size(); i++) {
         joiner.add(String.format("%somitted%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getOmitted().get(i)))));
       }
     }
 

@@ -35,7 +35,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   PreparedAuthToken.JSON_PROPERTY_TOKEN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class PreparedAuthToken {
   public static final String JSON_PROPERTY_TOKEN = "token";
   @javax.annotation.Nullable
@@ -142,7 +142,7 @@ public class PreparedAuthToken {
 
     // add `token` to the URL query string
     if (getToken() != null) {
-      joiner.add(String.format("%stoken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stoken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getToken()))));
     }
 
     return joiner.toString();

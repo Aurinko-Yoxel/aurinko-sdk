@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.ContactsPage;
@@ -48,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ContSyncApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -59,7 +60,7 @@ public class ContSyncApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public ContSyncApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public ContSyncApi(ApiClient apiClient) {
@@ -92,7 +93,7 @@ public class ContSyncApi {
    * @return CompletableFuture&lt;DeletedPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<DeletedPage> contSyncDeleted(String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<DeletedPage> contSyncDeleted(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = contSyncDeletedRequestBuilder(deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -124,7 +125,7 @@ public class ContSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;DeletedPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<DeletedPage>> contSyncDeletedWithHttpInfo(String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<DeletedPage>> contSyncDeletedWithHttpInfo(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = contSyncDeletedRequestBuilder(deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -155,7 +156,7 @@ public class ContSyncApi {
     }
   }
 
-  private HttpRequest.Builder contSyncDeletedRequestBuilder(String deltaToken, String pageToken) throws ApiException {
+  private HttpRequest.Builder contSyncDeletedRequestBuilder(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -287,7 +288,7 @@ public class ContSyncApi {
    * @return CompletableFuture&lt;ContactsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ContactsPage> contSyncUpdated(String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ContactsPage> contSyncUpdated(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = contSyncUpdatedRequestBuilder(deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -319,7 +320,7 @@ public class ContSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ContactsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ContactsPage>> contSyncUpdatedWithHttpInfo(String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<ContactsPage>> contSyncUpdatedWithHttpInfo(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = contSyncUpdatedRequestBuilder(deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -350,7 +351,7 @@ public class ContSyncApi {
     }
   }
 
-  private HttpRequest.Builder contSyncUpdatedRequestBuilder(String deltaToken, String pageToken) throws ApiException {
+  private HttpRequest.Builder contSyncUpdatedRequestBuilder(@javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

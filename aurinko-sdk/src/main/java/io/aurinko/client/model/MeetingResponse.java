@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   MeetingResponse.JSON_PROPERTY_RESPONSE,
   MeetingResponse.JSON_PROPERTY_COMMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class MeetingResponse {
   public static final String JSON_PROPERTY_RESPONSE = "response";
   @javax.annotation.Nonnull
@@ -174,12 +174,12 @@ public class MeetingResponse {
 
     // add `response` to the URL query string
     if (getResponse() != null) {
-      joiner.add(String.format("%sresponse%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResponse()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresponse%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResponse()))));
     }
 
     // add `comment` to the URL query string
     if (getComment() != null) {
-      joiner.add(String.format("%scomment%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getComment()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scomment%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getComment()))));
     }
 
     return joiner.toString();

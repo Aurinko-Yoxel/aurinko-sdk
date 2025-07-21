@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   EmailAddress.JSON_PROPERTY_ADDRESS,
   EmailAddress.JSON_PROPERTY_RAW
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailAddress {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -202,17 +202,17 @@ public class EmailAddress {
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `address` to the URL query string
     if (getAddress() != null) {
-      joiner.add(String.format("%saddress%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAddress()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%saddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAddress()))));
     }
 
     // add `raw` to the URL query string
     if (getRaw() != null) {
-      joiner.add(String.format("%sraw%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRaw()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sraw%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRaw()))));
     }
 
     return joiner.toString();

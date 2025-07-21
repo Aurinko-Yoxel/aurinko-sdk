@@ -43,7 +43,7 @@ import io.aurinko.client.ApiClient;
   RecurrenceSimpleRange.JSON_PROPERTY_COUNT,
   RecurrenceSimpleRange.JSON_PROPERTY_PATTERN_EXCLUSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class RecurrenceSimpleRange {
   /**
    * Gets or Sets type
@@ -308,7 +308,7 @@ public class RecurrenceSimpleRange {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `recurrenceStart` to the URL query string
@@ -318,12 +318,12 @@ public class RecurrenceSimpleRange {
 
     // add `recurrenceEnd` to the URL query string
     if (getRecurrenceEnd() != null) {
-      joiner.add(String.format("%srecurrenceEnd%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRecurrenceEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%srecurrenceEnd%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRecurrenceEnd()))));
     }
 
     // add `count` to the URL query string
     if (getCount() != null) {
-      joiner.add(String.format("%scount%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCount()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scount%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCount()))));
     }
 
     // add `patternExclusions` to the URL query string

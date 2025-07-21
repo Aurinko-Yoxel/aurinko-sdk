@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
   CreateMeetingResponse.JSON_PROPERTY_RESERVATION_ID,
   CreateMeetingResponse.JSON_PROPERTY_GROUP_XID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class CreateMeetingResponse {
   public static final String JSON_PROPERTY_CREATED = "created";
   @javax.annotation.Nullable
@@ -235,22 +235,22 @@ public class CreateMeetingResponse {
 
     // add `created` to the URL query string
     if (getCreated() != null) {
-      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreated()))));
     }
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `ReservationId` to the URL query string
     if (getReservationId() != null) {
-      joiner.add(String.format("%sReservationId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReservationId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sReservationId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReservationId()))));
     }
 
     // add `groupXid` to the URL query string
     if (getGroupXid() != null) {
-      joiner.add(String.format("%sgroupXid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGroupXid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sgroupXid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGroupXid()))));
     }
 
     return joiner.toString();

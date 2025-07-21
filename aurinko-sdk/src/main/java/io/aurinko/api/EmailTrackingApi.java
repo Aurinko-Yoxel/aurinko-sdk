@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.ConvertDraft;
@@ -54,7 +55,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailTrackingApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -65,7 +66,7 @@ public class EmailTrackingApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public EmailTrackingApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public EmailTrackingApi(ApiClient apiClient) {
@@ -98,7 +99,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> convertDraftTracking(String draftId, ConvertDraft convertDraft) throws ApiException {
+  public CompletableFuture<OkResponse> convertDraftTracking(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable ConvertDraft convertDraft) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = convertDraftTrackingRequestBuilder(draftId, convertDraft);
       return memberVarHttpClient.sendAsync(
@@ -130,7 +131,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> convertDraftTrackingWithHttpInfo(String draftId, ConvertDraft convertDraft) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> convertDraftTrackingWithHttpInfo(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable ConvertDraft convertDraft) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = convertDraftTrackingRequestBuilder(draftId, convertDraft);
       return memberVarHttpClient.sendAsync(
@@ -161,7 +162,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder convertDraftTrackingRequestBuilder(String draftId, ConvertDraft convertDraft) throws ApiException {
+  private HttpRequest.Builder convertDraftTrackingRequestBuilder(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable ConvertDraft convertDraft) throws ApiException {
     // verify the required parameter 'draftId' is set
     if (draftId == null) {
       throw new ApiException(400, "Missing the required parameter 'draftId' when calling convertDraftTracking");
@@ -201,7 +202,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;EmailDraftCreateTrackingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailDraftCreateTrackingResponse> createDraftTracking(String draftId, String ignoreNotFound, RewriteHtml rewriteHtml) throws ApiException {
+  public CompletableFuture<EmailDraftCreateTrackingResponse> createDraftTracking(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable String ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createDraftTrackingRequestBuilder(draftId, ignoreNotFound, rewriteHtml);
       return memberVarHttpClient.sendAsync(
@@ -234,7 +235,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailDraftCreateTrackingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailDraftCreateTrackingResponse>> createDraftTrackingWithHttpInfo(String draftId, String ignoreNotFound, RewriteHtml rewriteHtml) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailDraftCreateTrackingResponse>> createDraftTrackingWithHttpInfo(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable String ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createDraftTrackingRequestBuilder(draftId, ignoreNotFound, rewriteHtml);
       return memberVarHttpClient.sendAsync(
@@ -265,7 +266,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder createDraftTrackingRequestBuilder(String draftId, String ignoreNotFound, RewriteHtml rewriteHtml) throws ApiException {
+  private HttpRequest.Builder createDraftTrackingRequestBuilder(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable String ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
     // verify the required parameter 'draftId' is set
     if (draftId == null) {
       throw new ApiException(400, "Missing the required parameter 'draftId' when calling createDraftTracking");
@@ -324,7 +325,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;EmailTrackingPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailTrackingPageNext> getTracking(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId, Boolean showSentOnly) throws ApiException {
+  public CompletableFuture<EmailTrackingPageNext> getTracking(@javax.annotation.Nullable Boolean withActivityOnly, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String contextContains, @javax.annotation.Nullable String threadId, @javax.annotation.Nullable Boolean showSentOnly) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getTrackingRequestBuilder(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly);
       return memberVarHttpClient.sendAsync(
@@ -360,7 +361,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailTrackingPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailTrackingPageNext>> getTrackingWithHttpInfo(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId, Boolean showSentOnly) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailTrackingPageNext>> getTrackingWithHttpInfo(@javax.annotation.Nullable Boolean withActivityOnly, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String contextContains, @javax.annotation.Nullable String threadId, @javax.annotation.Nullable Boolean showSentOnly) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getTrackingRequestBuilder(withActivityOnly, limit, offset, contextContains, threadId, showSentOnly);
       return memberVarHttpClient.sendAsync(
@@ -391,7 +392,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder getTrackingRequestBuilder(Boolean withActivityOnly, Integer limit, Integer offset, String contextContains, String threadId, Boolean showSentOnly) throws ApiException {
+  private HttpRequest.Builder getTrackingRequestBuilder(@javax.annotation.Nullable Boolean withActivityOnly, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String contextContains, @javax.annotation.Nullable String threadId, @javax.annotation.Nullable Boolean showSentOnly) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -447,7 +448,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;EmailTrackingEventPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailTrackingEventPageNext> getTrackingEvents(String threadId, String from, String to, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<EmailTrackingEventPageNext> getTrackingEvents(@javax.annotation.Nullable String threadId, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getTrackingEventsRequestBuilder(threadId, from, to, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -482,7 +483,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailTrackingEventPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailTrackingEventPageNext>> getTrackingEventsWithHttpInfo(String threadId, String from, String to, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailTrackingEventPageNext>> getTrackingEventsWithHttpInfo(@javax.annotation.Nullable String threadId, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getTrackingEventsRequestBuilder(threadId, from, to, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -513,7 +514,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder getTrackingEventsRequestBuilder(String threadId, String from, String to, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder getTrackingEventsRequestBuilder(@javax.annotation.Nullable String threadId, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -564,7 +565,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> purgeMyTracking(String userAgent, String threadId) throws ApiException {
+  public CompletableFuture<OkResponse> purgeMyTracking(@javax.annotation.Nonnull String userAgent, @javax.annotation.Nullable String threadId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = purgeMyTrackingRequestBuilder(userAgent, threadId);
       return memberVarHttpClient.sendAsync(
@@ -596,7 +597,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> purgeMyTrackingWithHttpInfo(String userAgent, String threadId) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> purgeMyTrackingWithHttpInfo(@javax.annotation.Nonnull String userAgent, @javax.annotation.Nullable String threadId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = purgeMyTrackingRequestBuilder(userAgent, threadId);
       return memberVarHttpClient.sendAsync(
@@ -627,7 +628,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder purgeMyTrackingRequestBuilder(String userAgent, String threadId) throws ApiException {
+  private HttpRequest.Builder purgeMyTrackingRequestBuilder(@javax.annotation.Nonnull String userAgent, @javax.annotation.Nullable String threadId) throws ApiException {
     // verify the required parameter 'userAgent' is set
     if (userAgent == null) {
       throw new ApiException(400, "Missing the required parameter 'userAgent' when calling purgeMyTracking");
@@ -678,7 +679,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> switchOpenClicks(Boolean isIgnored, String messageId, String inetMessageId) throws ApiException {
+  public CompletableFuture<OkResponse> switchOpenClicks(@javax.annotation.Nonnull Boolean isIgnored, @javax.annotation.Nullable String messageId, @javax.annotation.Nullable String inetMessageId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = switchOpenClicksRequestBuilder(isIgnored, messageId, inetMessageId);
       return memberVarHttpClient.sendAsync(
@@ -711,7 +712,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> switchOpenClicksWithHttpInfo(Boolean isIgnored, String messageId, String inetMessageId) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> switchOpenClicksWithHttpInfo(@javax.annotation.Nonnull Boolean isIgnored, @javax.annotation.Nullable String messageId, @javax.annotation.Nullable String inetMessageId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = switchOpenClicksRequestBuilder(isIgnored, messageId, inetMessageId);
       return memberVarHttpClient.sendAsync(
@@ -742,7 +743,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder switchOpenClicksRequestBuilder(Boolean isIgnored, String messageId, String inetMessageId) throws ApiException {
+  private HttpRequest.Builder switchOpenClicksRequestBuilder(@javax.annotation.Nonnull Boolean isIgnored, @javax.annotation.Nullable String messageId, @javax.annotation.Nullable String inetMessageId) throws ApiException {
     // verify the required parameter 'isIgnored' is set
     if (isIgnored == null) {
       throw new ApiException(400, "Missing the required parameter 'isIgnored' when calling switchOpenClicks");
@@ -792,7 +793,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;TrackingData&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<TrackingData> trackingById(Long id) throws ApiException {
+  public CompletableFuture<TrackingData> trackingById(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = trackingByIdRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -823,7 +824,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;TrackingData&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<TrackingData>> trackingByIdWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<TrackingData>> trackingByIdWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = trackingByIdRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -854,7 +855,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder trackingByIdRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder trackingByIdRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling trackingById");
@@ -887,7 +888,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;EmailTrackingEvent&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailTrackingEvent> trackingEventById(Long trackingId, Long id) throws ApiException {
+  public CompletableFuture<EmailTrackingEvent> trackingEventById(@javax.annotation.Nonnull Long trackingId, @javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = trackingEventByIdRequestBuilder(trackingId, id);
       return memberVarHttpClient.sendAsync(
@@ -919,7 +920,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailTrackingEvent&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailTrackingEvent>> trackingEventByIdWithHttpInfo(Long trackingId, Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailTrackingEvent>> trackingEventByIdWithHttpInfo(@javax.annotation.Nonnull Long trackingId, @javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = trackingEventByIdRequestBuilder(trackingId, id);
       return memberVarHttpClient.sendAsync(
@@ -950,7 +951,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder trackingEventByIdRequestBuilder(Long trackingId, Long id) throws ApiException {
+  private HttpRequest.Builder trackingEventByIdRequestBuilder(@javax.annotation.Nonnull Long trackingId, @javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'trackingId' is set
     if (trackingId == null) {
       throw new ApiException(400, "Missing the required parameter 'trackingId' when calling trackingEventById");
@@ -989,7 +990,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;EmailTrackingEventPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailTrackingEventPageNext> trackingEvents(Long id, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<EmailTrackingEventPageNext> trackingEvents(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = trackingEventsRequestBuilder(id, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -1022,7 +1023,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailTrackingEventPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailTrackingEventPageNext>> trackingEventsWithHttpInfo(Long id, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailTrackingEventPageNext>> trackingEventsWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = trackingEventsRequestBuilder(id, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -1053,7 +1054,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder trackingEventsRequestBuilder(Long id, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder trackingEventsRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling trackingEvents");
@@ -1103,7 +1104,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> updateDraftTracking(String draftId, UpdateDraftTrackingIn updateDraftTrackingIn) throws ApiException {
+  public CompletableFuture<OkResponse> updateDraftTracking(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable UpdateDraftTrackingIn updateDraftTrackingIn) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateDraftTrackingRequestBuilder(draftId, updateDraftTrackingIn);
       return memberVarHttpClient.sendAsync(
@@ -1135,7 +1136,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> updateDraftTrackingWithHttpInfo(String draftId, UpdateDraftTrackingIn updateDraftTrackingIn) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> updateDraftTrackingWithHttpInfo(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable UpdateDraftTrackingIn updateDraftTrackingIn) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateDraftTrackingRequestBuilder(draftId, updateDraftTrackingIn);
       return memberVarHttpClient.sendAsync(
@@ -1166,7 +1167,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder updateDraftTrackingRequestBuilder(String draftId, UpdateDraftTrackingIn updateDraftTrackingIn) throws ApiException {
+  private HttpRequest.Builder updateDraftTrackingRequestBuilder(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable UpdateDraftTrackingIn updateDraftTrackingIn) throws ApiException {
     // verify the required parameter 'draftId' is set
     if (draftId == null) {
       throw new ApiException(400, "Missing the required parameter 'draftId' when calling updateDraftTracking");

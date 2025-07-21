@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   Recurrence.JSON_PROPERTY_ICAL,
   Recurrence.JSON_PROPERTY_SIMPLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Recurrence {
   /**
    * Gets or Sets original
@@ -241,7 +241,7 @@ public class Recurrence {
 
     // add `original` to the URL query string
     if (getOriginal() != null) {
-      joiner.add(String.format("%soriginal%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOriginal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%soriginal%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOriginal()))));
     }
 
     // add `ical` to the URL query string

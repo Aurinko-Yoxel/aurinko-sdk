@@ -72,8 +72,6 @@ public enum ServiceType {
   
   AUTO_QUOTES("AutoQuotes"),
   
-  TEAMWORK("Teamwork"),
-  
   NET_SUITE("NetSuite"),
   
   MC_TRADE("MCTrade"),

@@ -116,4 +116,23 @@ public class DraftsApiTest {
         // TODO: test validations
     }
     
+    /**
+     * Update a draft message
+     *
+     * Works for Google and Office365 only
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateDraftTest() throws ApiException {
+        String draftId = null;
+        BodyType bodyType = null;
+        OutgoingEmail outgoingEmail = null;
+        CompletableFuture<EmailDraftResponse> response = 
+        api.updateDraft(draftId, bodyType, outgoingEmail);
+        
+        // TODO: test validations
+    }
+    
 }

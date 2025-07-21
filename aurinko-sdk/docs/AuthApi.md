@@ -229,7 +229,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **clientId** | **String**| Application Client Id from the Aurinko portal dashboard. | |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, iCloud] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, iCloud] |
 | **returnUrl** | **String**| Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. | |
 | **scopes** | [**List&lt;Scope&gt;**](Scope.md)| Space separated list of Aurinko defined scopes. | [optional] |
 | **nativeScopes** | [**List&lt;String&gt;**](String.md)| Space separated list of provider defined scopes | [optional] |
@@ -330,7 +330,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **clientId** | **String**| Application Client Id from the Aurinko portal dashboard. | |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, iCloud] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, iCloud] |
 | **returnUrl** | **String**| Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. | |
 | **scopes** | [**List&lt;Scope&gt;**](Scope.md)| Space separated list of Aurinko defined scopes. | [optional] |
 | **nativeScopes** | [**List&lt;String&gt;**](String.md)| Space separated list of provider defined scopes | [optional] |
@@ -600,7 +600,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **clientId** | **String**| Application Client Id from the Aurinko portal dashboard. | |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, iCloud] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, iCloud] |
 | **returnUrl** | **String**| Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. | |
 | **accountRole** | **String**| The account&#39;s role in relation to a User. Use &#x60;primary&#x60; for the account to act as a key account; this will create a new User if the primary account doesn&#39;t exist already. If the primary account exists, it&#39;s simply re-authorized without creating a new user. Choose &#x60;secondary&#x60; to associate the account with an already existing User, which requires either existing User cookie or &#x60;userId&#x60; + &#x60;userSignature&#x60; for identification. | [enum: primary, secondary] |
 | **mailboxInfo** | **String**| Relevant only for cookie-based authentication in multi-client setups. When different client apps are connected to a single Aurinko application, this string (commonly the user&#39;s email, but can be any unique identifier) is combined with \&quot;clientId\&quot; to create a distinct authentication cookie name and prevent cookie conflicts. Clients using cookie-based auth must send \&quot;clientId\&quot; and \&quot;mailboxInfo\&quot; via \&quot;X-Aurinko-Client-Id\&quot; and \&quot;X-Aurinko-Mailbox-Info\&quot; HTTP headers for accurate cookie identification. | [optional] |
@@ -709,7 +709,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **clientId** | **String**| Application Client Id from the Aurinko portal dashboard. | |
-| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, Teamwork, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, iCloud] |
+| **serviceType** | [**ServiceTypeNonDaemon**](.md)|  | [enum: Google, Office365, EWS, IMAP, Salesforce, Salesflare, Repfabric, Slack, SugarCRM, HighLevel, Hubspot, Zoom, Webex, WebexBot, Pipedrive, EclipseERP, AutoQuotes, NetSuite, SpecPath, Zoho, Clientify, QuickBooks, ActiveCampaign, Creatio, ConstantContact, Fishbowl, iCloud] |
 | **returnUrl** | **String**| Return/Callback url for receiving the authorization code or token. It must be registered on the settings page in Aurinko portal. | |
 | **accountRole** | **String**| The account&#39;s role in relation to a User. Use &#x60;primary&#x60; for the account to act as a key account; this will create a new User if the primary account doesn&#39;t exist already. If the primary account exists, it&#39;s simply re-authorized without creating a new user. Choose &#x60;secondary&#x60; to associate the account with an already existing User, which requires either existing User cookie or &#x60;userId&#x60; + &#x60;userSignature&#x60; for identification. | [enum: primary, secondary] |
 | **mailboxInfo** | **String**| Relevant only for cookie-based authentication in multi-client setups. When different client apps are connected to a single Aurinko application, this string (commonly the user&#39;s email, but can be any unique identifier) is combined with \&quot;clientId\&quot; to create a distinct authentication cookie name and prevent cookie conflicts. Clients using cookie-based auth must send \&quot;clientId\&quot; and \&quot;mailboxInfo\&quot; via \&quot;X-Aurinko-Client-Id\&quot; and \&quot;X-Aurinko-Mailbox-Info\&quot; HTTP headers for accurate cookie identification. | [optional] |

@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   SyncStatus.JSON_PROPERTY_SYNC_DELETED_TOKEN,
   SyncStatus.JSON_PROPERTY_READY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class SyncStatus {
   public static final String JSON_PROPERTY_SYNC_UPDATED_TOKEN = "syncUpdatedToken";
   @javax.annotation.Nullable
@@ -204,17 +204,17 @@ public class SyncStatus {
 
     // add `syncUpdatedToken` to the URL query string
     if (getSyncUpdatedToken() != null) {
-      joiner.add(String.format("%ssyncUpdatedToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSyncUpdatedToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssyncUpdatedToken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSyncUpdatedToken()))));
     }
 
     // add `syncDeletedToken` to the URL query string
     if (getSyncDeletedToken() != null) {
-      joiner.add(String.format("%ssyncDeletedToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSyncDeletedToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssyncDeletedToken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSyncDeletedToken()))));
     }
 
     // add `ready` to the URL query string
     if (getReady() != null) {
-      joiner.add(String.format("%sready%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReady()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sready%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReady()))));
     }
 
     return joiner.toString();

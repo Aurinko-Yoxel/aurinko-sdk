@@ -43,7 +43,7 @@ import io.aurinko.client.ApiClient;
   BookingAvailableProfilesInDto.JSON_PROPERTY_PROFILE_IDS,
   BookingAvailableProfilesInDto.JSON_PROPERTY_REQUIRED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class BookingAvailableProfilesInDto {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   @javax.annotation.Nullable
@@ -286,12 +286,12 @@ public class BookingAvailableProfilesInDto {
 
     // add `timeMin` to the URL query string
     if (getTimeMin() != null) {
-      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeMin()))));
     }
 
     // add `timeMax` to the URL query string
     if (getTimeMax() != null) {
-      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMax()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeMax()))));
     }
 
     // add `profileNames` to the URL query string
@@ -299,7 +299,7 @@ public class BookingAvailableProfilesInDto {
       for (int i = 0; i < getProfileNames().size(); i++) {
         joiner.add(String.format("%sprofileNames%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getProfileNames().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getProfileNames().get(i)))));
       }
     }
 
@@ -308,13 +308,13 @@ public class BookingAvailableProfilesInDto {
       for (int i = 0; i < getProfileIds().size(); i++) {
         joiner.add(String.format("%sprofileIds%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getProfileIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getProfileIds().get(i)))));
       }
     }
 
     // add `required` to the URL query string
     if (getRequired() != null) {
-      joiner.add(String.format("%srequired%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRequired()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%srequired%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRequired()))));
     }
 
     return joiner.toString();

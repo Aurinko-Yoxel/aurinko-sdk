@@ -52,7 +52,7 @@ import io.aurinko.client.ApiClient;
   TrackingData.JSON_PROPERTY_IGNORE_OPEN_CLICKS,
   TrackingData.JSON_PROPERTY_HAS_BOUNCED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class TrackingData {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -639,87 +639,87 @@ public class TrackingData {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `messageId` to the URL query string
     if (getMessageId() != null) {
-      joiner.add(String.format("%smessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smessageId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMessageId()))));
     }
 
     // add `inetMessageId` to the URL query string
     if (getInetMessageId() != null) {
-      joiner.add(String.format("%sinetMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinetMessageId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInetMessageId()))));
     }
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getThreadId()))));
     }
 
     // add `sendDate` to the URL query string
     if (getSendDate() != null) {
-      joiner.add(String.format("%ssendDate%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSendDate()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssendDate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSendDate()))));
     }
 
     // add `lastActivityTime` to the URL query string
     if (getLastActivityTime() != null) {
-      joiner.add(String.format("%slastActivityTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastActivityTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastActivityTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastActivityTime()))));
     }
 
     // add `lastRespondedTime` to the URL query string
     if (getLastRespondedTime() != null) {
-      joiner.add(String.format("%slastRespondedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastRespondedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastRespondedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastRespondedTime()))));
     }
 
     // add `trackReplies` to the URL query string
     if (getTrackReplies() != null) {
-      joiner.add(String.format("%strackReplies%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackReplies%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackReplies()))));
     }
 
     // add `trackOpens` to the URL query string
     if (getTrackOpens() != null) {
-      joiner.add(String.format("%strackOpens%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackOpens()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackOpens%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackOpens()))));
     }
 
     // add `trackingCode` to the URL query string
     if (getTrackingCode() != null) {
-      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackingCode()))));
     }
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContext()))));
     }
 
     // add `location` to the URL query string
     if (getLocation() != null) {
-      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slocation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocation()))));
     }
 
     // add `userAgent` to the URL query string
     if (getUserAgent() != null) {
-      joiner.add(String.format("%suserAgent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserAgent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserAgent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserAgent()))));
     }
 
     // add `remoteAddr` to the URL query string
     if (getRemoteAddr() != null) {
-      joiner.add(String.format("%sremoteAddr%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRemoteAddr()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sremoteAddr%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRemoteAddr()))));
     }
 
     // add `openCount` to the URL query string
     if (getOpenCount() != null) {
-      joiner.add(String.format("%sopenCount%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOpenCount()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sopenCount%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOpenCount()))));
     }
 
     // add `ignoreOpenClicks` to the URL query string
     if (getIgnoreOpenClicks() != null) {
-      joiner.add(String.format("%signoreOpenClicks%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIgnoreOpenClicks()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%signoreOpenClicks%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIgnoreOpenClicks()))));
     }
 
     // add `hasBounced` to the URL query string
     if (getHasBounced() != null) {
-      joiner.add(String.format("%shasBounced%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHasBounced()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shasBounced%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasBounced()))));
     }
 
     return joiner.toString();

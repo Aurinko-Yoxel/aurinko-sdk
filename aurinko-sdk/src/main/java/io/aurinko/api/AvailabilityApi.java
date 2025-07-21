@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BookingAvailableProfilesInDto;
@@ -52,7 +53,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class AvailabilityApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -63,7 +64,7 @@ public class AvailabilityApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public AvailabilityApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public AvailabilityApi(ApiClient apiClient) {
@@ -98,7 +99,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;CreateMeetingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<CreateMeetingResponse> bookingAccountCreateMeeting(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<CreateMeetingResponse> bookingAccountCreateMeeting(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountCreateMeetingRequestBuilder(id, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -132,7 +133,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;ApiResponse&lt;CreateMeetingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingAccountCreateMeetingWithHttpInfo(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingAccountCreateMeetingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountCreateMeetingRequestBuilder(id, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -163,7 +164,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder bookingAccountCreateMeetingRequestBuilder(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  private HttpRequest.Builder bookingAccountCreateMeetingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingAccountCreateMeeting");
@@ -224,7 +225,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;BookingTimesOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingTimesOutDto> bookingAccountMeetingTimes(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingTimesOutDto> bookingAccountMeetingTimes(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountMeetingTimesRequestBuilder(id, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -261,7 +262,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingTimesOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingAccountMeetingTimesWithHttpInfo(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingAccountMeetingTimesWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountMeetingTimesRequestBuilder(id, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -292,7 +293,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder bookingAccountMeetingTimesRequestBuilder(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder bookingAccountMeetingTimesRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingAccountMeetingTimes");
@@ -349,7 +350,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;BookingAvailableProfilesOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingAvailableProfilesOutDto> bookingGroupAvailability(BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+  public CompletableFuture<BookingAvailableProfilesOutDto> bookingGroupAvailability(@javax.annotation.Nullable BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupAvailabilityRequestBuilder(bookingAvailableProfilesInDto);
       return memberVarHttpClient.sendAsync(
@@ -380,7 +381,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingAvailableProfilesOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingAvailableProfilesOutDto>> bookingGroupAvailabilityWithHttpInfo(BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingAvailableProfilesOutDto>> bookingGroupAvailabilityWithHttpInfo(@javax.annotation.Nullable BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupAvailabilityRequestBuilder(bookingAvailableProfilesInDto);
       return memberVarHttpClient.sendAsync(
@@ -411,7 +412,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder bookingGroupAvailabilityRequestBuilder(BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
+  private HttpRequest.Builder bookingGroupAvailabilityRequestBuilder(@javax.annotation.Nullable BookingAvailableProfilesInDto bookingAvailableProfilesInDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -447,7 +448,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;CreateMeetingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<CreateMeetingResponse> bookingGroupCreateMeeting(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<CreateMeetingResponse> bookingGroupCreateMeeting(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupCreateMeetingRequestBuilder(id, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -481,7 +482,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;ApiResponse&lt;CreateMeetingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingGroupCreateMeetingWithHttpInfo(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingGroupCreateMeetingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupCreateMeetingRequestBuilder(id, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -512,7 +513,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder bookingGroupCreateMeetingRequestBuilder(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  private HttpRequest.Builder bookingGroupCreateMeetingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingGroupCreateMeeting");
@@ -573,7 +574,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;BookingTimesOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingTimesOutDto> bookingGroupMeetingTimes(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingTimesOutDto> bookingGroupMeetingTimes(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupMeetingTimesRequestBuilder(id, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -610,7 +611,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingTimesOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingGroupMeetingTimesWithHttpInfo(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingGroupMeetingTimesWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingGroupMeetingTimesRequestBuilder(id, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -641,7 +642,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder bookingGroupMeetingTimesRequestBuilder(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder bookingGroupMeetingTimesRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingGroupMeetingTimes");
@@ -702,7 +703,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;CreateMeetingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<CreateMeetingResponse> createMeeting(String aurinkoClientId, String name, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<CreateMeetingResponse> createMeeting(@javax.annotation.Nonnull String aurinkoClientId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -737,7 +738,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;ApiResponse&lt;CreateMeetingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<CreateMeetingResponse>> createMeetingWithHttpInfo(String aurinkoClientId, String name, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<ApiResponse<CreateMeetingResponse>> createMeetingWithHttpInfo(@javax.annotation.Nonnull String aurinkoClientId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(aurinkoClientId, name, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -768,7 +769,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder createMeetingRequestBuilder(String aurinkoClientId, String name, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  private HttpRequest.Builder createMeetingRequestBuilder(@javax.annotation.Nonnull String aurinkoClientId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     // verify the required parameter 'aurinkoClientId' is set
     if (aurinkoClientId == null) {
       throw new ApiException(400, "Missing the required parameter 'aurinkoClientId' when calling createMeeting");
@@ -835,7 +836,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;BookingTimesOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingTimesOutDto> getMeetingTimes(String aurinkoClientId, String name, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingTimesOutDto> getMeetingTimes(@javax.annotation.Nonnull String aurinkoClientId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getMeetingTimesRequestBuilder(aurinkoClientId, name, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -873,7 +874,7 @@ public class AvailabilityApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingTimesOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingTimesOutDto>> getMeetingTimesWithHttpInfo(String aurinkoClientId, String name, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingTimesOutDto>> getMeetingTimesWithHttpInfo(@javax.annotation.Nonnull String aurinkoClientId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getMeetingTimesRequestBuilder(aurinkoClientId, name, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -904,7 +905,7 @@ public class AvailabilityApi {
     }
   }
 
-  private HttpRequest.Builder getMeetingTimesRequestBuilder(String aurinkoClientId, String name, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder getMeetingTimesRequestBuilder(@javax.annotation.Nonnull String aurinkoClientId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     // verify the required parameter 'aurinkoClientId' is set
     if (aurinkoClientId == null) {
       throw new ApiException(400, "Missing the required parameter 'aurinkoClientId' when calling getMeetingTimes");

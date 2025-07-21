@@ -18,6 +18,7 @@ import io.aurinko.client.model.AccountSaveResult;
 import io.aurinko.client.model.AccountsPage;
 import io.aurinko.client.model.ApiAccountInDto;
 import io.aurinko.client.model.ApiAccountOutDto;
+import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.ServiceKey;
 import io.aurinko.client.model.ServiceTypeNonDaemon;
 import io.aurinko.client.model.UserAccountType;
@@ -54,6 +55,23 @@ public class AccountsApiTest {
         Long id = null;
         
         CompletableFuture<Void> response = api.amAccountDelete(id);
+        
+        // TODO: test validations
+    }
+    
+    /**
+     * Check a connection, supported Office365, Google, IMAP
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void checkConnectionTest() throws ApiException {
+        ApiAccountInDto apiAccountInDto = null;
+        CompletableFuture<OkResponse> response = 
+        api.checkConnection(apiAccountInDto);
         
         // TODO: test validations
     }

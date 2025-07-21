@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BodyType;
@@ -54,7 +55,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class MessagesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -65,7 +66,7 @@ public class MessagesApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public MessagesApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public MessagesApi(ApiClient apiClient) {
@@ -99,7 +100,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;EmailMessagesPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailMessagesPageNext> conversation(String threadId, BodyType bodyType, String pageToken) throws ApiException {
+  public CompletableFuture<EmailMessagesPageNext> conversation(@javax.annotation.Nonnull String threadId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = conversationRequestBuilder(threadId, bodyType, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -132,7 +133,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessagesPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailMessagesPageNext>> conversationWithHttpInfo(String threadId, BodyType bodyType, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailMessagesPageNext>> conversationWithHttpInfo(@javax.annotation.Nonnull String threadId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = conversationRequestBuilder(threadId, bodyType, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -163,7 +164,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder conversationRequestBuilder(String threadId, BodyType bodyType, String pageToken) throws ApiException {
+  private HttpRequest.Builder conversationRequestBuilder(@javax.annotation.Nonnull String threadId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable String pageToken) throws ApiException {
     // verify the required parameter 'threadId' is set
     if (threadId == null) {
       throw new ApiException(400, "Missing the required parameter 'threadId' when calling conversation");
@@ -206,6 +207,100 @@ public class MessagesApi {
   }
 
   /**
+   * Delete a message
+   * Moves a message to Trash
+   * @param messageId  (required)
+   * @return CompletableFuture&lt;OkResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<OkResponse> deleteMessage(@javax.annotation.Nonnull String messageId) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = deleteMessageRequestBuilder(messageId);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("deleteMessage", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<OkResponse>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Delete a message
+   * Moves a message to Trash
+   * @param messageId  (required)
+   * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<OkResponse>> deleteMessageWithHttpInfo(@javax.annotation.Nonnull String messageId) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = deleteMessageRequestBuilder(messageId);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("deleteMessage", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<OkResponse>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<OkResponse>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder deleteMessageRequestBuilder(@javax.annotation.Nonnull String messageId) throws ApiException {
+    // verify the required parameter 'messageId' is set
+    if (messageId == null) {
+      throw new ApiException(400, "Missing the required parameter 'messageId' when calling deleteMessage");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/email/messages/{messageId}"
+        .replace("{messageId}", ApiClient.urlEncode(messageId.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("DELETE", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
    * Get a message attachment
    * 
    * @param messageId email message identifier (required)
@@ -213,7 +308,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;EmailAttachmentContent&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailAttachmentContent> emailAttachment(String messageId, String attachmentId) throws ApiException {
+  public CompletableFuture<EmailAttachmentContent> emailAttachment(@javax.annotation.Nonnull String messageId, @javax.annotation.Nonnull String attachmentId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = emailAttachmentRequestBuilder(messageId, attachmentId);
       return memberVarHttpClient.sendAsync(
@@ -245,7 +340,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailAttachmentContent&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailAttachmentContent>> emailAttachmentWithHttpInfo(String messageId, String attachmentId) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailAttachmentContent>> emailAttachmentWithHttpInfo(@javax.annotation.Nonnull String messageId, @javax.annotation.Nonnull String attachmentId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = emailAttachmentRequestBuilder(messageId, attachmentId);
       return memberVarHttpClient.sendAsync(
@@ -276,7 +371,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder emailAttachmentRequestBuilder(String messageId, String attachmentId) throws ApiException {
+  private HttpRequest.Builder emailAttachmentRequestBuilder(@javax.annotation.Nonnull String messageId, @javax.annotation.Nonnull String attachmentId) throws ApiException {
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
       throw new ApiException(400, "Missing the required parameter 'messageId' when calling emailAttachment");
@@ -318,7 +413,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;EmailMessage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailMessage> message(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted, Boolean requireThreadId) throws ApiException {
+  public CompletableFuture<EmailMessage> message(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean loadInlines, @javax.annotation.Nullable Boolean stripQuoted, @javax.annotation.Nullable Boolean requireThreadId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId);
       return memberVarHttpClient.sendAsync(
@@ -354,7 +449,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailMessage>> messageWithHttpInfo(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted, Boolean requireThreadId) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailMessage>> messageWithHttpInfo(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean loadInlines, @javax.annotation.Nullable Boolean stripQuoted, @javax.annotation.Nullable Boolean requireThreadId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = messageRequestBuilder(messageId, bodyType, nativeProperties, loadInlines, stripQuoted, requireThreadId);
       return memberVarHttpClient.sendAsync(
@@ -385,7 +480,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder messageRequestBuilder(String messageId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines, Boolean stripQuoted, Boolean requireThreadId) throws ApiException {
+  private HttpRequest.Builder messageRequestBuilder(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean loadInlines, @javax.annotation.Nullable Boolean stripQuoted, @javax.annotation.Nullable Boolean requireThreadId) throws ApiException {
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
       throw new ApiException(400, "Missing the required parameter 'messageId' when calling message");
@@ -440,7 +535,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;String&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<String> messageRaw(String messageId) throws ApiException {
+  public CompletableFuture<String> messageRaw(@javax.annotation.Nonnull String messageId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = messageRawRequestBuilder(messageId);
       return memberVarHttpClient.sendAsync(
@@ -471,7 +566,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;String&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<String>> messageRawWithHttpInfo(String messageId) throws ApiException {
+  public CompletableFuture<ApiResponse<String>> messageRawWithHttpInfo(@javax.annotation.Nonnull String messageId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = messageRawRequestBuilder(messageId);
       return memberVarHttpClient.sendAsync(
@@ -502,7 +597,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder messageRawRequestBuilder(String messageId) throws ApiException {
+  private HttpRequest.Builder messageRawRequestBuilder(@javax.annotation.Nonnull String messageId) throws ApiException {
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
       throw new ApiException(400, "Missing the required parameter 'messageId' when calling messageRaw");
@@ -538,7 +633,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;EmailMessagesPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailMessagesPageNext> messages(String pageToken, String q, BodyType bodyType, Boolean includeTrashAndJunk, List<String> nativeProperties) throws ApiException {
+  public CompletableFuture<EmailMessagesPageNext> messages(@javax.annotation.Nullable String pageToken, @javax.annotation.Nullable String q, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean includeTrashAndJunk, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = messagesRequestBuilder(pageToken, q, bodyType, includeTrashAndJunk, nativeProperties);
       return memberVarHttpClient.sendAsync(
@@ -573,7 +668,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessagesPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailMessagesPageNext>> messagesWithHttpInfo(String pageToken, String q, BodyType bodyType, Boolean includeTrashAndJunk, List<String> nativeProperties) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailMessagesPageNext>> messagesWithHttpInfo(@javax.annotation.Nullable String pageToken, @javax.annotation.Nullable String q, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean includeTrashAndJunk, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = messagesRequestBuilder(pageToken, q, bodyType, includeTrashAndJunk, nativeProperties);
       return memberVarHttpClient.sendAsync(
@@ -604,7 +699,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder messagesRequestBuilder(String pageToken, String q, BodyType bodyType, Boolean includeTrashAndJunk, List<String> nativeProperties) throws ApiException {
+  private HttpRequest.Builder messagesRequestBuilder(@javax.annotation.Nullable String pageToken, @javax.annotation.Nullable String q, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean includeTrashAndJunk, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -657,7 +752,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;EmailSendResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailSendResponse> reply(String messageId, BodyType bodyType, Boolean returnIds, OutgoingEmailReply outgoingEmailReply) throws ApiException {
+  public CompletableFuture<EmailSendResponse> reply(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnIds, @javax.annotation.Nullable OutgoingEmailReply outgoingEmailReply) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = replyRequestBuilder(messageId, bodyType, returnIds, outgoingEmailReply);
       return memberVarHttpClient.sendAsync(
@@ -691,7 +786,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailSendResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailSendResponse>> replyWithHttpInfo(String messageId, BodyType bodyType, Boolean returnIds, OutgoingEmailReply outgoingEmailReply) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailSendResponse>> replyWithHttpInfo(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnIds, @javax.annotation.Nullable OutgoingEmailReply outgoingEmailReply) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = replyRequestBuilder(messageId, bodyType, returnIds, outgoingEmailReply);
       return memberVarHttpClient.sendAsync(
@@ -722,7 +817,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder replyRequestBuilder(String messageId, BodyType bodyType, Boolean returnIds, OutgoingEmailReply outgoingEmailReply) throws ApiException {
+  private HttpRequest.Builder replyRequestBuilder(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnIds, @javax.annotation.Nullable OutgoingEmailReply outgoingEmailReply) throws ApiException {
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
       throw new ApiException(400, "Missing the required parameter 'messageId' when calling reply");
@@ -779,7 +874,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;EmailSendResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailSendResponse> send(BodyType bodyType, Boolean returnIds, OutgoingEmail outgoingEmail) throws ApiException {
+  public CompletableFuture<EmailSendResponse> send(@javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnIds, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = sendRequestBuilder(bodyType, returnIds, outgoingEmail);
       return memberVarHttpClient.sendAsync(
@@ -812,7 +907,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailSendResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailSendResponse>> sendWithHttpInfo(BodyType bodyType, Boolean returnIds, OutgoingEmail outgoingEmail) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailSendResponse>> sendWithHttpInfo(@javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnIds, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = sendRequestBuilder(bodyType, returnIds, outgoingEmail);
       return memberVarHttpClient.sendAsync(
@@ -843,7 +938,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder sendRequestBuilder(BodyType bodyType, Boolean returnIds, OutgoingEmail outgoingEmail) throws ApiException {
+  private HttpRequest.Builder sendRequestBuilder(@javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable Boolean returnIds, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -894,7 +989,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> updateMessageStatus(String messageId, UpdateMessageStatusData updateMessageStatusData) throws ApiException {
+  public CompletableFuture<OkResponse> updateMessageStatus(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable UpdateMessageStatusData updateMessageStatusData) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateMessageStatusRequestBuilder(messageId, updateMessageStatusData);
       return memberVarHttpClient.sendAsync(
@@ -926,7 +1021,7 @@ public class MessagesApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> updateMessageStatusWithHttpInfo(String messageId, UpdateMessageStatusData updateMessageStatusData) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> updateMessageStatusWithHttpInfo(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable UpdateMessageStatusData updateMessageStatusData) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateMessageStatusRequestBuilder(messageId, updateMessageStatusData);
       return memberVarHttpClient.sendAsync(
@@ -957,7 +1052,7 @@ public class MessagesApi {
     }
   }
 
-  private HttpRequest.Builder updateMessageStatusRequestBuilder(String messageId, UpdateMessageStatusData updateMessageStatusData) throws ApiException {
+  private HttpRequest.Builder updateMessageStatusRequestBuilder(@javax.annotation.Nonnull String messageId, @javax.annotation.Nullable UpdateMessageStatusData updateMessageStatusData) throws ApiException {
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
       throw new ApiException(400, "Missing the required parameter 'messageId' when calling updateMessageStatus");

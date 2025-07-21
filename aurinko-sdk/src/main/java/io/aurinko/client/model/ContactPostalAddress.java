@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   ContactPostalAddress.JSON_PROPERTY_COUNTRY,
   ContactPostalAddress.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ContactPostalAddress {
   public static final String JSON_PROPERTY_STREET = "street";
   @javax.annotation.Nullable
@@ -398,42 +398,42 @@ public class ContactPostalAddress {
 
     // add `street` to the URL query string
     if (getStreet() != null) {
-      joiner.add(String.format("%sstreet%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStreet()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstreet%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStreet()))));
     }
 
     // add `streetLine2` to the URL query string
     if (getStreetLine2() != null) {
-      joiner.add(String.format("%sstreetLine2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStreetLine2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstreetLine2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStreetLine2()))));
     }
 
     // add `poBox` to the URL query string
     if (getPoBox() != null) {
-      joiner.add(String.format("%spoBox%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPoBox()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%spoBox%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPoBox()))));
     }
 
     // add `city` to the URL query string
     if (getCity() != null) {
-      joiner.add(String.format("%scity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCity()))));
     }
 
     // add `state` to the URL query string
     if (getState() != null) {
-      joiner.add(String.format("%sstate%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getState()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getState()))));
     }
 
     // add `postalCode` to the URL query string
     if (getPostalCode() != null) {
-      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPostalCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%spostalCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPostalCode()))));
     }
 
     // add `country` to the URL query string
     if (getCountry() != null) {
-      joiner.add(String.format("%scountry%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCountry()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     return joiner.toString();

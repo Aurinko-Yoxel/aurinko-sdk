@@ -35,7 +35,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   ReminderOverride.JSON_PROPERTY_MINUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ReminderOverride {
   public static final String JSON_PROPERTY_MINUTES = "minutes";
   @javax.annotation.Nullable
@@ -142,7 +142,7 @@ public class ReminderOverride {
 
     // add `minutes` to the URL query string
     if (getMinutes() != null) {
-      joiner.add(String.format("%sminutes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMinutes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sminutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMinutes()))));
     }
 
     return joiner.toString();

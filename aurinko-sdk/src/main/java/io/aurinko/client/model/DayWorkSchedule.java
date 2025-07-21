@@ -40,7 +40,7 @@ import io.aurinko.client.ApiClient;
   DayWorkSchedule.JSON_PROPERTY_DAY_OF_WEEK,
   DayWorkSchedule.JSON_PROPERTY_WORKING_INTERVALS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class DayWorkSchedule {
   public static final String JSON_PROPERTY_DAY_OF_WEEK = "dayOfWeek";
   @javax.annotation.Nullable
@@ -185,7 +185,7 @@ public class DayWorkSchedule {
 
     // add `dayOfWeek` to the URL query string
     if (getDayOfWeek() != null) {
-      joiner.add(String.format("%sdayOfWeek%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDayOfWeek()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdayOfWeek%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDayOfWeek()))));
     }
 
     // add `workingIntervals` to the URL query string

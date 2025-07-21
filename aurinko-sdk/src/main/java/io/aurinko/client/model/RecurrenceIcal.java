@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   RecurrenceIcal.JSON_PROPERTY_RULES,
   RecurrenceIcal.JSON_PROPERTY_RECURRENCE_START
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class RecurrenceIcal {
   public static final String JSON_PROPERTY_RULES = "rules";
   @javax.annotation.Nullable
@@ -187,7 +187,7 @@ public class RecurrenceIcal {
       for (int i = 0; i < getRules().size(); i++) {
         joiner.add(String.format("%srules%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getRules().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getRules().get(i)))));
       }
     }
 

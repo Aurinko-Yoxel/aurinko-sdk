@@ -46,7 +46,7 @@ import io.aurinko.client.ApiClient;
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_PROVIDER,
   MeetingInfo.JSON_PROPERTY_ONLINE_MEETING_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class MeetingInfo {
   public static final String JSON_PROPERTY_CANCELED = "canceled";
   @javax.annotation.Nullable
@@ -386,7 +386,7 @@ public class MeetingInfo {
 
     // add `canceled` to the URL query string
     if (getCanceled() != null) {
-      joiner.add(String.format("%scanceled%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCanceled()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scanceled%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCanceled()))));
     }
 
     // add `attendees` to the URL query string
@@ -401,7 +401,7 @@ public class MeetingInfo {
 
     // add `response` to the URL query string
     if (getResponse() != null) {
-      joiner.add(String.format("%sresponse%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResponse()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresponse%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResponse()))));
     }
 
     // add `attendeePermissions` to the URL query string
@@ -409,18 +409,18 @@ public class MeetingInfo {
       for (int i = 0; i < getAttendeePermissions().size(); i++) {
         joiner.add(String.format("%sattendeePermissions%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAttendeePermissions().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getAttendeePermissions().get(i)))));
       }
     }
 
     // add `onlineMeeting` to the URL query string
     if (getOnlineMeeting() != null) {
-      joiner.add(String.format("%sonlineMeeting%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOnlineMeeting()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sonlineMeeting%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOnlineMeeting()))));
     }
 
     // add `onlineMeetingProvider` to the URL query string
     if (getOnlineMeetingProvider() != null) {
-      joiner.add(String.format("%sonlineMeetingProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOnlineMeetingProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sonlineMeetingProvider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOnlineMeetingProvider()))));
     }
 
     // add `onlineMeetingDetails` to the URL query string

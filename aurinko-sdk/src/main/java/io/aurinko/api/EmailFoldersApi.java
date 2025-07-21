@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BodyType;
@@ -52,7 +53,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailFoldersApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -63,7 +64,7 @@ public class EmailFoldersApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public EmailFoldersApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public EmailFoldersApi(ApiClient apiClient) {
@@ -95,7 +96,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;EmailFolderInfo&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailFolderInfo> createFolder(EmailFolderCreate emailFolderCreate) throws ApiException {
+  public CompletableFuture<EmailFolderInfo> createFolder(@javax.annotation.Nullable EmailFolderCreate emailFolderCreate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createFolderRequestBuilder(emailFolderCreate);
       return memberVarHttpClient.sendAsync(
@@ -126,7 +127,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailFolderInfo&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailFolderInfo>> createFolderWithHttpInfo(EmailFolderCreate emailFolderCreate) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailFolderInfo>> createFolderWithHttpInfo(@javax.annotation.Nullable EmailFolderCreate emailFolderCreate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createFolderRequestBuilder(emailFolderCreate);
       return memberVarHttpClient.sendAsync(
@@ -157,7 +158,7 @@ public class EmailFoldersApi {
     }
   }
 
-  private HttpRequest.Builder createFolderRequestBuilder(EmailFolderCreate emailFolderCreate) throws ApiException {
+  private HttpRequest.Builder createFolderRequestBuilder(@javax.annotation.Nullable EmailFolderCreate emailFolderCreate) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -190,7 +191,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;EmailFolderInfo&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailFolderInfo> folder(String folderId) throws ApiException {
+  public CompletableFuture<EmailFolderInfo> folder(@javax.annotation.Nonnull String folderId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = folderRequestBuilder(folderId);
       return memberVarHttpClient.sendAsync(
@@ -221,7 +222,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailFolderInfo&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailFolderInfo>> folderWithHttpInfo(String folderId) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailFolderInfo>> folderWithHttpInfo(@javax.annotation.Nonnull String folderId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = folderRequestBuilder(folderId);
       return memberVarHttpClient.sendAsync(
@@ -252,7 +253,7 @@ public class EmailFoldersApi {
     }
   }
 
-  private HttpRequest.Builder folderRequestBuilder(String folderId) throws ApiException {
+  private HttpRequest.Builder folderRequestBuilder(@javax.annotation.Nonnull String folderId) throws ApiException {
     // verify the required parameter 'folderId' is set
     if (folderId == null) {
       throw new ApiException(400, "Missing the required parameter 'folderId' when calling folder");
@@ -288,7 +289,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;EmailMessagesPageNext&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailMessagesPageNext> folderEmails(String folderId, String pageToken, String q, BodyType bodyType, List<String> nativeProperties) throws ApiException {
+  public CompletableFuture<EmailMessagesPageNext> folderEmails(@javax.annotation.Nonnull String folderId, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable String q, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = folderEmailsRequestBuilder(folderId, pageToken, q, bodyType, nativeProperties);
       return memberVarHttpClient.sendAsync(
@@ -323,7 +324,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailMessagesPageNext&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailMessagesPageNext>> folderEmailsWithHttpInfo(String folderId, String pageToken, String q, BodyType bodyType, List<String> nativeProperties) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailMessagesPageNext>> folderEmailsWithHttpInfo(@javax.annotation.Nonnull String folderId, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable String q, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = folderEmailsRequestBuilder(folderId, pageToken, q, bodyType, nativeProperties);
       return memberVarHttpClient.sendAsync(
@@ -354,7 +355,7 @@ public class EmailFoldersApi {
     }
   }
 
-  private HttpRequest.Builder folderEmailsRequestBuilder(String folderId, String pageToken, String q, BodyType bodyType, List<String> nativeProperties) throws ApiException {
+  private HttpRequest.Builder folderEmailsRequestBuilder(@javax.annotation.Nonnull String folderId, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable String q, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties) throws ApiException {
     // verify the required parameter 'folderId' is set
     if (folderId == null) {
       throw new ApiException(400, "Missing the required parameter 'folderId' when calling folderEmails");
@@ -407,7 +408,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;EmailFolderInfoPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailFolderInfoPage> folders(String pageToken) throws ApiException {
+  public CompletableFuture<EmailFolderInfoPage> folders(@javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = foldersRequestBuilder(pageToken);
       return memberVarHttpClient.sendAsync(
@@ -438,7 +439,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailFolderInfoPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailFolderInfoPage>> foldersWithHttpInfo(String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailFolderInfoPage>> foldersWithHttpInfo(@javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = foldersRequestBuilder(pageToken);
       return memberVarHttpClient.sendAsync(
@@ -469,7 +470,7 @@ public class EmailFoldersApi {
     }
   }
 
-  private HttpRequest.Builder foldersRequestBuilder(String pageToken) throws ApiException {
+  private HttpRequest.Builder foldersRequestBuilder(@javax.annotation.Nullable String pageToken) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -511,7 +512,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;WellKnownFoldersOut&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<WellKnownFoldersOut> updateWellKnownFolders(WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
+  public CompletableFuture<WellKnownFoldersOut> updateWellKnownFolders(@javax.annotation.Nullable WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateWellKnownFoldersRequestBuilder(wellKnownFoldersIn);
       return memberVarHttpClient.sendAsync(
@@ -542,7 +543,7 @@ public class EmailFoldersApi {
    * @return CompletableFuture&lt;ApiResponse&lt;WellKnownFoldersOut&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<WellKnownFoldersOut>> updateWellKnownFoldersWithHttpInfo(WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
+  public CompletableFuture<ApiResponse<WellKnownFoldersOut>> updateWellKnownFoldersWithHttpInfo(@javax.annotation.Nullable WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateWellKnownFoldersRequestBuilder(wellKnownFoldersIn);
       return memberVarHttpClient.sendAsync(
@@ -573,7 +574,7 @@ public class EmailFoldersApi {
     }
   }
 
-  private HttpRequest.Builder updateWellKnownFoldersRequestBuilder(WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
+  private HttpRequest.Builder updateWellKnownFoldersRequestBuilder(@javax.annotation.Nullable WellKnownFoldersIn wellKnownFoldersIn) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

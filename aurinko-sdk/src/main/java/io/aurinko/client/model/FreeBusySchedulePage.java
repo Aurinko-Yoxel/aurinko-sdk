@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   FreeBusySchedulePage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FreeBusySchedulePage {
   public static final String JSON_PROPERTY_RECORDS = "records";
   @javax.annotation.Nullable

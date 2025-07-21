@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   EmailSendResponse.JSON_PROPERTY_PROCESSING_STATUS,
   EmailSendResponse.JSON_PROPERTY_PROCESSING_ERROR
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailSendResponse {
   /**
    * Gets or Sets status
@@ -401,32 +401,32 @@ public class EmailSendResponse {
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `submittedMessageId` to the URL query string
     if (getSubmittedMessageId() != null) {
-      joiner.add(String.format("%ssubmittedMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubmittedMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubmittedMessageId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubmittedMessageId()))));
     }
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getThreadId()))));
     }
 
     // add `trackingId` to the URL query string
     if (getTrackingId() != null) {
-      joiner.add(String.format("%strackingId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackingId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackingId()))));
     }
 
     // add `processingStatus` to the URL query string
     if (getProcessingStatus() != null) {
-      joiner.add(String.format("%sprocessingStatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getProcessingStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sprocessingStatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProcessingStatus()))));
     }
 
     // add `processingError` to the URL query string

@@ -55,7 +55,7 @@ import io.aurinko.client.ApiClient;
   OutgoingEmail.JSON_PROPERTY_FOLLOW_UP,
   OutgoingEmail.JSON_PROPERTY_KEYWORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class OutgoingEmail {
   public static final String JSON_PROPERTY_FROM = "from";
   @javax.annotation.Nullable
@@ -613,22 +613,22 @@ public class OutgoingEmail {
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubject()))));
     }
 
     // add `body` to the URL query string
     if (getBody() != null) {
-      joiner.add(String.format("%sbody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbody%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBody()))));
     }
 
     // add `inReplyTo` to the URL query string
     if (getInReplyTo() != null) {
-      joiner.add(String.format("%sinReplyTo%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInReplyTo()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinReplyTo%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInReplyTo()))));
     }
 
     // add `references` to the URL query string
     if (getReferences() != null) {
-      joiner.add(String.format("%sreferences%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getReferences()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sreferences%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReferences()))));
     }
 
     // add `to` to the URL query string
@@ -706,7 +706,7 @@ public class OutgoingEmail {
       for (int i = 0; i < getKeywords().size(); i++) {
         joiner.add(String.format("%skeywords%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getKeywords().get(i)))));
       }
     }
 

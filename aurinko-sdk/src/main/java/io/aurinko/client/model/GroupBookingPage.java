@@ -41,7 +41,7 @@ import io.aurinko.client.ApiClient;
   GroupBookingPage.JSON_PROPERTY_DONE,
   GroupBookingPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class GroupBookingPage {
   public static final String JSON_PROPERTY_OFFSET = "offset";
   @javax.annotation.Nullable
@@ -246,17 +246,17 @@ public class GroupBookingPage {
 
     // add `offset` to the URL query string
     if (getOffset() != null) {
-      joiner.add(String.format("%soffset%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOffset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%soffset%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOffset()))));
     }
 
     // add `totalSize` to the URL query string
     if (getTotalSize() != null) {
-      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTotalSize()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stotalSize%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTotalSize()))));
     }
 
     // add `done` to the URL query string
     if (getDone() != null) {
-      joiner.add(String.format("%sdone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDone()))));
     }
 
     // add `records` to the URL query string

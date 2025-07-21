@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
   EmailSendError.JSON_PROPERTY_FAILED_STEPS,
   EmailSendError.JSON_PROPERTY_ERROR_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailSendError {
   /**
    * Action that should have been performed, but were not performed due to an error
@@ -227,13 +227,13 @@ public class EmailSendError {
       for (int i = 0; i < getFailedSteps().size(); i++) {
         joiner.add(String.format("%sfailedSteps%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getFailedSteps().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getFailedSteps().get(i)))));
       }
     }
 
     // add `errorMessage` to the URL query string
     if (getErrorMessage() != null) {
-      joiner.add(String.format("%serrorMessage%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getErrorMessage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%serrorMessage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getErrorMessage()))));
     }
 
     return joiner.toString();

@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.ConversationDripStatus;
@@ -51,7 +52,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FollowUpRobotApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -62,7 +63,7 @@ public class FollowUpRobotApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public FollowUpRobotApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public FollowUpRobotApi(ApiClient apiClient) {
@@ -94,7 +95,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;FollowupRuleAggregateOut&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<FollowupRuleAggregateOut> createRule(FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
+  public CompletableFuture<FollowupRuleAggregateOut> createRule(@javax.annotation.Nullable FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createRuleRequestBuilder(followupRuleAggregateIn);
       return memberVarHttpClient.sendAsync(
@@ -125,7 +126,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ApiResponse&lt;FollowupRuleAggregateOut&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<FollowupRuleAggregateOut>> createRuleWithHttpInfo(FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
+  public CompletableFuture<ApiResponse<FollowupRuleAggregateOut>> createRuleWithHttpInfo(@javax.annotation.Nullable FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createRuleRequestBuilder(followupRuleAggregateIn);
       return memberVarHttpClient.sendAsync(
@@ -156,7 +157,7 @@ public class FollowUpRobotApi {
     }
   }
 
-  private HttpRequest.Builder createRuleRequestBuilder(FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
+  private HttpRequest.Builder createRuleRequestBuilder(@javax.annotation.Nullable FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -189,7 +190,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> deleteRule(Long id) throws ApiException {
+  public CompletableFuture<OkResponse> deleteRule(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteRuleRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -220,7 +221,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> deleteRuleWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> deleteRuleWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteRuleRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -251,7 +252,7 @@ public class FollowUpRobotApi {
     }
   }
 
-  private HttpRequest.Builder deleteRuleRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder deleteRuleRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteRule");
@@ -370,7 +371,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ConversationDripStatus&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ConversationDripStatus> getConversationDripStatus(String convoId) throws ApiException {
+  public CompletableFuture<ConversationDripStatus> getConversationDripStatus(@javax.annotation.Nonnull String convoId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getConversationDripStatusRequestBuilder(convoId);
       return memberVarHttpClient.sendAsync(
@@ -401,7 +402,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ConversationDripStatus&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ConversationDripStatus>> getConversationDripStatusWithHttpInfo(String convoId) throws ApiException {
+  public CompletableFuture<ApiResponse<ConversationDripStatus>> getConversationDripStatusWithHttpInfo(@javax.annotation.Nonnull String convoId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getConversationDripStatusRequestBuilder(convoId);
       return memberVarHttpClient.sendAsync(
@@ -432,7 +433,7 @@ public class FollowUpRobotApi {
     }
   }
 
-  private HttpRequest.Builder getConversationDripStatusRequestBuilder(String convoId) throws ApiException {
+  private HttpRequest.Builder getConversationDripStatusRequestBuilder(@javax.annotation.Nonnull String convoId) throws ApiException {
     // verify the required parameter 'convoId' is set
     if (convoId == null) {
       throw new ApiException(400, "Missing the required parameter 'convoId' when calling getConversationDripStatus");
@@ -466,7 +467,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ConversationDripStatus&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ConversationDripStatus> getConversationsDripStatus(Boolean active, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ConversationDripStatus> getConversationsDripStatus(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getConversationsDripStatusRequestBuilder(active, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -499,7 +500,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ConversationDripStatus&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ConversationDripStatus>> getConversationsDripStatusWithHttpInfo(Boolean active, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<ConversationDripStatus>> getConversationsDripStatusWithHttpInfo(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getConversationsDripStatusRequestBuilder(active, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -530,7 +531,7 @@ public class FollowUpRobotApi {
     }
   }
 
-  private HttpRequest.Builder getConversationsDripStatusRequestBuilder(Boolean active, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder getConversationsDripStatusRequestBuilder(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -663,7 +664,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;FollowupConfig&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<FollowupConfig> updateConfig(FollowupConfig followupConfig) throws ApiException {
+  public CompletableFuture<FollowupConfig> updateConfig(@javax.annotation.Nullable FollowupConfig followupConfig) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateConfigRequestBuilder(followupConfig);
       return memberVarHttpClient.sendAsync(
@@ -694,7 +695,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ApiResponse&lt;FollowupConfig&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<FollowupConfig>> updateConfigWithHttpInfo(FollowupConfig followupConfig) throws ApiException {
+  public CompletableFuture<ApiResponse<FollowupConfig>> updateConfigWithHttpInfo(@javax.annotation.Nullable FollowupConfig followupConfig) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateConfigRequestBuilder(followupConfig);
       return memberVarHttpClient.sendAsync(
@@ -725,7 +726,7 @@ public class FollowUpRobotApi {
     }
   }
 
-  private HttpRequest.Builder updateConfigRequestBuilder(FollowupConfig followupConfig) throws ApiException {
+  private HttpRequest.Builder updateConfigRequestBuilder(@javax.annotation.Nullable FollowupConfig followupConfig) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -759,7 +760,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ConversationDripStatus&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ConversationDripStatus> updateConversationDripStatus(String convoId, DripRequestDTO dripRequestDTO) throws ApiException {
+  public CompletableFuture<ConversationDripStatus> updateConversationDripStatus(@javax.annotation.Nonnull String convoId, @javax.annotation.Nullable DripRequestDTO dripRequestDTO) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateConversationDripStatusRequestBuilder(convoId, dripRequestDTO);
       return memberVarHttpClient.sendAsync(
@@ -791,7 +792,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ConversationDripStatus&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ConversationDripStatus>> updateConversationDripStatusWithHttpInfo(String convoId, DripRequestDTO dripRequestDTO) throws ApiException {
+  public CompletableFuture<ApiResponse<ConversationDripStatus>> updateConversationDripStatusWithHttpInfo(@javax.annotation.Nonnull String convoId, @javax.annotation.Nullable DripRequestDTO dripRequestDTO) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateConversationDripStatusRequestBuilder(convoId, dripRequestDTO);
       return memberVarHttpClient.sendAsync(
@@ -822,7 +823,7 @@ public class FollowUpRobotApi {
     }
   }
 
-  private HttpRequest.Builder updateConversationDripStatusRequestBuilder(String convoId, DripRequestDTO dripRequestDTO) throws ApiException {
+  private HttpRequest.Builder updateConversationDripStatusRequestBuilder(@javax.annotation.Nonnull String convoId, @javax.annotation.Nullable DripRequestDTO dripRequestDTO) throws ApiException {
     // verify the required parameter 'convoId' is set
     if (convoId == null) {
       throw new ApiException(400, "Missing the required parameter 'convoId' when calling updateConversationDripStatus");
@@ -861,7 +862,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;FollowupRuleAggregateOut&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<FollowupRuleAggregateOut> updateRule(Long id, FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
+  public CompletableFuture<FollowupRuleAggregateOut> updateRule(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateRuleRequestBuilder(id, followupRuleAggregateIn);
       return memberVarHttpClient.sendAsync(
@@ -893,7 +894,7 @@ public class FollowUpRobotApi {
    * @return CompletableFuture&lt;ApiResponse&lt;FollowupRuleAggregateOut&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<FollowupRuleAggregateOut>> updateRuleWithHttpInfo(Long id, FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
+  public CompletableFuture<ApiResponse<FollowupRuleAggregateOut>> updateRuleWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateRuleRequestBuilder(id, followupRuleAggregateIn);
       return memberVarHttpClient.sendAsync(
@@ -924,7 +925,7 @@ public class FollowUpRobotApi {
     }
   }
 
-  private HttpRequest.Builder updateRuleRequestBuilder(Long id, FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
+  private HttpRequest.Builder updateRuleRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable FollowupRuleAggregateIn followupRuleAggregateIn) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateRule");

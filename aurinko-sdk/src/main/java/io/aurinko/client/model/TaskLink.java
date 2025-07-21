@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   TaskLink.JSON_PROPERTY_DESCRIPTION,
   TaskLink.JSON_PROPERTY_LINK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class TaskLink {
   public static final String JSON_PROPERTY_SOURCE = "source";
   @javax.annotation.Nullable
@@ -204,17 +204,17 @@ public class TaskLink {
 
     // add `source` to the URL query string
     if (getSource() != null) {
-      joiner.add(String.format("%ssource%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSource()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssource%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSource()))));
     }
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
     }
 
     // add `link` to the URL query string
     if (getLink() != null) {
-      joiner.add(String.format("%slink%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slink%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLink()))));
     }
 
     return joiner.toString();

@@ -52,7 +52,7 @@ import io.aurinko.client.ApiClient;
   OutgoingEmailReply.JSON_PROPERTY_TRACKING,
   OutgoingEmailReply.JSON_PROPERTY_FOLLOW_UP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class OutgoingEmailReply {
   public static final String JSON_PROPERTY_FROM = "from";
   @javax.annotation.Nullable
@@ -512,12 +512,12 @@ public class OutgoingEmailReply {
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubject()))));
     }
 
     // add `body` to the URL query string
     if (getBody() != null) {
-      joiner.add(String.format("%sbody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbody%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBody()))));
     }
 
     // add `to` to the URL query string

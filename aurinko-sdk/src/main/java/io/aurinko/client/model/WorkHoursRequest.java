@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   WorkHoursRequest.JSON_PROPERTY_EMAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class WorkHoursRequest {
   public static final String JSON_PROPERTY_EMAILS = "emails";
   @javax.annotation.Nullable
@@ -155,7 +155,7 @@ public class WorkHoursRequest {
       for (int i = 0; i < getEmails().size(); i++) {
         joiner.add(String.format("%semails%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getEmails().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getEmails().get(i)))));
       }
     }
 

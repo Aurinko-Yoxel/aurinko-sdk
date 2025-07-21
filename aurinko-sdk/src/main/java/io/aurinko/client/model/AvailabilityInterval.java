@@ -41,7 +41,7 @@ import io.aurinko.client.ApiClient;
   AvailabilityInterval.JSON_PROPERTY_DATE_END_INCLUSIVE,
   AvailabilityInterval.JSON_PROPERTY_HOURS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class AvailabilityInterval {
   public static final String JSON_PROPERTY_DATE_START_INCLUSIVE = "dateStartInclusive";
   @javax.annotation.Nullable
@@ -216,12 +216,12 @@ public class AvailabilityInterval {
 
     // add `dateStartInclusive` to the URL query string
     if (getDateStartInclusive() != null) {
-      joiner.add(String.format("%sdateStartInclusive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateStartInclusive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateStartInclusive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateStartInclusive()))));
     }
 
     // add `dateEndInclusive` to the URL query string
     if (getDateEndInclusive() != null) {
-      joiner.add(String.format("%sdateEndInclusive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDateEndInclusive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdateEndInclusive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDateEndInclusive()))));
     }
 
     // add `hours` to the URL query string

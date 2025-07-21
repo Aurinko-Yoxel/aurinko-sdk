@@ -66,7 +66,7 @@ import io.aurinko.client.ApiClient;
   Contact.JSON_PROPERTY_HAS_PHOTO,
   Contact.JSON_PROPERTY_PHOTO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Contact {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -735,22 +735,22 @@ public class Contact {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEtag()))));
     }
 
     // add `createdTime` to the URL query string
     if (getCreatedTime() != null) {
-      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreatedTime()))));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastModifiedTime()))));
     }
 
     // add `name` to the URL query string
@@ -760,12 +760,12 @@ public class Contact {
 
     // add `nickName` to the URL query string
     if (getNickName() != null) {
-      joiner.add(String.format("%snickName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNickName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snickName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNickName()))));
     }
 
     // add `fileAs` to the URL query string
     if (getFileAs() != null) {
-      joiner.add(String.format("%sfileAs%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFileAs()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfileAs%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFileAs()))));
     }
 
     // add `company` to the URL query string
@@ -785,7 +785,7 @@ public class Contact {
 
     // add `birthday` to the URL query string
     if (getBirthday() != null) {
-      joiner.add(String.format("%sbirthday%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBirthday()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbirthday%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBirthday()))));
     }
 
     // add `keywords` to the URL query string
@@ -793,13 +793,13 @@ public class Contact {
       for (int i = 0; i < getKeywords().size(); i++) {
         joiner.add(String.format("%skeywords%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getKeywords().get(i)))));
       }
     }
 
     // add `notes` to the URL query string
     if (getNotes() != null) {
-      joiner.add(String.format("%snotes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotes()))));
     }
 
     // add `emailAddresses` to the URL query string
@@ -847,13 +847,13 @@ public class Contact {
       for (String _key : getNativeProperties().keySet()) {
         joiner.add(String.format("%snativeProperties%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getNativeProperties().get(_key), URLEncoder.encode(ApiClient.valueToString(getNativeProperties().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getNativeProperties().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getNativeProperties().get(_key)))));
       }
     }
 
     // add `hasPhoto` to the URL query string
     if (getHasPhoto() != null) {
-      joiner.add(String.format("%shasPhoto%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHasPhoto()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shasPhoto%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasPhoto()))));
     }
 
     // add `photo` to the URL query string

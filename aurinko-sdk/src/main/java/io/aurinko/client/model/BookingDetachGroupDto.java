@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
   BookingDetachGroupDto.JSON_PROPERTY_EXT_ID,
   BookingDetachGroupDto.JSON_PROPERTY_ACCOUNT_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class BookingDetachGroupDto {
   public static final String JSON_PROPERTY_EXT_ID = "extId";
   @javax.annotation.Nullable
@@ -183,7 +183,7 @@ public class BookingDetachGroupDto {
 
     // add `extId` to the URL query string
     if (getExtId() != null) {
-      joiner.add(String.format("%sextId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExtId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sextId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExtId()))));
     }
 
     // add `accountIds` to the URL query string
@@ -191,7 +191,7 @@ public class BookingDetachGroupDto {
       for (int i = 0; i < getAccountIds().size(); i++) {
         joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getAccountIds().get(i)))));
       }
     }
 

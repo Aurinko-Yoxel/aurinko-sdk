@@ -244,6 +244,11 @@ tags:
     4. Compare this computed signature to the `X-Aurinko-Signature` header on the request.
     If it matches - request is valid, if not - request must be discarded.
   name: Webhooks
+- description: |
+    API calls are limited to 250 requests per second.
+    Webhooks from providers (such as webhooks from the Office, Google, and others) are limited to 3,000 requests per second.
+  name: RateLimiting
+  x-displayName: Rate Limiting
 paths:
   /v1/calendars/freeBusy:
     post:
@@ -1421,6 +1426,34 @@ paths:
       x-accepts:
       - application/json
   /v1/email/messages/{messageId}:
+    delete:
+      description: Moves a message to Trash
+      operationId: deleteMessage
+      parameters:
+      - explode: false
+        in: path
+        name: messageId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+          description: Success
+      summary: Delete a message
+      tags:
+      - Messages
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -H 'Authorization: Bearer <access token>' \
+              -X DELETE https://api.aurinko.io/v1/email/messages/{messageId}'
+      x-accepts:
+      - application/json
     get:
       operationId: message
       parameters:
@@ -2033,6 +2066,54 @@ paths:
         source: |-
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/email/drafts/{id}
+      x-accepts:
+      - application/json
+    put:
+      description: Works for Google and Office365 only
+      operationId: updateDraft
+      parameters:
+      - description: draft message identifier
+        explode: false
+        in: path
+        name: draftId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: bodyType
+        required: false
+        schema:
+          $ref: '#/components/schemas/BodyType'
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OutgoingEmail'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailDraftResponse'
+          description: Success
+      summary: Update a draft message
+      tags:
+      - Drafts
+      x-codeSamples:
+      - lang: cURL
+        source: |-
+          curl -H 'Authorization: Bearer <access token>' \
+              -X PUT https://api.aurinko.io/v1/email/drafts/:draftId?bodyType=text \
+              -d '{
+                  "subject": "Business lunch",
+                  "body": "How about a lunch meeting?",
+                  "to": [{"address": "partner@example.com"}]
+                  "cc": [{"address": "guest@example.com"}]
+                 }'
+      x-content-type: application/json
       x-accepts:
       - application/json
   /v1/email/drafts/{draftId}/send:
@@ -4864,6 +4945,37 @@ paths:
         source: "curl -u ClientId:Secret -X GET https://api.aurinko.io/v1/am/accounts/{id}"
       x-accepts:
       - application/json
+  /v1/am/accounts/connect:
+    post:
+      operationId: checkConnection
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiAccountInDto'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+          description: Success
+        "401":
+          description: Authentication information is missing or invalid
+          headers:
+            WWW_Authenticate:
+              explode: false
+              schema:
+                type: string
+              style: simple
+      security:
+      - AppAuth: []
+      summary: "Check a connection, supported Office365, Google, IMAP"
+      tags:
+      - Accounts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /v1/am/svc_accounts:
     get:
       operationId: getSvcAccounts
@@ -6795,7 +6907,6 @@ components:
       - Pipedrive
       - EclipseERP
       - AutoQuotes
-      - Teamwork
       - NetSuite
       - MCTrade
       - SpecPath
@@ -6856,7 +6967,6 @@ components:
       - Pipedrive
       - EclipseERP
       - AutoQuotes
-      - Teamwork
       - NetSuite
       - SpecPath
       - Zoho
@@ -7855,6 +7965,7 @@ components:
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
           loginString: loginString
           timezone: timezone
+          trustServer: true
           tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
           copyToSent: true
           type: daemon
@@ -7887,6 +7998,7 @@ components:
           authObtainedAt: 2000-01-23T04:56:07.000+00:00
           loginString: loginString
           timezone: timezone
+          trustServer: true
           tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
           copyToSent: true
           type: daemon
@@ -8700,6 +8812,23 @@ components:
             \ in the event description or subject."
           type: string
       type: object
+    SchedulerInfo:
+      example:
+        name: name
+        id: id
+        email: email
+      properties:
+        id:
+          readOnly: true
+          type: string
+        email:
+          description: "Email of the person requesting the meeting, if not specified,\
+            \ an event will be created without an attendee"
+          type: string
+        name:
+          description: Username of the person requesting the meeting
+          type: string
+      type: object
     EmailSendResponse:
       example:
         threadId: threadId
@@ -8792,6 +8921,7 @@ components:
         authObtainedAt: 2000-01-23T04:56:07.000+00:00
         loginString: loginString
         timezone: timezone
+        trustServer: true
         tokenIssuedAt: 2000-01-23T04:56:07.000+00:00
         copyToSent: true
         type: daemon
@@ -8886,6 +9016,8 @@ components:
           type: string
         copyToSent:
           description: Copy sent emails to “Sent Messages” folder
+          type: boolean
+        trustServer:
           type: boolean
       type: object
     WellKnownFoldersOut:
@@ -9299,6 +9431,7 @@ components:
         loginString: loginString
         authOrgId: authOrgId
         timezone: timezone
+        trustServer: true
         active: true
         copyToSent: true
         email2: email2
@@ -9367,6 +9500,8 @@ components:
           type: string
         copyToSent:
           description: Copy sent emails to “Sent Messages” folder
+          type: boolean
+        trustServer:
           type: boolean
       required:
       - active
@@ -10000,6 +10135,10 @@ components:
       type: string
     CreateMeetingDto:
       example:
+        schedulerInfo:
+          name: name
+          id: id
+          email: email
         groupXids:
         - groupXids
         - groupXids
@@ -10028,17 +10167,22 @@ components:
             type: integer
           type: array
         name:
-          description: Username of the person requesting the meeting
+          deprecated: true
+          description: "Username of the person requesting the meeting (please, use\
+            \ schedulerInfo.name instead)"
           type: string
         email:
-          description: "Email of the person requesting the meeting, if not specified,\
-            \ an event will be created without an attendee"
+          deprecated: true
+          description: "Email of the person requesting the meeting (please, use schedulerInfo.email\
+            \ instead)"
           type: string
         substitutionData:
           additionalProperties:
             type: string
           description: "Data for substitution instead of templates, key - value"
           type: object
+        schedulerInfo:
+          $ref: '#/components/schemas/SchedulerInfo'
       type: object
     AccountSaveResult:
       example:
@@ -11298,7 +11442,6 @@ components:
       - AutoQuotes
       - SpecPath
       - Clientify
-      - Teamwork
       - EclipseERP
       - NetSuite
       - Fishbowl
@@ -13802,4 +13945,7 @@ x-tagGroups:
 - name: Other
   tags:
   - Errors
+- name: Rate Limiting
+  tags:
+  - RateLimiting
 

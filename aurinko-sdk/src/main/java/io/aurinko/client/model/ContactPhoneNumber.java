@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   ContactPhoneNumber.JSON_PROPERTY_TYPE,
   ContactPhoneNumber.JSON_PROPERTY_CANONICAL_FORM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ContactPhoneNumber {
   public static final String JSON_PROPERTY_NUMBER = "number";
   @javax.annotation.Nullable
@@ -269,17 +269,17 @@ public class ContactPhoneNumber {
 
     // add `number` to the URL query string
     if (getNumber() != null) {
-      joiner.add(String.format("%snumber%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNumber()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNumber()))));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `canonicalForm` to the URL query string
     if (getCanonicalForm() != null) {
-      joiner.add(String.format("%scanonicalForm%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCanonicalForm()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scanonicalForm%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCanonicalForm()))));
     }
 
     return joiner.toString();

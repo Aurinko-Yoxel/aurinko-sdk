@@ -51,7 +51,7 @@ import io.aurinko.client.ApiClient;
   ConversationDripStatus.JSON_PROPERTY_TARGETS,
   ConversationDripStatus.JSON_PROPERTY_DRIP_RESPONDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ConversationDripStatus {
   public static final String JSON_PROPERTY_CONVO_ID = "convoId";
   @javax.annotation.Nullable
@@ -525,17 +525,17 @@ public class ConversationDripStatus {
 
     // add `convoId` to the URL query string
     if (getConvoId() != null) {
-      joiner.add(String.format("%sconvoId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getConvoId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sconvoId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getConvoId()))));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubject()))));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `rule` to the URL query string
@@ -550,22 +550,22 @@ public class ConversationDripStatus {
 
     // add `dripStartedAt` to the URL query string
     if (getDripStartedAt() != null) {
-      joiner.add(String.format("%sdripStartedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripStartedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripStartedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDripStartedAt()))));
     }
 
     // add `dripLastNum` to the URL query string
     if (getDripLastNum() != null) {
-      joiner.add(String.format("%sdripLastNum%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripLastNum()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripLastNum%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDripLastNum()))));
     }
 
     // add `dripError` to the URL query string
     if (getDripError() != null) {
-      joiner.add(String.format("%sdripError%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripError%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDripError()))));
     }
 
     // add `dripEndedAt` to the URL query string
     if (getDripEndedAt() != null) {
-      joiner.add(String.format("%sdripEndedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripEndedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripEndedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDripEndedAt()))));
     }
 
     // add `actionVars` to the URL query string
@@ -573,7 +573,7 @@ public class ConversationDripStatus {
       for (String _key : getActionVars().keySet()) {
         joiner.add(String.format("%sactionVars%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getActionVars().get(_key), URLEncoder.encode(ApiClient.valueToString(getActionVars().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getActionVars().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getActionVars().get(_key)))));
       }
     }
 
@@ -582,13 +582,13 @@ public class ConversationDripStatus {
       for (int i = 0; i < getTargets().size(); i++) {
         joiner.add(String.format("%stargets%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getTargets().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getTargets().get(i)))));
       }
     }
 
     // add `dripResponder` to the URL query string
     if (getDripResponder() != null) {
-      joiner.add(String.format("%sdripResponder%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDripResponder()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdripResponder%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDripResponder()))));
     }
 
     return joiner.toString();

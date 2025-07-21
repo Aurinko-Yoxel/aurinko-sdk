@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.ApiAccountOutDto;
@@ -46,7 +47,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class AccountApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -57,7 +58,7 @@ public class AccountApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public AccountApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public AccountApi(ApiClient apiClient) {
@@ -234,7 +235,7 @@ public class AccountApi {
    * @return CompletableFuture&lt;ApiAccountOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiAccountOutDto> getMyAccount(Boolean pingProvider, Boolean includeProviderAuth) throws ApiException {
+  public CompletableFuture<ApiAccountOutDto> getMyAccount(@javax.annotation.Nullable Boolean pingProvider, @javax.annotation.Nullable Boolean includeProviderAuth) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getMyAccountRequestBuilder(pingProvider, includeProviderAuth);
       return memberVarHttpClient.sendAsync(
@@ -266,7 +267,7 @@ public class AccountApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ApiAccountOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ApiAccountOutDto>> getMyAccountWithHttpInfo(Boolean pingProvider, Boolean includeProviderAuth) throws ApiException {
+  public CompletableFuture<ApiResponse<ApiAccountOutDto>> getMyAccountWithHttpInfo(@javax.annotation.Nullable Boolean pingProvider, @javax.annotation.Nullable Boolean includeProviderAuth) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getMyAccountRequestBuilder(pingProvider, includeProviderAuth);
       return memberVarHttpClient.sendAsync(
@@ -297,7 +298,7 @@ public class AccountApi {
     }
   }
 
-  private HttpRequest.Builder getMyAccountRequestBuilder(Boolean pingProvider, Boolean includeProviderAuth) throws ApiException {
+  private HttpRequest.Builder getMyAccountRequestBuilder(@javax.annotation.Nullable Boolean pingProvider, @javax.annotation.Nullable Boolean includeProviderAuth) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

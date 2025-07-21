@@ -40,7 +40,7 @@ import io.aurinko.client.ApiClient;
   Attendee.JSON_PROPERTY_RESPONSE,
   Attendee.JSON_PROPERTY_COMMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Attendee {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -327,7 +327,7 @@ public class Attendee {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `emailAddress` to the URL query string
@@ -337,17 +337,17 @@ public class Attendee {
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     // add `response` to the URL query string
     if (getResponse() != null) {
-      joiner.add(String.format("%sresponse%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResponse()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresponse%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResponse()))));
     }
 
     // add `comment` to the URL query string
     if (getComment() != null) {
-      joiner.add(String.format("%scomment%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getComment()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scomment%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getComment()))));
     }
 
     return joiner.toString();

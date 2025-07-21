@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
   AccountSaveResult.JSON_PROPERTY_USER_ID,
   AccountSaveResult.JSON_PROPERTY_USER_SESSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class AccountSaveResult {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
   @javax.annotation.Nullable
@@ -235,22 +235,22 @@ public class AccountSaveResult {
 
     // add `accountId` to the URL query string
     if (getAccountId() != null) {
-      joiner.add(String.format("%saccountId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAccountId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%saccountId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAccountId()))));
     }
 
     // add `accessToken` to the URL query string
     if (getAccessToken() != null) {
-      joiner.add(String.format("%saccessToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAccessToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%saccessToken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAccessToken()))));
     }
 
     // add `userId` to the URL query string
     if (getUserId() != null) {
-      joiner.add(String.format("%suserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserId()))));
     }
 
     // add `userSession` to the URL query string
     if (getUserSession() != null) {
-      joiner.add(String.format("%suserSession%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUserSession()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%suserSession%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserSession()))));
     }
 
     return joiner.toString();

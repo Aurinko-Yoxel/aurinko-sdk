@@ -71,7 +71,7 @@ import io.aurinko.client.ApiClient;
   Event.JSON_PROPERTY_ATTACHMENTS,
   Event.JSON_PROPERTY_OMITTED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Event {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -894,42 +894,42 @@ public class Event {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `etag` to the URL query string
     if (getEtag() != null) {
-      joiner.add(String.format("%setag%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEtag()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%setag%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEtag()))));
     }
 
     // add `calendarId` to the URL query string
     if (getCalendarId() != null) {
-      joiner.add(String.format("%scalendarId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCalendarId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scalendarId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCalendarId()))));
     }
 
     // add `createdTime` to the URL query string
     if (getCreatedTime() != null) {
-      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreatedTime()))));
     }
 
     // add `lastModifiedTime` to the URL query string
     if (getLastModifiedTime() != null) {
-      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastModifiedTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastModifiedTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastModifiedTime()))));
     }
 
     // add `subject` to the URL query string
     if (getSubject() != null) {
-      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSubject()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssubject%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSubject()))));
     }
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
     }
 
     // add `location` to the URL query string
     if (getLocation() != null) {
-      joiner.add(String.format("%slocation%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLocation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slocation%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLocation()))));
     }
 
     // add `start` to the URL query string
@@ -954,7 +954,7 @@ public class Event {
 
     // add `recurrenceType` to the URL query string
     if (getRecurrenceType() != null) {
-      joiner.add(String.format("%srecurrenceType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRecurrenceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%srecurrenceType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRecurrenceType()))));
     }
 
     // add `recurrence` to the URL query string
@@ -974,22 +974,22 @@ public class Event {
 
     // add `iCalUid` to the URL query string
     if (getiCalUid() != null) {
-      joiner.add(String.format("%siCalUid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getiCalUid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%siCalUid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getiCalUid()))));
     }
 
     // add `globalId` to the URL query string
     if (getGlobalId() != null) {
-      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getGlobalId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sglobalId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGlobalId()))));
     }
 
     // add `showAs` to the URL query string
     if (getShowAs() != null) {
-      joiner.add(String.format("%sshowAs%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getShowAs()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sshowAs%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getShowAs()))));
     }
 
     // add `sensitivity` to the URL query string
     if (getSensitivity() != null) {
-      joiner.add(String.format("%ssensitivity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSensitivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssensitivity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSensitivity()))));
     }
 
     // add `categories` to the URL query string
@@ -997,18 +997,18 @@ public class Event {
       for (int i = 0; i < getCategories().size(); i++) {
         joiner.add(String.format("%scategories%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getCategories().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getCategories().get(i)))));
       }
     }
 
     // add `htmlLink` to the URL query string
     if (getHtmlLink() != null) {
-      joiner.add(String.format("%shtmlLink%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHtmlLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shtmlLink%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHtmlLink()))));
     }
 
     // add `hasAttachments` to the URL query string
     if (getHasAttachments() != null) {
-      joiner.add(String.format("%shasAttachments%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHasAttachments()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shasAttachments%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHasAttachments()))));
     }
 
     // add `attachments` to the URL query string
@@ -1026,7 +1026,7 @@ public class Event {
       for (int i = 0; i < getOmitted().size(); i++) {
         joiner.add(String.format("%somitted%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getOmitted().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getOmitted().get(i)))));
       }
     }
 

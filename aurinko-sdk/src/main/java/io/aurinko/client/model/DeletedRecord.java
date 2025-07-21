@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   DeletedRecord.JSON_PROPERTY_ID,
   DeletedRecord.JSON_PROPERTY_TIMESTAMP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class DeletedRecord {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -172,12 +172,12 @@ public class DeletedRecord {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `timestamp` to the URL query string
     if (getTimestamp() != null) {
-      joiner.add(String.format("%stimestamp%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimestamp()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimestamp%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimestamp()))));
     }
 
     return joiner.toString();

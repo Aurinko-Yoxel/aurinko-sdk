@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   ConvertDraft.JSON_PROPERTY_MESSAGE_ID,
   ConvertDraft.JSON_PROPERTY_INTERNET_MESSAGE_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ConvertDraft {
   public static final String JSON_PROPERTY_THREAD_ID = "threadId";
   @javax.annotation.Nullable
@@ -204,17 +204,17 @@ public class ConvertDraft {
 
     // add `threadId` to the URL query string
     if (getThreadId() != null) {
-      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getThreadId()))));
     }
 
     // add `messageId` to the URL query string
     if (getMessageId() != null) {
-      joiner.add(String.format("%smessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%smessageId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMessageId()))));
     }
 
     // add `internetMessageId` to the URL query string
     if (getInternetMessageId() != null) {
-      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getInternetMessageId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sinternetMessageId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInternetMessageId()))));
     }
 
     return joiner.toString();

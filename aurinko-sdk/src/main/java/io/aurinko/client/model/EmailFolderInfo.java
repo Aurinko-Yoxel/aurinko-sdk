@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   EmailFolderInfo.JSON_PROPERTY_PARENT_ID,
   EmailFolderInfo.JSON_PROPERTY_SYS_LABEL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailFolderInfo {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -287,37 +287,37 @@ public class EmailFolderInfo {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `fullName` to the URL query string
     if (getFullName() != null) {
-      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFullName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sfullName%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
     }
 
     // add `isFolder` to the URL query string
     if (getIsFolder() != null) {
-      joiner.add(String.format("%sisFolder%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIsFolder()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sisFolder%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsFolder()))));
     }
 
     // add `isLabel` to the URL query string
     if (getIsLabel() != null) {
-      joiner.add(String.format("%sisLabel%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getIsLabel()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sisLabel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getIsLabel()))));
     }
 
     // add `parentId` to the URL query string
     if (getParentId() != null) {
-      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getParentId()))));
     }
 
     // add `sysLabel` to the URL query string
     if (getSysLabel() != null) {
-      joiner.add(String.format("%ssysLabel%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSysLabel()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssysLabel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSysLabel()))));
     }
 
     return joiner.toString();

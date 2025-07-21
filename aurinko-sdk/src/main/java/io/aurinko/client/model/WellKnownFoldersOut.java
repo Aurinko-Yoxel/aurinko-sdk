@@ -36,7 +36,7 @@ import io.aurinko.client.ApiClient;
   WellKnownFoldersOut.JSON_PROPERTY_ARCHIVE,
   WellKnownFoldersOut.JSON_PROPERTY_SENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class WellKnownFoldersOut {
   public static final String JSON_PROPERTY_ARCHIVE = "archive";
   @javax.annotation.Nullable
@@ -173,12 +173,12 @@ public class WellKnownFoldersOut {
 
     // add `archive` to the URL query string
     if (getArchive() != null) {
-      joiner.add(String.format("%sarchive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getArchive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sarchive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getArchive()))));
     }
 
     // add `sent` to the URL query string
     if (getSent() != null) {
-      joiner.add(String.format("%ssent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSent()))));
     }
 
     return joiner.toString();

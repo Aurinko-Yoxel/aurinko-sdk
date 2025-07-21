@@ -49,7 +49,7 @@ import io.aurinko.client.ApiClient;
   EndUserDto.JSON_PROPERTY_EXTERNAL_ID_TYPE,
   EndUserDto.JSON_PROPERTY_ACCOUNTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EndUserDto {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -434,47 +434,47 @@ public class EndUserDto {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `appId` to the URL query string
     if (getAppId() != null) {
-      joiner.add(String.format("%sappId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAppId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sappId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAppId()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `authOrgId` to the URL query string
     if (getAuthOrgId() != null) {
-      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthOrgId()))));
     }
 
     // add `createdAt` to the URL query string
     if (getCreatedAt() != null) {
-      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCreatedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreatedAt()))));
     }
 
     // add `lastActivity` to the URL query string
     if (getLastActivity() != null) {
-      joiner.add(String.format("%slastActivity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLastActivity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slastActivity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLastActivity()))));
     }
 
     // add `trustedIdentity` to the URL query string
     if (getTrustedIdentity() != null) {
-      joiner.add(String.format("%strustedIdentity%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrustedIdentity()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strustedIdentity%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrustedIdentity()))));
     }
 
     // add `externalIdType` to the URL query string
     if (getExternalIdType() != null) {
-      joiner.add(String.format("%sexternalIdType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getExternalIdType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sexternalIdType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExternalIdType()))));
     }
 
     // add `accounts` to the URL query string

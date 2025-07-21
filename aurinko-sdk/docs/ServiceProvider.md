@@ -45,8 +45,6 @@
 
 * `CLIENTIFY` (value: `"Clientify"`)
 
-* `TEAMWORK` (value: `"Teamwork"`)
-
 * `ECLIPSE_ERP` (value: `"EclipseERP"`)
 
 * `NET_SUITE` (value: `"NetSuite"`)

@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BookingInDto;
@@ -58,7 +59,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class BookingApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -69,7 +70,7 @@ public class BookingApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public BookingApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public BookingApi(ApiClient apiClient) {
@@ -104,7 +105,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;CreateMeetingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<CreateMeetingResponse> bookingAccountCreateMeeting(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<CreateMeetingResponse> bookingAccountCreateMeeting(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountCreateMeetingRequestBuilder(id, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -138,7 +139,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;CreateMeetingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingAccountCreateMeetingWithHttpInfo(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  public CompletableFuture<ApiResponse<CreateMeetingResponse>> bookingAccountCreateMeetingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountCreateMeetingRequestBuilder(id, required, reserveForMinutes, createMeetingDto);
       return memberVarHttpClient.sendAsync(
@@ -169,7 +170,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingAccountCreateMeetingRequestBuilder(Long id, BookingRequiredMode required, Long reserveForMinutes, CreateMeetingDto createMeetingDto) throws ApiException {
+  private HttpRequest.Builder bookingAccountCreateMeetingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable Long reserveForMinutes, @javax.annotation.Nullable CreateMeetingDto createMeetingDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingAccountCreateMeeting");
@@ -230,7 +231,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;BookingTimesOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingTimesOutDto> bookingAccountMeetingTimes(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingTimesOutDto> bookingAccountMeetingTimes(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountMeetingTimesRequestBuilder(id, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -267,7 +268,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingTimesOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingAccountMeetingTimesWithHttpInfo(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingTimesOutDto>> bookingAccountMeetingTimesWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountMeetingTimesRequestBuilder(id, required, fromDate, intervalLength, pageToken, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -298,7 +299,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingAccountMeetingTimesRequestBuilder(Long id, BookingRequiredMode required, LocalDate fromDate, String intervalLength, String pageToken, Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder bookingAccountMeetingTimesRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingRequiredMode required, @javax.annotation.Nullable LocalDate fromDate, @javax.annotation.Nullable String intervalLength, @javax.annotation.Nullable String pageToken, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingAccountMeetingTimes");
@@ -355,7 +356,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ConfirmReservationOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ConfirmReservationOutDto> bookingAccountReservationConfirm(Long id) throws ApiException {
+  public CompletableFuture<ConfirmReservationOutDto> bookingAccountReservationConfirm(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountReservationConfirmRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -386,7 +387,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ConfirmReservationOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ConfirmReservationOutDto>> bookingAccountReservationConfirmWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<ConfirmReservationOutDto>> bookingAccountReservationConfirmWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountReservationConfirmRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -417,7 +418,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingAccountReservationConfirmRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder bookingAccountReservationConfirmRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingAccountReservationConfirm");
@@ -449,7 +450,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ConfirmSlotDeleteOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ConfirmSlotDeleteOutDto> bookingAccountReservationDelete(Long id) throws ApiException {
+  public CompletableFuture<ConfirmSlotDeleteOutDto> bookingAccountReservationDelete(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountReservationDeleteRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -480,7 +481,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ConfirmSlotDeleteOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ConfirmSlotDeleteOutDto>> bookingAccountReservationDeleteWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<ConfirmSlotDeleteOutDto>> bookingAccountReservationDeleteWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = bookingAccountReservationDeleteRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -511,7 +512,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder bookingAccountReservationDeleteRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder bookingAccountReservationDeleteRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling bookingAccountReservationDelete");
@@ -543,7 +544,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;BookingOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingOutDto> create(BookingInDto bookingInDto) throws ApiException {
+  public CompletableFuture<BookingOutDto> create(@javax.annotation.Nullable BookingInDto bookingInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createRequestBuilder(bookingInDto);
       return memberVarHttpClient.sendAsync(
@@ -574,7 +575,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingOutDto>> createWithHttpInfo(BookingInDto bookingInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingOutDto>> createWithHttpInfo(@javax.annotation.Nullable BookingInDto bookingInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createRequestBuilder(bookingInDto);
       return memberVarHttpClient.sendAsync(
@@ -605,7 +606,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder createRequestBuilder(BookingInDto bookingInDto) throws ApiException {
+  private HttpRequest.Builder createRequestBuilder(@javax.annotation.Nullable BookingInDto bookingInDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -638,7 +639,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> deleteBooking(Long id) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> deleteBooking(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -669,7 +670,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> deleteBookingWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> deleteBookingWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -700,7 +701,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder deleteBookingRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder deleteBookingRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteBooking");
@@ -733,7 +734,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;BookingPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingPage> getAccBookings(Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<BookingPage> getAccBookings(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getAccBookingsRequestBuilder(limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -765,7 +766,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingPage>> getAccBookingsWithHttpInfo(Integer limit, Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingPage>> getAccBookingsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getAccBookingsRequestBuilder(limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -796,7 +797,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder getAccBookingsRequestBuilder(Integer limit, Integer offset) throws ApiException {
+  private HttpRequest.Builder getAccBookingsRequestBuilder(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -840,7 +841,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;BookingOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingOutDto> getBooking(Long id) throws ApiException {
+  public CompletableFuture<BookingOutDto> getBooking(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -871,7 +872,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingOutDto>> getBookingWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingOutDto>> getBookingWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getBookingRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -902,7 +903,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder getBookingRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder getBookingRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getBooking");
@@ -935,7 +936,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;BookingSuccessOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<BookingSuccessOutDto> updateBooking(Long id, BookingUpdateDto bookingUpdateDto) throws ApiException {
+  public CompletableFuture<BookingSuccessOutDto> updateBooking(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingUpdateDto bookingUpdateDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateBookingRequestBuilder(id, bookingUpdateDto);
       return memberVarHttpClient.sendAsync(
@@ -967,7 +968,7 @@ public class BookingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;BookingSuccessOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> updateBookingWithHttpInfo(Long id, BookingUpdateDto bookingUpdateDto) throws ApiException {
+  public CompletableFuture<ApiResponse<BookingSuccessOutDto>> updateBookingWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingUpdateDto bookingUpdateDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateBookingRequestBuilder(id, bookingUpdateDto);
       return memberVarHttpClient.sendAsync(
@@ -998,7 +999,7 @@ public class BookingApi {
     }
   }
 
-  private HttpRequest.Builder updateBookingRequestBuilder(Long id, BookingUpdateDto bookingUpdateDto) throws ApiException {
+  private HttpRequest.Builder updateBookingRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable BookingUpdateDto bookingUpdateDto) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateBooking");

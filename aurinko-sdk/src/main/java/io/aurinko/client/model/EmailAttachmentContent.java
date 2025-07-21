@@ -35,7 +35,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   EmailAttachmentContent.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailAttachmentContent {
   public static final String JSON_PROPERTY_CONTENT = "content";
   @javax.annotation.Nullable
@@ -142,7 +142,7 @@ public class EmailAttachmentContent {
 
     // add `content` to the URL query string
     if (getContent() != null) {
-      joiner.add(String.format("%scontent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContent()))));
     }
 
     return joiner.toString();

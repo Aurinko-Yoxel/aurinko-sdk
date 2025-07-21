@@ -41,7 +41,7 @@ import io.aurinko.client.ApiClient;
   EventsPage.JSON_PROPERTY_LENGTH,
   EventsPage.JSON_PROPERTY_RECORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EventsPage {
   public static final String JSON_PROPERTY_NEXT_PAGE_TOKEN = "nextPageToken";
   @javax.annotation.Nullable
@@ -246,17 +246,17 @@ public class EventsPage {
 
     // add `nextPageToken` to the URL query string
     if (getNextPageToken() != null) {
-      joiner.add(String.format("%snextPageToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNextPageToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snextPageToken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNextPageToken()))));
     }
 
     // add `nextDeltaToken` to the URL query string
     if (getNextDeltaToken() != null) {
-      joiner.add(String.format("%snextDeltaToken%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNextDeltaToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snextDeltaToken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNextDeltaToken()))));
     }
 
     // add `length` to the URL query string
     if (getLength() != null) {
-      joiner.add(String.format("%slength%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLength()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%slength%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLength()))));
     }
 
     // add `records` to the URL query string

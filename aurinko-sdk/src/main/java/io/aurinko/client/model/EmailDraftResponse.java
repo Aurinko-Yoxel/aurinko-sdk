@@ -36,7 +36,7 @@ import io.aurinko.client.ApiClient;
   EmailDraftResponse.JSON_PROPERTY_ID,
   EmailDraftResponse.JSON_PROPERTY_WEB_LINK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailDraftResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -163,12 +163,12 @@ public class EmailDraftResponse {
 
     // add `id` to the URL query string
     if (getId() != null) {
-      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getId()))));
     }
 
     // add `webLink` to the URL query string
     if (getWebLink() != null) {
-      joiner.add(String.format("%swebLink%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getWebLink()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%swebLink%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getWebLink()))));
     }
 
     return joiner.toString();

@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.DeletedPage;
@@ -49,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class CalSyncApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -60,7 +61,7 @@ public class CalSyncApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public CalSyncApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public CalSyncApi(ApiClient apiClient) {
@@ -94,7 +95,7 @@ public class CalSyncApi {
    * @return CompletableFuture&lt;DeletedPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<DeletedPage> calSyncDeleted(String calendarId, String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<DeletedPage> calSyncDeleted(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = calSyncDeletedRequestBuilder(calendarId, deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -127,7 +128,7 @@ public class CalSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;DeletedPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<DeletedPage>> calSyncDeletedWithHttpInfo(String calendarId, String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<DeletedPage>> calSyncDeletedWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = calSyncDeletedRequestBuilder(calendarId, deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -158,7 +159,7 @@ public class CalSyncApi {
     }
   }
 
-  private HttpRequest.Builder calSyncDeletedRequestBuilder(String calendarId, String deltaToken, String pageToken) throws ApiException {
+  private HttpRequest.Builder calSyncDeletedRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling calSyncDeleted");
@@ -209,7 +210,7 @@ public class CalSyncApi {
    * @return CompletableFuture&lt;SyncStatus&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SyncStatus> calSyncStart(String calendarId, OffsetDateTime timeMin, OffsetDateTime timeMax) throws ApiException {
+  public CompletableFuture<SyncStatus> calSyncStart(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull OffsetDateTime timeMin, @javax.annotation.Nonnull OffsetDateTime timeMax) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = calSyncStartRequestBuilder(calendarId, timeMin, timeMax);
       return memberVarHttpClient.sendAsync(
@@ -242,7 +243,7 @@ public class CalSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SyncStatus&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SyncStatus>> calSyncStartWithHttpInfo(String calendarId, OffsetDateTime timeMin, OffsetDateTime timeMax) throws ApiException {
+  public CompletableFuture<ApiResponse<SyncStatus>> calSyncStartWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull OffsetDateTime timeMin, @javax.annotation.Nonnull OffsetDateTime timeMax) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = calSyncStartRequestBuilder(calendarId, timeMin, timeMax);
       return memberVarHttpClient.sendAsync(
@@ -273,7 +274,7 @@ public class CalSyncApi {
     }
   }
 
-  private HttpRequest.Builder calSyncStartRequestBuilder(String calendarId, OffsetDateTime timeMin, OffsetDateTime timeMax) throws ApiException {
+  private HttpRequest.Builder calSyncStartRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nonnull OffsetDateTime timeMin, @javax.annotation.Nonnull OffsetDateTime timeMax) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling calSyncStart");
@@ -332,7 +333,7 @@ public class CalSyncApi {
    * @return CompletableFuture&lt;EventsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EventsPage> calSyncUpdated(String calendarId, String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<EventsPage> calSyncUpdated(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = calSyncUpdatedRequestBuilder(calendarId, deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -365,7 +366,7 @@ public class CalSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EventsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EventsPage>> calSyncUpdatedWithHttpInfo(String calendarId, String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<EventsPage>> calSyncUpdatedWithHttpInfo(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = calSyncUpdatedRequestBuilder(calendarId, deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -396,7 +397,7 @@ public class CalSyncApi {
     }
   }
 
-  private HttpRequest.Builder calSyncUpdatedRequestBuilder(String calendarId, String deltaToken, String pageToken) throws ApiException {
+  private HttpRequest.Builder calSyncUpdatedRequestBuilder(@javax.annotation.Nonnull String calendarId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     // verify the required parameter 'calendarId' is set
     if (calendarId == null) {
       throw new ApiException(400, "Missing the required parameter 'calendarId' when calling calSyncUpdated");

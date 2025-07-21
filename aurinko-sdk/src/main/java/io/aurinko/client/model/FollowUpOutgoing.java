@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
   FollowUpOutgoing.JSON_PROPERTY_RULE_ID,
   FollowUpOutgoing.JSON_PROPERTY_ACTION_VARS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FollowUpOutgoing {
   public static final String JSON_PROPERTY_RULE_ID = "ruleId";
   @javax.annotation.Nullable
@@ -183,7 +183,7 @@ public class FollowUpOutgoing {
 
     // add `ruleId` to the URL query string
     if (getRuleId() != null) {
-      joiner.add(String.format("%sruleId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRuleId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sruleId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRuleId()))));
     }
 
     // add `actionVars` to the URL query string
@@ -191,7 +191,7 @@ public class FollowUpOutgoing {
       for (String _key : getActionVars().keySet()) {
         joiner.add(String.format("%sactionVars%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getActionVars().get(_key), URLEncoder.encode(ApiClient.valueToString(getActionVars().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getActionVars().get(_key), ApiClient.urlEncode(ApiClient.valueToString(getActionVars().get(_key)))));
       }
     }
 

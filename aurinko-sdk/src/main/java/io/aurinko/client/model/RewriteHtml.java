@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   RewriteHtml.JSON_PROPERTY_HTML_TEXT,
   RewriteHtml.JSON_PROPERTY_TRACKING
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class RewriteHtml {
   public static final String JSON_PROPERTY_HTML_TEXT = "htmlText";
   @javax.annotation.Nullable
@@ -174,7 +174,7 @@ public class RewriteHtml {
 
     // add `htmlText` to the URL query string
     if (getHtmlText() != null) {
-      joiner.add(String.format("%shtmlText%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHtmlText()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shtmlText%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHtmlText()))));
     }
 
     // add `tracking` to the URL query string

@@ -59,9 +59,10 @@ import io.aurinko.client.ApiClient;
   ApiAccountInDto.JSON_PROPERTY_NAME,
   ApiAccountInDto.JSON_PROPERTY_SERVER_INFO,
   ApiAccountInDto.JSON_PROPERTY_TIMEZONE,
-  ApiAccountInDto.JSON_PROPERTY_COPY_TO_SENT
+  ApiAccountInDto.JSON_PROPERTY_COPY_TO_SENT,
+  ApiAccountInDto.JSON_PROPERTY_TRUST_SERVER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ApiAccountInDto {
   public static final String JSON_PROPERTY_SERVICE_TYPE = "serviceType";
   @javax.annotation.Nonnull
@@ -146,6 +147,10 @@ public class ApiAccountInDto {
   public static final String JSON_PROPERTY_COPY_TO_SENT = "copyToSent";
   @javax.annotation.Nullable
   private Boolean copyToSent;
+
+  public static final String JSON_PROPERTY_TRUST_SERVER = "trustServer";
+  @javax.annotation.Nullable
+  private Boolean trustServer;
 
   public ApiAccountInDto() { 
   }
@@ -662,6 +667,30 @@ public class ApiAccountInDto {
   }
 
 
+  public ApiAccountInDto trustServer(@javax.annotation.Nullable Boolean trustServer) {
+    this.trustServer = trustServer;
+    return this;
+  }
+
+  /**
+   * Get trustServer
+   * @return trustServer
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TRUST_SERVER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Boolean getTrustServer() {
+    return trustServer;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TRUST_SERVER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTrustServer(@javax.annotation.Nullable Boolean trustServer) {
+    this.trustServer = trustServer;
+  }
+
+
   /**
    * Return true if this ApiAccountInDto object is equal to o.
    */
@@ -694,12 +723,13 @@ public class ApiAccountInDto {
         Objects.equals(this.name, apiAccountInDto.name) &&
         Objects.equals(this.serverInfo, apiAccountInDto.serverInfo) &&
         Objects.equals(this.timezone, apiAccountInDto.timezone) &&
-        Objects.equals(this.copyToSent, apiAccountInDto.copyToSent);
+        Objects.equals(this.copyToSent, apiAccountInDto.copyToSent) &&
+        Objects.equals(this.trustServer, apiAccountInDto.trustServer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(serviceType, serviceProvider, authScopes, authOrgId, authUserId, clientOrgId, serverUrl, loginString, oauthClientId, active, authString1, authString2, password, authObtainedAt, authExpiresAt, email, email2, name, serverInfo, timezone, copyToSent);
+    return Objects.hash(serviceType, serviceProvider, authScopes, authOrgId, authUserId, clientOrgId, serverUrl, loginString, oauthClientId, active, authString1, authString2, password, authObtainedAt, authExpiresAt, email, email2, name, serverInfo, timezone, copyToSent, trustServer);
   }
 
   @Override
@@ -727,6 +757,7 @@ public class ApiAccountInDto {
     sb.append("    serverInfo: ").append(toIndentedString(serverInfo)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    copyToSent: ").append(toIndentedString(copyToSent)).append("\n");
+    sb.append("    trustServer: ").append(toIndentedString(trustServer)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -776,12 +807,12 @@ public class ApiAccountInDto {
 
     // add `serviceType` to the URL query string
     if (getServiceType() != null) {
-      joiner.add(String.format("%sserviceType%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserviceType%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getServiceType()))));
     }
 
     // add `serviceProvider` to the URL query string
     if (getServiceProvider() != null) {
-      joiner.add(String.format("%sserviceProvider%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServiceProvider()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserviceProvider%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getServiceProvider()))));
     }
 
     // add `authScopes` to the URL query string
@@ -790,99 +821,104 @@ public class ApiAccountInDto {
         if (getAuthScopes().get(i) != null) {
           joiner.add(String.format("%sauthScopes%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(ApiClient.valueToString(getAuthScopes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              ApiClient.urlEncode(ApiClient.valueToString(getAuthScopes().get(i)))));
         }
       }
     }
 
     // add `authOrgId` to the URL query string
     if (getAuthOrgId() != null) {
-      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthOrgId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthOrgId()))));
     }
 
     // add `authUserId` to the URL query string
     if (getAuthUserId() != null) {
-      joiner.add(String.format("%sauthUserId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthUserId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthUserId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthUserId()))));
     }
 
     // add `clientOrgId` to the URL query string
     if (getClientOrgId() != null) {
-      joiner.add(String.format("%sclientOrgId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getClientOrgId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sclientOrgId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getClientOrgId()))));
     }
 
     // add `serverUrl` to the URL query string
     if (getServerUrl() != null) {
-      joiner.add(String.format("%sserverUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServerUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserverUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getServerUrl()))));
     }
 
     // add `loginString` to the URL query string
     if (getLoginString() != null) {
-      joiner.add(String.format("%sloginString%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLoginString()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sloginString%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLoginString()))));
     }
 
     // add `oauthClientId` to the URL query string
     if (getOauthClientId() != null) {
-      joiner.add(String.format("%soauthClientId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOauthClientId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%soauthClientId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOauthClientId()))));
     }
 
     // add `active` to the URL query string
     if (getActive() != null) {
-      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getActive()))));
     }
 
     // add `authString1` to the URL query string
     if (getAuthString1() != null) {
-      joiner.add(String.format("%sauthString1%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthString1()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthString1%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthString1()))));
     }
 
     // add `authString2` to the URL query string
     if (getAuthString2() != null) {
-      joiner.add(String.format("%sauthString2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthString2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthString2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthString2()))));
     }
 
     // add `password` to the URL query string
     if (getPassword() != null) {
-      joiner.add(String.format("%spassword%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPassword()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%spassword%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPassword()))));
     }
 
     // add `authObtainedAt` to the URL query string
     if (getAuthObtainedAt() != null) {
-      joiner.add(String.format("%sauthObtainedAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthObtainedAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthObtainedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthObtainedAt()))));
     }
 
     // add `authExpiresAt` to the URL query string
     if (getAuthExpiresAt() != null) {
-      joiner.add(String.format("%sauthExpiresAt%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getAuthExpiresAt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sauthExpiresAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAuthExpiresAt()))));
     }
 
     // add `email` to the URL query string
     if (getEmail() != null) {
-      joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
     // add `email2` to the URL query string
     if (getEmail2() != null) {
-      joiner.add(String.format("%semail2%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEmail2()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%semail2%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail2()))));
     }
 
     // add `name` to the URL query string
     if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
     }
 
     // add `serverInfo` to the URL query string
     if (getServerInfo() != null) {
-      joiner.add(String.format("%sserverInfo%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getServerInfo()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sserverInfo%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getServerInfo()))));
     }
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimezone()))));
     }
 
     // add `copyToSent` to the URL query string
     if (getCopyToSent() != null) {
-      joiner.add(String.format("%scopyToSent%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCopyToSent()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scopyToSent%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCopyToSent()))));
+    }
+
+    // add `trustServer` to the URL query string
+    if (getTrustServer() != null) {
+      joiner.add(String.format("%strustServer%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrustServer()))));
     }
 
     return joiner.toString();

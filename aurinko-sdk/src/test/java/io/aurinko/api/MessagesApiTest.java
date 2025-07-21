@@ -63,6 +63,23 @@ public class MessagesApiTest {
     }
     
     /**
+     * Delete a message
+     *
+     * Moves a message to Trash
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteMessageTest() throws ApiException {
+        String messageId = null;
+        CompletableFuture<OkResponse> response = 
+        api.deleteMessage(messageId);
+        
+        // TODO: test validations
+    }
+    
+    /**
      * Get a message attachment
      *
      * 

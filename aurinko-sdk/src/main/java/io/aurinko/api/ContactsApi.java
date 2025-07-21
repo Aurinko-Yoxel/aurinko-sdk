@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BodyType;
@@ -48,7 +49,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ContactsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -59,7 +60,7 @@ public class ContactsApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public ContactsApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public ContactsApi(ApiClient apiClient) {
@@ -95,7 +96,7 @@ public class ContactsApi {
    * @return CompletableFuture&lt;Contact&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Contact> contact(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto, Boolean includeUpdateToken) throws ApiException {
+  public CompletableFuture<Contact> contact(@javax.annotation.Nonnull String contId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean withPhoto, @javax.annotation.Nullable Boolean includeUpdateToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = contactRequestBuilder(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken);
       return memberVarHttpClient.sendAsync(
@@ -130,7 +131,7 @@ public class ContactsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Contact&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Contact>> contactWithHttpInfo(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto, Boolean includeUpdateToken) throws ApiException {
+  public CompletableFuture<ApiResponse<Contact>> contactWithHttpInfo(@javax.annotation.Nonnull String contId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean withPhoto, @javax.annotation.Nullable Boolean includeUpdateToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = contactRequestBuilder(contId, bodyType, nativeProperties, withPhoto, includeUpdateToken);
       return memberVarHttpClient.sendAsync(
@@ -161,7 +162,7 @@ public class ContactsApi {
     }
   }
 
-  private HttpRequest.Builder contactRequestBuilder(String contId, BodyType bodyType, List<String> nativeProperties, Boolean withPhoto, Boolean includeUpdateToken) throws ApiException {
+  private HttpRequest.Builder contactRequestBuilder(@javax.annotation.Nonnull String contId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean withPhoto, @javax.annotation.Nullable Boolean includeUpdateToken) throws ApiException {
     // verify the required parameter 'contId' is set
     if (contId == null) {
       throw new ApiException(400, "Missing the required parameter 'contId' when calling contact");
@@ -214,7 +215,7 @@ public class ContactsApi {
    * @return CompletableFuture&lt;ContactOrId&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ContactOrId> createContact(Contact contact) throws ApiException {
+  public CompletableFuture<ContactOrId> createContact(@javax.annotation.Nullable Contact contact) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createContactRequestBuilder(contact);
       return memberVarHttpClient.sendAsync(
@@ -245,7 +246,7 @@ public class ContactsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ContactOrId&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ContactOrId>> createContactWithHttpInfo(Contact contact) throws ApiException {
+  public CompletableFuture<ApiResponse<ContactOrId>> createContactWithHttpInfo(@javax.annotation.Nullable Contact contact) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createContactRequestBuilder(contact);
       return memberVarHttpClient.sendAsync(
@@ -276,7 +277,7 @@ public class ContactsApi {
     }
   }
 
-  private HttpRequest.Builder createContactRequestBuilder(Contact contact) throws ApiException {
+  private HttpRequest.Builder createContactRequestBuilder(@javax.annotation.Nullable Contact contact) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -309,7 +310,7 @@ public class ContactsApi {
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> deleteContact(String contId) throws ApiException {
+  public CompletableFuture<Void> deleteContact(@javax.annotation.Nonnull String contId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteContactRequestBuilder(contId);
       return memberVarHttpClient.sendAsync(
@@ -333,7 +334,7 @@ public class ContactsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> deleteContactWithHttpInfo(String contId) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> deleteContactWithHttpInfo(@javax.annotation.Nonnull String contId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteContactRequestBuilder(contId);
       return memberVarHttpClient.sendAsync(
@@ -356,7 +357,7 @@ public class ContactsApi {
     }
   }
 
-  private HttpRequest.Builder deleteContactRequestBuilder(String contId) throws ApiException {
+  private HttpRequest.Builder deleteContactRequestBuilder(@javax.annotation.Nonnull String contId) throws ApiException {
     // verify the required parameter 'contId' is set
     if (contId == null) {
       throw new ApiException(400, "Missing the required parameter 'contId' when calling deleteContact");
@@ -390,7 +391,7 @@ public class ContactsApi {
    * @return CompletableFuture&lt;ContactOrId&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ContactOrId> updateContact(String contId, String ifMatch, Contact contact) throws ApiException {
+  public CompletableFuture<ContactOrId> updateContact(@javax.annotation.Nonnull String contId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable Contact contact) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateContactRequestBuilder(contId, ifMatch, contact);
       return memberVarHttpClient.sendAsync(
@@ -423,7 +424,7 @@ public class ContactsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ContactOrId&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ContactOrId>> updateContactWithHttpInfo(String contId, String ifMatch, Contact contact) throws ApiException {
+  public CompletableFuture<ApiResponse<ContactOrId>> updateContactWithHttpInfo(@javax.annotation.Nonnull String contId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable Contact contact) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateContactRequestBuilder(contId, ifMatch, contact);
       return memberVarHttpClient.sendAsync(
@@ -454,7 +455,7 @@ public class ContactsApi {
     }
   }
 
-  private HttpRequest.Builder updateContactRequestBuilder(String contId, String ifMatch, Contact contact) throws ApiException {
+  private HttpRequest.Builder updateContactRequestBuilder(@javax.annotation.Nonnull String contId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nullable Contact contact) throws ApiException {
     // verify the required parameter 'contId' is set
     if (contId == null) {
       throw new ApiException(400, "Missing the required parameter 'contId' when calling updateContact");

@@ -211,4 +211,12 @@ class ApiAccountInDtoTest {
         // TODO: test copyToSent
     }
 
+    /**
+     * Test the property 'trustServer'
+     */
+    @Test
+    void trustServerTest() {
+        // TODO: test trustServer
+    }
+
 }

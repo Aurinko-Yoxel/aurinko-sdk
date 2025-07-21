@@ -40,7 +40,7 @@ import io.aurinko.client.ApiClient;
   FreeBusyRequest.JSON_PROPERTY_TIME_MAX,
   FreeBusyRequest.JSON_PROPERTY_EMAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FreeBusyRequest {
   public static final String JSON_PROPERTY_TIME_MIN = "timeMin";
   @javax.annotation.Nullable
@@ -215,12 +215,12 @@ public class FreeBusyRequest {
 
     // add `timeMin` to the URL query string
     if (getTimeMin() != null) {
-      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMin()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMin%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeMin()))));
     }
 
     // add `timeMax` to the URL query string
     if (getTimeMax() != null) {
-      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimeMax()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimeMax%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimeMax()))));
     }
 
     // add `emails` to the URL query string
@@ -228,7 +228,7 @@ public class FreeBusyRequest {
       for (int i = 0; i < getEmails().size(); i++) {
         joiner.add(String.format("%semails%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getEmails().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getEmails().get(i)))));
       }
     }
 

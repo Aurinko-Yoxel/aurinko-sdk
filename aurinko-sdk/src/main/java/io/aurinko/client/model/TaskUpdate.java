@@ -48,7 +48,7 @@ import io.aurinko.client.ApiClient;
   TaskUpdate.JSON_PROPERTY_START_DATE_TIME,
   TaskUpdate.JSON_PROPERTY_CATEGORIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class TaskUpdate {
   public static final String JSON_PROPERTY_TITLE = "title";
   @javax.annotation.Nullable
@@ -403,42 +403,42 @@ public class TaskUpdate {
 
     // add `title` to the URL query string
     if (getTitle() != null) {
-      joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTitle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stitle%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTitle()))));
     }
 
     // add `parentId` to the URL query string
     if (getParentId() != null) {
-      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getParentId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sparentId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getParentId()))));
     }
 
     // add `previousId` to the URL query string
     if (getPreviousId() != null) {
-      joiner.add(String.format("%spreviousId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getPreviousId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%spreviousId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPreviousId()))));
     }
 
     // add `notes` to the URL query string
     if (getNotes() != null) {
-      joiner.add(String.format("%snotes%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotes()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotes()))));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `importance` to the URL query string
     if (getImportance() != null) {
-      joiner.add(String.format("%simportance%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getImportance()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%simportance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getImportance()))));
     }
 
     // add `due` to the URL query string
     if (getDue() != null) {
-      joiner.add(String.format("%sdue%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDue()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdue%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDue()))));
     }
 
     // add `startDateTime` to the URL query string
     if (getStartDateTime() != null) {
-      joiner.add(String.format("%sstartDateTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStartDateTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstartDateTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStartDateTime()))));
     }
 
     // add `categories` to the URL query string
@@ -446,7 +446,7 @@ public class TaskUpdate {
       for (int i = 0; i < getCategories().size(); i++) {
         joiner.add(String.format("%scategories%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getCategories().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getCategories().get(i)))));
       }
     }
 

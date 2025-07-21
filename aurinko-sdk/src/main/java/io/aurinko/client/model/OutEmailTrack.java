@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
   OutEmailTrack.JSON_PROPERTY_TRACK_OPENS_AFTER_SEND_DELAY,
   OutEmailTrack.JSON_PROPERTY_CONTEXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class OutEmailTrack {
   public static final String JSON_PROPERTY_THREAD_REPLIES = "threadReplies";
   @javax.annotation.Nullable
@@ -235,22 +235,22 @@ public class OutEmailTrack {
 
     // add `threadReplies` to the URL query string
     if (getThreadReplies() != null) {
-      joiner.add(String.format("%sthreadReplies%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getThreadReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sthreadReplies%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getThreadReplies()))));
     }
 
     // add `opens` to the URL query string
     if (getOpens() != null) {
-      joiner.add(String.format("%sopens%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getOpens()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sopens%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOpens()))));
     }
 
     // add `trackOpensAfterSendDelay` to the URL query string
     if (getTrackOpensAfterSendDelay() != null) {
-      joiner.add(String.format("%strackOpensAfterSendDelay%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackOpensAfterSendDelay()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackOpensAfterSendDelay%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackOpensAfterSendDelay()))));
     }
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContext()))));
     }
 
     return joiner.toString();

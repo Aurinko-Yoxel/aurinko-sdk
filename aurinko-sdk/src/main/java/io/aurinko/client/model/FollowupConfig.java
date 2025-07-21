@@ -38,7 +38,7 @@ import io.aurinko.client.ApiClient;
   FollowupConfig.JSON_PROPERTY_TIMEZONE,
   FollowupConfig.JSON_PROPERTY_EMAIL_ALIASES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class FollowupConfig {
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   @javax.annotation.Nullable
@@ -183,7 +183,7 @@ public class FollowupConfig {
 
     // add `timezone` to the URL query string
     if (getTimezone() != null) {
-      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTimezone()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stimezone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTimezone()))));
     }
 
     // add `emailAliases` to the URL query string
@@ -191,7 +191,7 @@ public class FollowupConfig {
       for (int i = 0; i < getEmailAliases().size(); i++) {
         joiner.add(String.format("%semailAliases%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getEmailAliases().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getEmailAliases().get(i)))));
       }
     }
 

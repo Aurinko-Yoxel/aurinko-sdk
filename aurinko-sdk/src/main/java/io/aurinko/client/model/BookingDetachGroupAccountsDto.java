@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   BookingDetachGroupAccountsDto.JSON_PROPERTY_ACCOUNT_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class BookingDetachGroupAccountsDto {
   public static final String JSON_PROPERTY_ACCOUNT_IDS = "accountIds";
   @javax.annotation.Nullable
@@ -155,7 +155,7 @@ public class BookingDetachGroupAccountsDto {
       for (int i = 0; i < getAccountIds().size(); i++) {
         joiner.add(String.format("%saccountIds%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getAccountIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getAccountIds().get(i)))));
       }
     }
 

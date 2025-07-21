@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.DeletedPage;
@@ -49,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class TaskSyncApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -60,7 +61,7 @@ public class TaskSyncApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public TaskSyncApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public TaskSyncApi(ApiClient apiClient) {
@@ -94,7 +95,7 @@ public class TaskSyncApi {
    * @return CompletableFuture&lt;DeletedPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<DeletedPage> taskSyncDeleted(String taskListId, String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<DeletedPage> taskSyncDeleted(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskSyncDeletedRequestBuilder(taskListId, deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -127,7 +128,7 @@ public class TaskSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;DeletedPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<DeletedPage>> taskSyncDeletedWithHttpInfo(String taskListId, String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<DeletedPage>> taskSyncDeletedWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskSyncDeletedRequestBuilder(taskListId, deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -158,7 +159,7 @@ public class TaskSyncApi {
     }
   }
 
-  private HttpRequest.Builder taskSyncDeletedRequestBuilder(String taskListId, String deltaToken, String pageToken) throws ApiException {
+  private HttpRequest.Builder taskSyncDeletedRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling taskSyncDeleted");
@@ -208,7 +209,7 @@ public class TaskSyncApi {
    * @return CompletableFuture&lt;SyncStatus&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SyncStatus> taskSyncStart(String taskListId, OffsetDateTime skipCompletedBeforeDate) throws ApiException {
+  public CompletableFuture<SyncStatus> taskSyncStart(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable OffsetDateTime skipCompletedBeforeDate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskSyncStartRequestBuilder(taskListId, skipCompletedBeforeDate);
       return memberVarHttpClient.sendAsync(
@@ -240,7 +241,7 @@ public class TaskSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SyncStatus&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SyncStatus>> taskSyncStartWithHttpInfo(String taskListId, OffsetDateTime skipCompletedBeforeDate) throws ApiException {
+  public CompletableFuture<ApiResponse<SyncStatus>> taskSyncStartWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable OffsetDateTime skipCompletedBeforeDate) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskSyncStartRequestBuilder(taskListId, skipCompletedBeforeDate);
       return memberVarHttpClient.sendAsync(
@@ -271,7 +272,7 @@ public class TaskSyncApi {
     }
   }
 
-  private HttpRequest.Builder taskSyncStartRequestBuilder(String taskListId, OffsetDateTime skipCompletedBeforeDate) throws ApiException {
+  private HttpRequest.Builder taskSyncStartRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable OffsetDateTime skipCompletedBeforeDate) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling taskSyncStart");
@@ -320,7 +321,7 @@ public class TaskSyncApi {
    * @return CompletableFuture&lt;SyncTasksPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<SyncTasksPage> taskSyncUpdated(String taskListId, String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<SyncTasksPage> taskSyncUpdated(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskSyncUpdatedRequestBuilder(taskListId, deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -353,7 +354,7 @@ public class TaskSyncApi {
    * @return CompletableFuture&lt;ApiResponse&lt;SyncTasksPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<SyncTasksPage>> taskSyncUpdatedWithHttpInfo(String taskListId, String deltaToken, String pageToken) throws ApiException {
+  public CompletableFuture<ApiResponse<SyncTasksPage>> taskSyncUpdatedWithHttpInfo(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = taskSyncUpdatedRequestBuilder(taskListId, deltaToken, pageToken);
       return memberVarHttpClient.sendAsync(
@@ -384,7 +385,7 @@ public class TaskSyncApi {
     }
   }
 
-  private HttpRequest.Builder taskSyncUpdatedRequestBuilder(String taskListId, String deltaToken, String pageToken) throws ApiException {
+  private HttpRequest.Builder taskSyncUpdatedRequestBuilder(@javax.annotation.Nonnull String taskListId, @javax.annotation.Nullable String deltaToken, @javax.annotation.Nullable String pageToken) throws ApiException {
     // verify the required parameter 'taskListId' is set
     if (taskListId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskListId' when calling taskSyncUpdated");

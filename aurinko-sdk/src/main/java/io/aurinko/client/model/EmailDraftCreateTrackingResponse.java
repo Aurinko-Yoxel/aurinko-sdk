@@ -42,7 +42,7 @@ import io.aurinko.client.ApiClient;
   EmailDraftCreateTrackingResponse.JSON_PROPERTY_LINK_CODES,
   EmailDraftCreateTrackingResponse.JSON_PROPERTY_TRACKING_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EmailDraftCreateTrackingResponse {
   public static final String JSON_PROPERTY_TRACK_REPLIES = "trackReplies";
   @javax.annotation.Nullable
@@ -307,22 +307,22 @@ public class EmailDraftCreateTrackingResponse {
 
     // add `trackReplies` to the URL query string
     if (getTrackReplies() != null) {
-      joiner.add(String.format("%strackReplies%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackReplies()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackReplies%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackReplies()))));
     }
 
     // add `htmlBody` to the URL query string
     if (getHtmlBody() != null) {
-      joiner.add(String.format("%shtmlBody%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getHtmlBody()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%shtmlBody%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getHtmlBody()))));
     }
 
     // add `trackingCode` to the URL query string
     if (getTrackingCode() != null) {
-      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackingCode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackingCode()))));
     }
 
     // add `context` to the URL query string
     if (getContext() != null) {
-      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getContext()))));
     }
 
     // add `linkCodes` to the URL query string
@@ -330,13 +330,13 @@ public class EmailDraftCreateTrackingResponse {
       for (int i = 0; i < getLinkCodes().size(); i++) {
         joiner.add(String.format("%slinkCodes%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getLinkCodes().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getLinkCodes().get(i)))));
       }
     }
 
     // add `trackingId` to the URL query string
     if (getTrackingId() != null) {
-      joiner.add(String.format("%strackingId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTrackingId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%strackingId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrackingId()))));
     }
 
     return joiner.toString();

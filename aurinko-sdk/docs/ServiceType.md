@@ -47,8 +47,6 @@
 
 * `AUTO_QUOTES` (value: `"AutoQuotes"`)
 
-* `TEAMWORK` (value: `"Teamwork"`)
-
 * `NET_SUITE` (value: `"NetSuite"`)
 
 * `MC_TRADE` (value: `"MCTrade"`)

@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.EndUserAccountDto;
@@ -50,7 +51,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class UserApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -61,7 +62,7 @@ public class UserApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public UserApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public UserApi(ApiClient apiClient) {
@@ -94,7 +95,7 @@ public class UserApi {
    * @return CompletableFuture&lt;EndUserAccountDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EndUserAccountDto> copyAsManaged(Long id, String clientOrgId) throws ApiException {
+  public CompletableFuture<EndUserAccountDto> copyAsManaged(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable String clientOrgId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = copyAsManagedRequestBuilder(id, clientOrgId);
       return memberVarHttpClient.sendAsync(
@@ -126,7 +127,7 @@ public class UserApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EndUserAccountDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EndUserAccountDto>> copyAsManagedWithHttpInfo(Long id, String clientOrgId) throws ApiException {
+  public CompletableFuture<ApiResponse<EndUserAccountDto>> copyAsManagedWithHttpInfo(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable String clientOrgId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = copyAsManagedRequestBuilder(id, clientOrgId);
       return memberVarHttpClient.sendAsync(
@@ -157,7 +158,7 @@ public class UserApi {
     }
   }
 
-  private HttpRequest.Builder copyAsManagedRequestBuilder(Long id, String clientOrgId) throws ApiException {
+  private HttpRequest.Builder copyAsManagedRequestBuilder(@javax.annotation.Nonnull Long id, @javax.annotation.Nullable String clientOrgId) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling copyAsManaged");
@@ -204,7 +205,7 @@ public class UserApi {
    * @return CompletableFuture&lt;EndUserAccountDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EndUserAccountDto> getEndUserAccount(Long id) throws ApiException {
+  public CompletableFuture<EndUserAccountDto> getEndUserAccount(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getEndUserAccountRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -235,7 +236,7 @@ public class UserApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EndUserAccountDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EndUserAccountDto>> getEndUserAccountWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<EndUserAccountDto>> getEndUserAccountWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getEndUserAccountRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -266,7 +267,7 @@ public class UserApi {
     }
   }
 
-  private HttpRequest.Builder getEndUserAccountRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder getEndUserAccountRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getEndUserAccount");
@@ -559,7 +560,7 @@ public class UserApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> logoutAccount(Long id) throws ApiException {
+  public CompletableFuture<OkResponse> logoutAccount(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = logoutAccountRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -590,7 +591,7 @@ public class UserApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> logoutAccountWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> logoutAccountWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = logoutAccountRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -621,7 +622,7 @@ public class UserApi {
     }
   }
 
-  private HttpRequest.Builder logoutAccountRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder logoutAccountRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling logoutAccount");
@@ -653,7 +654,7 @@ public class UserApi {
    * @return CompletableFuture&lt;EndUserDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EndUserDto> updateSettings(EndUserSettingsDto endUserSettingsDto) throws ApiException {
+  public CompletableFuture<EndUserDto> updateSettings(@javax.annotation.Nullable EndUserSettingsDto endUserSettingsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateSettingsRequestBuilder(endUserSettingsDto);
       return memberVarHttpClient.sendAsync(
@@ -684,7 +685,7 @@ public class UserApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EndUserDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EndUserDto>> updateSettingsWithHttpInfo(EndUserSettingsDto endUserSettingsDto) throws ApiException {
+  public CompletableFuture<ApiResponse<EndUserDto>> updateSettingsWithHttpInfo(@javax.annotation.Nullable EndUserSettingsDto endUserSettingsDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = updateSettingsRequestBuilder(endUserSettingsDto);
       return memberVarHttpClient.sendAsync(
@@ -715,7 +716,7 @@ public class UserApi {
     }
   }
 
-  private HttpRequest.Builder updateSettingsRequestBuilder(EndUserSettingsDto endUserSettingsDto) throws ApiException {
+  private HttpRequest.Builder updateSettingsRequestBuilder(@javax.annotation.Nullable EndUserSettingsDto endUserSettingsDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

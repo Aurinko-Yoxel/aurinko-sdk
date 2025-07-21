@@ -15,12 +15,14 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.AccountSaveResult;
 import io.aurinko.client.model.AccountsPage;
 import io.aurinko.client.model.ApiAccountInDto;
 import io.aurinko.client.model.ApiAccountOutDto;
+import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.ServiceKey;
 import io.aurinko.client.model.ServiceTypeNonDaemon;
 import io.aurinko.client.model.UserAccountType;
@@ -52,7 +54,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class AccountsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -63,7 +65,7 @@ public class AccountsApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public AccountsApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public AccountsApi(ApiClient apiClient) {
@@ -95,7 +97,7 @@ public class AccountsApi {
    * @return CompletableFuture&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<Void> amAccountDelete(Long id) throws ApiException {
+  public CompletableFuture<Void> amAccountDelete(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = amAccountDeleteRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -119,7 +121,7 @@ public class AccountsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;Void&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<Void>> amAccountDeleteWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<Void>> amAccountDeleteWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = amAccountDeleteRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -142,7 +144,7 @@ public class AccountsApi {
     }
   }
 
-  private HttpRequest.Builder amAccountDeleteRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder amAccountDeleteRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling amAccountDelete");
@@ -168,13 +170,108 @@ public class AccountsApi {
   }
 
   /**
+   * Check a connection, supported Office365, Google, IMAP
+   * 
+   * @param apiAccountInDto  (optional)
+   * @return CompletableFuture&lt;OkResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<OkResponse> checkConnection(@javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = checkConnectionRequestBuilder(apiAccountInDto);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("checkConnection", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<OkResponse>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Check a connection, supported Office365, Google, IMAP
+   * 
+   * @param apiAccountInDto  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<OkResponse>> checkConnectionWithHttpInfo(@javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = checkConnectionRequestBuilder(apiAccountInDto);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("checkConnection", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<OkResponse>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<OkResponse>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder checkConnectionRequestBuilder(@javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/am/accounts/connect";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(apiAccountInDto);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
    * Get account by id
    * 
    * @param id account id (required)
    * @return CompletableFuture&lt;ApiAccountOutDto&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiAccountOutDto> getAccount(Long id) throws ApiException {
+  public CompletableFuture<ApiAccountOutDto> getAccount(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getAccountRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -205,7 +302,7 @@ public class AccountsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;ApiAccountOutDto&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ApiAccountOutDto>> getAccountWithHttpInfo(Long id) throws ApiException {
+  public CompletableFuture<ApiResponse<ApiAccountOutDto>> getAccountWithHttpInfo(@javax.annotation.Nonnull Long id) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getAccountRequestBuilder(id);
       return memberVarHttpClient.sendAsync(
@@ -236,7 +333,7 @@ public class AccountsApi {
     }
   }
 
-  private HttpRequest.Builder getAccountRequestBuilder(Long id) throws ApiException {
+  private HttpRequest.Builder getAccountRequestBuilder(@javax.annotation.Nonnull Long id) throws ApiException {
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getAccount");
@@ -272,7 +369,7 @@ public class AccountsApi {
    * @return CompletableFuture&lt;AccountsPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountsPage> getAccounts(Integer limit, Integer offset, String authOrgId, ServiceTypeNonDaemon serviceType, Long subscriptionId) throws ApiException {
+  public CompletableFuture<AccountsPage> getAccounts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authOrgId, @javax.annotation.Nullable ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable Long subscriptionId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getAccountsRequestBuilder(limit, offset, authOrgId, serviceType, subscriptionId);
       return memberVarHttpClient.sendAsync(
@@ -307,7 +404,7 @@ public class AccountsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;AccountsPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountsPage>> getAccountsWithHttpInfo(Integer limit, Integer offset, String authOrgId, ServiceTypeNonDaemon serviceType, Long subscriptionId) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountsPage>> getAccountsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authOrgId, @javax.annotation.Nullable ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable Long subscriptionId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getAccountsRequestBuilder(limit, offset, authOrgId, serviceType, subscriptionId);
       return memberVarHttpClient.sendAsync(
@@ -338,7 +435,7 @@ public class AccountsApi {
     }
   }
 
-  private HttpRequest.Builder getAccountsRequestBuilder(Integer limit, Integer offset, String authOrgId, ServiceTypeNonDaemon serviceType, Long subscriptionId) throws ApiException {
+  private HttpRequest.Builder getAccountsRequestBuilder(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authOrgId, @javax.annotation.Nullable ServiceTypeNonDaemon serviceType, @javax.annotation.Nullable Long subscriptionId) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -392,7 +489,7 @@ public class AccountsApi {
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountSaveResult> upsertPersonal(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<AccountSaveResult> upsertPersonal(@javax.annotation.Nullable UserAccountType userAccount, @javax.annotation.Nullable String userId, @javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = upsertPersonalRequestBuilder(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
@@ -427,7 +524,7 @@ public class AccountsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertPersonalWithHttpInfo(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertPersonalWithHttpInfo(@javax.annotation.Nullable UserAccountType userAccount, @javax.annotation.Nullable String userId, @javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = upsertPersonalRequestBuilder(userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
@@ -458,7 +555,7 @@ public class AccountsApi {
     }
   }
 
-  private HttpRequest.Builder upsertPersonalRequestBuilder(UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
+  private HttpRequest.Builder upsertPersonalRequestBuilder(@javax.annotation.Nullable UserAccountType userAccount, @javax.annotation.Nullable String userId, @javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
 @JsonPropertyOrder({
   BookingAvailableProfilesOutDto.JSON_PROPERTY_PROFILE_IDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class BookingAvailableProfilesOutDto {
   public static final String JSON_PROPERTY_PROFILE_IDS = "profileIds";
   @javax.annotation.Nullable
@@ -155,7 +155,7 @@ public class BookingAvailableProfilesOutDto {
       for (int i = 0; i < getProfileIds().size(); i++) {
         joiner.add(String.format("%sprofileIds%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getProfileIds().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getProfileIds().get(i)))));
       }
     }
 

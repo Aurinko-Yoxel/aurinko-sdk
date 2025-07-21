@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.AccountSaveResult;
@@ -49,7 +50,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ManagedAccountsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -60,7 +61,7 @@ public class ManagedAccountsApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public ManagedAccountsApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public ManagedAccountsApi(ApiClient apiClient) {
@@ -97,7 +98,7 @@ public class ManagedAccountsApi {
    * @return CompletableFuture&lt;AccountSaveResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<AccountSaveResult> upsertManagedAccount(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<AccountSaveResult> upsertManagedAccount(@javax.annotation.Nonnull Long accId, @javax.annotation.Nullable UserAccountType userAccount, @javax.annotation.Nullable String userId, @javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = upsertManagedAccountRequestBuilder(accId, userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
@@ -133,7 +134,7 @@ public class ManagedAccountsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;AccountSaveResult&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertManagedAccountWithHttpInfo(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
+  public CompletableFuture<ApiResponse<AccountSaveResult>> upsertManagedAccountWithHttpInfo(@javax.annotation.Nonnull Long accId, @javax.annotation.Nullable UserAccountType userAccount, @javax.annotation.Nullable String userId, @javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = upsertManagedAccountRequestBuilder(accId, userAccount, userId, recycleKeys, ensureAccess, apiAccountInDto);
       return memberVarHttpClient.sendAsync(
@@ -164,7 +165,7 @@ public class ManagedAccountsApi {
     }
   }
 
-  private HttpRequest.Builder upsertManagedAccountRequestBuilder(Long accId, UserAccountType userAccount, String userId, List<ServiceKey> recycleKeys, Boolean ensureAccess, ApiAccountInDto apiAccountInDto) throws ApiException {
+  private HttpRequest.Builder upsertManagedAccountRequestBuilder(@javax.annotation.Nonnull Long accId, @javax.annotation.Nullable UserAccountType userAccount, @javax.annotation.Nullable String userId, @javax.annotation.Nullable List<ServiceKey> recycleKeys, @javax.annotation.Nullable Boolean ensureAccess, @javax.annotation.Nullable ApiAccountInDto apiAccountInDto) throws ApiException {
     // verify the required parameter 'accId' is set
     if (accId == null) {
       throw new ApiException(400, "Missing the required parameter 'accId' when calling upsertManagedAccount");

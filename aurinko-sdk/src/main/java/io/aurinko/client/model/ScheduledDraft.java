@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   ScheduledDraft.JSON_PROPERTY_STATUS,
   ScheduledDraft.JSON_PROPERTY_ERROR_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ScheduledDraft {
   public static final String JSON_PROPERTY_JOB_ID = "jobId";
   @javax.annotation.Nullable
@@ -257,22 +257,22 @@ public class ScheduledDraft {
 
     // add `jobId` to the URL query string
     if (getJobId() != null) {
-      joiner.add(String.format("%sjobId%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getJobId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sjobId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getJobId()))));
     }
 
     // add `sendTime` to the URL query string
     if (getSendTime() != null) {
-      joiner.add(String.format("%ssendTime%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getSendTime()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%ssendTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSendTime()))));
     }
 
     // add `status` to the URL query string
     if (getStatus() != null) {
-      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStatus()))));
     }
 
     // add `errorMessage` to the URL query string
     if (getErrorMessage() != null) {
-      joiner.add(String.format("%serrorMessage%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getErrorMessage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%serrorMessage%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getErrorMessage()))));
     }
 
     return joiner.toString();

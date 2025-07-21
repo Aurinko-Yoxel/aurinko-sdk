@@ -4,7 +4,7 @@ Aurinko.io API
 
 - API version: 1.0.0
 
-- Generator version: 7.10.0
+- Generator version: 7.13.0
 
 ## Introduction
 The Aurinko API is a unified API platform allowing developers to quickly build integrations with
@@ -76,7 +76,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.aurinko</groupId>
   <artifactId>aurinko-api</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -86,7 +86,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.aurinko:aurinko-api:1.0.5"
+compile "io.aurinko:aurinko-api:1.0.6"
 ```
 
 ### Others
@@ -99,7 +99,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aurinko-api-1.0.5.jar`
+- `target/aurinko-api-1.0.6.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -148,6 +148,8 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**getMyAccountWithHttpInfo**](docs/AccountApi.md#getMyAccountWithHttpInfo) | **GET** /v1/account | Get account status
 *AccountsApi* | [**amAccountDelete**](docs/AccountsApi.md#amAccountDelete) | **DELETE** /v1/am/accounts/{id} | Delete account by ID
 *AccountsApi* | [**amAccountDeleteWithHttpInfo**](docs/AccountsApi.md#amAccountDeleteWithHttpInfo) | **DELETE** /v1/am/accounts/{id} | Delete account by ID
+*AccountsApi* | [**checkConnection**](docs/AccountsApi.md#checkConnection) | **POST** /v1/am/accounts/connect | Check a connection, supported Office365, Google, IMAP
+*AccountsApi* | [**checkConnectionWithHttpInfo**](docs/AccountsApi.md#checkConnectionWithHttpInfo) | **POST** /v1/am/accounts/connect | Check a connection, supported Office365, Google, IMAP
 *AccountsApi* | [**getAccount**](docs/AccountsApi.md#getAccount) | **GET** /v1/am/accounts/{id} | Get account by id
 *AccountsApi* | [**getAccountWithHttpInfo**](docs/AccountsApi.md#getAccountWithHttpInfo) | **GET** /v1/am/accounts/{id} | Get account by id
 *AccountsApi* | [**getAccounts**](docs/AccountsApi.md#getAccounts) | **GET** /v1/am/accounts | Get accounts
@@ -236,6 +238,8 @@ Class | Method | HTTP request | Description
 *DraftsApi* | [**getDraftWithHttpInfo**](docs/DraftsApi.md#getDraftWithHttpInfo) | **GET** /v1/email/drafts/{draftId} | Get a draft message
 *DraftsApi* | [**sendDraft**](docs/DraftsApi.md#sendDraft) | **POST** /v1/email/drafts/{draftId}/send | Send a draft message
 *DraftsApi* | [**sendDraftWithHttpInfo**](docs/DraftsApi.md#sendDraftWithHttpInfo) | **POST** /v1/email/drafts/{draftId}/send | Send a draft message
+*DraftsApi* | [**updateDraft**](docs/DraftsApi.md#updateDraft) | **PUT** /v1/email/drafts/{draftId} | Update a draft message
+*DraftsApi* | [**updateDraftWithHttpInfo**](docs/DraftsApi.md#updateDraftWithHttpInfo) | **PUT** /v1/email/drafts/{draftId} | Update a draft message
 *EmailFoldersApi* | [**createFolder**](docs/EmailFoldersApi.md#createFolder) | **POST** /v1/email/folders | Create a new email folder
 *EmailFoldersApi* | [**createFolderWithHttpInfo**](docs/EmailFoldersApi.md#createFolderWithHttpInfo) | **POST** /v1/email/folders | Create a new email folder
 *EmailFoldersApi* | [**folder**](docs/EmailFoldersApi.md#folder) | **GET** /v1/email/folders/{folderId} | Get an email folder
@@ -354,6 +358,8 @@ Class | Method | HTTP request | Description
 *ManagedAccountsApi* | [**upsertManagedAccountWithHttpInfo**](docs/ManagedAccountsApi.md#upsertManagedAccountWithHttpInfo) | **POST** /v1/am/svc_accounts/{accId}/accounts | Upsert a managed account
 *MessagesApi* | [**conversation**](docs/MessagesApi.md#conversation) | **GET** /v1/email/conversations/{threadId} | Get messages in a conversation
 *MessagesApi* | [**conversationWithHttpInfo**](docs/MessagesApi.md#conversationWithHttpInfo) | **GET** /v1/email/conversations/{threadId} | Get messages in a conversation
+*MessagesApi* | [**deleteMessage**](docs/MessagesApi.md#deleteMessage) | **DELETE** /v1/email/messages/{messageId} | Delete a message
+*MessagesApi* | [**deleteMessageWithHttpInfo**](docs/MessagesApi.md#deleteMessageWithHttpInfo) | **DELETE** /v1/email/messages/{messageId} | Delete a message
 *MessagesApi* | [**emailAttachment**](docs/MessagesApi.md#emailAttachment) | **GET** /v1/email/messages/{messageId}/attachments/{attachmentId} | Get a message attachment
 *MessagesApi* | [**emailAttachmentWithHttpInfo**](docs/MessagesApi.md#emailAttachmentWithHttpInfo) | **GET** /v1/email/messages/{messageId}/attachments/{attachmentId} | Get a message attachment
 *MessagesApi* | [**message**](docs/MessagesApi.md#message) | **GET** /v1/email/messages/{messageId} | Get a message
@@ -550,6 +556,7 @@ Class | Method | HTTP request | Description
  - [ReminderOverride](docs/ReminderOverride.md)
  - [RewriteHtml](docs/RewriteHtml.md)
  - [ScheduledDraft](docs/ScheduledDraft.md)
+ - [SchedulerInfo](docs/SchedulerInfo.md)
  - [Scope](docs/Scope.md)
  - [SelectedMeetingTime](docs/SelectedMeetingTime.md)
  - [Sensitivity](docs/Sensitivity.md)

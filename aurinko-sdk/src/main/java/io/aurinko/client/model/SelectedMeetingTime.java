@@ -37,7 +37,7 @@ import io.aurinko.client.ApiClient;
   SelectedMeetingTime.JSON_PROPERTY_START,
   SelectedMeetingTime.JSON_PROPERTY_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class SelectedMeetingTime {
   public static final String JSON_PROPERTY_START = "start";
   @javax.annotation.Nullable
@@ -174,12 +174,12 @@ public class SelectedMeetingTime {
 
     // add `start` to the URL query string
     if (getStart() != null) {
-      joiner.add(String.format("%sstart%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getStart()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sstart%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStart()))));
     }
 
     // add `end` to the URL query string
     if (getEnd() != null) {
-      joiner.add(String.format("%send%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getEnd()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%send%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEnd()))));
     }
 
     return joiner.toString();

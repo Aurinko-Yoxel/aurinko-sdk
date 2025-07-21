@@ -15,6 +15,7 @@ package io.aurinko.api;
 import io.aurinko.client.ApiClient;
 import io.aurinko.client.ApiException;
 import io.aurinko.client.ApiResponse;
+import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.BodyType;
@@ -53,7 +54,7 @@ import java.util.function.Consumer;
 
 import java.util.concurrent.CompletableFuture;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class DraftsApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -64,7 +65,7 @@ public class DraftsApi {
   private final Consumer<HttpResponse<String>> memberVarAsyncResponseInterceptor;
 
   public DraftsApi() {
-    this(new ApiClient());
+    this(Configuration.getDefaultApiClient());
   }
 
   public DraftsApi(ApiClient apiClient) {
@@ -97,7 +98,7 @@ public class DraftsApi {
    * @return CompletableFuture&lt;EmailDraftResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailDraftResponse> createDraft(BodyType bodyType, OutgoingEmail outgoingEmail) throws ApiException {
+  public CompletableFuture<EmailDraftResponse> createDraft(@javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createDraftRequestBuilder(bodyType, outgoingEmail);
       return memberVarHttpClient.sendAsync(
@@ -129,7 +130,7 @@ public class DraftsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailDraftResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailDraftResponse>> createDraftWithHttpInfo(BodyType bodyType, OutgoingEmail outgoingEmail) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailDraftResponse>> createDraftWithHttpInfo(@javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createDraftRequestBuilder(bodyType, outgoingEmail);
       return memberVarHttpClient.sendAsync(
@@ -160,7 +161,7 @@ public class DraftsApi {
     }
   }
 
-  private HttpRequest.Builder createDraftRequestBuilder(BodyType bodyType, OutgoingEmail outgoingEmail) throws ApiException {
+  private HttpRequest.Builder createDraftRequestBuilder(@javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -208,7 +209,7 @@ public class DraftsApi {
    * @return CompletableFuture&lt;OkResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<OkResponse> deleteDraft(String draftId) throws ApiException {
+  public CompletableFuture<OkResponse> deleteDraft(@javax.annotation.Nonnull String draftId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteDraftRequestBuilder(draftId);
       return memberVarHttpClient.sendAsync(
@@ -239,7 +240,7 @@ public class DraftsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;OkResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<OkResponse>> deleteDraftWithHttpInfo(String draftId) throws ApiException {
+  public CompletableFuture<ApiResponse<OkResponse>> deleteDraftWithHttpInfo(@javax.annotation.Nonnull String draftId) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = deleteDraftRequestBuilder(draftId);
       return memberVarHttpClient.sendAsync(
@@ -270,7 +271,7 @@ public class DraftsApi {
     }
   }
 
-  private HttpRequest.Builder deleteDraftRequestBuilder(String draftId) throws ApiException {
+  private HttpRequest.Builder deleteDraftRequestBuilder(@javax.annotation.Nonnull String draftId) throws ApiException {
     // verify the required parameter 'draftId' is set
     if (draftId == null) {
       throw new ApiException(400, "Missing the required parameter 'draftId' when calling deleteDraft");
@@ -305,7 +306,7 @@ public class DraftsApi {
    * @return CompletableFuture&lt;EmailDraft&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailDraft> getDraft(String draftId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines) throws ApiException {
+  public CompletableFuture<EmailDraft> getDraft(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean loadInlines) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getDraftRequestBuilder(draftId, bodyType, nativeProperties, loadInlines);
       return memberVarHttpClient.sendAsync(
@@ -339,7 +340,7 @@ public class DraftsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailDraft&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailDraft>> getDraftWithHttpInfo(String draftId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailDraft>> getDraftWithHttpInfo(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean loadInlines) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getDraftRequestBuilder(draftId, bodyType, nativeProperties, loadInlines);
       return memberVarHttpClient.sendAsync(
@@ -370,7 +371,7 @@ public class DraftsApi {
     }
   }
 
-  private HttpRequest.Builder getDraftRequestBuilder(String draftId, BodyType bodyType, List<String> nativeProperties, Boolean loadInlines) throws ApiException {
+  private HttpRequest.Builder getDraftRequestBuilder(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable List<String> nativeProperties, @javax.annotation.Nullable Boolean loadInlines) throws ApiException {
     // verify the required parameter 'draftId' is set
     if (draftId == null) {
       throw new ApiException(400, "Missing the required parameter 'draftId' when calling getDraft");
@@ -423,7 +424,7 @@ public class DraftsApi {
    * @return CompletableFuture&lt;EmailDraftSendResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailDraftSendResponse> sendDraft(String draftId, OffsetDateTime sendTime, DraftSendDetails draftSendDetails) throws ApiException {
+  public CompletableFuture<EmailDraftSendResponse> sendDraft(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable OffsetDateTime sendTime, @javax.annotation.Nullable DraftSendDetails draftSendDetails) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = sendDraftRequestBuilder(draftId, sendTime, draftSendDetails);
       return memberVarHttpClient.sendAsync(
@@ -456,7 +457,7 @@ public class DraftsApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailDraftSendResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailDraftSendResponse>> sendDraftWithHttpInfo(String draftId, OffsetDateTime sendTime, DraftSendDetails draftSendDetails) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailDraftSendResponse>> sendDraftWithHttpInfo(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable OffsetDateTime sendTime, @javax.annotation.Nullable DraftSendDetails draftSendDetails) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = sendDraftRequestBuilder(draftId, sendTime, draftSendDetails);
       return memberVarHttpClient.sendAsync(
@@ -487,7 +488,7 @@ public class DraftsApi {
     }
   }
 
-  private HttpRequest.Builder sendDraftRequestBuilder(String draftId, OffsetDateTime sendTime, DraftSendDetails draftSendDetails) throws ApiException {
+  private HttpRequest.Builder sendDraftRequestBuilder(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable OffsetDateTime sendTime, @javax.annotation.Nullable DraftSendDetails draftSendDetails) throws ApiException {
     // verify the required parameter 'draftId' is set
     if (draftId == null) {
       throw new ApiException(400, "Missing the required parameter 'draftId' when calling sendDraft");
@@ -521,6 +522,125 @@ public class DraftsApi {
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(draftSendDetails);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Update a draft message
+   * Works for Google and Office365 only
+   * @param draftId draft message identifier (required)
+   * @param bodyType  (optional)
+   * @param outgoingEmail  (optional)
+   * @return CompletableFuture&lt;EmailDraftResponse&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<EmailDraftResponse> updateDraft(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = updateDraftRequestBuilder(draftId, bodyType, outgoingEmail);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("updateDraft", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailDraftResponse>() {})
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+      });
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  /**
+   * Update a draft message
+   * Works for Google and Office365 only
+   * @param draftId draft message identifier (required)
+   * @param bodyType  (optional)
+   * @param outgoingEmail  (optional)
+   * @return CompletableFuture&lt;ApiResponse&lt;EmailDraftResponse&gt;&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public CompletableFuture<ApiResponse<EmailDraftResponse>> updateDraftWithHttpInfo(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
+    try {
+      HttpRequest.Builder localVarRequestBuilder = updateDraftRequestBuilder(draftId, bodyType, outgoingEmail);
+      return memberVarHttpClient.sendAsync(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+            if (memberVarAsyncResponseInterceptor != null) {
+              memberVarAsyncResponseInterceptor.accept(localVarResponse);
+            }
+            if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(getApiException("updateDraft", localVarResponse));
+            }
+            try {
+              String responseBody = localVarResponse.body();
+              return CompletableFuture.completedFuture(
+                  new ApiResponse<EmailDraftResponse>(
+                      localVarResponse.statusCode(),
+                      localVarResponse.headers().map(),
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<EmailDraftResponse>() {}))
+              );
+            } catch (IOException e) {
+              return CompletableFuture.failedFuture(new ApiException(e));
+            }
+        }
+      );
+    }
+    catch (ApiException e) {
+      return CompletableFuture.failedFuture(e);
+    }
+  }
+
+  private HttpRequest.Builder updateDraftRequestBuilder(@javax.annotation.Nonnull String draftId, @javax.annotation.Nullable BodyType bodyType, @javax.annotation.Nullable OutgoingEmail outgoingEmail) throws ApiException {
+    // verify the required parameter 'draftId' is set
+    if (draftId == null) {
+      throw new ApiException(400, "Missing the required parameter 'draftId' when calling updateDraft");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/email/drafts/{draftId}"
+        .replace("{draftId}", ApiClient.urlEncode(draftId.toString()));
+
+    List<Pair> localVarQueryParams = new ArrayList<>();
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    localVarQueryParameterBaseName = "bodyType";
+    localVarQueryParams.addAll(ApiClient.parameterToPairs("bodyType", bodyType));
+
+    if (!localVarQueryParams.isEmpty() || localVarQueryStringJoiner.length() != 0) {
+      StringJoiner queryJoiner = new StringJoiner("&");
+      localVarQueryParams.forEach(p -> queryJoiner.add(p.getName() + '=' + p.getValue()));
+      if (localVarQueryStringJoiner.length() != 0) {
+        queryJoiner.add(localVarQueryStringJoiner.toString());
+      }
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath + '?' + queryJoiner.toString()));
+    } else {
+      localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+    }
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(outgoingEmail);
+      localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
     }

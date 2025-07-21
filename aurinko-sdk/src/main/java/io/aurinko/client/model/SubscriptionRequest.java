@@ -40,7 +40,7 @@ import io.aurinko.client.ApiClient;
   SubscriptionRequest.JSON_PROPERTY_NOTIFICATION_URL,
   SubscriptionRequest.JSON_PROPERTY_FILTERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class SubscriptionRequest {
   public static final String JSON_PROPERTY_RESOURCE = "resource";
   @javax.annotation.Nullable
@@ -215,12 +215,12 @@ public class SubscriptionRequest {
 
     // add `resource` to the URL query string
     if (getResource() != null) {
-      joiner.add(String.format("%sresource%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getResource()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sresource%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getResource()))));
     }
 
     // add `notificationUrl` to the URL query string
     if (getNotificationUrl() != null) {
-      joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getNotificationUrl()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%snotificationUrl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getNotificationUrl()))));
     }
 
     // add `filters` to the URL query string
@@ -229,7 +229,7 @@ public class SubscriptionRequest {
         if (getFilters().get(i) != null) {
           joiner.add(String.format("%sfilters%s%s=%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(ApiClient.valueToString(getFilters().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+              ApiClient.urlEncode(ApiClient.valueToString(getFilters().get(i)))));
         }
       }
     }

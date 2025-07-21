@@ -39,7 +39,7 @@ import io.aurinko.client.ApiClient;
   UpdateMessageStatusData.JSON_PROPERTY_ARCHIVED,
   UpdateMessageStatusData.JSON_PROPERTY_KEYWORDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class UpdateMessageStatusData {
   public static final String JSON_PROPERTY_UNREAD = "unread";
   @javax.annotation.Nullable
@@ -214,12 +214,12 @@ public class UpdateMessageStatusData {
 
     // add `unread` to the URL query string
     if (getUnread() != null) {
-      joiner.add(String.format("%sunread%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getUnread()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sunread%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUnread()))));
     }
 
     // add `archived` to the URL query string
     if (getArchived() != null) {
-      joiner.add(String.format("%sarchived%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getArchived()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sarchived%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getArchived()))));
     }
 
     // add `keywords` to the URL query string
@@ -227,7 +227,7 @@ public class UpdateMessageStatusData {
       for (int i = 0; i < getKeywords().size(); i++) {
         joiner.add(String.format("%skeywords%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
-            URLEncoder.encode(ApiClient.valueToString(getKeywords().get(i)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            ApiClient.urlEncode(ApiClient.valueToString(getKeywords().get(i)))));
       }
     }
 

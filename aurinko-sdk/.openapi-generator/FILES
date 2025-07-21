@@ -151,6 +151,7 @@ docs/Reminder.md
 docs/ReminderOverride.md
 docs/RewriteHtml.md
 docs/ScheduledDraft.md
+docs/SchedulerInfo.md
 docs/Scope.md
 docs/SelectedMeetingTime.md
 docs/Sensitivity.md
@@ -242,6 +243,8 @@ src/main/java/io/aurinko/client/Configuration.java
 src/main/java/io/aurinko/client/JSON.java
 src/main/java/io/aurinko/client/Pair.java
 src/main/java/io/aurinko/client/RFC3339DateFormat.java
+src/main/java/io/aurinko/client/RFC3339InstantDeserializer.java
+src/main/java/io/aurinko/client/RFC3339JavaTimeModule.java
 src/main/java/io/aurinko/client/ServerConfiguration.java
 src/main/java/io/aurinko/client/ServerVariable.java
 src/main/java/io/aurinko/client/model/AbstractOpenApiSchema.java
@@ -371,6 +374,7 @@ src/main/java/io/aurinko/client/model/Reminder.java
 src/main/java/io/aurinko/client/model/ReminderOverride.java
 src/main/java/io/aurinko/client/model/RewriteHtml.java
 src/main/java/io/aurinko/client/model/ScheduledDraft.java
+src/main/java/io/aurinko/client/model/SchedulerInfo.java
 src/main/java/io/aurinko/client/model/Scope.java
 src/main/java/io/aurinko/client/model/SelectedMeetingTime.java
 src/main/java/io/aurinko/client/model/Sensitivity.java
@@ -566,6 +570,7 @@ src/test/java/io/aurinko/client/model/ReminderOverrideTest.java
 src/test/java/io/aurinko/client/model/ReminderTest.java
 src/test/java/io/aurinko/client/model/RewriteHtmlTest.java
 src/test/java/io/aurinko/client/model/ScheduledDraftTest.java
+src/test/java/io/aurinko/client/model/SchedulerInfoTest.java
 src/test/java/io/aurinko/client/model/ScopeTest.java
 src/test/java/io/aurinko/client/model/SelectedMeetingTimeTest.java
 src/test/java/io/aurinko/client/model/SensitivityTest.java
