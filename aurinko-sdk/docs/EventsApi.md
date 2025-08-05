@@ -138,6 +138,8 @@ CompletableFuture<[**EmailAttachmentContent**](EmailAttachmentContent.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## attachmentWithHttpInfo
 
@@ -260,6 +262,8 @@ CompletableFuture<ApiResponse<[**EmailAttachmentContent**](EmailAttachmentConten
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## createEvent
@@ -377,6 +381,8 @@ CompletableFuture<[**EventOrId**](EventOrId.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createEventWithHttpInfo
 
@@ -503,6 +509,8 @@ CompletableFuture<ApiResponse<[**EventOrId**](EventOrId.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## deleteEvent
@@ -609,12 +617,14 @@ CompletableFuture<void> (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteEventWithHttpInfo
 
@@ -730,12 +740,14 @@ CompletableFuture<ApiResponse<Void>>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## event
@@ -849,6 +861,8 @@ CompletableFuture<[**Event**](Event.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## eventWithHttpInfo
 
@@ -971,6 +985,8 @@ CompletableFuture<ApiResponse<[**Event**](Event.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## eventsByICalUIds
@@ -1084,6 +1100,8 @@ CompletableFuture<[**EventsPageNext**](EventsPageNext.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## eventsByICalUIdsWithHttpInfo
 
@@ -1206,6 +1224,8 @@ CompletableFuture<ApiResponse<[**EventsPageNext**](EventsPageNext.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## occurrenceByOrigStart
@@ -1319,6 +1339,8 @@ CompletableFuture<[**Event**](Event.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## occurrenceByOrigStartWithHttpInfo
 
@@ -1441,6 +1463,8 @@ CompletableFuture<ApiResponse<[**Event**](Event.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## range
@@ -1556,6 +1580,8 @@ CompletableFuture<[**EventsPageNext**](EventsPageNext.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## rangeWithHttpInfo
 
@@ -1680,6 +1706,8 @@ CompletableFuture<ApiResponse<[**EventsPageNext**](EventsPageNext.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## seriesInfo
@@ -1791,6 +1819,8 @@ CompletableFuture<[**SeriesInfo**](SeriesInfo.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## seriesInfoWithHttpInfo
 
@@ -1911,6 +1941,8 @@ CompletableFuture<ApiResponse<[**SeriesInfo**](SeriesInfo.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateEvent
@@ -2030,6 +2062,8 @@ CompletableFuture<[**EventOrId**](EventOrId.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateEventWithHttpInfo
 
@@ -2158,6 +2192,8 @@ CompletableFuture<ApiResponse<[**EventOrId**](EventOrId.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateMeetingResponse
@@ -2273,6 +2309,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateMeetingResponseWithHttpInfo
 
@@ -2397,4 +2435,6 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

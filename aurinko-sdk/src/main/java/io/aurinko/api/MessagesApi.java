@@ -18,6 +18,7 @@ import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.BodyType;
 import io.aurinko.client.model.EmailAttachmentContent;
 import io.aurinko.client.model.EmailMessage;
@@ -610,7 +611,7 @@ public class MessagesApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    localVarRequestBuilder.header("Accept", "text/plain");
+    localVarRequestBuilder.header("Accept", "text/plain, application/json");
 
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {

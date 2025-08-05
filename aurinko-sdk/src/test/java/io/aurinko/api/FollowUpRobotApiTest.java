@@ -14,7 +14,9 @@
 package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.ConversationDripStatus;
+import io.aurinko.client.model.ConversationDripStatusPage;
 import io.aurinko.client.model.DripRequestDTO;
 import io.aurinko.client.model.FollowupConfig;
 import io.aurinko.client.model.FollowupRuleAggregateIn;
@@ -120,7 +122,7 @@ public class FollowUpRobotApiTest {
         Boolean active = null;
         Integer limit = null;
         Integer offset = null;
-        CompletableFuture<ConversationDripStatus> response = 
+        CompletableFuture<ConversationDripStatusPage> response = 
         api.getConversationsDripStatus(active, limit, offset);
         
         // TODO: test validations

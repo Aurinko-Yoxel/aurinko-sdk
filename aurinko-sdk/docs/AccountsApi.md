@@ -86,6 +86,7 @@ CompletableFuture<void> (empty response body)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## amAccountDeleteWithHttpInfo
 
@@ -166,6 +167,7 @@ CompletableFuture<ApiResponse<Void>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## checkConnection
@@ -238,6 +240,7 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## checkConnectionWithHttpInfo
 
@@ -319,6 +322,7 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getAccount
@@ -391,6 +395,7 @@ CompletableFuture<[**ApiAccountOutDto**](ApiAccountOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getAccountWithHttpInfo
 
@@ -472,6 +477,7 @@ CompletableFuture<ApiResponse<[**ApiAccountOutDto**](ApiAccountOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getAccounts
@@ -552,6 +558,7 @@ CompletableFuture<[**AccountsPage**](AccountsPage.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getAccountsWithHttpInfo
 
@@ -641,6 +648,7 @@ CompletableFuture<ApiResponse<[**AccountsPage**](AccountsPage.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## upsertPersonal
@@ -721,6 +729,7 @@ CompletableFuture<[**AccountSaveResult**](AccountSaveResult.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## upsertPersonalWithHttpInfo
 
@@ -810,4 +819,5 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

@@ -14,6 +14,7 @@
 package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.ConvertDraft;
 import io.aurinko.client.model.EmailDraftCreateTrackingResponse;
 import io.aurinko.client.model.EmailTrackingEvent;

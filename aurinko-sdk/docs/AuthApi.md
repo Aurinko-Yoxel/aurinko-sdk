@@ -89,6 +89,7 @@ CompletableFuture<[**AccountSaveResult**](AccountSaveResult.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## authCodeExchangeWithHttpInfo
 
@@ -170,6 +171,7 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## authorize
@@ -262,6 +264,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **303** | Redirect |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## authorizeWithHttpInfo
 
@@ -363,6 +366,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **303** | Redirect |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## authorizeDaemon
@@ -445,6 +449,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **303** | Redirect |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## authorizeDaemonWithHttpInfo
 
@@ -536,6 +541,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **303** | Redirect |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## authorizeUser
@@ -636,6 +642,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **303** | Redirect |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## authorizeUserWithHttpInfo
 
@@ -745,6 +752,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **303** | Redirect |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getAccessTokenByCode
@@ -817,6 +825,7 @@ CompletableFuture<[**AccountSaveResult**](AccountSaveResult.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getAccessTokenByCodeWithHttpInfo
 
@@ -898,6 +907,7 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## prepareAuth
@@ -1005,6 +1015,7 @@ CompletableFuture<[**PreparedAuthToken**](PreparedAuthToken.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## prepareAuthWithHttpInfo
 
@@ -1121,4 +1132,5 @@ CompletableFuture<ApiResponse<[**PreparedAuthToken**](PreparedAuthToken.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

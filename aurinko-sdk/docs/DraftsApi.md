@@ -126,6 +126,8 @@ CompletableFuture<[**EmailDraftResponse**](EmailDraftResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createDraftWithHttpInfo
 
@@ -246,6 +248,8 @@ CompletableFuture<ApiResponse<[**EmailDraftResponse**](EmailDraftResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## deleteDraft
@@ -355,6 +359,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteDraftWithHttpInfo
 
@@ -473,6 +479,8 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getDraft
@@ -588,6 +596,8 @@ CompletableFuture<[**EmailDraft**](EmailDraft.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getDraftWithHttpInfo
 
@@ -712,6 +722,8 @@ CompletableFuture<ApiResponse<[**EmailDraft**](EmailDraft.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## sendDraft
@@ -825,6 +837,8 @@ CompletableFuture<[**EmailDraftSendResponse**](EmailDraftSendResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## sendDraftWithHttpInfo
 
@@ -947,6 +961,8 @@ CompletableFuture<ApiResponse<[**EmailDraftSendResponse**](EmailDraftSendRespons
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateDraft
@@ -1062,6 +1078,8 @@ CompletableFuture<[**EmailDraftResponse**](EmailDraftResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateDraftWithHttpInfo
 
@@ -1186,4 +1204,6 @@ CompletableFuture<ApiResponse<[**EmailDraftResponse**](EmailDraftResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

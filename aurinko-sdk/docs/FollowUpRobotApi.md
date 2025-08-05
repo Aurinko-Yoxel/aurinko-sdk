@@ -132,6 +132,8 @@ CompletableFuture<[**FollowupRuleAggregateOut**](FollowupRuleAggregateOut.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of add rule |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createRuleWithHttpInfo
 
@@ -250,6 +252,8 @@ CompletableFuture<ApiResponse<[**FollowupRuleAggregateOut**](FollowupRuleAggrega
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of add rule |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## deleteRule
@@ -359,6 +363,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteRuleWithHttpInfo
 
@@ -477,6 +483,8 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getConfig
@@ -582,6 +590,8 @@ CompletableFuture<[**FollowupConfig**](FollowupConfig.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getConfigWithHttpInfo
 
@@ -696,6 +706,8 @@ CompletableFuture<ApiResponse<[**FollowupConfig**](FollowupConfig.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getConversationDripStatus
@@ -805,6 +817,8 @@ CompletableFuture<[**ConversationDripStatus**](ConversationDripStatus.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A conversation status response |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getConversationDripStatusWithHttpInfo
 
@@ -923,11 +937,13 @@ CompletableFuture<ApiResponse<[**ConversationDripStatus**](ConversationDripStatu
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A conversation status response |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getConversationsDripStatus
 
-> CompletableFuture<ConversationDripStatus> getConversationsDripStatus(active, limit, offset)
+> CompletableFuture<ConversationDripStatusPage> getConversationsDripStatus(active, limit, offset)
 
 Get a list of conversations touched by followup
 
@@ -996,7 +1012,7 @@ public class Example {
         Integer limit = 50; // Integer | page size
         Integer offset = 0; // Integer | page offset
         try {
-            CompletableFuture<ConversationDripStatus> result = apiInstance.getConversationsDripStatus(active, limit, offset);
+            CompletableFuture<ConversationDripStatusPage> result = apiInstance.getConversationsDripStatus(active, limit, offset);
             System.out.println(result.get());
         } catch (ApiException e) {
             System.err.println("Exception when calling FollowUpRobotApi#getConversationsDripStatus");
@@ -1020,7 +1036,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<[**ConversationDripStatus**](ConversationDripStatus.md)>
+CompletableFuture<[**ConversationDripStatusPage**](ConversationDripStatusPage.md)>
 
 
 ### Authorization
@@ -1036,10 +1052,12 @@ CompletableFuture<[**ConversationDripStatus**](ConversationDripStatus.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of conversations with followup |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getConversationsDripStatusWithHttpInfo
 
-> CompletableFuture<ApiResponse<ConversationDripStatus>> getConversationsDripStatus getConversationsDripStatusWithHttpInfo(active, limit, offset)
+> CompletableFuture<ApiResponse<ConversationDripStatusPage>> getConversationsDripStatus getConversationsDripStatusWithHttpInfo(active, limit, offset)
 
 Get a list of conversations touched by followup
 
@@ -1109,7 +1127,7 @@ public class Example {
         Integer limit = 50; // Integer | page size
         Integer offset = 0; // Integer | page offset
         try {
-            CompletableFuture<ApiResponse<ConversationDripStatus>> response = apiInstance.getConversationsDripStatusWithHttpInfo(active, limit, offset);
+            CompletableFuture<ApiResponse<ConversationDripStatusPage>> response = apiInstance.getConversationsDripStatusWithHttpInfo(active, limit, offset);
             System.out.println("Status code: " + response.get().getStatusCode());
             System.out.println("Response headers: " + response.get().getHeaders());
             System.out.println("Response body: " + response.get().getData());
@@ -1142,7 +1160,7 @@ public class Example {
 
 ### Return type
 
-CompletableFuture<ApiResponse<[**ConversationDripStatus**](ConversationDripStatus.md)>>
+CompletableFuture<ApiResponse<[**ConversationDripStatusPage**](ConversationDripStatusPage.md)>>
 
 
 ### Authorization
@@ -1158,6 +1176,8 @@ CompletableFuture<ApiResponse<[**ConversationDripStatus**](ConversationDripStatu
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of conversations with followup |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getRules
@@ -1263,6 +1283,8 @@ CompletableFuture<[**FollowupRuleAggregateOut**](FollowupRuleAggregateOut.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of rules |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getRulesWithHttpInfo
 
@@ -1377,6 +1399,8 @@ CompletableFuture<ApiResponse<[**FollowupRuleAggregateOut**](FollowupRuleAggrega
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of rules |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateConfig
@@ -1486,6 +1510,8 @@ CompletableFuture<[**FollowupConfig**](FollowupConfig.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of changed configuration |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateConfigWithHttpInfo
 
@@ -1604,6 +1630,8 @@ CompletableFuture<ApiResponse<[**FollowupConfig**](FollowupConfig.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of changed configuration |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateConversationDripStatus
@@ -1715,6 +1743,8 @@ CompletableFuture<[**ConversationDripStatus**](ConversationDripStatus.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of applying drip |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateConversationDripStatusWithHttpInfo
 
@@ -1835,6 +1865,8 @@ CompletableFuture<ApiResponse<[**ConversationDripStatus**](ConversationDripStatu
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of applying drip |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateRule
@@ -1946,6 +1978,8 @@ CompletableFuture<[**FollowupRuleAggregateOut**](FollowupRuleAggregateOut.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of changed rule |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateRuleWithHttpInfo
 
@@ -2066,4 +2100,6 @@ CompletableFuture<ApiResponse<[**FollowupRuleAggregateOut**](FollowupRuleAggrega
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A result of changed rule |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

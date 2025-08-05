@@ -9,7 +9,9 @@
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | Profile name used in calendar links to identify a profile. |  [optional] |
 |**durationMinutes** | **Integer** | Duration of the meeting in minutes. |  [optional] |
+|**bufferBetweenMinutes** | **Integer** | A Duration specifying the minimum number of minutes that must be free after the meeting in minutes. |  [optional] |
 |**availabilityStep** | **Integer** | Determines the interval at which new meeting slots are made available throughout the working hours. Allowed values are 5, 10, 15, 20, 30, 60. |  [optional] |
+|**startAfterMinutes** | **Integer** | The available meeting times can only start this minutes after the current time. Default is 1 hour. |  [optional] |
 |**startTime** | **OffsetDateTime** | The beginning of the formation of intervals. Must be in the future, otherwise the current time will be used. |  [optional] |
 |**endTime** | **OffsetDateTime** | The ending of the formation of intervals. If the time specified here is in the past, the intervals will be empty, regardless of the Start time parameter. |  [optional] |
 |**timeAvailableFor** | **String** | Time period (in ISO-8601 format) the profile is covering. For example, P3M (3 months), P4W (4 weeks), P5D (5 days). |  [optional] |

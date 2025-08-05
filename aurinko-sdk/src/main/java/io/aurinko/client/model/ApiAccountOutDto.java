@@ -69,7 +69,9 @@ import io.aurinko.client.ApiClient;
   ApiAccountOutDto.JSON_PROPERTY_AUTH_EXPIRES_AT,
   ApiAccountOutDto.JSON_PROPERTY_USER_ID,
   ApiAccountOutDto.JSON_PROPERTY_COPY_TO_SENT,
-  ApiAccountOutDto.JSON_PROPERTY_TRUST_SERVER
+  ApiAccountOutDto.JSON_PROPERTY_TRUST_SERVER,
+  ApiAccountOutDto.JSON_PROPERTY_CREATED_AT,
+  ApiAccountOutDto.JSON_PROPERTY_UPDATED_AT
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class ApiAccountOutDto {
@@ -188,6 +190,14 @@ public class ApiAccountOutDto {
   public static final String JSON_PROPERTY_TRUST_SERVER = "trustServer";
   @javax.annotation.Nullable
   private Boolean trustServer;
+
+  public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
+  @javax.annotation.Nullable
+  private OffsetDateTime createdAt;
+
+  public static final String JSON_PROPERTY_UPDATED_AT = "updatedAt";
+  @javax.annotation.Nullable
+  private OffsetDateTime updatedAt;
 
   public ApiAccountOutDto() { 
   }
@@ -904,6 +914,54 @@ public class ApiAccountOutDto {
   }
 
 
+  public ApiAccountOutDto createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  /**
+   * Get createdAt
+   * @return createdAt
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public ApiAccountOutDto updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  /**
+   * Get updatedAt
+   * @return updatedAt
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
   /**
    * Return true if this ApiAccountOutDto object is equal to o.
    */
@@ -944,12 +1002,14 @@ public class ApiAccountOutDto {
         Objects.equals(this.authExpiresAt, apiAccountOutDto.authExpiresAt) &&
         Objects.equals(this.userId, apiAccountOutDto.userId) &&
         Objects.equals(this.copyToSent, apiAccountOutDto.copyToSent) &&
-        Objects.equals(this.trustServer, apiAccountOutDto.trustServer);
+        Objects.equals(this.trustServer, apiAccountOutDto.trustServer) &&
+        Objects.equals(this.createdAt, apiAccountOutDto.createdAt) &&
+        Objects.equals(this.updatedAt, apiAccountOutDto.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parentId, serviceType, serviceProvider, active, tokenStatus, tokenError, type, daemon, loginString, email, email2, mailboxAddress, name, name2, serverUrl, serverUrl2, clientOrgId, authUserId, authOrgId, timezone, tokenIssuedAt, authScopes, authNativeScopes, authObtainedAt, authExpiresAt, userId, copyToSent, trustServer);
+    return Objects.hash(id, parentId, serviceType, serviceProvider, active, tokenStatus, tokenError, type, daemon, loginString, email, email2, mailboxAddress, name, name2, serverUrl, serverUrl2, clientOrgId, authUserId, authOrgId, timezone, tokenIssuedAt, authScopes, authNativeScopes, authObtainedAt, authExpiresAt, userId, copyToSent, trustServer, createdAt, updatedAt);
   }
 
   @Override
@@ -985,6 +1045,8 @@ public class ApiAccountOutDto {
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    copyToSent: ").append(toIndentedString(copyToSent)).append("\n");
     sb.append("    trustServer: ").append(toIndentedString(trustServer)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1185,6 +1247,16 @@ public class ApiAccountOutDto {
     // add `trustServer` to the URL query string
     if (getTrustServer() != null) {
       joiner.add(String.format("%strustServer%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTrustServer()))));
+    }
+
+    // add `createdAt` to the URL query string
+    if (getCreatedAt() != null) {
+      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreatedAt()))));
+    }
+
+    // add `updatedAt` to the URL query string
+    if (getUpdatedAt() != null) {
+      joiner.add(String.format("%supdatedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUpdatedAt()))));
     }
 
     return joiner.toString();

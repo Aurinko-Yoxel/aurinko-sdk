@@ -89,6 +89,7 @@ CompletableFuture<[**AccountSaveResult**](AccountSaveResult.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## upsertManagedAccountWithHttpInfo
 
@@ -180,4 +181,5 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

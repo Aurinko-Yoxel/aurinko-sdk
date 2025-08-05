@@ -277,4 +277,20 @@ class ApiAccountOutDtoTest {
         // TODO: test trustServer
     }
 
+    /**
+     * Test the property 'createdAt'
+     */
+    @Test
+    void createdAtTest() {
+        // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'updatedAt'
+     */
+    @Test
+    void updatedAtTest() {
+        // TODO: test updatedAt
+    }
+
 }

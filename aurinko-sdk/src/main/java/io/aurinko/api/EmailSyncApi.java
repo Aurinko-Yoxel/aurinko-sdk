@@ -18,6 +18,7 @@ import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.BodyType;
 import io.aurinko.client.model.EmailDeletedPage;
 import io.aurinko.client.model.EmailMessagesPage;

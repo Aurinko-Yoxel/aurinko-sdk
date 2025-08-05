@@ -124,6 +124,8 @@ CompletableFuture<[**TaskList**](TaskList.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createTaskListWithHttpInfo
 
@@ -242,6 +244,8 @@ CompletableFuture<ApiResponse<[**TaskList**](TaskList.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## deleteTaskList
@@ -351,6 +355,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteTaskListWithHttpInfo
 
@@ -469,6 +475,8 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## taskList
@@ -578,6 +586,8 @@ CompletableFuture<[**TaskList**](TaskList.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## taskListWithHttpInfo
 
@@ -696,6 +706,8 @@ CompletableFuture<ApiResponse<[**TaskList**](TaskList.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## taskListsList
@@ -805,6 +817,8 @@ CompletableFuture<[**TaskListPage**](TaskListPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## taskListsListWithHttpInfo
 
@@ -923,6 +937,8 @@ CompletableFuture<ApiResponse<[**TaskListPage**](TaskListPage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateTaskList
@@ -1036,6 +1052,8 @@ CompletableFuture<[**TaskList**](TaskList.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateTaskListWithHttpInfo
 
@@ -1158,4 +1176,6 @@ CompletableFuture<ApiResponse<[**TaskList**](TaskList.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

@@ -136,6 +136,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## convertDraftTrackingWithHttpInfo
 
@@ -256,6 +258,8 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## createDraftTracking
@@ -369,6 +373,8 @@ CompletableFuture<[**EmailDraftCreateTrackingResponse**](EmailDraftCreateTrackin
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createDraftTrackingWithHttpInfo
 
@@ -491,6 +497,8 @@ CompletableFuture<ApiResponse<[**EmailDraftCreateTrackingResponse**](EmailDraftC
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getTracking
@@ -610,6 +618,8 @@ CompletableFuture<[**EmailTrackingPageNext**](EmailTrackingPageNext.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getTrackingWithHttpInfo
 
@@ -738,6 +748,8 @@ CompletableFuture<ApiResponse<[**EmailTrackingPageNext**](EmailTrackingPageNext.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getTrackingEvents
@@ -855,6 +867,8 @@ CompletableFuture<[**EmailTrackingEventPageNext**](EmailTrackingEventPageNext.md
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getTrackingEventsWithHttpInfo
 
@@ -981,6 +995,8 @@ CompletableFuture<ApiResponse<[**EmailTrackingEventPageNext**](EmailTrackingEven
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## purgeMyTracking
@@ -1092,6 +1108,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## purgeMyTrackingWithHttpInfo
 
@@ -1212,6 +1230,8 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## switchOpenClicks
@@ -1325,6 +1345,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## switchOpenClicksWithHttpInfo
 
@@ -1447,6 +1469,8 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## trackingById
@@ -1556,6 +1580,8 @@ CompletableFuture<[**TrackingData**](TrackingData.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## trackingByIdWithHttpInfo
 
@@ -1674,6 +1700,8 @@ CompletableFuture<ApiResponse<[**TrackingData**](TrackingData.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## trackingEventById
@@ -1785,6 +1813,8 @@ CompletableFuture<[**EmailTrackingEvent**](EmailTrackingEvent.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## trackingEventByIdWithHttpInfo
 
@@ -1905,6 +1935,8 @@ CompletableFuture<ApiResponse<[**EmailTrackingEvent**](EmailTrackingEvent.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## trackingEvents
@@ -2018,6 +2050,8 @@ CompletableFuture<[**EmailTrackingEventPageNext**](EmailTrackingEventPageNext.md
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## trackingEventsWithHttpInfo
 
@@ -2140,6 +2174,8 @@ CompletableFuture<ApiResponse<[**EmailTrackingEventPageNext**](EmailTrackingEven
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateDraftTracking
@@ -2251,6 +2287,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateDraftTrackingWithHttpInfo
 
@@ -2371,4 +2409,6 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

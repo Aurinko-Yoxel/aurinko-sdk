@@ -265,6 +265,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/FreeBusySchedulePage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: "Get the free/busy availability information for a collection of users,\
         \ or resources"
       tags:
@@ -277,35 +301,6 @@ paths:
               -d '{
                   "timeMin": "2020-02-03T10:00:00-07:00",
                   "timeMax": "2020-06-03T10:00:00-07:00",
-                  "emails": ["user1@corp.com","user2@corp.com"]
-                 }'
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/calendars/workHours:
-    post:
-      operationId: calendarWorkhours
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WorkHoursRequest'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WorkHoursResponse'
-          description: Success
-      summary: "Get working hours for a collection of users, or resources."
-      tags:
-      - FreeBusySchedule
-      x-codeSamples:
-      - lang: cURL
-        source: |-
-          curl -H 'Authorization: Bearer <access token>' \
-              -X POST https://api.aurinko.io/v1/calendars/workHours \
-              -d '{
                   "emails": ["user1@corp.com","user2@corp.com"]
                  }'
       x-content-type: application/json
@@ -326,6 +321,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SuggestMeetingTimesResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: "Suggest meeting times for a collection of users, or resources"
       tags:
       - FreeBusySchedule
@@ -386,6 +405,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/CalendarsPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request list of calendars
       tags:
       - Calendars
@@ -410,6 +453,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Calendar'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create new calendar
       tags:
       - Calendars
@@ -441,6 +508,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Calendar'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get a calendar
       tags:
       - Calendars
@@ -474,6 +565,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Calendar'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a calendar
       tags:
       - Calendars
@@ -525,6 +640,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyncStatus'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Start a new calendar sync
       tags:
       - CalSync
@@ -575,6 +714,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/EventsPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        "410":
+          content:
+            application/json:
+              examples:
+                expiredSyncToken:
+                  value:
+                    code: syncToken.expired
+                    message: syncToken expired.
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: "SyncToken expired, retrieve a new syncToken and try again"
+        default:
+          description: See "Handling errors" section for details
       summary: Request changed events (deltas)
       tags:
       - CalSync
@@ -624,6 +799,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/DeletedPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        "410":
+          content:
+            application/json:
+              examples:
+                expiredSyncToken:
+                  value:
+                    code: syncToken.expired
+                    message: syncToken expired.
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: "SyncToken expired, retrieve a new syncToken and try again"
+        default:
+          description: See "Handling errors" section for details
       summary: Request deleted events (deltas)
       tags:
       - CalSync
@@ -682,6 +893,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EventsPageNext'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request events in a range
       tags:
       - Events
@@ -732,6 +967,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EventsPageNext'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request events by ICalUid's
       tags:
       - Events
@@ -776,6 +1035,30 @@ paths:
       responses:
         "200":
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Delete an event
       tags:
       - Events
@@ -822,6 +1105,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Event'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get an event
       tags:
       - Events
@@ -892,6 +1199,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EventOrId'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update an event
       tags:
       - Events
@@ -950,6 +1281,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SeriesInfo'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request a series description
       tags:
       - Events
@@ -996,6 +1351,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Event'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request an occurrence by original start time
       tags:
       - Events
@@ -1057,6 +1436,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EventOrId'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create a new event
       tags:
       - Events
@@ -1129,6 +1532,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update meeting response
       tags:
       - Events
@@ -1179,6 +1606,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailAttachmentContent'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get an event attachment
       tags:
       - Events
@@ -1216,6 +1667,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyncStatus'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Start a new email sync
       tags:
       - EmailSync
@@ -1257,6 +1732,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailMessagesPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        "410":
+          content:
+            application/json:
+              examples:
+                expiredSyncToken:
+                  value:
+                    code: syncToken.expired
+                    message: syncToken expired.
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: "SyncToken expired, retrieve a new syncToken and try again"
+        default:
+          description: See "Handling errors" section for details
       summary: Request changed emails (deltas)
       tags:
       - EmailSync
@@ -1298,6 +1809,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailDeletedPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        "410":
+          content:
+            application/json:
+              examples:
+                expiredSyncToken:
+                  value:
+                    code: syncToken.expired
+                    message: syncToken expired.
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: "SyncToken expired, retrieve a new syncToken and try again"
+        default:
+          description: See "Handling errors" section for details
       summary: Request deleted emails (deltas)
       tags:
       - EmailSync
@@ -1366,6 +1913,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailMessagesPageNext'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: List email messages
       tags:
       - Messages
@@ -1408,6 +1979,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailSendResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Send a new message
       tags:
       - Messages
@@ -1444,6 +2039,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Delete a message
       tags:
       - Messages
@@ -1521,6 +2140,28 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailMessage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
         "408":
           description: threadId may be yet unavailable for some IMAP providers
           headers:
@@ -1529,6 +2170,8 @@ paths:
               schema:
                 type: integer
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Get a message
       tags:
       - Messages
@@ -1558,6 +2201,30 @@ paths:
               schema:
                 type: string
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get a raw message
       tags:
       - Messages
@@ -1567,6 +2234,7 @@ paths:
           curl -X GET -H 'Authorization: Bearer <access token>' \
               https://api.aurinko.io/v1/email/messages/{id}/raw
       x-accepts:
+      - application/json
       - text/plain
   /v1/email/messages/{messageId}/status:
     post:
@@ -1591,6 +2259,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a message's status
       tags:
       - Messages
@@ -1642,6 +2334,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailMessagesPageNext'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get messages in a conversation
       tags:
       - Messages
@@ -1692,6 +2408,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailSendResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Reply to a message
       tags:
       - Messages
@@ -1736,6 +2476,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailAttachmentContent'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get a message attachment
       tags:
       - Messages
@@ -1765,6 +2529,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailFolderInfoPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: List email folders
       tags:
       - EmailFolders
@@ -1789,6 +2577,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailFolderInfo'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create a new email folder
       tags:
       - EmailFolders
@@ -1813,6 +2625,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/WellKnownFoldersOut'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: List wellKnown email folders
       tags:
       - EmailFolders
@@ -1837,6 +2673,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/WellKnownFoldersOut'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update wellKnown email folders
       tags:
       - EmailFolders
@@ -1870,6 +2730,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailFolderInfo'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get an email folder
       tags:
       - EmailFolders
@@ -1933,6 +2817,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailMessagesPageNext'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: List email messages in a specified folder
       tags:
       - EmailFolders
@@ -1967,6 +2875,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailDraftResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create a new draft message
       tags:
       - Drafts
@@ -2003,6 +2935,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Delete a draft message
       tags:
       - Drafts
@@ -2058,6 +3014,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailDraft'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get a draft message
       tags:
       - Drafts
@@ -2099,6 +3079,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailDraftResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a draft message
       tags:
       - Drafts
@@ -2149,6 +3153,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailDraftSendResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Send a draft message
       tags:
       - Drafts
@@ -2194,6 +3222,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailDraftCreateTrackingResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create tracking for a draft message
       tags:
       - EmailTracking
@@ -2235,6 +3287,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Mark draft's tracking as sent
       tags:
       - EmailTracking
@@ -2274,6 +3350,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Modify draft's tracking
       tags:
       - EmailTracking
@@ -2358,6 +3458,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailTrackingPageNext'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: List tracking data
       tags:
       - EmailTracking
@@ -2395,6 +3519,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Purge recent activity for a user
       tags:
       - EmailTracking
@@ -2443,6 +3591,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Set ignore open/click tracking for а message
       tags:
       - EmailTracking
@@ -2515,6 +3687,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailTrackingEventPageNext'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: List all tracking events
       tags:
       - EmailTracking
@@ -2545,6 +3741,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/TrackingData'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get tracking data by Id
       tags:
       - EmailTracking
@@ -2597,6 +3817,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailTrackingEventPageNext'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: List tracking events
       tags:
       - EmailTracking
@@ -2636,6 +3880,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmailTrackingEvent'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get tracking event by Id
       tags:
       - EmailTracking
@@ -2656,6 +3924,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/FollowupConfig'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get a follow up configuration
       tags:
       - FollowUpRobot
@@ -2675,6 +3967,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/FollowupConfig'
           description: A result of changed configuration
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a follow up configuration
       tags:
       - FollowUpRobot
@@ -2691,6 +4007,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/FollowupRuleAggregateOut'
           description: A list of rules
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get follow up rules
       tags:
       - FollowUpRobot
@@ -2710,6 +4050,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/FollowupRuleAggregateOut'
           description: A result of add rule
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Add a follow up rule
       tags:
       - FollowUpRobot
@@ -2735,6 +4099,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Delete a follow up rule
       tags:
       - FollowUpRobot
@@ -2763,6 +4151,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/FollowupRuleAggregateOut'
           description: A result of changed rule
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a follow up rule
       tags:
       - FollowUpRobot
@@ -2809,8 +4221,32 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ConversationDripStatus'
+                $ref: '#/components/schemas/ConversationDripStatusPage'
           description: A result of conversations with followup
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get a list of conversations touched by followup
       tags:
       - FollowUpRobot
@@ -2835,6 +4271,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/ConversationDripStatus'
           description: A conversation status response
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Check a conversation status
       tags:
       - FollowUpRobot
@@ -2863,6 +4323,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/ConversationDripStatus'
           description: A result of applying drip
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a conversation status
       tags:
       - FollowUpRobot
@@ -2881,6 +4365,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyncStatus'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Start a new contacts sync
       tags:
       - ContSync
@@ -2921,6 +4429,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/ContactsPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        "410":
+          content:
+            application/json:
+              examples:
+                expiredSyncToken:
+                  value:
+                    code: syncToken.expired
+                    message: syncToken expired.
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: "SyncToken expired, retrieve a new syncToken and try again"
+        default:
+          description: See "Handling errors" section for details
       summary: Request changed contacts (deltas)
       tags:
       - ContSync
@@ -2962,6 +4506,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/DeletedPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        "410":
+          content:
+            application/json:
+              examples:
+                expiredSyncToken:
+                  value:
+                    code: syncToken.expired
+                    message: syncToken expired.
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: "SyncToken expired, retrieve a new syncToken and try again"
+        default:
+          description: See "Handling errors" section for details
       summary: Request deleted contacts (deltas)
       tags:
       - ContSync
@@ -2988,8 +4568,32 @@ paths:
       responses:
         "200":
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
         "404":
           description: Contact not found
+        default:
+          description: See "Handling errors" section for details
       summary: Delete a contact
       tags:
       - Contacts
@@ -3052,6 +4656,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Contact'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get a contact
       tags:
       - Contacts
@@ -3094,6 +4722,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/ContactOrId'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a contact
       tags:
       - Contacts
@@ -3131,6 +4783,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/ContactOrId'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create a new contact
       tags:
       - Contacts
@@ -3170,6 +4846,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Get user work hours
       tags:
       - Booking
@@ -3216,6 +4894,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Get booking profiles
       tags:
       - Booking
@@ -3243,6 +4923,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Create a booking profile
       tags:
       - Booking
@@ -3277,6 +4959,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Delete a booking profile by id
       tags:
       - Booking
@@ -3309,6 +4993,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Get a booking profile by id
       tags:
       - Booking
@@ -3346,6 +5032,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Update a booking profile
       tags:
       - Booking
@@ -3434,6 +5122,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Get available meeting times
       tags:
       - Booking
@@ -3491,6 +5181,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Create a meeting
       tags:
       - Booking
@@ -3526,6 +5218,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Convert an unconfirmed booking reservation to a calendar event
       tags:
       - Booking
@@ -3559,6 +5253,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       summary: Cancel an unconfirmed booking reservation
       tags:
       - Booking
@@ -3587,6 +5283,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Get available bookings for а time range
@@ -3678,6 +5376,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Get available meeting times
@@ -3737,6 +5437,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Create a meeting
@@ -3787,6 +5489,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Get group booking profiles
@@ -3816,6 +5520,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Create a group booking profile
@@ -3852,6 +5558,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Delete a group booking profile by id
@@ -3886,6 +5594,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Get a group booking profile by id
@@ -3925,6 +5635,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Update a group booking profile
@@ -3983,6 +5695,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: List groups of a group booking profile
@@ -4022,6 +5736,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Assign groups to group booking
@@ -4063,6 +5779,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Remove groups from group booking
@@ -4121,6 +5839,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: List accounts of a group booking profile
@@ -4160,6 +5880,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Assign accounts to group booking
@@ -4201,6 +5923,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Remove accounts from group booking
@@ -4237,6 +5961,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Convert an unconfirmed booking reservation to a calendar event
@@ -4272,6 +5998,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Cancel an unconfirmed booking reservation
@@ -4360,6 +6088,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/BookingTimesOutDto'
           description: Success
+        default:
+          description: See "Handling errors" section for details
       security: []
       summary: Get available meeting times
       tags:
@@ -4416,6 +6146,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CreateMeetingResponse'
           description: Success
+        default:
+          description: See "Handling errors" section for details
       security: []
       summary: Create a meeting
       tags:
@@ -4434,7 +6166,29 @@ paths:
                 $ref: '#/components/schemas/EndUserDto'
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       security:
       - UserSessionCookie: []
       - ClientIdHeader: []
@@ -4465,7 +6219,29 @@ paths:
                 $ref: '#/components/schemas/EndUserDto'
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       security:
       - UserSessionCookie: []
       - ClientIdHeader: []
@@ -4492,7 +6268,29 @@ paths:
                 $ref: '#/components/schemas/EndUserAccountsPage'
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       security:
       - UserSessionCookie: []
       - ClientIdHeader: []
@@ -4530,7 +6328,29 @@ paths:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       security:
       - UserSessionCookie: []
       - ClientIdHeader: []
@@ -4565,7 +6385,29 @@ paths:
                 $ref: '#/components/schemas/EndUserAccountDto'
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       security:
       - UserSessionCookie: []
       - ClientIdHeader: []
@@ -4609,7 +6451,29 @@ paths:
                 $ref: '#/components/schemas/EndUserAccountDto'
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       security:
       - UserSessionCookie: []
       - ClientIdHeader: []
@@ -4636,7 +6500,29 @@ paths:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       security:
       - UserSessionCookie: []
       - ClientIdHeader: []
@@ -4658,7 +6544,29 @@ paths:
         "200":
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Delete the account
       tags:
       - Account
@@ -4699,7 +6607,29 @@ paths:
                 $ref: '#/components/schemas/ApiAccountOutDto'
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get account status
       tags:
       - Account
@@ -4717,7 +6647,29 @@ paths:
         "200":
           description: Success
         "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
           description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Delete the token and revoke all provider authentication data associated
         with it
       tags:
@@ -4795,6 +6747,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Get accounts
@@ -4867,6 +6821,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Upsert an account
@@ -4898,6 +6854,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Delete account by ID
@@ -4935,6 +6893,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Get account by id
@@ -4968,6 +6928,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: "Check a connection, supported Office365, Google, IMAP"
@@ -5051,6 +7013,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Get service accounts
@@ -5097,6 +7061,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Upsert a service account
@@ -5174,6 +7140,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Upsert a managed account
@@ -5217,6 +7185,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/PreparedAuthToken'
           description: Success
+        default:
+          description: See "Handling errors" section for details
       summary: Validate an external identity token
       tags:
       - Auth
@@ -5384,6 +7354,8 @@ paths:
       responses:
         "303":
           description: Redirect
+        default:
+          description: See "Handling errors" section for details
       security: []
       summary: Start an account authorization flow
       tags:
@@ -5509,6 +7481,8 @@ paths:
       responses:
         "303":
           description: Redirect
+        default:
+          description: See "Handling errors" section for details
       security: []
       summary: Start a service/daemon account authorization flow
       tags:
@@ -5746,6 +7720,8 @@ paths:
       responses:
         "303":
           description: Redirect
+        default:
+          description: See "Handling errors" section for details
       security: []
       summary: Start a user session authorization flow
       tags:
@@ -5790,6 +7766,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: "Get access token, Deprecated use POST instead"
@@ -5826,6 +7804,8 @@ paths:
               schema:
                 type: string
               style: simple
+        default:
+          description: See "Handling errors" section for details
       security:
       - AppAuth: []
       summary: Request an access token
@@ -5879,6 +7859,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SubscriptionsPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Get a list of push event subscriptions
       tags:
       - Webhooks
@@ -5905,6 +7909,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SubscriptionResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create a push event subscription
       tags:
       - Webhooks
@@ -5936,6 +7964,30 @@ paths:
       responses:
         "200":
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Remove a subscription
       tags:
       - Webhooks
@@ -5960,6 +8012,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SubscriptionResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Check a subscription status
       tags:
       - Webhooks
@@ -5986,6 +8062,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/TaskListPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request list of task lists
       tags:
       - TaskLists
@@ -6010,6 +8110,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/TaskList'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create a task list
       tags:
       - TaskLists
@@ -6041,6 +8165,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Delete a task list by id
       tags:
       - TaskLists
@@ -6069,6 +8217,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/TaskList'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request a task list by id
       tags:
       - TaskLists
@@ -6111,6 +8283,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/TaskList'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a task list
       tags:
       - TaskLists
@@ -6152,6 +8348,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyncStatus'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Start a new task sync
       tags:
       - TaskSync
@@ -6201,6 +8421,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyncTasksPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        "410":
+          content:
+            application/json:
+              examples:
+                expiredSyncToken:
+                  value:
+                    code: syncToken.expired
+                    message: syncToken expired.
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: "SyncToken expired, retrieve a new syncToken and try again"
+        default:
+          description: See "Handling errors" section for details
       summary: Request changed tasks (deltas)
       tags:
       - TaskSync
@@ -6250,6 +8506,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/DeletedPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        "410":
+          content:
+            application/json:
+              examples:
+                expiredSyncToken:
+                  value:
+                    code: syncToken.expired
+                    message: syncToken expired.
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: "SyncToken expired, retrieve a new syncToken and try again"
+        default:
+          description: See "Handling errors" section for details
       summary: Request deleted tasks (deltas)
       tags:
       - TaskSync
@@ -6290,6 +8582,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/TasksPage'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request list of tasks
       tags:
       - Tasks
@@ -6323,6 +8639,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/TaskCreateResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Create a task
       tags:
       - Tasks
@@ -6362,6 +8702,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/OkResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Delete a task by id
       tags:
       - Tasks
@@ -6398,6 +8762,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Task'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Request a task by id
       tags:
       - Tasks
@@ -6448,6 +8836,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/TaskUpdateResponse'
           description: Success
+        "401":
+          content:
+            application/json:
+              examples:
+                missingToken:
+                  value:
+                    code: unauthorized
+                    message: unauthorized
+                    requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+                deadToken:
+                  value:
+                    code: token.dead
+                    message: Not authorized
+                    requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+                invalidToken:
+                  value:
+                    code: token.refresh.failed
+                    message: "Invalid data: refreshToken missing"
+                    requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+              schema:
+                $ref: '#/components/schemas/ApiRequestFailed'
+          description: Access token is missing or invalid
+        default:
+          description: See "Handling errors" section for details
       summary: Update a task
       tags:
       - Tasks
@@ -6463,6 +8875,26 @@ paths:
 components:
   responses:
     UnauthorizedError:
+      content:
+        application/json:
+          examples:
+            missingToken:
+              value:
+                code: unauthorized
+                message: unauthorized
+                requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+            deadToken:
+              value:
+                code: token.dead
+                message: Not authorized
+                requestId: 82414de3-3835-47ef-aca1-6745e42a60d6
+            invalidToken:
+              value:
+                code: token.refresh.failed
+                message: "Invalid data: refreshToken missing"
+                requestId: e0587d2f-d612-4c06-902d-5f3d807e5ca7
+          schema:
+            $ref: '#/components/schemas/ApiRequestFailed'
       description: Access token is missing or invalid
     UnauthorizedError2:
       description: Authentication information is missing or invalid
@@ -6486,6 +8918,20 @@ components:
           schema:
             $ref: '#/components/schemas/OkResponse'
       description: Success
+    UnexpectedError:
+      description: See "Handling errors" section for details
+    ResourceExpiredError:
+      content:
+        application/json:
+          examples:
+            expiredSyncToken:
+              value:
+                code: syncToken.expired
+                message: syncToken expired.
+                requestId: 82414de3-3815-47ef-aca1-6745e42a60d6
+          schema:
+            $ref: '#/components/schemas/ApiRequestFailed'
+      description: "SyncToken expired, retrieve a new syncToken and try again"
   schemas:
     TaskUpdate:
       example:
@@ -6583,23 +9029,6 @@ components:
           type: string
       type: object
     WorkHoursResponseItem:
-      example:
-        workHours:
-          daySchedules:
-          - dayOfWeek: monday
-            workingIntervals:
-            - start: 09:00:00
-              end: 17:00:00
-            - start: 09:00:00
-              end: 17:00:00
-          - dayOfWeek: monday
-            workingIntervals:
-            - start: 09:00:00
-              end: 17:00:00
-            - start: 09:00:00
-              end: 17:00:00
-          timezone: timezone
-        email: email
       properties:
         email:
           type: string
@@ -7081,6 +9510,7 @@ components:
     GroupBookingInDto:
       example:
         availabilityStep: 0
+        startAfterMinutes: 6
         subject: subject
         workHours:
           daySchedules:
@@ -7098,6 +9528,7 @@ components:
               end: 17:00:00
           timezone: timezone
         description: description
+        bufferBetweenMinutes: 15
         durationMinutes: 30
         availabilityIntervals:
           intervals:
@@ -7133,10 +9564,19 @@ components:
           description: Duration of the meeting in minutes.
           example: 30
           type: integer
+        bufferBetweenMinutes:
+          description: A Duration specifying the minimum number of minutes that must
+            be free after the meeting in minutes.
+          example: 15
+          type: integer
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
             \ 20, 30, 60."
+          type: integer
+        startAfterMinutes:
+          description: The available meeting times can only start this minutes after
+            the current time. Default is 1 hour.
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -7559,6 +9999,7 @@ components:
           authNativeScopes:
           - null
           - null
+          createdAt: 2000-01-23T04:56:07.000+00:00
           authScopes:
           - null
           - null
@@ -7567,6 +10008,7 @@ components:
           id: 6
           templatesCount: 2
           email: email
+          updatedAt: 2000-01-23T04:56:07.000+00:00
           authOrgId: authOrgId
           active: true
           nativeScopes:
@@ -7599,6 +10041,7 @@ components:
           authNativeScopes:
           - null
           - null
+          createdAt: 2000-01-23T04:56:07.000+00:00
           authScopes:
           - null
           - null
@@ -7607,6 +10050,7 @@ components:
           id: 6
           templatesCount: 2
           email: email
+          updatedAt: 2000-01-23T04:56:07.000+00:00
           authOrgId: authOrgId
           active: true
           nativeScopes:
@@ -7680,10 +10124,6 @@ components:
           $ref: '#/components/schemas/BookingRequiredMode'
       type: object
     WorkHoursRequest:
-      example:
-        emails:
-        - emails
-        - emails
       properties:
         emails:
           items:
@@ -7973,6 +10413,7 @@ components:
           - null
           - null
           email2: email2
+          createdAt: 2000-01-23T04:56:07.000+00:00
           tokenError: tokenError
           authScopes:
           - Calendar.Read
@@ -7982,6 +10423,7 @@ components:
           authExpiresAt: 2000-01-23T04:56:07.000+00:00
           id: 0
           email: email
+          updatedAt: 2000-01-23T04:56:07.000+00:00
           authOrgId: authOrgId
           active: true
           serverUrl2: serverUrl2
@@ -8006,6 +10448,7 @@ components:
           - null
           - null
           email2: email2
+          createdAt: 2000-01-23T04:56:07.000+00:00
           tokenError: tokenError
           authScopes:
           - Calendar.Read
@@ -8015,6 +10458,7 @@ components:
           authExpiresAt: 2000-01-23T04:56:07.000+00:00
           id: 0
           email: email
+          updatedAt: 2000-01-23T04:56:07.000+00:00
           authOrgId: authOrgId
           active: true
           serverUrl2: serverUrl2
@@ -8613,6 +11057,7 @@ components:
           authNativeScopes:
           - null
           - null
+          createdAt: 2000-01-23T04:56:07.000+00:00
           authScopes:
           - null
           - null
@@ -8621,6 +11066,7 @@ components:
           id: 6
           templatesCount: 2
           email: email
+          updatedAt: 2000-01-23T04:56:07.000+00:00
           authOrgId: authOrgId
           active: true
           nativeScopes:
@@ -8653,6 +11099,7 @@ components:
           authNativeScopes:
           - null
           - null
+          createdAt: 2000-01-23T04:56:07.000+00:00
           authScopes:
           - null
           - null
@@ -8661,6 +11108,7 @@ components:
           id: 6
           templatesCount: 2
           email: email
+          updatedAt: 2000-01-23T04:56:07.000+00:00
           authOrgId: authOrgId
           active: true
           nativeScopes:
@@ -8715,6 +11163,7 @@ components:
     BookingInDto:
       example:
         availabilityStep: 0
+        startAfterMinutes: 6
         subject: subject
         workHours:
           daySchedules:
@@ -8732,6 +11181,7 @@ components:
               end: 17:00:00
           timezone: timezone
         description: description
+        bufferBetweenMinutes: 15
         durationMinutes: 30
         availabilityIntervals:
           intervals:
@@ -8766,10 +11216,19 @@ components:
           description: Duration of the meeting in minutes.
           example: 30
           type: integer
+        bufferBetweenMinutes:
+          description: A Duration specifying the minimum number of minutes that must
+            be free after the meeting in minutes.
+          example: 15
+          type: integer
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
             \ 20, 30, 60."
+          type: integer
+        startAfterMinutes:
+          description: The available meeting times can only start this minutes after
+            the current time. Default is 1 hour.
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -8874,40 +11333,6 @@ components:
       - confidential
       type: string
     WorkHoursResponse:
-      example:
-        items:
-        - workHours:
-            daySchedules:
-            - dayOfWeek: monday
-              workingIntervals:
-              - start: 09:00:00
-                end: 17:00:00
-              - start: 09:00:00
-                end: 17:00:00
-            - dayOfWeek: monday
-              workingIntervals:
-              - start: 09:00:00
-                end: 17:00:00
-              - start: 09:00:00
-                end: 17:00:00
-            timezone: timezone
-          email: email
-        - workHours:
-            daySchedules:
-            - dayOfWeek: monday
-              workingIntervals:
-              - start: 09:00:00
-                end: 17:00:00
-              - start: 09:00:00
-                end: 17:00:00
-            - dayOfWeek: monday
-              workingIntervals:
-              - start: 09:00:00
-                end: 17:00:00
-              - start: 09:00:00
-                end: 17:00:00
-            timezone: timezone
-          email: email
       properties:
         items:
           items:
@@ -8929,6 +11354,7 @@ components:
         - null
         - null
         email2: email2
+        createdAt: 2000-01-23T04:56:07.000+00:00
         tokenError: tokenError
         authScopes:
         - Calendar.Read
@@ -8938,6 +11364,7 @@ components:
         authExpiresAt: 2000-01-23T04:56:07.000+00:00
         id: 0
         email: email
+        updatedAt: 2000-01-23T04:56:07.000+00:00
         authOrgId: authOrgId
         active: true
         serverUrl2: serverUrl2
@@ -9019,6 +11446,12 @@ components:
           type: boolean
         trustServer:
           type: boolean
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
       type: object
     WellKnownFoldersOut:
       example:
@@ -9035,6 +11468,7 @@ components:
     GroupBookingOutDto:
       example:
         availabilityStep: 5
+        startAfterMinutes: 5
         subject: subject
         workHours:
           daySchedules:
@@ -9052,6 +11486,7 @@ components:
               end: 17:00:00
           timezone: timezone
         description: description
+        bufferBetweenMinutes: 15
         durationMinutes: 30
         availabilityIntervals:
           intervals:
@@ -9091,10 +11526,19 @@ components:
           description: Duration of the meeting in minutes.
           example: 30
           type: integer
+        bufferBetweenMinutes:
+          description: A Duration specifying the minimum number of minutes that must
+            be free after the meeting in minutes.
+          example: 15
+          type: integer
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
             \ 20, 30, 60."
+          type: integer
+        startAfterMinutes:
+          description: The available meeting times can only start this minutes after
+            the current time. Default is 1 hour.
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -9614,6 +12058,7 @@ components:
     BookingUpdateDto:
       example:
         availabilityStep: 0
+        startAfterMinutes: 6
         subject: subject
         workHours:
           daySchedules:
@@ -9631,6 +12076,7 @@ components:
               end: 17:00:00
           timezone: timezone
         description: description
+        bufferBetweenMinutes: 15
         durationMinutes: 30
         availabilityIntervals:
           intervals:
@@ -9665,10 +12111,19 @@ components:
           description: Duration of the meeting in minutes.
           example: 30
           type: integer
+        bufferBetweenMinutes:
+          description: A Duration specifying the minimum number of minutes that must
+            be free after the meeting in minutes.
+          example: 15
+          type: integer
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
             \ 20, 30, 60."
+          type: integer
+        startAfterMinutes:
+          description: The available meeting times can only start this minutes after
+            the current time. Default is 1 hour.
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -9839,7 +12294,7 @@ components:
       example:
         actionVars:
           key: actionVars
-        dripLastNum: 0
+        dripLastNum: 1
         dripError: dripError
         subject: subject
         dripStartedAt: 2000-01-23T04:56:07.000+00:00
@@ -9943,6 +12398,7 @@ components:
     GroupBookingUpdateDto:
       example:
         availabilityStep: 0
+        startAfterMinutes: 6
         subject: subject
         workHours:
           daySchedules:
@@ -9960,6 +12416,7 @@ components:
               end: 17:00:00
           timezone: timezone
         description: description
+        bufferBetweenMinutes: 15
         durationMinutes: 30
         availabilityIntervals:
           intervals:
@@ -9995,10 +12452,19 @@ components:
           description: Duration of the meeting in minutes.
           example: 30
           type: integer
+        bufferBetweenMinutes:
+          description: A Duration specifying the minimum number of minutes that must
+            be free after the meeting in minutes.
+          example: 15
+          type: integer
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
             \ 20, 30, 60."
+          type: integer
+        startAfterMinutes:
+          description: The available meeting times can only start this minutes after
+            the current time. Default is 1 hour.
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -10839,6 +13305,7 @@ components:
           - start: 2000-01-23T04:56:07.000+00:00
             end: 2000-01-23T04:56:07.000+00:00
         timeMax: 2000-01-23T04:56:07.000+00:00
+        bufferBetweenMinutes: 15
         timeMin: 2000-01-23T04:56:07.000+00:00
         defaultTimezone: defaultTimezone
       properties:
@@ -10854,6 +13321,11 @@ components:
           type: string
         durationMinutes:
           description: The duration of the meeting to search time for.
+          type: integer
+        bufferBetweenMinutes:
+          description: A Duration specifying the minimum number of minutes that must
+            be free after the meeting in minutes.
+          example: 15
           type: integer
         availabilityStep:
           default: 30
@@ -11153,6 +13625,7 @@ components:
         authNativeScopes:
         - null
         - null
+        createdAt: 2000-01-23T04:56:07.000+00:00
         authScopes:
         - null
         - null
@@ -11161,6 +13634,7 @@ components:
         id: 6
         templatesCount: 2
         email: email
+        updatedAt: 2000-01-23T04:56:07.000+00:00
         authOrgId: authOrgId
         active: true
         nativeScopes:
@@ -11248,6 +13722,12 @@ components:
           type: boolean
         templatesCount:
           type: integer
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
       type: object
     AvailabilityIntervals:
       example:
@@ -11419,6 +13899,93 @@ components:
           type: integer
         message:
           type: string
+      type: object
+    ConversationDripStatusPage:
+      example:
+        totalSize: 6
+        offset: 0
+        records:
+        - actionVars:
+            key: actionVars
+          dripLastNum: 1
+          dripError: dripError
+          subject: subject
+          dripStartedAt: 2000-01-23T04:56:07.000+00:00
+          rule:
+          - templateBody: templateBody
+            name: name
+            templateSubject: templateSubject
+            id: 0
+            actions:
+            - intervalDays: 6
+              message: message
+            - intervalDays: 6
+              message: message
+            expectThreadResponse: true
+          - templateBody: templateBody
+            name: name
+            templateSubject: templateSubject
+            id: 0
+            actions:
+            - intervalDays: 6
+              message: message
+            - intervalDays: 6
+              message: message
+            expectThreadResponse: true
+          dripEndedAt: 2000-01-23T04:56:07.000+00:00
+          dripResponder: dripResponder
+          targets:
+          - targets
+          - targets
+          convoId: convoId
+          status: disabled
+        - actionVars:
+            key: actionVars
+          dripLastNum: 1
+          dripError: dripError
+          subject: subject
+          dripStartedAt: 2000-01-23T04:56:07.000+00:00
+          rule:
+          - templateBody: templateBody
+            name: name
+            templateSubject: templateSubject
+            id: 0
+            actions:
+            - intervalDays: 6
+              message: message
+            - intervalDays: 6
+              message: message
+            expectThreadResponse: true
+          - templateBody: templateBody
+            name: name
+            templateSubject: templateSubject
+            id: 0
+            actions:
+            - intervalDays: 6
+              message: message
+            - intervalDays: 6
+              message: message
+            expectThreadResponse: true
+          dripEndedAt: 2000-01-23T04:56:07.000+00:00
+          dripResponder: dripResponder
+          targets:
+          - targets
+          - targets
+          convoId: convoId
+          status: disabled
+        done: true
+      properties:
+        offset:
+          type: integer
+        totalSize:
+          format: int64
+          type: integer
+        done:
+          type: boolean
+        records:
+          items:
+            $ref: '#/components/schemas/ConversationDripStatus'
+          type: array
       type: object
     ServiceProvider:
       enum:
@@ -11796,6 +14363,7 @@ components:
         offset: 0
         records:
         - availabilityStep: 5
+          startAfterMinutes: 5
           subject: subject
           workHours:
             daySchedules:
@@ -11813,6 +14381,7 @@ components:
                 end: 17:00:00
             timezone: timezone
           description: description
+          bufferBetweenMinutes: 15
           durationMinutes: 30
           availabilityIntervals:
             intervals:
@@ -11841,6 +14410,7 @@ components:
           startConference: true
           openMeetingUrl: openMeetingUrl
         - availabilityStep: 5
+          startAfterMinutes: 5
           subject: subject
           workHours:
             daySchedules:
@@ -11858,6 +14428,7 @@ components:
                 end: 17:00:00
             timezone: timezone
           description: description
+          bufferBetweenMinutes: 15
           durationMinutes: 30
           availabilityIntervals:
             intervals:
@@ -11915,6 +14486,27 @@ components:
           items:
             $ref: '#/components/schemas/DataConsumerFilter'
           type: array
+      type: object
+    ApiRequestFailed:
+      example:
+        code: code
+        requestId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        originalError: "{}"
+        message: message
+      properties:
+        code:
+          type: string
+        message:
+          description: A message describing the error.
+          type: string
+        requestId:
+          description: A unique identifier for the request.
+          format: uuid
+          type: string
+        originalError:
+          description: |
+            Optional. The original error or additional context as a JSON value.
+          type: object
       type: object
     MeetingInfo:
       example:
@@ -12101,6 +14693,7 @@ components:
     BookingOutDto:
       example:
         availabilityStep: 5
+        startAfterMinutes: 5
         subject: subject
         workHours:
           daySchedules:
@@ -12118,6 +14711,7 @@ components:
               end: 17:00:00
           timezone: timezone
         description: description
+        bufferBetweenMinutes: 15
         durationMinutes: 30
         availabilityIntervals:
           intervals:
@@ -12156,10 +14750,19 @@ components:
           description: Duration of the meeting in minutes.
           example: 30
           type: integer
+        bufferBetweenMinutes:
+          description: A Duration specifying the minimum number of minutes that must
+            be free after the meeting in minutes.
+          example: 15
+          type: integer
         availabilityStep:
           description: "Determines the interval at which new meeting slots are made\
             \ available throughout the working hours. Allowed values are 5, 10, 15,\
             \ 20, 30, 60."
+          type: integer
+        startAfterMinutes:
+          description: The available meeting times can only start this minutes after
+            the current time. Default is 1 hour.
           type: integer
         startTime:
           description: "The beginning of the formation of intervals. Must be in the\
@@ -12248,6 +14851,7 @@ components:
         offset: 0
         records:
         - availabilityStep: 5
+          startAfterMinutes: 5
           subject: subject
           workHours:
             daySchedules:
@@ -12265,6 +14869,7 @@ components:
                 end: 17:00:00
             timezone: timezone
           description: description
+          bufferBetweenMinutes: 15
           durationMinutes: 30
           availabilityIntervals:
             intervals:
@@ -12292,6 +14897,7 @@ components:
           startConference: true
           openMeetingUrl: openMeetingUrl
         - availabilityStep: 5
+          startAfterMinutes: 5
           subject: subject
           workHours:
             daySchedules:
@@ -12309,6 +14915,7 @@ components:
                 end: 17:00:00
             timezone: timezone
           description: description
+          bufferBetweenMinutes: 15
           durationMinutes: 30
           availabilityIntervals:
             intervals:

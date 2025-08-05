@@ -69,6 +69,14 @@ class SuggestMeetingTimesRequestTest {
     }
 
     /**
+     * Test the property 'bufferBetweenMinutes'
+     */
+    @Test
+    void bufferBetweenMinutesTest() {
+        // TODO: test bufferBetweenMinutes
+    }
+
+    /**
      * Test the property 'availabilityStep'
      */
     @Test

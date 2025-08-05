@@ -124,6 +124,9 @@ CompletableFuture<[**DeletedPage**](DeletedPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **410** | SyncToken expired, retrieve a new syncToken and try again |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## taskSyncDeletedWithHttpInfo
 
@@ -246,6 +249,9 @@ CompletableFuture<ApiResponse<[**DeletedPage**](DeletedPage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **410** | SyncToken expired, retrieve a new syncToken and try again |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## taskSyncStart
@@ -357,6 +363,8 @@ CompletableFuture<[**SyncStatus**](SyncStatus.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## taskSyncStartWithHttpInfo
 
@@ -477,6 +485,8 @@ CompletableFuture<ApiResponse<[**SyncStatus**](SyncStatus.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## taskSyncUpdated
@@ -590,6 +600,9 @@ CompletableFuture<[**SyncTasksPage**](SyncTasksPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **410** | SyncToken expired, retrieve a new syncToken and try again |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## taskSyncUpdatedWithHttpInfo
 
@@ -712,4 +725,7 @@ CompletableFuture<ApiResponse<[**SyncTasksPage**](SyncTasksPage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **410** | SyncToken expired, retrieve a new syncToken and try again |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

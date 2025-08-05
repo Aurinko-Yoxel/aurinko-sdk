@@ -126,6 +126,8 @@ CompletableFuture<[**EmailFolderInfo**](EmailFolderInfo.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createFolderWithHttpInfo
 
@@ -244,6 +246,8 @@ CompletableFuture<ApiResponse<[**EmailFolderInfo**](EmailFolderInfo.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## folder
@@ -353,6 +357,8 @@ CompletableFuture<[**EmailFolderInfo**](EmailFolderInfo.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## folderWithHttpInfo
 
@@ -471,6 +477,8 @@ CompletableFuture<ApiResponse<[**EmailFolderInfo**](EmailFolderInfo.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## folderEmails
@@ -588,6 +596,8 @@ CompletableFuture<[**EmailMessagesPageNext**](EmailMessagesPageNext.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## folderEmailsWithHttpInfo
 
@@ -714,6 +724,8 @@ CompletableFuture<ApiResponse<[**EmailMessagesPageNext**](EmailMessagesPageNext.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## folders
@@ -823,6 +835,8 @@ CompletableFuture<[**EmailFolderInfoPage**](EmailFolderInfoPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## foldersWithHttpInfo
 
@@ -941,6 +955,8 @@ CompletableFuture<ApiResponse<[**EmailFolderInfoPage**](EmailFolderInfoPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateWellKnownFolders
@@ -1050,6 +1066,8 @@ CompletableFuture<[**WellKnownFoldersOut**](WellKnownFoldersOut.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateWellKnownFoldersWithHttpInfo
 
@@ -1168,6 +1186,8 @@ CompletableFuture<ApiResponse<[**WellKnownFoldersOut**](WellKnownFoldersOut.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## wellKnownFolders
@@ -1273,6 +1293,8 @@ CompletableFuture<[**WellKnownFoldersOut**](WellKnownFoldersOut.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## wellKnownFoldersWithHttpInfo
 
@@ -1387,4 +1409,6 @@ CompletableFuture<ApiResponse<[**WellKnownFoldersOut**](WellKnownFoldersOut.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

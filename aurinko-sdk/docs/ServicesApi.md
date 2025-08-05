@@ -91,6 +91,7 @@ CompletableFuture<[**AccountsPage**](AccountsPage.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getSvcAccountsWithHttpInfo
 
@@ -182,6 +183,7 @@ CompletableFuture<ApiResponse<[**AccountsPage**](AccountsPage.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## upsertServiceAccount
@@ -256,6 +258,7 @@ CompletableFuture<[**AccountSaveResult**](AccountSaveResult.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## upsertServiceAccountWithHttpInfo
 
@@ -339,4 +342,5 @@ CompletableFuture<ApiResponse<[**AccountSaveResult**](AccountSaveResult.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

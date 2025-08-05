@@ -122,6 +122,9 @@ CompletableFuture<[**EmailDeletedPage**](EmailDeletedPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **410** | SyncToken expired, retrieve a new syncToken and try again |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## emailSyncDeletedWithHttpInfo
 
@@ -242,6 +245,9 @@ CompletableFuture<ApiResponse<[**EmailDeletedPage**](EmailDeletedPage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **410** | SyncToken expired, retrieve a new syncToken and try again |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## emailSyncStart
@@ -353,6 +359,8 @@ CompletableFuture<[**SyncStatus**](SyncStatus.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## emailSyncStartWithHttpInfo
 
@@ -473,6 +481,8 @@ CompletableFuture<ApiResponse<[**SyncStatus**](SyncStatus.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## emailSyncUpdated
@@ -584,6 +594,9 @@ CompletableFuture<[**EmailMessagesPage**](EmailMessagesPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **410** | SyncToken expired, retrieve a new syncToken and try again |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## emailSyncUpdatedWithHttpInfo
 
@@ -704,4 +717,7 @@ CompletableFuture<ApiResponse<[**EmailMessagesPage**](EmailMessagesPage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **410** | SyncToken expired, retrieve a new syncToken and try again |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

@@ -18,6 +18,7 @@ import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.TaskList;
 import io.aurinko.client.model.TaskListCreate;

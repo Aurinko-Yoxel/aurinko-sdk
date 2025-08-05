@@ -14,6 +14,7 @@ docs/AccountsPage.md
 docs/AdditionalField.md
 docs/ApiAccountInDto.md
 docs/ApiAccountOutDto.md
+docs/ApiRequestFailed.md
 docs/Attendee.md
 docs/AuthApi.md
 docs/AvailabilityApi.md
@@ -64,6 +65,7 @@ docs/ContactUrl.md
 docs/ContactsApi.md
 docs/ContactsPage.md
 docs/ConversationDripStatus.md
+docs/ConversationDripStatusPage.md
 docs/ConvertDraft.md
 docs/CreateMeetingDto.md
 docs/CreateMeetingResponse.md
@@ -254,6 +256,7 @@ src/main/java/io/aurinko/client/model/AccountsPage.java
 src/main/java/io/aurinko/client/model/AdditionalField.java
 src/main/java/io/aurinko/client/model/ApiAccountInDto.java
 src/main/java/io/aurinko/client/model/ApiAccountOutDto.java
+src/main/java/io/aurinko/client/model/ApiRequestFailed.java
 src/main/java/io/aurinko/client/model/Attendee.java
 src/main/java/io/aurinko/client/model/AvailabilityInterval.java
 src/main/java/io/aurinko/client/model/AvailabilityIntervals.java
@@ -297,6 +300,7 @@ src/main/java/io/aurinko/client/model/ContactRelation.java
 src/main/java/io/aurinko/client/model/ContactUrl.java
 src/main/java/io/aurinko/client/model/ContactsPage.java
 src/main/java/io/aurinko/client/model/ConversationDripStatus.java
+src/main/java/io/aurinko/client/model/ConversationDripStatusPage.java
 src/main/java/io/aurinko/client/model/ConvertDraft.java
 src/main/java/io/aurinko/client/model/CreateMeetingDto.java
 src/main/java/io/aurinko/client/model/CreateMeetingResponse.java
@@ -450,6 +454,7 @@ src/test/java/io/aurinko/client/model/AccountsPageTest.java
 src/test/java/io/aurinko/client/model/AdditionalFieldTest.java
 src/test/java/io/aurinko/client/model/ApiAccountInDtoTest.java
 src/test/java/io/aurinko/client/model/ApiAccountOutDtoTest.java
+src/test/java/io/aurinko/client/model/ApiRequestFailedTest.java
 src/test/java/io/aurinko/client/model/AttendeeTest.java
 src/test/java/io/aurinko/client/model/AvailabilityIntervalTest.java
 src/test/java/io/aurinko/client/model/AvailabilityIntervalsTest.java
@@ -492,6 +497,7 @@ src/test/java/io/aurinko/client/model/ContactRelationTest.java
 src/test/java/io/aurinko/client/model/ContactTest.java
 src/test/java/io/aurinko/client/model/ContactUrlTest.java
 src/test/java/io/aurinko/client/model/ContactsPageTest.java
+src/test/java/io/aurinko/client/model/ConversationDripStatusPageTest.java
 src/test/java/io/aurinko/client/model/ConversationDripStatusTest.java
 src/test/java/io/aurinko/client/model/ConvertDraftTest.java
 src/test/java/io/aurinko/client/model/CreateMeetingDtoTest.java

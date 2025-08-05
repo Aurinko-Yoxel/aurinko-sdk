@@ -39,7 +39,9 @@ import io.aurinko.client.ApiClient;
   BookingOutDto.JSON_PROPERTY_ID,
   BookingOutDto.JSON_PROPERTY_NAME,
   BookingOutDto.JSON_PROPERTY_DURATION_MINUTES,
+  BookingOutDto.JSON_PROPERTY_BUFFER_BETWEEN_MINUTES,
   BookingOutDto.JSON_PROPERTY_AVAILABILITY_STEP,
+  BookingOutDto.JSON_PROPERTY_START_AFTER_MINUTES,
   BookingOutDto.JSON_PROPERTY_START_TIME,
   BookingOutDto.JSON_PROPERTY_END_TIME,
   BookingOutDto.JSON_PROPERTY_TIME_AVAILABLE_FOR,
@@ -66,9 +68,17 @@ public class BookingOutDto {
   @javax.annotation.Nullable
   private Integer durationMinutes;
 
+  public static final String JSON_PROPERTY_BUFFER_BETWEEN_MINUTES = "bufferBetweenMinutes";
+  @javax.annotation.Nullable
+  private Integer bufferBetweenMinutes;
+
   public static final String JSON_PROPERTY_AVAILABILITY_STEP = "availabilityStep";
   @javax.annotation.Nullable
   private Integer availabilityStep;
+
+  public static final String JSON_PROPERTY_START_AFTER_MINUTES = "startAfterMinutes";
+  @javax.annotation.Nullable
+  private Integer startAfterMinutes;
 
   public static final String JSON_PROPERTY_START_TIME = "startTime";
   @javax.annotation.Nullable
@@ -189,6 +199,30 @@ public class BookingOutDto {
   }
 
 
+  public BookingOutDto bufferBetweenMinutes(@javax.annotation.Nullable Integer bufferBetweenMinutes) {
+    this.bufferBetweenMinutes = bufferBetweenMinutes;
+    return this;
+  }
+
+  /**
+   * A Duration specifying the minimum number of minutes that must be free after the meeting in minutes.
+   * @return bufferBetweenMinutes
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BUFFER_BETWEEN_MINUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Integer getBufferBetweenMinutes() {
+    return bufferBetweenMinutes;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_BUFFER_BETWEEN_MINUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBufferBetweenMinutes(@javax.annotation.Nullable Integer bufferBetweenMinutes) {
+    this.bufferBetweenMinutes = bufferBetweenMinutes;
+  }
+
+
   public BookingOutDto availabilityStep(@javax.annotation.Nullable Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
     return this;
@@ -210,6 +244,30 @@ public class BookingOutDto {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAvailabilityStep(@javax.annotation.Nullable Integer availabilityStep) {
     this.availabilityStep = availabilityStep;
+  }
+
+
+  public BookingOutDto startAfterMinutes(@javax.annotation.Nullable Integer startAfterMinutes) {
+    this.startAfterMinutes = startAfterMinutes;
+    return this;
+  }
+
+  /**
+   * The available meeting times can only start this minutes after the current time. Default is 1 hour.
+   * @return startAfterMinutes
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_START_AFTER_MINUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Integer getStartAfterMinutes() {
+    return startAfterMinutes;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_START_AFTER_MINUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStartAfterMinutes(@javax.annotation.Nullable Integer startAfterMinutes) {
+    this.startAfterMinutes = startAfterMinutes;
   }
 
 
@@ -492,7 +550,9 @@ public class BookingOutDto {
     return Objects.equals(this.id, bookingOutDto.id) &&
         Objects.equals(this.name, bookingOutDto.name) &&
         Objects.equals(this.durationMinutes, bookingOutDto.durationMinutes) &&
+        Objects.equals(this.bufferBetweenMinutes, bookingOutDto.bufferBetweenMinutes) &&
         Objects.equals(this.availabilityStep, bookingOutDto.availabilityStep) &&
+        Objects.equals(this.startAfterMinutes, bookingOutDto.startAfterMinutes) &&
         Objects.equals(this.startTime, bookingOutDto.startTime) &&
         Objects.equals(this.endTime, bookingOutDto.endTime) &&
         Objects.equals(this.timeAvailableFor, bookingOutDto.timeAvailableFor) &&
@@ -508,7 +568,7 @@ public class BookingOutDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, durationMinutes, availabilityStep, startTime, endTime, timeAvailableFor, subject, description, location, workHours, availabilityIntervals, context, startConference, openMeetingUrl);
+    return Objects.hash(id, name, durationMinutes, bufferBetweenMinutes, availabilityStep, startAfterMinutes, startTime, endTime, timeAvailableFor, subject, description, location, workHours, availabilityIntervals, context, startConference, openMeetingUrl);
   }
 
   @Override
@@ -518,7 +578,9 @@ public class BookingOutDto {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
+    sb.append("    bufferBetweenMinutes: ").append(toIndentedString(bufferBetweenMinutes)).append("\n");
     sb.append("    availabilityStep: ").append(toIndentedString(availabilityStep)).append("\n");
+    sb.append("    startAfterMinutes: ").append(toIndentedString(startAfterMinutes)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    timeAvailableFor: ").append(toIndentedString(timeAvailableFor)).append("\n");
@@ -592,9 +654,19 @@ public class BookingOutDto {
       joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDurationMinutes()))));
     }
 
+    // add `bufferBetweenMinutes` to the URL query string
+    if (getBufferBetweenMinutes() != null) {
+      joiner.add(String.format("%sbufferBetweenMinutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBufferBetweenMinutes()))));
+    }
+
     // add `availabilityStep` to the URL query string
     if (getAvailabilityStep() != null) {
       joiner.add(String.format("%savailabilityStep%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAvailabilityStep()))));
+    }
+
+    // add `startAfterMinutes` to the URL query string
+    if (getStartAfterMinutes() != null) {
+      joiner.add(String.format("%sstartAfterMinutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStartAfterMinutes()))));
     }
 
     // add `startTime` to the URL query string

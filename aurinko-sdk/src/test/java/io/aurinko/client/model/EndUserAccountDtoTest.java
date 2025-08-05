@@ -254,4 +254,20 @@ class EndUserAccountDtoTest {
         // TODO: test templatesCount
     }
 
+    /**
+     * Test the property 'createdAt'
+     */
+    @Test
+    void createdAtTest() {
+        // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'updatedAt'
+     */
+    @Test
+    void updatedAtTest() {
+        // TODO: test updatedAt
+    }
+
 }

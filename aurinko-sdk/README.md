@@ -76,7 +76,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.aurinko</groupId>
   <artifactId>aurinko-api</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -86,7 +86,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.aurinko:aurinko-api:1.0.6"
+compile "io.aurinko:aurinko-api:1.0.7"
 ```
 
 ### Others
@@ -99,7 +99,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aurinko-api-1.0.6.jar`
+- `target/aurinko-api-1.0.7.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -316,8 +316,6 @@ Class | Method | HTTP request | Description
 *FollowUpRobotApi* | [**updateConversationDripStatusWithHttpInfo**](docs/FollowUpRobotApi.md#updateConversationDripStatusWithHttpInfo) | **PUT** /v1/followup/conversations/{convoId} | Update a conversation status
 *FollowUpRobotApi* | [**updateRule**](docs/FollowUpRobotApi.md#updateRule) | **PUT** /v1/followup/rules/{id} | Update a follow up rule
 *FollowUpRobotApi* | [**updateRuleWithHttpInfo**](docs/FollowUpRobotApi.md#updateRuleWithHttpInfo) | **PUT** /v1/followup/rules/{id} | Update a follow up rule
-*FreeBusyScheduleApi* | [**calendarWorkhours**](docs/FreeBusyScheduleApi.md#calendarWorkhours) | **POST** /v1/calendars/workHours | Get working hours for a collection of users, or resources.
-*FreeBusyScheduleApi* | [**calendarWorkhoursWithHttpInfo**](docs/FreeBusyScheduleApi.md#calendarWorkhoursWithHttpInfo) | **POST** /v1/calendars/workHours | Get working hours for a collection of users, or resources.
 *FreeBusyScheduleApi* | [**freeBusy**](docs/FreeBusyScheduleApi.md#freeBusy) | **POST** /v1/calendars/freeBusy | Get the free/busy availability information for a collection of users, or resources
 *FreeBusyScheduleApi* | [**freeBusyWithHttpInfo**](docs/FreeBusyScheduleApi.md#freeBusyWithHttpInfo) | **POST** /v1/calendars/freeBusy | Get the free/busy availability information for a collection of users, or resources
 *FreeBusyScheduleApi* | [**suggestMeetingTimes**](docs/FreeBusyScheduleApi.md#suggestMeetingTimes) | **POST** /v1/calendars/suggestMeetingTimes | Suggest meeting times for a collection of users, or resources
@@ -436,6 +434,7 @@ Class | Method | HTTP request | Description
  - [AdditionalField](docs/AdditionalField.md)
  - [ApiAccountInDto](docs/ApiAccountInDto.md)
  - [ApiAccountOutDto](docs/ApiAccountOutDto.md)
+ - [ApiRequestFailed](docs/ApiRequestFailed.md)
  - [Attendee](docs/Attendee.md)
  - [AvailabilityInterval](docs/AvailabilityInterval.md)
  - [AvailabilityIntervals](docs/AvailabilityIntervals.md)
@@ -479,6 +478,7 @@ Class | Method | HTTP request | Description
  - [ContactUrl](docs/ContactUrl.md)
  - [ContactsPage](docs/ContactsPage.md)
  - [ConversationDripStatus](docs/ConversationDripStatus.md)
+ - [ConversationDripStatusPage](docs/ConversationDripStatusPage.md)
  - [ConvertDraft](docs/ConvertDraft.md)
  - [CreateMeetingDto](docs/CreateMeetingDto.md)
  - [CreateMeetingResponse](docs/CreateMeetingResponse.md)

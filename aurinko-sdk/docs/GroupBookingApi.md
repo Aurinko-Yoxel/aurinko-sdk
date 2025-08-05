@@ -111,6 +111,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## attachAccountsGroupBookingWithHttpInfo
 
@@ -194,6 +195,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## attachGroupsBooking
@@ -268,6 +270,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## attachGroupsBookingWithHttpInfo
 
@@ -351,6 +354,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## attachedAccountsGroupBooking
@@ -427,6 +431,7 @@ CompletableFuture<[**BookingAttachedAccountsPage**](BookingAttachedAccountsPage.
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## attachedAccountsGroupBookingWithHttpInfo
 
@@ -512,6 +517,7 @@ CompletableFuture<ApiResponse<[**BookingAttachedAccountsPage**](BookingAttachedA
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## attachedGroupsBooking
@@ -588,6 +594,7 @@ CompletableFuture<[**BookingAttachedGroupsPage**](BookingAttachedGroupsPage.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## attachedGroupsBookingWithHttpInfo
 
@@ -673,6 +680,7 @@ CompletableFuture<ApiResponse<[**BookingAttachedGroupsPage**](BookingAttachedGro
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingGroupAvailability
@@ -745,6 +753,7 @@ CompletableFuture<[**BookingAvailableProfilesOutDto**](BookingAvailableProfilesO
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingGroupAvailabilityWithHttpInfo
 
@@ -826,6 +835,7 @@ CompletableFuture<ApiResponse<[**BookingAvailableProfilesOutDto**](BookingAvaila
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingGroupCreateMeeting
@@ -904,6 +914,7 @@ CompletableFuture<[**CreateMeetingResponse**](CreateMeetingResponse.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingGroupCreateMeetingWithHttpInfo
 
@@ -991,6 +1002,7 @@ CompletableFuture<ApiResponse<[**CreateMeetingResponse**](CreateMeetingResponse.
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingGroupMeetingTimes
@@ -1075,6 +1087,7 @@ CompletableFuture<[**BookingTimesOutDto**](BookingTimesOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingGroupMeetingTimesWithHttpInfo
 
@@ -1168,6 +1181,7 @@ CompletableFuture<ApiResponse<[**BookingTimesOutDto**](BookingTimesOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingGroupReservationConfirm
@@ -1240,6 +1254,7 @@ CompletableFuture<[**ConfirmReservationOutDto**](ConfirmReservationOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingGroupReservationConfirmWithHttpInfo
 
@@ -1321,6 +1336,7 @@ CompletableFuture<ApiResponse<[**ConfirmReservationOutDto**](ConfirmReservationO
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingGroupReservationDelete
@@ -1393,6 +1409,7 @@ CompletableFuture<[**ConfirmSlotDeleteOutDto**](ConfirmSlotDeleteOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingGroupReservationDeleteWithHttpInfo
 
@@ -1474,6 +1491,7 @@ CompletableFuture<ApiResponse<[**ConfirmSlotDeleteOutDto**](ConfirmSlotDeleteOut
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## createGroupBooking
@@ -1546,6 +1564,7 @@ CompletableFuture<[**GroupBookingOutDto**](GroupBookingOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createGroupBookingWithHttpInfo
 
@@ -1627,6 +1646,7 @@ CompletableFuture<ApiResponse<[**GroupBookingOutDto**](GroupBookingOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## deleteGroupBooking
@@ -1699,6 +1719,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteGroupBookingWithHttpInfo
 
@@ -1780,6 +1801,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## detachAccountsGroupBooking
@@ -1854,6 +1876,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## detachAccountsGroupBookingWithHttpInfo
 
@@ -1937,6 +1960,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## detachGroupsBooking
@@ -2011,6 +2035,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## detachGroupsBookingWithHttpInfo
 
@@ -2094,6 +2119,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getGroupBooking
@@ -2166,6 +2192,7 @@ CompletableFuture<[**GroupBookingOutDto**](GroupBookingOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getGroupBookingWithHttpInfo
 
@@ -2247,6 +2274,7 @@ CompletableFuture<ApiResponse<[**GroupBookingOutDto**](GroupBookingOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getGroupBookings
@@ -2321,6 +2349,7 @@ CompletableFuture<[**GroupBookingPage**](GroupBookingPage.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getGroupBookingsWithHttpInfo
 
@@ -2404,6 +2433,7 @@ CompletableFuture<ApiResponse<[**GroupBookingPage**](GroupBookingPage.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateGroupBooking
@@ -2478,6 +2508,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateGroupBookingWithHttpInfo
 
@@ -2561,4 +2592,5 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

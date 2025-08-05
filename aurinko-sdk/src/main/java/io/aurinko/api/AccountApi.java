@@ -19,6 +19,7 @@ import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
 import io.aurinko.client.model.ApiAccountOutDto;
+import io.aurinko.client.model.ApiRequestFailed;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

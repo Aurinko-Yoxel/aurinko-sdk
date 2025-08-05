@@ -14,12 +14,11 @@
 package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.FreeBusyRequest;
 import io.aurinko.client.model.FreeBusySchedulePage;
 import io.aurinko.client.model.SuggestMeetingTimesRequest;
 import io.aurinko.client.model.SuggestMeetingTimesResponse;
-import io.aurinko.client.model.WorkHoursRequest;
-import io.aurinko.client.model.WorkHoursResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -39,23 +38,6 @@ public class FreeBusyScheduleApiTest {
 
     private final FreeBusyScheduleApi api = new FreeBusyScheduleApi();
 
-    
-    /**
-     * Get working hours for a collection of users, or resources.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void calendarWorkhoursTest() throws ApiException {
-        WorkHoursRequest workHoursRequest = null;
-        CompletableFuture<WorkHoursResponse> response = 
-        api.calendarWorkhours(workHoursRequest);
-        
-        // TODO: test validations
-    }
     
     /**
      * Get the free/busy availability information for a collection of users, or resources

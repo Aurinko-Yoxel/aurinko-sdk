@@ -141,6 +141,7 @@ CompletableFuture<[**CreateMeetingResponse**](CreateMeetingResponse.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingAccountCreateMeetingWithHttpInfo
 
@@ -266,6 +267,7 @@ CompletableFuture<ApiResponse<[**CreateMeetingResponse**](CreateMeetingResponse.
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingAccountMeetingTimes
@@ -388,6 +390,7 @@ CompletableFuture<[**BookingTimesOutDto**](BookingTimesOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingAccountMeetingTimesWithHttpInfo
 
@@ -519,6 +522,7 @@ CompletableFuture<ApiResponse<[**BookingTimesOutDto**](BookingTimesOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingAccountReservationConfirm
@@ -629,6 +633,7 @@ CompletableFuture<[**ConfirmReservationOutDto**](ConfirmReservationOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingAccountReservationConfirmWithHttpInfo
 
@@ -748,6 +753,7 @@ CompletableFuture<ApiResponse<[**ConfirmReservationOutDto**](ConfirmReservationO
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingAccountReservationDelete
@@ -858,6 +864,7 @@ CompletableFuture<[**ConfirmSlotDeleteOutDto**](ConfirmSlotDeleteOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingAccountReservationDeleteWithHttpInfo
 
@@ -977,6 +984,7 @@ CompletableFuture<ApiResponse<[**ConfirmSlotDeleteOutDto**](ConfirmSlotDeleteOut
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## create
@@ -1087,6 +1095,7 @@ CompletableFuture<[**BookingOutDto**](BookingOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createWithHttpInfo
 
@@ -1206,6 +1215,7 @@ CompletableFuture<ApiResponse<[**BookingOutDto**](BookingOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## deleteBooking
@@ -1316,6 +1326,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteBookingWithHttpInfo
 
@@ -1435,6 +1446,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getAccBookings
@@ -1547,6 +1559,7 @@ CompletableFuture<[**BookingPage**](BookingPage.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getAccBookingsWithHttpInfo
 
@@ -1668,6 +1681,7 @@ CompletableFuture<ApiResponse<[**BookingPage**](BookingPage.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getBooking
@@ -1778,6 +1792,7 @@ CompletableFuture<[**BookingOutDto**](BookingOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getBookingWithHttpInfo
 
@@ -1897,6 +1912,7 @@ CompletableFuture<ApiResponse<[**BookingOutDto**](BookingOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateBooking
@@ -2009,6 +2025,7 @@ CompletableFuture<[**BookingSuccessOutDto**](BookingSuccessOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateBookingWithHttpInfo
 
@@ -2130,6 +2147,7 @@ CompletableFuture<ApiResponse<[**BookingSuccessOutDto**](BookingSuccessOutDto.md
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## workHours
@@ -2236,6 +2254,7 @@ CompletableFuture<[**WeekWorkSchedule**](WeekWorkSchedule.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## workHoursWithHttpInfo
 
@@ -2351,4 +2370,5 @@ CompletableFuture<ApiResponse<[**WeekWorkSchedule**](WeekWorkSchedule.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

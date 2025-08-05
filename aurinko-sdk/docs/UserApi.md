@@ -100,6 +100,7 @@ CompletableFuture<[**EndUserAccountDto**](EndUserAccountDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## copyAsManagedWithHttpInfo
 
@@ -190,6 +191,7 @@ CompletableFuture<ApiResponse<[**EndUserAccountDto**](EndUserAccountDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getEndUserAccount
@@ -269,6 +271,7 @@ CompletableFuture<[**EndUserAccountDto**](EndUserAccountDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getEndUserAccountWithHttpInfo
 
@@ -357,6 +360,7 @@ CompletableFuture<ApiResponse<[**EndUserAccountDto**](EndUserAccountDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getEndUserAccounts
@@ -432,6 +436,7 @@ CompletableFuture<[**EndUserAccountsPage**](EndUserAccountsPage.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getEndUserAccountsWithHttpInfo
 
@@ -516,6 +521,7 @@ CompletableFuture<ApiResponse<[**EndUserAccountsPage**](EndUserAccountsPage.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getUserInfo
@@ -591,6 +597,7 @@ CompletableFuture<[**EndUserDto**](EndUserDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getUserInfoWithHttpInfo
 
@@ -675,6 +682,7 @@ CompletableFuture<ApiResponse<[**EndUserDto**](EndUserDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## logout
@@ -752,6 +760,7 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## logoutWithHttpInfo
 
@@ -838,6 +847,7 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## logoutAccount
@@ -919,6 +929,7 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## logoutAccountWithHttpInfo
 
@@ -1009,6 +1020,7 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateSettings
@@ -1088,6 +1100,7 @@ CompletableFuture<[**EndUserDto**](EndUserDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateSettingsWithHttpInfo
 
@@ -1176,4 +1189,5 @@ CompletableFuture<ApiResponse<[**EndUserDto**](EndUserDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

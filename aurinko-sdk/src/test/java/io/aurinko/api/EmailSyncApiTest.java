@@ -14,6 +14,7 @@
 package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.BodyType;
 import io.aurinko.client.model.EmailDeletedPage;
 import io.aurinko.client.model.EmailMessagesPage;

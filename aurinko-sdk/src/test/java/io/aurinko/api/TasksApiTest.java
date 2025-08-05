@@ -14,6 +14,7 @@
 package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.OkResponse;
 import io.aurinko.client.model.Task;
 import io.aurinko.client.model.TaskCreate;

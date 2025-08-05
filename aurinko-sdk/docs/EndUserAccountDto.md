@@ -33,6 +33,8 @@
 |**bookingCount** | **Integer** |  |  [optional] |
 |**trackingActive** | **Boolean** |  |  [optional] |
 |**templatesCount** | **Integer** |  |  [optional] |
+|**createdAt** | **OffsetDateTime** |  |  [optional] |
+|**updatedAt** | **OffsetDateTime** |  |  [optional] |
 
 
 

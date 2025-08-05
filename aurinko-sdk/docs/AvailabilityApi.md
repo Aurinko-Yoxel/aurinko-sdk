@@ -135,6 +135,7 @@ CompletableFuture<[**CreateMeetingResponse**](CreateMeetingResponse.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingAccountCreateMeetingWithHttpInfo
 
@@ -260,6 +261,7 @@ CompletableFuture<ApiResponse<[**CreateMeetingResponse**](CreateMeetingResponse.
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingAccountMeetingTimes
@@ -382,6 +384,7 @@ CompletableFuture<[**BookingTimesOutDto**](BookingTimesOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingAccountMeetingTimesWithHttpInfo
 
@@ -513,6 +516,7 @@ CompletableFuture<ApiResponse<[**BookingTimesOutDto**](BookingTimesOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingGroupAvailability
@@ -585,6 +589,7 @@ CompletableFuture<[**BookingAvailableProfilesOutDto**](BookingAvailableProfilesO
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingGroupAvailabilityWithHttpInfo
 
@@ -666,6 +671,7 @@ CompletableFuture<ApiResponse<[**BookingAvailableProfilesOutDto**](BookingAvaila
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingGroupCreateMeeting
@@ -744,6 +750,7 @@ CompletableFuture<[**CreateMeetingResponse**](CreateMeetingResponse.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingGroupCreateMeetingWithHttpInfo
 
@@ -831,6 +838,7 @@ CompletableFuture<ApiResponse<[**CreateMeetingResponse**](CreateMeetingResponse.
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## bookingGroupMeetingTimes
@@ -915,6 +923,7 @@ CompletableFuture<[**BookingTimesOutDto**](BookingTimesOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## bookingGroupMeetingTimesWithHttpInfo
 
@@ -1008,6 +1017,7 @@ CompletableFuture<ApiResponse<[**BookingTimesOutDto**](BookingTimesOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Authentication information is missing or invalid |  * WWW_Authenticate -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## createMeeting
@@ -1081,6 +1091,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createMeetingWithHttpInfo
 
@@ -1163,6 +1174,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getMeetingTimes
@@ -1242,6 +1254,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getMeetingTimesWithHttpInfo
 
@@ -1330,4 +1343,5 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

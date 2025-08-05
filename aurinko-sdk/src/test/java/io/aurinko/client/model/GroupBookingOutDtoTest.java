@@ -65,11 +65,27 @@ class GroupBookingOutDtoTest {
     }
 
     /**
+     * Test the property 'bufferBetweenMinutes'
+     */
+    @Test
+    void bufferBetweenMinutesTest() {
+        // TODO: test bufferBetweenMinutes
+    }
+
+    /**
      * Test the property 'availabilityStep'
      */
     @Test
     void availabilityStepTest() {
         // TODO: test availabilityStep
+    }
+
+    /**
+     * Test the property 'startAfterMinutes'
+     */
+    @Test
+    void startAfterMinutesTest() {
+        // TODO: test startAfterMinutes
     }
 
     /**

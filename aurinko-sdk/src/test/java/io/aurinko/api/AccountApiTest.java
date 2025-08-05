@@ -15,6 +15,7 @@ package io.aurinko.api;
 
 import io.aurinko.client.ApiException;
 import io.aurinko.client.model.ApiAccountOutDto;
+import io.aurinko.client.model.ApiRequestFailed;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

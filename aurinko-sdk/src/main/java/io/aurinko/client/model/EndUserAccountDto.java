@@ -67,7 +67,9 @@ import io.aurinko.client.ApiClient;
   EndUserAccountDto.JSON_PROPERTY_HAS_API_ERRORS,
   EndUserAccountDto.JSON_PROPERTY_BOOKING_COUNT,
   EndUserAccountDto.JSON_PROPERTY_TRACKING_ACTIVE,
-  EndUserAccountDto.JSON_PROPERTY_TEMPLATES_COUNT
+  EndUserAccountDto.JSON_PROPERTY_TEMPLATES_COUNT,
+  EndUserAccountDto.JSON_PROPERTY_CREATED_AT,
+  EndUserAccountDto.JSON_PROPERTY_UPDATED_AT
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class EndUserAccountDto {
@@ -174,6 +176,14 @@ public class EndUserAccountDto {
   public static final String JSON_PROPERTY_TEMPLATES_COUNT = "templatesCount";
   @javax.annotation.Nullable
   private Integer templatesCount;
+
+  public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
+  @javax.annotation.Nullable
+  private OffsetDateTime createdAt;
+
+  public static final String JSON_PROPERTY_UPDATED_AT = "updatedAt";
+  @javax.annotation.Nullable
+  private OffsetDateTime updatedAt;
 
   public EndUserAccountDto() { 
   }
@@ -834,6 +844,54 @@ public class EndUserAccountDto {
   }
 
 
+  public EndUserAccountDto createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  /**
+   * Get createdAt
+   * @return createdAt
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public EndUserAccountDto updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  /**
+   * Get updatedAt
+   * @return updatedAt
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
   /**
    * Return true if this EndUserAccountDto object is equal to o.
    */
@@ -871,12 +929,14 @@ public class EndUserAccountDto {
         Objects.equals(this.hasApiErrors, endUserAccountDto.hasApiErrors) &&
         Objects.equals(this.bookingCount, endUserAccountDto.bookingCount) &&
         Objects.equals(this.trackingActive, endUserAccountDto.trackingActive) &&
-        Objects.equals(this.templatesCount, endUserAccountDto.templatesCount);
+        Objects.equals(this.templatesCount, endUserAccountDto.templatesCount) &&
+        Objects.equals(this.createdAt, endUserAccountDto.createdAt) &&
+        Objects.equals(this.updatedAt, endUserAccountDto.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parentId, serviceType, userAccountType, type, active, loginString, email, name, serverUrl, serverUrl2, clientOrgId, authUserId, authOrgId, timezone, authObtainedAt, organization, tokenStatus, scopes, authScopes, nativeScopes, authNativeScopes, hasApiErrors, bookingCount, trackingActive, templatesCount);
+    return Objects.hash(id, parentId, serviceType, userAccountType, type, active, loginString, email, name, serverUrl, serverUrl2, clientOrgId, authUserId, authOrgId, timezone, authObtainedAt, organization, tokenStatus, scopes, authScopes, nativeScopes, authNativeScopes, hasApiErrors, bookingCount, trackingActive, templatesCount, createdAt, updatedAt);
   }
 
   @Override
@@ -909,6 +969,8 @@ public class EndUserAccountDto {
     sb.append("    bookingCount: ").append(toIndentedString(bookingCount)).append("\n");
     sb.append("    trackingActive: ").append(toIndentedString(trackingActive)).append("\n");
     sb.append("    templatesCount: ").append(toIndentedString(templatesCount)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1104,6 +1166,16 @@ public class EndUserAccountDto {
     // add `templatesCount` to the URL query string
     if (getTemplatesCount() != null) {
       joiner.add(String.format("%stemplatesCount%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTemplatesCount()))));
+    }
+
+    // add `createdAt` to the URL query string
+    if (getCreatedAt() != null) {
+      joiner.add(String.format("%screatedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreatedAt()))));
+    }
+
+    // add `updatedAt` to the URL query string
+    if (getUpdatedAt() != null) {
+      joiner.add(String.format("%supdatedAt%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUpdatedAt()))));
     }
 
     return joiner.toString();

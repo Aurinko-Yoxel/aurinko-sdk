@@ -122,6 +122,8 @@ CompletableFuture<[**Calendar**](Calendar.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## calendarByIdWithHttpInfo
 
@@ -240,6 +242,8 @@ CompletableFuture<ApiResponse<[**Calendar**](Calendar.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## calendars
@@ -353,6 +357,8 @@ CompletableFuture<[**CalendarsPage**](CalendarsPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## calendarsWithHttpInfo
 
@@ -475,6 +481,8 @@ CompletableFuture<ApiResponse<[**CalendarsPage**](CalendarsPage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## createCalendar
@@ -584,6 +592,8 @@ CompletableFuture<[**Calendar**](Calendar.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## createCalendarWithHttpInfo
 
@@ -702,6 +712,8 @@ CompletableFuture<ApiResponse<[**Calendar**](Calendar.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateCalendar
@@ -813,6 +825,8 @@ CompletableFuture<[**Calendar**](Calendar.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateCalendarWithHttpInfo
 
@@ -933,4 +947,6 @@ CompletableFuture<ApiResponse<[**Calendar**](Calendar.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

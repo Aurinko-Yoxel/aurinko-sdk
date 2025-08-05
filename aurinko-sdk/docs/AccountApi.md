@@ -109,13 +109,14 @@ CompletableFuture<void> (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteAccountWithHttpInfo
 
@@ -223,13 +224,14 @@ CompletableFuture<ApiResponse<Void>>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## deleteToken
@@ -328,13 +330,14 @@ CompletableFuture<void> (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteTokenWithHttpInfo
 
@@ -442,13 +445,14 @@ CompletableFuture<ApiResponse<Void>>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getMyAccount
@@ -561,6 +565,7 @@ CompletableFuture<[**ApiAccountOutDto**](ApiAccountOutDto.md)>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getMyAccountWithHttpInfo
 
@@ -682,4 +687,5 @@ CompletableFuture<ApiResponse<[**ApiAccountOutDto**](ApiAccountOutDto.md)>>
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

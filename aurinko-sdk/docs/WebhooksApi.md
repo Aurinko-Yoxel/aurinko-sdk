@@ -122,6 +122,8 @@ CompletableFuture<[**SubscriptionResponse**](SubscriptionResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getSubscriptionWithHttpInfo
 
@@ -240,6 +242,8 @@ CompletableFuture<ApiResponse<[**SubscriptionResponse**](SubscriptionResponse.md
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## getSubscriptions
@@ -353,6 +357,8 @@ CompletableFuture<[**SubscriptionsPage**](SubscriptionsPage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## getSubscriptionsWithHttpInfo
 
@@ -475,6 +481,8 @@ CompletableFuture<ApiResponse<[**SubscriptionsPage**](SubscriptionsPage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## subscribe
@@ -584,6 +592,8 @@ CompletableFuture<[**SubscriptionResponse**](SubscriptionResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## subscribeWithHttpInfo
 
@@ -702,6 +712,8 @@ CompletableFuture<ApiResponse<[**SubscriptionResponse**](SubscriptionResponse.md
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## unsubscribe
@@ -804,12 +816,14 @@ CompletableFuture<void> (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## unsubscribeWithHttpInfo
 
@@ -921,10 +935,12 @@ CompletableFuture<ApiResponse<Void>>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

@@ -18,7 +18,9 @@ import io.aurinko.client.ApiResponse;
 import io.aurinko.client.Configuration;
 import io.aurinko.client.Pair;
 
+import io.aurinko.client.model.ApiRequestFailed;
 import io.aurinko.client.model.ConversationDripStatus;
+import io.aurinko.client.model.ConversationDripStatusPage;
 import io.aurinko.client.model.DripRequestDTO;
 import io.aurinko.client.model.FollowupConfig;
 import io.aurinko.client.model.FollowupRuleAggregateIn;
@@ -464,10 +466,10 @@ public class FollowUpRobotApi {
    * @param active active or inactive threads, by default all threads returned (optional)
    * @param limit page size (optional, default to 50)
    * @param offset page offset (optional, default to 0)
-   * @return CompletableFuture&lt;ConversationDripStatus&gt;
+   * @return CompletableFuture&lt;ConversationDripStatusPage&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ConversationDripStatus> getConversationsDripStatus(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+  public CompletableFuture<ConversationDripStatusPage> getConversationsDripStatus(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getConversationsDripStatusRequestBuilder(active, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -479,7 +481,7 @@ public class FollowUpRobotApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<ConversationDripStatus>() {})
+                  responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<ConversationDripStatusPage>() {})
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));
@@ -497,10 +499,10 @@ public class FollowUpRobotApi {
    * @param active active or inactive threads, by default all threads returned (optional)
    * @param limit page size (optional, default to 50)
    * @param offset page offset (optional, default to 0)
-   * @return CompletableFuture&lt;ApiResponse&lt;ConversationDripStatus&gt;&gt;
+   * @return CompletableFuture&lt;ApiResponse&lt;ConversationDripStatusPage&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<ConversationDripStatus>> getConversationsDripStatusWithHttpInfo(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+  public CompletableFuture<ApiResponse<ConversationDripStatusPage>> getConversationsDripStatusWithHttpInfo(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = getConversationsDripStatusRequestBuilder(active, limit, offset);
       return memberVarHttpClient.sendAsync(
@@ -515,10 +517,10 @@ public class FollowUpRobotApi {
             try {
               String responseBody = localVarResponse.body();
               return CompletableFuture.completedFuture(
-                  new ApiResponse<ConversationDripStatus>(
+                  new ApiResponse<ConversationDripStatusPage>(
                       localVarResponse.statusCode(),
                       localVarResponse.headers().map(),
-                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<ConversationDripStatus>() {}))
+                      responseBody == null || responseBody.isBlank() ? null : memberVarObjectMapper.readValue(responseBody, new TypeReference<ConversationDripStatusPage>() {}))
               );
             } catch (IOException e) {
               return CompletableFuture.failedFuture(new ApiException(e));

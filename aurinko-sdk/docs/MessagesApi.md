@@ -136,6 +136,8 @@ CompletableFuture<[**EmailMessagesPageNext**](EmailMessagesPageNext.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## conversationWithHttpInfo
 
@@ -258,6 +260,8 @@ CompletableFuture<ApiResponse<[**EmailMessagesPageNext**](EmailMessagesPageNext.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## deleteMessage
@@ -369,6 +373,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## deleteMessageWithHttpInfo
 
@@ -489,6 +495,8 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## emailAttachment
@@ -600,6 +608,8 @@ CompletableFuture<[**EmailAttachmentContent**](EmailAttachmentContent.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## emailAttachmentWithHttpInfo
 
@@ -720,6 +730,8 @@ CompletableFuture<ApiResponse<[**EmailAttachmentContent**](EmailAttachmentConten
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## message
@@ -839,7 +851,9 @@ CompletableFuture<[**EmailMessage**](EmailMessage.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
 | **408** | threadId may be yet unavailable for some IMAP providers |  * Retry-After -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## messageWithHttpInfo
 
@@ -968,7 +982,9 @@ CompletableFuture<ApiResponse<[**EmailMessage**](EmailMessage.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
 | **408** | threadId may be yet unavailable for some IMAP providers |  * Retry-After -  <br>  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## messageRaw
@@ -1072,12 +1088,14 @@ CompletableFuture<**String**>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain
+- **Accept**: text/plain, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## messageRawWithHttpInfo
 
@@ -1190,12 +1208,14 @@ CompletableFuture<ApiResponse<**String**>>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain
+- **Accept**: text/plain, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## messages
@@ -1313,6 +1333,8 @@ CompletableFuture<[**EmailMessagesPageNext**](EmailMessagesPageNext.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## messagesWithHttpInfo
 
@@ -1439,6 +1461,8 @@ CompletableFuture<ApiResponse<[**EmailMessagesPageNext**](EmailMessagesPageNext.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## reply
@@ -1554,6 +1578,8 @@ CompletableFuture<[**EmailSendResponse**](EmailSendResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## replyWithHttpInfo
 
@@ -1678,6 +1704,8 @@ CompletableFuture<ApiResponse<[**EmailSendResponse**](EmailSendResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## send
@@ -1791,6 +1819,8 @@ CompletableFuture<[**EmailSendResponse**](EmailSendResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## sendWithHttpInfo
 
@@ -1913,6 +1943,8 @@ CompletableFuture<ApiResponse<[**EmailSendResponse**](EmailSendResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 
 ## updateMessageStatus
@@ -2024,6 +2056,8 @@ CompletableFuture<[**OkResponse**](OkResponse.md)>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 
 ## updateMessageStatusWithHttpInfo
 
@@ -2144,4 +2178,6 @@ CompletableFuture<ApiResponse<[**OkResponse**](OkResponse.md)>>
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **401** | Access token is missing or invalid |  -  |
+| **0** | See \&quot;Handling errors\&quot; section for details |  -  |
 

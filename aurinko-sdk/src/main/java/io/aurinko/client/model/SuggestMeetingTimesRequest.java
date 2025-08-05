@@ -43,6 +43,7 @@ import io.aurinko.client.ApiClient;
   SuggestMeetingTimesRequest.JSON_PROPERTY_TIME_MIN,
   SuggestMeetingTimesRequest.JSON_PROPERTY_TIME_MAX,
   SuggestMeetingTimesRequest.JSON_PROPERTY_DURATION_MINUTES,
+  SuggestMeetingTimesRequest.JSON_PROPERTY_BUFFER_BETWEEN_MINUTES,
   SuggestMeetingTimesRequest.JSON_PROPERTY_AVAILABILITY_STEP,
   SuggestMeetingTimesRequest.JSON_PROPERTY_ATTENDEES,
   SuggestMeetingTimesRequest.JSON_PROPERTY_DEFAULT_TIMEZONE,
@@ -63,6 +64,10 @@ public class SuggestMeetingTimesRequest {
   public static final String JSON_PROPERTY_DURATION_MINUTES = "durationMinutes";
   @javax.annotation.Nullable
   private Integer durationMinutes;
+
+  public static final String JSON_PROPERTY_BUFFER_BETWEEN_MINUTES = "bufferBetweenMinutes";
+  @javax.annotation.Nullable
+  private Integer bufferBetweenMinutes;
 
   public static final String JSON_PROPERTY_AVAILABILITY_STEP = "availabilityStep";
   @javax.annotation.Nullable
@@ -160,6 +165,30 @@ public class SuggestMeetingTimesRequest {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDurationMinutes(@javax.annotation.Nullable Integer durationMinutes) {
     this.durationMinutes = durationMinutes;
+  }
+
+
+  public SuggestMeetingTimesRequest bufferBetweenMinutes(@javax.annotation.Nullable Integer bufferBetweenMinutes) {
+    this.bufferBetweenMinutes = bufferBetweenMinutes;
+    return this;
+  }
+
+  /**
+   * A Duration specifying the minimum number of minutes that must be free after the meeting in minutes.
+   * @return bufferBetweenMinutes
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BUFFER_BETWEEN_MINUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public Integer getBufferBetweenMinutes() {
+    return bufferBetweenMinutes;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_BUFFER_BETWEEN_MINUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBufferBetweenMinutes(@javax.annotation.Nullable Integer bufferBetweenMinutes) {
+    this.bufferBetweenMinutes = bufferBetweenMinutes;
   }
 
 
@@ -338,6 +367,7 @@ public class SuggestMeetingTimesRequest {
     return Objects.equals(this.timeMin, suggestMeetingTimesRequest.timeMin) &&
         Objects.equals(this.timeMax, suggestMeetingTimesRequest.timeMax) &&
         Objects.equals(this.durationMinutes, suggestMeetingTimesRequest.durationMinutes) &&
+        Objects.equals(this.bufferBetweenMinutes, suggestMeetingTimesRequest.bufferBetweenMinutes) &&
         Objects.equals(this.availabilityStep, suggestMeetingTimesRequest.availabilityStep) &&
         Objects.equals(this.attendees, suggestMeetingTimesRequest.attendees) &&
         Objects.equals(this.defaultTimezone, suggestMeetingTimesRequest.defaultTimezone) &&
@@ -348,7 +378,7 @@ public class SuggestMeetingTimesRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(timeMin, timeMax, durationMinutes, availabilityStep, attendees, defaultTimezone, defaultWorkHours, availabilityIntervals, freeStatuses);
+    return Objects.hash(timeMin, timeMax, durationMinutes, bufferBetweenMinutes, availabilityStep, attendees, defaultTimezone, defaultWorkHours, availabilityIntervals, freeStatuses);
   }
 
   @Override
@@ -358,6 +388,7 @@ public class SuggestMeetingTimesRequest {
     sb.append("    timeMin: ").append(toIndentedString(timeMin)).append("\n");
     sb.append("    timeMax: ").append(toIndentedString(timeMax)).append("\n");
     sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
+    sb.append("    bufferBetweenMinutes: ").append(toIndentedString(bufferBetweenMinutes)).append("\n");
     sb.append("    availabilityStep: ").append(toIndentedString(availabilityStep)).append("\n");
     sb.append("    attendees: ").append(toIndentedString(attendees)).append("\n");
     sb.append("    defaultTimezone: ").append(toIndentedString(defaultTimezone)).append("\n");
@@ -424,6 +455,11 @@ public class SuggestMeetingTimesRequest {
     // add `durationMinutes` to the URL query string
     if (getDurationMinutes() != null) {
       joiner.add(String.format("%sdurationMinutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDurationMinutes()))));
+    }
+
+    // add `bufferBetweenMinutes` to the URL query string
+    if (getBufferBetweenMinutes() != null) {
+      joiner.add(String.format("%sbufferBetweenMinutes%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBufferBetweenMinutes()))));
     }
 
     // add `availabilityStep` to the URL query string
