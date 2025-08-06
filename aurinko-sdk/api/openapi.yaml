@@ -12299,17 +12299,7 @@ components:
         subject: subject
         dripStartedAt: 2000-01-23T04:56:07.000+00:00
         rule:
-        - templateBody: templateBody
-          name: name
-          templateSubject: templateSubject
-          id: 0
-          actions:
-          - intervalDays: 6
-            message: message
-          - intervalDays: 6
-            message: message
-          expectThreadResponse: true
-        - templateBody: templateBody
+          templateBody: templateBody
           name: name
           templateSubject: templateSubject
           id: 0
@@ -12340,9 +12330,7 @@ components:
           - ruleIncomplete
           type: string
         rule:
-          items:
-            $ref: '#/components/schemas/FollowupRuleAggregateOut'
-          type: array
+          $ref: '#/components/schemas/FollowupRuleAggregateOut'
         dripStartedAt:
           format: date-time
           type: string
@@ -13912,17 +13900,7 @@ components:
           subject: subject
           dripStartedAt: 2000-01-23T04:56:07.000+00:00
           rule:
-          - templateBody: templateBody
-            name: name
-            templateSubject: templateSubject
-            id: 0
-            actions:
-            - intervalDays: 6
-              message: message
-            - intervalDays: 6
-              message: message
-            expectThreadResponse: true
-          - templateBody: templateBody
+            templateBody: templateBody
             name: name
             templateSubject: templateSubject
             id: 0
@@ -13946,17 +13924,7 @@ components:
           subject: subject
           dripStartedAt: 2000-01-23T04:56:07.000+00:00
           rule:
-          - templateBody: templateBody
-            name: name
-            templateSubject: templateSubject
-            id: 0
-            actions:
-            - intervalDays: 6
-              message: message
-            - intervalDays: 6
-              message: message
-            expectThreadResponse: true
-          - templateBody: templateBody
+            templateBody: templateBody
             name: name
             templateSubject: templateSubject
             id: 0

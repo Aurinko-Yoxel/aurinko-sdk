@@ -110,7 +110,7 @@ public class ConversationDripStatus {
 
   public static final String JSON_PROPERTY_RULE = "rule";
   @javax.annotation.Nullable
-  private List<FollowupRuleAggregateOut> rule = new ArrayList<>();
+  private FollowupRuleAggregateOut rule;
 
   public static final String JSON_PROPERTY_DRIP_STARTED_AT = "dripStartedAt";
   @javax.annotation.Nullable
@@ -215,16 +215,8 @@ public class ConversationDripStatus {
   }
 
 
-  public ConversationDripStatus rule(@javax.annotation.Nullable List<FollowupRuleAggregateOut> rule) {
+  public ConversationDripStatus rule(@javax.annotation.Nullable FollowupRuleAggregateOut rule) {
     this.rule = rule;
-    return this;
-  }
-
-  public ConversationDripStatus addRuleItem(FollowupRuleAggregateOut ruleItem) {
-    if (this.rule == null) {
-      this.rule = new ArrayList<>();
-    }
-    this.rule.add(ruleItem);
     return this;
   }
 
@@ -235,14 +227,14 @@ public class ConversationDripStatus {
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RULE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public List<FollowupRuleAggregateOut> getRule() {
+  public FollowupRuleAggregateOut getRule() {
     return rule;
   }
 
 
   @JsonProperty(JSON_PROPERTY_RULE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRule(@javax.annotation.Nullable List<FollowupRuleAggregateOut> rule) {
+  public void setRule(@javax.annotation.Nullable FollowupRuleAggregateOut rule) {
     this.rule = rule;
   }
 
@@ -540,12 +532,7 @@ public class ConversationDripStatus {
 
     // add `rule` to the URL query string
     if (getRule() != null) {
-      for (int i = 0; i < getRule().size(); i++) {
-        if (getRule().get(i) != null) {
-          joiner.add(getRule().get(i).toUrlQueryString(String.format("%srule%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
-        }
-      }
+      joiner.add(getRule().toUrlQueryString(prefix + "rule" + suffix));
     }
 
     // add `dripStartedAt` to the URL query string

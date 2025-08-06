@@ -10,7 +10,7 @@
 |**convoId** | **String** |  |  [optional] |
 |**subject** | **String** |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-|**rule** | [**List&lt;FollowupRuleAggregateOut&gt;**](FollowupRuleAggregateOut.md) |  |  [optional] |
+|**rule** | [**FollowupRuleAggregateOut**](FollowupRuleAggregateOut.md) |  |  [optional] |
 |**dripStartedAt** | **OffsetDateTime** |  |  [optional] |
 |**dripLastNum** | **Integer** |  |  [optional] |
 |**dripError** | **String** |  |  [optional] |
