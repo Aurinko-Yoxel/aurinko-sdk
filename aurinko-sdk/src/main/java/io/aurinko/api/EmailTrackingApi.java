@@ -203,7 +203,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;EmailDraftCreateTrackingResponse&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<EmailDraftCreateTrackingResponse> createDraftTracking(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable String ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
+  public CompletableFuture<EmailDraftCreateTrackingResponse> createDraftTracking(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable Boolean ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createDraftTrackingRequestBuilder(draftId, ignoreNotFound, rewriteHtml);
       return memberVarHttpClient.sendAsync(
@@ -236,7 +236,7 @@ public class EmailTrackingApi {
    * @return CompletableFuture&lt;ApiResponse&lt;EmailDraftCreateTrackingResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    */
-  public CompletableFuture<ApiResponse<EmailDraftCreateTrackingResponse>> createDraftTrackingWithHttpInfo(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable String ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
+  public CompletableFuture<ApiResponse<EmailDraftCreateTrackingResponse>> createDraftTrackingWithHttpInfo(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable Boolean ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = createDraftTrackingRequestBuilder(draftId, ignoreNotFound, rewriteHtml);
       return memberVarHttpClient.sendAsync(
@@ -267,7 +267,7 @@ public class EmailTrackingApi {
     }
   }
 
-  private HttpRequest.Builder createDraftTrackingRequestBuilder(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable String ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
+  private HttpRequest.Builder createDraftTrackingRequestBuilder(@javax.annotation.Nullable String draftId, @javax.annotation.Nullable Boolean ignoreNotFound, @javax.annotation.Nullable RewriteHtml rewriteHtml) throws ApiException {
     // verify the required parameter 'draftId' is set
     if (draftId == null) {
       throw new ApiException(400, "Missing the required parameter 'draftId' when calling createDraftTracking");

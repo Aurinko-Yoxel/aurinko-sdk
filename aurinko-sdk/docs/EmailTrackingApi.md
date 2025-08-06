@@ -330,7 +330,7 @@ public class Example {
 
         EmailTrackingApi apiInstance = new EmailTrackingApi(defaultClient);
         String draftId = "draftId_example"; // String | an identifier of a draft message for start tracking
-        String ignoreNotFound = "ignoreNotFound_example"; // String | if draft was not found, store tracking data anyway
+        Boolean ignoreNotFound = true; // Boolean | if draft was not found, store tracking data anyway
         RewriteHtml rewriteHtml = new RewriteHtml(); // RewriteHtml | 
         try {
             CompletableFuture<EmailDraftCreateTrackingResponse> result = apiInstance.createDraftTracking(draftId, ignoreNotFound, rewriteHtml);
@@ -352,7 +352,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **draftId** | **String**| an identifier of a draft message for start tracking | |
-| **ignoreNotFound** | **String**| if draft was not found, store tracking data anyway | [optional] |
+| **ignoreNotFound** | **Boolean**| if draft was not found, store tracking data anyway | [optional] |
 | **rewriteHtml** | [**RewriteHtml**](RewriteHtml.md)|  | [optional] |
 
 ### Return type
@@ -445,7 +445,7 @@ public class Example {
 
         EmailTrackingApi apiInstance = new EmailTrackingApi(defaultClient);
         String draftId = "draftId_example"; // String | an identifier of a draft message for start tracking
-        String ignoreNotFound = "ignoreNotFound_example"; // String | if draft was not found, store tracking data anyway
+        Boolean ignoreNotFound = true; // Boolean | if draft was not found, store tracking data anyway
         RewriteHtml rewriteHtml = new RewriteHtml(); // RewriteHtml | 
         try {
             CompletableFuture<ApiResponse<EmailDraftCreateTrackingResponse>> response = apiInstance.createDraftTrackingWithHttpInfo(draftId, ignoreNotFound, rewriteHtml);
@@ -476,7 +476,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **draftId** | **String**| an identifier of a draft message for start tracking | |
-| **ignoreNotFound** | **String**| if draft was not found, store tracking data anyway | [optional] |
+| **ignoreNotFound** | **Boolean**| if draft was not found, store tracking data anyway | [optional] |
 | **rewriteHtml** | [**RewriteHtml**](RewriteHtml.md)|  | [optional] |
 
 ### Return type

@@ -3208,7 +3208,7 @@ paths:
         required: false
         schema:
           nullable: true
-          type: string
+          type: boolean
         style: form
       requestBody:
         content:

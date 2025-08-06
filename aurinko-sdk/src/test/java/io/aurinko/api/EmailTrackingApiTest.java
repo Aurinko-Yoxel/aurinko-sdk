@@ -73,7 +73,7 @@ public class EmailTrackingApiTest {
     @Test
     public void createDraftTrackingTest() throws ApiException {
         String draftId = null;
-        String ignoreNotFound = null;
+        Boolean ignoreNotFound = null;
         RewriteHtml rewriteHtml = null;
         CompletableFuture<EmailDraftCreateTrackingResponse> response = 
         api.createDraftTracking(draftId, ignoreNotFound, rewriteHtml);
